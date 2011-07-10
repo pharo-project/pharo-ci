@@ -2,7 +2,7 @@ if [ -z "$WORKSPACE" ] ; then
 	WORKSPACE=.
 fi
 
-mkdir -p $WORKSPACE/images
+mkdir -p "$WORKSPACE/images"
 
 sh "$WORKSPACE/download.sh" "$WORKSPACE/images/Pharo14.zip" https://gforge.inria.fr/frs/download.php/28710/Pharo-1.4-14025.zip
 
