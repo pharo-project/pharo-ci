@@ -8,16 +8,29 @@
 #
 
 # vm configuration
-PHARO_VM="/builds/vm/bin/squeak"
+
+if [ -z "$WORKSPACE" ] ; then
+  WORKSPACE=`pwd`
+fi
+
+if [ -z "$PHARO_VM" ] ; then
+  echo "PHARO_VM environment variable is not set."
+  exit 1
+fi
+
 PHARO_PARAM="-nodisplay -nosound"
 
-# directory configuration
-BUILD_PATH="${WORKSPACE:=$(readlink -f $(dirname $0))/builds}"
+if [ `uname` == "Darwin" ]; then
+  PHARO_PARAM="-headless"
+fi
 
-IMAGES_PATH="$(readlink -f $(dirname $0))/images"
-SCRIPTS_PATH="$(readlink -f $(dirname $0))/scripts"
-SOURCES_PATH="$(readlink -f $(dirname $0))/sources"
-BUILD_CACHE="$(readlink -f $(dirname $0))/cache"
+# directory configuration
+BUILD_PATH="${WORKSPACE}"
+
+IMAGES_PATH="$WORKSPACE/images"
+SCRIPTS_PATH="$WORKSPACE/scripts"
+SOURCES_PATH="$WORKSPACE/sources"
+BUILD_CACHE="$WORKSPACE/cache"
 
 # help function
 function display_help() {
