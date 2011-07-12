@@ -7,7 +7,7 @@
 # Copyright (c) 2010 Lukas Renggli <renggli@gmail.com>
 #
 
-# vm configuration
+# vm configuration 
 
 if [ -z "$WORKSPACE" ] ; then
   WORKSPACE=`pwd`
