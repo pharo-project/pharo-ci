@@ -155,7 +155,9 @@ mkdir -p "$OUTPUT_PATH"
 mkdir -p "$BUILD_CACHE/${JOB_NAME:=$OUTPUT_NAME}"
 ln -s "$BUILD_CACHE/${JOB_NAME:=$OUTPUT_NAME}" "$OUTPUT_CACHE"
 
-find "$SOURCES_PATH" -name "*.sources" -exec ln "{}" "$OUTPUT_PATH/" \;
+ln -s "$SOURCES_PATH/PharoV10.sources" "$OUTPUT_PATH"
+
+# find "$SOURCES_PATH" -name "*.sources" -exec ln "{}" "$OUTPUT_PATH/" \;
 
 if [ -n "$TEMPORARY_IMAGE" ] ; then
   cp "$TEMPORARY_IMAGE" "$TEMPORARY_OUTPUT_IMAGE"
