@@ -142,7 +142,7 @@ exec "$PHARO_VM" $PHARO_PARAM "$OUTPUT_IMAGE" "$OUTPUT_SCRIPT" -headless
 
 if [ -f "$OUTPUT_DEBUG" ] ; then
 
-	X=`grep THERE_BE_DRAGONS_HERE "$OUTPUT_SCRIPT" | wc -l`
+	X=`grep THERE_BE_DRAGONS_HERE "$OUTPUT_DEBUG" | wc -l`
 	if [ $X != "0" ] ; then
   		echo "$(basename $0): error loading code ($PHARO_VM)"
   		cat "$OUTPUT_DEBUG" | tr '\r' '\n' | sed 's/^/  /'
