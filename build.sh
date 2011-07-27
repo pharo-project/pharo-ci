@@ -138,7 +138,7 @@ rm -f "$OUTPUT_DEBUG"
 echo "Executing: 
 $PHARO_VM $PHARO_PARAM $OUTPUT_IMAGE $OUTPUT_SCRIPT -headless "
 
-exec "$PHARO_VM" $PHARO_PARAM "$OUTPUT_IMAGE" "$OUTPUT_SCRIPT" -headless
+"$PHARO_VM" $PHARO_PARAM "$OUTPUT_IMAGE" "$OUTPUT_SCRIPT" -headless
 
 if [ -f "$OUTPUT_DEBUG" ] ; then
 
