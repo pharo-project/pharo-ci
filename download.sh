@@ -11,4 +11,4 @@ if [ `uname` == "Darwin" ]; then
 	CERTCHECK=''
 fi
 
-wget $CERTCHECK -O "$1" "$2"
+wget -nv $CERTCHECK -O "$1" "$2"
