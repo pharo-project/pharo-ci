@@ -131,11 +131,25 @@ for FILE in "${SCRIPTS[@]}" ; do
 	echo "!" >> "$OUTPUT_SCRIPT"
 done
 
+# make sure we don't have debug log before running image
+rm -f "$OUTPUT_DEBUG"
+
 # build image in the background
 echo "Executing: 
 $PHARO_VM $PHARO_PARAM $OUTPUT_IMAGE $OUTPUT_SCRIPT -headless "
 
 exec "$PHARO_VM" $PHARO_PARAM "$OUTPUT_IMAGE" "$OUTPUT_SCRIPT" -headless
+
+if [ -f "$OUTPUT_DEBUG" ] ; then
+
+	X=`grep THERE_BE_DRAGONS_HERE "$OUTPUT_SCRIPT" | wc -l`
+	if [ $X != "0" ] ; then
+  		echo "$(basename $0): error loading code ($PHARO_VM)"
+  		cat "$OUTPUT_DEBUG" | tr '\r' '\n' | sed 's/^/  /'
+  		exit 1
+	fi
+fi
+    
 
 # remove cache link
 rm -f "$OUTPUT_CACHE"
@@ -143,3 +157,4 @@ rm -f "$OUTPUT_PATH/*.sources"
 
 # success
 exit 0
+
