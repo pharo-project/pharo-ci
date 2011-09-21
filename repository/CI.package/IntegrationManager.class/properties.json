@@ -1,0 +1,15 @@
+{
+	"category" : "CI",
+	"classinstvars" : [
+		"default",
+		"integrated" ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"integrated" ],
+	"name" : "IntegrationManager",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

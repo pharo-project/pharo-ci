@@ -1,0 +1,18 @@
+{
+	"category" : "CI-Loader",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"issue",
+		"testResult",
+		"previousTestResult",
+		"failures",
+		"errors" ],
+	"name" : "ChangeLoader",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

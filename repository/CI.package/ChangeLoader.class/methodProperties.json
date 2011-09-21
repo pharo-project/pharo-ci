@@ -1,0 +1,19 @@
+{
+	"class" : {
+		"issue:" : "BenjaminVanRyseghem 9/21/2011 14:37" },
+	"instance" : {
+		"buildErrorReport" : "BenjaminVanRyseghem 9/21/2011 19:03",
+		"buildReport" : "BenjaminVanRyseghem 9/21/2011 18:19",
+		"isAllGreen" : "BenjaminVanRyseghem 9/20/2011 19:14",
+		"isGreen" : "BenjaminVanRyseghem 9/21/2011 18:31",
+		"issue" : "BenjaminVanRyseghem 9/21/2011 17:10",
+		"issue:" : "BenjaminVanRyseghem 9/21/2011 15:18",
+		"loadCS" : "BenjaminVanRyseghem 9/21/2011 17:52",
+		"loadCSAndAllTests" : "BenjaminVanRyseghem 9/21/2011 17:51",
+		"loadSlice" : "BenjaminVanRyseghem 9/21/2011 19:16",
+		"loadSliceAndAllTests" : "BenjaminVanRyseghem 9/21/2011 17:51",
+		"removeFalseErrors" : "BenjaminVanRyseghem 9/21/2011 19:02",
+		"runAllTests" : "BenjaminVanRyseghem 9/20/2011 19:17",
+		"runTests" : "BenjaminVanRyseghem 9/21/2011 20:54",
+		"testResult" : "BenjaminVanRyseghem 9/21/2011 17:10",
+		"testResult:" : "BenjaminVanRyseghem 9/21/2011 17:10" } }

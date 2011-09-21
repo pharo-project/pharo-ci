@@ -1,0 +1,19 @@
+{
+	"category" : "CI",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"comment",
+		"contents",
+		"filename",
+		"issue",
+		"name",
+		"url" ],
+	"name" : "GoogleAttachement",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

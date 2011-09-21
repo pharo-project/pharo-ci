@@ -1,0 +1,7 @@
+accessing
+integrate: anIssue
+	anIssue integrated
+		ifTrue: [ ^ self ].
+		
+	anIssue load.
+	integrated add: anIssue.

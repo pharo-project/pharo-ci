@@ -1,0 +1,11 @@
+{
+	"class" : {
+		"default" : "CamilloBruni 8/17/2011 10:35",
+		"initialize" : "CamilloBruni 8/18/2011 10:34" },
+	"instance" : {
+		"id" : "CamilloBruni 8/18/2011 10:42",
+		"initialize" : "CamilloBruni 8/18/2011 10:36",
+		"integrate" : "CamilloBruni 8/17/2011 10:36",
+		"integrate:" : "CamilloBruni 8/17/2011 10:36",
+		"isIntegrated:" : "CamilloBruni 8/17/2011 10:35",
+		"summary" : "BenjaminVanRyseghem 9/18/2011 05:04" } }

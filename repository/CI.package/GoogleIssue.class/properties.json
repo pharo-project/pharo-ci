@@ -1,0 +1,27 @@
+{
+	"category" : "CI",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"tracker",
+		"comments",
+		"id",
+		"labels",
+		"state",
+		"status",
+		"title",
+		"published",
+		"updated",
+		"content",
+		"slice",
+		"relatedPackages",
+		"relatedTests",
+		"attachements" ],
+	"name" : "GoogleIssue",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }
