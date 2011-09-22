@@ -1,11 +1,10 @@
 testing
 runTests
 
-	| testClasses |
-	testClasses := OrderedCollection new.	
+	| classesToTest |
 	
-	 testClasses addAll: (self class environment allClasses select: [:class | {'SUnit'. 'CompilerTests'. 'CollectionsTests'. 'KernelTests'} anySatisfy: [:packageName | class category beginsWith: packageName]]).
-	testClasses := testClasses select: [:e | e inheritsFrom: TestCase ].
+	classesToTest := testClasses.
+	classesToTest addAll: self dirtyPackagesTests.
 
 	^ (TestSuite new 
 			addTests: ((testClasses

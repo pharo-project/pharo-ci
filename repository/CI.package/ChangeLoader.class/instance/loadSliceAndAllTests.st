@@ -11,4 +11,4 @@ loadSliceAndAllTests
 			"Then I run test"
 			self isAllGreen
 				ifTrue: [ self issue fixToInclude ]
-				ifFalse:[ self issue reviewNeeded:  self buildReport ]]
+				ifFalse:[ self issue reviewNeeded:  self buildGreenReport ]]
