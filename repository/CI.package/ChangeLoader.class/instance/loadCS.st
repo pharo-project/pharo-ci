@@ -1,8 +1,11 @@
 protocol
 loadCS
 
-	self issue hasSourceAttachments ifFalse: [ ^ self ].
+	| aStringCollection |
 	
-	"load the code and run the test"
-	self testChangeImpact: [ 
-		self issue sourceAttachments do: [:aString | FileStream fileIn: aString ]].
+	aStringCollection := self issue linksForAttachments.
+	"here I load the code"
+	aStringCollection do: [:aString | FileStream fileIn: aString ] .
+	
+	"Then I run test"
+	^ self isGreen

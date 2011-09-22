@@ -9,10 +9,9 @@
 		"issue",
 		"testResult",
 		"previousTestResult",
-		"testFailures",
-		"testErrors",
-		"testClasses",
-		"errors" ],
+		"failures",
+		"errors",
+		"testClasses" ],
 	"name" : "ChangeLoader",
 	"pools" : [
 		 ],

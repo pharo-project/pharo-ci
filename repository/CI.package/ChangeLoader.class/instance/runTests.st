@@ -1,14 +1,12 @@
 testing
 runTests
 
-	| suite |
+	| classesToTest |
 	
-	suite := TestSuite new.
-	
-	testClasses do: [ :testClass|
-		suite addTests: testClass suite tests ].
+	classesToTest := testClasses.
+	classesToTest addAll: self dirtyPackagesTests.
 
-	self dirtyPackagesTests do: [ :testClass|
-		suite addTests: testClass suite tests ].
-
-	^ suite run.
+	^ (TestSuite new 
+			addTests: ((testClasses
+							select: [ :class| class isAbstract not ]) 
+								gather: [:e | e suite tests])) run.
