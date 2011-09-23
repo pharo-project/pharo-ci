@@ -1,4 +1,4 @@
 printing
 buildRedReport
 
-	^ String streamContents: [:stream | self buildRedReportOn: stream]
+	^ String streamContents: [:stream | self buildRedReportOn: stream ]
