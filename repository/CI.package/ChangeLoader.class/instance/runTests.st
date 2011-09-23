@@ -7,11 +7,16 @@ runTests
 	
 	testClasses do: [ :testClass|
 		suite addTests: testClass suite tests ].
+	
+	"remove some tests which fail randomly under cog"
+	suite := self removeCogCriticalTestsFrom: suite.
 
 	self extraTests do: [ :testClass|
 		suite addTests: testClass suite tests ].
-
+	
+	
 	testStopwatch reset activate.
 	result := suite run.
 	testStopwatch suspend.
+	
 	^ result

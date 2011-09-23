@@ -1,3 +1,3 @@
 testing
 isGreen
-	^  errors isEmpty and: [ testResult hasPassed ]
+	^  errors isEmpty and: [ testFailures isEmptyOrNil and: [ testErrors isEmptyOrNil ]]
