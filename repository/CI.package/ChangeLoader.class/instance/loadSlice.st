@@ -1,21 +1,9 @@
 protocol
 loadSlice
-
-	"Load slice and run tests"
-	self issue slice
-		ifNotNil: [:slice | 
-			
-			" I run tests a first time to be able to remove false errors later"
-			previousTestResult := self runTests.
-			
-			"here I load the code"
-			slice load.
+	"load the slice for the set issue"
+	
+	[ self issue slice load ]
+		on: Exception
+		do: [ :e| self addError: e forFile: (self issue slice name, ' from ', self repository description)].
 		
-			"Then I re run tests"
-			testResult := self runTests.
-			self removeFalseErrors.
-			
-			"Finally I notive Google"
-			self isGreen
-				ifTrue: [ self issue fixToInclude: self buildReport ]
-				ifFalse:[ self issue reviewNeeded:  self buildErrorReport ]]
+	extraTests addAll: self impactedPackagesTests.

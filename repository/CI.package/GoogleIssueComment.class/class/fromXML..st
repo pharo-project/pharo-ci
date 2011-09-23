@@ -5,7 +5,7 @@ fromXML: entryNode
 	
 	idString := entryNode id text.
 	
-	comment := self with: (idString copyFrom: (idString lastIndexOf: $/) + 1 to: idString size).
+	comment := self id: (idString copyFrom: (idString lastIndexOf: $/) + 1 to: idString size) asInteger. 
 	
 	comment published: entryNode published text asDateAndTime.
 	comment updated: entryNode updated text asDateAndTime.

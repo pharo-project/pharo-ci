@@ -1,0 +1,14 @@
+{
+	"category" : "CI",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "GoogleIssueDescription",
+	"pools" : [
+		 ],
+	"super" : "GoogleIssueComment",
+	"type" : "normal" }

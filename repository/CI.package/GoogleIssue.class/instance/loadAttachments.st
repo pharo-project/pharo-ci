@@ -16,9 +16,9 @@ loadAttachments
 	commentTags := (soup // 'div') attribute: 'id' matching: 'hc[0-9]+' asRegex.
 		
 	"assign attachments to issues"
-	^ Array streamContents: [ :stream|
+	^ (Array streamContents: [ :stream|
 		commentTags do: [ :commentTag|
-			comment := self comments at: (commentTag id allButFirst: 2) asInteger + 1.
+			comment := self commentById: (commentTag id allButFirst: 2) asInteger.
 			attachmentLinks 
 				select: [ :link| commentTag includesTag: link] 
 				thenDo: [ :link|
@@ -26,6 +26,6 @@ loadAttachments
 						(comment addAttachment: 
 							((GoogleAttachement fromURL: link href)
 										issue: self;
-										yourself))]]]
+										yourself))]]]) sort: [ :a :b| a published <= b published]
 							
 	

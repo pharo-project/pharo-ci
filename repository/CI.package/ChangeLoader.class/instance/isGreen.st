@@ -1,4 +1,3 @@
 testing
 isGreen
-
-	^ testResult failures isEmpty and: [ testResult errors isEmpty ]
+	^  errors isEmpty and: [ testResult failures isEmpty and: [ testResult errors isEmpty ]]

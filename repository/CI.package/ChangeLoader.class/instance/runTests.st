@@ -1,12 +1,17 @@
 testing
 runTests
 
-	| classesToTest |
+	| suite result |
 	
-	classesToTest := testClasses.
-	classesToTest addAll: self dirtyPackagesTests.
+	suite := TestSuite new.
+	
+	testClasses do: [ :testClass|
+		suite addTests: testClass suite tests ].
 
-	^ (TestSuite new 
-			addTests: ((testClasses
-							select: [ :class| class isAbstract not ]) 
-								gather: [:e | e suite tests])) run.
+	self extraTests do: [ :testClass|
+		suite addTests: testClass suite tests ].
+
+	testStopwatch reset activate.
+	result := suite run.
+	testStopwatch suspend.
+	^ result
