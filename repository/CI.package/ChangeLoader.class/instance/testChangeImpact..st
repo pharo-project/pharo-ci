@@ -2,6 +2,7 @@ testing
 testChangeImpact: aBlock
 	|complete|
 	
+	"run the issue update requests in the background to save some time"
 	complete := Semaphore new.
 	[ self issue monkeyIsChecking.
 	 complete signal ] fork.
@@ -21,5 +22,7 @@ testChangeImpact: aBlock
 	"collect possible errors"
 	] on: Error do: [ :e| self addError: e ].
 	
+	"wait for the initial issue update to be completed"
 	complete wait.
+	"update the issue with load/test results"
 	self notifyTracker.

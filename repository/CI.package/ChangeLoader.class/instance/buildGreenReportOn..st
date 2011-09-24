@@ -17,4 +17,7 @@ buildGreenReportOn: stream
 	stream lf.
 	
 	packages keys asArray sort do: [ :package|
-		stream tab << package << ' (' << (packages at: package) << ')'; lf]
+		stream tab << package << ' (' << (packages at: package) << ')'; lf].
+	
+	stream lf.
+	self printSetupDescriptionOn: stream.
