@@ -7,4 +7,4 @@ loadChangeSet
 			on: Error 
 			do: [ :e| self addError: e forFile: attachment description ]].
 		
-	extraTests addAll: self dirtyPackagesTests.
+	self extraTests addAll: self dirtyPackagesTests.

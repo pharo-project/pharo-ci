@@ -1,10 +1,10 @@
 testing
 impactedPackagesTests
 			
-	| packages categories classes |
+	| repo packages categories classes |
 	
-	packages := (MCVersion allInstances detect: [:each | 
-								each info name = self slice name ]) dependencies.
+	repo := MCHttpRepository allInstances detect: [: e| e description = 'http://ss3.gemstone.com/ss/PharoInbox' ].
+	packages := (repo versionReaderForFileNamed: (repo allFileNames detect:[:e | e includesSubString: self slice name]) ) dependencies.
 	categories := packages collect: [:each | each package name ]. 
 	categories := categories reject: [:e | e = 'KernelTests' ].
 	

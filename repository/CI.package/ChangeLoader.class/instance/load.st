@@ -5,5 +5,5 @@ load
 	
 	self issue hasSlice ifTrue: [ ^ self loadSlice ].
 	self issue hasChangeSet ifTrue: [ ^ self loadChangeSet ].
-	
-	self errorNoLoadableSources
+
+	"Here we assume the check has already be done by the issue"

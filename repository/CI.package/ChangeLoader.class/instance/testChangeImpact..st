@@ -1,6 +1,6 @@
 testing
 testChangeImpact: aBlock
-	|complete|
+	| complete |
 	
 	"run the issue update requests in the background to save some time"
 	complete := Semaphore new.
@@ -8,6 +8,9 @@ testChangeImpact: aBlock
 	 complete signal ] fork.
 	
 	" I run tests a first time to be able to remove false errors later"
+	self issue hasSlice
+		ifTrue: [	self extraTests addAll: self impactedPackagesTests ].
+			
 	self preRunTests.
 	[
 		loadStopwatch reset activate.

@@ -4,4 +4,4 @@ ensureFix
 	"check whether this issue has a loadable source, either an attached .cs or .st file or a SLICE"
 	
 	self hasFix 
-		ifFalse: [ Error signal: 'cannt load issue without attached sources (SLICE or issue attachments)' ]
+		ifFalse: [ self errorNoSources ]

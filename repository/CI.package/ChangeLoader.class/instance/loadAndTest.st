@@ -6,4 +6,4 @@ loadAndTest
 	self issue hasSlice ifTrue: [ ^ self loadAndTestSlice ].
 	self issue hasChangeSet ifTrue: [ ^ self loadAndTestChangeSet ].
 	
-	self errorNoLoadableSources.
+	"Here I assume the check have already been done by the issue itself"
