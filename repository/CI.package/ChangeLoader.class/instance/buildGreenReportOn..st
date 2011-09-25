@@ -9,7 +9,7 @@ buildGreenReportOn: stream
 	
 	packages := Dictionary new.
 	testedClasses do: [ :testClass|
-		packages at: testClass package name put: (packages at: testClass package name ifAbsent: [ 0 ]) + 1 ].
+		packages at: testClass category put: (packages at: testClass category ifAbsent: [ 0 ]) + 1 ].
 	
 	title := 'Tests passed (', testedClasses size asString , ') in ', testStopwatch duration asString, ' :'.
 	stream << title; lf.
