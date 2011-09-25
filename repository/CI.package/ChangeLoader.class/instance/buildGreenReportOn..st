@@ -1,23 +1,20 @@
 printing
 buildGreenReportOn: stream
 
-	| testedClasses packages title |
+	| packages |
 	
 	testResult ifNil: [ ^ self ].
-	testedClasses := testResult passed collect: [:each | each class].
-	testedClasses ifEmpty: [ ^ self ].
 	
+	self greenTitleOn: stream.
+	
+	"count the number of tests per package"
 	packages := Dictionary new.
-	testedClasses do: [ :testClass|
-		packages at: testClass category put: (packages at: testClass category ifAbsent: [ 0 ]) + 1 ].
-	
-	title := 'Tests passed (', testedClasses size asString , ') in ', testStopwatch duration asString, ' :'.
-	stream << title; lf.
-	title size timesRepeat: [ stream << '='].
-	stream lf.
+	testResult passed do: [ :testCase| | package |
+		package := testCase class category.
+		packages at: package put: (packages at: package ifAbsent: [ 0 ]) + 1 ].
 	
 	packages keys asArray sort do: [ :package|
 		stream tab << package << ' (' << (packages at: package) << ')'; lf].
 	
 	stream lf.
-	self printSetupDescriptionOn: stream.
+	self buildSetupDescriptionOn: stream.

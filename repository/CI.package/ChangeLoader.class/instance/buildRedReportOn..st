@@ -5,4 +5,4 @@ buildRedReportOn: stream
 	self buildTestsReportOn: stream.
 	
 	stream lf.
-	self printSetupDescriptionOn: stream.
+	self buildSetupDescriptionOn: stream.
