@@ -8,6 +8,8 @@ runTests
 	testClasses do: [ :testClass|
 		suite addTests: testClass suite tests ].
 	
+	suite := self removeCriticalTestsFrom: suite.
+	
 	"remove some tests which fail randomly under cog"
 	suite := self removeCogCriticalTestsFrom: suite.
 
