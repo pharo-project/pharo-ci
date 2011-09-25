@@ -4,7 +4,7 @@ impactedPackagesTests
 	| packages categories classes |
 	
 	packages := (MCVersion allInstances detect: [:each | 
-								each info name = self issue slice name ]) dependencies.
+								each info name = self slice name ]) dependencies.
 	categories := packages collect: [:each | each package name ]. 
 	categories := categories reject: [:e | e = 'KernelTests' ].
 	

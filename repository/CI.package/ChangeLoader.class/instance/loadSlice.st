@@ -2,8 +2,8 @@ protocol
 loadSlice
 	"load the slice for the set issue"
 	
-	[ self issue slice load ]
+	[ self slice load ]
 		on: Exception
-		do: [ :e| self addError: e forFile: (self issue slice name, ' from ', self repository description)].
+		do: [ :e| self addError: e forFile: (self slice name, ' from ', self slice repository description)].
 		
 	extraTests addAll: self impactedPackagesTests.
