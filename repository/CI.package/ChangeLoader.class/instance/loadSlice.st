@@ -1,4 +1,4 @@
-protocol
+private
 loadSlice
 	"load the slice for the set issue"
 	

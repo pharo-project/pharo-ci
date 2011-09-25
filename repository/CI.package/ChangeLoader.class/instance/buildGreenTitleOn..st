@@ -6,9 +6,9 @@ buildGreenTitleOn: aStream
 	
 	title :=  String streamContents: [ :s |
 					s << testResult passed size asString << ' tests passed in '.
-					s << (duration hours padded: #left to: 2 with: $0) << ':'.
-					s << (duration minutes padded: #left to: 2 with: $0) << ':'.
-					s << (duration seconds padded: #left to: 2 with: $0) << 's:'].
+					s << (duration hours asString padded: #left to: 2 with: $0) << ':'.
+					s << (duration minutes asString padded: #left to: 2 with: $0) << ':'.
+					s << (duration seconds asString padded: #left to: 2 with: $0) << 's:'].
 				
 	aStream << title; lf.
 	title size timesRepeat: [ aStream << '='].

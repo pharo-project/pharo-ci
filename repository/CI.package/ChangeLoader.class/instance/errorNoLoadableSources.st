@@ -1,4 +1,6 @@
-error-reporting
+testing
 errorNoLoadableSources
 	
-	Error signal: 'Issue has no loadable sources attached'.
+	"Error signal: 'Issue has no loadable sources attached'."
+	
+	self issue errorNoSources
