@@ -5,6 +5,8 @@ buildGreenReportOn: stream
 	
 	testResult ifNil: [ ^ self ].
 	
+	self buildGreenTitleOn: stream.
+	
 	"count the number of tests per package"
 	packages := Dictionary new.
 	testResult passed do: [ :testCase| | package |
