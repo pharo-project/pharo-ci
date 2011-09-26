@@ -1,0 +1,4 @@
+display
+allReadyForIntegrationIssues
+
+	^ self tracker readyForIntegrationIssues

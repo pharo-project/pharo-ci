@@ -1,13 +1,18 @@
 {
-	"category" : "CI",
+	"category" : "CI-Integration",
 	"classinstvars" : [
 		"default",
 		"integrated" ],
 	"classvars" : [
 		 ],
-	"commentStamp" : "",
+	"commentStamp" : "<historical>",
 	"instvars" : [
-		"integrated" ],
+		"currentTests",
+		"integrated",
+		"issuesToIntegrate",
+		"newVersionNumber",
+		"previousTests",
+		"tracker" ],
 	"name" : "IntegrationManager",
 	"pools" : [
 		 ],

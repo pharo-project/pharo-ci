@@ -1,11 +1,29 @@
 {
 	"class" : {
 		"default" : "CamilloBruni 8/17/2011 10:35",
-		"initialize" : "CamilloBruni 8/18/2011 10:34" },
+		"initialize" : "CamilloBruni 8/18/2011 10:34",
+		"tracker:" : "BenjaminVanRyseghem 9/26/2011 15:50" },
 	"instance" : {
+		"allReadyForIntegrationIssues" : "BenjaminVanRyseghem 9/26/2011 15:50",
+		"closeIssues" : "BenjaminVanRyseghem 9/26/2011 19:23",
+		"coreTests" : "BenjaminVanRyseghem 9/26/2011 18:50",
+		"ensureStability" : "BenjaminVanRyseghem 9/26/2011 19:09",
 		"id" : "CamilloBruni 8/18/2011 10:42",
 		"initialize" : "CamilloBruni 8/18/2011 10:36",
-		"integrate" : "CamilloBruni 8/17/2011 10:36",
+		"installSources" : "BenjaminVanRyseghem 9/26/2011 19:01",
+		"integrate" : "BenjaminVanRyseghem 9/26/2011 19:27",
 		"integrate:" : "CamilloBruni 8/17/2011 10:36",
+		"isCog" : "BenjaminVanRyseghem 9/26/2011 18:50",
 		"isIntegrated:" : "CamilloBruni 8/17/2011 10:35",
-		"summary" : "BenjaminVanRyseghem 9/18/2011 05:04" } }
+		"listDialogClass" : "BenjaminVanRyseghem 9/26/2011 15:53",
+		"loadSources" : "BenjaminVanRyseghem 9/26/2011 18:45",
+		"newVersionNumber" : "BenjaminVanRyseghem 9/26/2011 19:22",
+		"newVersionNumber:" : "BenjaminVanRyseghem 9/26/2011 19:22",
+		"openSelectionList" : "BenjaminVanRyseghem 9/26/2011 16:37",
+		"removeCriticalTestsFrom:" : "BenjaminVanRyseghem 9/26/2011 18:59",
+		"retrieveTestClasses" : "BenjaminVanRyseghem 9/26/2011 18:51",
+		"runTests" : "BenjaminVanRyseghem 9/26/2011 18:59",
+		"summary" : "BenjaminVanRyseghem 9/18/2011 05:04",
+		"testClasses" : "BenjaminVanRyseghem 9/26/2011 18:54",
+		"tracker" : "BenjaminVanRyseghem 9/26/2011 15:51",
+		"tracker:" : "BenjaminVanRyseghem 9/26/2011 15:47" } }
