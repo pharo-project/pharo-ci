@@ -1,5 +1,8 @@
 tests
 coreTests
+	
+	"give back the list of core tests to check the system's sanity"
+	
 	| tests |
 	
 	tests := self class environment allClasses select: [:class | 

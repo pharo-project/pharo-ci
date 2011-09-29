@@ -3,7 +3,7 @@ openSelectionList
 
 	| window |
 	window := self listDialogClass
-		itemsList: self allReadyForIntegrationIssues
+		itemsList: self allIssuesReadyForIntegration
 		itemsHeaderName: 'Issues ready for integration '
 		wrapBlockOrSelector: [:item | item name]
 		title: 'Integration'.

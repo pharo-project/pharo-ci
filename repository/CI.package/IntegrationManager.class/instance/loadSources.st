@@ -1,12 +1,16 @@
 loading
 loadSources
-	"Download sources from the internet in parallele"
+	"Download sources from the internet in parallel"
 	
 	'Loading sources'
 		displayProgressAt: Display center
 		from: 0 
 		to: issuesToIntegrate size
-		during: [:bar |
-			issuesToIntegrate doWithIndex: [: each :index | 
-				each loadSource.
-				bar value: index ] inParallel: 8 ].
+		during: [:bar | |progress|
+			progress := 0.
+			issuesToIntegrate 
+				do: [: each | 
+					each loadSource.
+					progress := progress + 1.
+					bar value: progress] 
+				inParallel: 8 ].

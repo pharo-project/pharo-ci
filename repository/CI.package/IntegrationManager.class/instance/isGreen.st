@@ -1,5 +1,5 @@
 tests
-ensureStability
+isGreen
 	"Here I ensure that no tests are failing"
 	| failures errors |
 	
@@ -12,9 +12,8 @@ ensureStability
 		detected := previousTests failures detect: [:e2 | each name = e2 name ] ifNone: [nil].
 		detected ifNil: [ false ] ifNotNil: [ each selector = detected selector ]].
 	
-	
 	errors := currentTests errors reject:[: each || detected |
 		detected := previousTests errors detect: [:e2 | each name = e2 name ] ifNone: [nil].
 		detected ifNil: [ false ] ifNotNil: [ each selector = detected selector ]].
 	
-	self assert: (failures isEmpty and: [ errors isEmpty ])
+	^ failures isEmpty and: [ errors isEmpty ]

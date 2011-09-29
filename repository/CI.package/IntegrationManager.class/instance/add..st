@@ -1,5 +1,5 @@
 accessing
-integrate: anIssue
+add: anIssue
 	anIssue integrated
 		ifTrue: [ ^ self ].
 		

@@ -1,4 +1,5 @@
 integration-private
 integrate
-	"see IntegrationManager >> #integrate:"
-	IntegrationManager default integrate: self.
+	" mark this issue ready for integration use IntegrationManager >> #integrateAll to integrate the marked issues.
+	see IntegrationManager >> #add:"
+	IntegrationManager default add: self.

@@ -1,5 +1,5 @@
 entry point
-integrate
+integrateAll
 	"I am used to integrate issues into Pharo"
 	| loaders |
 	
@@ -26,8 +26,8 @@ integrate
 	currentTests := self runTests.
 	
 	"Check tests are all greens"
-	self ensureStability.
+	self assert: self isGreen.
 	
 	"Now I comment and close issues in parallele"
-	self closeIssues.
+	self closeAll.
 	self halt.
