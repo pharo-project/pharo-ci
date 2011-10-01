@@ -1,4 +1,4 @@
 loading
 preLoadScript
 
-	^ (FSFilesystem disk * 'preload.st') readStream
+	^ FileStream fileNamed: 'preload.st'

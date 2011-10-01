@@ -1,4 +1,4 @@
 loading
 postLoadScript
 
-	^ (FSFilesystem disk * 'postload.st') readStream
+	^ FileStream fileNamed: 'postload.st'
