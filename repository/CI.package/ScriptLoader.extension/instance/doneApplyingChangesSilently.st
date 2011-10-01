@@ -31,5 +31,3 @@ doneApplyingChangesSilently
 	self saveChangedPackagesIntoWaitingFolder.
 	self generateScriptAndUpdateMethodForNewVersionSilently.
 	self saveLatestScriptLoaderToWaitingFolder.
-	
-	self inform: 'Update prepared and ready to be verified.'
