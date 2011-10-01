@@ -4,7 +4,7 @@
 		"default",
 		"integrated" ],
 	"classvars" : [
-		 ],
+		"UniqueInstance" ],
 	"commentStamp" : "<historical>",
 	"instvars" : [
 		"currentTests",
@@ -12,7 +12,8 @@
 		"issuesToIntegrate",
 		"newVersionNumber",
 		"previousTests",
-		"tracker" ],
+		"tracker",
+		"scriptLoader" ],
 	"name" : "IntegrationManager",
 	"pools" : [
 		 ],

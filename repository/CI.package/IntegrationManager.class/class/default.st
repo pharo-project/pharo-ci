@@ -1,3 +1,4 @@
-instance creation
-default
-	^ default ifNil: [ default := self new ].
+accessing
+default 
+
+	^ self uniqueInstance
