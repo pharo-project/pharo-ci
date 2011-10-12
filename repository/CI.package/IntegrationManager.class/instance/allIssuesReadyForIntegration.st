@@ -1,4 +1,0 @@
-display
-allIssuesReadyForIntegration
-
-	^ self tracker allIssuesReadyForIntegration

@@ -17,12 +17,14 @@ integrate
 	
 	"Check tests are all greens"
 	self isGreen ifFalse: [ ^ self ].
-	self halt.
+
 	"Now I comment and close issues in parallele"
-	scriptLoader publishChanges.
+	scriptLoader publishChangesSilently.
 	self closeAll.
 	self buildSumUp.
 	self sendMail.
 	
 	"tear down just in case"
 	issuesToIntegrate := nil.
+	postloadScript := nil.
+	preloadScript := nil.

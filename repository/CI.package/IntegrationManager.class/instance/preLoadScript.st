@@ -1,4 +1,4 @@
 loading
 preLoadScript
 
-	^ FileStream fileNamed: 'preload.st'
+	^ preloadScript ifNil: [ preloadScript := FileStream fileNamed: 'preload.st' ]

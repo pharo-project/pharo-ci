@@ -7,13 +7,13 @@ generateNewUpdateMethodSilently
 	mthName := 'update', self currentUpdateVersionNumber asString.
 	str nextPutAll: mthName ; cr  ; tab.
 	str nextPutAll: '"self new ', mthName, '"'; crtab. 
-	preamble := IntegrationManager default preLoadScript contents asString.
+	preamble := IntegrationManager default preLoadScript reset contents asString.
 	
 	str nextPutAll: 'self withUpdateLog: ' ; nextPut: $'; nextPutAll: self commentForCurrentUpdate ; nextPut: $'; nextPut: $. .
 	str crtab.
 	str nextPutAll: 'self script' , self currentScriptVersionNumber asString, '.'.
 	str crtab.
-	postscript := IntegrationManager default postLoadScript contents asString.
+	postscript := IntegrationManager default postLoadScript reset contents asString.
 	postscript isEmptyOrNil ifFalse: [str nextPutAll: postscript; ensureEndsWith: $.; crtab].
 	str nextPutAll: 'self flushCaches.'; cr.
 	

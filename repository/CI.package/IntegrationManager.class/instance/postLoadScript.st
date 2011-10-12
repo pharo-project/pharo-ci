@@ -1,4 +1,4 @@
 loading
 postLoadScript
 
-	^ FileStream fileNamed: 'postload.st'
+	^ postloadScript ifNil: [ postloadScript := FileStream fileNamed: 'postload.st' ]

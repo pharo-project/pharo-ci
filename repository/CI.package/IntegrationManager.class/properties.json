@@ -13,7 +13,9 @@
 		"newVersionNumber",
 		"previousTests",
 		"tracker",
-		"scriptLoader" ],
+		"scriptLoader",
+		"preloadScript",
+		"postloadScript" ],
 	"name" : "IntegrationManager",
 	"pools" : [
 		 ],

@@ -9,7 +9,8 @@ prepare
 	scriptLoader := ScriptLoader new.
 	versionNumber := scriptLoader prepareNewUpdateSilently.
 	versionNumber ifNil: [ ^ self ].
-	
+	"Here I kill the working copy of my packages to prevent scriptlaod to add them"
+	self removeWorkingCopies.
 	" Here I assume I am using the latest version of the image "
 	self newVersionNumber: versionNumber.
 	
