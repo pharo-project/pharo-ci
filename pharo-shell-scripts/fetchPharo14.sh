@@ -4,7 +4,7 @@ fi
 
 mkdir -p "$WORKSPACE/images"
 
-sh "$WORKSPACE/download.sh" "$WORKSPACE/images/Pharo14.zip" https://gforge.inria.fr/frs/download.php/29262/Pharo-1.4-14196.zip
+sh "$WORKSPACE/download.sh" "$WORKSPACE/images/Pharo14.zip" https://gforge.inria.fr/frs/download.php/29327/Pharo-1.4-14210.zip
 
 unzip -j -o -d "$WORKSPACE/images/" "$WORKSPACE/images/Pharo14.zip"
 mv "$WORKSPACE"/images/Pharo-1.4*.image "$WORKSPACE/images/gforge14.image"
