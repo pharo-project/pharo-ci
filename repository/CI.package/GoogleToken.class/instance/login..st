@@ -4,7 +4,7 @@ login: aPasswordString
 	
 	| result client|
 	
-	client := ZnNeoClient new 
+	client := ZnClient new 
 					url: 'https://www.google.com/accounts/ClientLogin';
 					yourself.
 	
