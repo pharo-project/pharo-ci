@@ -12,6 +12,9 @@ loadAttachments
 	attachmentLinks := ((soup // 'a') select: [ :tag| tag size = 1])
 									attribute: #href matching: regex.
 	
+	attachmentLinks isEmpty
+		ifTrue: [ ^ Array new ]. 
+	
 	"find the parent comment"
 	commentTags := (soup // 'div') attribute: 'id' matching: 'hc[0-9]+' asRegex.
 		
