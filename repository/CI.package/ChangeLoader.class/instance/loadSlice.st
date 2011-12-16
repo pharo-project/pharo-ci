@@ -6,4 +6,5 @@ loadSlice
 	
 	[ self slice load ]
 		on: Error, Warning
-		do: [ :e| self addError: e forFile: (self slice name, ' from ', self slice repository description)].
+		do: [ :e| 
+			self addError: e forFile: (self slice name, ' from ', self slice repository description)].

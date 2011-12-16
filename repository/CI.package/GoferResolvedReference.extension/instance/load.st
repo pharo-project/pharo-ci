@@ -2,7 +2,7 @@
 load
 	
 	Gofer new
-		url: self repository description;
+		repository: self repository;
 		package: package;
 		version: self name;
 		load

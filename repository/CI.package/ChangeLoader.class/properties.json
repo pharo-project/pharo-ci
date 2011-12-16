@@ -18,7 +18,8 @@
 		"testStopWatch",
 		"loadStopwatch",
 		"testStopwatch",
-		"changes" ],
+		"changes",
+		"verbose" ],
 	"name" : "ChangeLoader",
 	"pools" : [
 		 ],

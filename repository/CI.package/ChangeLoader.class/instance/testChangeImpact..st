@@ -4,7 +4,7 @@ testChangeImpact: aBlock
 	
 	"run the issue update requests in the background to save some time"
 	complete := Semaphore new.
-	[ self issue monkeyIsChecking.
+	[self isVerbose ifTrue: [ self issue monkeyIsChecking ].
 	 complete signal ] fork.
 	
 	" I run tests a first time to be able to remove false errors later"
