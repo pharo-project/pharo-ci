@@ -4,13 +4,13 @@ buildTestsReportOn: stream
 	(testErrors isEmptyOrNil and: [ testFailures isEmptyOrNil])
 		ifTrue: [ ^ self ].
 	
-	stream << 'Test Results:'; lf.
-	stream << '-------------'; lf.
+	stream nextPutAll: 'Test Results:'; lf.
+	stream nextPutAll: '-------------'; lf.
 			
 	testErrors ifNotEmpty: [:collection |
-		stream << 'Errors:'; lf.
+		stream nextPutAll: 'Errors:'; lf.
 		collection do: [:e | stream tab print: e; lf ]].
 		
 	testFailures ifNotEmpty: [:collection |
-		stream << 'Failures:'; lf.
+		stream nextPutAll: 'Failures:'; lf.
 		collection do: [:e | stream tab print: e; lf ]]

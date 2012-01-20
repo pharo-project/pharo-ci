@@ -9,6 +9,6 @@ buildGreenTestResultsOn: stream
 		packages at: package put: (packages at: package ifAbsent: [ 0 ]) + 1 ].
 	
 	packages keys asArray sort do: [ :package|
-		stream tab << package << ' (' << (packages at: package) << ')'; lf].
+		stream tab; nextPutAll: package; nextPutAll: ' ('; nextPutAll: (packages at: package); nextPutAll: ')'; lf].
 	
 	stream lf.

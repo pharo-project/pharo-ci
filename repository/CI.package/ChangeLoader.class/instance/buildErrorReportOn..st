@@ -3,11 +3,11 @@ buildErrorReportOn: stream
 
 	errors isEmpty ifTrue: [ ^ self ].
 	
-	stream << 'Monkey went bananas:'; lf.
+	stream nextPutAll: 'Monkey went bananas:'; lf.
 	
 	errors 
 		do: [:e | 
-			stream << '--------------------'; lf.
-			stream << e ]
+			stream nextPutAll: '--------------------'; lf.
+			stream nextPutAll: e ]
 		separatedBy: [ stream lf lf]
 			

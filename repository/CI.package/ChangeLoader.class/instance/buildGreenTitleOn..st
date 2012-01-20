@@ -11,6 +11,6 @@ buildGreenTitleOn: aStream
 					s << (duration seconds asString padded: #left to: 2 with: $0) << 's:'].
 				
 	aStream << title; lf.
-	title size timesRepeat: [ aStream << '='].
+	title size timesRepeat: [ aStream nextPutAll: '='].
 	aStream lf.
 	
