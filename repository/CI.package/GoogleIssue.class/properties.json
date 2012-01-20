@@ -19,7 +19,8 @@
 		"slice",
 		"relatedPackages",
 		"relatedTests",
-		"attachements" ],
+		"attachements",
+		"changeLoader" ],
 	"name" : "GoogleIssue",
 	"pools" : [
 		 ],

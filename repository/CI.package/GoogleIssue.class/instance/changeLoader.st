@@ -1,3 +1,3 @@
 integration
 changeLoader
-	^ ChangeLoader issue: self.
+	^ changeLoader ifNil: [ changeLoader := ChangeLoader issue: self ].
