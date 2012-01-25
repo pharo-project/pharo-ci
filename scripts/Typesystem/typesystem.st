@@ -1,4 +1,4 @@
-"Load The TypeSystem..."
+"Load The TypeSystem ..."
 "see  http://pleiad.dcc.uchile.cl/private/gradual-types/installation"
 
 
