@@ -3,6 +3,7 @@
 
 "in Source directory"
 (FileStream oldFileNamed: '/builds/jenkins/workspace/Gradual Typing/scripts/Typesystem/Source/TypeSystem-Errors.st') fileIn.
+(FileStream oldFileNamed: '/builds/jenkins/workspace/Gradual Typing/scripts/Typesystem/Source/TypeConfiguration.st') fileIn.
 (FileStream oldFileNamed: '/builds/jenkins/workspace/Gradual Typing/scripts/Typesystem/Source/Type.st') fileIn.
 (FileStream oldFileNamed: '/builds/jenkins/workspace/Gradual Typing/scripts/Typesystem/Source/TypeSystem-Core.st') fileIn.
 (FileStream oldFileNamed: '/builds/jenkins/workspace/Gradual Typing/scripts/Typesystem/Source/TypeSystem-Types.st') fileIn.
