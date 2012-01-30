@@ -61,7 +61,3 @@ Gofer new
 TypeConfiguration uniqueInstance bootstrap: false.
 (FileStream oldFileNamed: '/builds/jenkins/workspace/Gradual Typing/scripts/Typesystem/loadfiles.st') fileIn.
 
-
-
-
-
