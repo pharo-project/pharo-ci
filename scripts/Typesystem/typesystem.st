@@ -7,6 +7,10 @@ Gofer new
 	squeaksource: 'OpalFrontend';
 	package: 'Compiler-Frontend';
 	load.
+Gofer new
+	squeaksource: 'OpalFrontend';
+	package: 'Compiler-Requests';
+	load.
 Gofer new	
 	squeaksource: 'OpalFrontend';
 	package: 'Compiler-Debugger';
