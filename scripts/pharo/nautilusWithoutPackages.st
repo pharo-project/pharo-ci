@@ -1,6 +1,6 @@
 "Load Nautilus"
 Gofer new
-	squeaksource: 'Nautilus';
+	url: 'http://ss3.gemstone.com/ss/Nautilus';
 	package: 'ConfigurationOfNautilusWithoutPackages';
 	load.
 	
