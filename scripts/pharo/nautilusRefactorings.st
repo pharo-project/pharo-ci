@@ -1,1 +1,1 @@
-"Load Nautilus with Refactorings"Gofer new	url: 'http://ss3.gemstone.com/ss/Nautilus';	package: 'ConfigurationOfNautilus';	load.	(Smalltalk at: #ConfigurationOfNautilusRefactoring) perform: #loadDefault
+"Load Nautilus with Refactorings"Gofer new	url: 'http://ss3.gemstone.com/ss/Nautilus';	package: 'ConfigurationOfNautilus';	load.	(Smalltalk at: #ConfigurationOfNautilus) perform: #loadRefactorings
