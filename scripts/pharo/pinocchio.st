@@ -41,7 +41,7 @@ OSProcess waitForCommand: 'git --git-dir="p-st" remote add origin git@github.com
 OSProcess waitForCommand: 'git --git-dir="p" branch --set-upstream master origin/master'.
 MCRepositoryGroup default 
     addRepository: (MCOSGitRepository 
-                        directory: 'p-est'
+                        directory: 'p-st'
                         remote: 'git@github.com:pinocchio/p-st.git' 
                         push: true).
 
@@ -55,7 +55,21 @@ P4StaticClassInstaller exportKernelTestOSX64.
 
 "Customized ==================================================="
 P4StaticClassInstaller osx64 "linux64"
-    compileClasses: {....}.
-'
+    compileClasses: '
 
+(Workspace openContents: '')
+	width: 1200; height: 230;
+	setToAdhereToEdge: #bottomLeft;
+	makeUnclosable.
 
+MCWorkingCopyBrowser new show window
+	width: 700; height: 230;
+	setToAdhereToEdge: #topLeft;
+	makeUnclosable.
+
+Debugger alwaysOpenFullDebugger: true.
+World submorphs do: [:each | each delete ].
+PolymorphSystemSettings 
+	desktopColor: Color gray;
+	showDesktopLogo: false.
+TextEditorDialogWindow autoAccept: true.
