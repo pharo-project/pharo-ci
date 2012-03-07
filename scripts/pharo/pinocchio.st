@@ -31,19 +31,19 @@ Gofer new
 
 "Fetch the latest sources from our git repository ============================"
 "c-code"
-OSProcess waitForCommand: 'git clone git://github.com/pinocchio/p.git'
-OSProcess waitForCommand: 'git --git-dir="p" remote add origin git@github.com:pinocchio/p.git'
-OSProcess waitForCommand: 'git --git-dir="p" branch --set-upstream master origin/master'
+OSProcess waitForCommand: 'git clone git://github.com/pinocchio/p.git'.
+OSProcess waitForCommand: 'git --git-dir="p" remote add origin git@github.com:pinocchio/p.git'.
+OSProcess waitForCommand: 'git --git-dir="p" branch --set-upstream master origin/master'.
 
 "st-code"
-OSProcess waitForCommand: 'git clone git://github.com/pinocchio/p-st.git'   
-OSProcess waitForCommand: 'git --git-dir="p-st" remote add origin git@github.com:pinocchio/p-st.git'
-OSProcess waitForCommand: 'git --git-dir="p" branch --set-upstream master origin/master'
+OSProcess waitForCommand: 'git clone git://github.com/pinocchio/p-st.git'.
+OSProcess waitForCommand: 'git --git-dir="p-st" remote add origin git@github.com:pinocchio/p-st.git'.
+OSProcess waitForCommand: 'git --git-dir="p" branch --set-upstream master origin/master'.
 MCRepositoryGroup default 
     addRepository: (MCOSGitRepository 
-                        directory: 'p-est' 
+                        directory: 'p-est'
                         remote: 'git@github.com:pinocchio/p-st.git' 
-                        push: true)
+                        push: true).
 
 "create a workspace with the default export =================================="
 Workspace openContents: '"Default Exporting of Kernel Tests ============================"
