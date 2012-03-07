@@ -27,7 +27,7 @@ Gofer new
     package: 'ConfigurationOfOSProcess';
     load.
 
-(Smalltalk at: #ConfigurationOfOSProcess) peform: #load.
+(Smalltalk at: #ConfigurationOfOSProcess) perform: #load.
 
 "Fetch the latest sources from our git repository ============================"
 "c-code"
