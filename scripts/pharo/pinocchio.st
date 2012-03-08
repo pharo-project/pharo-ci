@@ -57,7 +57,7 @@ P4StaticClassInstaller exportKernelTestOSX64.
 P4StaticClassInstaller osx64 "linux64"
     compileClasses: '.
 
-(Workspace openContents: '')
+(Workspace new openLabel: '')
 	width: 1200; height: 230;
 	setToAdhereToEdge: #bottomLeft;
 	makeUnclosable.
