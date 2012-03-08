@@ -1,7 +1,4 @@
 "Load Nautilus"
-Gofer new
-	squeaksource: 'Nautilus';
-	package: 'ConfigurationOfNautilus';
-	load.
+Gofer new	url: 'http://ss3.gemstone.com/ss/Nautilus';	package: 'ConfigurationOfNautilus';	load.
 	
-(Smalltalk at: #ConfigurationOfNautilus) perform: #loadDefault
+(Smalltalk at: #ConfigurationOfNautilus) perform: #loadCore

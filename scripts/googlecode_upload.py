@@ -54,9 +54,11 @@ import optparse
 import getpass
 import base64
 import sys
+import urllib
 
 
-def upload(file, project_name, user_name, password, summary, labels=None):
+def upload(file, project_name, user_name, password, summary, labels=None, 
+           delete=False):
   """Upload a file to a Google Code project's file server.
 
   Args:
@@ -67,6 +69,8 @@ def upload(file, project_name, user_name, password, summary, labels=None):
               Note that this is NOT your global Google Account password!
     summary: A small description for the file.
     labels: an optional list of label strings with which to tag the file.
+    delete: a boolean indicating whether the file should be deleted form
+            the project
 
   Returns: a tuple:
     http_status: 201 if the upload succeeded, something else if an
@@ -80,13 +84,35 @@ def upload(file, project_name, user_name, password, summary, labels=None):
   if user_name.endswith('@gmail.com'):
     user_name = user_name[:user_name.index('@gmail.com')]
 
+  
+  if delete:
+    upload_host = 'code.google.com'
+    upload_uri = '/p/%s/downloads/delete/delete.do' % project_name
+    auth_token = base64.b64encode('%s:%s'% (user_name, password))
+    
+    params = urllib.urlencode({
+                     'token': auth_token, 
+                     'filename': os.path.basename(file)
+                    })
+    headers = {
+            'Authorization': 'Basic %s' % auth_token,
+            "Accept": "*/*",
+            "User-Agent" : "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.44 Safari/535.11",
+            "Content-type": "application/x-www-form-urlencoded",
+    }
+
+    server = httplib.HTTPConnection(upload_host)
+    req = server.request('POST', upload_uri, params, headers)
+    resp = server.getresponse()
+    import ipdb; ipdb.set_trace()
+    server.close()
+
+  upload_host = '%s.googlecode.com' % project_name
   form_fields = [('summary', summary)]
   if labels is not None:
     form_fields.extend([('label', l.strip()) for l in labels])
-
   content_type, body = encode_upload_request(form_fields, file)
 
-  upload_host = '%s.googlecode.com' % project_name
   upload_uri = '/files'
   auth_token = base64.b64encode('%s:%s'% (user_name, password))
   headers = {
@@ -152,7 +178,7 @@ def encode_upload_request(fields, file_path):
   return 'multipart/form-data; boundary=%s' % BOUNDARY, CRLF.join(body)
 
 
-def upload_find_auth(file_path, project_name, summary, labels=None,
+def upload_find_auth(file_path, project_name, summary, labels=None, delete=False, 
                      user_name=None, password=None, tries=3):
   """Find credentials and upload a file to a Google Code project's file server.
 
@@ -184,7 +210,7 @@ def upload_find_auth(file_path, project_name, summary, labels=None,
       password = getpass.getpass()
 
     status, reason, url = upload(file_path, project_name, user_name, password,
-                                 summary, labels)
+                                 summary, labels, delete)
     # Returns 403 Forbidden instead of 401 Unauthorized for bad
     # credentials as of 2007-07-17.
     if status in [httplib.FORBIDDEN, httplib.UNAUTHORIZED]:
@@ -205,6 +231,8 @@ def main():
                     help='Short description of the file')
   parser.add_option('-p', '--project', dest='project',
                     help='Google Code project name')
+  parser.add_option('-d', '--delete', dest='delete', action="store_true",
+                    help='Delete any existing file first', default=False)
   parser.add_option('-u', '--user', dest='user',
                     help='Your Google Code username')
   parser.add_option('-w', '--password', dest='password',
@@ -232,7 +260,7 @@ def main():
     labels = None
 
   status, reason, url = upload_find_auth(file_path, options.project,
-                                         options.summary, labels,
+                                         options.summary, labels, options.delete,
                                          options.user, options.password)
   if url:
     print 'The file was uploaded successfully.'
