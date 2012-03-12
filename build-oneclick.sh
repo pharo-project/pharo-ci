@@ -42,6 +42,9 @@ while getopts ":i:o:n:t:v:c:w:?" OPT ; do
 				INPUT_IMAGE="$IMAGES_PATH/$OPTARG.image"
 			elif [ -n "$WORKSPACE" ] ; then
 				INPUT_IMAGE=`find "$WORKSPACE" -name "$OPTARG.image"`
+			elif [ -f "$BUILD_PATH/$OPTARG.zip" ] ; then
+				unzip -q "$BUILD_PATH/$OPTARG.zip"
+				INPUT_IMAGE=`find "$WORKSPACE" -name "$OPTARG.image"`
 			fi
 
 			if [ ! -f "$INPUT_IMAGE" ] ; then
@@ -167,15 +170,23 @@ ls -1 "$INPUT_PATH" | while read FILE ; do
 done
 
 # copy over Linux VM files
-unzip -q "$VM_PATH/linux/Cog.zip" -d "$OUTPUT_PATH/Contents/Linux"
-mv "$OUTPUT_PATH/Contents/Linux/CogVM" "$OUTPUT_PATH/Contents/Linux/pharo"
+if [ -f "$VM_PATH/linux/Cog.zip" ] ; then
+    unzip -q "$VM_PATH/linux/Cog.zip" -d "$OUTPUT_PATH/Contents/Linux"
+    mv "$OUTPUT_PATH/Contents/Linux/CogVM" "$OUTPUT_PATH/Contents/Linux/pharo"
+else
+    echo "Warning: Cannot find Linux VM!"
+fi
 
 # copy over Mac OS VM files
-unzip -q "$VM_PATH/mac/CogVM.zip" -d "$OUTPUT_PATH/tmp"
-mkdir "$OUTPUT_PATH/Contents/MacOS"
-cp "$OUTPUT_PATH/tmp/CogVM.app/Contents/MacOS/CogVm" "$OUTPUT_PATH/Contents/MacOS/pharo"
-cp -R "$OUTPUT_PATH/tmp/CogVM.app/Contents/Resources/" "$OUTPUT_PATH/Contents/Resources"
-rm -rf "$OUTPUT_PATH/tmp"
+if [ -f "$VM_PATH/mac/CogVM.zip" ] ; then
+    unzip -q "$VM_PATH/mac/CogVM.zip" -d "$OUTPUT_PATH/tmp"
+    mkdir "$OUTPUT_PATH/Contents/MacOS"
+    cp "$OUTPUT_PATH/tmp/CogVM.app/Contents/MacOS/CogVm" "$OUTPUT_PATH/Contents/MacOS/pharo"
+    cp -R "$OUTPUT_PATH/tmp/CogVM.app/Contents/Resources/" "$OUTPUT_PATH/Contents/Resources"
+    rm -rf "$OUTPUT_PATH/tmp"
+else
+    echo "Warning: Cannot find Mac OS VM!"
+fi
 
 # copy over specific files
 cp "$INPUT_IMAGE" "$OUTPUT_PATH/Contents/Resources/$OPTION_NAME.image"
@@ -188,7 +199,7 @@ zip --quiet --recurse-paths -9 "$OUTPUT_ARCH" "$OPTION_NAME.app"
 cd - > /dev/null
 
 # remove the build directory
-#rm -rf "$OUTPUT_PATH"
+rm -rf "$OUTPUT_PATH"
 
 # success
 exit 0
