@@ -1,12 +1,8 @@
 This one-click distribution of "%{TITLE}" has been assembled by the "Pharo Builder" available from:
 
-	http://github.com/renggli/builder
+	https://gitorious.org/pharo-build/pharo-build
 
-This distribution is based on the following standard virtual machines:
-
-- Mac OS X 4.2.5beta1U
-- Linux Intel x86 4.0.3.2202
-- Windows 4.0.2
+This distribution is based on the latest virtual machines built by the Jenkins server : https://ci.lille.inria.fr/pharo/view/Cog/
 
 The one-click distribution bundle is licensed under the MIT License:
 
