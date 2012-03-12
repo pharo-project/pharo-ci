@@ -40,10 +40,11 @@ while getopts ":i:o:n:t:v:c:w:?" OPT ; do
 				INPUT_IMAGE="$IMAGES_PATH/$OPTARG/$OPTARG.image"
 			elif [ -f "$IMAGES_PATH/$OPTARG.image" ] ; then
 				INPUT_IMAGE="$IMAGES_PATH/$OPTARG.image"
-			elif [ -n "$WORKSPACE" ] ; then
+			elif [ -f "$WORKSPACE/$OPTARG.zip" ] ; then
+				unzip -q "$WORKSPACE/$OPTARG.zip"
+				rm -rf "$WORKSPACE/$OPTARG.zip"
 				INPUT_IMAGE=`find "$WORKSPACE" -name "$OPTARG.image"`
-			elif [ -f "$BUILD_PATH/$OPTARG.zip" ] ; then
-				unzip -q "$BUILD_PATH/$OPTARG.zip"
+			elif [ -n "$WORKSPACE" ] ; then
 				INPUT_IMAGE=`find "$WORKSPACE" -name "$OPTARG.image"`
 			fi
 
@@ -181,7 +182,7 @@ fi
 if [ -f "$VM_PATH/mac/CogVM.zip" ] ; then
     unzip -q "$VM_PATH/mac/CogVM.zip" -d "$OUTPUT_PATH/tmp"
     mkdir "$OUTPUT_PATH/Contents/MacOS"
-    cp "$OUTPUT_PATH/tmp/CogVM.app/Contents/MacOS/CogVm" "$OUTPUT_PATH/Contents/MacOS/pharo"
+    cp "$OUTPUT_PATH/tmp/CogVM.app/Contents/MacOS/CogVM" "$OUTPUT_PATH/Contents/MacOS/pharo"
     cp -R "$OUTPUT_PATH/tmp/CogVM.app/Contents/Resources/" "$OUTPUT_PATH/Contents/Resources"
     rm -rf "$OUTPUT_PATH/tmp"
 else
@@ -195,7 +196,7 @@ cp -R "$ICONS_PATH/" "$OUTPUT_PATH/Contents/Resources"
 
 # zip up the application
 cd "$BUILD_PATH"
-zip --quiet --recurse-paths -9 "$OUTPUT_ARCH" "$OPTION_NAME.app"
+zip -q -r -9 "$OUTPUT_ARCH" "$OPTION_NAME.app"
 cd - > /dev/null
 
 # remove the build directory
