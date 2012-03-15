@@ -192,6 +192,12 @@ else
     echo "Warning: Cannot find Mac OS VM!"
 fi
 
+# copy over Windows VM files
+if [ -f "$VM_PATH/win/Cog.zip" ] ; then
+    unzip -q "$VM_PATH/win/Cog.zip" -d "$OUTPUT_PATH"
+else
+    echo "Warning: Cannot find Linux VM!"
+fi
 # copy over specific files
 cp "$INPUT_IMAGE" "$OUTPUT_PATH/Contents/Resources/$OPTION_NAME.image"
 cp "$INPUT_CHANGES" "$OUTPUT_PATH/Contents/Resources/$OPTION_NAME.changes"
