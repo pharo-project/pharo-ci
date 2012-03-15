@@ -404,7 +404,7 @@
 	<key>SqueakExplicitWindowOpenNeeded</key>
 	<false/>
 	<key>SqueakImageName</key>
-	<string>pharo.image</string>
+	<string>%{NAME}.image</string>
 	<key>SqueakMaxHeapSize</key>
 	<integer>536870912</integer>
 	<key>SqueakMouseCmdButton1</key>
