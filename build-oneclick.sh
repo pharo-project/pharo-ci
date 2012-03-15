@@ -13,6 +13,7 @@ BUILD_PATH="${WORKSPACE:=$BASE_PATH/builds}"
 IMAGES_PATH="$BASE_PATH/images"
 TEMPLATE_PATH="$BASE_PATH/one-click/templates"
 ICONS_PATH="$BASE_PATH/one-click/icons"
+NIB_FILE="$BASE_PATH/one-click/MainMenu.nib"
 VM_PATH="$BUILD_PATH/vm"
 
 # help function
@@ -183,7 +184,9 @@ if [ -f "$VM_PATH/mac/CogVM.zip" ] ; then
     unzip -q "$VM_PATH/mac/CogVM.zip" -d "$OUTPUT_PATH/tmp"
     mkdir "$OUTPUT_PATH/Contents/MacOS"
     cp "$OUTPUT_PATH/tmp/CogVM.app/Contents/MacOS/CogVM" "$OUTPUT_PATH/Contents/MacOS/pharo"
+    cp "$NIB_FILE" "$OUTPUT_PATH/Contents/Resources"
     cp -R "$OUTPUT_PATH/tmp/CogVM.app/Contents/Resources/" "$OUTPUT_PATH/Contents/Resources"
+
     rm -rf "$OUTPUT_PATH/tmp"
 else
     echo "Warning: Cannot find Mac OS VM!"
