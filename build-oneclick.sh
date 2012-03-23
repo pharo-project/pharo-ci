@@ -185,7 +185,8 @@ if [ -f "$VM_PATH/mac/CogVM.zip" ] ; then
     mkdir "$OUTPUT_PATH/Contents/MacOS"
     cp "$OUTPUT_PATH/tmp/CogVM.app/Contents/MacOS/CogVM" "$OUTPUT_PATH/Contents/MacOS/pharo"
     cp "$NIB_FILE" "$OUTPUT_PATH/Contents/Resources"
-    cp -R "$OUTPUT_PATH/tmp/CogVM.app/Contents/Resources/" "$OUTPUT_PATH/Contents/Resources"
+    # Need to add thi ugly '*' outside double-quotes to be able to copy the content of the folder (and not the folder itself) on linux
+    cp -R "$OUTPUT_PATH/tmp/CogVM.app/Contents/Resources/"* "$OUTPUT_PATH/Contents/Resources"
 
     rm -rf "$OUTPUT_PATH/tmp"
 else
