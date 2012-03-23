@@ -1,10 +1,17 @@
 "Load the typed pharo kernel ..."
 
+TypeConfiguration uniqueInstance bootstrap: true.
+CompilerFrontend registerCompilerContext: OTCSupport defaultCompilerContext forClass: ProtoObject.
+CompilerFrontend registerCompilerContext: OTCSupport defaultCompilerContext forClass: Object.
+CompilerFrontend registerCompilerContext: OTCSupport defaultCompilerContext forClass: TUndefinedObject.
+
+(FileStream oldFileNamed: '/home/eallende/TypeSystemOld/Typesystem/loadtypedfiles.st') fileIn.
+
+
+TypeConfiguration uniqueInstance bootstrap: false.
 CompilerFrontend registerCompilerContext: (OTCSupport defaultCompilerContextForClass: ProtoObject) forClass: ProtoObject.
 CompilerFrontend registerCompilerContext: (OTCSupport defaultCompilerContextForClass: Object) forClass: Object.
 CompilerFrontend registerCompilerContext: (OTCSupport defaultCompilerContextForClass: TUndefinedObject) forClass: TUndefinedObject.
-TypeConfiguration uniqueInstance bootstrap: true.
-(FileStream oldFileNamed: '/builds/jenkins/workspace/Gradual Typing/scripts/Typesystem/loadtypedfiles.st') fileIn.
-TypeConfiguration uniqueInstance bootstrap: false.
-(FileStream oldFileNamed: '/builds/jenkins/workspace/Gradual Typing/scripts/Typesystem/loadtypedfiles.st') fileIn.
-(FileStream oldFileNamed: '/builds/jenkins/workspace/Gradual Typing/scripts/Typesystem/loadtypedfiles.st') fileIn. "We need to check two times"
+
+(FileStream oldFileNamed: '/home/eallende/TypeSystemOld/Typesystem/loadtypedfiles.st') fileIn.
+(FileStream oldFileNamed: '/home/eallende/TypeSystemOld/Typesystem/loadtypedfiles.st') fileIn. "We need to check two times"
