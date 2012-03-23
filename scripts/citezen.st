@@ -1,5 +1,7 @@
-Gofer new squeaksource: 'Citezen';
+Gofer
+	new 
+	url: 'http://ss3.gemstone.com/ss/citezen';
 	package: 'ConfigurationOfCitezen';
 	load.
 
-(Smalltalk at: #ConfigurationOfCitezen) perform: #loadNoWeb.
+((Smalltalk at: #ConfigurationOfCitezen) project version: #development) load: { 'NoWeb'}.
