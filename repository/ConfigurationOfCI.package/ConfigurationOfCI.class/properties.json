@@ -1,0 +1,14 @@
+{
+	"category" : "ConfigurationOfCI",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		"LastVersionLoad" ],
+	"commentStamp" : "",
+	"instvars" : [
+		"project" ],
+	"name" : "ConfigurationOfCI",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }
