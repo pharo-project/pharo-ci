@@ -2,13 +2,9 @@
 	"class" : {
 		 },
 	"instance" : {
-		"checkImageIsUptodateSilently" : "Integrator 10/1/2011 00:38",
 		"compileNewUpdateMethodSilently" : "Integrator 10/1/2011 01:56",
 		"doneApplyingChangesSilently" : "BenjaminVanRyseghem 10/1/2011 14:31",
 		"generateNewUpdateMethodSilently" : "BenjaminVanRyseghem 10/12/2011 16:34",
 		"generateScriptAndUpdateMethodForNewVersionSilently" : "Integrator 10/1/2011 01:51",
-		"launchUpdateSilently" : "BenjaminVanRyseghem 9/30/2011 01:52",
-		"loadLatestUpdateListSilently" : "Integrator 10/1/2011 01:06",
 		"newGenerateNewUpdateMethodSilently" : "BenjaminVanRyseghem 10/12/2011 16:34",
-		"prepareNewUpdateSilently" : "Integrator 10/1/2011 01:56",
 		"publishChangesSilently" : "Integrator 10/3/2011 16:24" } }

@@ -1,10 +1,10 @@
 {
-	"category" : "CI",
+	"category" : "CI-Core",
 	"classinstvars" : [
 		 ],
 	"classvars" : [
 		 ],
-	"commentStamp" : "",
+	"commentStamp" : "<historical>",
 	"instvars" : [
 		"attachments",
 		"author",

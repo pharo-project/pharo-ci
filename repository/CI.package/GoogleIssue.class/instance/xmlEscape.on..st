@@ -1,5 +1,5 @@
 integration-private
-xmlEscape: aString
+xmlEscape: aString on: stream
 	"a poor man's convert... :/"
 	| map |
 	map := Dictionary newFromPairs: #(
@@ -9,9 +9,8 @@ xmlEscape: aString
 				$> '&gt;' 
 				$& '&amp;').
 	
-	^ String streamContents: [ :s|
-		aString do: [ :c|
-			map 
-				at: c 
-				ifPresent: [ :mapping| s nextPutAll: mapping ] 
-				ifAbsent: [ s nextPut: c]]]. 
+	aString do: [ :c|
+		map 
+			at: c 
+			ifPresent: [ :mapping| stream nextPutAll: mapping ] 
+			ifAbsent: [ stream nextPut: c]]. 

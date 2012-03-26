@@ -1,16 +1,10 @@
 entry point
 loadAndGenerate
+	"My main purpose is to generate a script which made a the fresh image loading the sources"
 	"I load the sources and push all the packages on the disk"
-	| loaders |
-	
 	"Download sources from the internet in parallele"
 	self loadSources.
 
-	"Install sequenticially sources from issues"
-	self preLoadScript fileIn.
-	loaders := self installSources.
-	self postLoadScript fileIn.
+	"Generate a script for the loading the source in the fresh image"
+	self generateScriptForSources.
 	"Here I assume tests will be run in the other image"
-	
-	"Apply changes"
-	scriptLoader doneApplyingChangesSilently.

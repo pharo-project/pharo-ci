@@ -1,5 +1,6 @@
 accessing
 add: anIssue
+
 	anIssue integrated
 		ifTrue: [ ^ self ].
 		

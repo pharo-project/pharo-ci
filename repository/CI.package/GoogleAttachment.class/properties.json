@@ -1,10 +1,10 @@
 {
-	"category" : "CI",
+	"category" : "CI-Core",
 	"classinstvars" : [
 		 ],
 	"classvars" : [
 		 ],
-	"commentStamp" : "",
+	"commentStamp" : "<historical>",
 	"instvars" : [
 		"comment",
 		"contents",
@@ -12,7 +12,7 @@
 		"issue",
 		"name",
 		"url" ],
-	"name" : "GoogleAttachement",
+	"name" : "GoogleAttachment",
 	"pools" : [
 		 ],
 	"super" : "Object",

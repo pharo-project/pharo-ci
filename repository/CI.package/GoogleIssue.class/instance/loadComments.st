@@ -4,7 +4,7 @@ loadComments
 	
 	contents := (self tracker get: (self url: '/comments/full')) contents.
 	
-	doc := Soup fromString: contents.
+	doc := GoogleIssueTracker soupClass fromString: contents.
 	
 	^ ((doc findAllTags: 'entry') collect: [ :node| 
 		(GoogleIssueComment fromXML: node)

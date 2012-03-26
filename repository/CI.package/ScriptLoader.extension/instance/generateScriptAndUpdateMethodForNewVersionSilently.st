@@ -1,4 +1,4 @@
-*CI-Integration
+*CI
 generateScriptAndUpdateMethodForNewVersionSilently
 	"Use me to generate the script and update method"
 	"self new generateScriptAndUpdateMethodForNewVersion"

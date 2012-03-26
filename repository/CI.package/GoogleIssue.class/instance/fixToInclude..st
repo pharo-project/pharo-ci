@@ -3,6 +3,6 @@ fixToInclude: aString
  
 	"set the status of the issue to FixToInclude"
 	self status: #FixToInclude.
-	^ self saveStatusChange: 'This Issue has been checked by Ulysse the Monkey
+	^ self submitStatusChange: 'This Issue has been checked by Ulysse the Monkey
 	
 ', aString.

@@ -2,7 +2,7 @@ private
 summary
 
 	| issues |
-	issues := integrated asArray sort: [ :a :b| a id >= b id ].
+	issues := issuesToIntegrate asArray sort: [ :a :b| a id >= b id ].
 	
 	^ String streamContents: [ :s|
 		s << self id asString; cr.

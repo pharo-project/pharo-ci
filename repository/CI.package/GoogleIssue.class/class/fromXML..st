@@ -9,7 +9,7 @@ fromXML: entryNode
 	issue updated: entryNode updated text asDateAndTime.
 	issue title: entryNode title text.
 	
-	issue content: ((GoogleIssueDescription fromXML: entryNode)
+	issue description: ((GoogleIssueDescription fromXML: entryNode)
 							issue: issue;
 							yourself).
 	

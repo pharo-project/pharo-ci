@@ -4,7 +4,7 @@ loadAttachments
 	
 	| soup regex attachmentLinks commentTags attachment comment|
 	
-	soup := Soup fromString:  (self tracker get: self viewUrl) contents.
+	soup := GoogleIssueTracker soupClass fromString:  (self tracker get: self viewUrl) contents.
 	
 	"manually find the matching attachment urls.."
 	regex := 'http\://pharo.googlecode.com/issues/attachment\?.*' asRegex.
@@ -27,7 +27,7 @@ loadAttachments
 				thenDo: [ :link|
 					stream nextPut: 
 						(comment addAttachment: 
-							((GoogleAttachement fromURL: link href)
+							((GoogleAttachment fromURL: link href)
 										issue: self;
 										yourself))]]]) sort: [ :a :b| a published <= b published]
 							

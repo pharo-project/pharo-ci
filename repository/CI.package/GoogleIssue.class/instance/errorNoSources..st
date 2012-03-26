@@ -3,6 +3,6 @@ errorNoSources: aMessageString
 	"set the status of the issue to NoSourcesAvailable"
 	
 	self status: #NoSourcesAvailable.
-	^ self saveStatusChange: (String streamContents: [ :stream| 
+	^ self submitStatusChange: (String streamContents: [ :stream| 
 				stream << 'This Issue has been checked by Ulysse the Monkey, but no sources are available:'; lf; lf.
 				stream << aMessageString]).

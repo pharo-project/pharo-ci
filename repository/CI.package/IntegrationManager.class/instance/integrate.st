@@ -8,9 +8,9 @@ integrate
 	previousTests := self runTests.
 	
 	"Install sequenticially sources from issues"
-	self preLoadScript fileIn.
+	self preLoadScript reset fileIn.
 	loaders := scriptLoader loadPackageFromWaitingFolder.
-	self postLoadScript fileIn.
+	self postLoadScript reset fileIn.
 
 	"Re run tests to validate coexistence of the issues"
 	currentTests := self runTests.
@@ -22,7 +22,7 @@ integrate
 	scriptLoader publishChangesSilently.
 	self closeAll.
 	self buildSumUp.
-	self sendMail.
+	self generateMailScript.
 	
 	"tear down just in case"
 	issuesToIntegrate := nil.
