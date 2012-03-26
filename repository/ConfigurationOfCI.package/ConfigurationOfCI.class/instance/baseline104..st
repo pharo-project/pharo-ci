@@ -3,6 +3,7 @@ baseline104: spec
 	<version: '1.04-baseline'>
 
 	spec for: #pharo do: [	
+		spec blessing: #baseline.
 		spec repository: 'http://ss3.gemstone.com/ss/ci'.
 	
 		"Dependencies"
@@ -23,7 +24,7 @@ baseline104: spec
 				versionString: #stable;
 				repository:  'http://www.squeaksource.com/ZincHTTPComponents'].
 				
-		spec package: 'Zodiac' with: [
+		spec package: 'Zodiac-Core' with: [
 			spec repository: 'http://www.squeaksource.com/Zodiac' ].
 			
 		spec

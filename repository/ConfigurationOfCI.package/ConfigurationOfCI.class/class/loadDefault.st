@@ -1,4 +1,3 @@
-as yet unclassified
+loading
 loadDefault
-
-	(self project version: '1.14') load
+	self load

@@ -1,4 +1,4 @@
-as yet unclassified
+private
 bootstrapPackage: aString from: aPath 
 	| repository version |
 	repository := MCHttpRepository

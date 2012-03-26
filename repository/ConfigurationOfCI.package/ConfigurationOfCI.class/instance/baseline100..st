@@ -7,5 +7,6 @@ baseline100: spec
 	].	
 		
 	spec for: #pharo do: [
+		spec blessing: #baseline.
 		spec repository: 'http://www.squeaksource.com/ci'.
 		spec package: 'CI'.]

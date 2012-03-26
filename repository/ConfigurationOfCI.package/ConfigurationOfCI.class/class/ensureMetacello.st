@@ -1,4 +1,4 @@
-as yet unclassified
+private
 ensureMetacello
 	"Bootstrap Gofer (if necessary), bootstrap ConfigurationOfMetacello (using old Gofer API), then load the latest 
 	version of Metacello itself."
