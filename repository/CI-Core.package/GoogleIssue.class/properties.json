@@ -1,0 +1,28 @@
+{
+	"category" : "CI-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"attachements",
+		"changeLoader",
+		"comments",
+		"description",
+		"id",
+		"labels",
+		"published",
+		"relatedPackages",
+		"relatedTests",
+		"slice",
+		"state",
+		"status",
+		"title",
+		"tracker",
+		"updated" ],
+	"name" : "GoogleIssue",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

@@ -1,0 +1,14 @@
+{
+	"category" : "CI-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"tracker" ],
+	"name" : "MonkeyChecker",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }
