@@ -29,7 +29,7 @@ baseline104: spec
 			
 		spec
 			package:  'CI-Core' with: [ 
-				spec requires: #( 'OSProcess' 'ZincHTTPComponents' 'Zodiac' )];
+				spec requires: #( 'OSProcess' 'ZincHTTPComponents' 'Zodiac-Core' )];
 			package: 'CI-Integration' with: [ 
 				spec requires: #( 'Soup' 'CI-Core' )];
 			package: 'CI-Loader' with: [ 
