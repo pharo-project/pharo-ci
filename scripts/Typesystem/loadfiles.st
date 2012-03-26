@@ -9,7 +9,7 @@
 (FileStream oldFileNamed: '../scripts/Typesystem/Source/TypeSystem-Types.st') fileIn.
 
 "go to Extension directory"
-((FileDirectory on: '../scripts/Typesystem/Source/Extensions') matchingEntries: '*.st') do: [:each | each  readStream fileIn].
+((FileDirectory on: ((FileDirectory default fullName),'/../scripts/Typesystem/Source/Extensions')) matchingEntries: '*.st') do: [:each | each  readStream fileIn].
 		
 "go back to main dir"
 (FileStream oldFileNamed: '../scripts/Typesystem/Source/TypeSystem-Rules.st') fileIn.	
