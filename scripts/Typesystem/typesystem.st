@@ -60,4 +60,4 @@ Gofer new
 (FileStream oldFileNamed: '../scripts/Typesystem/loadfiles.st') fileIn.
 TypeConfiguration uniqueInstance bootstrap: false.
 (FileStream oldFileNamed: '../scripts/Typesystem/loadfiles.st') fileIn.
-
+(FileStream oldFileNamed: '../scripts/Typesystem/loadfiles.st') fileIn.
