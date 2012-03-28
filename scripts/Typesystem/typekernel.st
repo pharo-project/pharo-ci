@@ -13,6 +13,7 @@ CompilerFrontend registerCompilerContext: (OTCSupport defaultCompilerContextForC
 CompilerFrontend registerCompilerContext: (OTCSupport defaultCompilerContextForClass: Object) forClass: Object.
 CompilerFrontend registerCompilerContext: (OTCSupport defaultCompilerContextForClass: TUndefinedObject) forClass: TUndefinedObject.
 
+(FileStream oldFileNamed: '../scripts/Typesystem/Source-TypedKernel/global.st') fileIn.
 (FileStream oldFileNamed: '../scripts/Typesystem/loadtypedfiles.st') fileIn.
 (FileStream oldFileNamed: '../scripts/Typesystem/loadtypedfiles.st') fileIn. "We need to check two times"
 
