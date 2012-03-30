@@ -1,0 +1,1 @@
+'From Pharo1.4a of ''16 June 2011'' [Latest update: #14417] on 30 March 2012 at 5:16:06 pm'!!Class methodsFor: '*typesystem-core' stamp: 'EstebanAllende 3/30/2012 17:14'!hasParametricTypes	(TypeDictionary uniqueInstance getRawTypeEnvironmentFor: self) ifNil: [^false] ifNotNil: [:x|x pvar ifNil: [^false] ifNotNil: [^x pvar trimBoth isEmpty not]]! !
