@@ -2,8 +2,6 @@
 
 log := ((Smalltalk vm getSystemAttribute: 3) ifNil: [FileDirectory default] ifNotNilDo: [:path | FileDirectory on: path]) forceNewFileNamed: 'info_loadFuel.txt'.
 
-packagesDir := ((Smalltalk vm getSystemAttribute: 4) ifNil: [FileDirectory default] ifNotNilDo: [:path | FileDirectory on: path]).
-
 old := Undeclared copy.
 oldCalls := SystemNavigation default allUnimplementedCalls.
 lastCalls := oldCalls.
@@ -14,7 +12,7 @@ lastCalls := oldCalls.
   'FuelCodeLoader'
 ) do: [:package|
   log nextPutAll: 'loading ', package, '...'; cr.
-  packagesDir readOnlyFileNamed: package, '.st' do: [:file | file fileInSilently ].
+  FileStream readOnlyFileNamed: package, '.st' do: [:file | file fileInSilently ].
   log nextPutAll: package, ' loaded'; cr.
   log nextPutAll: 'New Undeclared:'; cr.
   log nextPutAll: (Undeclared copyWithoutAll: old) asString; cr.
