@@ -1,4 +1,6 @@
-"install pinoccio ============================================================"
+Author fullName: 'Pinocchio Installation'.
+
+"install pinocchio ============================================================"
 Gofer new url: 'http://ss3.gemstone.com/ss/p';
     package: 'ConfigurationOfPinocchio';
     load.
@@ -38,7 +40,7 @@ OSProcess waitForCommand: 'git --git-dir="p" branch --set-upstream master origin
 "st-code"
 OSProcess waitForCommand: 'git clone git://github.com/pinocchio/p-st.git'.
 OSProcess waitForCommand: 'git --git-dir="p-st" remote add origin git@github.com:pinocchio/p-st.git'.
-OSProcess waitForCommand: 'git --git-dir="p" branch --set-upstream master origin/master'.
+OSProcess waitForCommand: 'git --git-dir="p-st" branch --set-upstream master origin/master'.
 
 "create a working copy for the pinocchio git repos"
 wc := (MCPackage named: 'Pinocchio') workingCopy.
@@ -84,3 +86,5 @@ PolymorphSystemSettings
 	desktopColor: Color gray;
 	showDesktopLogo: false.
 TextEditorDialogWindow autoAccept: true.
+
+Author reset.
