@@ -172,7 +172,7 @@ ls -1 "$INPUT_PATH" | while read FILE ; do
 done
 
 # copy over Linux VM files
-$LINUX_VM_PATH="$VM_PATH/Architecture=32,OS=linux/Cog-linux.zip"
+LINUX_VM_PATH="$VM_PATH/Architecture=32,OS=linux/Cog-linux.zip"
 if [ -f "$LINUX_VM_PATH" ] ; then
     unzip -q "$LINUX_VM_PATH" -d "$OUTPUT_PATH/Contents/Linux"
     mv "$OUTPUT_PATH/Contents/Linux/CogVM" "$OUTPUT_PATH/Contents/Linux/pharo"
@@ -181,7 +181,7 @@ else
 fi
 
 # copy over Mac OS VM files
-$MAC_VM_PATH="$VM_PATH/Architecture=32,OS=mac/Cog-mac.zip"
+MAC_VM_PATH="$VM_PATH/Architecture=32,OS=mac/Cog-mac.zip"
 if [ -f "$MAC_VM_PATH" ] ; then
     unzip -q "$MAC_VM_PATH" -d "$OUTPUT_PATH/tmp"
     mkdir "$OUTPUT_PATH/Contents/MacOS"
@@ -196,7 +196,7 @@ else
 fi
 
 # copy over Windows VM files
-$WIN_VM_PATH="$VM_PATH/Architecture=32,OS=win/Cog-win.zip"
+WIN_VM_PATH="$VM_PATH/Architecture=32,OS=win/Cog-win.zip"
 if [ -f "$WIN_VM_PATH" ] ; then
     unzip -q "$WIN_VM_PATH" -d "$OUTPUT_PATH"
 else
