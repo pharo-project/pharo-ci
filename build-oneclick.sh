@@ -172,16 +172,18 @@ ls -1 "$INPUT_PATH" | while read FILE ; do
 done
 
 # copy over Linux VM files
-if [ -f "$VM_PATH/linux/Cog.zip" ] ; then
-    unzip -q "$VM_PATH/linux/Cog.zip" -d "$OUTPUT_PATH/Contents/Linux"
+$LINUX_VM_PATH="$VM_PATH/Architecture=32,OS=linux/Cog-linux.zip"
+if [ -f "$LINUX_VM_PATH" ] ; then
+    unzip -q "$LINUX_VM_PATH" -d "$OUTPUT_PATH/Contents/Linux"
     mv "$OUTPUT_PATH/Contents/Linux/CogVM" "$OUTPUT_PATH/Contents/Linux/pharo"
 else
     echo "Warning: Cannot find Linux VM!"
 fi
 
 # copy over Mac OS VM files
-if [ -f "$VM_PATH/mac/CogVM.zip" ] ; then
-    unzip -q "$VM_PATH/mac/CogVM.zip" -d "$OUTPUT_PATH/tmp"
+$MAC_VM_PATH="$VM_PATH/Architecture=32,OS=mac/Cog-mac.zip"
+if [ -f "$MAC_VM_PATH" ] ; then
+    unzip -q "$MAC_VM_PATH" -d "$OUTPUT_PATH/tmp"
     mkdir "$OUTPUT_PATH/Contents/MacOS"
     cp "$OUTPUT_PATH/tmp/CogVM.app/Contents/MacOS/CogVM" "$OUTPUT_PATH/Contents/MacOS/pharo"
     cp "$NIB_FILE" "$OUTPUT_PATH/Contents/Resources"
@@ -194,10 +196,11 @@ else
 fi
 
 # copy over Windows VM files
-if [ -f "$VM_PATH/win/Cog.zip" ] ; then
-    unzip -q "$VM_PATH/win/Cog.zip" -d "$OUTPUT_PATH"
+$WIN_VM_PATH="$VM_PATH/Architecture=32,OS=win/Cog-win.zip"
+if [ -f "$WIN_VM_PATH" ] ; then
+    unzip -q "$WIN_VM_PATH" -d "$OUTPUT_PATH"
 else
-    echo "Warning: Cannot find Linux VM!"
+    echo "Warning: Cannot find Windows VM!"
 fi
 # copy over specific files
 cp "$INPUT_IMAGE" "$OUTPUT_PATH/Contents/Resources/$OPTION_NAME.image"
