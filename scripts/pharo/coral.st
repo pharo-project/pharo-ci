@@ -6,5 +6,5 @@ Gofer new url: 'http://ss3.gemstone.com/ss/coral';
 (Smalltalk at: #ConfigurationOfCoral) perform: #loadDevelopment.
 (Smalltalk at: #CoralInstaller) perform: #generateCoralScript.
 (Smalltalk at: #CoralInstaller) perform: #generateAllExamples.
-(Smalltalk at: #CoralREADME) perform: #openWorkspaces.
+" (Smalltalk at: #CoralREADME) perform: #openWorkspaces. "
 

@@ -1,1 +1,0 @@
-'From Pharo1.4a of ''16 June 2011'' [Latest update: #14244] on 12 December 2011 at 3:03:01 pm'!!ClassDescription methodsFor: '*typesystem-types' stamp: 'EstebanAllende 12/5/2011 01:23'!asType	^NominalType for: self.! !
