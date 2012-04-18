@@ -3,4 +3,4 @@ Gofer new
 	package: 'HandleVirtualMachine';
 	load.
 	
-self initializeHandlePrimitiveTables.
+HSCStackInterpreterPrimitives initializeHandlePrimitiveTables.
