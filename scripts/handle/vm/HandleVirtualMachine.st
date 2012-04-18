@@ -5,4 +5,3 @@ Gofer new
 	
 HSCStackInterpreterPrimitives initializePrimitiveTable.
 HSCStackInterpreterPrimitives initializeHandlePrimitiveTables.
-HSCStackInterpreterPrimitives requiredMethodNames.
