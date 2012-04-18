@@ -1,8 +1,4 @@
 Gofer new
-	squeaksource: 'Handle';
+    squeaksource3: 'Handles';
 	package: 'HandleVirtualMachine';
 	load.
-	
-(Smalltalk saveAs: 'generator.image') 
-	ifFalse: [ Smalltalk snapshot: false andQuit: true ]
-
