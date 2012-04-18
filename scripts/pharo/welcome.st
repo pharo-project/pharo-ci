@@ -1,6 +1,9 @@
+WorldState addDeferredUIMessage: [
 | welcomeWorkspace welcomeWindow |
 welcomeWorkspace := Workspace new.
-(welcomeWorkspace openLabel: 'Welcome') extent: 500@380.
+(welcomeWorkspace openLabel: 'Welcome')
+	position: 10@10;
+	extent: 500@380.
 welcomeWorkspace contents: '"
 Pharo 1.4
 =======
@@ -17,4 +20,4 @@ to Tools, then Configuration Browser).
 "
 
 MetacelloConfigurationBrowser open.
-'
+' ]
