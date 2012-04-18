@@ -3,4 +3,6 @@ Gofer new
 	package: 'HandleVirtualMachine';
 	load.
 	
+HSCStackInterpreterPrimitives initializePrimitiveTable.
 HSCStackInterpreterPrimitives initializeHandlePrimitiveTables.
+HSCStackInterpreterPrimitives requiredMethodNames.
