@@ -1,14 +1,15 @@
+"try"
 WorldState addDeferredUIMessage: [
 | welcomeWorkspace welcomeWindow |
 welcomeWorkspace := Workspace new.
 (welcomeWorkspace openLabel: 'Welcome')
-	position: 10@10;
+	position: 100@150;
 	extent: 500@380.
 welcomeWorkspace contents: '"
 Pharo 1.4
 =======
 
-Hello, fellow pharoer!
+Hello, fellow pharoer,
 
 Pharo 1.4 comes with a whole set of packages you can use 
 to explore the system and develop your own applications.
