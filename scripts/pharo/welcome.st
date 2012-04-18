@@ -1,9 +1,11 @@
-"try"
 WorldState addDeferredUIMessage: [
-| welcomeWorkspace welcomeWindow |
+| welcomeWorkspace |
+(World submorphs 
+	select: [ :each | each isKindOf: SystemWindow ])
+	do: #delete.  
 welcomeWorkspace := Workspace new.
 (welcomeWorkspace openLabel: 'Welcome')
-	position: 100@150;
+	position: 260@150;
 	extent: 500@380.
 welcomeWorkspace contents: '"
 Pharo 1.4
@@ -21,4 +23,4 @@ to Tools, then Configuration Browser).
 "
 
 MetacelloConfigurationBrowser open.
-' ]
+' ]	
