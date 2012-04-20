@@ -7,8 +7,8 @@ mkdir -p "$WORKSPACE/images"
 sh "$WORKSPACE/download.sh" "$WORKSPACE/images/Pharo20.zip" https://gforge.inria.fr/frs/download.php/30625/Pharo-2.0-007.zip
 
 unzip -j -o -d "$WORKSPACE/images/" "$WORKSPACE/images/Pharo20.zip"
-mv "$WORKSPACE"/images/Pharo-1.4*.image "$WORKSPACE/images/gforge20.image"
-mv "$WORKSPACE"/images/Pharo-1.4*.changes "$WORKSPACE/images/gforge20.changes"
+mv "$WORKSPACE"/images/Pharo-2.0*.image "$WORKSPACE/images/gforge20.image"
+mv "$WORKSPACE"/images/Pharo-2.0*.changes "$WORKSPACE/images/gforge20.changes"
 
 # fetch PharoV10.sources
 
