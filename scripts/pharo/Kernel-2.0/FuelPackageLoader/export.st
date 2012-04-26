@@ -5,7 +5,6 @@ extensionMethods
   ^ (Smalltalk allClassesAndTraits, (Smalltalk allClasses collect: [:c | c class])) gather: [:classOrTrait | self extensionMethodsForClass: classOrTrait]! !
 
 
-"
 ZnConnectionTimeout value: 300 during: [
 #(  'Fuel'
   'FuelMetalevel'
@@ -14,7 +13,6 @@ ZnConnectionTimeout value: 300 during: [
   FileStream forceNewFileNamed: (packageName, '.st') do: [:file |
     file nextPutAll: (ScriptLoader latestSource: packageName location: 'http://ss3.gemstone.com/ss/Fuel')]].
 ].
-"
 
 !
 
