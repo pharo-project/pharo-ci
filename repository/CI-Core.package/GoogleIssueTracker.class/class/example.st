@@ -1,9 +1,9 @@
+to be overriden
 example
-example
-
+	"self example"
 	| tracker issue |
 	"Example usage of the issue tracker"
-	Halt because: 'Evaluate step by step for a better understanding'.
+	Halt now: 'Evaluate step by step for a better understanding'.
 	tracker := GoogleIssueTracker pharo.
 	
 	"give back a list of all open issues"
