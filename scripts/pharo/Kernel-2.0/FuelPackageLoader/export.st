@@ -21,28 +21,6 @@ FileStream readOnlyFileNamed: 'FuelMetalevel.st' do: [:file | file fileInSilentl
 FileStream readOnlyFileNamed: 'FuelPackageLoader.st' do: [:file | file fileInSilently ].
 !
 
-'From Pharo1.4a of ''16 June 2011'' [Latest update: #14424] on 18 April 2012 at 8:09:19 pm'!
-
-!FLPackageLoaderGeneralMapper methodsFor: 'visiting' stamp: 'PavelKrivanek 4/18/2012 20:09'!
-visitMetaclass: aMetaclass
-
-    (Smalltalk globals includes: aMetaclass theNonMetaClass)
-               ifTrue: [ self visitSubstitution: aMetaclass by: ((self clusterKeyedByClusterName: FLClassCluster) objects detect: [:each | each name =  aMetaclass theNonMetaClass name]) class ]
-               ifFalse: [ super visitMetaclass: aMetaclass ]! !
-
-'From Pharo1.4a of ''16 June 2011'' [Latest update: #14433] on 18 April 2012 at 9:26:39 pm'!
-
-!FLFullGeneralMapper methodsFor: 'visiting' stamp: 'PavelKrivanek 4/18/2012 21:26'!
-visitCompiledMethod: aCompiledMethod
-
-  (self
-    clusterKeyedByClusterName: FLCompiledMethodCluster 
-    factory: [ FLCompiledMethodCluster withSourceCode ])
-    add: aCompiledMethod traceWith: analysis! !
-
-
-
-
 | packageNames |
 
 FLSerializer serialize: (TextStyle named: 'Bitmap DejaVu Sans') toFileNamed: 'dejavu.fuel'.
