@@ -14,8 +14,11 @@ if [ -z "$WORKSPACE" ] ; then
 fi
 
 if [ -z "$PHARO_VM" ] ; then
-	echo "PHARO_VM environment variable is not set."
-	exit 1
+    source "$WORKSPACE/pharo-shell-scripts/fetchLatestVM.sh"
+    if [ -z "$PHARO_VM" ] ; then
+        echo "PHARO_VM environment variable is not set."
+        exit 1
+    fi
 fi
 
 PHARO_PARAM="-nodisplay -nosound"
