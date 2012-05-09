@@ -8,8 +8,8 @@ if [ -z "$OS" ] ; then
 	echo "OS environment variable is not set."
 	exit 1
 fi
-if [ -z "$ARCHITECTURE" ] ; then
-	echo "ARCHITECTURE environment variable is not set."
+if [ -z "$Architecture" ] ; then
+	echo "Architecture environment variable is not set."
 	exit 1
 fi
 
@@ -18,7 +18,7 @@ if [ -z "$WORKSPACE" ] ; then
 fi
 
 VM_BASE_URL="https://ci.lille.inria.fr/pharo/view/Cog/job/Cog-VM"
-VM_URL="${VM_BASE_URL}/Architecture=${ARCHITECTURE},OS=${OS}/lastSuccessfulBuild/artifact/Cog-${OS}.zip"
+VM_URL="${VM_BASE_URL}/Architecture=${Architecture},OS=${OS}/lastSuccessfulBuild/artifact/Cog-${OS}.zip"
 
 VM_DIR="$WORKSPACE/vm"
 rm -rf "$VM_DIR"
