@@ -1,1 +1,1 @@
-Smalltalk shrinkToKernel.
+ Gofer new        squeaksource3: 'Fuel';        package: 'Fuel';        package: 'FuelMetalevel';        package: 'FuelPackageLoader';        load.!BasicCodeLoaderTest removeFromSystem.CommandLineArgumentsTest removeFromSystem.CommandLineHandlerTest removeFromSystem.!Smalltalk shrinkToKernel.
