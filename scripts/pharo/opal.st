@@ -1,11 +1,6 @@
 "Load Opal Compiler"
 Gofer new
-	squeaksource: 'rb';
-	package: 'AST-Core';
-	load.
-
-Gofer new
-	squeaksource: 'OpalCompiler';
+	url: 'http://smalltalkhub.com/mc/MarcusDenker/Opal/main';
 	package: 'OpalCompiler-Core';
 	package: 'OpalCompiler-Tests';
 	package: 'OpalCompiler-RegressionTests';
