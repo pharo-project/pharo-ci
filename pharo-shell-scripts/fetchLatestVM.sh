@@ -28,7 +28,7 @@ sh "$WORKSPACE/download.sh" "$VM_DIR/vm.zip" $VM_URL
 
 unzip -j -o -d "$VM_DIR" "$VM_DIR/vm.zip"
 
-cd $VM_DIR
+cd "$VM_DIR"
 
 if [ "$OS" == "win" ]; then
     export PHARO_VM=`find . -name CogVM.exe`
