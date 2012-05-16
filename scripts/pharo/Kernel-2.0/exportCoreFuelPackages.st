@@ -23,6 +23,6 @@ packageNames := ((MCWorkingCopy allManagers  collect: [:p | p package name] )
 
 FileStream forceNewFileNamed: 'pharo-core.fuel' do: [:aStream |
        aStream binary.
-       FLPackageStore new storeOn: aStream packages: packageNames.].
+       FLPackageStore new storePackagesNamed: packageNames on: aStream].
 
 Smalltalk snapshot: false andQuit: true.
