@@ -1,1 +1,59 @@
-'From Pharo2.0a of ''18 April 2012'' [Latest update: #20073] on 14 May 2012 at 9:26:27 am'!!SmalltalkImage methodsFor: 'PharoKernel' stamp: 'PavelKrivanek 5/14/2012 09:25'!kernelPackageNames  ^ #('Announcements-Core' 'Announcements-Core' 'Collections-Abstract' 'Collections-Arithmetic' 'Collections-Arrayed' 'Collections-Atomic' 'Collections-Native' 'Collections-Sequenceable' 'Collections-Stack' 'Collections-Streams' 'Collections-Strings' 'Collections-Support' 'Collections-Text' 'Collections-Traits' 'Collections-Unordered' 'Collections-Weak' 'Compiler' 'Compression' 'Files' 'Graphics-Display Objects' 'Graphics-Primitives' 'Graphics-Transformations' 'Kernel' 'Multilingual-Encodings' 'Multilingual-ImmPlugin' 'Multilingual-Languages' 'Multilingual-TextConversion'  'System-Change Notification' 'System-Changes' 'System-CommandLine' 'System-Clipboard' 'System-FileRegistry' 'System-Finalization' 'System-Localization' 'System-Object Events' 'System-Object Storage' 'System-Platforms' 'System-Support' 'Traits' 'UIManager' 'Transcript' 'FileSystem-AnsiStreams' 'FileSystem-Core' 'FileSystem-Disk' 'FileSystem-Memory' 'Fuel' 'FuelMetalevel' 'FuelPackageLoader' 'CodeImport' 'FuelFileSystem' 'FuelCommandLineHandler')! !ChunkImportTestCase removeFromSystem! Gofer new        squeaksource3: 'Fuel';        package: 'Fuel';        package: 'FuelMetalevel';        package: 'FuelPackageLoader';        package: 'FuelFileSystem';        package: 'FuelCommandLineHandler';        load.!BasicCodeLoaderTest removeFromSystem.CommandLineArgumentsTest removeFromSystem.CommandLineHandlerTest removeFromSystem.!Smalltalk shrinkToKernel.
+!SmalltalkImage methodsFor: 'PharoCore' stamp: 'PavelKrivanek 5/16/2012 19:51'!
+exortCoreAsFuelPackage
+
+| packageNames package |
+
+FileStream forceNewFileNamed: 'pharo-core.fuel' do: [:aStream |
+  aStream binary.
+
+  packageNames := ((MCWorkingCopy allManagers  collect: [:p | p package name] ) 
+    copyWithoutAll: SmalltalkImage current kernelPackageNames) asSortedCollection.
+
+  package := FLPackage withPackages: packageNames.
+  package mustInitialize: false.
+  package addPostLoadAction: [:pkg | ScriptLoader new initializeMorphicFrom: pkg].
+  package packageHeader addPreMaterializationAction: [:header | 
+    #(World ActiveEvent ActiveWorld ActiveHand) do: [:className | Smalltalk globals at: className put: nil]. 
+    FileStream stdout nextPutAll: 'executed...'; lf. ].
+
+  package at: #DejaVu putAdditionalObject: (TextStyle named: 'Bitmap DejaVu Sans').
+  package at: #DecimalProperty putAdditionalObject: (Unicode classPool at: #DecimalProperty).
+  package at: #GeneralCategory putAdditionalObject: (Unicode classPool at: #GeneralCategory).
+  package at: #GB2312Table putAdditionalObject: (UCSTable classPool at: #GB2312Table).
+  package at: #JISX0208Table putAdditionalObject: (UCSTable classPool at: #JISX0208Table).
+  package at: #KSX1001Table putAdditionalObject: (UCSTable classPool at: #KSX1001Table).
+
+  FLPackageStore new storePackage: package on: aStream
+
+].
+! !
+
+'From Pharo2.0a of ''18 April 2012'' [Latest update: #20073] on 14 May 2012 at 9:26:27 am'!
+
+!SmalltalkImage methodsFor: 'PharoKernel' stamp: 'PavelKrivanek 5/14/2012 09:25'!
+kernelPackageNames
+
+  ^ #('Announcements-Core' 'Announcements-Core' 'Collections-Abstract' 'Collections-Arithmetic' 'Collections-Arrayed' 'Collections-Atomic' 'Collections-Native' 'Collections-Sequenceable' 'Collections-Stack' 'Collections-Streams' 'Collections-Strings' 'Collections-Support' 'Collections-Text' 'Collections-Traits' 'Collections-Unordered' 'Collections-Weak' 'Compiler' 'Compression' 'Files' 'Graphics-Display Objects' 'Graphics-Primitives' 'Graphics-Transformations' 'Kernel' 'Multilingual-Encodings' 'Multilingual-ImmPlugin' 'Multilingual-Languages' 'Multilingual-TextConversion'  'System-Change Notification' 'System-Changes' 'System-CommandLine' 'System-Clipboard' 'System-FileRegistry' 'System-Finalization' 'System-Localization' 'System-Object Events' 'System-Object Storage' 'System-Platforms' 'System-Support' 'Traits' 'UIManager' 'Transcript' 'FileSystem-AnsiStreams' 'FileSystem-Core' 'FileSystem-Disk' 'FileSystem-Memory' 'Fuel' 'FuelMetalevel' 'FuelPackageLoader' 'CodeImport' 'FuelFileSystem' 'FuelCommandLineHandler')! !
+
+ChunkImportTestCase removeFromSystem!
+
+
+ Gofer new
+        squeaksource3: 'Fuel';
+        package: 'Fuel';
+        package: 'FuelMetalevel';
+        package: 'FuelPackageLoader';
+        package: 'FuelFileSystem';
+        package: 'FuelCommandLineHandler';
+        load.
+
+!
+
+
+BasicCodeLoaderTest removeFromSystem.
+CommandLineArgumentsTest removeFromSystem.
+CommandLineHandlerTest removeFromSystem.
+
+!
+
+Smalltalk shrinkToKernel.
