@@ -16,6 +16,8 @@ FileStream forceNewFileNamed: 'pharo-core.fuel' do: [:aStream |
     #(World ActiveEvent ActiveWorld ActiveHand) do: [:className | Smalltalk globals at: className put: nil]. 
     FileStream stdout nextPutAll: 'executed...'; lf. ].
 
+  package at: #PackageNames putAdditionalObject: (MCWorkingCopy allManagers  collect: [:p | p package name]).
+
   package at: #DejaVu putAdditionalObject: (TextStyle named: 'Bitmap DejaVu Sans').
   package at: #DecimalProperty putAdditionalObject: (Unicode classPool at: #DecimalProperty).
   package at: #GeneralCategory putAdditionalObject: (Unicode classPool at: #GeneralCategory).
