@@ -8,12 +8,14 @@ Gofer new url: 'http://ss3.gemstone.com/ss/p';
 (Smalltalk at: #ConfigurationOfPinocchio) perform: #loadDevelopment.
 
 "install o-completion ========================================================"
-Gofer new
-    squeaksource: 'MetacelloRepository';
-    package: 'ConfigurationOfOCompletion';
-    load.
-
-(Smalltalk at: #ConfigurationOfOCompletion) perform: #loadStable.
+(SystemVersion current major >= 2) 
+    ifFalse: [
+        Gofer new
+            squeaksource: 'MetacelloRepository';
+            package: 'ConfigurationOfOCompletion';
+            load.
+        
+        (Smalltalk at: #ConfigurationOfOCompletion) perform: #loadStable ].
 
 "install git-support ========================================================="
 Gofer new
