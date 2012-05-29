@@ -46,10 +46,10 @@ OSProcess waitForCommand: 'git --git-dir="p-st" branch --set-upstream master ori
 
 "create a working copy for the pinocchio git repos"
 wc := (MCPackage named: 'Pinocchio') workingCopy.
-wc repositoryGroup addRepository:( MCOSGitRepository 
+"wc repositoryGroup addRepository:( MCOSGitRepository 
             directory: 'p-st'
             remote: 'git@github.com:pinocchio/p-st.git' 
-            push: true).
+            push: true)."
 
 "add all subpackages of P4 to the working copy"
 wc requirePackage: (MCPackage named: 'P4').
