@@ -1,7 +1,7 @@
 Author fullName: 'Pinocchio Installation'.
 
 "install pinocchio ============================================================"
-Gofer new url: 'http://ss3.gemstone.com/ss/p';
+Gofer new url: 'http://smalltalkhub.com/mc/dh83/p/main';
     package: 'ConfigurationOfPinocchio';
     load.
 
@@ -40,12 +40,19 @@ OSProcess waitForCommand: 'git --git-dir="p" remote add origin git@github.com:pi
 OSProcess waitForCommand: 'git --git-dir="p" branch --set-upstream master origin/master'.
 
 "st-code"
-OSProcess waitForCommand: 'git clone git://github.com/pinocchio/p-st.git'.
-OSProcess waitForCommand: 'git --git-dir="p-st" remote add origin git@github.com:pinocchio/p-st.git'.
-OSProcess waitForCommand: 'git --git-dir="p-st" branch --set-upstream master origin/master'.
+[
+    OSProcess waitForCommand: 'git clone git://github.com/pinocchio/p-st.git'.
+    OSProcess waitForCommand: 'git --git-dir="p-st" remote add origin git@github.com:pinocchio/p-st.git'.
+    OSProcess waitForCommand: 'git --git-dir="p-st" branch --set-upstream master origin/master'.
+] "value".
 
 "create a working copy for the pinocchio git repos"
 wc := (MCPackage named: 'Pinocchio') workingCopy.
+wc repositoryGroup
+    addRepository: (MCHttpRepository
+	    location: 'http://smalltalkhub.com/mc/dh83/p/main'
+        user: ''
+        password: '').
 "wc repositoryGroup addRepository:( MCOSGitRepository 
             directory: 'p-st'
             remote: 'git@github.com:pinocchio/p-st.git' 
@@ -89,4 +96,5 @@ PolymorphSystemSettings
 	showDesktopLogo: false.
 TextEditorDialogWindow autoAccept: true.
 
+"CLEANUP ======================================================================"
 Author reset.
