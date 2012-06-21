@@ -1,0 +1,4 @@
+*CI-Integration
+soupClass
+
+	^ Soup
