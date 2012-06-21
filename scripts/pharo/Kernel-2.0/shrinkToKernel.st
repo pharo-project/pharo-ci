@@ -5,6 +5,18 @@ kernelPackageNames
 
   ^ #('Announcements-Core' 'Announcements-Core' 'Collections-Abstract' 'Collections-Arithmetic' 'Collections-Arrayed' 'Collections-Atomic' 'Collections-Native' 'Collections-Sequenceable' 'Collections-Stack' 'Collections-Streams' 'Collections-Strings' 'Collections-Support' 'Collections-Traits' 'Collections-Unordered' 'Collections-Weak' 'Compiler' 'Compression' 'Files' 'Graphics-Display Objects' 'Graphics-Primitives' 'Graphics-Transformations' 'Kernel' 'Multilingual-Encodings' 'Multilingual-ImmPlugin' 'Multilingual-Languages' 'Multilingual-TextConversion'  'System-Change Notification' 'System-Changes' 'System-CommandLine' 'System-Clipboard' 'System-FileRegistry' 'System-Finalization' 'System-Localization' 'System-Object Events' 'System-Platforms' 'System-Support' 'Text-Core' 'Traits' 'UIManager' 'Transcript' 'FileSystem-AnsiStreams' 'FileSystem-Core' 'FileSystem-Disk' 'FileSystem-Memory' 'Fuel' 'FuelMetalevel' 'FuelPackageLoader' 'CodeImport' 'FuelFileSystem' 'FuelCommandLineHandler')! !
 
+Object subclass: #PragmaCollector
+  instanceVariableNames: 'announcer collected filter'
+  classVariableNames: ''
+  poolDictionaries: ''
+  category: 'PragmaCollector'!
+
+Announcement subclass: #PragmaCollectorReset
+  instanceVariableNames: 'collector'
+  classVariableNames: ''
+  poolDictionaries: ''
+  category: 'PragmaCollector'!
+
 
 "output Version Number of stdout"
 FileStream stdout 
