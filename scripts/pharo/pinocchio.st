@@ -1,6 +1,23 @@
 Author fullName: 'Pinocchio Installation'.
 
+"============================================================================="
+"some helper blocks for error printing"
+color := [:colorCode :text|
+    FileStream stderr 
+        "set the color"
+        nextPut: Character escape; nextPut: $[; print: colorCode; nextPut: $m;
+        nextPutAll: text; crlf;
+        "reset the color"
+        nextPut: Character escape; nextPutAll: '[0m'.
+].
+
+red := [:text| color value: 31 value: text ].
+green := [:text| color value: 32 value: text ].
+yellow := [:text| color value: 33 value: text ].
+white := [:text| FileStream stderr nextPutAll: text; crlf ].
+
 "install pinocchio ============================================================"
+yellow value: 'Installing Pinocchio'.
 Gofer new url: 'http://smalltalkhub.com/mc/dh83/p/main';
     package: 'ConfigurationOfPinocchio';
     load.
@@ -10,6 +27,7 @@ Gofer new url: 'http://smalltalkhub.com/mc/dh83/p/main';
 "install o-completion ========================================================"
 (SystemVersion current major >= 2) 
     ifFalse: [
+        yellow value: 'Installing O-Completion'.
         Gofer new
             squeaksource: 'MetacelloRepository';
             package: 'ConfigurationOfOCompletion';
@@ -18,6 +36,7 @@ Gofer new url: 'http://smalltalkhub.com/mc/dh83/p/main';
         (Smalltalk at: #ConfigurationOfOCompletion) perform: #loadStable ].
 
 "install git-support ========================================================="
+yellow value: 'Installing Git-Support'.
 Gofer new
     url: 'http://ss3.gemstone.com/ss/fs-git';
     package: 'ConfigurationOfFSGit';
@@ -26,6 +45,7 @@ Gofer new
 (Smalltalk at: #ConfigurationOfFSGit)  perform: #loadDevelopment.
 
 "install os-process =========================================================="
+yellow value: 'Installing OS-Process'.
 Gofer new
     squeaksource: 'MetacelloRepository';
     package: 'ConfigurationOfOSProcess';
@@ -35,6 +55,7 @@ Gofer new
 
 "Fetch the latest sources from our git repository ============================"
 "c-code"
+yellow value: 'Loading Git Repositories'.
 OSProcess waitForCommand: 'git clone git://github.com/pinocchio/p.git'.
 OSProcess waitForCommand: 'git --git-dir="p" remote add origin git@github.com:pinocchio/p.git'.
 OSProcess waitForCommand: 'git --git-dir="p" branch --set-upstream master origin/master'.
@@ -47,6 +68,7 @@ OSProcess waitForCommand: 'git --git-dir="p" branch --set-upstream master origin
 ] "value".
 
 "create a working copy for the pinocchio git repos"
+yellow value: 'Setting up Pinocchio MC WorkingCopy'.
 wc := (MCPackage named: 'Pinocchio') workingCopy.
 wc repositoryGroup
     addRepository: (MCHttpRepository
