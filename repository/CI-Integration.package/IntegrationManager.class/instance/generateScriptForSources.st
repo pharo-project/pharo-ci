@@ -16,7 +16,7 @@ generateScriptForSources
 						nextPutAll: String crlf ]].
 		comment := String streamContents: [:strm |
 						issuesToIntegrate do: [:each | 
-							strm << each name << 'Thanks to ' << each content author email ; lf;lf.
+							strm << each name << 'Thanks to ' << each description author email ; lf;lf.
 							strm << each url;lf;lf;lf.]].
 		stream
 			nextPutAll: 'ScriptLoader new doneApplyingChangesSilentlyComment: ';
