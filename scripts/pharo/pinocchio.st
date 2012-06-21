@@ -82,8 +82,10 @@ wc repositoryGroup
 
 "add all subpackages of P4 to the working copy"
 wc requirePackage: (MCPackage named: 'P4').
-(RPackage named: 'P4') systemSubPackages do: [ :p| 
-    wc requirePackage: (MCPackage named: p name) ].
+(RPackage named: 'P4') systemSubPackages do: [ :p| | packageName | 
+    "inly include up to two sublevels!"
+    packageName := $- join: (($- split: p name) first: 2).
+    wc requirePackage: (MCPackage named: packageName) ].
 
 "Settings ===================================================================="
 "create a workspace with the default export settings"
