@@ -24,7 +24,7 @@
 		"baseline102:" : "BenjaminVanRyseghem 3/26/2012 19:28",
 		"baseline103:" : "BenjaminVanRyseghem 3/26/2012 19:28",
 		"baseline104:" : "BenjaminVanRyseghem 6/21/2012 14:04",
-		"development:" : "BenjaminVanRyseghem 3/26/2012 19:28",
+		"development:" : "Integrator 6/21/2012 18:12",
 		"preload100" : "CamilloBruni 9/21/2011 16:30",
 		"preload102" : "CamilloBruni 9/21/2011 16:30",
 		"preload107" : "BenjaminVanRyseghem 10/3/2011 16:59",
@@ -33,7 +33,7 @@
 		"preloadXMLSupport" : "BenjaminVanRyseghem 9/20/2011 14:23",
 		"preloadZincHTTPComponents" : "BenjaminVanRyseghem 10/3/2011 16:57",
 		"project" : "BenjaminVanRyseghem 9/20/2011 14:21",
-		"stable:" : "BenjaminVanRyseghem 3/26/2012 19:28",
+		"stable:" : "Integrator 6/21/2012 18:12",
 		"version100:" : "CamilloBruni 9/21/2011 16:42",
 		"version101:" : "CamilloBruni 9/21/2011 16:42",
 		"version102:" : "CamilloBruni 9/22/2011 19:41",
@@ -49,4 +49,5 @@
 		"version112:" : "MonkeyGalactikalIntegrator 1/24/2012 23:55",
 		"version113:" : "MonkeyGalactikalIntegrator 1/24/2012 23:55",
 		"version114:" : "BenjaminVanRyseghem 3/8/2012 18:50",
-		"version115:" : "BenjaminVanRyseghem 6/21/2012 14:03" } }
+		"version115:" : "BenjaminVanRyseghem 6/21/2012 14:03",
+		"version116:" : "Integrator 6/21/2012 18:11" } }
