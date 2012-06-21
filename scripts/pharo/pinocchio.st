@@ -71,11 +71,13 @@ OSProcess waitForCommand: 'git --git-dir="p" branch --set-upstream master origin
 wc := (MCPackage named: 'Pinocchio') workingCopy.
 wc repositoryGroup repositories allButFirst do: [ :r| 
     wc repositoryGroup removeRepository: r ].
+
 wc repositoryGroup
     addRepository: (repos := MCHttpRepository
 	    location: 'http://smalltalkhub.com/mc/dh83/p/main'
         user: ''
         password: '').
+
 "wc repositoryGroup addRepository:( MCOSGitRepository 
             directory: 'p-st'
             remote: 'git@github.com:pinocchio/p-st.git' 
@@ -83,11 +85,11 @@ wc repositoryGroup
 
 "add all subpackages of P4 to the working copy"
 (RPackage named: 'P4') systemSubPackages do: [ :p| | packageName package repositoryGroup | 
-    "inly include up to two sublevels!"
+    "only include up to two sublevels"
     packageName := $- join: (( $- split: p name) first: 2).
     wc requirePackage: (package := MCPackage named: packageName).
     repositoryGroup := package workingCopy repositoryGroup.
-	repositoryGroup repositories allButFirst do: [:r| removeRepository: r ].
+	repositoryGroup repositories allButFirst do: [:r|  repositoryGroup removeRepository: r ].
     repositoryGroup addRepository: repos ].
 
 "Settings ===================================================================="
