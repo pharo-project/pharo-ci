@@ -1,6 +1,6 @@
 {
 	"class" : {
-		"fromXML:tracker:" : "DamienCassou 5/15/2012 18:27",
+		"fromXML:" : "BenjaminVanRyseghem 3/26/2012 16:38",
 		"id:" : "CamilloBruni 9/22/2011 22:51" },
 	"instance" : {
 		"=" : "CamilloBruni 9/19/2011 17:53",
@@ -15,7 +15,7 @@
 		"comments" : "BenjaminVanRyseghem 3/26/2012 16:38",
 		"commentsUrl" : "BenjaminVanRyseghem 3/26/2012 18:06",
 		"description" : "BenjaminVanRyseghem 3/26/2012 16:38",
-		"description:" : "BenjaminVanRyseghem 3/26/2012 17:04",
+		"description:" : "Integrator 6/21/2012 17:52",
 		"dirtyPackagesTests" : "BenjaminVanRyseghem 9/26/2011 18:41",
 		"ensureFix" : "BenjaminVanRyseghem 9/25/2011 17:23",
 		"errorNoSources" : "BenjaminVanRyseghem 3/26/2012 17:20",
