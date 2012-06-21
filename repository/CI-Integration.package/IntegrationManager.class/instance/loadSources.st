@@ -8,7 +8,7 @@ loadSources
 		to: issuesToIntegrate size
 		during: [:bar | |progress|
 			progress := 0.
-			issuesToIntegrate 
+			issuesToIntegrate asOrderedCollection 
 				do: [: each | 
 					each loadSource.
 					progress := progress + 1.
