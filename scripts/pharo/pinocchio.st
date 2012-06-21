@@ -68,10 +68,9 @@ OSProcess waitForCommand: 'git --git-dir="p" branch --set-upstream master origin
 ] "value".
 
 "create a working copy for the pinocchio git repos"
-yellow value: 'Setting up Pinocchio MC WorkingCopy'.
 wc := (MCPackage named: 'Pinocchio') workingCopy.
-wc repositoryGroup
-    addRepository: (MCHttpRepository
+wc initialize repositoryGroup
+    addRepository: (repos := MCHttpRepository
 	    location: 'http://smalltalkhub.com/mc/dh83/p/main'
         user: ''
         password: '').
@@ -82,10 +81,10 @@ wc repositoryGroup
 
 "add all subpackages of P4 to the working copy"
 wc requirePackage: (MCPackage named: 'P4').
-(RPackage named: 'P4') systemSubPackages do: [ :p| | packageName | 
-    "inly include up to two sublevels!"
-    packageName := $- join: (($- split: p name) first: 2).
-    wc requirePackage: (MCPackage named: packageName) ].
+(RPackage named: 'P4') systemSubPackages do: [ :p| | packageName package | 
+    packageName := $- join: (( $- split: p name) first: 2).
+	wc requirePackage: (package := MCPackage named: packageName).
+	package workingCopy initialize repositoryGroup addRepository: repos ].
 
 "Settings ===================================================================="
 "create a workspace with the default export settings"
