@@ -26,7 +26,7 @@ mkdir -p "$VM_DIR"
 
 sh "$WORKSPACE/download.sh" "$VM_DIR/vm.zip" $VM_URL
 
-unzip -j -o -d "$VM_DIR" "$VM_DIR/vm.zip"
+unzip -qjo -d "$VM_DIR" "$VM_DIR/vm.zip"
 
 cd "$VM_DIR"
 
