@@ -3,7 +3,7 @@
 !SmalltalkImage methodsFor: 'PharoKernel' stamp: 'EstebanLorenzano 6/20/2012 18:14'!
 kernelPackageNames
 
-  ^ #('Announcements-Core' 'Announcements-Core' 'Collections-Abstract' 'Collections-Arithmetic' 'Collections-Arrayed' 'Collections-Atomic' 'Collections-Native' 'Collections-Sequenceable' 'Collections-Stack' 'Collections-Streams' 'Collections-Strings' 'Collections-Support' 'Collections-Traits' 'Collections-Unordered' 'Collections-Weak' 'Compiler' 'Compression' 'Files' 'Graphics-Display Objects' 'Graphics-Primitives' 'Graphics-Transformations' 'Kernel' 'Multilingual-Encodings' 'Multilingual-ImmPlugin' 'Multilingual-Languages' 'Multilingual-TextConversion'  'System-Change Notification' 'System-Changes' 'System-CommandLine' 'System-Clipboard' 'System-FileRegistry' 'System-Finalization' 'System-Localization' 'System-Object Events' 'System-Platforms' 'System-Support' 'Text-Core' 'Traits' 'UIManager' 'Transcript' 'FileSystem-AnsiStreams' 'FileSystem-Core' 'FileSystem-Disk' 'FileSystem-Memory' 'Fuel' 'FuelMetalevel' 'FuelPackageLoader' 'CodeImport' 'FuelFileSystem' 'FuelCommandLineHandler')! !
+  ^ #('Announcements-Core' 'Announcements-Core' 'Collections-Abstract' 'Collections-Arithmetic' 'Collections-Arrayed' 'Collections-Atomic' 'Collections-Native' 'Collections-Sequenceable' 'Collections-Stack' 'Collections-Streams' 'Collections-Strings' 'Collections-Support' 'Collections-Traits' 'Collections-Unordered' 'Collections-Weak' 'Compiler' 'Compression' 'Files' 'Graphics-Display Objects' 'Graphics-Primitives' 'Graphics-Transformations' 'Kernel' 'Multilingual-Encodings' 'Multilingual-ImmPlugin' 'Multilingual-Languages' 'Multilingual-TextConversion'  'System-Change Notification' 'System-Changes' 'System-CommandLine' 'System-Clipboard' 'System-FileRegistry' 'System-Finalization' 'System-Localization' 'System-Object Events' 'System-Platforms' 'System-Support' 'Text-Core' 'Traits' 'UIManager' 'Transcript' 'FileSystem-AnsiStreams' 'FileSystem-Core' 'FileSystem-Disk' 'FileSystem-Memory' 'Fuel' 'FuelMetalevel' 'FuelPackageLoader' 'CodeImport' 'FuelFileSystem' 'FuelCommandLineHandler' 'SystemProgress')! !
 
 Object subclass: #PragmaCollector
   instanceVariableNames: 'announcer collected filter'
@@ -16,6 +16,18 @@ Announcement subclass: #PragmaCollectorReset
   classVariableNames: ''
   poolDictionaries: ''
   category: 'PragmaCollector'!
+
+'From Pharo2.0a of ''18 April 2012'' [Latest update: #20152] on 22 June 2012 at 11:35:37 am'!
+
+!DummyUIManager methodsFor: 'ui requests' stamp: 'PavelKrivanek 6/22/2012 11:35'!
+progressInitiationExceptionDefaultAction: anException
+
+  | result |
+
+  result := anException workBlock value: DummySystemProgressItem new.
+
+  anException resume: result! !
+
 
 
 "output Version Number of stdout"
