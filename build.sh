@@ -137,6 +137,12 @@ done
 # make sure we don't have debug log before running image
 rm -f "$OUTPUT_DEBUG"
 
+# Ugly hack to deal with backslashes when running in a bash shell on windows
+if [ "$OS" == "win" ]; then
+    OUTPUT_IMAGE=$(echo ${OUTPUT_IMAGE//\\/\/})
+    OUTPUT_SCRIPT=$(echo ${OUTPUT_SCRIPT//\\/\/})
+fi
+
 # build image in the background
 echo "Executing: 
 $PHARO_VM $PHARO_PARAM $OUTPUT_IMAGE $OUTPUT_SCRIPT -headless "
