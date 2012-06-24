@@ -1,10 +1,3 @@
-!CompiledMethod methodsFor: '*Ring-Core-Kernel' stamp: 'StephaneDucasse 9/1/2011 11:55'!
-realClass
-	"answer the class that I am installed in"
-	
-	^self numLiterals > 0
-		ifTrue: [ (self literalAt: self numLiterals) value ]
-		ifFalse: [ nil ]! !
 
 
 'From Pharo2.0a of ''18 April 2012'' [Latest update: #20152] on 24 June 2012 at 6:29:56 pm'!
