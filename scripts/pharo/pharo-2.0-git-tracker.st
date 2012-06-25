@@ -36,11 +36,11 @@ packages := MCWorkingCopy allInstances
 
 " load filetree =============================================================="
 yellow value:'Installing FileTree'.
-[Gofer new
+Gofer new
     url: 'http://ss3.gemstone.com/ss/FileTree';
     package: 'ConfigurationOfFileTree';
     load.
-((Smalltalk at: #ConfigurationOfFileTree) project version: '1.0') load. ].
+((Smalltalk at: #ConfigurationOfFileTree) project version: '1.0') load.
 
 " create a new filetree repository ==========================================="
 yellow value: 'Preparing commit'.
