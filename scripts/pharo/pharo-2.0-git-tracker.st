@@ -58,7 +58,7 @@ yellow value:'Comitting changes to ', fileTreeRepository directory asString.
 gofer := Gofer new.
 packages do: [ :packageName| gofer package: packageName ].
 gofer repository: fileTreeRepository.
-"gofer commit: commitMessage."
+gofer commit: commitMessage.
 
 "output the current version number =========================================="
 (FileStream forceNewFileNamed: 'version')
