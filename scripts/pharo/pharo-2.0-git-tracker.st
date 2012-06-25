@@ -61,8 +61,9 @@ gofer repository: fileTreeRepository.
 "gofer commit: commitMessage."
 
 "output the current version number =========================================="
-FileStream stdout  nextPutAll: versionString.
-
+(FileStream forceNewFileNamed: 'version')
+    nextPutAll: versionString;
+    close.
 "store the commit message in a separate file"
 (FileStream forceNewFileNamed: versionString)
     lineEndConvention: #lf;
