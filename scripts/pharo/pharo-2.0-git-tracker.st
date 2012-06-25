@@ -1,5 +1,8 @@
 | color red green yellow 
   updateSelector commitMessage versionString fileTreeRepository gofer |
+
+"============================================================================="
+Author fullName: 'Mister Foo'.
 "============================================================================="
 "some helper blocks for error printing"
 color := [:colorCode :text|
