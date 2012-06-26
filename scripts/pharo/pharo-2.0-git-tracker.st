@@ -70,6 +70,7 @@ gofer commit: commitMessage.
 "store the commit message in a separate file"
 (FileStream forceNewFileNamed: versionString)
     lineEndConvention: #lf;
+    nextPutAll: versionString; lf;
     nextPutAll: commitMessage; lf;
     close.
 
