@@ -101,7 +101,8 @@ Tests-SystemChangeNotification
 Tests-SystemTests-Support
 Tests-Traits
 Tests-Traits-MOP
-Tests-VM' linesDo: [:packageName |
+Tests-VM
+HudsonBuildTools' linesDo: [:packageName |
 
 
 packagesDir readOnlyFileNamed: packageName, '.st' do: [:file | CodeImporter evaluateReadStream: file ].
