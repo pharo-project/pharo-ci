@@ -73,5 +73,8 @@ gofer commit: commitMessage.
     nextPutAll: commitMessage; lf;
     close.
 
+FileStream stdout
+    nextPutAll: versionString.
+
 " and we're done ============================================================"
 Smalltalk snapshot: false andQuit: true.
