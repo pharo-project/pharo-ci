@@ -1,5 +1,6 @@
 | color red green yellow 
-  updateSelector commitMessage versionString fileTreeRepository gofer |
+  updateSelector commitMessage versionString fileTreeRepository gofer 
+  mainRepos inboxRepos |
 
 "============================================================================="
 Author fullName: 'Mister Foo'.
@@ -25,16 +26,19 @@ Deprecation  raiseWarning: false.
 
 "keep track of the current mc packages ======================================="
 yellow value:'Tracking the currently installed packages'.
+
+mainRepos := MCRepositoryGroup default repositories detect: [ :repos|
+	repos asString includesSubString: 'http://ss3.gemstone.com/ss/Pharo20'].
+inboxRepos := MCRepositoryGroup default repositories detect: [ :repos|
+	repos asString includesSubString: 'PharoInbox'].
+
+
 packages := MCWorkingCopy allInstances 
     select: [ :wc|
         "remove the inbox from all working copies to speed up comitting"
-        (wc repositoryGroup repositories 
-            detect: [ :repos| repos asString includesSubString: 'PharoInbox']
-            ifNone: [ nil ]) ifNotNilDo: [ :inbox|
-                wc repositoryGroup removeRepository: inbox ].
+        wc repositoryGroup removeRepository: inboxRepos.
 	    "check if the package is in pharo core"
-        wc repositoryGroup repositories anySatisfy: [ :r| 
-            r asString includesSubString: 'http://ss3.gemstone.com/ss/Pharo20']]
+        wc repositoryGroup repositories anySatisfy: [ :r| r = mainRepos ]]
     thenCollect: [ :wc| wc package name ].
 
 " load filetree =============================================================="
@@ -58,10 +62,13 @@ commitMessage  := ((ScriptLoader methodDict at: updateSelector)
 
 "save all packages into the filetree repository ============================="
 yellow value:'Comitting changes to ', fileTreeRepository directory asString.
-gofer := Gofer new.
-packages do: [ :packageName| gofer package: packageName ].
-gofer repository: fileTreeRepository.
-gofer commit: commitMessage.
+
+mainRepos cacheAllFileNamesDuring: [
+inboxRepos cacheAllFileNamesDuring: [
+    gofer := Gofer new.
+    packages do: [ :packageName| gofer package: packageName ].
+    gofer repository: fileTreeRepository.
+    gofer commit: commitMessage ]].
 
 "output the current version number =========================================="
 (FileStream forceNewFileNamed: 'version')
