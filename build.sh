@@ -23,7 +23,7 @@ fi
 
 PHARO_PARAM="-nodisplay -nosound"
 
-if [ `uname` == "Darwin" ]; then
+if [ `uname` == "Darwin" ] || [ "$OS" == "win" ] ; then
 	PHARO_PARAM="-headless"
 fi
 
