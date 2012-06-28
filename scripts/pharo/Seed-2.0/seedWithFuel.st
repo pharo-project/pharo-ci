@@ -1,6 +1,8 @@
 | seed |
 
 HzFuelExporter exportAll.
+HzFuelExporter new exportJenkinsSeedBuildTools .
+HzFuelExporter new exportJenkinsTestRunner.
 
 'crash.dmp' asFileReference ensureDeleted.
 'fileok.txt' asFileReference ensureDeleted.
