@@ -190,7 +190,7 @@ guard()
 # ===========================================================================
 
 puts yellow("Fetching the latest VM pharo scripts")
-`test -e pharo-build || git clone --depth=1 git@gitorious.org:pharo-build/pharo-build.git`
+`test -e pharo-build || git clone --depth=1 https://git.gitorious.org/pharo-build/pharo-build.git`
 `git --git-dir=pharo-build/.git pull`
 
 
