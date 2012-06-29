@@ -21,14 +21,6 @@ def yellow(text)
     colorize(text, "[33m")
 end
 
-# ===========================================================================
-updateImage = true
-issueNumber = ARGV.last
-imageUrl    = "https://ci.lille.inria.fr/pharo/job/CI/lastSuccessfulBuild/artifact/CI.zip"
-artifact    = "CI"
-name        = "CI"
-destination = "Monkey#{issueNumber}"
-
 # ============================================================================
 
 def help(msg=nil, exitStatus=0)
@@ -106,12 +98,28 @@ elsif $*[0] == "--hack"
     exec(editor(), sourceFile)
 elsif $*[0] == "--batch"
     INTERACTIVE = false
-elsif ARGV.empty?
+    ARGV.pop
+else
     INTERACTIVE = true
+end
+
+if ARGV.empty?
+    issueNumber = ""
 elsif $*[0][0] == '-' || $*.size != 1 || $*[0].to_i == 0
     help("invalid arguments \"#{$*.join}\"", 1)
     INTERACTIVE = true
+else
+    issueNumber = ARGV.last    
 end
+
+
+# ===========================================================================
+updateImage = true
+imageUrl    = "https://ci.lille.inria.fr/pharo/job/CI/lastSuccessfulBuild/artifact/CI.zip"
+artifact    = "CI"
+name        = "CI"
+destination = "Monkey#{issueNumber}"
+
 
 # ============================================================================
 
@@ -259,6 +267,10 @@ tracker authenticate: '#{googleCodeUser()}' with: '#{googleCodePassword()}'.
 issue := '#{issueNumber}' isEmpty
     ifTrue:  [ tracker nextIssue ]
     ifFalse: [ tracker issue: '#{issueNumber}' asInteger ].
+
+issue ifNil: [ 
+    red value: 'No more issues to be checked'.
+    Smalltalk exitSuccess  ].
 
 issueNumber := issue id.
 
