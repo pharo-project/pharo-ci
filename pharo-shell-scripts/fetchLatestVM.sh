@@ -33,6 +33,11 @@ if [ -z "$WORKSPACE" ] ; then
 	WORKSPACE=.
 fi
 
+DIR=`readlink "$0"` || DIR="$0";
+DIR=`dirname "$DIR"`;
+cd "$DIR"
+DIR=`pwd`
+
 # -------------------------------------------------------------------------
 VM_BASE_URL="https://ci.lille.inria.fr/pharo/job/Cog-VM"
 VM_URL="${VM_BASE_URL}/Architecture=${ARCHITECTURE},OS=${OS}/lastSuccessfulBuild/artifact/Cog-${OS}.zip"
@@ -41,7 +46,7 @@ VM_DIR="$WORKSPACE/vm"
 rm -rf "$VM_DIR"
 mkdir -p "$VM_DIR"
 
-sh "$WORKSPACE/download.sh" "$VM_DIR/vm.zip" $VM_URL
+sh "$DIR/../download.sh" "$VM_DIR/vm.zip" $VM_URL
 
 unzip -qjo -d "$VM_DIR" "$VM_DIR/vm.zip"
 
