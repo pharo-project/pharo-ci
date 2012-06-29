@@ -270,9 +270,10 @@ issue := '#{issueNumber}' isEmpty
 
 issue ifNil: [ 
     red value: 'No more issues to be checked'.
-    Smalltalk exitSuccess  ].
+    Smalltalk exitFail  ].
 
 issueNumber := issue id.
+FileStream stdout print: issueNumber.
 
 yellow value: 'Opening image for issue ', issueNumber printString.
 yellow value: ' http://code.google.com/p/pharo/issues/detail?id=', issueNumber printString.
@@ -325,7 +326,7 @@ begin
             option = "-headless"
         end
         pid = fork do
-          `$PHARO_VM #{option} '#{Dir.pwd}/Monkey#{issueNumber}.image' '#{Dir.pwd}/issueLoading.st'`
+          issueNumber=`$PHARO_VM #{option} '#{Dir.pwd}/Monkey#{issueNumber}.image' '#{Dir.pwd}/issueLoading.st'`.chomp
         end
         
         Process.wait
@@ -346,7 +347,7 @@ issue reviewNeeded: 'Timeout occured while loading and testing the code'.
 Smalltalk snapshot: false andQuit: true.
 IDENTIFIER
     }
-    `stackVM "#{Dir.pwd}/Monkey#{issueNumber}.image" "#{Dir.pwd}/issueLoading.st"`
+    `$PHARO_VM "#{Dir.pwd}/Monkey#{issueNumber}.image" "#{Dir.pwd}/issueLoading.st"`
 end
 
 # ===========================================================================
