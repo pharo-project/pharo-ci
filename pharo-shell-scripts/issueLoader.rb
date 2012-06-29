@@ -256,14 +256,14 @@ tracker := GoogleIssueTracker pharo.
 tracker authenticate: '#{googleCodeUser()}' with: '#{googleCodePassword()}'.
 
 "===================================="
-'#{issueNumber}' isEmpty
-    ifTrue: [ issueNumber := tracker nextIssue ]
-    ifFalse: [ issueNumber := '#{issueNumber}' asInteger ].
+issue := '#{issueNumber}' isEmpty
+    ifTrue:  [ tracker nextIssue ]
+    ifFalse: [ tracker issue: '#{issueNumber}' asInteger ].
+
+issueNumber := issue id.
 
 yellow value: 'Opening image for issue ', issueNumber printString.
 yellow value: ' http://code.google.com/p/pharo/issues/detail?id=', issueNumber printString.
-    
-issue := tracker issue: issueNumber.
 
 "===================================="
 
