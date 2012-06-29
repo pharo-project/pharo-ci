@@ -10,7 +10,7 @@ version116: spec
 
 	spec for: #'pharo' do: [
 		spec 
-			package: 'CI-Core' with: 'CI-Core-BenjaminVanRyseghem.7';
+			package: 'CI-Core' with: 'CI-Core-BenjaminVanRyseghem.8';
 			package: 'CI-Integration' with: 'CI-Integration-Integrator.5';
 			package: 'CI-Loader' with: 'CI-Loader-BenjaminVanRyseghem.2';
 			project: 'Soup' with: '1.2';
