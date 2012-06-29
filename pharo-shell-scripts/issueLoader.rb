@@ -258,7 +258,6 @@ Gofer new
 [ 
 "===================================="
 
-yellow value: 'Loading tracker issue #{issueNumber}'.
 
 tracker := GoogleIssueTracker pharo.
 tracker authenticate: '#{googleCodeUser()}' with: '#{googleCodePassword()}'.
@@ -273,6 +272,8 @@ issue ifNil: [
     Smalltalk exitFail  ].
 
 issueNumber := issue id.
+
+yellow value: 'Loading tracker issue ', issueNumber printString.
 FileStream stdout print: issueNumber.
 
 yellow value: 'Opening image for issue ', issueNumber printString.
