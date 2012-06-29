@@ -182,10 +182,10 @@ guard()
 
 # ===========================================================================
 
-if !system("ping -c 1 ss3.gemstone.com > /dev/null")
-    puts red('Could not find ss3.gemstone.com')
-    exit 1
-end
+#if !system("ping -c 1 ss3.gemstone.com > /dev/null")
+#    puts red('Could not find ss3.gemstone.com')
+#    exit 1
+#end
 
 # ===========================================================================
 
