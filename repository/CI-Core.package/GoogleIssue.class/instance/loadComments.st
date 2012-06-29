@@ -2,7 +2,7 @@ loading
 loadComments
 	|contents doc nodes |
 	
-	contents := (self tracker get: (self url: '/comments/full')) contents.
+	contents := (self tracker get: self commentsUrl) contents.
 	
 	doc := GoogleIssueTracker soupClass fromString: contents.
 	
