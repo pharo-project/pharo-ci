@@ -48,11 +48,11 @@ unzip -qjo -d "$VM_DIR" "$VM_DIR/vm.zip"
 cd "$VM_DIR"
 
 if [ "$OS" == "win" ]; then
-    PHARO_VM=`find . -name CogVM.exe`
+    PHARO_VM_EXEC=`find . -name CogVM.exe`
 else
-    PHARO_VM=`find . -name CogVM`
+    PHARO_VM_EXEC=`find . -name CogVM`
 fi
-export PHARO_VM=`pwd`"/$PHARO_VM"
+export PHARO_VM=`pwd`"/$PHARO_VM_EXEC"
 echo $PHARO_VM
 
-cd - 1>&2
+cd - > /dev/null

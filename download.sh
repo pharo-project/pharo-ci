@@ -7,8 +7,6 @@ CERTCHECK="--no-check-certificate"
 
 # on macs wget is pretty old and not recognizing this option 
 
-if [ `uname` == "Darwin" ]; then
-	CERTCHECK=''
-fi
+wget --help | grep -- "$CERTCHECK" 2>&1 > /dev/null || CERTCHECK=''
 
 wget -nv $CERTCHECK -O "$1" "$2"
