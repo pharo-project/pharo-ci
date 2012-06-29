@@ -12,6 +12,6 @@ version116: spec
 		spec 
 			package: 'CI-Core' with: 'CI-Core-Integrator.6';
 			package: 'CI-Integration' with: 'CI-Integration-Integrator.5';
-			package: 'CI-Loader' with: 'CI-Loader-BenjaminVanRyseghem.1';
+			package: 'CI-Loader' with: 'CI-Loader-BenjaminVanRyseghem.2';
 			project: 'Soup' with: '1.2';
 			package: 'Zodiac-Core' with: 'Zodiac-Core-SvenVanCaekenberghe.17'].
