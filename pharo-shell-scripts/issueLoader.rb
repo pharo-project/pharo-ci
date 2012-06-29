@@ -98,7 +98,7 @@ elsif $*[0] == "--hack"
     exec(editor(), sourceFile)
 elsif $*[0] == "--batch"
     INTERACTIVE = false
-    ARGV.pop
+    ARGV.shift
 else
     INTERACTIVE = true
 end
@@ -258,7 +258,6 @@ Gofer new
 [ 
 "===================================="
 
-
 tracker := GoogleIssueTracker pharo.
 tracker authenticate: '#{googleCodeUser()}' with: '#{googleCodePassword()}'.
 
@@ -269,7 +268,7 @@ issue := '#{issueNumber}' isEmpty
 
 issue ifNil: [ 
     red value: 'No more issues to be checked'.
-    Smalltalk exitFail  ].
+    "Smalltalk exitFail" ].
 
 issueNumber := issue id.
 
