@@ -3,7 +3,7 @@ fromXML: entryNode tracker: aTracker
 
 	| issue |
 	
-	issue := self id: (entryNode findTag: 'id') text squeezeOutNumber.
+	issue := self id: ((entryNode findTag: 'id') text subStrings: '/') last squeezeOutNumber.
 	issue tracker: aTracker.	
 	issue published: entryNode published text asDateAndTime.
 	issue updated: entryNode updated text asDateAndTime.
