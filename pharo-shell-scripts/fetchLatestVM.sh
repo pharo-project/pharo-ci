@@ -4,37 +4,60 @@
 # Copyright (c) 2012 Christophe Demarey
 #
 
+# -------------------------------------------------------------------------
+
 if [ -z "$OS" ] ; then
-	echo "OS environment variable is not set."
-	exit 1
+    #try to extract the os name
+    TMP_OS=`uname | tr '[:upper:]' '[:lower:]'`
+    if [[ "{$TMP_OS}" = *windows* ]]; then
+        OS='win'
+    elif [[ "{$TMP_OS}" = *darwin* ]]; then
+        OS='mac'
+    elif [[ "{$TMP_OS}" = *linux* ]]; then
+        OS='linux'
+    fi
 fi
+
+if [ -z "$OS" ] ; then
+    echo "OS environment variable is not set."  1>&2
+    exit 1
+fi
+
+# -------------------------------------------------------------------------
 if [ -z "$ARCHITECTURE" ] ; then
-	echo "Architecture environment variable is not set."
-	exit 1
+	  echo "Architecture environment variable is not set. Defaulting to x86 32 bit"  1>&2
+    ARCHITECTURE=32
 fi
 
 if [ -z "$WORKSPACE" ] ; then
 	WORKSPACE=.
 fi
 
-VM_BASE_URL="https://ci.lille.inria.fr/pharo/view/Cog/job/Cog-VM"
+DIR=`readlink "$0"` || DIR="$0";
+DIR=`dirname "$DIR"`;
+cd "$DIR"
+DIR=`pwd`
+
+# -------------------------------------------------------------------------
+VM_BASE_URL="https://ci.lille.inria.fr/pharo/job/Cog-VM"
 VM_URL="${VM_BASE_URL}/Architecture=${ARCHITECTURE},OS=${OS}/lastSuccessfulBuild/artifact/Cog-${OS}.zip"
 
 VM_DIR="$WORKSPACE/vm"
 rm -rf "$VM_DIR"
 mkdir -p "$VM_DIR"
 
-sh "$WORKSPACE/download.sh" "$VM_DIR/vm.zip" $VM_URL
+sh "$DIR/../download.sh" "$VM_DIR/vm.zip" $VM_URL
 
 unzip -qjo -d "$VM_DIR" "$VM_DIR/vm.zip"
 
 cd "$VM_DIR"
 
 if [ "$OS" == "win" ]; then
-    PHARO_VM=`find . -name CogVM.exe`
+    PHARO_VM_EXEC=`find . -name CogVM.exe`
 else
-    PHARO_VM=`find . -name CogVM`
+    PHARO_VM_EXEC=`find . -name CogVM`
 fi
-export PHARO_VM="$VM_DIR/$PHARO_VM"
+export PHARO_VM=`pwd`"/$PHARO_VM_EXEC"
+echo $PHARO_VM
 
-cd -
+cd - > /dev/null
