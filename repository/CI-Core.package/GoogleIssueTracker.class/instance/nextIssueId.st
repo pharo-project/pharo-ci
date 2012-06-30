@@ -1,4 +1,6 @@
 issues
 nextIssueId
 	
-	^ self nextIssue id
+	^ self nextIssue 
+			ifNil: [ nil ] 
+			ifNotNil:[ :nextIssue | nextIssue id ]
