@@ -35,8 +35,7 @@ fi
 
 DIR=`readlink "$0"` || DIR="$0";
 DIR=`dirname "$DIR"`;
-cd "$DIR"
-DIR=`pwd`
+cd "$DIR" && DIR=`pwd` && cd - > /dev/null
 
 # -------------------------------------------------------------------------
 VM_BASE_URL="https://ci.lille.inria.fr/pharo/job/Cog-VM"
