@@ -14,7 +14,7 @@ if [ -z "$WORKSPACE" ] ; then
 fi
 
 if [ -z "$PHARO_VM" ] ; then
-    source "$WORKSPACE/pharo-shell-scripts/fetchLatestVM.sh"
+    export PHARO_VM=`$WORKSPACE/pharo-shell-scripts/fetchLatestVM.sh`
     if [ -z "$PHARO_VM" ] ; then
         echo "PHARO_VM environment variable is not set."
         exit 1
