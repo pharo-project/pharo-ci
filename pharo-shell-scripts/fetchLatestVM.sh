@@ -30,7 +30,7 @@ if [ -z "$ARCHITECTURE" ] ; then
 fi
 
 if [ -z "$WORKSPACE" ] ; then
-	WORKSPACE=.
+	WORKSPACE=`pwd`
 fi
 
 DIR=`readlink "$0"` || DIR="$0";
