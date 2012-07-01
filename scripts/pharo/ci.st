@@ -5,6 +5,3 @@ Gofer new
 	load.
 	
 (Smalltalk at: #ConfigurationOfCI) perform: #loadFull.
-
-"save the image first separately to prevent possible OSProcess errors"
-Smalltalk snapshot: true andQuit: false.
