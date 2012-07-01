@@ -14,9 +14,7 @@ if [ -z "$WORKSPACE" ] ; then
 fi
 
 # get the current script loction
-DIR=`readlink "$0"` || DIR="$0";
-DIR=`dirname "$DIR"`;
-cd "$DIR" && DIR=`pwd` && cd - > /dev/null
+DIR=`dirname "$0"`;
 
 if [ -z "$PHARO_VM" ] ; then
     export PHARO_VM=`cd "$DIR" && ./pharo-shell-scripts/fetchLatestVM.sh`
