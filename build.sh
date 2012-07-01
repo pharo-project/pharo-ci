@@ -13,8 +13,13 @@ if [ -z "$WORKSPACE" ] ; then
 	WORKSPACE=`pwd`
 fi
 
+# get the current script location
+DIR=`readlink "$0"` || DIR="$0";
+DIR=`dirname "$DIR"`;
+cd "$DIR" && DIR=`pwd` && cd - > /dev/null
+
 if [ -z "$PHARO_VM" ] ; then
-    export PHARO_VM=`$WORKSPACE/pharo-shell-scripts/fetchLatestVM.sh`
+    export PHARO_VM=`$DIR/pharo-shell-scripts/fetchLatestVM.sh`
     if [ -z "$PHARO_VM" ] ; then
         echo "PHARO_VM environment variable is not set."
         exit 1
