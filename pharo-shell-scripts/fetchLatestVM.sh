@@ -33,9 +33,7 @@ if [ -z "$WORKSPACE" ] ; then
 	WORKSPACE=`pwd`
 fi
 
-DIR=`readlink "$0"` || DIR="$0";
-DIR=`dirname "$DIR"`;
-cd "$DIR" && DIR=`pwd` && cd - > /dev/null
+DIR=`dirname "$0"`;
 
 # -------------------------------------------------------------------------
 VM_BASE_URL="https://ci.lille.inria.fr/pharo/job/Cog-VM"
