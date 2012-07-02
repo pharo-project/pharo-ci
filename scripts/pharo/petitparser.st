@@ -5,7 +5,7 @@ Gofer new
 	load.
 
 Gofer new
-	renggli: 'petit';
+	url: 'http://smalltalkhub.com/mc/MarcusDenker/PetitParser/main';
 	package: 'PetitParser';
 	package: 'PetitTests';
 	package: 'PetitAnalyzer';
@@ -15,7 +15,7 @@ Gofer new
 !
 "PetitParser Examples"
 Gofer new
-    renggli: 'petit';
+    	url: 'http://smalltalkhub.com/mc/MarcusDenker/PetitParser/main';
 	package: 'PetitSmalltalk';
 	package: 'PetitXml';
 	load.
