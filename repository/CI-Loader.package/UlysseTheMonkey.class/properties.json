@@ -4,7 +4,7 @@
 		 ],
 	"classvars" : [
 		 ],
-	"commentStamp" : "",
+	"commentStamp" : "<historical>",
 	"instvars" : [
 		"issue",
 		"testResult",
@@ -20,7 +20,7 @@
 		"testStopwatch",
 		"changes",
 		"verbose" ],
-	"name" : "ChangeLoader",
+	"name" : "UlysseTheMonkey",
 	"pools" : [
 		 ],
 	"super" : "Object",
