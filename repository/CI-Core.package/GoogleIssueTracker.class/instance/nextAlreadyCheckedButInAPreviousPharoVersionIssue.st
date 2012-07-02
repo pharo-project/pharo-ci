@@ -11,5 +11,5 @@ nextAlreadyCheckedButInAPreviousPharoVersionIssue
 			labels := e labels select: [ :s | (s beginsWith: self checkedInLabel) ].
 			labels ifEmpty: [ ^ e ].
 			
-			labels anySatisfy: [:s | s squeezeOutNumber < Smalltalk lastUpdateString squeezeOutNumber ]]
+			labels noneSatisfy: [:s | s squeezeOutNumber = Smalltalk lastUpdateString squeezeOutNumber ]]
 		ifNone: [ nil ]
