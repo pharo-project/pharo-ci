@@ -1,4 +1,4 @@
 integration
 checkedInLabel
 
-	^ GoogleIssueTracker checkedInLabel , Smalltalk lastUpdateString squeezeOutNumber asString
+	^ {GoogleIssueTracker checkedInLabel , Smalltalk lastUpdateString squeezeOutNumber asString}
