@@ -7,7 +7,7 @@ nextIssue
 	
 	"try issues which are new and unprrocessed"
 	issues := self issuesWithParams: 'can=open&status=', PharoTrackerLabels reviewNeeded,'&q=Milestone%3D2.0'.
-	issues ifEmpty: [ ^ nil ].
+	issues ifEmpty: [ ^ self nextAlreadyCheckedButInAPreviousPharoVersionIssue ].
 	nextIssue := issues first.
 	nextIssue hasFix
 		ifTrue: [ ^ nextIssue ]
