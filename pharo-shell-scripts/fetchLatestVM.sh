@@ -30,13 +30,10 @@ if [ -z "$ARCHITECTURE" ] ; then
 fi
 
 if [ -z "$WORKSPACE" ] ; then
-	WORKSPACE=.
+	WORKSPACE=`pwd`
 fi
 
-DIR=`readlink "$0"` || DIR="$0";
-DIR=`dirname "$DIR"`;
-cd "$DIR"
-DIR=`pwd`
+DIR=`dirname "$0"`;
 
 # -------------------------------------------------------------------------
 VM_BASE_URL="https://ci.lille.inria.fr/pharo/job/Cog-VM"

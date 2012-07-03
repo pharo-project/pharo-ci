@@ -27,8 +27,8 @@
 
 "Loading Collections-Abstract package"
 (FileStream oldFileNamed: '../scripts/Typesystem/Source-TypedKernel/Collections-Abstract/Collection.st') fileIn.
-(FileStream oldFileNamed: '../scripts/Typesystem/Source-TypedKernel/Collections-Abstract/SequenceableCollection.st') fileIn.
-(FileStream oldFileNamed: '../scripts/Typesystem/Source-TypedKernel/Collections-Abstract/ArrayedCollection.st') fileIn.
+"(FileStream oldFileNamed: '../scripts/Typesystem/Source-TypedKernel/Collections-Abstract/SequenceableCollection.st') fileIn."
+"(FileStream oldFileNamed: '../scripts/Typesystem/Source-TypedKernel/Collections-Abstract/ArrayedCollection.st') fileIn."
 
 
 
