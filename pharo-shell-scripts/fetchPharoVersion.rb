@@ -187,8 +187,8 @@ downloadZip = "pharo#{versionNumber}.zip"
 
 `#{DIR}/../download.sh #{downloadZip} #{versionFile}`
 `unzip -o #{downloadZip}`
-`mv **/*.image Pharo-#{versionNumber}.image`
-`mv **/*.changes Pharo-#{versionNumber}.changes`
+`mv **/*.image Pharo-#{VERSION}.image`
+`mv **/*.changes Pharo-#{VERSION}.changes`
 `rm -rf #{downloadZip}`
 
 if versionNumber == VERSION
@@ -204,6 +204,11 @@ Deprecation raiseWarning: false.
 UpdateStreamer new
 	upToNumber: #{VERSION};
 	updateFromServer.
+
+"For some reason the update is only triggered the second time"
+UpdateStreamer new
+    upToNumber: #{VERSION};
+    updateFromServer.
 
 Smalltalk snapshot: true andQuit: true.
 
@@ -221,7 +226,7 @@ end
 `mv pharo-build/sources/*.sources .`
 
 # exporting the pharo sources =================================================
-puts yellow("Updating the image Pharo-#{versionNumber}.image")
+puts yellow("Updating the image Pharo-#{VERSION}.image")
 
-`$PHARO_VM $PWD/Pharo-#{versionNumber}.image $PWD/updateTo#{VERSION}.st`
+`$PHARO_VM -headless $PWD/Pharo-#{VERSION}.image $PWD/updateTo#{VERSION}.st`
 
