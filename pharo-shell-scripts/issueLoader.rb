@@ -150,7 +150,7 @@ end
 if updateImage
     puts yellow("Fetching the latest image")
     puts "    #{imageUrl}"
-        `curl --progress-bar -o "artifact#{issueNumber}.zip" "#{imageUrl}" \
+        `curl #{'--progress-bar' if INTERACTIVE} -o "artifact#{issueNumber}.zip" "#{imageUrl}" \
         && cp "artifact#{issueNumber}.zip" "backup.zip"  \
         || cp "backup.zip" "artifact#{issueNumber}.zip"`
 else
