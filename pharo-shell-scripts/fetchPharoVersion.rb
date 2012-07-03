@@ -179,20 +179,26 @@ VERSION.downto(10000).each do |i|
   end
 end
 
+
 # ==============================================================================
 puts yellow("Using pharo version #{versionNumber} as base image")
 
-puts "#{DIR}/../download.sh #{versionFile}"
-`#{DIR}/../download.sh #{versionFile}`
-`unzip -o #{File.basename(versionFile)}`
-`mv **/*.image update.image`
-`mv **/*.changes update.changes`
+downloadZip = "pharo#{versionNumber}.zip"
+
+`#{DIR}/../download.sh #{downloadZip} #{versionFile}`
+`unzip -o #{downloadZip}`
+`mv **/*.image Pharo-#{versionNumber}.image`
+`mv **/*.changes Pharo-#{versionNumber}.changes`
+`rm -rf #{downloadZip}`
+
+if versionNumber == VERSION
+    exit
+end
 
 # ==============================================================================
-File.open("export.st", 'w') {|f| 
+File.open("updateTo#{VERSION}.st", 'w') {|f| 
 f.puts <<IDENTIFIER
 
-FileStream stdout nextPutAll: 'Updating to Version #{VERSION}'; crlf.
 Deprecation raiseWarning: false.
 
 UpdateStreamer new
@@ -208,14 +214,14 @@ IDENTIFIER
 
 #TODO need to check for older vm versions...
 if !ENV.has_key? 'PHARO_VM'
-  puts yellow("$PHARO_VM is undefined, loading latest VM: ")
-  puts ENV['PHARO_VM'] = `cd pharo-build && pharo-shell-scripts/fetchLatestVM.sh 2> /dev/null`.chomp
+    puts yellow("$PHARO_VM is undefined, loading latest VM: ")
+    puts ENV['PHARO_VM'] = `#{DIR}/fetchLatestVM.sh 2> /dev/null`.chomp
 end
 
 `mv pharo-build/sources/*.sources .`
 
 # exporting the pharo sources =================================================
-puts yellow("Updating the image")
+puts yellow("Updating the image Pharo-#{versionNumber}.image")
 
-`$PHARO_VM $PWD/update.image $PWD/export.st`
+`$PHARO_VM $PWD/Pharo-#{versionNumber}.image $PWD/updateTo#{VERSION}.st`
 
