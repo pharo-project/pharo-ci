@@ -171,7 +171,7 @@ ln -s "$BUILD_CACHE/${JOB_NAME:=$OUTPUT_NAME}" "$OUTPUT_CACHE"
 ln -s "$SOURCES_PATH/PharoV10.sources" "$OUTPUT_PATH"
 
 mkdir -p "$SUPPORT_PATH"
-cp "$SUPPORT_PATH"/* "$OUTPUT_PATH"/
+cp -r "$SUPPORT_PATH"/* "$OUTPUT_PATH"/
 
 # find "$SOURCES_PATH" -name "*.sources" -exec ln "{}" "$OUTPUT_PATH/" \;
 
