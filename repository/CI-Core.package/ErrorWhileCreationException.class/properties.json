@@ -1,0 +1,14 @@
+{
+	"category" : "CI-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"response" ],
+	"name" : "ErrorWhileCreationException",
+	"pools" : [
+		 ],
+	"super" : "Exception",
+	"type" : "normal" }
