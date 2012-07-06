@@ -184,8 +184,12 @@ fi
 MAC_VM_PATH="$VM_PATH/Architecture=32,OS=mac/Cog-mac.zip"
 if [ -f "$MAC_VM_PATH" ] ; then
     unzip -q "$MAC_VM_PATH" -d "$OUTPUT_PATH/tmp"
-    mkdir "$OUTPUT_PATH/Contents/MacOS"
-    cp "$OUTPUT_PATH/tmp/CogVM.app/Contents/MacOS/CogVM" "$OUTPUT_PATH/Contents/MacOS/pharo"
+    
+    #Ensuring bin and plugins
+    mv "$OUTPUT_PATH/tmp/CogVM.app/Contents/MacOS" "$OUTPUT_PATH/Contents"
+    #Rename binary
+    mv "$OUTPUT_PATH/tmp/CogVM.app/Contents/MacOS/CogVM" "$OUTPUT_PATH/tmp/CogVM.app/Contents/MacOS/pharo"
+    #Ensuring resources
     cp "$NIB_FILE" "$OUTPUT_PATH/Contents/Resources"
     # Need to add this ugly '*' outside double-quotes to be able to copy the content of the folder (and not the folder itself) on linux
     cp -R "$OUTPUT_PATH/tmp/CogVM.app/Contents/Resources/"* "$OUTPUT_PATH/Contents/Resources"
