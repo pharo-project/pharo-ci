@@ -1,6 +1,6 @@
 protocol
 submitNewSlice
-	| slice creator wc |
+	| slice creator wc message |
 	
 	self tracker ifNil: [ ^ self ].
 	self mcPackage ifNil: [ ^ self ].
@@ -20,9 +20,10 @@ submitNewSlice
 	 
 	self receiver openModal: creator openDialogWithSpec.
 	creator cancelled ifTrue: [ ^ self ].
+	message := issue description content.
 	issue description: (String streamContents: [:s |
-								s << issue description content.
-								s cr;cr.
+								s << message.
+								s cr; cr.
 								s << '-------------------';cr.
 								s<< 'Slice is in the inbox']).
 	[ issue submitAsNewEntry ] on: ErrorWhileCreationException do: [ ^ self ].
@@ -30,7 +31,8 @@ submitNewSlice
 	slice issueNumber: issue id asString.
 	slice issueSummary: issue title.
 	slice := slice makeSlice.
-	self postNewSlice: slice message: issue description content.
+	
+	self postNewSlice: slice message: message.
 	
 	issue
 		status: PharoTrackerLabels reviewNeeded;
