@@ -1,17 +1,25 @@
 protocol
 submitNewSlice
-	| slice creator |
+	| slice creator wc |
 	
+	self tracker ifNil: [ ^ self ].
 	self mcPackage ifNil: [ ^ self ].
+	wc :=  self mcPackage workingCopy.
+	wc modified ifFalse: [ ^ self ].
+	
+	(self viewChangesFor: wc)
+		ifFalse: [ ^ self ].
+	
 	slice := MCSliceInfo new
-				includedPackages: { MCWorkingCopy allManagers detect: [:e | e modified and: [e package = self mcPackage ]] ifNone: [ self halt ] };
+				includedPackages: { wc };
 				yourself.
 				
 	creator := IssueCreator new
 					issue: issue;
 					yourself.
-					
+	 
 	self receiver openModal: creator openDialogWithSpec.
+	creator cancelled ifTrue: [ ^ self ].
 	issue description: (String streamContents: [:s |
 								s << issue description content.
 								s cr;cr.
@@ -22,7 +30,7 @@ submitNewSlice
 	slice issueNumber: issue id asString.
 	slice issueSummary: issue title.
 	slice := slice makeSlice.
-	self postNewSlice: slice.
+	self postNewSlice: slice message: issue description content.
 	
 	issue
 		status: PharoTrackerLabels reviewNeeded;

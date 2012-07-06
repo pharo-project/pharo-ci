@@ -1,4 +1,4 @@
 accessing
 tracker
 
-	^ tracker
+	^ tracker ifNil: [ self initializeTracker ].

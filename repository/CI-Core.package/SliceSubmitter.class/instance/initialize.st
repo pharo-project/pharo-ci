@@ -3,12 +3,10 @@ initialize
 	"Initialization code for SliceSubmitter"
 
 	super initialize.
-
-	tracker ifNil: [ self initializeTracker ].
 		
 	issue := GoogleIssue new
 				status: PharoTrackerLabels accepted;
-				tracker: tracker;
+				tracker: self tracker;
 				yourself.
 	receiver := World.
 	mcPackage := nil.
