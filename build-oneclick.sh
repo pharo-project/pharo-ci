@@ -188,7 +188,7 @@ if [ -f "$MAC_VM_PATH" ] ; then
     #Ensuring bin and plugins
     mv "$OUTPUT_PATH/tmp/CogVM.app/Contents/MacOS" "$OUTPUT_PATH/Contents"
     #Rename binary
-    mv "$OUTPUT_PATH/tmp/CogVM.app/Contents/MacOS/CogVM" "$OUTPUT_PATH/tmp/CogVM.app/Contents/MacOS/pharo"
+    mv "$OUTPUT_PATH/tmp/CogVM.app/Contents/MacOS/CogVM" "$OUTPUT_PATH/Contents/MacOS/pharo"
     #Ensuring resources
     cp "$NIB_FILE" "$OUTPUT_PATH/Contents/Resources"
     # Need to add this ugly '*' outside double-quotes to be able to copy the content of the folder (and not the folder itself) on linux
