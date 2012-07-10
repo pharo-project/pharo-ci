@@ -22,18 +22,18 @@ end
 
 def dir
     begin
-        return File.readlink $0
+        return File.readlink($0)
     rescue
         return $0
     end
 end
-DIR = File.dirname dir
+DIR = File.dirname(dir)
 
 # ============================================================================
 
-VERSION = ARGV[0].to_i
+PHARO_VERSION = ARGV[0].to_i()
 
-puts yellow("Exporting Pharo Version #{VERSION}")
+puts yellow("Exporting Pharo Version #{PHARO_VERSION}")
 
 # ============================================================================
 puts yellow("Updating local git resources")
@@ -64,13 +64,13 @@ if !ENV.has_key? 'PHARO_VM'
 end
 
 # loading the proper image ====================================================
-puts yellow("Loading image version #{VERSION}")
-system("#{SCRIPTS}/pharo-shell-scripts/fetchPharoVersion.rb #{VERSION}")
+puts yellow("Loading image version #{PHARO_VERSION}")
+system("#{SCRIPTS}/pharo-shell-scripts/fetchPharoVersion.rb #{PHARO_VERSION}")
 
 # exporting the pharo sources =================================================
 puts yellow("Updating the image and exporting all sources ")
 
-`$PHARO_VM -headless Pharo-#{VERSION}.image #{SCRIPTS}/scripts/pharo/pharo-2.0-git-tracker.st`
+`$PHARO_VM -headless Pharo-#{PHARO_VERSION}.image #{SCRIPTS}/scripts/pharo/pharo-2.0-git-tracker.st`
 
-`touch pharo-core/#{VERSION}`
-`echo #{VERSION} > #{VERSION}`
+`touch pharo-core/#{PHARO_VERSION}`
+`echo #{PHARO_VERSION} > #{PHARO_VERSION}`
