@@ -70,7 +70,7 @@ puts yellow("Loading image version #{VERSION}")
 # exporting the pharo sources =================================================
 puts yellow("Updating the image and exporting all sources ")
 
-`$PHARO_VM Pharo-#{VERSION}.image #{SCRIPTS}/scripts/pharo/pharo-2.0-git-tracker.st`
+`$PHARO_VM -headless Pharo-#{VERSION}.image #{SCRIPTS}/scripts/pharo/pharo-2.0-git-tracker.st`
 
 `touch pharo-core/#{VERSION}`
 `echo #{VERSION} > #{VERSION}`
