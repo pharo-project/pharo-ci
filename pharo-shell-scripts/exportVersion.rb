@@ -16,8 +16,8 @@ def green(text)
     colorize(text, "[32m")
 end
 
-def yellow(text)
-    colorize(text, "[33m")
+def blue(text)
+    colorize(text, "[34m")
 end
 
 def dir
@@ -33,10 +33,10 @@ DIR = File.dirname(dir)
 
 PHARO_VERSION = ARGV[0].to_i()
 
-puts yellow("Exporting Pharo Version #{PHARO_VERSION}")
+puts blue("Exporting Pharo Version #{PHARO_VERSION}")
 
 # ============================================================================
-puts yellow("Updating local git resources")
+puts blue("Updating local git resources")
 
 # assume that when we're in a git repository it is the phato-build one
 if File.exist? DIR+'/../.git'
@@ -59,16 +59,16 @@ SOURCES="https://gforge.inria.fr/frs/download.php/24391/PharoV10.sources.zip"
 # Loading the latest VM =======================================================
 
 if !ENV.has_key? 'PHARO_VM'
-  puts yellow("$PHARO_VM is undefined, loading latest VM: ")
+  puts blue("$PHARO_VM is undefined, loading latest VM: ")
   puts ENV['PHARO_VM'] = `#{SCRIPTS}pharo-shell-scripts/fetchLatestVM.sh 2> /dev/null`.chomp
 end
 
 # loading the proper image ====================================================
-puts yellow("Loading image version #{PHARO_VERSION}")
+puts blue("Loading image version #{PHARO_VERSION}")
 system("#{SCRIPTS}/pharo-shell-scripts/fetchPharoVersion.rb #{PHARO_VERSION}")
 
 # exporting the pharo sources =================================================
-puts yellow("Updating the image and exporting all sources ")
+puts blue("Updating the image and exporting all sources ")
 
 `$PHARO_VM -headless Pharo-#{PHARO_VERSION}.image #{SCRIPTS}/scripts/pharo/pharo-2.0-git-tracker.st`
 
