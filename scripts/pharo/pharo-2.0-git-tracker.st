@@ -1,4 +1,4 @@
-| color red green yellow white white_nolf
+| color red green blue white white_nolf
   updateSelector commitMessage versionString fileTreeRepository packages
   mainRepos inboxRepos commit |
 
@@ -17,7 +17,7 @@ color := [:colorCode :text|
 
 red        := [:text| color value: 31 value: text ].
 green      := [:text| color value: 32 value: text ].
-yellow     := [:text| color value: 33 value: text ].
+blue       := [:text| color value: 34 value: text ].
 white      := [:text| FileStream stderr nextPutAll: text; crlf ].
 white_nolf := [:text| FileStream stderr nextPutAll: text ].
 
@@ -26,7 +26,7 @@ white_nolf := [:text| FileStream stderr nextPutAll: text ].
 Deprecation  raiseWarning: false.
 
 "keep track of the current mc packages ======================================="
-yellow value:'Tracking the currently installed packages'.
+blue value:'Tracking the currently installed packages'.
 
 mainRepos := MCRepositoryGroup default repositories detect: [ :repos|
 	repos asString includesSubString: 'http://ss3.gemstone.com/ss/Pharo20'].
@@ -43,7 +43,7 @@ packages := MCWorkingCopy allInstances
     thenCollect: [ :wc| wc package name ].
 
 " load filetree =============================================================="
-yellow value:'Installing FileTree'.
+blue value:'Installing FileTree'.
 Gofer new
     url: 'http://ss3.gemstone.com/ss/FileTree';
     package: 'ConfigurationOfFileTree';
@@ -51,7 +51,7 @@ Gofer new
 ((Smalltalk at: #ConfigurationOfFileTree) project version: '1.0') load.
 
 " create a new filetree repository ==========================================="
-yellow value: 'Preparing commit'.
+blue value: 'Preparing commit'.
 fileTreeRepository := MCFileTreeRepository new directory: FileDirectory default / 'pharo-core'.
 
 " extra the commit message from the current version ========================="
@@ -62,7 +62,7 @@ commitMessage  := ((ScriptLoader methodDict at: updateSelector)
                         each isKindOf: ByteString ]) first.
 
 "save all packages into the filetree repository ============================="
-yellow value:'Comitting changes to ', fileTreeRepository directory asString.
+blue value:'Comitting changes to ', fileTreeRepository directory asString.
 
 
 "manually commit since Gofer gives birth incredible shitty pink ponies on the way"
