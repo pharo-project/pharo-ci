@@ -72,7 +72,7 @@ inboxRepos cacheAllFileNamesDuring: [
         white value: 'Done in ', (Duration milliSeconds: [ Gofer new
             package: packageName;
             repository: fileTreeRepository;
-            commit: commitMessage ] timeToRun) asString ]]].
+            commit: commitMessage ] timeToRun) asString, 's' ]]].
 
 "output the current version number =========================================="
 (FileStream forceNewFileNamed: 'version')
