@@ -56,7 +56,10 @@ def editor()
 end
 
 def guard()
-    exit $?.to_i if !$?.success?
+    if !$?.success?
+        puts red("FAILURE #{$?.to_i}")
+        exit($?.to_i)
+    end
 end
 
 def error(message)
@@ -159,8 +162,8 @@ end
 guard()
 
 # ============================================================================
-
 puts blue("Unzipping archive")
+
 `unzip -x "artifact#{issueNumber}.zip" -d "#{destination}" && rm -rf "#{destination}/__MACOSX"`
 Dir::chdir(destination)
 guard()
@@ -175,8 +178,8 @@ if File.exists? File.dirname(imagePath)+"/PharoV10.sources"
 end
 
 # ============================================================================
-
 puts blue("Cleaning up unzipped files")
+
 `rm "../artifact#{issueNumber}.zip"`
 guard()
 
@@ -188,10 +191,11 @@ guard()
 #end
 
 # ===========================================================================
-
 puts blue("Fetching the latest VM pharo scripts")
+
 `test -e pharo-build || git clone --depth=1 git://gitorious.org/pharo-build/pharo-build.git`
 `git --git-dir=pharo-build/.git pull`
+guard()
 
 
 # Loading the latest VM =====================================================
@@ -199,6 +203,7 @@ puts blue("Fetching the latest VM pharo scripts")
 if !ENV.has_key? 'PHARO_VM'
   puts blue("$PHARO_VM is undefined, loading latest VM: ")
   puts ENV['PHARO_VM'] = `cd pharo-build && pharo-shell-scripts/fetchLatestVM.sh 2> /dev/null`.chomp
+  guard()
 end
 
 # ===========================================================================
@@ -325,12 +330,14 @@ begin
         else
             option = "-headless"
         end
+        puts blue('STARTING EXPORT')
         pid = fork do
           issueNumber=`$PHARO_VM #{option} '#{Dir.pwd}/Monkey#{issueNumber}.image' '#{Dir.pwd}/issueLoading.st'`.chomp
           guard()
         end
         
         Process.wait
+        guard()
     }
 rescue Timeout::Error    
     Process.kill('KILL', pid)
