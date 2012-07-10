@@ -223,7 +223,8 @@ if !ENV.has_key? 'PHARO_VM'
     puts ENV['PHARO_VM'] = `#{DIR}/fetchLatestVM.sh 2> /dev/null`.chomp
 end
 
-`mv pharo-build/sources/*.sources .`
+SOURCES="https://gforge.inria.fr/frs/download.php/24391/PharoV10.sources.zip"
+`test -e PharoV10.sources || (wget --no-check-certificate #{SOURCES}; unzip PharoV10.sources.zip)`
 
 # exporting the pharo sources =================================================
 puts yellow("Updating the image Pharo-#{VERSION}.image")
