@@ -1,4 +1,6 @@
 accessing
 tracker
 
-	^ tracker ifNil: [ self initializeTracker ].
+	^ tracker ifNil: [ 
+		self initializeTracker.
+		tracker ].

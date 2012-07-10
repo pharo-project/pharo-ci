@@ -9,6 +9,7 @@ buildNautilusMenu: aBuilder
 	mc workingCopy modified not ifTrue: [ ^ self ].
 	(aBuilder item: #'Commit this package')
 		action: [ self new 
+						receiver: target window;
 						mcPackage: mc;
 						submitNewSlice ];
 		order: 1299.5;
