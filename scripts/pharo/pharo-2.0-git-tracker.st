@@ -1,6 +1,6 @@
-| color red green yellow 
-  updateSelector commitMessage versionString fileTreeRepository gofer 
-  mainRepos inboxRepos |
+| color red green yellow white white_nolf
+  updateSelector commitMessage versionString fileTreeRepository packages
+  mainRepos inboxRepos commit |
 
 "============================================================================="
 Author fullName: 'Mister Foo'.
@@ -64,15 +64,23 @@ commitMessage  := ((ScriptLoader methodDict at: updateSelector)
 "save all packages into the filetree repository ============================="
 yellow value:'Comitting changes to ', fileTreeRepository directory asString.
 
+
+"manually commit since Gofer gives birth incredible shitty pink ponies on the way"
+commit := [ :packageName| | version |
+	  version := [ (MCPackage named: packageName) workingCopy newVersion ]
+		    on: MCVersionNameAndMessageRequest
+		    do: [ :notification |
+			      notification resume: { notification suggestedName. commitMessage }].
+	  fileTreeRepository storeVersion: version ].
+
 mainRepos cacheAllFileNamesDuring: [
 inboxRepos cacheAllFileNamesDuring: [
     packages do: [ :packageName| |message|
         white_nolf value: (message := '    Exporting ', packageName, ' ... ').
         (50 - message size) timesRepeat: [ white_nolf value: ' ']. 
-        white value: 'Done in ', (Duration milliSeconds: [ Gofer new
-            package: packageName;
-            repository: fileTreeRepository;
-            commit: commitMessage ] timeToRun) asString ]]].
+        white value: 'Done in ', (Duration milliSeconds: [ 
+                commit value: packageName
+            ] timeToRun) asString ]]].
 
 "output the current version number =========================================="
 (FileStream forceNewFileNamed: 'version')
