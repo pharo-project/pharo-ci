@@ -17,8 +17,8 @@ def green(text)
     colorize(text, "[32m")
 end
 
-def yellow(text)
-    colorize(text, "[33m")
+def blue(text)
+    colorize(text, "[34m")
 end
 
 # ============================================================================
@@ -148,7 +148,7 @@ end
 # ============================================================================
 
 if updateImage
-    puts yellow("Fetching the latest image")
+    puts blue("Fetching the latest image")
     puts "    #{imageUrl}"
         `curl #{'--progress-bar' if INTERACTIVE} -o "artifact#{issueNumber}.zip" "#{imageUrl}" \
         && cp "artifact#{issueNumber}.zip" "backup.zip"  \
@@ -160,7 +160,7 @@ guard()
 
 # ============================================================================
 
-puts yellow("Unzipping archive")
+puts blue("Unzipping archive")
 `unzip -x "artifact#{issueNumber}.zip" -d "#{destination}" && rm -rf "#{destination}/__MACOSX"`
 Dir::chdir(destination)
 guard()
@@ -176,7 +176,7 @@ end
 
 # ============================================================================
 
-puts yellow("Cleaning up unzipped files")
+puts blue("Cleaning up unzipped files")
 `rm "../artifact#{issueNumber}.zip"`
 guard()
 
@@ -189,7 +189,7 @@ guard()
 
 # ===========================================================================
 
-puts yellow("Fetching the latest VM pharo scripts")
+puts blue("Fetching the latest VM pharo scripts")
 `test -e pharo-build || git clone --depth=1 git://gitorious.org/pharo-build/pharo-build.git`
 `git --git-dir=pharo-build/.git pull`
 
@@ -197,7 +197,7 @@ puts yellow("Fetching the latest VM pharo scripts")
 # Loading the latest VM =====================================================
 
 if !ENV.has_key? 'PHARO_VM'
-  puts yellow("$PHARO_VM is undefined, loading latest VM: ")
+  puts blue("$PHARO_VM is undefined, loading latest VM: ")
   puts ENV['PHARO_VM'] = `cd pharo-build && pharo-shell-scripts/fetchLatestVM.sh 2> /dev/null`.chomp
 end
 
@@ -206,7 +206,7 @@ end
 
 File.open("issueLoading.st", 'w') {|f| 
 f.puts <<IDENTIFIER
-| tracker issue color red green yellow issueNumber |
+| tracker issue color red green blue issueNumber |
 "===================================="
 
 "some helper blocks for error printing"
@@ -222,7 +222,7 @@ color := [:colorCode :text|
 
 red    := [:text| color value: 31 value: text ].
 green  := [:text| color value: 32 value: text ].
-yellow := [:text| color value: 33 value: text ].
+blue := [:text| color value: 33 value: text ].
 
 "===================================="
 "===================================="
@@ -237,7 +237,7 @@ Author fullName: 'MonkeyGalactikalIntegrator'.
 
 "===================================="
 
-yellow value: 'Updating the image'.
+blue value: 'Updating the image'.
 
 UpdateStreamer new 
     beSilent; 
@@ -245,7 +245,7 @@ UpdateStreamer new
 
 "===================================="
 
-yellow value: 'Installing Continuous Integration Services'.
+blue value: 'Installing Continuous Integration Services'.
 
 Gofer new
 	url: 'http://ss3.gemstone.com/ss/ci';
@@ -272,15 +272,15 @@ issue ifNil: [
 
 issueNumber := issue id.
 
-yellow value: 'Loading tracker issue ', issueNumber printString.
+blue value: 'Loading tracker issue ', issueNumber printString.
 FileStream stdout print: issueNumber.
 
-yellow value: 'Opening image for issue ', issueNumber printString.
-yellow value: ' http://code.google.com/p/pharo/issues/detail?id=', issueNumber printString.
+blue value: 'Opening image for issue ', issueNumber printString.
+blue value: ' http://code.google.com/p/pharo/issues/detail?id=', issueNumber printString.
 
 "===================================="
 
-yellow value: 'Running tests'.
+blue value: 'Running tests'.
 changeLoader := issue loadAndTest.
 
 changeLoader isGreen
@@ -334,7 +334,7 @@ begin
 rescue Timeout::Error    
     Process.kill('KILL', pid)
     Process.kill('KILL', pid+1) #this is pure guess...
-    puts red('Timeout: ') + yellow("Loading #{issueNumber} took longer than 15mins")
+    puts red('Timeout: ') + blue("Loading #{issueNumber} took longer than 15mins")
     File.open("issueLoading.st", 'w') {|f| 
         f.puts <<IDENTIFIER
 "===================================="
