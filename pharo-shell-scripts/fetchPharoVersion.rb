@@ -231,3 +231,5 @@ puts yellow("Updating the image Pharo-#{VERSION}.image")
 
 `$PHARO_VM -headless $PWD/Pharo-#{VERSION}.image $PWD/updateTo#{VERSION}.st`
 
+`rm $PWD/updateTo#{VERSION}.st`
+
