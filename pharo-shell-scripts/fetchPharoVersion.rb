@@ -179,7 +179,6 @@ VERSION.downto(10000).each do |i|
   end
 end
 
-
 # ==============================================================================
 puts yellow("Using pharo version #{versionNumber} as base image")
 
@@ -187,6 +186,7 @@ downloadZip = "pharo#{versionNumber}.zip"
 
 `#{DIR}/../download.sh #{downloadZip} #{versionFile}`
 `unzip -o #{downloadZip}`
+# Potentially dangerous as it might not match the proper images..
 `mv **/*.image Pharo-#{VERSION}.image`
 `mv **/*.changes Pharo-#{VERSION}.changes`
 `rm -rf #{downloadZip}`
