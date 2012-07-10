@@ -225,9 +225,9 @@ color := [:colorCode :text|
         nextPut: Character escape; nextPutAll: '[0m'.
 ].
 
-red    := [:text| color value: 31: text ].
-green  := [:text| color value: 32 value: text ].
-blue := [:text| color value: 34 value: text ].
+red   := [:text| color value: 31 text ].
+green := [:text| color value: 32 value: text ].
+blue  := [:text| color value: 34 value: text ].
 
 "===================================="
 "===================================="
