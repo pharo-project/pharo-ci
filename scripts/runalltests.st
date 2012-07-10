@@ -1,1 +1,1 @@
-!FLCreateClassSerializationTest methodsFor: 'tests' stamp: 'MarianoMartinezPeck 5/11/2012 10:53'!testCreateByteArrayWithInstance! !"Run all tests in the image"Deprecation raiseWarning: false.HDTestReport runCategories: Smalltalk organization categories
+"Run all tests in the image"Deprecation raiseWarning: false.HDTestReport runCategories: Smalltalk organization categories
