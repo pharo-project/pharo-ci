@@ -17,3 +17,5 @@ seed := PharoSeed new
 
 HazelBuilderExample new
     buildImageWithSeed: seed.
+
+SmalltalkImage current snapshot: false andQuit: true.
