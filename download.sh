@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # download resource from web url
 # arguments:
 # 1 - output

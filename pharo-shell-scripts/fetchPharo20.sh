@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [ -z "$WORKSPACE" ] ; then
 	WORKSPACE=.
 fi

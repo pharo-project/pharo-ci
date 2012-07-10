@@ -21,7 +21,7 @@ end
 
 # ============================================================================
 
-VERSION = ARGV[0].to_i()
+PHARO_VERSION = ARGV[0].to_i()
 
 # find the script location
 def dir
@@ -171,7 +171,7 @@ versions = {
 # find the last version =======================================================
 versionFile = nil
 versionNumber = 0
-VERSION.downto(10000) {|i|
+PHARO_VERSION.downto(10000) {|i|
     versionNumber = i
     if versions.has_key? i
         versionFile = versions[i]
@@ -184,30 +184,30 @@ puts yellow("Using pharo version #{versionNumber} as base image")
 
 downloadZip = "pharo#{versionNumber}.zip"
 
-`#{DIR}/../download.sh #{downloadZip} #{versionFile}`
+`bash #{DIR}/../download.sh #{downloadZip} #{versionFile}`
 `unzip -o #{downloadZip}`
 # Potentially dangerous as it might not match the proper images..
-`mv **/*.image Pharo-#{VERSION}.image`
-`mv **/*.changes Pharo-#{VERSION}.changes`
+`mv **/*.image Pharo-#{PHARO_VERSION}.image`
+`mv **/*.changes Pharo-#{PHARO_VERSION}.changes`
 `rm -rf #{downloadZip}`
 
-if versionNumber == VERSION
+if versionNumber == PHARO_VERSION
     exit
 end
 
 # ==============================================================================
-File.open("updateTo#{VERSION}.st", 'w') {|f| 
+File.open("updateTo#{PHARO_VERSION}.st", 'w') {|f| 
 f.puts <<IDENTIFIER
 
 Deprecation raiseWarning: false.
 
 UpdateStreamer new
-	upToNumber: #{VERSION};
+	upToNumber: #{PHARO_VERSION};
 	updateFromServer.
 
 "For some reason the update is only triggered the second time"
 UpdateStreamer new
-    upToNumber: #{VERSION};
+    upToNumber: #{PHARO_VERSION};
     updateFromServer.
 
 Smalltalk snapshot: true andQuit: true.
@@ -227,8 +227,8 @@ SOURCES="https://gforge.inria.fr/frs/download.php/24391/PharoV10.sources.zip"
 `test -e PharoV10.sources || (wget --no-check-certificate #{SOURCES}; unzip PharoV10.sources.zip)`
 
 # exporting the pharo sources =================================================
-puts yellow("Updating the image Pharo-#{VERSION}.image")
+puts yellow("Updating the image Pharo-#{PHARO_VERSION}.image")
 
-`$PHARO_VM -headless $PWD/Pharo-#{VERSION}.image $PWD/updateTo#{VERSION}.st`
+`$PHARO_VM -headless $PWD/Pharo-#{PHARO_VERSION}.image $PWD/updateTo#{PHARO_VERSION}.st`
 
-`rm $PWD/updateTo#{VERSION}.st`
+`rm $PWD/updateTo#{PHARO_VERSION}.st`
