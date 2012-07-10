@@ -65,7 +65,7 @@ end
 
 # loading the proper image ====================================================
 puts yellow("Loading image version #{VERSION}")
-`#{SCRIPTS}/pharo-shell-scripts/fetchPharoVersion.rb #{VERSION}`
+system("#{SCRIPTS}/pharo-shell-scripts/fetchPharoVersion.rb #{VERSION}")
 
 # exporting the pharo sources =================================================
 puts yellow("Updating the image and exporting all sources ")
