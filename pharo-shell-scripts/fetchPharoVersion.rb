@@ -21,17 +21,17 @@ end
 
 # ============================================================================
 
-VERSION = ARGV[0].to_i
+VERSION = ARGV[0].to_i()
 
 # find the script location
 def dir
     begin
-        return File.readlink $0
+        return File.readlink($0)
     rescue
         return $0
     end
 end
-DIR = File.dirname dir
+DIR = File.dirname(dir)
 
 # PharoImage Versions ==========================================================
 versions = {
@@ -171,13 +171,13 @@ versions = {
 # find the last version =======================================================
 versionFile = nil
 versionNumber = 0
-VERSION.downto(10000).each do |i|
-  versionNumber = i
-  if versions.has_key? i
-    versionFile = versions[i]
-    break
-  end
-end
+VERSION.downto(10000) {|i|
+    versionNumber = i
+    if versions.has_key? i
+        versionFile = versions[i]
+        break
+    end
+}
 
 # ==============================================================================
 puts yellow("Using pharo version #{versionNumber} as base image")
@@ -232,4 +232,3 @@ puts yellow("Updating the image Pharo-#{VERSION}.image")
 `$PHARO_VM -headless $PWD/Pharo-#{VERSION}.image $PWD/updateTo#{VERSION}.st`
 
 `rm $PWD/updateTo#{VERSION}.st`
-
