@@ -220,9 +220,9 @@ color := [:colorCode :text|
         nextPut: Character escape; nextPutAll: '[0m'.
 ].
 
-red    := [:text| color value: 31 value: text ].
+red    := [:text| color value: 31: text ].
 green  := [:text| color value: 32 value: text ].
-blue := [:text| color value: 33 value: text ].
+blue := [:text| color value: 34 value: text ].
 
 "===================================="
 "===================================="
@@ -327,6 +327,7 @@ begin
         end
         pid = fork do
           issueNumber=`$PHARO_VM #{option} '#{Dir.pwd}/Monkey#{issueNumber}.image' '#{Dir.pwd}/issueLoading.st'`.chomp
+          guard()
         end
         
         Process.wait
@@ -348,6 +349,7 @@ Smalltalk snapshot: false andQuit: true.
 IDENTIFIER
     }
     `$PHARO_VM "#{Dir.pwd}/Monkey#{issueNumber}.image" "#{Dir.pwd}/issueLoading.st"`
+    guard()
 end
 
 # ===========================================================================
