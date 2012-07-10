@@ -15,8 +15,8 @@ def green(text)
     colorize(text, "[32m")
 end
 
-def yellow(text)
-    colorize(text, "[33m")
+def blue(text)
+    colorize(text, "[34m")
 end
 
 # ============================================================================
@@ -180,7 +180,7 @@ PHARO_VERSION.downto(10000) {|i|
 }
 
 # ==============================================================================
-puts yellow("Using pharo version #{versionNumber} as base image")
+puts blue("Using pharo version #{versionNumber} as base image")
 
 downloadZip = "pharo#{versionNumber}.zip"
 
@@ -219,7 +219,7 @@ IDENTIFIER
 
 #TODO need to check for older vm versions...
 if !ENV.has_key? 'PHARO_VM'
-    puts yellow("$PHARO_VM is undefined, loading latest VM: ")
+    puts blue("$PHARO_VM is undefined, loading latest VM: ")
     puts ENV['PHARO_VM'] = `#{DIR}/fetchLatestVM.sh 2> /dev/null`.chomp
 end
 
@@ -227,7 +227,7 @@ SOURCES="https://gforge.inria.fr/frs/download.php/24391/PharoV10.sources.zip"
 `test -e PharoV10.sources || (wget --quiet --no-check-certificate #{SOURCES}; unzip PharoV10.sources.zip)`
 
 # exporting the pharo sources =================================================
-puts yellow("Updating the image Pharo-#{PHARO_VERSION}.image")
+puts blue("Updating the image Pharo-#{PHARO_VERSION}.image")
 
 `$PHARO_VM -headless $PWD/Pharo-#{PHARO_VERSION}.image $PWD/updateTo#{PHARO_VERSION}.st`
 
