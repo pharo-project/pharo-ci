@@ -15,10 +15,10 @@ color := [:colorCode :text|
         nextPut: Character escape; nextPutAll: '[0m'.
 ].
 
-red := [:text| color value: 31 value: text ].
-green := [:text| color value: 32 value: text ].
-yellow := [:text| color value: 33 value: text ].
-white := [:text| FileStream stderr nextPutAll: text; crlf ].
+red        := [:text| color value: 31 value: text ].
+green      := [:text| color value: 32 value: text ].
+yellow     := [:text| color value: 33 value: text ].
+white      := [:text| FileStream stderr nextPutAll: text; crlf ].
 white_nolf := [:text| FileStream stderr nextPutAll: text ].
 
 "============================================================================="
@@ -66,8 +66,9 @@ yellow value:'Comitting changes to ', fileTreeRepository directory asString.
 
 mainRepos cacheAllFileNamesDuring: [
 inboxRepos cacheAllFileNamesDuring: [
-    packages do: [ :packageName|
-        white_nolf value: '    Exporting ', packageName, ' ... '.
+    packages do: [ :packageName| |message|
+        white_nolf value: (message := '    Exporting ', packageName, ' ... ').
+        (50 - message size) timesRepeat: [ white_nolf value: ' ']. 
         white value: 'Done in ', (Duration milliSeconds: [ Gofer new
             package: packageName;
             repository: fileTreeRepository;
