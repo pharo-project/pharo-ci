@@ -19,6 +19,7 @@ red := [:text| color value: 31 value: text ].
 green := [:text| color value: 32 value: text ].
 yellow := [:text| color value: 33 value: text ].
 white := [:text| FileStream stderr nextPutAll: text; crlf ].
+white_nolf := [:text| FileStream stderr nextPutAll: text ].
 
 "============================================================================="
 
@@ -65,10 +66,12 @@ yellow value:'Comitting changes to ', fileTreeRepository directory asString.
 
 mainRepos cacheAllFileNamesDuring: [
 inboxRepos cacheAllFileNamesDuring: [
-    gofer := Gofer new.
-    packages do: [ :packageName| gofer package: packageName ].
-    gofer repository: fileTreeRepository.
-    gofer commit: commitMessage ]].
+    packages do: [ :packageName|
+        white_nolf value: '    Exporting ', packageName, ' ... '.
+        white value: 'Done in ', (Duration milliSeconds: [ Gofer new
+            package: packageName;
+            repository: fileTreeRepository;
+            commit: commitMessage ] timeToRun) asString ]]].
 
 "output the current version number =========================================="
 (FileStream forceNewFileNamed: 'version')
