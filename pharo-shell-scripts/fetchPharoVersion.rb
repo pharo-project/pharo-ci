@@ -184,7 +184,7 @@ puts yellow("Using pharo version #{versionNumber} as base image")
 
 downloadZip = "pharo#{versionNumber}.zip"
 
-`bash #{DIR}/../download.sh #{downloadZip} #{versionFile}`
+`#{DIR}/../download.sh #{downloadZip} #{versionFile}`
 `unzip -o #{downloadZip}`
 # Potentially dangerous as it might not match the proper images..
 `mv **/*.image Pharo-#{PHARO_VERSION}.image`
@@ -224,7 +224,7 @@ if !ENV.has_key? 'PHARO_VM'
 end
 
 SOURCES="https://gforge.inria.fr/frs/download.php/24391/PharoV10.sources.zip"
-`test -e PharoV10.sources || (wget --no-check-certificate #{SOURCES}; unzip PharoV10.sources.zip)`
+`test -e PharoV10.sources || (wget --quiet --no-check-certificate #{SOURCES}; unzip PharoV10.sources.zip)`
 
 # exporting the pharo sources =================================================
 puts yellow("Updating the image Pharo-#{PHARO_VERSION}.image")
