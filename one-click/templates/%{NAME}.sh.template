@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # path
-ROOT=`readlink -f $(dirname $0)`
+ROOT=`dirname -f $(readlink $0)`
 LINUX="$ROOT/Contents/Linux"
 RESOURCES="$ROOT/Contents/Resources"
 
