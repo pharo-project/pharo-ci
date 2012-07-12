@@ -15,6 +15,7 @@ CompilerFrontend registerCompilerContext: (OTCSupport defaultCompilerContextForC
 
 (FileStream oldFileNamed: '../scripts/Typesystem/Source-TypedKernel/global.st') fileIn.
 (FileStream oldFileNamed: '../scripts/Typesystem/loadtypedfiles.st') fileIn.
+(FileStream oldFileNamed: '../scripts/Typesystem/Source-TypedKernel/fix-String.st') fileIn.
 (FileStream oldFileNamed: '../scripts/Typesystem/loadtypedfiles.st') fileIn. "We need to check two times"
 
 (FileStream oldFileNamed: '../scripts/Typesystem/loadfiles.st') fileIn.

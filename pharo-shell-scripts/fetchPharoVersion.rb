@@ -15,26 +15,30 @@ def green(text)
     colorize(text, "[32m")
 end
 
-def yellow(text)
-    colorize(text, "[33m")
+def blue(text)
+    colorize(text, "[34m")
 end
 
 # ============================================================================
 
-VERSION = ARGV[0].to_i
+PHARO_VERSION = ARGV[0].to_i()
 
 # find the script location
 def dir
     begin
-        return File.readlink $0
+        return File.readlink($0)
     rescue
         return $0
     end
 end
-DIR = File.dirname dir
+DIR = File.dirname(dir)
 
 # PharoImage Versions ==========================================================
 versions = {
+20200 => 'https://ci.lille.inria.fr/pharo/job/Pharo-2.0/202/artifact/Pharo-2.0.zip',
+20195 => 'https://ci.lille.inria.fr/pharo/job/Pharo-2.0/198/artifact/Pharo-2.0.zip',
+20175 => 'https://ci.lille.inria.fr/pharo/job/Pharo-2.0/183/artifact/Pharo-2.0.zip',
+
 20156 => 'https://gforge.inria.fr/frs/download.php/31073/Pharo-2.0-156.zip',
 20144 => 'https://gforge.inria.fr/frs/download.php/31047/Pharo-2.0-144.zip',
 20143 => 'https://gforge.inria.fr/frs/download.php/31046/Pharo-2.0-143.zip',
@@ -171,39 +175,44 @@ versions = {
 # find the last version =======================================================
 versionFile = nil
 versionNumber = 0
-VERSION.downto(10000).each do |i|
-  versionNumber = i
-  if versions.has_key? i
-    versionFile = versions[i]
-    break
-  end
-end
-
+PHARO_VERSION.downto(10000) {|i|
+    versionNumber = i
+    if versions.has_key? i
+        versionFile = versions[i]
+        break
+    end
+}
 
 # ==============================================================================
-puts yellow("Using pharo version #{versionNumber} as base image")
+puts blue("Using pharo version #{versionNumber} as base image")
 
 downloadZip = "pharo#{versionNumber}.zip"
 
 `#{DIR}/../download.sh #{downloadZip} #{versionFile}`
 `unzip -o #{downloadZip}`
-`mv **/*.image Pharo-#{versionNumber}.image`
-`mv **/*.changes Pharo-#{versionNumber}.changes`
+# Potentially dangerous as it might not match the proper images..
+`mv **/*.image Pharo-#{PHARO_VERSION}.image`
+`mv **/*.changes Pharo-#{PHARO_VERSION}.changes`
 `rm -rf #{downloadZip}`
 
-if versionNumber == VERSION
+if versionNumber == PHARO_VERSION
     exit
 end
 
 # ==============================================================================
-File.open("updateTo#{VERSION}.st", 'w') {|f| 
+File.open("updateTo#{PHARO_VERSION}.st", 'w') {|f| 
 f.puts <<IDENTIFIER
 
 Deprecation raiseWarning: false.
 
 UpdateStreamer new
-	upToNumber: #{VERSION};
+	upToNumber: #{PHARO_VERSION};
 	updateFromServer.
+
+"For some reason the update is only triggered the second time"
+UpdateStreamer new
+    upToNumber: #{PHARO_VERSION};
+    updateFromServer.
 
 Smalltalk snapshot: true andQuit: true.
 
@@ -214,14 +223,16 @@ IDENTIFIER
 
 #TODO need to check for older vm versions...
 if !ENV.has_key? 'PHARO_VM'
-    puts yellow("$PHARO_VM is undefined, loading latest VM: ")
+    puts blue("$PHARO_VM is undefined, loading latest VM: ")
     puts ENV['PHARO_VM'] = `#{DIR}/fetchLatestVM.sh 2> /dev/null`.chomp
 end
 
-`mv pharo-build/sources/*.sources .`
+SOURCES="https://gforge.inria.fr/frs/download.php/24391/PharoV10.sources.zip"
+`test -e PharoV10.sources || (wget --quiet --no-check-certificate #{SOURCES}; unzip PharoV10.sources.zip)`
 
 # exporting the pharo sources =================================================
-puts yellow("Updating the image Pharo-#{versionNumber}.image")
+puts blue("Updating the image Pharo-#{PHARO_VERSION}.image")
 
-`$PHARO_VM $PWD/Pharo-#{versionNumber}.image $PWD/updateTo#{VERSION}.st`
+`$PHARO_VM -headless $PWD/Pharo-#{PHARO_VERSION}.image $PWD/updateTo#{PHARO_VERSION}.st`
 
+`rm $PWD/updateTo#{PHARO_VERSION}.st`
