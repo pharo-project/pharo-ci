@@ -1,1 +1,1 @@
-"Run all tests in the image"Deprecation raiseWarning: false.HDTestReport runCategories: Smalltalk organization categories
+"Run all tests in the image"HDTestReport runCategories: Smalltalk organization categories
