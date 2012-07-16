@@ -20,6 +20,13 @@ def blue(text)
     colorize(text, "[34m")
 end
 
+def guard()
+    if !$?.success?
+        puts red("FAILURE #{$?.to_i}")
+        exit($?.to_i)
+    end
+end
+
 def dir
     begin
         return File.readlink($0)
@@ -43,18 +50,20 @@ if File.exist? DIR+'/../.git'
     SCRIPTS = DIR+'/../'
 else 
    SCRIPTS = 'pharo-build/'
-    `test -e pharo-build || git clone --depth=1 git@gitorious.org:pharo-build/pharo-build.git`
-    `git --git-dir=pharo-build/.git pull`
+    system("test -e pharo-build || git clone --depth=1 git@gitorious.org:pharo-build/pharo-build.git")
+    system("git --git-dir=pharo-build/.git pull")
 end
  
 puts REPOS="git@github.com:PharoProject/pharo-core.git"
-`test -e pharo-core || git clone --no-checkout #{REPOS}`
-`git --git-dir=pharo-core/.git pull`
-`rm -rf pharo-core/*`
+system("test -e pharo-core || git clone --no-checkout #{REPOS}")
+system("git --git-dir=pharo-core/.git pull")
+system("rm -rf pharo-core/*")
+guard()
 
 
 SOURCES="https://gforge.inria.fr/frs/download.php/24391/PharoV10.sources.zip"
-`test -e PharoV10.sources || (wget --quiet --no-check-certificate #{SOURCES}; unzip PharoV10.sources.zip)`
+system("test -e PharoV10.sources || (wget --quiet --no-check-certificate #{SOURCES}; unzip PharoV10.sources.zip)")
+guard()
 
 # Loading the latest VM =======================================================
 
@@ -66,11 +75,13 @@ end
 # loading the proper image ====================================================
 puts blue("Loading image version #{PHARO_VERSION}")
 system("#{SCRIPTS}/pharo-shell-scripts/fetchPharoVersion.rb #{PHARO_VERSION}")
+guard()
 
 # exporting the pharo sources =================================================
 puts blue("Updating the image and exporting all sources ")
 
-`$PHARO_VM -headless Pharo-#{PHARO_VERSION}.image #{SCRIPTS}/scripts/pharo/pharo-2.0-git-tracker.st`
+system("$PHARO_VM -headless Pharo-#{PHARO_VERSION}.image #{SCRIPTS}/scripts/pharo/pharo-2.0-git-tracker.st")
+guard()
 
 `touch pharo-core/#{PHARO_VERSION}`
 `echo #{PHARO_VERSION} > #{PHARO_VERSION}`
