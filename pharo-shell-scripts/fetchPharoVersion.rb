@@ -35,6 +35,7 @@ DIR = File.dirname(dir)
 
 # PharoImage Versions ==========================================================
 versions = {
+20214 => 'https://ci.lille.inria.fr/pharo/job/Pharo-2.0/215/artifact/Pharo-2.0.zip',
 20200 => 'https://ci.lille.inria.fr/pharo/job/Pharo-2.0/202/artifact/Pharo-2.0.zip',
 20195 => 'https://ci.lille.inria.fr/pharo/job/Pharo-2.0/198/artifact/Pharo-2.0.zip',
 20175 => 'https://ci.lille.inria.fr/pharo/job/Pharo-2.0/183/artifact/Pharo-2.0.zip',
