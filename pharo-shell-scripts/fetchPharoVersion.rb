@@ -248,7 +248,7 @@ IDENTIFIER
 
 LOADED_VERSION = `$PHARO_VM -headless $PWD/Pharo-#{PHARO_VERSION}.image $PWD/versionCheck#{PHARO_VERSION}.st`
 `rm versionCheck#{PHARO_VERSION}.st`
-
+h
 if LOADED_VERSION.to_i != PHARO_VERSION.to_i
     puts red("Could not load given version! Loaded version is #{LOADED_VERSION} instead of #{PHARO_VERSION}")
     exit 10
