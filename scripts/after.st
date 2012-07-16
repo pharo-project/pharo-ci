@@ -20,7 +20,7 @@ Symbol compactSymbolTable.
 !
 
 "Save and Quit in a separate thread allowing other deferred startup actions to complete"
-[ 
+"[ "
     Processor yield.
     SmalltalkImage current snapshot: true andQuit: true.
-] forkAt: Processor systemBackgroundPriority.
+"] forkAt: Processor systemBackgroundPriority."
