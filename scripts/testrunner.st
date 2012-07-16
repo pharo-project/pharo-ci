@@ -1,5 +1,5 @@
 "Load Hudson Build Tools"
 Gofer new
-	squeaksource: 'CISupport';
+	url: 'http://ss3.gemstone.com/ss/CISupport';
 	package: 'HudsonBuildTools';
 	load.

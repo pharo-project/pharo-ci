@@ -18,5 +18,9 @@ Smalltalk allClassesAndTraitsDo: [ :each |
 Smalltalk garbageCollect.
 Symbol compactSymbolTable.
 !
-"Save and Quit"
-SmalltalkImage current snapshot: true andQuit: true.
+
+"Save and Quit in a separate thread allowing other deferred startup actions to complete"
+"[ "
+    Processor yield.
+    SmalltalkImage current snapshot: true andQuit: true.
+"] forkAt: Processor systemBackgroundPriority."
