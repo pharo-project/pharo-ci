@@ -216,7 +216,6 @@ UpdateStreamer new
     updateFromServer.
 
 Smalltalk snapshot: true andQuit: true.
-
 IDENTIFIER
 }
 
@@ -234,6 +233,23 @@ SOURCES="https://gforge.inria.fr/frs/download.php/24391/PharoV10.sources.zip"
 # exporting the pharo sources =================================================
 puts blue("Updating the image Pharo-#{PHARO_VERSION}.image")
 
-`$PHARO_VM -headless $PWD/Pharo-#{PHARO_VERSION}.image $PWD/updateTo#{PHARO_VERSION}.st`
-
+system("$PHARO_VM -headless $PWD/Pharo-#{PHARO_VERSION}.image $PWD/updateTo#{PHARO_VERSION}.st")
 `rm $PWD/updateTo#{PHARO_VERSION}.st`
+
+# check the version ==========================================================
+puts blue("Double check the loaded version")
+
+File.open("versionCheck#{PHARO_VERSION}.st", 'w') {|f|
+    f.puts <<IDENTIFIER
+FileStream stdout nextPutAll: SystemVersion current highestUpdate asString.
+Smalltalk exit: 0.
+IDENTIFIER
+}
+
+LOADED_VERSION = `$PHARO_VM -headless $PWD/Pharo-#{PHARO_VERSION}.image $PWD/versionCheck#{PHARO_VERSION}.st`
+`rm versionCheck#{PHARO_VERSION}.st`
+
+if LOADED_VERSION.to_i != PHARO_VERSION.to_i
+    puts red("Could not load given version! Loaded version is #{LOADED_VERSION} instead of #{PHARO_VERSION}")
+    exit 10
+end
