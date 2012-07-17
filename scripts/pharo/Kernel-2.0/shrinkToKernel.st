@@ -1,3 +1,15 @@
+'From Pharo2.0a of ''18 April 2012'' [Latest update: #20216] on 17 July 2012 at 8:39:54 am'!
+
+!SmalltalkImage methodsFor: 'PharoKernel-private' stamp: 'PavelKrivanek 7/17/2012 08:39'!
+privCleanUnloadMethods
+
+  " remove class unload methods to avoid their calling during removing of this classes "
+
+  #(#Browser #ChangeList #ChangeSorter #DummySoundSystem #FT2Handle 
+  #FileContentsBrowser #GZipReadStream #GZipWriteStream #MCVersionReader 
+  #MailComposition #Morph #FreeTypeFontProvider
+  #DefaultExternalDropHandler #FileStream #Form) 
+    do: [:className | (Smalltalk at: className) class removeSelector: #unload. ].! !
 
 
 'From Pharo2.0a of ''18 April 2012'' [Latest update: #20152] on 24 June 2012 at 6:29:56 pm'!
