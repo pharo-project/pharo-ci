@@ -18,4 +18,6 @@ CompilerFrontend registerCompilerContext: (OTCSupport defaultCompilerContextForC
 (FileStream oldFileNamed: '../scripts/Typesystem/Source-TypedKernel/fix-String.st') fileIn.
 (FileStream oldFileNamed: '../scripts/Typesystem/loadtypedfiles.st') fileIn. "We need to check two times"
 
+TypeConfiguration uniqueInstance enableInstrumentation: true.
 (FileStream oldFileNamed: '../scripts/Typesystem/loadfiles.st') fileIn.
+TypeConfiguration uniqueInstance enableCasts: true.
