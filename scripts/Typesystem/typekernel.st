@@ -5,6 +5,9 @@ CompilerFrontend registerCompilerContext: OTCSupport defaultCompilerContext forC
 CompilerFrontend registerCompilerContext: OTCSupport defaultCompilerContext forClass: Object.
 CompilerFrontend registerCompilerContext: OTCSupport defaultCompilerContext forClass: TUndefinedObject.
 
+"Load fixes"
+((FileDirectory on: ((FileDirectory default fullName),'/../scripts/Typesystem/Source-TypedKernel/Fixes')) matchingEntries: '*.st') do: [:each | each  readStream fileIn].
+
 (FileStream oldFileNamed: '../scripts/Typesystem/loadtypedfiles.st') fileIn.
 
 
