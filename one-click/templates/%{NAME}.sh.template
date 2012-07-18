@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # path
 DIR=`dirname "$0"`
@@ -17,10 +17,7 @@ gvfs-set-attribute \
 # zenity is part of GNOME
 image_count=`ls "$RESOURCES"/*.image 2>/dev/null |wc -l`
 if which zenity &>/dev/null && [ "$image_count"  -ne 1 ]; then
-	olddir=`pwd`
-	cd "$RESOURCES"
-	image=`zenity --title 'Select an image' --file-selection --file-filter '*.image' --file-filter '*'`
-	cd "$olddir"
+	image=`zenity --title 'Select an image' --file-selection --filename "$RESOURCES/" --file-filter '*.image' --file-filter '*'`
 else
 	image="$RESOURCES/%{NAME}.image"
 fi
