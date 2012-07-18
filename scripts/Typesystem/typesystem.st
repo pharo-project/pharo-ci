@@ -61,3 +61,6 @@ Gofer new
 TypeConfiguration uniqueInstance bootstrap: false.
 (FileStream oldFileNamed: '../scripts/Typesystem/loadfiles.st') fileIn.
 (FileStream oldFileNamed: '../scripts/Typesystem/loadfiles.st') fileIn.
+
+TypeConfiguration uniqueInstance enableInstrumentation: true.
+TypeConfiguration uniqueInstance enableCasts: true.

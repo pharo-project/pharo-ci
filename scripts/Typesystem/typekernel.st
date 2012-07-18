@@ -1,3 +1,6 @@
+TypeConfiguration uniqueInstance enableInstrumentation: false.
+TypeConfiguration uniqueInstance enableCasts: false.
+
 "Load the typed pharo kernel ..."
 
 TypeConfiguration uniqueInstance bootstrap: true.
