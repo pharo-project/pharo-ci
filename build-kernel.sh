@@ -181,6 +181,7 @@ if [ -n "$TEMPORARY_IMAGE" ] ; then
 fi
 
 for FILE in "${TEMPORARY_SCRIPTS[@]}" ; do
+  echo "Running script $FILE"
   exec "$PHARO_VM" $PHARO_PARAM "$TEMPORARY_OUTPUT_IMAGE" "$FILE" &
 
   # wait for the process to terminate, or a debug log
