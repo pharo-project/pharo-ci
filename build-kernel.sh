@@ -208,6 +208,7 @@ cp "$INPUT_CHANGES" "$OUTPUT_CHANGES"
 ###SCRIPTS=("${SCRIPTS[@]}" "$SCRIPTS_PATH/after.st")
 
 for FILE in "${SCRIPTS[@]}" ; do
+  echo "Running script $FILE"
   exec "$PHARO_VM" $PHARO_PARAM "$OUTPUT_IMAGE" "$FILE" &
 
   # wait for the process to terminate, or a debug log
