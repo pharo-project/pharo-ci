@@ -17,7 +17,7 @@ fi
 DIR=`dirname "$0"`;
 
 if [ -z "$PHARO_VM" ] ; then
-    export PHARO_VM=`$DIR/pharo-shell-scripts/fetchLatestVM.sh`
+    export PHARO_VM=`cd "$DIR" && ./pharo-shell-scripts/fetchLatestVM.sh`
     if [ -z "$PHARO_VM" ] ; then
         echo "PHARO_VM environment variable is not set."
         exit 1
