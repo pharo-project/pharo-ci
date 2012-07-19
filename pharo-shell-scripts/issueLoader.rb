@@ -262,7 +262,13 @@ Gofer new
 "==========================================================================="
 
 tracker := GoogleIssueTracker pharo.
-tracker authenticate: '#{googleCodeUser()}' with: '#{googleCodePassword()}'.
+IDENTIFIER
+
+if UPDATE_ISSUE
+  f.puts "tracker authenticate: '#{googleCodeUser()}' with: '#{googleCodePassword()}'."
+end
+
+f.puts <<IDENTIFIER
 
 "==========================================================================="
 issue := '#{issueNumber}' isEmpty
