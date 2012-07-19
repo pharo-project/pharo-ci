@@ -29,20 +29,25 @@ def help(msg=nil, exitStatus=0)
         $stderr.puts ""
     end
 
-    $stderr.puts "usage /.image [options] issueNumber"
+    $stderr.puts "usage /.image [options] [issueNumber]"
     $stderr.puts ""
     $stderr.puts "    Loads and tests an issue from the google issue tracker at" 
-    $stderr.puts "    http://code.google.com/p/pharo/issues/list"
-    $stderr.puts "    This script will update the issue status and adds comments if the errors "
-    $stderr.puts "    occur during loading"
+    $stderr.puts "        http://code.google.com/p/pharo/issues/list"
+    $stderr.puts ""
+    $stderr.puts "    when the --update-issue flag is set, this script will update the issue status "
+    $stderr.puts "    and adds comments if the errors occur during loading."
+    $stderr.puts ""
+    $stderr.puts "    If no [issueNumber] is given the script will fetch automatically an issue "
+    $stderr.puts "    and test it."
     $stderr.puts ""
     $stderr.puts "    $PHARO_CI_USER is used as the code.google.com user"
     $stderr.puts "    $PHARO_CI_PWD is used for the password"
     $stderr.puts ""
     $stderr.puts ""
-    $stderr.puts "    --hack     edit the sources of this script"
-    $stderr.puts "    --batch    run the script without human interaction needed"
-    $stderr.puts "    -h/--help  show this help text"
+    $stderr.puts "    --hack            edit the sources of this script"
+    $stderr.puts "    --batch           run the script without human interaction"
+    $stderr.puts "    --update-issue    update the issue with warnings / remarks"
+    $stderr.puts "    -h/--help         show this help text"
    
     exit exitStatus
 end
@@ -96,23 +101,19 @@ end
 if $*[0] == "--help" || $*[0] == "-h"
     help()
     exit 0
-elsif $*[0] == "--hack"
+elsif ARGV.include? "--hack"
     sourceFile = `readlink #{__FILE__} || echo #{__FILE__}`.chomp
     exec(editor(), sourceFile)
-elsif $*[0] == "--batch"
-    INTERACTIVE = false
-    ARGV.shift
-else
-    INTERACTIVE = true
 end
 
-if ARGV.empty?
+INTERACTIVE  = ARGV.include? '--batch'
+UPDATE_ISSUE = ARGV.include? '--update-issue'
+
+issueNumber = ARGV.last
+if issueNumber.to_i == 0
     issueNumber = ""
-elsif $*[0][0] == '-' || $*.size != 1 || $*[0].to_i == 0
+elsif issueNumber[0] == '-'
     help("invalid arguments \"#{$*.join}\"", 1)
-    INTERACTIVE = true
-else
-    issueNumber = ARGV.last    
 end
 
 
@@ -136,16 +137,15 @@ if File.exists? destination
         break if result.empty?
     end
 
-    
-  case result
+    case result
     when 'e'
-      exit 0
+        exit 0
     when 'r'    
-      puts red('resuse not yet implemented')
-      exit 1
+        puts red('resuse not yet implemented')
+        exit 1
     else
-      `rm -rf #{destination}`
-  end
+        `rm -rf #{destination}`
+    end
 end
 
 # ============================================================================
@@ -211,8 +211,8 @@ end
 
 File.open("issueLoading.st", 'w') {|f| 
 f.puts <<IDENTIFIER
-| tracker issue color red green blue issueNumber |
-"===================================="
+| tracker issue color red green blue issueNumber changeLoader |
+"==========================================================================="
 
 "some helper blocks for error printing"
 
@@ -225,12 +225,12 @@ color := [:colorCode :text|
         nextPut: Character escape; nextPutAll: '[0m'.
 ].
 
-red   := [:text| color value: 31 text ].
+red   := [:text| color value: 31 value: text ].
 green := [:text| color value: 32 value: text ].
 blue  := [:text| color value: 34 value: text ].
 
-"===================================="
-"===================================="
+"==========================================================================="
+"==========================================================================="
 
 World submorphs do: [:each | each delete ].
 
@@ -240,7 +240,7 @@ Smalltalk garbageCollect.
 
 Author fullName: 'MonkeyGalactikalIntegrator'.
 
-"===================================="
+"==========================================================================="
 
 blue value: 'Updating the image'.
 
@@ -248,9 +248,9 @@ UpdateStreamer new
     beSilent; 
     elementaryReadServerUpdates.
 
-"===================================="
+"==========================================================================="
 
-blue value: 'Installing Continuous Integration Services'.
+blue value: 'Installing/Updating Continuous Integration Services'.
 
 Gofer new
 	url: 'http://ss3.gemstone.com/ss/ci';
@@ -259,21 +259,19 @@ Gofer new
 	
 (Smalltalk at: #ConfigurationOfCI) perform: #loadFull.
 
-"===================================="
-[ 
-"===================================="
+"==========================================================================="
 
 tracker := GoogleIssueTracker pharo.
 tracker authenticate: '#{googleCodeUser()}' with: '#{googleCodePassword()}'.
 
-"===================================="
+"==========================================================================="
 issue := '#{issueNumber}' isEmpty
     ifTrue:  [ tracker nextIssue ]
     ifFalse: [ tracker issue: '#{issueNumber}' asInteger ].
 
 issue ifNil: [ 
     red value: 'No more issues to be checked'.
-    "Smalltalk exitFail" ].
+    Smalltalk exit: 0 ].
 
 issueNumber := issue id.
 
@@ -283,22 +281,23 @@ FileStream stdout print: issueNumber.
 blue value: 'Opening image for issue ', issueNumber printString.
 blue value: ' http://code.google.com/p/pharo/issues/detail?id=', issueNumber printString.
 
-"===================================="
+"==========================================================================="
+[ 
+"==========================================================================="
 
 blue value: 'Running tests'.
-changeLoader := issue loadAndTest.
+changeLoader := issue changeLoader #{'quiet' if !UPDATE_ISSUE} loadAndTest.
 
 changeLoader isGreen
     ifFalse:  [ 
         red value: 'Issue ', issueNumber printString, ' has errors'.
         issue changeLoader buildRedReportOn: FileStream stderr]
     ifTrue: [ 
-        green value: 'Issue ', issueNumber printString, ' is ready for integration'
-       ].
+        green value: 'Issue ', issueNumber printString, ' is ready for integration' ].
     
-"===================================="
+"==========================================================================="
 
-] on: Error fork: [ :error|
+] on: Error do: [ :error|
     "output the Error warning in red"
     red value: 'Failed to load Issue:'.
     FileStream stderr print: error; crlf.
@@ -309,7 +308,7 @@ changeLoader isGreen
     error pass.
 ].
 
-"===================================="
+"==========================================================================="
 
 Smalltalk snapshot: true andQuit: true.
 
@@ -345,10 +344,10 @@ rescue Timeout::Error
     puts red('Timeout: ') + blue("Loading #{issueNumber} took longer than 15mins")
     File.open("issueLoading.st", 'w') {|f| 
         f.puts <<IDENTIFIER
-"===================================="
+"==========================================================================="
 tracker := GoogleIssueTracker pharo.
 tracker authenticate: 'pharo.ulysse@gmail.com' with: 'AydsInJis'.
-"===================================="
+"==========================================================================="
 
 issue := tracker issue: #{issueNumber}.
 issue reviewNeeded: 'Timeout occured while loading and testing the code'.
