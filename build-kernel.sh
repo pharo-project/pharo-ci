@@ -181,25 +181,8 @@ if [ -n "$TEMPORARY_IMAGE" ] ; then
 fi
 
 for FILE in "${TEMPORARY_SCRIPTS[@]}" ; do
-  echo "Running script $FILE"
-  exec "$PHARO_VM" $PHARO_PARAM "$TEMPORARY_OUTPUT_IMAGE" "$FILE" &
-
-  # wait for the process to terminate, or a debug log
-  if [ $! ] ; then
-    while kill -0 $! 2> /dev/null ; do
-      if [ -f "$OUTPUT_DEBUG" ] ; then
-        sleep 5
-        kill -s SIGKILL $! 2> /dev/null
-        echo "$(basename $0): error loading code ($PHARO_VM)"
-        cat "$OUTPUT_DEBUG" | tr '\r' '\n' | sed 's/^/  /'
-        exit 1
-      fi
-      sleep 1
-    done
-  else
-    echo "$(basename $0): unable to start VM ($PHARO_VM)"
-    exit 1
-  fi
+    echo "Running script $FILE"
+    "$PHARO_VM" $PHARO_PARAM "$TEMPORARY_OUTPUT_IMAGE" "$FILE"
 done
 
 # prepare image file and sources
@@ -210,24 +193,7 @@ cp "$INPUT_CHANGES" "$OUTPUT_CHANGES"
 
 for FILE in "${SCRIPTS[@]}" ; do
   echo "Running script $FILE"
-  exec "$PHARO_VM" $PHARO_PARAM "$OUTPUT_IMAGE" "$FILE" &
-
-  # wait for the process to terminate, or a debug log
-  if [ $! ] ; then
-    while kill -0 $! 2> /dev/null ; do
-      if [ -f "$OUTPUT_DEBUG" ] ; then
-        sleep 5
-        kill -s SIGKILL $! 2> /dev/null
-        echo "$(basename $0): error loading code ($PHARO_VM)"
-        cat "$OUTPUT_DEBUG" | tr '\r' '\n' | sed 's/^/  /'
-        exit 1
-      fi
-      sleep 1
-    done
-  else
-    echo "$(basename $0): unable to start VM ($PHARO_VM)"
-    exit 1
-  fi
+  "$PHARO_VM" $PHARO_PARAM "$OUTPUT_IMAGE" "$FILE"
 done
 
 if [ -n "$TEMPORARY_IMAGE" ] ; then
