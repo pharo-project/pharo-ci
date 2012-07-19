@@ -1,9 +1,15 @@
+TypeConfiguration uniqueInstance enableInstrumentation: false.
+TypeConfiguration uniqueInstance enableCasts: false.
+
 "Load the typed pharo kernel ..."
 
 TypeConfiguration uniqueInstance bootstrap: true.
 CompilerFrontend registerCompilerContext: OTCSupport defaultCompilerContext forClass: ProtoObject.
 CompilerFrontend registerCompilerContext: OTCSupport defaultCompilerContext forClass: Object.
 CompilerFrontend registerCompilerContext: OTCSupport defaultCompilerContext forClass: TUndefinedObject.
+
+"Load fixes"
+((FileDirectory on: ((FileDirectory default fullName),'/../scripts/Typesystem/Source-TypedKernel/Fixes')) matchingEntries: '*.st') do: [:each | each  readStream fileIn].
 
 (FileStream oldFileNamed: '../scripts/Typesystem/loadtypedfiles.st') fileIn.
 
@@ -18,4 +24,6 @@ CompilerFrontend registerCompilerContext: (OTCSupport defaultCompilerContextForC
 (FileStream oldFileNamed: '../scripts/Typesystem/Source-TypedKernel/fix-String.st') fileIn.
 (FileStream oldFileNamed: '../scripts/Typesystem/loadtypedfiles.st') fileIn. "We need to check two times"
 
+TypeConfiguration uniqueInstance enableInstrumentation: true.
 (FileStream oldFileNamed: '../scripts/Typesystem/loadfiles.st') fileIn.
+TypeConfiguration uniqueInstance enableCasts: true.

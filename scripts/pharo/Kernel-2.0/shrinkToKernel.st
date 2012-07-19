@@ -1,3 +1,24 @@
+'From Pharo2.0a of ''18 April 2012'' [Latest update: #20216] on 17 July 2012 at 11:16:21 am'!
+
+!SmalltalkImage methodsFor: 'PharoKernel' stamp: 'GuillermoPolito 6/21/2012 11:53'!
+kernelPackageNames
+
+  ^ #('Announcements-Core' 'Announcements-Core' 'Collections-Abstract' 'Collections-Arithmetic' 'Collections-Arrayed' 'Collections-Atomic' 'Collections-Native' 'Collections-Sequenceable' 'Collections-Stack' 'Collections-Streams' 'Collections-Strings' 'Collections-Support' 'Collections-Text' 'Collections-Traits' 'Collections-Unordered' 'Collections-Weak' 'Compiler' 'Compression' 'Files' 'Graphics-Display Objects' 'Graphics-Primitives' 'Graphics-Transformations' 'Kernel' 'Multilingual-Encodings' 'Multilingual-ImmPlugin' 'Multilingual-Languages' 'Multilingual-TextConversion'  'System-Change Notification' 'System-Changes' 'System-CommandLine' 'System-Clipboard' 'System-FileRegistry' 'System-Finalization' 'System-Localization' 'System-Object Events' 'System-Platforms' 'System-Support' 'Text-Core' 'Traits' 'UIManager' 'Transcript' 'FileSystem-AnsiStreams' 'FileSystem-Core' 'FileSystem-Disk' 'FileSystem-Memory' 'Fuel' 'FuelMetalevel' 'FuelPackageLoader' 'CodeImport' 'FuelFileSystem' 'FuelCommandLineHandler' 'Regex-Core' 'SystemProgress' 'System-
+Announcements')! !
+
+
+'From Pharo2.0a of ''18 April 2012'' [Latest update: #20216] on 17 July 2012 at 8:39:54 am'!
+
+!SmalltalkImage methodsFor: 'PharoKernel-private' stamp: 'PavelKrivanek 7/17/2012 08:39'!
+privCleanUnloadMethods
+
+  " remove class unload methods to avoid their calling during removing of this classes "
+
+  #(#Browser #ChangeList #ChangeSorter #DummySoundSystem #FT2Handle 
+  #FileContentsBrowser #GZipReadStream #GZipWriteStream #MCVersionReader 
+  #MailComposition #Morph #FreeTypeFontProvider
+  #DefaultExternalDropHandler #FileStream #Form) 
+    do: [:className | (Smalltalk at: className) class removeSelector: #unload. ].! !
 
 
 'From Pharo2.0a of ''18 April 2012'' [Latest update: #20152] on 24 June 2012 at 6:29:56 pm'!
@@ -115,13 +136,6 @@ ensureReceiverAndArguments
 	^true
 ! !
 
-
-'From Pharo2.0a of ''18 April 2012'' [Latest update: #20145] on 21 June 2012 at 11:51:59 am'!
-
-!SmalltalkImage methodsFor: 'PharoKernel' stamp: 'EstebanLorenzano 6/20/2012 18:14'!
-kernelPackageNames
-
-  ^ #('Announcements-Core' 'Announcements-Core' 'Collections-Abstract' 'Collections-Arithmetic' 'Collections-Arrayed' 'Collections-Atomic' 'Collections-Native' 'Collections-Sequenceable' 'Collections-Stack' 'Collections-Streams' 'Collections-Strings' 'Collections-Support' 'Collections-Traits' 'Collections-Unordered' 'Collections-Weak' 'Compiler' 'Compression' 'Files' 'Graphics-Display Objects' 'Graphics-Primitives' 'Graphics-Transformations' 'Kernel' 'Multilingual-Encodings' 'Multilingual-ImmPlugin' 'Multilingual-Languages' 'Multilingual-TextConversion'  'System-Change Notification' 'System-Changes' 'System-CommandLine' 'System-Clipboard' 'System-FileRegistry' 'System-Finalization' 'System-Localization' 'System-Object Events' 'System-Platforms' 'System-Support' 'Text-Core' 'Traits' 'UIManager' 'Transcript' 'FileSystem-AnsiStreams' 'FileSystem-Core' 'FileSystem-Disk' 'FileSystem-Memory' 'Fuel' 'FuelMetalevel' 'FuelPackageLoader' 'CodeImport' 'FuelFileSystem' 'FuelCommandLineHandler' 'SystemProgress' 'System-Announcements')! !
 
 Object subclass: #PragmaCollector
   instanceVariableNames: 'announcer collected filter'

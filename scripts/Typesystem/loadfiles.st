@@ -17,5 +17,6 @@
 (FileStream oldFileNamed: '../scripts/Typesystem/Source/TypeSystem-Compiler.st') fileIn.
 (FileStream oldFileNamed: '../scripts/Typesystem/Source/TypeSystem-Parser.st') fileIn.
 (FileStream oldFileNamed: '../scripts/Typesystem/Source/TypeSystem-Types-Support.st') fileIn.
+(FileStream oldFileNamed: '../scripts/Typesystem/Source/TypeSystem-Support.st') fileIn.
 (FileStream oldFileNamed: '../scripts/Typesystem/Source/TypeSystem-TempSupport.st') fileIn.
 
