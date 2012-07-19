@@ -106,7 +106,7 @@ elsif ARGV.include? "--hack"
     exec(editor(), sourceFile)
 end
 
-INTERACTIVE  = ARGV.include? '--batch'
+INTERACTIVE  = !(ARGV.include? '--batch')
 UPDATE_ISSUE = ARGV.include? '--update-issue'
 
 issueNumber = ARGV.last
