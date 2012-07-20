@@ -123,6 +123,6 @@ SmalltalkImage current snapshot: true andQuit: true.
 	thisContext stack copy withIndexDo: [:stck :i |
 		[rep nextPutAll: i asString; space; nextPutAll: stck asString; cr] ifError: [:er | rep nextPutAll: er asString; cr]].
 	rep close. 
-	Smalltalk quitPrimitive.]
+	Smalltalk quitFailure.]
   
 ! 

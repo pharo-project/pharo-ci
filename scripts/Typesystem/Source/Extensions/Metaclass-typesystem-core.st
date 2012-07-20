@@ -1,0 +1,1 @@
+'From Pharo1.4 of 18 April 2012 [Latest update: #14438] on 19 July 2012 at 12:20:20 pm'!!Metaclass methodsFor: '*typesystem-core' stamp: 'EstebanAllende 7/19/2012 12:20'!isTKindOf: aClass	(super isTKindOf: aClass) ifTrue: [^true].	((aClass enhancedEqual: Class class) or: [Class class tInheritsFrom: aClass]) ifTrue: [^true].	^false! !
