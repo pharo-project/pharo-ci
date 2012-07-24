@@ -251,13 +251,13 @@ UpdateStreamer new
 "==========================================================================="
 
 blue value: 'Installing/Updating Continuous Integration Services'.
-
+"
 Gofer new
 	url: 'http://ss3.gemstone.com/ss/ci';
 	package: 'ConfigurationOfCI';
 	load.
 	
-(Smalltalk at: #ConfigurationOfCI) perform: #loadFull.
+(Smalltalk at: #ConfigurationOfCI) perform: #loadFull."
 
 "==========================================================================="
 
