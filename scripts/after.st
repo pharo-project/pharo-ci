@@ -19,8 +19,11 @@ Smalltalk garbageCollect.
 Symbol compactSymbolTable.
 !
 
-"Save and Quit in a separate thread allowing other deferred startup actions to complete"
-"[ "
+"Try to delay saving the image, hoping that some pending tasks might be finished"
+[ 
+    "yield to other pending processes and suspend myself"
     Processor yield.
-    SmalltalkImage current snapshot: true andQuit: true.
-"] forkAt: Processor systemBackgroundPriority."
+    "Save in the main UI thread, otherwise saving will create a broken image"
+    WorldState addDeferredUIMessage: [
+        SmalltalkImage current snapshot: true andQuit: true ].
+] forkAt: Processor systemBackgroundPriority."
