@@ -26,4 +26,4 @@ Symbol compactSymbolTable.
     "Save in the main UI thread, otherwise saving will create a broken image"
     WorldState addDeferredUIMessage: [
         SmalltalkImage current snapshot: true andQuit: true ].
-] forkAt: Processor systemBackgroundPriority."
+] forkAt: Processor systemBackgroundPriority.
