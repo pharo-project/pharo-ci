@@ -18,8 +18,9 @@ submitNewSlice
 					issue: issue;
 					yourself.
 	 
-	self receiver openModal: creator openDialogWithSpec.
+	self receiver openModal: creator openDialogWithSpec window.
 	creator cancelled ifTrue: [ ^ self ].
+	issue description ifNil: [ ^ self ]. "Something went wrong"
 	message := issue description content.
 	issue description: (String streamContents: [:s |
 								s << message.
