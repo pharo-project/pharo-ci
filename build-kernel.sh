@@ -30,7 +30,7 @@ $PHARO_VM
 -----------------------------------------------------------------------------
 "
 
-PHARO_PARAM="-nodisplay -nosound"
+PHARO_PARAM="-nodisplay -nosound -headless"
 
 if [ `uname` == "Darwin" ]; then
   PHARO_PARAM="-headless"
@@ -180,7 +180,7 @@ if [ -n "$TEMPORARY_IMAGE" ] ; then
   cp "$TEMPORARY_CHANGES" "$TEMPORARY_OUTPUT_CHANGES"
 fi
 
-set -e
+set -e;
 for FILE in "${TEMPORARY_SCRIPTS[@]}" ; do
     echo "Running script $FILE"
     "$PHARO_VM" $PHARO_PARAM "$TEMPORARY_OUTPUT_IMAGE" "$FILE"
