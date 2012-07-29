@@ -12,7 +12,7 @@ FileStream stdout
 !
 
 !SmalltalkImage methodsFor: 'PharoCore' stamp: 'PavelKrivanek 5/16/2012 19:51'!
-exortCoreAsFuelPackage
+exportCoreAsFuelPackage
 
 | packageNames package |
 
@@ -154,16 +154,6 @@ privShrinkingProcess
 
 ! !
 
-'From Pharo2.0a of ''18 April 2012'' [Latest update: #20236] on 29 July 2012 at 2:53:33 pm'!
-
-!Class methodsFor: 'initialize-release' stamp: 'al 9/3/2004 13:35'!
-removeFromSystem
-
-  FileStream stdout nextPutAll: self name asString; lf.
-
-	"Forget the receiver from the Smalltalk global dictionary. Any existing 
-	instances will refer to an obsolete version of the receiver."
-	self removeFromSystem: true.! !
 
 
 
