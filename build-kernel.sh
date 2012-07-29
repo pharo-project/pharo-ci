@@ -180,6 +180,7 @@ if [ -n "$TEMPORARY_IMAGE" ] ; then
   cp "$TEMPORARY_CHANGES" "$TEMPORARY_OUTPUT_CHANGES"
 fi
 
+set -e
 for FILE in "${TEMPORARY_SCRIPTS[@]}" ; do
     echo "Running script $FILE"
     "$PHARO_VM" $PHARO_PARAM "$TEMPORARY_OUTPUT_IMAGE" "$FILE"
