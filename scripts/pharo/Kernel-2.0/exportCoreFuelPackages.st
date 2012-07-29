@@ -1,8 +1,16 @@
-!SmalltalkImage methodsFor: 'PharoKernel' stamp: 'GuillermoPolito 6/21/2012 11:53'!
-kernelPackageNames
+(MCWorkingCopy forPackage: (MCPackage named: 'System')) unregister!
 
-  ^ #('Announcements-Core' 'Announcements-Core' 'Collections-Abstract' 'Collections-Arithmetic' 'Collections-Arrayed' 'Collections-Atomic' 'Collections-Native' 'Collections-Sequenceable' 'Collections-Stack' 'Collections-Streams' 'Collections-Strings' 'Collections-Support' 'Collections-Text' 'Collections-Traits' 'Collections-Unordered' 'Collections-Weak' 'Compiler' 'Compression' 'Files' 'Graphics-Display Objects' 'Graphics-Primitives' 'Graphics-Transformations' 'Kernel' 'Multilingual-Encodings' 'Multilingual-ImmPlugin' 'Multilingual-Languages' 'Multilingual-TextConversion'  'System-Change Notification' 'System-Changes' 'System-CommandLine' 'System-Clipboard' 'System-FileRegistry' 'System-Finalization' 'System-Localization' 'System-Object Events' 'System-Platforms' 'System-Support' 'Text-Core' 'Traits' 'UIManager' 'Transcript' 'FileSystem-AnsiStreams' 'FileSystem-Core' 'FileSystem-Disk' 'FileSystem-Memory' 'Fuel' 'FuelMetalevel' 'FuelPackageLoader' 'CodeImport' 'FuelFileSystem' 'FuelCommandLineHandler' 'Regex-Core' 'SystemProgress' 'System-
-Announcements')! !
+"output Version Number of stdout"
+FileStream stdout 
+    nextPutAll: '[version] ';
+    nextPutAll: SystemVersion current major asString;
+    nextPutAll: '.';
+    nextPutAll: SystemVersion current minor asString;
+    nextPutAll: ' #' ;
+    nextPutAll: SystemVersion current highestUpdate asString;
+    cr.
+
+!
 
 
 !ScriptLoader methodsFor: 'cleaning' stamp: 'PavelKrivanek 9/23/2010 10:30'!
@@ -71,13 +79,123 @@ cleanUpAfterMorphicInitialization
   Author reset! !
 
 
+'From Pharo2.0a of ''18 April 2012'' [Latest update: #20236] on 29 July 2012 at 2:31:49 pm'!
+
+!SmalltalkImage methodsFor: 'PharoKernel-private' stamp: 'PavelKrivanek 7/29/2012 14:31'!
+privShrinkingProcess
+
+  [
+    | packages |
+        
+    10 timesRepeat: [
+      (Delay forMilliseconds: 100) wait.
+      Processor yield ].
+
+    Author fullName: 'Mr.Shrinker'.
+
+    self privCleanMonticello.
+
+    UIManager default: DummyUIManager new.
+    UIManager default progressBarEnabled: false.
+
+    self privCleanProcesses.
+    self privCleanGlobals.
+
+    5 timesRepeat: [Smalltalk garbageCollect].
+
+    MCDataStream initialize.
+
+    Beeper instVarNamed: #default put: nil.
+
+    Smalltalk cleanOutUndeclared.
+
+    5 timesRepeat: [Smalltalk garbageCollect].
+
+    Author reset.
+  
+    KMPragmaKeymapBuilder release.
+
+    self privShrinkUnicodeTables.
+
+    Display newDepth: 1.
+
+    self privCleanStartUpList.
+    self privCleanShutDownList.
+
+"    CommandLine removeRegistrationNamed: #BasicCodeLoader.
+    SimpleCodeLoader register.
+"
+    "move class Model to different category"
+    Object subclass: #Model instanceVariableNames: 'dependents' classVariableNames: '' poolDictionaries: '' category: 'Kernel-Objects'.
+
+    self privCleanTextConstants.
+
+    SoundService default: nil.
+    SoundService unregister: DummySoundSystem.
+
+    ThreadSafeTranscript install.
+
+    self privCleanUnloadMethods.
+
+    SystemNavigation new removeAllButPackages: self kernelPackageNames.
+
+    Smalltalk flushClassNameCache.
+    3 timesRepeat: [
+      Smalltalk garbageCollect.
+        Symbol compactSymbolTable.].
+
+    Undeclared removeUnreferencedKeys.
+    self privRecompileAll.
+    
+    self privCleanChangeSets.
+    
+    SystemEventManager allInstances do: [:i | i instVarNamed: #actionMap put: IdentityDictionary new].
+
+    FileServices removeObsolete.
+    DebuggerMethodMap voidMapCache.
+
+    Object flushEvents.
+
+    MCDataStream initialize.
+
+    Locale classPool at: #LocaleChangeListeners put: nil.
+    SmalltalkImage classPool at: #Tools put: nil.
+
+    Behavior flushObsoleteSubclasses.
+    Smalltalk flushClassNameCache.
+    Smalltalk organization removeEmptyCategories.
+
+    WeakArray restartFinalizationProcess.
+
+    "UIManager default progressBarEnabled: true."
+    "Smalltalk condenseChanges."
+
+    Smalltalk saveImageInNewContext.
+
+  ] ifError: [:e |
+    | rep |
+    FLSerializer newFull serialize: thisContext toFileNamed: 'PharoDebug.fuel'.
+    rep := FileStream forceNewFileNamed: 'PharoDebug.log'.
+    rep nextPutAll: 'PharoKernel shrinking report'; cr.
+    rep nextPutAll: 'Error:'; cr.
+    rep nextPutAll: e asString; cr.
+    rep nextPutAll: thisContext stack size asString.
+    thisContext stack copy withIndexDo: [:stck :i |
+    [ rep nextPutAll: i asString; space; nextPutAll: stck asString; cr] ifError: []].
+    rep close. 
+    Smalltalk exitFailure ] 
+
+! !
+
+
+
 !ScriptLoader methodsFor: 'pharo-core' stamp: 'PavelKrivanek 9/23/2010 10:30'!
 initializeMorphicFrom: aFLPackage
 
 | dejavu prj world table |
 
     #(RGFactory InternetConfiguration NetNameResolver Socket Base64MimeConverter 
-    MIMEType UUIDGenerator URI HTTPSocket PackageInfo PackageServices 
+    MIMEType UUIDGenerator URI HTTPSocket PackageInfo 
     FileServices SystemAnnouncer MCCacheRepository MCDirtyPackageInfo 
     MCEmptyPackageInfo MCMethodDefinition MCMockASubclass MCMockClassA 
     MCMockPackageInfo MCPackageManager MCVersionReader MCWorkingCopy 
@@ -109,6 +227,8 @@ UCSTable classPool at: #JISX0208Table put: (aFLPackage additionalObjectAt: #JISX
 UCSTable classPool at: #KSX1001Table put: (aFLPackage additionalObjectAt: #KSX1001Table).
 
 FileStream stdout nextPutAll: 'finished' asString; lf.
+
+ProgressBarMorph initialize.
 
 BalloonBezierSimulation initialize.
 BalloonEngineConstants initialize.
@@ -280,12 +400,11 @@ Display newDepth: 32.
 (world instVarNamed: #worldState) canvas: nil.
 SmalltalkEditor initialize.
 
-
 FreeTypeFontProvider initialize.
 
 SHPreferences initialize.
 GraphicFontSettings setFontsToStyleNamed: #small.
-CombinedChar loadCompositionMapping.
+"CombinedChar loadCompositionMapping."
 
 AbstractFont initialize.
 CodeLoader initialize.
@@ -361,7 +480,7 @@ UIManager default restoreDisplay.
 
 
 !SmalltalkImage methodsFor: 'PharoCore' stamp: 'PavelKrivanek 5/16/2012 19:51'!
-exortCoreAsFuelPackage
+exportCoreAsFuelPackage
 
 | packageNames package |
 
@@ -379,6 +498,7 @@ FileStream forceNewFileNamed: 'pharo-core.fuel' do: [:aStream |
     FileStream stdout nextPutAll: 'executed...'; lf. ].
 
   package at: #PackageNames putAdditionalObject: (MCWorkingCopy allManagers  collect: [:p | p package name]).
+  package at: #MCRegistry putAdditionalObject: (MCWorkingCopy registry).
 
   package at: #DejaVu putAdditionalObject: (TextStyle named: 'Bitmap DejaVu Sans').
   package at: #DecimalProperty putAdditionalObject: (Unicode classPool at: #DecimalProperty).
@@ -392,6 +512,6 @@ FileStream forceNewFileNamed: 'pharo-core.fuel' do: [:aStream |
 ].
 ! !
 
-Smalltalk image exortCoreAsFuelPackage.
+Smalltalk image exportCoreAsFuelPackage.
 
 Smalltalk snapshot: false andQuit: true.

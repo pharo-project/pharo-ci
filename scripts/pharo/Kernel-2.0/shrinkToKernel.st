@@ -1,4 +1,70 @@
 
+!ScriptLoader methodsFor: 'cleaning' stamp: 'PavelKrivanek 9/23/2010 10:30'!
+cleanUpAfterMorphicInitialization
+  "self new cleanUpForRelease"
+
+  Author fullName: 'Mr.Cleaner'.
+  DebuggerMethodMap withAllSubclassesDo: [ :each | each voidMapCache ].
+" self cleanUpPackageOrganizer.
+  self cleanUpMethods.
+" DataStream initialize.
+  GradientFillStyle initPixelRampCache.
+  FreeTypeCache clearCurrent.
+  ImageMorph classPool at: #DefaultForm put: (Form extent: 1 @ 1 depth: 1).
+  Behavior flushObsoleteSubclasses.
+  MethodChangeRecord allInstancesDo: [ :x | x noteNewMethod: nil ].
+  World cleanseOtherworldlySteppers.
+  Smalltalk organization removeEmptyCategories.
+  Browser initialize.
+  SystemBrowser removeObsolete.
+  AppRegistry removeObsolete.
+  FileServices removeObsolete.
+  MCFileBasedRepository flushAllCaches.
+  MCMethodDefinition shutDown. 
+  MCDefinition clearInstances.
+  Smalltalk globals
+    at: #TTFontDescription
+    ifPresent: [ :c | 
+      c
+        clearDefault;
+        clearDescriptions ].
+  ExternalDropHandler resetRegisteredHandlers.
+  Undeclared removeUnreferencedKeys.
+  Smalltalk globals flushClassNameCache.
+  ScrollBar initializeImagesCache.
+  FreeTypeFontProvider current initialize.
+  NaturalLanguageTranslator classPool at: #AllKnownPhrases put: nil.
+  FreeTypeFontProvider current initialize.
+" SystemNavigation default
+    allObjectsDo: [ :each | 
+      (each respondsTo: #releaseCachedState)
+        ifTrue: [ each releaseCachedState ] ].
+" 3 timesRepeat: [ 
+    Smalltalk garbageCollect.
+    Symbol compactSymbolTable ].
+  HashedCollection rehashAll.
+  
+  "Remove empty categories, which are not in MC packages, because MC does
+  not do this (this script does not make packages dirty)"
+  Smalltalk organization removeEmptyCategories.
+  Smalltalk
+    allClassesAndTraitsDo: [ :class |
+      [ :each |
+        each
+          removeEmptyCategories;
+          sortCategories ]
+            value: class organization;
+            value: class class organization ].
+" PackageOrganizer default packages
+    do: [ :each | each methods ifEmpty: [ PackageOrganizer default unregisterPackage: each ] ]
+    displayingProgress: 'Cleaning Packages'.
+" Smalltalk organization sortCategories.
+  ChangeSet removeChangeSetsNamedSuchThat: [ :each | true ].
+  ChangeSet resetCurrentToNewUnnamedChangeSet.
+  Smalltalk garbageCollect.
+  Author reset! !
+
+
 "output Version Number of stdout"
 FileStream stdout 
     nextPutAll: '[version] ';
