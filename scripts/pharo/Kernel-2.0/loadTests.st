@@ -65,7 +65,7 @@ Parser subclass: #MockCustomParser
 
 [	
 
-packagesDir := ((Smalltalk vm getSystemAttribute: 4) ifNil: [FileDirectory default] ifNotNilDo: [:path | FileDirectory on: path]).
+packagesDir := ((Smalltalk vm getSystemAttribute: 4) ifNil: [FileSystem disk workingDirectory] ifNotNilDo: [:path | FileSystem disk workingDirectory resolve: path]).
 
 "FuelTests
 FuelMetalevelTests

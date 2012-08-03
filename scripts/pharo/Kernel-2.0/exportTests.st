@@ -23,7 +23,7 @@ Multilingual-Tests
 SUnit-Core
 SUnit-Tests
 Tests' linesDo: [:packageName |
-  ((Smalltalk vm getSystemAttribute: 3) ifNil: [FileDirectory default] ifNotNilDo: [:path | FileDirectory on: path]) forceNewFileNamed: (packageName, '.st') do: [:file |
+  ((Smalltalk vm getSystemAttribute: 3) ifNil: [FileSystem disk workingDirectory] ifNotNilDo: [:path | FileSystem disk workingDirectory resolve: path]) forceNewFileNamed: (packageName, '.st') do: [:file |
     file nextPutAll: (ScriptLoader latestSource: packageName location: 'http://ss3.gemstone.com/ss/Pharo20')]].
 
 FooSharedPool fileOut.
@@ -49,7 +49,7 @@ Tests-VM' linesDo: [:categoryName | SystemOrganization fileOutCategory:  categor
 #(
   'HudsonBuildTools'
 ) do: [:packageName |
-  ((Smalltalk vm getSystemAttribute: 3) ifNil: [FileDirectory default] ifNotNilDo: [:path | FileDirectory on: path]) forceNewFileNamed: (packageName, '.st') do: [:file |
+  ((Smalltalk vm getSystemAttribute: 3) ifNil: [FileSystem disk workingDirectory] ifNotNilDo: [:path | FileSystem disk workingDirectory resolve: path]) forceNewFileNamed: (packageName, '.st') do: [:file |
     file nextPutAll: (ScriptLoader latestSource: packageName location: 'http://source.lukas-renggli.ch/hudson')]].
 ]
 !
