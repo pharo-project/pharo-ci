@@ -46,7 +46,6 @@ Gofer new
     package: 'Tanker';
     package: 'TankerPackagesSupport';
     package: 'TankerCommandLineHandler';
-    package: 'FuelCommandLineHandler';
     load.!
 
 
@@ -346,4 +345,4 @@ shrinkToKernelWith: additionalPackageNames
 ! !
 
 
-Smalltalk shrinkToKernelWith: #('Fuel' 'FuelMetalevel' 'FuelPackageLoader' 'FuelCommandLineHandler' 'Tanker' 'TankerCommandLineHandler').
+Smalltalk shrinkToKernelWith: #('Fuel' 'FuelMetalevel' 'FuelCommandLineHandler' 'Tanker' 'TankerCommandLineHandler').
