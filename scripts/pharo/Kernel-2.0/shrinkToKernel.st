@@ -9,9 +9,6 @@ FileStream stdout
     cr.
 !
 
-"fix issue http://code.google.com/p/pharo/issues/detail?id=6476"
-(MCWorkingCopy forPackage: (MCPackage named: 'System')) unregister!
-
 "fix kernelPackageNames"
 
 'From Pharo2.0a of ''18 April 2012'' [Latest update: #20245] on 7 August 2012 at 11:00:18 am'!

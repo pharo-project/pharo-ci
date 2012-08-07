@@ -1,5 +1,3 @@
-(MCWorkingCopy forPackage: (MCPackage named: 'System')) unregister!
-
 
 "fix kernelPackageNames"
 
