@@ -276,7 +276,6 @@ TextConstants TextSharedInformation at: #DefaultFixedTextStyle put: dejavu.
   select: [:class | class sharedPools includes: TextConstants]
   thenDo: [:class | class compileAll. class class compileAll].
 "
-CommnadLine initialize.
 
 StrikeFontFixer initialize.
 TextStyle initialize.
@@ -363,9 +362,6 @@ TextDiffBuilder initialize.
 ThemeIcons initialize.
 ThumbnailMorph initialize.
 TransferMorph initialize.
-TTCFontDescription initialize.
-TTCFontSet initialize.
-TTFontDescription initialize.
 UITheme initialize.
 VistaryThemeIcons initialize.
 WorldState initialize.
@@ -379,8 +375,6 @@ RGFactory initialize.
 
 Cursor initTarget.
 Cursor initialize.
-
-DataStream initialize.
 
 BalloonMorph setBalloonColorTo: Color yellow.
 
@@ -424,17 +418,12 @@ UIManager default uiProcess resume.
 
 
 "this classes need world to resetWorldMenu"
-SARInstaller initialize.
-TTCFont initialize.
-TTFontReader initialize.
 
 DiskStore initialize.
-Locator initialize.
 FileHandle initialize.
 
 "HelpBrowser initialize."
 "HostWindowProxy initialize."
-LogoImageMorph initialize.
 TaskbarMorph initialize.
 TextEditor initialize.
 
@@ -470,18 +459,14 @@ GraphicFontSettings setFontsToStyleNamed: #small.
 "CombinedChar loadCompositionMapping."
 
 AbstractFont initialize.
-CodeLoader initialize.
 DialogItemsChooserUI initialize.
 EditorFindReplaceDialogWindow initialize.
 FinderUI initialize.
 "HelpBrowser initialize."
-HostSystemMenus initialize.
-HostWindowProxy initialize.
 PoolDefiner initialize.
 PoolDefiner2 initialize.
 RecentMessageList initialize.
 SHTextStylerST80 initialize.
-UrlCodeFileLoader initialize.
 
 (Smalltalk at: #ActiveHand) instVarNamed: #targetOffset put: 0@0.
 
@@ -523,11 +508,12 @@ RBRefactoryChangeManager initialize.
 RBScanner initialize.
 RBSpellChecker initialize.
 RBTransformationRule initialize.
-RMockSystemAnnouncer initialize.
 RPackage initialize.
 RPackageOrganizer initialize.
 SpecBinder initialize.
 StartupLoader initialize.
+
+IconicButton initialize.
 
 (aTAPackage additionalObjectAt: #PackageNames) do: [:name | PackageOrganizer default registerPackageNamed: name].
 RPackageOrganizer fillUp.
