@@ -50,7 +50,8 @@ Tests-VM' linesDo: [:categoryName | SystemOrganization fileOutCategory:  categor
 #(
   'HudsonBuildTools'
 ) do: [:packageName |
-  ((Smalltalk vm getSystemAttribute: 3) ifNil: [FileSystem disk workingDirectory] ifNotNilDo: [:path | FileSystem disk workingDirectory resolve: path]) forceNewFileNamed: (packageName, '.st') do: [:file |
+  "((Smalltalk vm getSystemAttribute: 3) ifNil: [FileSystem disk workingDirectory] ifNotNilDo: [:path | FileSystem disk workingDirectory resolve: path])" 
+ FileStream forceNewFileNamed: (packageName, '.st') do: [:file |
     file nextPutAll: (ScriptLoader latestSource: packageName location: 'http://source.lukas-renggli.ch/hudson')]].
 ]
 !
