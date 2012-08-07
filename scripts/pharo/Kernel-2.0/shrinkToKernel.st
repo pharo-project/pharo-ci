@@ -1,70 +1,3 @@
-
-!ScriptLoader methodsFor: 'cleaning' stamp: 'PavelKrivanek 9/23/2010 10:30'!
-cleanUpAfterMorphicInitialization
-  "self new cleanUpForRelease"
-
-  Author fullName: 'Mr.Cleaner'.
-  DebuggerMethodMap withAllSubclassesDo: [ :each | each voidMapCache ].
-" self cleanUpPackageOrganizer.
-  self cleanUpMethods.
-" DataStream initialize.
-  GradientFillStyle initPixelRampCache.
-  FreeTypeCache clearCurrent.
-  ImageMorph classPool at: #DefaultForm put: (Form extent: 1 @ 1 depth: 1).
-  Behavior flushObsoleteSubclasses.
-  MethodChangeRecord allInstancesDo: [ :x | x noteNewMethod: nil ].
-  World cleanseOtherworldlySteppers.
-  Smalltalk organization removeEmptyCategories.
-  Browser initialize.
-  SystemBrowser removeObsolete.
-  AppRegistry removeObsolete.
-  FileServices removeObsolete.
-  MCFileBasedRepository flushAllCaches.
-  MCMethodDefinition shutDown. 
-  MCDefinition clearInstances.
-  Smalltalk globals
-    at: #TTFontDescription
-    ifPresent: [ :c | 
-      c
-        clearDefault;
-        clearDescriptions ].
-  ExternalDropHandler resetRegisteredHandlers.
-  Undeclared removeUnreferencedKeys.
-  Smalltalk globals flushClassNameCache.
-  ScrollBar initializeImagesCache.
-  FreeTypeFontProvider current initialize.
-  NaturalLanguageTranslator classPool at: #AllKnownPhrases put: nil.
-  FreeTypeFontProvider current initialize.
-" SystemNavigation default
-    allObjectsDo: [ :each | 
-      (each respondsTo: #releaseCachedState)
-        ifTrue: [ each releaseCachedState ] ].
-" 3 timesRepeat: [ 
-    Smalltalk garbageCollect.
-    Symbol compactSymbolTable ].
-  HashedCollection rehashAll.
-  
-  "Remove empty categories, which are not in MC packages, because MC does
-  not do this (this script does not make packages dirty)"
-  Smalltalk organization removeEmptyCategories.
-  Smalltalk
-    allClassesAndTraitsDo: [ :class |
-      [ :each |
-        each
-          removeEmptyCategories;
-          sortCategories ]
-            value: class organization;
-            value: class class organization ].
-" PackageOrganizer default packages
-    do: [ :each | each methods ifEmpty: [ PackageOrganizer default unregisterPackage: each ] ]
-    displayingProgress: 'Cleaning Packages'.
-" Smalltalk organization sortCategories.
-  ChangeSet removeChangeSetsNamedSuchThat: [ :each | true ].
-  ChangeSet resetCurrentToNewUnnamedChangeSet.
-  Smalltalk garbageCollect.
-  Author reset! !
-
-
 "output Version Number of stdout"
 FileStream stdout 
     nextPutAll: '[version] ';
@@ -74,46 +7,33 @@ FileStream stdout
     nextPutAll: ' #' ;
     nextPutAll: SystemVersion current highestUpdate asString;
     cr.
-
 !
 
-!SmalltalkImage methodsFor: 'PharoCore' stamp: 'PavelKrivanek 5/16/2012 19:51'!
-exportCoreAsFuelPackage
+"fix issue http://code.google.com/p/pharo/issues/detail?id=6476"
+(MCWorkingCopy forPackage: (MCPackage named: 'System')) unregister!
 
-| packageNames package |
+"fix kernelPackageNames"
 
-FileStream forceNewFileNamed: 'pharo-core.fuel' do: [:aStream |
-  aStream binary.
+'From Pharo2.0a of ''18 April 2012'' [Latest update: #20245] on 7 August 2012 at 11:00:18 am'!
 
-  packageNames := ((MCWorkingCopy allManagers  collect: [:p | p package name] ) 
-    copyWithoutAll: SmalltalkImage current kernelPackageNames) asSortedCollection.
+!SmalltalkImage methodsFor: 'PharoKernel' stamp: 'PavelKrivanek 8/7/2012 11:00'!
+kernelPackageNames
 
-  package := FLPackage withPackages: packageNames.
-  package mustInitialize: false.
-  package addPostLoadAction: [:pkg | ScriptLoader new initializeMorphicFrom: pkg].
-  package packageHeader addPreMaterializationAction: [:header | 
-    #(World ActiveEvent ActiveWorld ActiveHand) do: [:className | Smalltalk globals at: className put: nil]. 
-    FileStream stdout nextPutAll: 'executed...'; lf. ].
+  ^ #('Announcements-Core' 'Announcements-Core' 'Collections-Abstract' 'Collections-Arithmetic' 'Collections-Arrayed'
+ 'Collections-Atomic' 'Collections-Native' 'Collections-Sequenceable' 'Collections-Stack' 'Collections-Streams' 
+'Collections-Strings' 'Collections-Support' 'Collections-Text' 'Collections-Traits' 'Collections-Unordered' 
+'Collections-Weak' 'Compiler' 'Compression' 'Files' 'Graphics-Display Objects' 'Graphics-Primitives' 
+'Graphics-Transformations' 'Kernel' 'Multilingual-Encodings' 'Multilingual-ImmPlugin' 'Multilingual-Languages' 
+'Multilingual-TextConversion'  'System-Change Notification' 'System-Changes' 'System-CommandLine' 'System-Clipboard' 
+'System-FileRegistry' 'System-Finalization' 'System-Localization' 'System-Object Events' 'System-Platforms' 
+'System-Support' 'Text-Core' 'Traits' 'UIManager' 'Transcript' 'FileSystem-AnsiStreams' 'FileSystem-Core' 
+'FileSystem-Disk' 'FileSystem-Memory' 'CodeImport' 'Regex-Core' 'SystemProgress' 'System-Announcements')! !
 
-  package at: #PackageNames putAdditionalObject: (MCWorkingCopy allManagers  collect: [:p | p package name]).
-  package at: #MCRegistry putAdditionalObject: (MCWorkingCopy registry).
 
-  package at: #DejaVu putAdditionalObject: (TextStyle named: 'Bitmap DejaVu Sans').
-  package at: #DecimalProperty putAdditionalObject: (Unicode classPool at: #DecimalProperty).
-  package at: #GeneralCategory putAdditionalObject: (Unicode classPool at: #GeneralCategory).
-  package at: #GB2312Table putAdditionalObject: (UCSTable classPool at: #GB2312Table).
-  package at: #JISX0208Table putAdditionalObject: (UCSTable classPool at: #JISX0208Table).
-  package at: #KSX1001Table putAdditionalObject: (UCSTable classPool at: #KSX1001Table).
+'From Pharo2.0a of ''18 April 2012'' [Latest update: #20245] on 7 August 2012 at 11:39:24 am'!
 
-  FLPackageStore new storePackage: package on: aStream
-
-].
-! !
-
-'From Pharo2.0a of ''18 April 2012'' [Latest update: #20236] on 29 July 2012 at 2:31:49 pm'!
-
-!SmalltalkImage methodsFor: 'PharoKernel-private' stamp: 'PavelKrivanek 7/29/2012 14:31'!
-privShrinkingProcess
+!SmalltalkImage methodsFor: 'PharoKernel-private' stamp: 'PavelKrivanek 8/7/2012 11:39'!
+privShrinkingProcessWith: additionalPackageNames
 
   [
     | packages |
@@ -168,7 +88,7 @@ privShrinkingProcess
 
     self privCleanUnloadMethods.
 
-    SystemNavigation new removeAllButPackages: self kernelPackageNames.
+    SystemNavigation new removeAllButPackages: self kernelPackageNames, additionalPackageNames.
 
     Smalltalk flushClassNameCache.
     3 timesRepeat: [
@@ -180,8 +100,6 @@ privShrinkingProcess
     
     self privCleanChangeSets.
     
-  "  SystemEventManager allInstances do: [:i | i instVarNamed: #actionMap put: IdentityDictionary new]."
-
     FileServices removeObsolete.
     DebuggerMethodMap voidMapCache.
 
@@ -205,7 +123,6 @@ privShrinkingProcess
 
   ] ifError: [:e |
     | rep |
-    FLSerializer newFull serialize: thisContext toFileNamed: 'PharoDebug.fuel'.
     rep := FileStream forceNewFileNamed: 'PharoDebug.log'.
     rep nextPutAll: 'PharoKernel shrinking report'; cr.
     rep nextPutAll: 'Error:'; cr.
@@ -215,11 +132,24 @@ privShrinkingProcess
     [ rep nextPutAll: i asString; space; nextPutAll: stck asString; cr] ifError: []].
     rep close. 
     Smalltalk exitFailure ] 
-
-
-
 ! !
 
+'From Pharo2.0a of ''18 April 2012'' [Latest update: #20245] on 7 August 2012 at 11:40:38 am'!
+
+!SmalltalkImage methodsFor: 'PharoKernel' stamp: 'PavelKrivanek 8/7/2012 11:40'!
+shrinkToKernelWith: additionalPackageNames
+
+  "
+  WARNING:  THIS METHOD WILL DESTROY YOUR IMAGE
+
+  Use with cation and only on fresh Pharo images 
+  "
+
+  [ self privShrinkingProcessWith: additionalPackageNames ] forkAt: 40.
+
+  Processor terminateActive.
+  
+! !
 
 
 

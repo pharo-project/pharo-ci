@@ -12,6 +12,53 @@ FileStream stdout
 
 !
 
+"fix kernelPackageNames"
+
+'From Pharo2.0a of ''18 April 2012'' [Latest update: #20245] on 7 August 2012 at 11:00:18 am'!
+
+!SmalltalkImage methodsFor: 'PharoKernel' stamp: 'PavelKrivanek 8/7/2012 11:00'!
+kernelPackageNames
+
+  ^ #('Announcements-Core' 'Announcements-Core' 'Collections-Abstract' 'Collections-Arithmetic' 'Collections-Arrayed'
+ 'Collections-Atomic' 'Collections-Native' 'Collections-Sequenceable' 'Collections-Stack' 'Collections-Streams' 
+'Collections-Strings' 'Collections-Support' 'Collections-Text' 'Collections-Traits' 'Collections-Unordered' 
+'Collections-Weak' 'Compiler' 'Compression' 'Files' 'Graphics-Display Objects' 'Graphics-Primitives' 
+'Graphics-Transformations' 'Kernel' 'Multilingual-Encodings' 'Multilingual-ImmPlugin' 'Multilingual-Languages' 
+'Multilingual-TextConversion'  'System-Change Notification' 'System-Changes' 'System-CommandLine' 'System-Clipboard' 
+'System-FileRegistry' 'System-Finalization' 'System-Localization' 'System-Object Events' 'System-Platforms' 
+'System-Support' 'Text-Core' 'Traits' 'UIManager' 'Transcript' 'FileSystem-AnsiStreams' 'FileSystem-Core' 
+'FileSystem-Disk' 'FileSystem-Memory' 'CodeImport' 'Regex-Core' 'SystemProgress' 'System-Announcements')! !
+
+
+"clean fuel, issue 6493"
+
+(MCPackage named: 'FuelFileSystem') workingCopy unload. 
+RPackageOrganizer  default unregisterPackageNamed: #'FuelFileSystem'.
+(MCPackage named: 'FuelFileSystemTests') workingCopy unload. 
+RPackageOrganizer  default unregisterPackageNamed: #'FuelFileSystemTests'.
+
+RPackageOrganizer  default unregisterPackageNamed: #'FuelPackageLoader'.
+RPackageOrganizer  default unregisterPackageNamed: #'FuelPackageLoaderTests'.
+!
+
+"load FuelCommandLineHandler"
+
+Gofer new
+  squeaksource3: 'Fuel';
+  package: 'FuelCommandLineHandler';
+  load.
+
+!
+
+"load Tanker"
+
+Gofer new
+    url: 'http://smalltalkhub.com/mc/marianopeck/Tanker/main';
+    package: 'Tanker';
+    package: 'TankerPackagesSupport';
+    package: 'TankerCommandLineHandler';
+    load.!
+
 
 !ScriptLoader methodsFor: 'cleaning' stamp: 'PavelKrivanek 9/23/2010 10:30'!
 cleanUpAfterMorphicInitialization
@@ -73,16 +120,16 @@ cleanUpAfterMorphicInitialization
     do: [ :each | each methods ifEmpty: [ PackageOrganizer default unregisterPackage: each ] ]
     displayingProgress: 'Cleaning Packages'.
 " Smalltalk organization sortCategories.
-  ChangeSet removeChangeSetsNamedSuchThat: [ :each | true ].
+ ChangeSet removeChangeSetsNamedSuchThat: [ :each | true ].
   ChangeSet resetCurrentToNewUnnamedChangeSet.
   Smalltalk garbageCollect.
   Author reset! !
 
 
-'From Pharo2.0a of ''18 April 2012'' [Latest update: #20236] on 29 July 2012 at 2:31:49 pm'!
+'From Pharo2.0a of ''18 April 2012'' [Latest update: #20245] on 7 August 2012 at 11:39:24 am'!
 
-!SmalltalkImage methodsFor: 'PharoKernel-private' stamp: 'PavelKrivanek 7/29/2012 14:31'!
-privShrinkingProcess
+!SmalltalkImage methodsFor: 'PharoKernel-private' stamp: 'PavelKrivanek 8/7/2012 11:39'!
+privShrinkingProcessWith: additionalPackageNames
 
   [
     | packages |
@@ -137,7 +184,7 @@ privShrinkingProcess
 
     self privCleanUnloadMethods.
 
-    SystemNavigation new removeAllButPackages: self kernelPackageNames.
+    SystemNavigation new removeAllButPackages: self kernelPackageNames, additionalPackageNames.
 
     Smalltalk flushClassNameCache.
     3 timesRepeat: [
@@ -149,8 +196,6 @@ privShrinkingProcess
     
     self privCleanChangeSets.
     
-  "  SystemEventManager allInstances do: [:i | i instVarNamed: #actionMap put: IdentityDictionary new]."
-
     FileServices removeObsolete.
     DebuggerMethodMap voidMapCache.
 
@@ -174,7 +219,6 @@ privShrinkingProcess
 
   ] ifError: [:e |
     | rep |
-    FLSerializer newFull serialize: thisContext toFileNamed: 'PharoDebug.fuel'.
     rep := FileStream forceNewFileNamed: 'PharoDebug.log'.
     rep nextPutAll: 'PharoKernel shrinking report'; cr.
     rep nextPutAll: 'Error:'; cr.
@@ -185,12 +229,31 @@ privShrinkingProcess
     rep close. 
     Smalltalk exitFailure ] 
 
+
+
 ! !
 
 
+'From Pharo2.0a of ''18 April 2012'' [Latest update: #20245] on 7 August 2012 at 11:40:38 am'!
+
+!SmalltalkImage methodsFor: 'PharoKernel' stamp: 'PavelKrivanek 8/7/2012 11:40'!
+shrinkToKernelWith: additionalPackageNames
+
+  "
+  WARNING:  THIS METHOD WILL DESTROY YOUR IMAGE
+
+  Use with cation and only on fresh Pharo images 
+  "
+
+  [ self privShrinkingProcessWith: additionalPackageNames ] forkAt: 40.
+
+  Processor terminateActive.
+  
+! !
+
 
 !ScriptLoader methodsFor: 'pharo-core' stamp: 'PavelKrivanek 9/23/2010 10:30'!
-initializeMorphicFrom: aFLPackage
+initializeMorphicFrom: aTAPackage
 
 | dejavu prj world table |
 
@@ -202,7 +265,7 @@ initializeMorphicFrom: aFLPackage
     ZnByteEncoder ZnConstants ZnMimeType ZnNetworkingUtils ZnServer 
     ZnSingleThreadedServer) do: [:c | (Smalltalk globals at: c) initialize.].
 
-dejavu := aFLPackage additionalObjectAt: #DejaVu. 
+dejavu := aTAPackage additionalObjectAt: #DejaVu. 
 
 TextConstants TextSharedInformation at: #DefaultTextStyle put: dejavu.
 TextConstants TextSharedInformation at: #'Bitmap DejaVu Sans' put: dejavu.
@@ -220,11 +283,11 @@ TextStyle initialize.
 
 FileStream stdout nextPutAll: 'loading tables...' asString; lf.
 
-Unicode classPool at: #DecimalProperty put: (aFLPackage additionalObjectAt: #DecimalProperty).
-Unicode classPool at: #GeneralCategory put: (aFLPackage additionalObjectAt: #GeneralCategory).
-UCSTable classPool at: #GB2312Table put: (aFLPackage additionalObjectAt: #GB2312Table).
-UCSTable classPool at: #JISX0208Table put: (aFLPackage additionalObjectAt: #JISX0208Table).
-UCSTable classPool at: #KSX1001Table put: (aFLPackage additionalObjectAt: #KSX1001Table).
+Unicode classPool at: #DecimalProperty put: (aTAPackage additionalObjectAt: #DecimalProperty).
+Unicode classPool at: #GeneralCategory put: (aTAPackage additionalObjectAt: #GeneralCategory).
+UCSTable classPool at: #GB2312Table put: (aTAPackage additionalObjectAt: #GB2312Table).
+UCSTable classPool at: #JISX0208Table put: (aTAPackage additionalObjectAt: #JISX0208Table).
+UCSTable classPool at: #KSX1001Table put: (aTAPackage additionalObjectAt: #KSX1001Table).
 
 FileStream stdout nextPutAll: 'finished' asString; lf.
 
@@ -466,7 +529,7 @@ RPackageOrganizer initialize.
 SpecBinder initialize.
 StartupLoader initialize.
 
-(aFLPackage additionalObjectAt: #PackageNames) do: [:name | PackageOrganizer default registerPackageNamed: name].
+(aTAPackage additionalObjectAt: #PackageNames) do: [:name | PackageOrganizer default registerPackageNamed: name].
 RPackageOrganizer fillUp.
 
 SmalltalkImage current snapshot: true andQuit: false.
@@ -482,15 +545,17 @@ UIManager default restoreDisplay.
 !SmalltalkImage methodsFor: 'PharoCore' stamp: 'PavelKrivanek 5/16/2012 19:51'!
 exportCoreAsFuelPackage
 
-| packageNames package |
+| packageNames package additionalPackages |
 
-FileStream forceNewFileNamed: 'pharo-core.fuel' do: [:aStream |
+FileStream forceNewFileNamed: 'pharo.tank' do: [:aStream |
   aStream binary.
 
-  packageNames := ((MCWorkingCopy allManagers  collect: [:p | p package name] ) 
-    copyWithoutAll: SmalltalkImage current kernelPackageNames) asSortedCollection.
+  additionalPackages := #('Fuel' 'FuelMetalevel' 'FuelPackageLoader' 'FuelCommandLineHandler' 'Tanker' 'TankerCommandLineHandler' ).
 
-  package := FLPackage withPackages: packageNames.
+  packageNames := ((MCWorkingCopy allManagers  collect: [:p | p package name] ) 
+    copyWithoutAll: SmalltalkImage current kernelPackageNames, additionalPackages) asSortedCollection.
+
+  package := TAPackage fromPackagesInfoNames: packageNames.
   package mustInitialize: false.
   package addPostLoadAction: [:pkg | ScriptLoader new initializeMorphicFrom: pkg].
   package packageHeader addPreMaterializationAction: [:header | 
@@ -507,7 +572,7 @@ FileStream forceNewFileNamed: 'pharo-core.fuel' do: [:aStream |
   package at: #JISX0208Table putAdditionalObject: (UCSTable classPool at: #JISX0208Table).
   package at: #KSX1001Table putAdditionalObject: (UCSTable classPool at: #KSX1001Table).
 
-  FLPackageStore new storePackage: package on: aStream
+  TAPackageStore new storePackage: package on: aStream.
 
 ].
 ! !
