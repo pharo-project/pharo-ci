@@ -1,14 +1,5 @@
 (MCWorkingCopy forPackage: (MCPackage named: 'System')) unregister!
 
-"output Version Number of stdout"
-FileStream stdout 
-    nextPutAll: '[version] ';
-    nextPutAll: SystemVersion current major asString;
-    nextPutAll: '.';
-    nextPutAll: SystemVersion current minor asString;
-    nextPutAll: ' #' ;
-    nextPutAll: SystemVersion current highestUpdate asString;
-    cr.
 
 !
 
@@ -29,10 +20,20 @@ kernelPackageNames
 'System-Support' 'Text-Core' 'Traits' 'UIManager' 'Transcript' 'FileSystem-AnsiStreams' 'FileSystem-Core' 
 'FileSystem-Disk' 'FileSystem-Memory' 'CodeImport' 'Regex-Core' 'SystemProgress' 'System-Announcements')! !
 
+"output Version Number of stdout"
+FileStream stdout 
+    nextPutAll: '[version] ';
+    nextPutAll: SystemVersion current major asString;
+    nextPutAll: '.';
+    nextPutAll: SystemVersion current minor asString;
+    nextPutAll: ' #' ;
+    nextPutAll: SystemVersion current highestUpdate asString;
+    cr.
 
-!
 
 "load FuelCommandLineHandler"
+
+FileStream stdout nextPutAll: 'Loading Fuel'; cr.
 
 Gofer new
   squeaksource3: 'Fuel';
@@ -40,16 +41,22 @@ Gofer new
   package: 'FuelCommandLineHandler';
   load.
 
-!
-
 "load Tanker"
+
+FileStream stdout nextPutAll: 'Loading Tanker'; cr.
 
 Gofer new
     url: 'http://smalltalkhub.com/mc/marianopeck/Tanker/main';
     package: 'Tanker';
     package: 'TankerPackagesSupport';
     package: 'TankerCommandLineHandler';
-    load.!
+    load.
+    
+    
+   (MCPackage named: 'FuelFileSystemTests') workingCopy unload. 
+RPackageOrganizer  default unregisterPackageNamed: #'FuelFileSystemTests'. 
+    
+  !
 
 
 !ScriptLoader methodsFor: 'cleaning' stamp: 'PavelKrivanek 9/23/2010 10:30'!

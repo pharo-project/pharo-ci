@@ -16,11 +16,10 @@ kernelPackageNames
 'System-Support' 'Text-Core' 'Traits' 'UIManager' 'Transcript' 'FileSystem-AnsiStreams' 'FileSystem-Core' 
 'FileSystem-Disk' 'FileSystem-Memory' 'CodeImport' 'Regex-Core' 'SystemProgress' 'System-Announcements')! !
 
-!
  
 "output Version Number of stdout"
 FileStream stdout 
-    nextPutAll: '[versionnnn] ';
+    nextPutAll: '[version] ';
     nextPutAll: SystemVersion current major asString;
     nextPutAll: '.';
     nextPutAll: SystemVersion current minor asString;
@@ -30,8 +29,7 @@ FileStream stdout
 
 "load FuelCommandLineHandler"
 
-FileStream stdout 
-    nextPutAll: 'caca'; cr.
+FileStream stdout nextPutAll: 'Loading Fuel'; cr.
 
 Gofer new
   squeaksource3: 'Fuel';
@@ -39,9 +37,9 @@ Gofer new
   package: 'FuelCommandLineHandler';
   load.
 
-!
-
 "load Tanker"
+
+FileStream stdout nextPutAll: 'Loading Tanker'; cr.
 
 Gofer new
     url: 'http://smalltalkhub.com/mc/marianopeck/Tanker/main';
@@ -49,6 +47,10 @@ Gofer new
     package: 'TankerPackagesSupport';
     package: 'TankerCommandLineHandler';
     load.
+    
+    
+       (MCPackage named: 'FuelFileSystemTests') workingCopy unload. 
+RPackageOrganizer  default unregisterPackageNamed: #'FuelFileSystemTests'. 
     
 !
 
