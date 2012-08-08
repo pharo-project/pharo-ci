@@ -32,6 +32,7 @@ RPackageOrganizer  default unregisterPackageNamed: #'FuelPackageLoaderTests'.
 
 Gofer new
   squeaksource3: 'Fuel';
+  package: 'Fuel';
   package: 'FuelCommandLineHandler';
   load.
 

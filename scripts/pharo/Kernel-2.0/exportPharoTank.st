@@ -45,6 +45,7 @@ RPackageOrganizer  default unregisterPackageNamed: #'FuelPackageLoaderTests'.
 
 Gofer new
   squeaksource3: 'Fuel';
+  package: 'Fuel';
   package: 'FuelCommandLineHandler';
   load.
 
@@ -256,6 +257,27 @@ shrinkToKernelWith: additionalPackageNames
 initializeMorphicFrom: aTAPackage
 
 | dejavu prj world table |
+EventSensorConstants initialize.
+"
+LanguageEnvironment initialize.
+Locale initialize.
+Object initialize.
+OSPlatform initialize.
+SetElement initialize.
+ProcessSpecificVariable initialize.
+EventSensorConstants initialize.
+WeakFinalizationList initialize.
+WeakArray initialize.
+Symbol initialize.
+String initialize."
+
+#(
+ #LanguageEnvironment #Locale #Object #OSPlatform 
+#ProcessSpecificVariable #SetElement
+ #String #Symbol #EventSensorConstants #WeakFinalizationList #WeakArray 
+ #WeakAnnouncementSubscription #WideSymbol #DefaultCommandLineHandler #RxMatcher
+#RxParser #RxsPredicate #AsyncFile #FileLocator #FileHandle #DiskStore #FileStream 
+#MultiByteFileStream #FLWellKnownObjectsCluster #FLLargeIdentityHashedCollection) do: [:each | (Smalltalk globals at: each) initialize] .
 
     #(RGFactory InternetConfiguration NetNameResolver Socket Base64MimeConverter 
     MIMEType UUIDGenerator URI HTTPSocket PackageInfo 
@@ -375,6 +397,8 @@ RGFactory initialize.
 
 Cursor initTarget.
 Cursor initialize.
+
+MCDataStream initialize.
 
 BalloonMorph setBalloonColorTo: Color yellow.
 
