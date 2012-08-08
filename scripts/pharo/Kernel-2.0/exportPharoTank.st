@@ -52,10 +52,7 @@ Gofer new
     package: 'TankerCommandLineHandler';
     load.
     
-    
-   (MCPackage named: 'FuelFileSystemTests') workingCopy unload. 
-RPackageOrganizer  default unregisterPackageNamed: #'FuelFileSystemTests'. 
-    
+   
   !
 
 

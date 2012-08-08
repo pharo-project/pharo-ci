@@ -49,9 +49,6 @@ Gofer new
     load.
     
     
-       (MCPackage named: 'FuelFileSystemTests') workingCopy unload. 
-RPackageOrganizer  default unregisterPackageNamed: #'FuelFileSystemTests'. 
-    
 !
 
 
