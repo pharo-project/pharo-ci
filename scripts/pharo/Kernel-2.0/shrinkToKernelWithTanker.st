@@ -16,19 +16,22 @@ kernelPackageNames
 'System-Support' 'Text-Core' 'Traits' 'UIManager' 'Transcript' 'FileSystem-AnsiStreams' 'FileSystem-Core' 
 'FileSystem-Disk' 'FileSystem-Memory' 'CodeImport' 'Regex-Core' 'SystemProgress' 'System-Announcements')! !
 
-
-"clean fuel, issue 6493"
-
-(MCPackage named: 'FuelFileSystem') workingCopy unload. 
-RPackageOrganizer  default unregisterPackageNamed: #'FuelFileSystem'.
-(MCPackage named: 'FuelFileSystemTests') workingCopy unload. 
-RPackageOrganizer  default unregisterPackageNamed: #'FuelFileSystemTests'.
-
-RPackageOrganizer  default unregisterPackageNamed: #'FuelPackageLoader'.
-RPackageOrganizer  default unregisterPackageNamed: #'FuelPackageLoaderTests'.
 !
+ 
+"output Version Number of stdout"
+FileStream stdout 
+    nextPutAll: '[versionnnn] ';
+    nextPutAll: SystemVersion current major asString;
+    nextPutAll: '.';
+    nextPutAll: SystemVersion current minor asString;
+    nextPutAll: ' #' ;
+    nextPutAll: SystemVersion current highestUpdate asString;
+    cr.
 
 "load FuelCommandLineHandler"
+
+FileStream stdout 
+    nextPutAll: 'caca'; cr.
 
 Gofer new
   squeaksource3: 'Fuel';
@@ -45,76 +48,9 @@ Gofer new
     package: 'Tanker';
     package: 'TankerPackagesSupport';
     package: 'TankerCommandLineHandler';
-    load.!
-
-
-"output Version Number of stdout"
-FileStream stdout 
-    nextPutAll: '[version] ';
-    nextPutAll: SystemVersion current major asString;
-    nextPutAll: '.';
-    nextPutAll: SystemVersion current minor asString;
-    nextPutAll: ' #' ;
-    nextPutAll: SystemVersion current highestUpdate asString;
-    cr.
-
+    load.
+    
 !
-
-"fix kernelPackageNames"
-
-'From Pharo2.0a of ''18 April 2012'' [Latest update: #20245] on 7 August 2012 at 11:00:18 am'!
-
-!SmalltalkImage methodsFor: 'PharoKernel' stamp: 'PavelKrivanek 8/7/2012 11:00'!
-kernelPackageNames
-
-  ^ #('Announcements-Core' 'Announcements-Core' 'Collections-Abstract' 'Collections-Arithmetic' 'Collections-Arrayed'
- 'Collections-Atomic' 'Collections-Native' 'Collections-Sequenceable' 'Collections-Stack' 'Collections-Streams' 
-'Collections-Strings' 'Collections-Support' 'Collections-Text' 'Collections-Traits' 'Collections-Unordered' 
-'Collections-Weak' 'Compiler' 'Compression' 'Files' 'Graphics-Display Objects' 'Graphics-Primitives' 
-'Graphics-Transformations' 'Kernel' 'Multilingual-Encodings' 'Multilingual-ImmPlugin' 'Multilingual-Languages' 
-'Multilingual-TextConversion'  'System-Change Notification' 'System-Changes' 'System-CommandLine' 'System-Clipboard' 
-'System-FileRegistry' 'System-Finalization' 'System-Localization' 'System-Object Events' 'System-Platforms' 
-'System-Support' 'Text-Core' 'Traits' 'UIManager' 'Transcript' 'FileSystem-AnsiStreams' 'FileSystem-Core' 
-'FileSystem-Disk' 'FileSystem-Memory' 'CodeImport' 'Regex-Core' 'SystemProgress' 'System-Announcements')! !
-
-
-"clean fuel, issue 6493"
-
-(MCPackage named: 'FuelFileSystem') workingCopy unload. 
-RPackageOrganizer  default unregisterPackageNamed: #'FuelFileSystem'.
-(MCPackage named: 'FuelFileSystemTests') workingCopy unload. 
-RPackageOrganizer  default unregisterPackageNamed: #'FuelFileSystemTests'.
-
-RPackageOrganizer  default unregisterPackageNamed: #'FuelPackageLoader'.
-RPackageOrganizer  default unregisterPackageNamed: #'FuelPackageLoaderTests'.
-!
-
-"fix issue 6528"
-
-Gofer it
-       squeaksource3: 'PharoInbox';
-       package: 'SLICE-Issue-6528-GroupAnnouncer-announcer-DNU';
-       load.
-!
-
-"load FuelCommandLineHandler"
-
-Gofer new
-  squeaksource3: 'Fuel';
-  package: 'FuelCommandLineHandler';
-  load.
-
-!
-
-"load Tanker"
-
-Gofer new
-    url: 'http://smalltalkhub.com/mc/marianopeck/Tanker/main';
-    package: 'Tanker';
-    package: 'TankerPackagesSupport';
-    package: 'TankerCommandLineHandler';
-    package: 'FuelCommandLineHandler';
-    load.!
 
 
 !ScriptLoader methodsFor: 'cleaning' stamp: 'PavelKrivanek 9/23/2010 10:30'!
@@ -125,7 +61,7 @@ cleanUpAfterMorphicInitialization
   DebuggerMethodMap withAllSubclassesDo: [ :each | each voidMapCache ].
 " self cleanUpPackageOrganizer.
   self cleanUpMethods.
-" DataStream initialize.
+" MCDataStream initialize.
   GradientFillStyle initPixelRampCache.
   FreeTypeCache clearCurrent.
   ImageMorph classPool at: #DefaultForm put: (Form extent: 1 @ 1 depth: 1).
@@ -140,12 +76,6 @@ cleanUpAfterMorphicInitialization
   MCFileBasedRepository flushAllCaches.
   MCMethodDefinition shutDown. 
   MCDefinition clearInstances.
-  Smalltalk globals
-    at: #TTFontDescription
-    ifPresent: [ :c | 
-      c
-        clearDefault;
-        clearDescriptions ].
   ExternalDropHandler resetRegisteredHandlers.
   Undeclared removeUnreferencedKeys.
   Smalltalk globals flushClassNameCache.

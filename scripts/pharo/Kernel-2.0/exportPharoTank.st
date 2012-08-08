@@ -30,15 +30,6 @@ kernelPackageNames
 'FileSystem-Disk' 'FileSystem-Memory' 'CodeImport' 'Regex-Core' 'SystemProgress' 'System-Announcements')! !
 
 
-"clean fuel, issue 6493"
-
-(MCPackage named: 'FuelFileSystem') workingCopy unload. 
-RPackageOrganizer  default unregisterPackageNamed: #'FuelFileSystem'.
-(MCPackage named: 'FuelFileSystemTests') workingCopy unload. 
-RPackageOrganizer  default unregisterPackageNamed: #'FuelFileSystemTests'.
-
-RPackageOrganizer  default unregisterPackageNamed: #'FuelPackageLoader'.
-RPackageOrganizer  default unregisterPackageNamed: #'FuelPackageLoaderTests'.
 !
 
 "load FuelCommandLineHandler"
@@ -69,7 +60,7 @@ cleanUpAfterMorphicInitialization
   DebuggerMethodMap withAllSubclassesDo: [ :each | each voidMapCache ].
 " self cleanUpPackageOrganizer.
   self cleanUpMethods.
-" DataStream initialize.
+" MCDataStream initialize.
   GradientFillStyle initPixelRampCache.
   FreeTypeCache clearCurrent.
   ImageMorph classPool at: #DefaultForm put: (Form extent: 1 @ 1 depth: 1).
@@ -84,12 +75,6 @@ cleanUpAfterMorphicInitialization
   MCFileBasedRepository flushAllCaches.
   MCMethodDefinition shutDown. 
   MCDefinition clearInstances.
-  Smalltalk globals
-    at: #TTFontDescription
-    ifPresent: [ :c | 
-      c
-        clearDefault;
-        clearDescriptions ].
   ExternalDropHandler resetRegisteredHandlers.
   Undeclared removeUnreferencedKeys.
   Smalltalk globals flushClassNameCache.
@@ -257,27 +242,10 @@ shrinkToKernelWith: additionalPackageNames
 initializeMorphicFrom: aTAPackage
 
 | dejavu prj world table |
-EventSensorConstants initialize.
-"
-LanguageEnvironment initialize.
-Locale initialize.
-Object initialize.
-OSPlatform initialize.
-SetElement initialize.
-ProcessSpecificVariable initialize.
-EventSensorConstants initialize.
-WeakFinalizationList initialize.
-WeakArray initialize.
-Symbol initialize.
-String initialize."
 
-#(
- #LanguageEnvironment #Locale #Object #OSPlatform 
-#ProcessSpecificVariable #SetElement
- #String #Symbol #EventSensorConstants #WeakFinalizationList #WeakArray 
- #WeakAnnouncementSubscription #WideSymbol #DefaultCommandLineHandler #RxMatcher
-#RxParser #RxsPredicate #AsyncFile #FileLocator #FileHandle #DiskStore #FileStream 
-#MultiByteFileStream #FLWellKnownObjectsCluster #FLLargeIdentityHashedCollection) do: [:each | (Smalltalk globals at: each) initialize] .
+
+#(#Behavior #ProcessorScheduler #SmalltalkImage #Delay #ByteString #ByteTextConverter #Categorizer #ChronologyConstants #Collection #CompiledMethod #Delay #DateAndTime #DefaultExternalDropHandler #EncodedCharSet #ExternalDropHandler #ExternalSemaphoreTable #Float #Halt #HashTableSizes #ISOLanguageDefinition #InstructionStream #Integer #LanguageEnvironment #Locale #Object #OSPlatform #ProcessSpecificVariable #SetElement #String #Symbol #EventSensorConstants #WeakFinalizationList #WeakArray #WeakAnnouncementSubscription #WideSymbol #DefaultCommandLineHandler #RxMatcher #RxParser #RxsPredicate #AsyncFile #FileLocator #FileHandle #DiskStore #FileStream #MultiByteFileStream #FLWellKnownObjectsCluster #FLLargeIdentityHashedCollection) do: [:each | (Smalltalk globals at: each) initialize] .
+
 
     #(RGFactory InternetConfiguration NetNameResolver Socket Base64MimeConverter 
     MIMEType UUIDGenerator URI HTTPSocket PackageInfo 
