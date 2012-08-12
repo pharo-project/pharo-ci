@@ -1,5 +1,5 @@
 (MCWorkingCopy forPackage: (MCPackage named: 'System')) unregister!
-
+(MCWorkingCopy forPackage: (MCPackage named: 'Graphics')) unregister!
 
 !
 
@@ -54,6 +54,8 @@ Gofer new
     
    
   !
+
+
 
 
 !ScriptLoader methodsFor: 'cleaning' stamp: 'PavelKrivanek 9/23/2010 10:30'!
@@ -554,7 +556,9 @@ FileStream forceNewFileNamed: 'pharo.tank' do: [:aStream |
   package at: #JISX0208Table putAdditionalObject: (UCSTable classPool at: #JISX0208Table).
   package at: #KSX1001Table putAdditionalObject: (UCSTable classPool at: #KSX1001Table).
 
-  TAPackageStore new storePackage: package on: aStream.
+
+
+StandardFileStream stdout 	nextPutAll: 'Time to export ', packageNames size asString, ' packages and a total of ', package behaviors size asString, ' classes: ' ;	nextPutAll: [TAPackageStore new storePackage: package on: aStream] timeToRun asString, ' ms.'; lf.
 
 ].
 ! !

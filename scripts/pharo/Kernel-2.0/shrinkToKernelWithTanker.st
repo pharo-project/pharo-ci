@@ -1,7 +1,9 @@
 
 "fix kernelPackageNames"
 
+
 'From Pharo2.0a of ''18 April 2012'' [Latest update: #20245] on 7 August 2012 at 11:00:18 am'!
+
 
 !SmalltalkImage methodsFor: 'PharoKernel' stamp: 'PavelKrivanek 8/7/2012 11:00'!
 kernelPackageNames
@@ -27,6 +29,8 @@ FileStream stdout
     nextPutAll: SystemVersion current highestUpdate asString;
     cr.
 
+
+
 "load FuelCommandLineHandler"
 
 FileStream stdout nextPutAll: 'Loading Fuel'; cr.
@@ -50,6 +54,7 @@ Gofer new
     
     
 !
+
 
 
 !ScriptLoader methodsFor: 'cleaning' stamp: 'PavelKrivanek 9/23/2010 10:30'!
@@ -143,7 +148,8 @@ FileStream forceNewFileNamed: 'pharo.tank' do: [:aStream |
   package at: #JISX0208Table putAdditionalObject: (UCSTable classPool at: #JISX0208Table).
   package at: #KSX1001Table putAdditionalObject: (UCSTable classPool at: #KSX1001Table).
 
-  TAPackageStore new storePackage: package on: aStream.
+
+StandardFileStream stdout 	nextPutAll: 'Time to export ', packageNames size asString, ' packages and a total of ', package behaviors size asString, ' classes: ' ;	nextPutAll: [TAPackageStore new storePackage: package on: aStream] timeToRun asString, ' ms.'; lf.
 
 ].
 ! !
@@ -236,6 +242,7 @@ privShrinkingProcessWith: additionalPackageNames
 
     "UIManager default progressBarEnabled: true."
     "Smalltalk condenseChanges."
+
 
     Smalltalk saveImageInNewContext.
 
