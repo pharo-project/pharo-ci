@@ -10,7 +10,9 @@
 !SmalltalkImage methodsFor: 'PharoKernel' stamp: 'PavelKrivanek 8/7/2012 11:00'!
 kernelPackageNames
 
-  ^ #('Announcements-Core' 'Announcements-Core' 'Collections-Abstract' 'Collections-Arithmetic' 'Collections-Arrayed'
+
+
+  ^ #('Announcements-  Core' 'Announcements-Core' 'Collections-Abstract' 'Collections-Arithmetic' 'Collections-Arrayed'
  'Collections-Atomic' 'Collections-Native' 'Collections-Sequenceable' 'Collections-Stack' 'Collections-Streams' 
 'Collections-Strings' 'Collections-Support' 'Collections-Text' 'Collections-Traits' 'Collections-Unordered' 
 'Collections-Weak' 'Compiler' 'Compression' 'Files' 'Graphics-Display Objects' 'Graphics-Primitives' 
@@ -558,7 +560,9 @@ FileStream forceNewFileNamed: 'pharo.tank' do: [:aStream |
 
 
 
-StandardFileStream stdout 	nextPutAll: 'Time to export ', packageNames size asString, ' packages and a total of ', package behaviors size asString, ' classes: ' ;	nextPutAll: [TAPackageStore new storePackage: package on: aStream] timeToRun asString, ' ms.'; lf.
+StandardFileStream stdout 
+	nextPutAll: 'Time to export ', packageNames size asString, ' packages and a total of ', package behaviors size asString, ' classes: ' ;
+	nextPutAll: [TAPackageStore new storePackage: package on: aStream] timeToRun asString, ' ms.'; lf.
 
 ].
 ! !
