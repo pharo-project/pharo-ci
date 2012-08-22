@@ -52,6 +52,7 @@ Gofer new
     package: 'TankerCommandLineHandler';
     load.
     
+     Parser warningAllowed: true.   
     
 !
 
@@ -149,7 +150,9 @@ FileStream forceNewFileNamed: 'pharo.tank' do: [:aStream |
   package at: #KSX1001Table putAdditionalObject: (UCSTable classPool at: #KSX1001Table).
 
 
-StandardFileStream stdout 	nextPutAll: 'Time to export ', packageNames size asString, ' packages and a total of ', package behaviors size asString, ' classes: ' ;	nextPutAll: [TAPackageStore new storePackage: package on: aStream] timeToRun asString, ' ms.'; lf.
+StandardFileStream stdout 
+	nextPutAll: 'Time to export ', packageNames size asString, ' packages and a total of ', package behaviors size asString, ' classes: ' ;
+	nextPutAll: [TAPackageStore new storePackage: package on: aStream] timeToRun asString, ' ms.'; lf.
 
 ].
 ! !

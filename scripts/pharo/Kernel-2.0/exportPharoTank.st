@@ -12,7 +12,7 @@ kernelPackageNames
 
 
 
-  ^ #('Announcements-  Core' 'Announcements-Core' 'Collections-Abstract' 'Collections-Arithmetic' 'Collections-Arrayed'
+  ^ #('Announcements-Core' 'Announcements-Core' 'Collections-Abstract' 'Collections-Arithmetic' 'Collections-Arrayed'
  'Collections-Atomic' 'Collections-Native' 'Collections-Sequenceable' 'Collections-Stack' 'Collections-Streams' 
 'Collections-Strings' 'Collections-Support' 'Collections-Text' 'Collections-Traits' 'Collections-Unordered' 
 'Collections-Weak' 'Compiler' 'Compression' 'Files' 'Graphics-Display Objects' 'Graphics-Primitives' 
@@ -53,7 +53,8 @@ Gofer new
     package: 'TankerPackagesSupport';
     package: 'TankerCommandLineHandler';
     load.
-    
+   
+   Parser warningAllowed: true.     
    
   !
 
