@@ -131,16 +131,16 @@ if File.exists? destination
         
     puts red("Issue has been loaded before:")+" #{Dir.pwd}/#{destination}" if INTERACTIVE
     while INTERACTIVE
-        print 'exit[e], reuse[r] or delete[D] files: '
+        print 'exit[e], or delete[D] files: '
         result = $stdin.gets.downcase.chomp
-        break if ['e', 'r', 'd'].include? result
+        break if ['e', 'd'].include? result
         break if result.empty?
     end
 
     case result
     when 'e'
         exit 0
-    when 'r'    
+    when 'r'
         puts red('resuse not yet implemented')
         exit 1
     else
@@ -220,7 +220,7 @@ color := [:colorCode :text|
     FileStream stderr 
         "set the color"
         nextPut: Character escape; nextPut: $[; print: colorCode; nextPut: $m;
-        nextPutAll: text; crlf;
+        nextPutAll: text; lf;
         "reset the color"
         nextPut: Character escape; nextPutAll: '[0m'.
 ].
@@ -232,12 +232,10 @@ blue  := [:text| color value: 34 value: text ].
 "==========================================================================="
 "==========================================================================="
 
+blue value: 'Cleaning up image'.
+
 World submorphs do: [:each | each delete ].
-
 Smalltalk garbageCollect.
-Smalltalk garbageCollect.
-Smalltalk garbageCollect.
-
 Author fullName: 'MonkeyGalactikalIntegrator'.
 
 "==========================================================================="
@@ -303,20 +301,18 @@ changeLoader isGreen
     
 "==========================================================================="
 
-] on: Error do: [ :error|
+] on: (Error, MCMergeOrLoadWarning) do: [ :error|
     "output the Error warning in red"
     red value: 'Failed to load Issue:'.
     FileStream stderr print: error; crlf.
 
-    "should do an exit 1 here"
-
-    "open the error"
     error pass.
 ].
 
 "==========================================================================="
 
-Smalltalk snapshot: true andQuit: true.
+
+Smalltalk snapshot: true andQuit: false.
 
 Workspace openContents: ' 
 issue := Smalltalk at: #''Issue ''', issueNumber printString, '.
