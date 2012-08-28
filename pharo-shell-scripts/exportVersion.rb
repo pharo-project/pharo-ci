@@ -61,6 +61,12 @@ system("rm -rf pharo-core/*")
 guard()
 
 
+puts REPOS="git://github.com/dalehenrich/filetree.git"
+system("test -e filetree || git clone -b pharo2.0 --no-checkout #{REPOS}")
+system("git --git-dir=filetree/.git pull")
+guard()
+
+
 SOURCES="https://gforge.inria.fr/frs/download.php/24391/PharoV10.sources.zip"
 system("test -e PharoV10.sources || (wget --quiet --no-check-certificate #{SOURCES}; unzip PharoV10.sources.zip)")
 guard()

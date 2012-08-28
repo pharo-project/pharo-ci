@@ -192,8 +192,9 @@ guard()
 
 # ===========================================================================
 puts blue("Fetching the latest VM pharo scripts")
-
-`test -e pharo-build || git clone --depth=1 git://gitorious.org/pharo-build/pharo-build.git`
+url = 'git://gitorious.org/pharo-build/pharo-build.git'
+puts "    #{url}"
+`test -e pharo-build || git clone --depth=1 #{url}`
 `git --git-dir=pharo-build/.git pull`
 guard()
 
@@ -211,7 +212,7 @@ end
 
 File.open("issueLoading.st", 'w') {|f| 
 f.puts <<IDENTIFIER
-| tracker issue color red green blue issueNumber changeLoader |
+| tracker issue color red green blue issueNumber changeLoader error |
 "==========================================================================="
 
 "some helper blocks for error printing"
@@ -301,23 +302,21 @@ changeLoader isGreen
     
 "==========================================================================="
 
-] on: (Error, MCMergeOrLoadWarning) do: [ :error|
+] on: (Error, MCMergeOrLoadWarning) do: [ :err |
     "output the Error warning in red"
     red value: 'Failed to load Issue:'.
-    FileStream stderr print: error; crlf.
+    FileStream stderr print: err; crlf.
 
-    error pass.
+    error  := err freeze.
+    err pass.
 ].
 
 "==========================================================================="
 
+Smalltalk snapshot: true andQuit: true.
 
-Smalltalk snapshot: true andQuit: false.
-
-Workspace openContents: ' 
-issue := Smalltalk at: #''Issue ''', issueNumber printString, '.
-issue changeLoader errors
-'.
+issue inspect.
+error ifNotNil: [ error debug ].
 
 IDENTIFIER
 }
@@ -342,7 +341,7 @@ begin
     }
 rescue Timeout::Error    
     Process.kill('KILL', pid)
-    Process.kill('KILL', pid+1) #this is pure guess...
+    Process.kill('KILL', pid+1) #this is a pure guess...
     puts red('Timeout: ') + blue("Loading #{issueNumber} took longer than 15mins")
     File.open("issueLoading.st", 'w') {|f| 
         f.puts <<IDENTIFIER
