@@ -51,7 +51,7 @@ Gofer new
     package: 'ConfigurationOfFileTree';
     load.
 ((Smalltalk at: #ConfigurationOfFileTree) project version: '1.0') load.
-] on: Error do: [ :f| ].
+] on: Error, Exception do: [ :f| ].
 
 Gofer new
     url: 'http://ss3.gemstone.com/ss/FileTree';

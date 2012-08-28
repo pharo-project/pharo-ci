@@ -2,7 +2,7 @@
 [ Gofer new
 	url: 'http://ss3.gemstone.com/ss/ci';
 	package: 'ConfigurationOfCI';
-	load ] on: Error do: [ :err| ].
+	load ] on: Error, Exception  do: [ :err| ].
 
 "Load the Integration manager"
 Gofer new
