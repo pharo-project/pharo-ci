@@ -35,11 +35,15 @@ DIR = File.dirname(dir)
 
 # PharoImage Versions ==========================================================
 versions = {
-20233 => 'https://ci.lille.inria.fr/pharo/job/Pharo-2.0/232/artifact/Pharo-2.0.zip',
-20214 => 'https://ci.lille.inria.fr/pharo/job/Pharo-2.0/215/artifact/Pharo-2.0.zip',
-20200 => 'https://ci.lille.inria.fr/pharo/job/Pharo-2.0/202/artifact/Pharo-2.0.zip',
-20195 => 'https://ci.lille.inria.fr/pharo/job/Pharo-2.0/198/artifact/Pharo-2.0.zip',
-20175 => 'https://ci.lille.inria.fr/pharo/job/Pharo-2.0/183/artifact/Pharo-2.0.zip',
+
+20263 => 'https://gforge.inria.fr/frs/download.php/31368/Pharo-2.0-263.zip',
+20262 => 'https://gforge.inria.fr/frs/download.php/31366/Pharo-2.0-262.zip',
+20214 => 'https://gforge.inria.fr/frs/download.php/31236/Pharo-2.0-214.zip',
+20213 => 'https://gforge.inria.fr/frs/download.php/31235/Pharo-2.0-213.zip',
+20212 => 'https://gforge.inria.fr/frs/download.php/31227/Pharo-2.0-212.zip',
+20203 => 'https://gforge.inria.fr/frs/download.php/31222/Pharo-2.0-203.zip',
+20192 => 'https://gforge.inria.fr/frs/download.php/31200/Pharo-2.0-192.zip',
+20184 => 'https://gforge.inria.fr/frs/download.php/31196/Pharo-2.0-184.zip',
 
 20156 => 'https://gforge.inria.fr/frs/download.php/31073/Pharo-2.0-156.zip',
 20144 => 'https://gforge.inria.fr/frs/download.php/31047/Pharo-2.0-144.zip',
