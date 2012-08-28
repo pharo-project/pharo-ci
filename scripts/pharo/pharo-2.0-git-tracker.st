@@ -44,11 +44,26 @@ packages := MCWorkingCopy allInstances
 
 " load filetree =============================================================="
 blue value:'Installing FileTree'.
+
+[
 Gofer new
     url: 'http://ss3.gemstone.com/ss/FileTree';
     package: 'ConfigurationOfFileTree';
     load.
 ((Smalltalk at: #ConfigurationOfFileTree) project version: '1.0') load.
+] on: Error do: [ :f| ].
+
+Gofer new
+    url: 'http://ss3.gemstone.com/ss/FileTree';
+    package: 'ConfigurationOfFileTree';
+    load.
+((Smalltalk at: #ConfigurationOfFileTree) project version: '1.0') load.
+
+Gofer new
+    repository: (MCFileTreeRepository new directory: 
+                (FileDirectory on: '/opt/git/filetree/repository/'));
+    package: 'MonticelloFileTree-Core';
+    load.
 
 " create a new filetree repository ==========================================="
 blue value: 'Preparing commit'.
