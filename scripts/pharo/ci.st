@@ -1,10 +1,11 @@
 "Explicitely load Metacello since it's currently broken"
-[ Gofer new
-	url: 'http://ss3.gemstone.com/ss/ci';
-	package: 'ConfigurationOfCI';
-	load ] on: Error, Exception  do: [ :err| ].
+ Gofer it
+        url: 'http://seaside.gemstone.com/ss/metacello';
+        package: 'ConfigurationOfMetacello';
+        load.
+       
+(Smalltalk at: #ConfigurationOfMetacello) project stableVersion load: 'batch'. 
 
-"Load the Integration manager"
 Gofer new
 	url: 'http://ss3.gemstone.com/ss/ci';
 	package: 'ConfigurationOfCI';
