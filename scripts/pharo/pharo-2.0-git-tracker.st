@@ -44,14 +44,15 @@ packages := MCWorkingCopy allInstances
 
 " load filetree =============================================================="
 blue value:'Installing FileTree'.
+[ Gofer it
+        url: 'http://seaside.gemstone.com/ss/metacello';
+        package: 'ConfigurationOfMetacello';
+        load.
+       
+(Smalltalk at: #ConfigurationOfMetacello) project stableVersion load: 'batch'. 
+] on: Error do: [ :f| ].
 
-[
-Gofer new
-    url: 'http://ss3.gemstone.com/ss/FileTree';
-    package: 'ConfigurationOfFileTree';
-    load.
-((Smalltalk at: #ConfigurationOfFileTree) project version: '1.0') load.
-] on: Error, Exception do: [ :f| ].
+[(Smalltalk at: #ConfigurationOfMetacello) project stableVersion load: 'batch'. ] on: Error do: [ :f| ].
 
 Gofer new
     url: 'http://ss3.gemstone.com/ss/FileTree';
