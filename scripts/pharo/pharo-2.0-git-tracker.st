@@ -51,6 +51,7 @@ blue value:'Installing FileTree'.
        
 (Smalltalk at: #ConfigurationOfMetacello) project stableVersion load: 'batch'. 
 ] on: Error do: [ :f| ].
+Compiler recompileAll.
 
 [(Smalltalk at: #ConfigurationOfMetacello) project stableVersion load: 'batch'. ] on: Error do: [ :f| ].
 
