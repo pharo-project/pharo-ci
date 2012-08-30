@@ -44,6 +44,7 @@ packages := MCWorkingCopy allInstances
 
 " load filetree =============================================================="
 blue value:'Installing FileTree'.
+
 [ Gofer it
         url: 'http://seaside.gemstone.com/ss/metacello';
         package: 'ConfigurationOfMetacello';
@@ -51,6 +52,7 @@ blue value:'Installing FileTree'.
        
 (Smalltalk at: #ConfigurationOfMetacello) project stableVersion load: 'batch'. 
 ] on: Error do: [ :f| ].
+
 Compiler recompileAll.
 
 [(Smalltalk at: #ConfigurationOfMetacello) project stableVersion load: 'batch'. ] on: Error do: [ :f| ].
@@ -63,11 +65,17 @@ Gofer new
 ((Smalltalk at: #ConfigurationOfFileTree) project version: '1.0') load.
 ] on: Warning do: [ :e| e resume ].
 
+Compiler recompileAll.
+
 Gofer new
     repository: (MCFileTreeRepository new directory: 
                 (FileDirectory on: '/opt/git/filetree/repository/'));
     package: 'MonticelloFileTree-Core';
     load.
+
+Compiler recompileAll.
+
+
 
 " create a new filetree repository ==========================================="
 blue value: 'Preparing commit'.
