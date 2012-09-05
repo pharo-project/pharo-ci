@@ -16,3 +16,7 @@ Gofer new
 	load.
 	
 (Smalltalk at: #ConfigurationOfCI) perform: #loadFull.
+
+
+"2.0 load rage"
+Compiler recompileAll.
