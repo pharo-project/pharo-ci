@@ -1,6 +1,6 @@
 loading
 loadSliceFrom: gofer
-	|match slices aSlice |
+	|match slices|
 	
 	match := 'SLICE-Issue-', id asString.
 	slices := gofer allResolved select: [ :ref| ref name beginsWith: match].
@@ -14,6 +14,4 @@ loadSliceFrom: gofer
 		goferReference repository isKindOf: MCCacheRepository ].
 	
 	" get the last version "
-	aSlice := (slices sort: [ :a :b | a versionNumber >= b versionNumber ]) first.
-	aSlice resolved.
-	^ aSlice
+	^ (slices sort: [ :a :b | a versionNumber >= b versionNumber ]) first

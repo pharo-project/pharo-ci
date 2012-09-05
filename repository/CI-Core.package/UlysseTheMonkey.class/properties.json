@@ -17,8 +17,7 @@
 		"testFailures",
 		"testResult",
 		"issue",
-		"verbose",
-		"debug" ],
+		"verbose" ],
 	"name" : "UlysseTheMonkey",
 	"pools" : [
 		 ],
