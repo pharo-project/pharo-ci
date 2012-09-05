@@ -11,7 +11,7 @@ version117: spec
 	spec for: #'pharo' do: [
 		spec project: 'Soup' with: '1.2'.
 		spec 
-			package: 'CI-Core' with: 'CI-Core-CamilloBruni.30';
+			package: 'CI-Core' with: 'CI-Core-CamilloBruni.31';
 			package: 'CI-Integration' with: 'CI-Integration-BenjaminVanRyseghem.6';
 			package: 'CI-Loader' with: 'CI-Loader-CamilloBruni.5';
 			package: 'Zodiac-Core' with: 'Zodiac-Core-MarcusDenker.23'. ].
