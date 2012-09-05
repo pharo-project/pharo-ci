@@ -1,4 +1,4 @@
 testing
 isCog
 
-	^ Smalltalk vm version includesSubstring: 'Cog'
+	^ Smalltalk vm version includesSubString: 'Cog'
