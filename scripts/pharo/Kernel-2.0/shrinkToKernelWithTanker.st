@@ -30,32 +30,133 @@ FileStream stdout
     cr.
 
 
+" hacks "
+
+
+ Parser warningAllowed: true.   
+
+" To be added soon in Pharo " 
+ 'BufferedConverterBatchMethods.cs' asFileReference readStream fileIn.
+
+
+Gofer it
+	squeaksource3: 'PharoInbox';
+	package: 'SLICE-Issue-6599-we-have-methods-with-trailer-EmbeddedSourceZip';
+	package: 'SLICE-Issue-6598-We-have-a-lot-of-incorrect-CompiledMethods-hanging-around';
+	package: 'SLICE-Issue-6609-ProcessSpecificVariable-bug';
+load.
+Compiler recompileAll.   "Needed by issue 6598"
+
 
 "load FuelCommandLineHandler"
 
 FileStream stdout nextPutAll: 'Loading Fuel'; cr.
 
 Gofer new
-  squeaksource3: 'Fuel';
+      squeaksource3: 'Fuel';
   package: 'Fuel';
   package: 'FuelCommandLineHandler';
   load.
 
+" Load and install new classbuilder  "
+  Gofer it
+                squeaksource3: 'PharoTaskForces';
+                package: 'Slot';
+                load.
+        (Smalltalk at: #SlotVirus) perform: #spread.
+
+  Gofer it
+      squeaksource3: 'PharoTaskForces';
+                package: 'SlotsClassBuilderIntegration';
+                load.
+                
+                
 "load Tanker"
 
 FileStream stdout nextPutAll: 'Loading Tanker'; cr.
 
 Gofer new
-    url: 'http://smalltalkhub.com/mc/marianopeck/Tanker/main';
+        smalltalkhubUser: 'marianopeck' project: 'Tanker';
     package: 'Tanker';
     package: 'TankerPackagesSupport';
     package: 'TankerCommandLineHandler';
     load.
-    
-     Parser warningAllowed: true.   
-    
+       
 !
 
+
+!TAImport methodsFor: 'private' stamp: 'PavelKrivanek 11/25/2011 14:33'!
+run
+
+	| bundle |
+	StandardFileStream stdout nextPutAll: 'Time to install sources in .changes: ', [sources run] timeToRun asString; lf.
+	
+	StandardFileStream stdout nextPutAll: 'Time to materialize: ',  [bundle := (FLMaterializer newDefault materializeFrom: binariesStream) root] timeToRun asString; lf.
+	bundle installUsing: sources binaryStream: binariesStream.
+	^ bundle
+! !	
+
+
+!TAExport methodsFor: 'private' stamp: 'PavelKrivanek 11/25/2011 14:33'!
+run
+
+	| bundle traits classes traitDefinitions classDefinitions extensionMethodDefinitions serializer extras |
+
+	StandardFileStream stdout nextPutAll: 'Time to export sources and create definitions: ',
+	[traits := self traitsOrder: (behaviors select: [:each | each isTrait ]).
+	classes := self classesOrder: (behaviors select: [:each | each isBehavior ]).
+
+	traitDefinitions := traits collect: [ :each | each tankerDefinitionOn: sourcesWriter ] as: Array.
+	classDefinitions := classes collect: [ :each | each tankerDefinitionOn: sourcesWriter ] as: Array.
+	extensionMethodDefinitions := methods collect: [ :each | each tankerDefinitionOn: sourcesWriter ] as: Array.
+
+	self writeClassInitialization: classes. 
+	sourcesWriter finalizeSourceWritting.	
+] timeToRun asString; lf.
+	
+	StandardFileStream stdout nextPutAll: 'Time to serialize: ',
+	[bundle := (TADefinitionBundle 
+		classes: classDefinitions 
+		traits: traitDefinitions 
+		methods: extensionMethodDefinitions)
+		mustInitialize: initializeClasses;
+		yourself.
+		
+	serializer := FLSerializer newDefault.
+	serializer header preMaterializationActions: preMaterializationActions. 
+	serializer header postMaterializationActions: postMaterializationActions. 
+	serializer serialize: bundle on: binariesStream.
+	
+	serializer serialize: preLoadActions on: binariesStream.
+	serializer serialize: additionalObjects on: binariesStream.
+	serializer serialize: postLoadActions on: binariesStream.
+	
+	binariesStream flush.
+	sourcesStream flush.] timeToRun asString; lf.
+! !	
+
+
+!TADefinitionBundle methodsFor: 'private' stamp: 'PavelKrivanek 11/25/2011 14:33'!
+installUsing: sources binaryStream: binaryStream environment: anEnvironment
+	"Install the definitions in the received environment"
+
+StandardFileStream stdout nextPutAll: 'Time to install classes in the system: ', 	
+[	self readAndExecutePreLoadActionsFrom: binaryStream.
+	
+	traitDefinitions do: [ :each | 
+		each installUsing: sources environment: anEnvironment ].
+
+	classes := classDefinitions collect: [ :each | 
+		each installUsing: sources environment: anEnvironment ].
+
+	extensionMethodDefinitions do: [ :each | 
+		each installUsing: sources environment: anEnvironment ].
+	
+	self initializeClassesIfNeeded. 
+	] timeToRun asString; lf.
+	self readAndStoreAdditionalObjectsFrom: binaryStream.
+	self readAndExecutePostLoadActionsFrom: binaryStream.
+! !	
 
 
 !ScriptLoader methodsFor: 'cleaning' stamp: 'PavelKrivanek 9/23/2010 10:30'!
@@ -122,22 +223,31 @@ cleanUpAfterMorphicInitialization
 !SmalltalkImage methodsFor: 'PharoCore' stamp: 'PavelKrivanek 5/16/2012 19:51'!
 exportCoreAsFuelPackage
 
-| packageNames package additionalPackages |
+| packageNames package additionalPackages behaviors methods export aBinaryStream aSourcesStream  |
 
-FileStream forceNewFileNamed: 'pharo.tank' do: [:aStream |
-  aStream binary.
 
-  additionalPackages := #('Fuel' 'FuelMetalevel' 'FuelPackageLoader' 'FuelCommandLineHandler' 'Tanker' 'TankerCommandLineHandler' ).
+  additionalPackages := #('Fuel' 'FuelMetalevel' 'FuelPackageLoader' 'FuelCommandLineHandler' 'Tanker' 'TankerCommandLineHandler' 'Slot').
 
   packageNames := ((MCWorkingCopy allManagers  collect: [:p | p package name] ) 
     copyWithoutAll: SmalltalkImage current kernelPackageNames, additionalPackages) asSortedCollection.
 
-  package := TAPackage fromPackagesInfoNames: packageNames.
-  package mustInitialize: false.
-  package addPostLoadAction: [:pkg | ScriptLoader new initializeMorphicFrom: pkg].
-  package packageHeader addPreMaterializationAction: [:header | 
+aBinaryStream := 'pharo.tank' asFileReference writeStream binary.
+aSourcesStream := 'pharo.tankst' asFileReference writeStream.
+behaviors := OrderedCollection new.
+methods := OrderedCollection new.
+packageNames do: [:packageName |
+	behaviors addAll: ((PackageInfo named: packageName) classes).
+	methods addAll: ((PackageInfo named: packageName) extensionMethods collect: [:each | each method])
+	].
+
+
+package := (TAPackage behaviors: behaviors extensionMethods: methods).
+package mustInitialize: false.
+
+  package addPostLoadAction: [:pkg | (Smalltalk at: #ScriptLoader) new initializeMorphicFrom: pkg].
+  package addPreMaterializationAction: [
     #(World ActiveEvent ActiveWorld ActiveHand) do: [:className | Smalltalk globals at: className put: nil]. 
-    FileStream stdout nextPutAll: 'executed...'; lf. ].
+ ].
 
   package at: #PackageNames putAdditionalObject: (MCWorkingCopy allManagers  collect: [:p | p package name]).
   package at: #MCRegistry putAdditionalObject: (MCWorkingCopy registry).
@@ -149,12 +259,19 @@ FileStream forceNewFileNamed: 'pharo.tank' do: [:aStream |
   package at: #JISX0208Table putAdditionalObject: (UCSTable classPool at: #JISX0208Table).
   package at: #KSX1001Table putAdditionalObject: (UCSTable classPool at: #KSX1001Table).
 
+export := TAExport  
+	package: package
+	binariesOn: aBinaryStream 
+	sourcesOn: aSourcesStream.
 
 StandardFileStream stdout 
-	nextPutAll: 'Time to export ', packageNames size asString, ' packages and a total of ', package behaviors size asString, ' classes: ' ;
-	nextPutAll: [TAPackageStore new storePackage: package on: aStream] timeToRun asString, ' ms.'; lf.
+	nextPutAll: 'Exporting ', packageNames size asString, ' packages and a total of ', behaviors size asString, ' classes '; lf.
+	
+export run.
 
-].
+aBinaryStream close.
+aSourcesStream close.
+
 ! !
 
 'From Pharo2.0a of ''18 April 2012'' [Latest update: #20245] on 7 August 2012 at 11:39:24 am'!
@@ -283,4 +400,4 @@ shrinkToKernelWith: additionalPackageNames
 ! !
 
 
-Smalltalk shrinkToKernelWith: #('Fuel' 'FuelMetalevel' 'FuelCommandLineHandler' 'Tanker' 'TankerCommandLineHandler').
+Smalltalk shrinkToKernelWith: #('Fuel' 'FuelMetalevel' 'FuelCommandLineHandler' 'Tanker' 'TankerCommandLineHandler' 'Slot' ).
