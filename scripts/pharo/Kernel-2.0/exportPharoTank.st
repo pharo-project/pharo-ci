@@ -41,14 +41,6 @@ FileStream stdout
  'BufferedConverterBatchMethods.cs' asFileReference readStream fileIn.
 
 
-Gofer it
-	squeaksource3: 'PharoInbox';
-	package: 'SLICE-Issue-6599-we-have-methods-with-trailer-EmbeddedSourceZip';
-	package: 'SLICE-Issue-6598-We-have-a-lot-of-incorrect-CompiledMethods-hanging-around';
-	package: 'SLICE-Issue-6609-ProcessSpecificVariable-bug';
-load.
-Compiler recompileAll.   "Needed by issue 6598"
-
 
 "load FuelCommandLineHandler"
 
@@ -439,11 +431,11 @@ repoGroup addRepository: (MCHttpRepository
   user: ''
   password: '').
 
-mcRegistry keysAndValuesDo: [:packageName :ancestry |
+mcRegistry keysAndValuesDo: [:package :oldWorkingCopy |
   | workingCopy |
-  PackageInfo registerPackageName: packageName.
-  workingCopy := MCWorkingCopy forPackage: (MCPackage new name: packageName). 
-  workingCopy instVarNamed: #ancestry put: ancestry.
+  PackageInfo registerPackageName: package name.
+  workingCopy := MCWorkingCopy forPackage: (MCPackage new name: package name). 
+  workingCopy instVarNamed: #ancestry put: oldWorkingCopy ancestry.
   workingCopy instVarNamed: #repositoryGroup put: repoGroup].
 
 RPackageOrganizer fillUp.

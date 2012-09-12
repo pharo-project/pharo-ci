@@ -39,15 +39,6 @@ FileStream stdout
  'BufferedConverterBatchMethods.cs' asFileReference readStream fileIn.
 
 
-Gofer it
-	squeaksource3: 'PharoInbox';
-	package: 'SLICE-Issue-6599-we-have-methods-with-trailer-EmbeddedSourceZip';
-	package: 'SLICE-Issue-6598-We-have-a-lot-of-incorrect-CompiledMethods-hanging-around';
-	package: 'SLICE-Issue-6609-ProcessSpecificVariable-bug';
-load.
-Compiler recompileAll.   "Needed by issue 6598"
-
-
 "load FuelCommandLineHandler"
 
 FileStream stdout nextPutAll: 'Loading Fuel'; cr.
@@ -321,7 +312,7 @@ privShrinkingProcessWith: additionalPackageNames
     SimpleCodeLoader register.
 "
     "move class Model to different category"
-    Object subclass: #Model instanceVariableNames: 'dependents' classVariableNames: '' poolDictionaries: '' category: 'Kernel-Objects'.
+   " Object subclass: #Model instanceVariableNames: 'dependents' classVariableNames: '' poolDictionaries: '' category: 'Kernel-Objects'."
 
     self privCleanTextConstants.
 
