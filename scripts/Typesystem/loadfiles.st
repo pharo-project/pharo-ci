@@ -19,4 +19,5 @@
 (FileStream oldFileNamed: '../scripts/Typesystem/Source/TypeSystem-Types-Support.st') fileIn.
 (FileStream oldFileNamed: '../scripts/Typesystem/Source/TypeSystem-Support.st') fileIn.
 (FileStream oldFileNamed: '../scripts/Typesystem/Source/TypeSystem-TempSupport.st') fileIn.
+(FileStream oldFileNamed: '../scripts/Typesystem/Source/TypeSystem-Polymorph.st') fileIn.
 
