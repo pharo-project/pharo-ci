@@ -32,31 +32,90 @@ FileStream stdout
     nextPutAll: SystemVersion current highestUpdate asString;
     cr.
 
+" hacks "
+
+
+ Parser warningAllowed: true.   
+
+" To be added soon in Pharo " 
+ 'BufferedConverterBatchMethods.cs' asFileReference readStream fileIn.
+
+
 
 "load FuelCommandLineHandler"
 
 FileStream stdout nextPutAll: 'Loading Fuel'; cr.
 
 Gofer new
-  squeaksource3: 'Fuel';
+      squeaksource3: 'Fuel';
   package: 'Fuel';
   package: 'FuelCommandLineHandler';
   load.
 
+" Load and install new classbuilder  "
+  Gofer it
+                squeaksource3: 'PharoTaskForces';
+                package: 'Slot';
+                load.
+        (Smalltalk at: #SlotVirus) perform: #spread.
+
+  Gofer it
+      squeaksource3: 'PharoTaskForces';
+                package: 'SlotsClassBuilderIntegration';
+                load.
+                
+                
 "load Tanker"
 
 FileStream stdout nextPutAll: 'Loading Tanker'; cr.
 
 Gofer new
-    url: 'http://smalltalkhub.com/mc/marianopeck/Tanker/main';
+        smalltalkhubUser: 'marianopeck' project: 'Tanker';
     package: 'Tanker';
     package: 'TankerPackagesSupport';
     package: 'TankerCommandLineHandler';
     load.
    
-   Parser warningAllowed: true.     
-   
   !
+
+
+
+
+!TAImport methodsFor: 'private' stamp: 'PavelKrivanek 11/25/2011 14:33'!
+run
+
+	| bundle |
+	StandardFileStream stdout nextPutAll: 'Time to install sources in .changes: ', [sources run] timeToRun asString; lf.
+	
+	StandardFileStream stdout nextPutAll: 'Time to materialize: ',  [bundle := (FLMaterializer newDefault materializeFrom: binariesStream) root] timeToRun asString; lf.
+	bundle installUsing: sources binaryStream: binariesStream.
+	^ bundle
+! !	
+
+
+
+!TADefinitionBundle methodsFor: 'private' stamp: 'PavelKrivanek 11/25/2011 14:33'!
+installUsing: sources binaryStream: binaryStream environment: anEnvironment
+	"Install the definitions in the received environment"
+
+StandardFileStream stdout nextPutAll: 'Time to install classes in the system: ', 	
+[	self readAndExecutePreLoadActionsFrom: binaryStream.
+	
+	traitDefinitions do: [ :each | 
+		each installUsing: sources environment: anEnvironment ].
+
+	classes := classDefinitions collect: [ :each | 
+		each installUsing: sources environment: anEnvironment ].
+
+	extensionMethodDefinitions do: [ :each | 
+		each installUsing: sources environment: anEnvironment ].
+	
+	self initializeClassesIfNeeded. 
+	] timeToRun asString; lf.
+	self readAndStoreAdditionalObjectsFrom: binaryStream.
+	self readAndExecutePostLoadActionsFrom: binaryStream.
+! !	
+
 
 
 
@@ -250,19 +309,30 @@ shrinkToKernelWith: additionalPackageNames
 !ScriptLoader methodsFor: 'pharo-core' stamp: 'PavelKrivanek 9/23/2010 10:30'!
 initializeMorphicFrom: aTAPackage
 
-| dejavu prj world table |
+| dejavu prj world table mcRegistry repoGroup initializedClasses blacklistedClasses |
 
+[
 
-#(#Behavior #ProcessorScheduler #SmalltalkImage #Delay #ByteString #ByteTextConverter #Categorizer #ChronologyConstants #Collection #CompiledMethod #Delay #DateAndTime #DefaultExternalDropHandler #EncodedCharSet #ExternalDropHandler #ExternalSemaphoreTable #Float #Halt #HashTableSizes #ISOLanguageDefinition #InstructionStream #Integer #LanguageEnvironment #Locale #Object #OSPlatform #ProcessSpecificVariable #SetElement #String #Symbol #EventSensorConstants #WeakFinalizationList #WeakArray #WeakAnnouncementSubscription #WideSymbol #DefaultCommandLineHandler #RxMatcher #RxParser #RxsPredicate #AsyncFile #FileLocator #FileHandle #DiskStore #FileStream #MultiByteFileStream #FLWellKnownObjectsCluster #FLLargeIdentityHashedCollection) do: [:each | (Smalltalk globals at: each) initialize] .
+initializedClasses := Set new. 
+blacklistedClasses := ((Smalltalk image kernelPackageNames 
+  gather: [:p | SystemNavigation default allClassesInPackageNamed: p]) 
+  collect: [:p | p name]) asSet.
 
+#(#Behavior #ProcessorScheduler #SmalltalkImage #Delay #ByteString #ByteTextConverter #Categorizer #ChronologyConstants 
+#Collection #CompiledMethod #Delay #DateAndTime #DefaultExternalDropHandler #EncodedCharSet #ExternalDropHandler 
+#ExternalSemaphoreTable #Float #Halt #HashTableSizes #ISOLanguageDefinition #InstructionStream #Integer
+#LanguageEnvironment #Locale #Object #OSPlatform #ProcessSpecificVariable #SetElement #String #Symbol #EventSensorConstants 
+#WeakFinalizationList #WeakArray #WeakAnnouncementSubscription #WideSymbol #DefaultCommandLineHandler #RxMatcher #RxParser 
+#RxsPredicate #AsyncFile #FileLocator #FileHandle #DiskStore #FileStream #MultiByteFileStream #FLWellKnownObjectsCluster 
+#FLLargeIdentityHashedCollection) do: [:each | (Smalltalk globals at: each) initialize. initializedClasses add: each.].
 
-    #(RGFactory InternetConfiguration NetNameResolver Socket Base64MimeConverter 
-    MIMEType UUIDGenerator URI HTTPSocket PackageInfo 
-    FileServices SystemAnnouncer MCCacheRepository MCDirtyPackageInfo 
-    MCEmptyPackageInfo MCMethodDefinition MCMockASubclass MCMockClassA 
-    MCMockPackageInfo MCPackageManager MCVersionReader MCWorkingCopy 
-    ZnByteEncoder ZnConstants ZnMimeType ZnNetworkingUtils ZnServer 
-    ZnSingleThreadedServer) do: [:c | (Smalltalk globals at: c) initialize.].
+#(RGFactory InternetConfiguration NetNameResolver Socket Base64MimeConverter 
+MIMEType UUIDGenerator URI HTTPSocket PackageInfo 
+FileServices SystemAnnouncer MCCacheRepository MCDirtyPackageInfo 
+MCEmptyPackageInfo MCMethodDefinition MCMockASubclass MCMockClassA 
+MCPackageManager MCVersionReader MCWorkingCopy 
+ZnByteEncoder ZnConstants ZnMimeType ZnNetworkingUtils ZnServer 
+ZnSingleThreadedServer) do: [:c | (Smalltalk globals at: c) initialize.].
 
 dejavu := aTAPackage additionalObjectAt: #DejaVu. 
 
@@ -271,13 +341,7 @@ TextConstants TextSharedInformation at: #'Bitmap DejaVu Sans' put: dejavu.
 TextConstants TextSharedInformation at: #DefaultMultiStyle put: dejavu.
 TextConstants TextSharedInformation at: #DefaultFixedTextStyle put: dejavu.
 
-"Smalltalk allClasses 
-  select: [:class | class sharedPools includes: TextConstants]
-  thenDo: [:class | class compileAll. class class compileAll].
-"
-
-StrikeFontFixer initialize.
-TextStyle initialize.
+#(StrikeFontFixer TextStyle) do: [:each | (Smalltalk globals at: each) initialize. initializedClasses add: each.].
 
 FileStream stdout nextPutAll: 'loading tables...' asString; lf.
 
@@ -289,104 +353,25 @@ UCSTable classPool at: #KSX1001Table put: (aTAPackage additionalObjectAt: #KSX10
 
 FileStream stdout nextPutAll: 'finished' asString; lf.
 
-ProgressBarMorph initialize.
-
-BalloonBezierSimulation initialize.
-BalloonEngineConstants initialize.
-BalloonEngine initialize.
-Browser initialize.
-"CommandHistory initialize."
-CornerRounder initialize.
-CPUWatcher initialize.
-Debugger initialize.
-DigitalSignatureAlgorithm initialize.
-DummySoundSystem initialize.
-FileContentsBrowser initialize.
-FileList initialize.
-FixUnderscores initialize.
-FreeTypeCacheConstants initialize.
-FreeTypeCache initialize.
-"FreeTypeFontProvider initialize."
-FreeTypeSettings initialize.
-FreeTypeSubPixelAntiAliasedGlyphRenderer initialize.
-FT2Constants initialize.
-FT2Handle initialize.
-GIFReadWriter initialize.
-HaloMorph initialize.
-HandMorph initialize.
-"HostSystemMenus initialize."
-ChangeList initialize.
-ChangeSorter initialize.
-CharacterScanner initialize.
-ImageMorph initialize.
-JPEGHuffmanTable initialize.
-JPEGReadStream initialize.
-JPEGReadWriter initialize.
-LogicalFont initialize.
-LongTestCase initialize.
-MailAddressTokenizer initialize.
-MailComposition initialize.
-MczInstaller initialize.
-MD5NonPrimitive initialize.
-MenuItemMorph initialize.
-MenuMorph initialize.
-"MidiPrimTester initialize."
-Morph initialize.
-MultiCharacterScanner initialize.
-"ParagraphEditor initialize."
-PNGReadWriter initialize.
-PrettyPrinting initialize.
-ProcessBrowser initialize.
-RealEstateAgent initialize.
-"RecentMessageSet initialize."
-RxMatcher initialize.
-RxParser initialize.
-RxsPredicate initialize.
-ScriptLoader initialize.
-ScrollBar initialize.
-SecureHashAlgorithm initialize.
-"ServerDirectory initialize."
-SHA1 initialize.
-ShortIntegerArray initialize.
-ShortRunArray initialize.
-SimpleEditor initialize.
-"StandardToolSet initialize."
-StrikeFontFixer initialize.
-SystemProgressMorph initialize.
-SystemWindow initialize.
-TestCase initialize.
-TextContainer initialize.
-TextDiffBuilder initialize.
-"TextPrinter initialize."
-ThemeIcons initialize.
-ThumbnailMorph initialize.
-TransferMorph initialize.
-UITheme initialize.
-VistaryThemeIcons initialize.
-WorldState initialize.
-ZnByteEncoder initialize.
-ZnConstants initialize.
-ZnMimeType initialize.
-ZnNetworkingUtils initialize.
-ZnServer initialize.
-ZnSingleThreadedServer initialize.
-RGFactory initialize.
+#(ProgressBarMorph BalloonBezierSimulation BalloonEngineConstants BalloonEngine Browser
+CornerRounder CPUWatcher Debugger DigitalSignatureAlgorithm DummySoundSystem FileContentsBrowser
+FileList FixUnderscores FreeTypeCacheConstants FreeTypeCache FreeTypeSettings 
+FreeTypeSubPixelAntiAliasedGlyphRenderer FT2Constants FT2Handle GIFReadWriter
+HaloMorph HandMorph ChangeList ChangeSorter CharacterScanner ImageMorph JPEGHuffmanTable
+JPEGReadStream JPEGReadWriter LogicalFont LongTestCase MailAddressTokenizer MailComposition
+MczInstaller MD5NonPrimitive MenuItemMorph MenuMorph Morph MultiCharacterScanner
+PNGReadWriter PrettyPrinting ProcessBrowser RealEstateAgent RxMatcher RxParser RxsPredicate
+ScriptLoader ScrollBar SecureHashAlgorithm SHA1 ShortIntegerArray ShortRunArray SimpleEditor
+StrikeFontFixer SystemProgressMorph SystemWindow TestCase TextContainer TextDiffBuilder
+ThemeIcons ThumbnailMorph TransferMorph UITheme VistaryThemeIcons WorldState ZnByteEncoder
+ZnConstants ZnMimeType ZnNetworkingUtils ZnServer ZnSingleThreadedServer RGFactory
+) do: [:each | (Smalltalk globals at: each) initialize. initializedClasses add: each.].
 
 Cursor initTarget.
-Cursor initialize.
-
-MCDataStream initialize.
-
 BalloonMorph setBalloonColorTo: Color yellow.
 
-"prj := Project new.
-Project classPool at: #CurrentProject put: prj.
-"
 world := PasteUpMorph new.
-
-"prj instVarNamed: #world put: world."
 world instVarNamed: #worldState put: WorldState new.
-
 world world addHand: HandMorph new.
 world activeHand.
 
@@ -401,123 +386,71 @@ world world handsDo: [:h | h initForEvents].
 world borderWidth: 0.
 
 MorphicUIManager new spawnNewProcess.
-
 SystemWindow noteTopWindowIn: world.
-
 Display newDepth: 32.
 world displayWorldSafely.
-
 UIManager default: MorphicUIManager new.
-
 world displayWorldSafely.
-
 UIManager default uiProcess resume.
-
-"-----------------MorphicTextEditor register: PluggableTextMorph."
-
-"(Delay forSeconds: 5) wait."
-
-
-"this classes need world to resetWorldMenu"
-
-DiskStore initialize.
-FileHandle initialize.
-
-"HelpBrowser initialize."
-"HostWindowProxy initialize."
-TaskbarMorph initialize.
-TextEditor initialize.
-
-"
-Gofer it
-  squeaksource: 'DejaVu';
-  package: 'DejaVuBitmapFonts';
-  load.
-(Smalltalk globals at: #DejaVuHolder) installFull.
-StandardFonts restoreDefaultFonts.
-"
-
+"MorphicTextEditor register: PluggableTextMorph."
 PharoTheme beCurrent.
-
-
 TestRunnerBrowser register: TestRunner.
-
 (world windowsSatisfying: [:w | w model canDiscardEdits]) do: [:w | w delete].
-
-
 ScriptLoader new cleanUpAfterMorphicInitialization.
-
-
 Display newDepth: 32.
 
 (world instVarNamed: #worldState) canvas: nil.
-SmalltalkEditor initialize.
 
-FreeTypeFontProvider initialize.
-
-SHPreferences initialize.
 GraphicFontSettings setFontsToStyleNamed: #small.
 "CombinedChar loadCompositionMapping."
 
-AbstractFont initialize.
-DialogItemsChooserUI initialize.
-EditorFindReplaceDialogWindow initialize.
-FinderUI initialize.
-"HelpBrowser initialize."
-PoolDefiner initialize.
-PoolDefiner2 initialize.
-RecentMessageList initialize.
-SHTextStylerST80 initialize.
-
 (Smalltalk at: #ActiveHand) instVarNamed: #targetOffset put: 0@0.
 
-
-"---------LogoImageMorph installDesktopLogo."
+"LogoImageMorph installDesktopLogo."
 
 PolymorphSystemSettings showDesktopLogo: false.
 PolymorphSystemSettings showDesktopLogo: true.
 PolymorphSystemSettings desktopColor: Color white.
 
-
-NOCCompletionTable initialize.
-NOCController initialize.
-NECController initialize.
-NECPreferences initialize.
-NECTestSuperClass initialize.
-NECTestClass initialize.
-
 Smalltalk cleanOutUndeclared.
 
-AbstractNautilusUI initialize.
-BalloonMorph initialize.
-DefaultCommandLineHandler initialize.
-DefaultExternalDropHandler initialize.
-IdentityTransform initialize.
-KMPragmaKeymapBuilder initialize.
-MCMockRPackage initialize.
-MetacelloScriptLoader initialize.
-Nautilus initialize.
-NautilusIcons initialize.
-NautilusMCBindings initialize.
-RBAbstractClass initialize.
-RBClass initialize.
-RBConfigurableFormatter initialize.
-RBMacSpellChecker initialize.
-RBPharoPlatform initialize.
-RBRefactoring initialize.
-RBRefactoryChangeManager initialize.
-RBScanner initialize.
-RBSpellChecker initialize.
-RBTransformationRule initialize.
-RPackage initialize.
-RPackageOrganizer initialize.
-SpecBinder initialize.
-StartupLoader initialize.
+(((Smalltalk allClasses select: [:c | c class includesSelector: #initialize] thenCollect: [:c | c name]) 
+  copyWithoutAll: initializedClasses) copyWithoutAll: blacklistedClasses)
+    do: [:each | 
+      (Smalltalk globals at: each) initialize].
 
-IconicButton initialize.
+mcRegistry := aTAPackage additionalObjectAt: #MCRegistry. 
 
-(aTAPackage additionalObjectAt: #PackageNames) do: [:name | PackageOrganizer default registerPackageNamed: name].
+repoGroup := MCRepositoryGroup new.
+repoGroup addRepository: (MCHttpRepository
+  location: 'http://ss3.gemstone.com/ss/Pharo20'
+  user: ''
+  password: '').  
+repoGroup addRepository: (MCHttpRepository
+  location: 'http://ss3.gemstone.com/ss/PharoInbox'
+  user: ''
+  password: '').
+
+mcRegistry keysAndValuesDo: [:package :oldWorkingCopy |
+  | workingCopy |
+  PackageInfo registerPackageName: package name.
+  workingCopy := MCWorkingCopy forPackage: (MCPackage new name: package name). 
+  workingCopy instVarNamed: #ancestry put: oldWorkingCopy ancestry.
+  workingCopy instVarNamed: #repositoryGroup put: repoGroup].
+
 RPackageOrganizer fillUp.
+
+]   ifError: [:e |
+    | rep |
+    rep := FileStream forceNewFileNamed: 'PharoDebug.log'.
+    rep nextPutAll: 'PharoKernel shrinking report'; cr.
+    rep nextPutAll: 'Error:'; cr.
+    rep nextPutAll: e asString; cr.
+    rep nextPutAll: thisContext stack size asString.
+    thisContext stack copy withIndexDo: [:stck :i |
+    [ rep nextPutAll: i asString; space; nextPutAll: stck asString; cr] ifError: []].
+    rep close. 
+    Smalltalk exitFailure ].
 
 SmalltalkImage current snapshot: true andQuit: false.
 SmalltalkImage current snapshot: true andQuit: true.
@@ -532,22 +465,31 @@ UIManager default restoreDisplay.
 !SmalltalkImage methodsFor: 'PharoCore' stamp: 'PavelKrivanek 5/16/2012 19:51'!
 exportCoreAsFuelPackage
 
-| packageNames package additionalPackages |
+| packageNames package additionalPackages behaviors methods export aBinaryStream aSourcesStream  |
 
-FileStream forceNewFileNamed: 'pharo.tank' do: [:aStream |
-  aStream binary.
 
-  additionalPackages := #('Fuel' 'FuelMetalevel' 'FuelPackageLoader' 'FuelCommandLineHandler' 'Tanker' 'TankerCommandLineHandler' ).
+  additionalPackages := #('Fuel' 'FuelMetalevel' 'FuelPackageLoader' 'FuelCommandLineHandler' 'Tanker' 'TankerCommandLineHandler' 'Slot').
 
   packageNames := ((MCWorkingCopy allManagers  collect: [:p | p package name] ) 
     copyWithoutAll: SmalltalkImage current kernelPackageNames, additionalPackages) asSortedCollection.
 
-  package := TAPackage fromPackagesInfoNames: packageNames.
-  package mustInitialize: false.
-  package addPostLoadAction: [:pkg | ScriptLoader new initializeMorphicFrom: pkg].
-  package packageHeader addPreMaterializationAction: [:header | 
+aBinaryStream := 'pharo.tank' asFileReference writeStream binary.
+aSourcesStream := 'pharo.tankst' asFileReference writeStream.
+behaviors := OrderedCollection new.
+methods := OrderedCollection new.
+packageNames do: [:packageName |
+	behaviors addAll: ((PackageInfo named: packageName) classes).
+	methods addAll: ((PackageInfo named: packageName) extensionMethods collect: [:each | each method])
+	].
+
+
+package := (TAPackage behaviors: behaviors extensionMethods: methods).
+package mustInitialize: false.
+
+  package addPostLoadAction: [:pkg | (Smalltalk at: #ScriptLoader) new initializeMorphicFrom: pkg].
+  package addPreMaterializationAction: [
     #(World ActiveEvent ActiveWorld ActiveHand) do: [:className | Smalltalk globals at: className put: nil]. 
-    FileStream stdout nextPutAll: 'executed...'; lf. ].
+ ].
 
   package at: #PackageNames putAdditionalObject: (MCWorkingCopy allManagers  collect: [:p | p package name]).
   package at: #MCRegistry putAdditionalObject: (MCWorkingCopy registry).
@@ -559,14 +501,21 @@ FileStream forceNewFileNamed: 'pharo.tank' do: [:aStream |
   package at: #JISX0208Table putAdditionalObject: (UCSTable classPool at: #JISX0208Table).
   package at: #KSX1001Table putAdditionalObject: (UCSTable classPool at: #KSX1001Table).
 
-
+export := TAExport  
+	package: package
+	binariesOn: aBinaryStream 
+	sourcesOn: aSourcesStream.
 
 StandardFileStream stdout 
-	nextPutAll: 'Time to export ', packageNames size asString, ' packages and a total of ', package behaviors size asString, ' classes: ' ;
-	nextPutAll: [TAPackageStore new storePackage: package on: aStream] timeToRun asString, ' ms.'; lf.
+	nextPutAll: 'Exporting ', packageNames size asString, ' packages and a total of ', behaviors size asString, ' classes '; lf.
+	
+export run.
 
-].
+aBinaryStream close.
+aSourcesStream close.
+
 ! !
+
 
 Smalltalk image exportCoreAsFuelPackage.
 
