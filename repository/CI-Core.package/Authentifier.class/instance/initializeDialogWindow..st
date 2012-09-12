@@ -7,15 +7,16 @@ initializeDialogWindow: aWindow
 		(user isEmpty or: [ password isEmpty ])
 			ifFalse: [ result contents: (user -> password) ]].
 		
-	aWindow toolbar okButton 		
+"	aWindow toolbar okButton 		
 					isEventForNextFocusBlock: [:ev | ev keyString = '<tab>' ];
 					isEventForPreviousFocusBlock: [:ev | ev keyString = '<Shift-tab>' ].
 		
 	aWindow toolbar cancelButton 		
 					isEventForNextFocusBlock: [:ev | ev keyString = '<tab>' ];
 					isEventForPreviousFocusBlock: [:ev | ev keyString = '<Shift-tab>' ].	
-		
+		"
 	self focusOrder
 		add: userField;
 		add: passwordField;
-		add: aWindow toolbar.
+		add: aWindow toolbar okButton;
+		add: aWindow toolbar cancelButton.

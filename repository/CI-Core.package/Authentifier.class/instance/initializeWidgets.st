@@ -12,9 +12,9 @@ initializeWidgets
 	userField 
 		entryCompletion: nil;
 		autoAccept: true;
-		isEventForNextFocusBlock: [:ev | ev keyString = '<tab>' ];
+"		isEventForNextFocusBlock: [:ev | ev keyString = '<tab>' ];
 		isEventForPreviousFocusBlock: [:ev | ev keyString = '<Shift-tab>' ];
-		ghostText: 'username'.
+"		ghostText: 'username'.
 		
 	gmail text: '@gmail.com'.
 	passwordLabel text: 'Password:'.
@@ -22,6 +22,6 @@ initializeWidgets
 		autoAccept: true; 
 		ghostText: 'password';
 		entryCompletion: nil;
-		isEventForNextFocusBlock: [:ev | ev keyString = '<tab>' ];
+"		isEventForNextFocusBlock: [:ev | ev keyString = '<tab>' ];
 		isEventForPreviousFocusBlock: [:ev | ev keyString = '<Shift-tab>' ];
-		beEncrypted.
+"		beEncrypted.
