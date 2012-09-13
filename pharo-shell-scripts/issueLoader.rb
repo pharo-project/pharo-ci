@@ -291,7 +291,7 @@ blue value: ' http://code.google.com/p/pharo/issues/detail?id=', issueNumber pri
 "==========================================================================="
 
 blue value: 'Running tests'.
-changeLoader := issue changeLoader #{'quiet' if !UPDATE_ISSUE} loadAndTest.
+changeLoader := issue changeLoader#{' quiet' if !UPDATE_ISSUE}#{' debug' if INTERACTIVE} loadAndTest.
 
 changeLoader isGreen
     ifFalse:  [ 
@@ -306,7 +306,6 @@ changeLoader isGreen
     "output the Error warning in red"
     red value: 'Failed to load Issue:'.
     FileStream stderr print: err; crlf.
-
     error  := err freeze.
     err pass.
 ].
