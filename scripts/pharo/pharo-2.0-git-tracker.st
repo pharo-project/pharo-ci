@@ -46,14 +46,13 @@ packages := MCWorkingCopy allInstances
 blue value:'Installing FileTree'.
 
 Gofer new
-    repository: (MCFileTreeRepository new directory: 
-                (FileDirectory on: '/opt/git/filetree/repository/'));
-    package: 'MonticelloFileTree-Core';
+    url: 'http://ss3.gemstone.com/ss/FileTree';
+    package: 'MonticelloFileTree-Core.pharo20';
     load.
 
 " create a new filetree repository ==========================================="
 blue value: 'Preparing commit'.
-fileTreeRepository := MCFileTreeRepository new directory: FileDirectory default / 'pharo-core'.
+fileTreeRepository := MCFileTreeRepository new directory: 'pharo-core' asFileReference.
 
 " extra the commit message from the current version ========================="
 versionString  := SystemVersion current highestUpdate asString.
