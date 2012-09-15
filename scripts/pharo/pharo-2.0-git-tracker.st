@@ -46,11 +46,13 @@ packages := MCWorkingCopy allInstances
 blue value:'Installing FileTree'.
 
 "until we have a proper configuration just hardcode the path"
+
 Gofer new
-    url: 'http://ss3.gemstone.com/ss/FileTree';
-    package: 'MonticelloFileTree-Core' constraint: [ :version| version author = 'CamilloBruni'];
+    url: 'http://smalltalkhub.com/mc/dh83/monticello-filetree/main';
+    package: 'MonticelloFileTree-Core';
     load.
 
+Compiler recompileAll.
 
 " create a new filetree repository ==========================================="
 blue value: 'Preparing commit'.
