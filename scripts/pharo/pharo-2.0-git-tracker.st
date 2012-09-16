@@ -45,8 +45,25 @@ packages := MCWorkingCopy allInstances
 " load filetree =============================================================="
 blue value:'Installing FileTree'.
 
-"until we have a proper configuration just hardcode the path"
+"Preload Metacello due to some issue in the 20200 branch"
+[ Gofer it
+        url: 'http://seaside.gemstone.com/ss/metacello';
+        package: 'ConfigurationOfMetacello';
+        load.
+(Smalltalk at: #ConfigurationOfMetacello) project stableVersion load: 'batch'. 
+Compiler recompileAll.
+] on: Error do: [ :f| ].
 
+[ Gofer it
+        url: 'http://seaside.gemstone.com/ss/metacello';
+        package: 'ConfigurationOfMetacello';
+        load.
+(Smalltalk at: #ConfigurationOfMetacello) project stableVersion load: 'batch'.
+Compiler recompileAll.
+] on: Error do: [ :f| ].
+
+
+"until we have a proper configuration just hardcode the path"
 Gofer new
     url: 'http://smalltalkhub.com/mc/dh83/monticello-filetree/main';
     package: 'MonticelloFileTree-Core';
@@ -56,7 +73,7 @@ Compiler recompileAll.
 
 " create a new filetree repository ==========================================="
 blue value: 'Preparing commit'.
-fileTreeRepository := MCFileTreeRepository new directory: 'pharo-core' asFileReference.
+fileTreeRepository := (Smalltalk at: #MCFileTreeRepository) new directory: 'pharo-core' asFileReference.
 
 " extra the commit message from the current version ========================="
 versionString  := SystemVersion current highestUpdate asString.
