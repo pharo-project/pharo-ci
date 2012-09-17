@@ -6,7 +6,7 @@ buildNautilusMenu: aBuilder
 	(package := target selectedPackage) ifNil: [ ^ self ].
 	mc := NautilusMCBindings default retrieveMCPackageFor: package.
 	
-	( mc isNil or: [ mc workingCopy modified not ] ) ifTrue: [ ^ self ].
+	mc workingCopy modified not ifTrue: [ ^ self ].
 	(aBuilder item: #'Commit this package')
 		action: [ self new 
 						receiver: target window;
