@@ -1,7 +1,7 @@
 private
 generateMailScript
 
-	FileDirectory default forceNewFileNamed: 'mail.scpt' do: [:s | 
+	(FileSystem disk workingDirectory / 'mail.scpt') writeStreamDo: [ :s |
 		s nextPutAll: 'set my_content to "'; nextPutAll: self summary; nextPutAll:'"'; cr.
 		s nextPutAll: 'set accountName to "Ulysse<pharo.ulysse@gmail.com>"'; cr.
 		s nextPutAll: 'set my_subject to "'; nextPutAll: self versionPrefix; print: self newVersionNumber; nextPutAll: '"' ; cr;cr.
