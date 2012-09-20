@@ -12,6 +12,6 @@ version117: spec
 		spec project: 'Soup' with: '1.2'.
 		spec 
 			package: 'CI-Core' with: 'CI-Core-EstebanLorenzano.41';
-			package: 'CI-Integration' with: 'CI-Integration-EstebanLorenzano.9';
+			package: 'CI-Integration' with: 'CI-Integration-EstebanLorenzano.10';
 			package: 'CI-Loader' with: 'CI-Loader-CamilloBruni.5';
 			package: 'Zodiac-Core' with: 'Zodiac-Core-MarcusDenker.23'. ].
