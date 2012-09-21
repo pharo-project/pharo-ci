@@ -11,12 +11,5 @@ initializeDialogWindow: aWindow
 					self issue 
 						labels: { type selectedItem label. 'Milestone-', SystemVersion current dottedMajorMinor };
 						title: t;
-						description: desc ]]].
-			
-	self focusOrder
-		add: title;
-		add: type;
-		add: description;
-		add: aWindow toolbar
-				
+						description: desc ]]]
 	
