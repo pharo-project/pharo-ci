@@ -67,7 +67,7 @@ def guard()
     end
 end
 
-def error(message)
+def error(msg)
     $stderr.puts red(msg)
     exit(1)
 end
