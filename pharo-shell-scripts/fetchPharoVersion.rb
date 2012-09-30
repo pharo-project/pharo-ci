@@ -35,6 +35,8 @@ DIR = File.dirname(dir)
 
 # PharoImage Versions ==========================================================
 versions = {
+20316 => 'http://pharo.gforge.inria.fr/ci/image/2.0/20316.zip',
+20312 => 'http://pharo.gforge.inria.fr/ci/image/2.0/20312.zip',
 20309 => 'http://pharo.gforge.inria.fr/ci/image/2.0/20309.zip',
 20301 => 'http://pharo.gforge.inria.fr/ci/image/2.0/20301.zip',
 20280 => 'http://pharo.gforge.inria.fr/ci/image/2.0/20280.zip',
