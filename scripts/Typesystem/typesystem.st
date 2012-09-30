@@ -52,6 +52,14 @@ Gofer new
 	package: 'Compiler-Extensions';
 	load.
 
+"Installing Spec"
+Gofer it
+        squeaksource3: 'Spec';
+        package: 'ConfigurationOfSpec';
+        load.
+(Smalltalk at: #ConfigurationOfSpec) perform: #loadDefault.
+
+"Installing bootstrapper"	
 Gofer new
 	squeaksource: 'GradualTypeSystem';
 	package: 'TypeSystem-Bootstrap';
