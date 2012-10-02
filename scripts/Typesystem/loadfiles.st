@@ -2,6 +2,7 @@
 "see  http://pleiad.dcc.uchile.cl/private/gradual-types/installation"
 
 "in Source directory"
+(FileStream oldFileNamed: '../scripts/Typesystem/Source/TSLogger.st') fileIn.
 (FileStream oldFileNamed: '../scripts/Typesystem/Source/TypeSystem-Errors.st') fileIn.
 (FileStream oldFileNamed: '../scripts/Typesystem/Source/TypeConfiguration.st') fileIn.
 (FileStream oldFileNamed: '../scripts/Typesystem/Source/Type.st') fileIn.
