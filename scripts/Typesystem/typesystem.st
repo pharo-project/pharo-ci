@@ -59,6 +59,13 @@ Gofer it
         load.
 (Smalltalk at: #ConfigurationOfSpec) perform: #loadDefault.
 
+"Installing Toothpick"
+Gofer it
+        squeaksource: 'Toothpick';
+        package: 'ConfigurationOfToothpick';
+        load.
+(Smalltalk at: #ConfigurationOfToothpick) perform: #load.
+
 "Installing bootstrapper"	
 Gofer new
 	squeaksource: 'GradualTypeSystem';
