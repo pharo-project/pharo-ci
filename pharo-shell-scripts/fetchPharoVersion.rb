@@ -35,11 +35,12 @@ DIR = File.dirname(dir)
 
 # PharoImage Versions ==========================================================
 versions = {
-20316 => 'http://pharo.gforge.inria.fr/ci/image/2.0/20316.zip',
-20312 => 'http://pharo.gforge.inria.fr/ci/image/2.0/20312.zip',
-20309 => 'http://pharo.gforge.inria.fr/ci/image/2.0/20309.zip',
-20301 => 'http://pharo.gforge.inria.fr/ci/image/2.0/20301.zip',
-20280 => 'http://pharo.gforge.inria.fr/ci/image/2.0/20280.zip',
+#TODO too lazy for, but should be updated to query this mirror!
+20316 => 'http://pharo.gforge.inria.fr/ci/image/20/20316.zip',
+20312 => 'http://pharo.gforge.inria.fr/ci/image/20/20312.zip',
+20309 => 'http://pharo.gforge.inria.fr/ci/image/20/20309.zip',
+20301 => 'http://pharo.gforge.inria.fr/ci/image/20/20301.zip',
+20280 => 'http://pharo.gforge.inria.fr/ci/image/20/20280.zip',
 20263 => 'https://gforge.inria.fr/frs/download.php/31368/Pharo-2.0-263.zip',
 20262 => 'https://gforge.inria.fr/frs/download.php/31366/Pharo-2.0-262.zip',
 20214 => 'https://gforge.inria.fr/frs/download.php/31236/Pharo-2.0-214.zip',
@@ -197,12 +198,19 @@ PHARO_VERSION.downto(10000) {|i|
 puts blue("Using pharo version #{versionNumber} as base image")
 
 downloadZip = "pharo#{versionNumber}.zip"
-
 `#{DIR}/../download.sh #{downloadZip} #{versionFile}`
-`unzip -o #{downloadZip}`
+
+system("unzip -o #{downloadZip} *.image *.changes")
+#do some awk magic to find the extracted names...
+extractedFiles = `unzip -lo #{downloadZip} *.image *.changes | awk '/-----/ {p = ++p % 2; next} p {print $NF}'`
+# get the first extracted filename
+baseName = extractedFiles.split.first
+# get everything before the last dot
+baseName = baseName.rpartition('.').first
+
 # Potentially dangerous as it might not match the proper images..
-`mv **/*.image Pharo-#{PHARO_VERSION}.image`
-`mv **/*.changes Pharo-#{PHARO_VERSION}.changes`
+`mv #{baseName}.image Pharo-#{PHARO_VERSION}.image`
+`mv #{baseName}.changes Pharo-#{PHARO_VERSION}.changes`
 `rm -rf #{downloadZip}`
 
 if versionNumber == PHARO_VERSION
