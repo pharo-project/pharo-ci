@@ -205,9 +205,8 @@ system("unzip -o #{downloadZip} **.image **.changes")
 extractedFiles = `unzip -lo #{downloadZip} *.image *.changes -x __MACOSX/* | awk '/-----/ {p = ++p % 2; next} p {print $NF}'`
 # get the first extracted filename
 baseName = extractedFiles.split.first
-# get everything before the last dot
-baseName = baseName.rpartition('.').first
-4/0
+# get everything before the last dot (ugly for ruby 1.8.6)
+baseName = baseName.split('.')[0..-2].join('.')
 # Potentially dangerous as it might not match the proper images..
 `mv #{baseName}.image Pharo-#{PHARO_VERSION}.image`
 `mv #{baseName}.changes Pharo-#{PHARO_VERSION}.changes`
