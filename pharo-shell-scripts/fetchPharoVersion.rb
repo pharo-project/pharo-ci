@@ -200,14 +200,14 @@ puts blue("Using pharo version #{versionNumber} as base image")
 downloadZip = "pharo#{versionNumber}.zip"
 `#{DIR}/../download.sh #{downloadZip} #{versionFile}`
 
-system("unzip -vo #{downloadZip} *.image *.changes")
+system("unzip -o #{downloadZip} **.image **.changes")
 #do some awk magic to find the extracted names...
 extractedFiles = `unzip -lo #{downloadZip} *.image *.changes -x __MACOSX/* | awk '/-----/ {p = ++p % 2; next} p {print $NF}'`
 # get the first extracted filename
 baseName = extractedFiles.split.first
 # get everything before the last dot
 baseName = baseName.rpartition('.').first
-
+4/0
 # Potentially dangerous as it might not match the proper images..
 `mv #{baseName}.image Pharo-#{PHARO_VERSION}.image`
 `mv #{baseName}.changes Pharo-#{PHARO_VERSION}.changes`
