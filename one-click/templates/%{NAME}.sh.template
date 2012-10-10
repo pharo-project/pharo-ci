@@ -25,6 +25,6 @@ fi
 # execute
 exec "$LINUX/pharo" \
 	-plugins "$LINUX" \
-	-encoding latin1 \
+	-encoding utf8 \
 	-vm-display-X11 \
 	"$image"
