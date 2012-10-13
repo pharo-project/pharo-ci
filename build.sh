@@ -7,6 +7,8 @@
 # Copyright (c) 2010 Lukas Renggli <renggli@gmail.com>
 #
 
+set -e
+
 # vm configuration
 
 if [ -z "$WORKSPACE" ] ; then
