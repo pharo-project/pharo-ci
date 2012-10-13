@@ -203,6 +203,9 @@ downloadZip = "pharo#{versionNumber}.zip"
 system("unzip -o #{downloadZip} **.image **.changes")
 #do some awk magic to find the extracted names...
 extractedFiles = `unzip -lo #{downloadZip} *.image *.changes -x __MACOSX/* | awk '/-----/ {p = ++p % 2; next} p {print $NF}'`
+puts blue('Extracted:')
+puts extractedFiles
+
 # get the first extracted filename
 baseName = extractedFiles.split.first
 # get everything before the last dot (ugly for ruby 1.8.6)
