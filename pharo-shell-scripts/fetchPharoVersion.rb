@@ -200,7 +200,7 @@ puts blue("Using pharo version #{versionNumber} as base image")
 downloadZip = "pharo#{versionNumber}.zip"
 `#{DIR}/../download.sh #{downloadZip} #{versionFile}`
 
-system("unzip -o #{downloadZip} **.image **.changes")
+system("unzip -o #{downloadZip} *.image *.changes")
 #do some awk magic to find the extracted names...
 extractedFiles = `unzip -lo #{downloadZip} *.image *.changes -x __MACOSX/* | awk '/-----/ {p = ++p % 2; next} p {print $NF}'`
 puts blue('Extracted:')
