@@ -3,7 +3,7 @@ TypeConfiguration uniqueInstance enableCasts: false.
 
 "Load the typed pharo kernel ..."
 
-TypeConfiguration uniqueInstance bootstrap: true.
+TypeConfiguration uniqueInstance disable: true.
 CompilerFrontend registerCompilerContext: OTCSupport defaultCompilerContext forClass: ProtoObject.
 CompilerFrontend registerCompilerContext: OTCSupport defaultCompilerContext forClass: Object.
 CompilerFrontend registerCompilerContext: OTCSupport defaultCompilerContext forClass: TUndefinedObject.
@@ -14,7 +14,7 @@ CompilerFrontend registerCompilerContext: OTCSupport defaultCompilerContext forC
 (FileStream oldFileNamed: '../scripts/Typesystem/loadtypedfiles.st') fileIn.
 
 
-TypeConfiguration uniqueInstance bootstrap: false.
+TypeConfiguration uniqueInstance disable: false.
 CompilerFrontend registerCompilerContext: (OTCSupport defaultCompilerContextForClass: ProtoObject) forClass: ProtoObject.
 CompilerFrontend registerCompilerContext: (OTCSupport defaultCompilerContextForClass: Object) forClass: Object.
 CompilerFrontend registerCompilerContext: (OTCSupport defaultCompilerContextForClass: TUndefinedObject) forClass: TUndefinedObject.
