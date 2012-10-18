@@ -2,7 +2,7 @@
 
 - Mac: launch %{NAME}.app
 - Linux: launch %{NAME}.sh
-- Windows: launch %{NAME}.bat
+- Windows: launch CogVM.exe
 
 This distribution was built %{WHEN}.
 
