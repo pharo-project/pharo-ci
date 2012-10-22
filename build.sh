@@ -166,7 +166,7 @@ fi
     
 
 # remove cache link
-rm -f "$OUTPUT_CACHE"
+rm -f "$OUTPUT_CACHE" || echo "Could not remove $OUTPUT_CACHE";
 rm -f "$OUTPUT_PATH/*.sources"
 
 # success
