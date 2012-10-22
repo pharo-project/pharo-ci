@@ -66,7 +66,7 @@ DIR=`dirname "$DIR"`;
 cd "$DIR"
 DIR=`pwd`
 cd - > /dev/null 
-# run the VM' >> vm.sh/
+# run the VM' >> vm.sh
 # make sure we only substite $PHARO_VM but put '$DIR' in the script
 echo \"\$DIR\"/\"$PHARO_VM\" -headless \$* >> vm.sh
 
