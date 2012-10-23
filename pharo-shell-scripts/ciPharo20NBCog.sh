@@ -6,7 +6,7 @@ set -e
 # ARHUMENT HANDLING ===========================================================
 
 if [[ "$1" = "-h" || "$1" = "--help" ]];then
-    echo "This script will download the latest Pharo 2.0 image and VM
+    echo "This script will download the latest Pharo 2.0 image and NativeBoost VM
 
 Result in the current directory:
     vm               VM directory
@@ -20,5 +20,5 @@ elif [[ $# -gt 0 ]];then
 fi
 
 # FETCH DATA ==================================================================
-curl http://pharo.gforge.inria.fr/ci/ciCog.sh | bash
+curl http://pharo.gforge.inria.fr/ci/ciNBCog.sh | bash
 curl http://pharo.gforge.inria.fr/ci/ciPharo20.sh | bash
