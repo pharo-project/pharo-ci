@@ -40,7 +40,7 @@ fi
 # DOWNLOAD THE LATEST VM ======================================================
 VM_URL="http://pharo.gforge.inria.fr/ci/vm/cog/${OS}/Cog-${OS}-latest.zip"
 
-wget --output-document=vm.zip $VM_URL
+wget --progress=bar:force --output-document=vm.zip $VM_URL
 
 unzip -qjo -d vm vm.zip
 
