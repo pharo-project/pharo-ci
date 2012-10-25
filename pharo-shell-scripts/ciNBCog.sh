@@ -17,7 +17,6 @@ elif [[ $# -gt 0 ]];then
     exit 1
 fi
 
-
 # SYSTEM PROPERTIES ===========================================================
 if [ -z "$OS" ] ; then
     #try to extract the os name
@@ -34,7 +33,6 @@ if [ -z "$OS" ] ; then
     fi
 fi
 
-
 if [ -z "$ARCHITECTURE" ] ; then
     ARCHITECTURE=32
 fi
@@ -42,7 +40,7 @@ fi
 # DOWNLOAD THE LATEST VM ======================================================
 VM_URL="http://pharo.gforge.inria.fr/ci/vm/nbcog/${OS}/NBCog-${OS}-latest.zip"
 
-wget --output-document=vm.zip $VM_URL
+wget --progress=bar:force --output-document=vm.zip $VM_URL
 
 unzip -qjo -d vm vm.zip
 
