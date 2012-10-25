@@ -43,7 +43,7 @@ fi
 # DOWNLOAD THE LATEST VM ======================================================
 VM_URL="http://pharo.gforge.inria.fr/ci/vm/nbcog/${OS}/NBCog-${OS}-latest.zip"
 
-wget --output-document=vm.zip $VM_URL
+wget --progress=dot --output-document=vm.zip $VM_URL
 
 unzip -qjo -d vm vm.zip
 
