@@ -43,7 +43,7 @@ fi
 # DOWNLOAD THE LATEST VM ======================================================
 VM_URL="http://pharo.gforge.inria.fr/ci/vm/nbcog/${OS}/NBCog-${OS}-latest.zip"
 
-curl --output vm.zip $VM_URL
+wget --output-document=vm.zip $VM_URL
 
 unzip -qjo -d vm vm.zip
 
@@ -63,6 +63,8 @@ DIR=`dirname "$DIR"`;
 cd "$DIR"
 DIR=`pwd`
 cd - > /dev/null 
+# disable parameter expansion to forward all arguments unprocess to the VM
+set -f
 # run the VM' >> vm.sh
 # make sure we only substite $PHARO_VM but put '$DIR' in the script
 echo \"\$DIR\"/\"$PHARO_VM\" -headless \$* >> vm.sh
