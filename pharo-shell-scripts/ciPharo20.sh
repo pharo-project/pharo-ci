@@ -19,12 +19,12 @@ fi
 
 # DOWNLOAD THE LATEST IMAGE ===================================================
 IMAGE_URL="http://pharo.gforge.inria.fr/ci/image/20/latest.zip"
-wget --output-document=image.zip $IMAGE_URL
+wget --progress=dot --output-document=image.zip $IMAGE_URL
 
 IMAGE_DIR="image"
 mkdir $IMAGE_DIR
 
-unzip -d $IMAGE_DIR image.zip
+unzip -q -d $IMAGE_DIR image.zip
 
 # find the image name
 PHARO_IMAGE=`find $IMAGE_DIR -name *.image`
