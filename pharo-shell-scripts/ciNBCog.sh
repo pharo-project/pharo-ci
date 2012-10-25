@@ -36,14 +36,13 @@ fi
 
 
 if [ -z "$ARCHITECTURE" ] ; then
-    echo "Architecture environment variable is not set. Defaulting to x86 32 bit"  1>&2
     ARCHITECTURE=32
 fi
 
 # DOWNLOAD THE LATEST VM ======================================================
 VM_URL="http://pharo.gforge.inria.fr/ci/vm/nbcog/${OS}/NBCog-${OS}-latest.zip"
 
-wget --progress=dot --output-document=vm.zip $VM_URL
+wget --output-document=vm.zip $VM_URL
 
 unzip -qjo -d vm vm.zip
 

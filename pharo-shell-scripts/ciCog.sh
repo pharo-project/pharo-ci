@@ -17,7 +17,6 @@ elif [[ $# -gt 0 ]];then
     exit 1
 fi
 
-
 # SYSTEM PROPERTIES ===========================================================
 if [ -z "$OS" ] ; then
     #try to extract the os name
@@ -34,16 +33,14 @@ if [ -z "$OS" ] ; then
     fi
 fi
 
-
 if [ -z "$ARCHITECTURE" ] ; then
-    echo "Architecture environment variable is not set. Defaulting to x86 32 bit"  1>&2
     ARCHITECTURE=32
 fi
 
 # DOWNLOAD THE LATEST VM ======================================================
 VM_URL="http://pharo.gforge.inria.fr/ci/vm/cog/${OS}/Cog-${OS}-latest.zip"
 
-wget --progress=dot --output-document=vm.zip $VM_URL
+wget --output-document=vm.zip $VM_URL
 
 unzip -qjo -d vm vm.zip
 
@@ -55,7 +52,7 @@ fi
 
 echo $PHARO_VM
 
-# create a local executable file which forwads to the found vm
+# create a local executable file which forwads to the found vm ================
 echo "#!/bin/bash" > vm.sh
 echo '# some magic to find out the real location of this script dealing with symlinks
 DIR=`readlink "$0"` || DIR="$0";
@@ -72,5 +69,5 @@ echo \"\$DIR\"/\"$PHARO_VM\" -headless \$* >> vm.sh
 # make the script executable
 chmod +x vm.sh
 
-# cleanup
+# cleanup =====================================================================
 rm -rf vm.zip
