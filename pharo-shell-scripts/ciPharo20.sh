@@ -19,7 +19,7 @@ fi
 
 # DOWNLOAD THE LATEST IMAGE ===================================================
 IMAGE_URL="http://pharo.gforge.inria.fr/ci/image/20/latest.zip"
-curl --output image.zip $IMAGE_URL
+wget --output-document=image.zip $IMAGE_URL
 
 IMAGE_DIR="image"
 mkdir $IMAGE_DIR

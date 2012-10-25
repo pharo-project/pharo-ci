@@ -20,5 +20,5 @@ elif [[ $# -gt 0 ]];then
 fi
 
 # FETCH DATA ==================================================================
-curl http://pharo.gforge.inria.fr/ci/ciCog.sh | bash
-curl http://pharo.gforge.inria.fr/ci/ciPharo20.sh | bash
+wget -qO - http://pharo.gforge.inria.fr/ci/ciCog.sh | bash
+wget -qO - http://pharo.gforge.inria.fr/ci/ciPharo20.sh | bash
