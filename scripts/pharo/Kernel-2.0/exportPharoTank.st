@@ -38,7 +38,7 @@ FileStream stdout
  Parser warningAllowed: true.   
 
 " To be added soon in Pharo " 
- 'BufferedConverterBatchMethods.cs' asFileReference readStream fileIn.
+ "'BufferedConverterBatchMethods.cs' asFileReference readStream fileIn."
 
 
 
