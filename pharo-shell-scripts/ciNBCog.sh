@@ -62,9 +62,9 @@ DIR=`pwd`
 cd - > /dev/null 
 # disable parameter expansion to forward all arguments unprocess to the VM
 set -f
-# run the VM' >> vm.sh
+# run the VM and pass along all arguments as is' >> vm.sh
 # make sure we only substite $PHARO_VM but put '$DIR' in the script
-echo \"\$DIR\"/\"$PHARO_VM\" -headless \$* >> vm.sh
+echo \"\$DIR\"/\"$PHARO_VM\" -headless \"\$@\" >> vm.sh
 
 # make the script executable
 chmod +x vm.sh
