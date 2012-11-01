@@ -318,6 +318,8 @@ blacklistedClasses := ((Smalltalk image kernelPackageNames
   gather: [:p | SystemNavigation default allClassesInPackageNamed: p]) 
   collect: [:p | p name]) asSet.
 
+blacklistedClasses add: #RPackageOrganizer.
+
 #(#Behavior #ProcessorScheduler #SmalltalkImage #Delay #ByteString #ByteTextConverter #Categorizer #ChronologyConstants 
 #Collection #CompiledMethod #Delay #DateAndTime #DefaultExternalDropHandler #EncodedCharSet #ExternalDropHandler 
 #ExternalSemaphoreTable #Float #Halt #HashTableSizes #ISOLanguageDefinition #InstructionStream #Integer
@@ -430,15 +432,15 @@ repoGroup addRepository: (MCHttpRepository
   location: 'http://ss3.gemstone.com/ss/PharoInbox'
   user: ''
   password: '').
-
+"
 mcRegistry keysAndValuesDo: [:package :oldWorkingCopy |
   | workingCopy |
   PackageInfo registerPackageName: package name.
   workingCopy := MCWorkingCopy forPackage: (MCPackage new name: package name). 
   workingCopy instVarNamed: #ancestry put: oldWorkingCopy ancestry.
-  workingCopy instVarNamed: #repositoryGroup put: repoGroup].
+  workingCopy instVarNamed: #repositoryGroup put: repoGroup]."
 
-RPackageOrganizer fillUp.
+"RPackageOrganizer fillUp."
 
 ]   ifError: [:e |
     | rep |
