@@ -38,7 +38,7 @@ FileStream stdout
  Parser warningAllowed: true.   
 
 " To be added soon in Pharo " 
- 'BufferedConverterBatchMethods.cs' asFileReference readStream fileIn.
+ "'BufferedConverterBatchMethods.cs' asFileReference readStream fileIn."
 
 
 
@@ -125,7 +125,7 @@ cleanUpAfterMorphicInitialization
   "self new cleanUpForRelease"
 
   Author fullName: 'Mr.Cleaner'.
-  DebuggerMethodMap withAllSubclassesDo: [ :each | each voidMapCache ].
+ " DebuggerMethodMap withAllSubclassesDo: [ :each | each voidMapCache ]."
 " self cleanUpPackageOrganizer.
   self cleanUpMethods.
 " MCDataStream initialize.
@@ -251,7 +251,7 @@ privShrinkingProcessWith: additionalPackageNames
     self privCleanChangeSets.
     
     FileServices removeObsolete.
-    DebuggerMethodMap voidMapCache.
+  "  DebuggerMethodMap voidMapCache."
 
     Object flushEvents.
 
@@ -317,6 +317,8 @@ initializedClasses := Set new.
 blacklistedClasses := ((Smalltalk image kernelPackageNames 
   gather: [:p | SystemNavigation default allClassesInPackageNamed: p]) 
   collect: [:p | p name]) asSet.
+
+blacklistedClasses add: #RPackageOrganizer.
 
 #(#Behavior #ProcessorScheduler #SmalltalkImage #Delay #ByteString #ByteTextConverter #Categorizer #ChronologyConstants 
 #Collection #CompiledMethod #Delay #DateAndTime #DefaultExternalDropHandler #EncodedCharSet #ExternalDropHandler 
@@ -430,15 +432,15 @@ repoGroup addRepository: (MCHttpRepository
   location: 'http://ss3.gemstone.com/ss/PharoInbox'
   user: ''
   password: '').
-
+"
 mcRegistry keysAndValuesDo: [:package :oldWorkingCopy |
   | workingCopy |
   PackageInfo registerPackageName: package name.
   workingCopy := MCWorkingCopy forPackage: (MCPackage new name: package name). 
   workingCopy instVarNamed: #ancestry put: oldWorkingCopy ancestry.
-  workingCopy instVarNamed: #repositoryGroup put: repoGroup].
+  workingCopy instVarNamed: #repositoryGroup put: repoGroup]."
 
-RPackageOrganizer fillUp.
+"RPackageOrganizer fillUp."
 
 ]   ifError: [:e |
     | rep |

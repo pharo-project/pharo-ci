@@ -61,11 +61,9 @@ Parser subclass: #MockCustomParser
   category: 'CompilerTests'!
 
 
-| log packagesDir|
+| log |
 
 [	
-
-packagesDir := ((Smalltalk vm getSystemAttribute: 4) ifNil: [FileSystem disk workingDirectory] ifNotNilDo: [:path | FileSystem disk workingDirectory resolve: path]).
 
 "FuelTests
 FuelMetalevelTests
@@ -104,8 +102,8 @@ Tests-Traits-MOP
 Tests-VM
 HudsonBuildTools' linesDo: [:packageName |
 
+CodeImporter evaluateReadStream: (packageName, '.st') asFileReference readStream.
 
-packagesDir readOnlyFileNamed: packageName, '.st' do: [:file | CodeImporter evaluateReadStream: file ].
 FileStream stdout nextPutAll: packageName, ' loaded'; lf.].
 
 FileStream stdout nextPutAll: 'Load tests finished'; lf.
@@ -123,6 +121,6 @@ SmalltalkImage current snapshot: true andQuit: true.
 	thisContext stack copy withIndexDo: [:stck :i |
 		[rep nextPutAll: i asString; space; nextPutAll: stck asString; cr] ifError: [:er | rep nextPutAll: er asString; cr]].
 	rep close. 
-	Smalltalk quitFailure.]
+	Smalltalk exitFailure.]
   
 ! 

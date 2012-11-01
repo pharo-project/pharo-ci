@@ -36,7 +36,7 @@ FileStream stdout
  Parser warningAllowed: true.   
 
 " To be added soon in Pharo " 
- 'BufferedConverterBatchMethods.cs' asFileReference readStream fileIn.
+" 'BufferedConverterBatchMethods.cs' asFileReference readStream fileIn."
 
 
 "load FuelCommandLineHandler"
@@ -155,7 +155,7 @@ cleanUpAfterMorphicInitialization
   "self new cleanUpForRelease"
 
   Author fullName: 'Mr.Cleaner'.
-  DebuggerMethodMap withAllSubclassesDo: [ :each | each voidMapCache ].
+"  DebuggerMethodMap withAllSubclassesDo: [ :each | each voidMapCache ]."
 " self cleanUpPackageOrganizer.
   self cleanUpMethods.
 " MCDataStream initialize.
@@ -336,7 +336,7 @@ privShrinkingProcessWith: additionalPackageNames
     self privCleanChangeSets.
     
     FileServices removeObsolete.
-    DebuggerMethodMap voidMapCache.
+   " DebuggerMethodMap voidMapCache."
 
     Object flushEvents.
 
