@@ -83,6 +83,7 @@ FileSystem-Tests-Memory
 KernelTests
 Multilingual-Tests
 Ring-Tests-Kernel
+Ring-Tests-Containers
 Tests-Bugs
 Tests-CodeImport
 Tests-Compression

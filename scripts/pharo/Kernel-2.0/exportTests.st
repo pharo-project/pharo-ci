@@ -21,6 +21,7 @@ FuelTests
 KernelTests
 Multilingual-Tests
 Ring-Tests-Kernel
+Ring-Tests-Containers
 SUnit-Core
 SUnit-Tests
 Tests' linesDo: [:packageName |
