@@ -1,3 +1,48 @@
+'From Pharo2.0a of ''18 April 2012'' [Latest update: #20386] on 8 November 2012 at 8:26:15 pm'!
+
+!Trait class methodsFor: 'instance creation' stamp: 'PavelKrivanek 11/8/2012 20:26'!
+named: aSymbol uses: aTraitCompositionOrCollection category: aString env: anEnvironment
+  | trait oldTrait systemCategory oldCategory |
+  
+  systemCategory := aString asSymbol.
+  trait := anEnvironment
+    at: aSymbol
+    ifAbsent: [nil].
+  oldTrait := trait copy.
+  "Since there some strange side effect who changes teh category before being able to 
+    actually update (and that causes a problem on RPackage organization), we take also the 
+    category"
+  oldCategory := oldTrait ifNotNil: [oldTrait category].
+  trait := trait ifNil: [ super new ].
+  
+  (trait isKindOf: Trait) ifFalse: [
+    ^self error: trait name , ' is not a Trait'].
+  trait
+    setName: aSymbol
+    andRegisterInCategory: systemCategory
+    environment: anEnvironment.
+    
+  trait setTraitComposition: aTraitCompositionOrCollection asTraitComposition.
+  
+  "... notify interested clients ..."
+  oldTrait ifNil: [
+    SystemAnnouncer uniqueInstance 
+      classAdded: trait 
+      inCategory: systemCategory.
+    ^trait].
+
+  SystemAnnouncer uniqueInstance traitDefinitionChangedFrom: oldTrait to: trait.
+
+  systemCategory ~= oldCategory
+    ifTrue: [ 
+      SystemAnnouncer uniqueInstance 
+        class: trait 
+        recategorizedFrom: oldCategory 
+        to: systemCategory].
+    
+  ^ trait! !
+
+
 
 'From Pharo1.4a of ''16 June 2011'' [Latest update: #14385] on 9 March 2012 at 8:50:12 pm'!
 Parser subclass: #MockCustomParser
