@@ -117,3 +117,5 @@ SmalltalkImage current snapshot: true andQuit: true.
 	Smalltalk exitFailure.]
   
 ! 
+
+TextDiffBuilderTest removeFromSystem.
