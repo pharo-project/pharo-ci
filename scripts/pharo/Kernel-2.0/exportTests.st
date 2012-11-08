@@ -20,6 +20,7 @@ FuelPackageLoaderTests
 FuelTests
 KernelTests
 Multilingual-Tests
+Ring-Tests-Kernel
 SUnit-Core
 SUnit-Tests
 Tests' linesDo: [:packageName |
