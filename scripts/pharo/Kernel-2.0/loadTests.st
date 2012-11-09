@@ -101,6 +101,8 @@ FileStream stdout nextPutAll: packageName, ' loaded'; lf.].
 
 FileStream stdout nextPutAll: 'Load tests finished'; lf.
 
+(Smalltalk at: #TextDiffBuilderTest) removeFromSystem.
+
 SmalltalkImage current snapshot: true andQuit: true.
 
 
@@ -118,4 +120,3 @@ SmalltalkImage current snapshot: true andQuit: true.
   
 ! 
 
-TextDiffBuilderTest removeFromSystem.
