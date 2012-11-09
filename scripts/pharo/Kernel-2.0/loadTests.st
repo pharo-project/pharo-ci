@@ -102,6 +102,12 @@ FileStream stdout nextPutAll: packageName, ' loaded'; lf.].
 FileStream stdout nextPutAll: 'Load tests finished'; lf.
 
 (Smalltalk at: #TextDiffBuilderTest) removeFromSystem.
+(Smalltalk at: #StickynessBugz) removeFromSystem.
+(Smalltalk at: #RenderBugz) removeFromSystem.
+(Smalltalk at: #MorphicUIBugTest) removeFromSystem.
+(Smalltalk at: #MorphBugs) removeFromSystem.
+(Smalltalk at: #HandBugs) removeFromSystem.
+(Smalltalk at: #CircleMorphBugs) removeFromSystem.
 
 SmalltalkImage current snapshot: true andQuit: true.
 
