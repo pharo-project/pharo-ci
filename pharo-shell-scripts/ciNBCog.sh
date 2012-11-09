@@ -64,7 +64,12 @@ cd - > /dev/null
 set -f
 # run the VM and pass along all arguments as is' >> vm.sh
 # make sure we only substite $PHARO_VM but put '$DIR' in the script
-echo \"\$DIR\"/\"$PHARO_VM\" -headless \"\$@\" >> vm.sh
+echo -n "\"\$DIR\"/\"$PHARO_VM\" -headless " >> vm.sh
+if [ "$OS" == "linux" ]; then
+    echo " -nodisplay " >> vm.sh
+fi
+echo \"\$@\" >> vm.sh
+
 
 # make the script executable
 chmod +x vm.sh
