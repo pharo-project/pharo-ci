@@ -67,11 +67,12 @@ set -f
 echo -n \"\$DIR\"/\"$PHARO_VM\" >> vm.sh
 if [ "$OS" == "linux" ]; then
     echo -n " -vm-display-null " >> vm.sh
+elif [ "$OS" == "win" ]; then
+    echo -n " -nodisplay "
 else
     echo -n " -headless "
 fi
 echo \"\$@\" >> vm.sh
-
 
 # make the script executable
 chmod +x vm.sh
