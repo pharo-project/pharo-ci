@@ -1,56 +1,3 @@
-'From Pharo2.0a of ''18 April 2012'' [Latest update: #20152] on 24 June 2012 at 9:53:48 pm'!
-
-!CompiledMethod methodsFor: 'private' stamp: 'MarcusDenker 4/29/2012 10:33'!
-getSourceReplacingSelectorWith: newSelector
-  | oldKeywords newKeywords args newSelectorWithArgs source oldSelector s |
-  source := self sourceCode.
-  oldSelector := self parserClass new parseSelector: source.
-  oldSelector = newSelector ifTrue: [ ^ source ].
-  oldKeywords := oldSelector keywords.
-  newKeywords := (newSelector ifNil: [self defaultSelector]) keywords.
-  [oldKeywords size = newKeywords size] assert.
-  args := (self methodClass parserClass new
-    parseArgsAndTemps: source string notifying: nil) copyFrom: 1 to: self numArgs.
-  newSelectorWithArgs := String streamContents: [:stream |
-    newKeywords withIndexDo: [:keyword :index |
-      stream nextPutAll: keyword.
-      stream space.
-      args size >= index ifTrue: [
-        stream nextPutAll: (args at: index); space]]].
-  s := source string readStream.
-  oldKeywords do: [ :each | s match: each ].
-  args isEmpty ifFalse: [ s match: args last ].
-  ^newSelectorWithArgs trimBoth, s upToEnd! !
-
-
-'From Pharo2.0a of ''18 April 2012'' [Latest update: #20152] on 26 June 2012 at 10:25:45 am'!
-
-!TPureBehavior methodsFor: 'traits' stamp: 'PavelKrivanek 6/26/2012 10:25'!
-traitsProvidingSelector: aSymbol
-  | result |
-  result := OrderedCollection new.
-  self hasTraitComposition ifFalse: [^result].
-  (self traitComposition methodDescriptionsForSelector: aSymbol)
-    do: [:methodDescription | methodDescription selector = aSymbol ifTrue: [
-      result addAll: (methodDescription locatedMethods
-        collect: [:each | each methodClass])]].
-  ^result! !
-
-'From Pharo2.0a of ''18 April 2012'' [Latest update: #20152] on 26 June 2012 at 10:24:51 am'!
-
-!TraitComposition methodsFor: 'enquiries' stamp: 'PavelKrivanek 6/26/2012 10:24'!
-traitProvidingSelector: aSymbol
-  "Return the trait which originally provides the method aSymbol or return nil
-  if trait composition does not provide this selector or there is a conflict.
-  Take aliases into account. Return the trait which the aliased method is defined in."
-
-  | methodDescription locatedMethod |
-  methodDescription := self methodDescriptionForSelector: aSymbol.
-  (methodDescription isProvided not or: [methodDescription isConflict]) 
-    ifTrue: [^nil].
-  locatedMethod := methodDescription providedLocatedMethod.
-  ^locatedMethod methodClass traitOrClassOfSelector: locatedMethod selector! !
-
 
 
 'From Pharo1.4a of ''16 June 2011'' [Latest update: #14385] on 9 March 2012 at 8:50:12 pm'!
@@ -82,6 +29,8 @@ FileSystem-Tests-Disk
 FileSystem-Tests-Memory
 KernelTests
 Multilingual-Tests
+Ring-Tests-Kernel
+Ring-Tests-Containers
 Tests-Bugs
 Tests-CodeImport
 Tests-Compression
@@ -108,6 +57,14 @@ FileStream stdout nextPutAll: packageName, ' loaded'; lf.].
 
 FileStream stdout nextPutAll: 'Load tests finished'; lf.
 
+(Smalltalk at: #TextDiffBuilderTest) removeFromSystem.
+(Smalltalk at: #StickynessBugz) removeFromSystem.
+(Smalltalk at: #RenderBugz) removeFromSystem.
+(Smalltalk at: #MorphicUIBugTest) removeFromSystem.
+(Smalltalk at: #MorphBugs) removeFromSystem.
+(Smalltalk at: #HandBugs) removeFromSystem.
+(Smalltalk at: #CircleMorphBugs) removeFromSystem.
+
 SmalltalkImage current snapshot: true andQuit: true.
 
 
@@ -124,3 +81,4 @@ SmalltalkImage current snapshot: true andQuit: true.
 	Smalltalk exitFailure.]
   
 ! 
+
