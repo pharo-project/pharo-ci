@@ -66,7 +66,7 @@ set -f
 # make sure we only substite $PHARO_VM but put '$DIR' in the script
 echo -n "\"\$DIR\"/\"$PHARO_VM\" -headless " >> vm.sh
 if [ "$OS" == "linux" ]; then
-    echo " -nodisplay " >> vm.sh
+    echo " -vm-display-null " >> vm.sh
 fi
 echo \"\$@\" >> vm.sh
 
