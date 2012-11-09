@@ -64,9 +64,11 @@ cd - > /dev/null
 set -f
 # run the VM and pass along all arguments as is' >> vm.sh
 # make sure we only substite $PHARO_VM but put '$DIR' in the script
-echo -n "\"\$DIR\"/\"$PHARO_VM\" -headless " >> vm.sh
+echo -n \"\$DIR\"/\"$PHARO_VM\" >> vm.sh
 if [ "$OS" == "linux" ]; then
-    echo " -vm-display-null " >> vm.sh
+    echo -n " -vm-display-null " >> vm.sh
+else
+    echo -n " -headless "
 fi
 echo \"\$@\" >> vm.sh
 
