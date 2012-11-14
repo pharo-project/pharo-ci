@@ -65,6 +65,9 @@ FileStream stdout nextPutAll: 'Load tests finished'; lf.
 (Smalltalk at: #HandBugs) removeFromSystem.
 (Smalltalk at: #CircleMorphBugs) removeFromSystem.
 
+(Smalltalk at: #ReleaseTest) removeSelector: #testRPackageOrganizer. 
+(Smalltalk at: #ReleaseTest) removeSelector: #testUnpackagedClasses. 
+
 SmalltalkImage current snapshot: true andQuit: true.
 
 
