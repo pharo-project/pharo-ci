@@ -34,7 +34,7 @@ privShrinkingProcessWith: additionalPackageNames
   
     (Smalltalk classNamed: #KMPragmaKeymapBuilder) release.
 
-    self privShrinkUnicodeTables.
+    "self privShrinkUnicodeTables."
 
     Display newDepth: 1.
 
