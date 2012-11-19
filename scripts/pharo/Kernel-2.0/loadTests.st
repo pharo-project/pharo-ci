@@ -57,6 +57,9 @@ FileStream stdout nextPutAll: packageName, ' loaded'; lf.].
 
 FileStream stdout nextPutAll: 'Load tests finished'; lf.
 
+#(Trait1 Trait2 Trait3 MOPTestClassA MOPTestClassB MOPTestClassC MOPTestClassD) 
+  do: [:n | (Smalltalk at: n) compileAll].
+
 (Smalltalk at: #TextDiffBuilderTest) removeFromSystem.
 (Smalltalk at: #StickynessBugz) removeFromSystem.
 (Smalltalk at: #RenderBugz) removeFromSystem.
