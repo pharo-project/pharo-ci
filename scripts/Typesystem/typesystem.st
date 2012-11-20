@@ -66,6 +66,12 @@ Gofer it
         load.
 (Smalltalk at: #ConfigurationOfToothpick) perform: #load.
 
+"Installing RoelTyper"
+Gofer it
+        squeaksource: 'RoelTyper';
+        package: 'RoelTyper';
+        load.
+
 "Installing bootstrapper"	
 Gofer new
 	squeaksource: 'GradualTypeSystem';
