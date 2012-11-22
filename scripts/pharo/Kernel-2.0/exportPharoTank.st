@@ -215,7 +215,7 @@ FileStream stdout nextPutAll: 'finished' asString; lf.
 
 #(ProgressBarMorph BalloonBezierSimulation BalloonEngineConstants BalloonEngine Browser
 CornerRounder CPUWatcher Debugger DigitalSignatureAlgorithm DummySoundSystem FileContentsBrowser
-FileList FixUnderscores FreeTypeCacheConstants FreeTypeCache FreeTypeSettings 
+FileList FreeTypeCacheConstants FreeTypeCache FreeTypeSettings 
 FreeTypeSubPixelAntiAliasedGlyphRenderer FT2Constants FT2Handle GIFReadWriter
 HaloMorph HandMorph ChangeList CharacterScanner ImageMorph JPEGHuffmanTable
 JPEGReadStream JPEGReadWriter LogicalFont LongTestCase MailAddressTokenizer MailComposition
