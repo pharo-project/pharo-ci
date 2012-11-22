@@ -1,38 +1,9 @@
-"output Version Number of stdout"
-FileStream stdout 
-    nextPutAll: '[version] ';
-    nextPutAll: SystemVersion current major asString;
-    nextPutAll: '.';
-    nextPutAll: SystemVersion current minor asString;
-    nextPutAll: ' #' ;
-    nextPutAll: SystemVersion current highestUpdate asString;
-    cr.
-!
+'From Pharo2.0a of ''18 April 2012'' [Latest update: #20407] on 19 November 2012 at 10:57:46 am'!
 
-"fix kernelPackageNames"
-
-'From Pharo2.0a of ''18 April 2012'' [Latest update: #20245] on 7 August 2012 at 11:00:18 am'!
-
-!SmalltalkImage methodsFor: 'PharoKernel' stamp: 'PavelKrivanek 8/7/2012 11:00'!
-kernelPackageNames
-
-  ^ #('Announcements-Core' 'Announcements-Core' 'Collections-Abstract' 'Collections-Arithmetic' 'Collections-Arrayed'
- 'Collections-Atomic' 'Collections-Native' 'Collections-Sequenceable' 'Collections-Stack' 'Collections-Streams' 
-'Collections-Strings' 'Collections-Support' 'Collections-Text' 'Collections-Traits' 'Collections-Unordered' 
-'Collections-Weak' 'Compiler' 'Compression' 'Files' 'Graphics-Display Objects' 'Graphics-Primitives' 
-'Graphics-Transformations' 'Kernel' 'Multilingual-Encodings' 'Multilingual-ImmPlugin' 'Multilingual-Languages' 
-'Multilingual-TextConversion'  'System-Change Notification' 'System-Changes' 'System-CommandLine' 'System-Clipboard' 
-'System-FileRegistry' 'System-Finalization' 'System-Localization' 'System-Object Events' 'System-Platforms' 
-'System-Support' 'Text-Core' 'Traits' 'UIManager' 'Transcript' 'FileSystem-AnsiStreams' 'FileSystem-Core' 
-'FileSystem-Disk' 'FileSystem-Memory' 'CodeImport' 'Regex-Core' 'SystemProgress' 'System-Announcements' 'Ring-Core-Kernel' 'Ring-Core-Containers')! !
-
-
-'From Pharo2.0a of ''18 April 2012'' [Latest update: #20245] on 7 August 2012 at 11:39:24 am'!
-
-!SmalltalkImage methodsFor: 'PharoKernel-private' stamp: 'PavelKrivanek 8/7/2012 11:39'!
+!SmalltalkImage methodsFor: 'PharoKernel-private' stamp: 'PavelKrivanek 11/19/2012 10:57'!
 privShrinkingProcessWith: additionalPackageNames
 
-  [
+[
     | packages |
         
     10 timesRepeat: [
@@ -51,7 +22,7 @@ privShrinkingProcessWith: additionalPackageNames
 
     5 timesRepeat: [Smalltalk garbageCollect].
 
-    MCDataStream initialize.
+    (Smalltalk classNamed: #MCDataStream) initialize.
 
     Beeper instVarNamed: #default put: nil.
 
@@ -61,9 +32,9 @@ privShrinkingProcessWith: additionalPackageNames
 
     Author reset.
   
-    KMPragmaKeymapBuilder release.
+    (Smalltalk classNamed: #KMPragmaKeymapBuilder) release.
 
-    self privShrinkUnicodeTables.
+    "self privShrinkUnicodeTables."
 
     Display newDepth: 1.
 
@@ -78,12 +49,14 @@ privShrinkingProcessWith: additionalPackageNames
 
     self privCleanTextConstants.
 
-    SoundService default: nil.
-    SoundService unregister: DummySoundSystem.
+    (Smalltalk classNamed: #SoundService) default: nil.
+    (Smalltalk classNamed: #SoundService) unregister: (Smalltalk classNamed: #DummySoundSystem).
 
     ThreadSafeTranscript install.
 
     self privCleanUnloadMethods.
+
+    (Smalltalk classNamed: #RPackageOrganizer) unregisterInterestToSystemAnnouncement.
 
     SystemNavigation new removeAllButPackages: self kernelPackageNames, additionalPackageNames.
 
@@ -98,11 +71,10 @@ privShrinkingProcessWith: additionalPackageNames
     self privCleanChangeSets.
     
     FileServices removeObsolete.
-    DebuggerMethodMap voidMapCache.
 
     Object flushEvents.
 
-    MCDataStream initialize.
+    (Smalltalk classNamed: #MCDataStream) initialize.
 
     Locale classPool at: #LocaleChangeListeners put: nil.
     SmalltalkImage classPool at: #Tools put: nil.
@@ -112,6 +84,7 @@ privShrinkingProcessWith: additionalPackageNames
     Smalltalk organization removeEmptyCategories.
 
     WeakArray restartFinalizationProcess.
+    SmalltalkImage current fixObsoleteReferences.
 
     "UIManager default progressBarEnabled: true."
     "Smalltalk condenseChanges."
@@ -128,26 +101,7 @@ privShrinkingProcessWith: additionalPackageNames
     thisContext stack copy withIndexDo: [:stck :i |
     [ rep nextPutAll: i asString; space; nextPutAll: stck asString; cr] ifError: []].
     rep close. 
-    Smalltalk exitFailure ] 
-! !
-
-'From Pharo2.0a of ''18 April 2012'' [Latest update: #20245] on 7 August 2012 at 11:40:38 am'!
-
-!SmalltalkImage methodsFor: 'PharoKernel' stamp: 'PavelKrivanek 8/7/2012 11:40'!
-shrinkToKernelWith: additionalPackageNames
-
-  "
-  WARNING:  THIS METHOD WILL DESTROY YOUR IMAGE
-
-  Use with cation and only on fresh Pharo images 
-  "
-
-  [ self privShrinkingProcessWith: additionalPackageNames ] forkAt: 40.
-
-  Processor terminateActive.
-  
-! !
-
+    Smalltalk exitFailure ] ! !
 
 
 Smalltalk shrinkToKernel.

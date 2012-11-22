@@ -57,6 +57,9 @@ FileStream stdout nextPutAll: packageName, ' loaded'; lf.].
 
 FileStream stdout nextPutAll: 'Load tests finished'; lf.
 
+#(Trait1 Trait2 Trait3 MOPTestClassA MOPTestClassB MOPTestClassC MOPTestClassD) 
+  do: [:n | (Smalltalk at: n) compileAll].
+
 (Smalltalk at: #TextDiffBuilderTest) removeFromSystem.
 (Smalltalk at: #StickynessBugz) removeFromSystem.
 (Smalltalk at: #RenderBugz) removeFromSystem.
@@ -64,6 +67,9 @@ FileStream stdout nextPutAll: 'Load tests finished'; lf.
 (Smalltalk at: #MorphBugs) removeFromSystem.
 (Smalltalk at: #HandBugs) removeFromSystem.
 (Smalltalk at: #CircleMorphBugs) removeFromSystem.
+
+(Smalltalk at: #ReleaseTest) removeSelector: #testRPackageOrganizer. 
+(Smalltalk at: #ReleaseTest) removeSelector: #testUnpackagedClasses. 
 
 SmalltalkImage current snapshot: true andQuit: true.
 
