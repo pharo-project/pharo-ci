@@ -55,7 +55,7 @@ FileStream stdout nextPutAll: result asString.
 
 ].
 
-FLSerializer serialize: (Smalltalk globals at: #Trace) toFileNamed: 'trace.fuel'.
+"FLSerializer serialize: (Smalltalk globals at: #Trace) toFileNamed: 'trace.fuel'."
 
 
 FileStream stdout nextPutAll: 'done'; cr.
