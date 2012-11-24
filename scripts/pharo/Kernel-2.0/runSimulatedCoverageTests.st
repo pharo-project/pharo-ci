@@ -1,3 +1,5 @@
+TestValueWithinFix removeSelector: #testValueWithinNonLocalReturnFixReal.
+TestValueWithinFix removeSelector: #testValueWithinNonLocalReturnFixSimply.
 
 'From Pharo2.0a of ''18 April 2012'' [Latest update: #20416] on 24 November 2012 at 8:01:03 pm'!
 
