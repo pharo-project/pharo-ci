@@ -1,3 +1,4 @@
+"remove time dependent tests"
 TestValueWithinFix removeSelector: #testValueWithinNonLocalReturnFixReal.
 TestValueWithinFix removeSelector: #testValueWithinNonLocalReturnFixSimply.
 
@@ -28,6 +29,8 @@ HDTestReport runCategories: Smalltalk organization categories.
 
 "HDTestReport runCategories: {'Announcements-Tests-Core' }."
 
+FileStream stdout lf; lf.
+
 ((Smalltalk allClasses inject: OrderedCollection new into: [:col :c | col add: c; add: c class. col]), Smalltalk allTraits) do: [:class | 
 
 result := String streamContents: [:s |
@@ -48,7 +51,7 @@ classTrace
 (usedBytecodes  /  allBytecodes * 100) asFloat asString; nextPutAll:
 '%'; lf.
 ] ifError: [:e | FileStream stdout nextPutAll: 'ERROR: ', e asString ]]]].
-FileStream stdout nextPutAll: result asString.
+FileStream stdout nextPutAll: result asString; lf; lf.
 
 ].
 
