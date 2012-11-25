@@ -38,7 +38,7 @@ classTrace
                 s nextPutAll: 'Class ', class name, ' not called'; lf. ]
         ifNotNil: [
                 s nextPutAll: class name; lf.
-                class localSelectors do: [:sel |
+                class selectors do: [:sel |
                         | m usedBytecodes allBytecodes |
                         [m := class >> sel.
                         usedBytecodes := (classTrace at: sel ifAbsent: Set new) size.
