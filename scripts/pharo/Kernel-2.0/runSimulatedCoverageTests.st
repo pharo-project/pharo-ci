@@ -17,8 +17,8 @@ runAll
         methods := (Smalltalk globals at: #Trace) at: cls ifAbsentPut: Dictionary new.
         bytecodes := methods at: sel ifAbsentPut: Set new.
         bytecodes add: current pc.].
-    ] ifError: [:e | FileStream stdout nextPutAll: 'ERROR: ', e asString; lf; lf.].
- ]! !
+    ] ifError: [:e | FileStream stdout nextPutAll: 'ERROR: ', e asString; lf; lf.]].
+ ! !
 
 | classTrace result  |
 
@@ -38,14 +38,7 @@ classTrace
                 s nextPutAll: 'Class ', class name, ' not called'; lf. ]
         ifNotNil: [
                 s nextPutAll: class name; lf.
- "
-thisContext runSimulated: [
-
-  HDTestReport runCategories: Smalltalk organization categories. 
-] contextAtEachStep: [ :current |
- FileStream stdout nextPutAll: current method methodClass asString, ' >> ', current method selector asString.
-].
-"               class localSelectors do: [:sel |
+                class localSelectors do: [:sel |
                         | m usedBytecodes allBytecodes |
                         [m := class >> sel.
                         usedBytecodes := (classTrace at: sel ifAbsent: Set new) size.
@@ -54,8 +47,7 @@ thisContext runSimulated: [
                         s tab; nextPutAll: sel; nextPutAll: ' - '; nextPutAll:
 (usedBytecodes  /  allBytecodes * 100) asFloat asString; nextPutAll:
 '%'; lf.
-] ifError: [:e | FileStream stdout nextPutAll: 'ERROR: ', e asString ]].
-].
+] ifError: [:e | FileStream stdout nextPutAll: 'ERROR: ', e asString ]]]].
 FileStream stdout nextPutAll: result asString.
 
 ].
