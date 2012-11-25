@@ -1,6 +1,8 @@
 TestValueWithinFix removeSelector: #testValueWithinNonLocalReturnFixReal.
 TestValueWithinFix removeSelector: #testValueWithinNonLocalReturnFixSimply.
 
+!
+
 'From Pharo2.0a of ''18 April 2012'' [Latest update: #20416] on 24 November 2012 at 8:01:03 pm'!
 
 !HDTestReport methodsFor: 'running' stamp: 'JohanBrichau 10/25/2010 23:05'!
@@ -45,13 +47,14 @@ thisContext runSimulated: [
 ].
 "               class localSelectors do: [:sel |
                         | m usedBytecodes allBytecodes |
-                        m := class >> sel.
+                        [m := class >> sel.
                         usedBytecodes := (classTrace at: sel ifAbsent: Set new) size.
                         allBytecodes := 0.
                         m symbolicLinesDo: [:pc :lineForPC | allBytecodes := allBytecodes + 1 ]..
                         s tab; nextPutAll: sel; nextPutAll: ' - '; nextPutAll:
 (usedBytecodes  /  allBytecodes * 100) asFloat asString; nextPutAll:
-'%'; lf. ]].
+'%'; lf.
+] ifError: [:e | FileStream stdout nextPutAll: 'ERROR: ', e asString ]].
 ].
 FileStream stdout nextPutAll: result asString.
 
