@@ -38,6 +38,7 @@ if [ -z "$ARCHITECTURE" ] ; then
 fi
 
 VM_TYPE=rizel
+VM_BINARY_NAME=StackVM
 
 # DOWNLOAD THE LATEST VM ======================================================
 VM_URL="http://pharo.gforge.inria.fr/ci/vm/${VM_TYPE}/${OS}/${VM_TYPE}-${OS}-latest.zip"
@@ -47,9 +48,9 @@ wget --progress=bar:force --output-document=vm.zip $VM_URL
 unzip -qjo -d vm vm.zip
 
 if [ "$OS" == "win" ]; then
-    PHARO_VM=`find vm -name RizelVM.exe`
+    PHARO_VM=`find vm -name ${VM_BINARY_NAME}.exe`
 else
-    PHARO_VM=`find vm -name RizelVM`
+    PHARO_VM=`find vm -name ${VM_BINARY_NAME}`
 fi
 
 echo $PHARO_VM
