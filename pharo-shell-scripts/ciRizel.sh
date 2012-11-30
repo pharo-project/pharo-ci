@@ -36,7 +36,8 @@ fi
 if [ -z "$ARCHITECTURE" ] ; then
     ARCHITECTURE=32
 fi
-$VM_TYPE=rizel
+
+VM_TYPE=rizel
 
 # DOWNLOAD THE LATEST VM ======================================================
 VM_URL="http://pharo.gforge.inria.fr/ci/vm/${VM_TYPE}/${OS}/${VM_TYPE}-${OS}-latest.zip"
