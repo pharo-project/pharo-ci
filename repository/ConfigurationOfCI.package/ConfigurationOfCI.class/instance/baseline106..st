@@ -18,13 +18,13 @@ baseline106: spec
 				versionString: #stable;
 				repository: 'http://www.squeaksource.com/MetacelloRepository' ].
 			
-		spec package: 'Filesystem-Legacy' with: [
+		spec package: 'FileSystem-Legacy' with: [
 			spec repository: 'http://www.smalltalkhub.com/mc/dh83/fisleg/main/' ].
 				
 		spec
 			package:  'CI-Core';
 			package: 'CI-Integration' with: [ 
-				spec requires: #( 'Soup' 'CI-Core' 'Filesystem-Legacy' 'OSProcess' )];
+				spec requires: #( 'Soup' 'CI-Core' 'FileSystem-Legacy' 'OSProcess' )];
 			package: 'CI-Loader' with: [ 
 				spec requires: #( 'Soup' 'CI-Core' )].
 			

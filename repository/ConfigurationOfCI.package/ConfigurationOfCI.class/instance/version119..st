@@ -12,7 +12,7 @@ version119: spec
 		spec 
 			project: 'Soup' with: '1.2'.
 		spec 
-			package: 'Filesystem-Legacy' with: 'Filesystem-Legacy-CamilloBruni.1'.
+			package: 'FileSystem-Legacy' with: 'FileSystem-Legacy-CamilloBruni.1'.
 		spec 
 			package: 'CI-Core' with: 'CI-Core-CamilloBruni.42';
 			package: 'CI-Integration' with: 'CI-Integration-CamilloBruni.13';
