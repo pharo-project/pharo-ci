@@ -9,4 +9,5 @@ dispatchSubCommand
 	self fetchIssue.
 	subCommand = 'load'
 		ifTrue: [ ^ self loadIssue ].
+		
 	self testIssue.

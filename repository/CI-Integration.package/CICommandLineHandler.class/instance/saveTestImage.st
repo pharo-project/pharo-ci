@@ -1,3 +1,3 @@
 action-test
 saveTestImage
-	^ Smalltalk saveImageInFileNamed: 'issue', issue id asString.
+	^ Smalltalk saveImageInFileNamed: self testImage basename.

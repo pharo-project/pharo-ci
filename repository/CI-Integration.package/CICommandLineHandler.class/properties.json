@@ -7,7 +7,9 @@
 	"commentStamp" : "<historical>",
 	"instvars" : [
 		"tracker",
-		"issue" ],
+		"issue",
+		"googleCodeUser",
+		"googleCodePassword" ],
 	"name" : "CICommandLineHandler",
 	"pools" : [
 		 ],
