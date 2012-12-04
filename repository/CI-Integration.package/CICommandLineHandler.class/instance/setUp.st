@@ -1,5 +1,5 @@
 setup
 setUp
 	tracker := GoogleIssueTracker pharo.
-	(self hasOption: 'updateIssue')
+	(self hasOption: 'update-issue')
 		ifTrue: [	self authenticateTracker ].
