@@ -1,0 +1,19 @@
+versions
+version119: spec
+	<version: '1.19' imports: #('1.06-baseline' )>
+
+	spec for: #'common' do: [
+		spec blessing: #'stable'.
+		spec description: 'command line handler'.
+		spec author: 'CamilloBruni'.
+		spec timestamp: '2012-12-04 23:25'. ].
+
+	spec for: #'pharo' do: [
+		spec 
+			project: 'Soup' with: '1.2'.
+		spec 
+			package: 'Filesystem-Legacy' with: 'Filesystem-Legacy-CamilloBruni.1'.
+		spec 
+			package: 'CI-Core' with: 'CI-Core-CamilloBruni.42';
+			package: 'CI-Integration' with: 'CI-Integration-CamilloBruni.13';
+			package: 'CI-Loader' with: 'CI-Loader-CamilloBruni.6' ].
