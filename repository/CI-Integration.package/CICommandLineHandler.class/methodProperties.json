@@ -1,0 +1,22 @@
+{
+	"class" : {
+		"commandName" : "CamilloBruni 12/4/2012 19:34",
+		"description" : "CamilloBruni 12/4/2012 19:34" },
+	"instance" : {
+		"activate" : "CamilloBruni 12/4/2012 19:58",
+		"dispatchSubCommand" : "CamilloBruni 12/4/2012 19:59",
+		"fetchIssue" : "CamilloBruni 12/4/2012 19:56",
+		"fetchNextIssue" : "CamilloBruni 12/4/2012 20:20",
+		"handleIssueTestFailure" : "CamilloBruni 12/4/2012 23:20",
+		"handleIssueTestSuccess" : "CamilloBruni 12/4/2012 23:20",
+		"handleIssueTestTimeout" : "CamilloBruni 12/4/2012 23:17",
+		"initializeStderr" : "CamilloBruni 12/4/2012 20:13",
+		"listOpenIssues" : "CamilloBruni 12/4/2012 20:10",
+		"loadAndTestIssue" : "CamilloBruni 12/4/2012 23:19",
+		"printOpenIssue:" : "CamilloBruni 12/4/2012 20:08",
+		"saveTestImage" : "CamilloBruni 12/4/2012 20:50",
+		"setUp" : "CamilloBruni 12/4/2012 19:55",
+		"spawnTestImage" : "CamilloBruni 12/4/2012 22:57",
+		"testImageName" : "CamilloBruni 12/4/2012 20:58",
+		"testIssue" : "CamilloBruni 12/4/2012 22:56",
+		"waitForIssueTestTimeout" : "CamilloBruni 12/4/2012 22:57" } }

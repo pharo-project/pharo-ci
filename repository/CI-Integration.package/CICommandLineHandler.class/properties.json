@@ -1,0 +1,15 @@
+{
+	"category" : "CI-Integration-CommandLine",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"tracker",
+		"issue" ],
+	"name" : "CICommandLineHandler",
+	"pools" : [
+		 ],
+	"super" : "CommandLineHandler",
+	"type" : "normal" }
