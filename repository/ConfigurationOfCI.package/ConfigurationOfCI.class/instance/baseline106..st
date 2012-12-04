@@ -16,10 +16,10 @@ baseline106: spec
 			spec
 				className: 'ConfigurationOfOSProcess';
 				versionString: #stable;
-				repository: 'http://www.smalltalkhub.com/MetacelloRepository' ].
+				repository: 'http://www.squeaksource.com/MetacelloRepository' ].
 			
 		spec package: 'Filesystem-Legacy' with: [
-			spec repository: 'http://www.squeaksource.com/mc/dh83/fisleg/main/' ].
+			spec repository: 'http://www.smalltalkhub.com/mc/dh83/fisleg/main/' ].
 				
 		spec
 			package:  'CI-Core';
