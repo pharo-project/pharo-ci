@@ -1,3 +1,3 @@
 action-test
 saveTestImage
-	^ Smalltalk saveImageInFileNamed: self testImage basename.
+	^ Smalltalk saveAs: self testImage basenameWithoutExtension.
