@@ -1,9 +1,7 @@
 action
 fetchNextIssue
 
-	stderr yellow;
-		nextPutAll: 'Fetching next issue...'; 
-		flush; clear; lf.
+	self inform: 'Fetching next issue...'.
 	issue := tracker nextIssue.
 	issue ifNil: [ 
 		self exitFailure: 'No more open issue available' ]
