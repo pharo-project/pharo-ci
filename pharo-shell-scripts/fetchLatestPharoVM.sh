@@ -51,6 +51,8 @@ cd "$VM_DIR"
 
 if [ "$OS" == "win" ]; then
     PHARO_VM_EXEC=`find . -name Pharo.exe`
+elif [ "$OS" == "unix" ]; then
+    PHARO_VM_EXEC=`find . -name pharo`
 else
     PHARO_VM_EXEC=`find . -name Pharo`
 fi
