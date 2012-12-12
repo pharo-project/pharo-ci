@@ -1,8 +1,6 @@
 #
 # fetchLatestVM.sh -- Get the latest Virtual Machine from Jenkins.
 #
-# Copyright (c) 2012 Christophe Demarey
-#
 
 # -------------------------------------------------------------------------
 
@@ -51,7 +49,7 @@ cd "$VM_DIR"
 
 if [ "$OS" == "win" ]; then
     PHARO_VM_EXEC=`find . -name Pharo.exe`
-elif [ "$OS" == "unix" ]; then
+elif [ "$OS" == "linux" ]; then
     PHARO_VM_EXEC=`find . -name pharo`
 else
     PHARO_VM_EXEC=`find . -name Pharo`
