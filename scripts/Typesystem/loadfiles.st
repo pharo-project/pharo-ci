@@ -22,4 +22,5 @@
 (FileStream oldFileNamed: '../scripts/Typesystem/Source/TypeSystem-TempSupport.st') fileIn.
 (FileStream oldFileNamed: '../scripts/Typesystem/Source/TypeSystem-UI.st') fileIn.
 (FileStream oldFileNamed: '../scripts/Typesystem/Source/TypeSystem-Inference.st') fileIn.
+(FileStream oldFileNamed: '../scripts/Typesystem/Source/TypeSystem-Research.st') fileIn.
 
