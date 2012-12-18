@@ -38,7 +38,7 @@ if [ -z "$ARCHITECTURE" ] ; then
 fi
 
 # DOWNLOAD THE LATEST VM ======================================================
-VM_URL="http://pharo.gforge.inria.fr/ci/vm/nbcog/${OS}/NBCog-${OS}-latest.zip"
+VM_URL="http://pharo.gforge.inria.fr/ci/vm/nbcog/${OS}/nbcog-${OS}-latest.zip"
 
 wget --progress=bar:force --output-document=vm.zip $VM_URL
 
