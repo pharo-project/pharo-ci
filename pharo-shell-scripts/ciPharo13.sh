@@ -27,8 +27,8 @@ mkdir $IMAGE_DIR
 unzip -q -d $IMAGE_DIR image.zip
 
 # find the image name
-PHARO_IMAGE=`find $IMAGE_DIR -name *.image`
-PHARO_CHANGES=`find $IMAGE_DIR -name *.changes`
+PHARO_IMAGE=`find $IMAGE_DIR -name \*.image`
+PHARO_CHANGES=`find $IMAGE_DIR -name \*.changes`
 
 # rename
 mv "$PHARO_IMAGE" Pharo.image
