@@ -42,7 +42,7 @@ VM_URL="http://pharo.gforge.inria.fr/ci/vm/cog/${OS}/cog-${OS}-latest.zip"
 
 wget --progress=bar:force --output-document=vm.zip $VM_URL
 
-unzip -qjo -d vm vm.zip
+unzip -qo -d vm vm.zip
 
 if [ "$OS" == "win" ]; then
     PHARO_VM=`find vm -name CogVM.exe`
