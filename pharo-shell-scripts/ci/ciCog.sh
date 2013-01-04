@@ -4,4 +4,4 @@
 set -e 
 
 # OUTDATE! use newer script ===============================================
-wget --quiet -qO - http://pharo.gforge.inria.fr/ci/ciCogVM.sh | bash
+wget --quiet -qO - http://pharo.gforge.inria.fr/ci/script/ciCogVM.sh | bash

@@ -15,4 +15,4 @@ elif [ $# -gt 0 ]; then
 fi
 
 # FETCH DATA ==================================================================
-wget --quiet -qO - http://pharo.gforge.inria.fr/ci/ciPharo14CogVM.sh | bash
+wget --quiet -qO - http://pharo.gforge.inria.fr/ci/script/ciPharo14CogVM.sh | bash

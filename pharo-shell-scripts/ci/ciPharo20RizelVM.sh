@@ -5,7 +5,7 @@ set -e
 
 # ARHUMENT HANDLING ===========================================================
 
-if { [ "$1" = "-h" ] || [ "$1" = "--help" ]; }; then
+if { [ "$1" = "-h" ] || [ "$1" = "--help" ]; }; 
     echo "This script will download the latest Pharo 2.0 image and the Rizel Benchmarking VM
 
 Result in the current directory:
@@ -20,5 +20,5 @@ elif [ $# -gt 0 ]; then
 fi
 
 # FETCH DATA ==================================================================
-wget --quiet -qO - http://pharo.gforge.inria.fr/ci/ciRizelVM.sh | bash
-wget --quiet -qO - http://pharo.gforge.inria.fr/ci/ciPharo20.sh | bash
+wget --quiet -qO - http://pharo.gforge.inria.fr/ci/script/ciRizelVM.sh | bash
+wget --quiet -qO - http://pharo.gforge.inria.fr/ci/script/ciPharo20.sh | bash
