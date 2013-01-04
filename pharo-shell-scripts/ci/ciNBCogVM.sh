@@ -5,7 +5,7 @@ set -e
 
 # ARHUMENT HANDLING ===========================================================
 
-if {[ "$1" = "-h" ] || [ "$1" = "--help" ]}; then
+if { [ "$1" = "-h" ] || [ "$1" = "--help" ]; }; then
     echo "This script will download the latest NativeBoost enabled VM for Pharo
 
 Result in the current directory:

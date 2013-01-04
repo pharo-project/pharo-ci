@@ -5,7 +5,7 @@ set -e
 
 # ARHUMENT HANDLING ===========================================================
 
-if {[ "$1" = "-h" ] || [ "$1" = "--help" ]}; then
+if { [ "$1" = "-h" ] || [ "$1" = "--help" ]; }; then
     echo "This script will download the latest Pharo VM
 
 Result in the current directory:
