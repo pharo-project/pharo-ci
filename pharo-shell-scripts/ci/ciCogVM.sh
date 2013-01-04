@@ -5,14 +5,14 @@ set -e
 
 # ARHUMENT HANDLING ===========================================================
 
-if [[ "$1" = "-h" || "$1" = "--help" ]];then
+if {[ "$1" = "-h" ] || [ "$1" = "--help" ]}; then
     echo "This script will download the latest Cog VM for Pharo
 
 Result in the current directory:
     vm               directory containing the VM
     vm.sh            script forwarding to the VM inside vm"
     exit 0
-elif [[ $# -gt 0 ]];then
+elif [ $# -gt 0 ];then
     echo "--help is the only argument allowed"
     exit 1
 fi
