@@ -5,14 +5,14 @@ set -e
 
 # ARHUMENT HANDLING ===========================================================
 
-if [[ "$1" = "-h" || "$1" = "--help" ]];then
+if {[ "$1" = "-h" ] || [ "$1" = "--help" ]}; then
     echo "This script will download the latest Pharo VM
 
 Result in the current directory:
     vm               directory containing the VM
     vm.sh            script forwarding to the VM inside vm"
     exit 0
-elif [[ $# -gt 0 ]];then
+elif [ $# -gt 0 ]; then
     echo "--help is the only argument allowed"
     exit 1
 fi
@@ -46,9 +46,9 @@ unzip -qjo -d vm vm.zip
 
 if [ "$OS" == "win" ]; then
     PHARO_VM=`find vm -name Pharo.exe`
-elif [[ "{$TMP_OS}" = *darwin* ]]; then
+elif [ "$OS" == "mac" ]; then
     PHARO_VM=`find vm -name Pharo`
-elif [[ "{$TMP_OS}" = *linux* ]]; then
+elif [ "$OS" == "linux" ]; then
     PHARO_VM=`find vm -name pharo`
 fi
 
