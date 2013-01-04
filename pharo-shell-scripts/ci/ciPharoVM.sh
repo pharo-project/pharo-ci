@@ -46,8 +46,10 @@ unzip -qjo -d vm vm.zip
 
 if [ "$OS" == "win" ]; then
     PHARO_VM=`find vm -name Pharo.exe`
-else
+elif [[ "{$TMP_OS}" = *darwin* ]]; then
     PHARO_VM=`find vm -name Pharo`
+elif [[ "{$TMP_OS}" = *linux* ]]; then
+    PHARO_VM=`find vm -name pharo`
 fi
 
 echo $PHARO_VM
