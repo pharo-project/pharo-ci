@@ -6,7 +6,7 @@ set -e
 # ARHUMENT HANDLING ===========================================================
 
 if [[ "$1" = "-h" || "$1" = "--help" ]];then
-    echo "This script will download the latest Cog VM for Pharo
+    echo "This script will download the latest Pharo VM
 
 Result in the current directory:
     vm               directory containing the VM
@@ -45,9 +45,9 @@ wget --progress=bar:force --output-document=vm.zip $VM_URL
 unzip -qjo -d vm vm.zip
 
 if [ "$OS" == "win" ]; then
-    PHARO_VM=`find vm -name CogVM.exe`
+    PHARO_VM=`find vm -name Pharo.exe`
 else
-    PHARO_VM=`find vm -name CogVM`
+    PHARO_VM=`find vm -name Pharo`
 fi
 
 echo $PHARO_VM
