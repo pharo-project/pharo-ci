@@ -5,5 +5,5 @@ set -e
 
 
 # OUTDATE! use newer script ===============================================
-wget --quiet -qO - http://pharo.gforge.inria.fr/ci/ciPharo20RizelVM.sh | bash
+wget --quiet -qO - http://pharo.gforge.inria.fr/ci/script/ciPharo20RizelVM.sh | bash
 

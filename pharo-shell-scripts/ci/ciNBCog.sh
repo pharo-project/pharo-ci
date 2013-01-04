@@ -5,4 +5,4 @@ set -e
 
 
 # OUTDATE! use newer script ===============================================
-wget --quiet -qO - http://pharo.gforge.inria.fr/ci/ciNBCogVM.sh | bash
+wget --quiet -qO - http://pharo.gforge.inria.fr/ci/script/ciNBCogVM.sh | bash
