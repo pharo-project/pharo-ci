@@ -34,7 +34,7 @@ fi
 DIR=`dirname "$0"`;
 
 # -------------------------------------------------------------------------
-VM_BASE_URL="https://ci.inria.fr/pharo/view/Cog/job/PharoVM"
+VM_BASE_URL="https://ci.inria.fr/pharo/job/PharoVM"
 VM_URL="${VM_BASE_URL}/Architecture=${ARCHITECTURE},OS=${OS}/lastSuccessfulBuild/artifact/Pharo-${OS}.zip"
 
 VM_DIR="$WORKSPACE/vm"
@@ -43,7 +43,7 @@ mkdir -p "$VM_DIR"
 
 sh "$DIR/../download.sh" "$VM_DIR/vm.zip" $VM_URL
 
-unzip -jo -d "$VM_DIR" "$VM_DIR/vm.zip"
+unzip -qo -d "$VM_DIR" "$VM_DIR/vm.zip"
 
 cd "$VM_DIR"
 
