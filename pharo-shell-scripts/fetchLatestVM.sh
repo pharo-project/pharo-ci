@@ -45,7 +45,7 @@ mkdir -p "$VM_DIR"
 
 sh "$DIR/../download.sh" "$VM_DIR/vm.zip" $VM_URL
 
-unzip -jo -d "$VM_DIR" "$VM_DIR/vm.zip"
+unzip -qo -d "$VM_DIR" "$VM_DIR/vm.zip"
 
 cd "$VM_DIR"
 
