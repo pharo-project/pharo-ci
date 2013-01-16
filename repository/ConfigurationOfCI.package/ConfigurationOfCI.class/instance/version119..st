@@ -15,5 +15,5 @@ version119: spec
 			package: 'FileSystem-Legacy' with: 'FileSystem-Legacy-CamilloBruni.1'.
 		spec 
 			package: 'CI-Core' with: 'CI-Core-MonkeyGalactikalIntegrator.45';
-			package: 'CI-Integration' with: 'CI-Integration-CamilloBruni.22';
+			package: 'CI-Integration' with: 'CI-Integration-CamilloBruni.23';
 			package: 'CI-Loader' with: 'CI-Loader-CamilloBruni.6' ].
