@@ -20,7 +20,6 @@ initializeWidgets
 	passwordLabel text: 'Password:'.
 	passwordField
 		autoAccept: true; 
-		acceptOnCR: true;
 		ghostText: 'password';
 		entryCompletion: nil;
 		isEventForNextFocusBlock: [:ev | ev keyString = '<tab>' ];

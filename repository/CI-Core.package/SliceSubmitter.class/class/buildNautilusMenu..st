@@ -3,11 +3,11 @@ buildNautilusMenu: aBuilder
 	<nautilusPackageMenu>
 	| package target mc |
 	target := aBuilder model.
-	(package := target selectedPackage) ifNil: [ ^self ].
+	(package := target selectedPackage) ifNil: [ ^ self ].
 	mc := NautilusMCBindings default retrieveMCPackageFor: package.
 	
-	mc isNil or: [ mc workingCopy modified not ifTrue: [ ^self ] ].
-	(aBuilder item: #'Open new bug report and attach changes of this package')
+	mc workingCopy modified not ifTrue: [ ^ self ].
+	(aBuilder item: #'Commit this package')
 		action: [ self new 
 						receiver: target window;
 						mcPackage: mc;
