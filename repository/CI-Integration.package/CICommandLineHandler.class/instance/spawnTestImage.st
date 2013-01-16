@@ -1,9 +1,7 @@
 action-test
 spawnTestImage
 	| osProces |
-	"sometimes they are not properly initialized anymore "
-	self initializeStderr; initializeStdout.
-	
+	self initializeStandardStreams.
 	self waitForIssueTestTimeout.
 	
 	self inform: 'Spawning new test image...'.

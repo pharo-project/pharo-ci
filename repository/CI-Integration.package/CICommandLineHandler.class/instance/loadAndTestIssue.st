@@ -1,6 +1,7 @@
 action-test
 loadAndTestIssue
 	| changeLoader |
+	self initializeStandardStreams.
 	self inform: 'Loading and Testing issue in separate image...'.
 	changeLoader := issue changeLoader.
 	tracker isAuthenticated 
