@@ -62,12 +62,11 @@ Compiler recompileAll.
 Compiler recompileAll.
 ] on: Error do: [ :f| ].
 
-
-"until we have a proper configuration just hardcode the path"
 Gofer new
-    url: 'http://smalltalkhub.com/mc/dh83/monticello-filetree/main';
-    package: 'MonticelloFileTree-Core';
-    load.
+      url: 'http://ss3.gemstone.com/ss/FileTree';
+      package: 'ConfigurationOfFileTree';
+      load.
+    ((Smalltalk at: #ConfigurationOfFileTree) project version: #'stable') load.
 
 Compiler recompileAll.
 
