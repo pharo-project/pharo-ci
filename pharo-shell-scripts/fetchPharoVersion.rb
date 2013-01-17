@@ -202,7 +202,7 @@ PHARO_VERSION.downto(1000) {|i|
     url = FILE_SERVER + i.to_s[0..1] + '/' + i.to_s + '.zip'
     puts url
     res = Net::HTTP.get_response(URI.parse(url))
-    if res.code = 200
+    if res.kind_of? Net::HTTPOK
         versionFile = url
         versionNumber = i
         break
