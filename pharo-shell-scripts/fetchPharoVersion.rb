@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
-
+require 'net/http'
+require 'uri'
 
 # ============================================================================
 
@@ -187,12 +188,27 @@ versions = {
 versionFile = nil
 versionNumber = 0
 PHARO_VERSION.downto(10000) {|i|
-    versionNumber = i
     if versions.has_key? i
+        versionNumber = i
         versionFile = versions[i]
         break
     end
 }
+
+# check if the file exists on our main servers...
+puts blue("Trying prebuilt images:")
+FILE_SERVER="http://pharo.gforge.inria.fr/ci/image/"
+PHARO_VERSION.downto(1000) {|i|
+    url = FILE_SERVER + i.to_s[0..1] + '/' + i.to_s + '.zip'
+    puts url
+    res = Net::HTTP.get_response(URI.parse(url))
+    if res.code = 200
+        versionFile = url
+        versionNumber = i
+        break
+    end
+}
+
 
 # ==============================================================================
 puts blue("Using pharo version #{versionNumber} as base image")
