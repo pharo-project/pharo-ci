@@ -36,7 +36,7 @@ fi
 DIR=`dirname "$0"`;
 
 # -------------------------------------------------------------------------
-VM_BASE_URL="https://ci.lille.inria.fr/pharo/job/Cog-VM"
+VM_BASE_URL="https://ci.inria.fr/pharo/job/Cog-VM"
 VM_URL="${VM_BASE_URL}/Architecture=${ARCHITECTURE},OS=${OS}/lastSuccessfulBuild/artifact/Cog-${OS}.zip"
 
 VM_DIR="$WORKSPACE/vm"
