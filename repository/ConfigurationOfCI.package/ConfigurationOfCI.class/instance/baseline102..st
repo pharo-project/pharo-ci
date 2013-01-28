@@ -7,6 +7,6 @@ baseline102: spec
 		spec repository: 'http://www.squeaksource.com/Soup'.
 		spec package: 'Soup-Core'.
 		
-		spec repository: 'http://ss3.gemstone.com/ss/ci'.
+		spec repository: 'http://smalltalkhub.com/mc/Pharo/ci/main'.
 		spec package:  'CI' with: [
 			spec requires: 'Soup-Core']]

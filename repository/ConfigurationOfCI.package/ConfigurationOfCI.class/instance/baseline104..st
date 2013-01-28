@@ -4,7 +4,7 @@ baseline104: spec
 
 	spec for: #pharo do: [	
 		spec blessing: #baseline.
-		spec repository: 'http://ss3.gemstone.com/ss/ci'.
+		spec repository: 'http://smalltalkhub.com/mc/Pharo/ci/main'.
 	
 		"Dependencies"
 		spec project: 'Soup' with: [
