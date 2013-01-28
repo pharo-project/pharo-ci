@@ -43,6 +43,7 @@ VM_URL="http://pharo.gforge.inria.fr/ci/vm/cog/${OS}/cog-${OS}-latest.zip"
 wget --progress=bar:force --output-document=vm.zip $VM_URL
 
 unzip -qo -d vm vm.zip
+rm -rf vm.zip
 
 if [ "$OS" == "win" ]; then
     PHARO_VM=`find vm -name CogVM.exe`
@@ -51,6 +52,12 @@ else
 fi
 
 echo $PHARO_VM
+
+# DOWNLOAD THE PharoV10.sources ===============================================
+SOURCES_URL="http://pharo.gforge.inria.fr/ci/image/PharoV10.sources.zip"
+wget --progress=bar:force --output-document=sources.zip $SOURCES_URL
+unzip -qo -d vm sources.zip
+rm -rf sources.zip
 
 # create a local executable file which forwads to the found vm ================
 echo "#!/bin/bash" > vm.sh
@@ -74,6 +81,3 @@ echo " \"\$@\"" >> vm.sh
 
 # make the script executable
 chmod +x vm.sh
-
-# cleanup =====================================================================
-rm -rf vm.zip
