@@ -172,7 +172,9 @@ ls -1 "$INPUT_PATH" | while read FILE ; do
 done
 
 # copy over Linux VM files
-LINUX_VM_PATH="$VM_PATH/Architecture=32,OS=linux/Cog-linux.zip"
+wget http://pharo.gforge.inria.fr/ci/vm/nbcog/linux/nbcog-linux-latest.zip
+ 
+LINUX_VM_PATH="nbcog-linux-latest.zip"
 if [ -f "$LINUX_VM_PATH" ] ; then
     unzip -q "$LINUX_VM_PATH" -d "$OUTPUT_PATH/Contents/Linux"
     mv "$OUTPUT_PATH/Contents/Linux/CogVM" "$OUTPUT_PATH/Contents/Linux/pharo"
@@ -181,7 +183,8 @@ else
 fi
 
 # copy over Mac OS VM files
-MAC_VM_PATH="$VM_PATH/Architecture=32,OS=mac/Cog-mac.zip"
+wget http://pharo.gforge.inria.fr/ci/vm/nbcog/mac/nbcog-mac-latest.zip
+MAC_VM_PATH="nbcog-mac-latest.zip"
 if [ -f "$MAC_VM_PATH" ] ; then
     unzip -q "$MAC_VM_PATH" -d "$OUTPUT_PATH/tmp"
     
@@ -200,7 +203,8 @@ else
 fi
 
 # copy over Windows VM files
-WIN_VM_PATH="$VM_PATH/Architecture=32,OS=win/Cog-win.zip"
+wget http://pharo.gforge.inria.fr/ci/vm/nbcog/win/nbcog-win-latest.zip
+WIN_VM_PATH="nbcog-win-latest.zip"
 if [ -f "$WIN_VM_PATH" ] ; then
     unzip -q "$WIN_VM_PATH" -d "$OUTPUT_PATH"
 else
