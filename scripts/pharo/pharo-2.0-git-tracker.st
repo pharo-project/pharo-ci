@@ -46,6 +46,7 @@ packages := MCWorkingCopy allInstances
 blue value:'Installing FileTree'.
 
 "Preload Metacello due to some issue in the 20200 branch"
+"
 [ Gofer it
         url: 'http://seaside.gemstone.com/ss/metacello';
         package: 'ConfigurationOfMetacello';
@@ -60,7 +61,7 @@ Compiler recompileAll.
         load.
 (Smalltalk at: #ConfigurationOfMetacello) project stableVersion load: 'batch'.
 Compiler recompileAll.
-] on: Error do: [ :f| ].
+] on: Error do: [ :f| ]."
 
 Gofer new
       url: 'http://ss3.gemstone.com/ss/FileTree';
@@ -68,7 +69,11 @@ Gofer new
       load.
     ((Smalltalk at: #ConfigurationOfFileTree) project version: #'stable') load.
 
-Compiler recompileAll.
+Gofer new
+    url: 'http://smalltalkhub.com/mc/Pharo/ci/main'
+    package: 'filetree';
+    load.
+"Compiler recompileAll."
 
 " create a new filetree repository ==========================================="
 blue value: 'Preparing commit'.
@@ -77,9 +82,12 @@ fileTreeRepository := (Smalltalk at: #MCFileTreeRepository) new directory: 'phar
 " extra the commit message from the current version ========================="
 versionString  := SystemVersion current highestUpdate asString.
 updateSelector := ('update', versionString) asSymbol.
-commitMessage  := ((ScriptLoader methodDict at: updateSelector) 
-                    allLiterals select: [ :each| 
-                        each isKindOf: ByteString ]) first.
+commitMessage  := ScriptLoader methodDict 
+                        at: updateSelector
+                        ifPresent: [ :method|
+                            (method allLiterals select: [ :each| 
+                                each isKindOf: ByteString ]) first]
+                        ifAbsent: [ '' "for some strange reason some updates do not contain an explicit update"].
 
 "save all packages into the filetree repository ============================="
 blue value:'Comitting changes to ', fileTreeRepository directory asString.
