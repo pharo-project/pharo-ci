@@ -68,11 +68,11 @@ Gofer new
       package: 'ConfigurationOfFileTree';
       load.
     ((Smalltalk at: #ConfigurationOfFileTree) project version: #'stable') load.
-
+"
 Gofer new
     url: 'http://smalltalkhub.com/mc/Pharo/ci/main'
     package: 'filetree';
-    load.
+    load."
 "Compiler recompileAll."
 
 " create a new filetree repository ==========================================="
