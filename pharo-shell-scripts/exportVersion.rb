@@ -75,7 +75,7 @@ guard()
 
 if !ENV.has_key? 'PHARO_VM'
   puts blue("$PHARO_VM is undefined, loading latest VM: ")
-  puts ENV['PHARO_VM'] = `#{SCRIPTS}pharo-shell-scripts/fetchLatestVM.sh 2> /dev/null`.chomp
+  puts ENV['PHARO_VM'] = `curl http://pharo.gforge.inria.fr/ci/script/ciNBCogVM.sh | bash 2> /dev/null`.chomp
 end
 
 # loading the proper image ====================================================
