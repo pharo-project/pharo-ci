@@ -3,8 +3,6 @@
   mainRepos inboxRepos commit |
 
 "============================================================================="
-Author fullName: 'Mister Foo'.
-"============================================================================="
 "some helper blocks for error printing"
 color := [:colorCode :text|
     FileStream stderr 
@@ -75,6 +73,8 @@ Gofer new
     load."
 "Compiler recompileAll."
 
+"============================================================================="
+Author fullName: 'Mister Foo'.
 " create a new filetree repository ==========================================="
 blue value: 'Preparing commit'.
 fileTreeRepository := (Smalltalk at: #MCFileTreeRepository) new directory: 'pharo-core' asFileReference.
