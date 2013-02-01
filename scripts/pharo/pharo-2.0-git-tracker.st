@@ -22,6 +22,9 @@ white_nolf := [:text| FileStream stderr nextPutAll: text ].
 "============================================================================="
 
 Deprecation  raiseWarning: false.
+Author fullName: 'Mister Foo'.
+"start Author name request handling =========================================="
+[
 
 "keep track of the current mc packages ======================================="
 blue value:'Tracking the currently installed packages'.
@@ -74,7 +77,6 @@ Gofer new
 "Compiler recompileAll."
 
 "============================================================================="
-Author fullName: 'Mister Foo'.
 " create a new filetree repository ==========================================="
 blue value: 'Preparing commit'.
 fileTreeRepository := (Smalltalk at: #MCFileTreeRepository) new directory: 'pharo-core' asFileReference.
@@ -92,7 +94,6 @@ commitMessage  := ScriptLoader methodDict
 "save all packages into the filetree repository ============================="
 blue value:'Comitting changes to ', fileTreeRepository directory asString.
 
-[
 "manually commit since Gofer gives birth incredible shitty pink ponies on the way"
 commit := [ :packageName| | version |
 	  version := [ (MCPackage named: packageName) workingCopy newVersion ]
@@ -100,7 +101,6 @@ commit := [ :packageName| | version |
 		    do: [ :notification |
 			      notification resume: { notification suggestedName. commitMessage }].
 	  fileTreeRepository storeVersion: version ].
-] on: AuthorNameRequest do: [ :request | request resume: 'Mister Foo'].
 
 mainRepos cacheAllFileNamesDuring: [
 inboxRepos cacheAllFileNamesDuring: [
@@ -110,6 +110,9 @@ inboxRepos cacheAllFileNamesDuring: [
         white value: 'Done in ', (Duration milliSeconds: [ 
                 commit value: packageName
             ] timeToRun) asString ]]].
+
+" ==========================================================================="
+] on: AuthorNameRequest do: [ :request | request resume: 'Mister Foo'].
 
 "output the current version number =========================================="
 (FileStream forceNewFileNamed: 'version')
