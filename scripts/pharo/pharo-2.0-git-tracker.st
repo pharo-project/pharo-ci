@@ -93,6 +93,7 @@ commitMessage  := ScriptLoader methodDict
 blue value:'Comitting changes to ', fileTreeRepository directory asString.
 
 
+Author fullName: 'Mister Foo'.
 "manually commit since Gofer gives birth incredible shitty pink ponies on the way"
 commit := [ :packageName| | version |
 	  version := [ (MCPackage named: packageName) workingCopy newVersion ]
