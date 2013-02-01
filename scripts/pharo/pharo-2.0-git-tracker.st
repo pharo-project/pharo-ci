@@ -92,8 +92,7 @@ commitMessage  := ScriptLoader methodDict
 "save all packages into the filetree repository ============================="
 blue value:'Comitting changes to ', fileTreeRepository directory asString.
 
-
-Author fullName: 'Mister Foo'.
+[
 "manually commit since Gofer gives birth incredible shitty pink ponies on the way"
 commit := [ :packageName| | version |
 	  version := [ (MCPackage named: packageName) workingCopy newVersion ]
@@ -101,6 +100,7 @@ commit := [ :packageName| | version |
 		    do: [ :notification |
 			      notification resume: { notification suggestedName. commitMessage }].
 	  fileTreeRepository storeVersion: version ].
+] on: AuthorNameRequest do: [ :request | request resume: 'Mister Foo'].
 
 mainRepos cacheAllFileNamesDuring: [
 inboxRepos cacheAllFileNamesDuring: [
