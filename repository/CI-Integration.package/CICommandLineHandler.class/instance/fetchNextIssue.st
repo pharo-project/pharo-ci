@@ -4,4 +4,5 @@ fetchNextIssue
 	self inform: 'Fetching next issue...'.
 	issue := tracker nextIssue.
 	issue ifNil: [ 
-		self exitFailure: 'No more open issue available' ]
+		self stdout red: 'No more open issue available'.
+		self exitSuccess ]

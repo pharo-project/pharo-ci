@@ -3,11 +3,11 @@
 		"commandName" : "CamilloBruni 12/4/2012 19:34",
 		"description" : "CamilloBruni 12/4/2012 19:34" },
 	"instance" : {
-		"activate" : "CamilloBruni 12/4/2012 19:58",
+		"activate" : "MonkeyGalactikalIntegrator 2/3/2013 16:25",
 		"authenticateTracker" : "CamilloBruni 1/16/2013 19:06",
 		"dispatchSubCommand" : "CamilloBruni 12/5/2012 00:03",
 		"fetchIssue" : "CamilloBruni 12/4/2012 19:56",
-		"fetchNextIssue" : "CamilloBruni 12/5/2012 14:49",
+		"fetchNextIssue" : "MonkeyGalactikalIntegrator 2/3/2013 16:24",
 		"googleCodePassword" : "CamilloBruni 1/16/2013 19:14",
 		"googleCodeUser" : "CamilloBruni 1/16/2013 19:14",
 		"handleIssueTestFailure" : "CamilloBruni 1/16/2013 17:57",

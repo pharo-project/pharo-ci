@@ -1,5 +1,6 @@
 activation
 activate
-	self activateHelp.
+	self activateHelp
+		ifTrue: [ ^ self ].
 	self setUp.
 	self dispatchSubCommand.
