@@ -18,7 +18,7 @@ elif [ $# -gt 0 ]; then
 fi
 
 # DOWNLOAD THE LATEST IMAGE ===================================================
-IMAGE_URL="http://pharo.gforge.inria.fr/ci/image/13/13328.zip"
+IMAGE_URL="http://files.pharo.org/image/13/13328.zip"
 wget --progress=bar:force --output-document=image.zip $IMAGE_URL
 
 IMAGE_DIR="image"
