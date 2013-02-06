@@ -38,7 +38,7 @@ if [ -z "$ARCHITECTURE" ] ; then
 fi
 
 # DOWNLOAD THE LATEST VM ======================================================
-VM_URL="http://pharo.gforge.inria.fr/ci/vm/nbcog/${OS}/nbcog-${OS}-latest.zip"
+VM_URL="http://files.pharo.org/vm/nbcog/${OS}/nbcog-${OS}-latest.zip"
 
 wget --progress=bar:force --output-document=vm.zip $VM_URL
 
@@ -53,7 +53,7 @@ fi
 echo $PHARO_VM
 
 # DOWNLOAD THE PharoV10.sources ===============================================
-SOURCES_URL="http://pharo.gforge.inria.fr/ci/image/PharoV10.sources.zip"
+SOURCES_URL="http://files.pharo.org/image/PharoV10.sources.zip"
 wget --progress=bar:force --output-document=sources.zip $SOURCES_URL
 if [ "$OS" = "mac" ]; then
 	SOURCES_DIR='vm';
