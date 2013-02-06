@@ -41,7 +41,7 @@ VM_TYPE=rizel
 VM_BINARY_NAME=StackVM
 
 # DOWNLOAD THE LATEST VM ======================================================
-VM_URL="http://pharo.gforge.inria.fr/ci/vm/${VM_TYPE}/${OS}/${VM_TYPE}-${OS}-latest.zip"
+VM_URL="http://files.pharo.org/vm/${VM_TYPE}/${OS}/${VM_TYPE}-${OS}-latest.zip"
 
 wget --progress=bar:force --output-document=vm.zip $VM_URL
 
@@ -56,7 +56,7 @@ fi
 echo $PHARO_VM
 
 # DOWNLOAD THE PharoV10.sources ===============================================
-SOURCES_URL="http://pharo.gforge.inria.fr/ci/image/PharoV10.sources.zip"
+SOURCES_URL="http://files.pharo.org/image/PharoV10.sources.zip"
 wget --progress=bar:force --output-document=sources.zip $SOURCES_URL
 if [ "$OS" = "mac" ]; then
 	SOURCES_DIR='vm';
