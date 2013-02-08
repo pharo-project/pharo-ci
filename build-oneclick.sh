@@ -176,8 +176,10 @@ wget http://pharo.gforge.inria.fr/ci/vm/nbcog/linux/nbcog-linux-latest.zip
  
 LINUX_VM_PATH="nbcog-linux-latest.zip"
 if [ -f "$LINUX_VM_PATH" ] ; then
-    unzip -q "$LINUX_VM_PATH" -d "$OUTPUT_PATH/Contents/Linux"
-    mv "$OUTPUT_PATH/Contents/Linux/CogVM" "$OUTPUT_PATH/Contents/Linux/pharo"
+    unzip -q "$LINUX_VM_PATH" -d "$OUTPUT_PATH/tmp"
+    mv "$OUTPUT_PATH/tmp/nbcog-linux-latest" "$OUTPUT_PATH/Contents/Linux"
+    mv "$OUTPUT_PATH/Contents/Linux/NBCog" "$OUTPUT_PATH/Contents/Linux/pharo"
+    rm "$OUTPUT_PATH/tmp" -r
 else
     echo "Warning: Cannot find Linux VM!"
 fi
@@ -189,13 +191,13 @@ if [ -f "$MAC_VM_PATH" ] ; then
     unzip -q "$MAC_VM_PATH" -d "$OUTPUT_PATH/tmp"
     
     #Ensuring bin and plugins
-    mv "$OUTPUT_PATH/tmp/CogVM.app/Contents/MacOS" "$OUTPUT_PATH/Contents"
+    mv "$OUTPUT_PATH/tmp/NBCog.app/Contents/MacOS" "$OUTPUT_PATH/Contents"
     #Rename binary
-    mv "$OUTPUT_PATH/Contents/MacOS/CogVM" "$OUTPUT_PATH/Contents/MacOS/pharo"
+    mv "$OUTPUT_PATH/Contents/MacOS/NBCog" "$OUTPUT_PATH/Contents/MacOS/pharo"
     #Ensuring resources
     #cp "$NIB_FILE" "$OUTPUT_PATH/Contents/Resources"
     # Need to add this ugly '*' outside double-quotes to be able to copy the content of the folder (and not the folder itself) on linux
-    cp -R "$OUTPUT_PATH/tmp/CogVM.app/Contents/Resources/"* "$OUTPUT_PATH/Contents/Resources"
+    cp -R "$OUTPUT_PATH/tmp/NBCog.app/Contents/Resources/"* "$OUTPUT_PATH/Contents/Resources"
 
     rm -rf "$OUTPUT_PATH/tmp"
 else
