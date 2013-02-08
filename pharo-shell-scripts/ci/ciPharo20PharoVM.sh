@@ -20,5 +20,5 @@ elif [ $# -gt 0 ]; then
 fi
 
 # FETCH DATA ==================================================================
-wget --quiet -qO - http://pharo.gforge.inria.fr/ci/script/ciPharoVM.sh | bash
-wget --quiet -qO - http://pharo.gforge.inria.fr/ci/script/ciPharo20.sh | bash
+wget --quiet -qO - http://files.pharo.org/script/ciPharoVM.sh | bash
+wget --quiet -qO - http://files.pharo.org/script/ciPharo20.sh | bash
