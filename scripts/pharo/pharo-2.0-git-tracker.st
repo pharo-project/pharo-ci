@@ -3,8 +3,6 @@
   mainRepos inboxRepos commit |
 
 "============================================================================="
-Author fullName: 'Mister Foo'.
-"============================================================================="
 "some helper blocks for error printing"
 color := [:colorCode :text|
     FileStream stderr 
@@ -24,6 +22,9 @@ white_nolf := [:text| FileStream stderr nextPutAll: text ].
 "============================================================================="
 
 Deprecation  raiseWarning: false.
+Author fullName: 'Mister Foo'.
+"start Author name request handling =========================================="
+[
 
 "keep track of the current mc packages ======================================="
 blue value:'Tracking the currently installed packages'.
@@ -46,6 +47,7 @@ packages := MCWorkingCopy allInstances
 blue value:'Installing FileTree'.
 
 "Preload Metacello due to some issue in the 20200 branch"
+"
 [ Gofer it
         url: 'http://seaside.gemstone.com/ss/metacello';
         package: 'ConfigurationOfMetacello';
@@ -60,16 +62,21 @@ Compiler recompileAll.
         load.
 (Smalltalk at: #ConfigurationOfMetacello) project stableVersion load: 'batch'.
 Compiler recompileAll.
-] on: Error do: [ :f| ].
+] on: Error do: [ :f| ]."
 
 Gofer new
       url: 'http://ss3.gemstone.com/ss/FileTree';
       package: 'ConfigurationOfFileTree';
       load.
     ((Smalltalk at: #ConfigurationOfFileTree) project version: #'stable') load.
+"
+Gofer new
+    url: 'http://smalltalkhub.com/mc/Pharo/ci/main'
+    package: 'filetree';
+    load."
+"Compiler recompileAll."
 
-Compiler recompileAll.
-
+"============================================================================="
 " create a new filetree repository ==========================================="
 blue value: 'Preparing commit'.
 fileTreeRepository := (Smalltalk at: #MCFileTreeRepository) new directory: 'pharo-core' asFileReference.
@@ -77,13 +84,15 @@ fileTreeRepository := (Smalltalk at: #MCFileTreeRepository) new directory: 'phar
 " extra the commit message from the current version ========================="
 versionString  := SystemVersion current highestUpdate asString.
 updateSelector := ('update', versionString) asSymbol.
-commitMessage  := ((ScriptLoader methodDict at: updateSelector) 
-                    allLiterals select: [ :each| 
-                        each isKindOf: ByteString ]) first.
+commitMessage  := ScriptLoader methodDict 
+                        at: updateSelector
+                        ifPresent: [ :method|
+                            (method allLiterals select: [ :each| 
+                                each isKindOf: ByteString ]) first]
+                        ifAbsent: [ '' "for some strange reason some updates do not contain an explicit update"].
 
 "save all packages into the filetree repository ============================="
 blue value:'Comitting changes to ', fileTreeRepository directory asString.
-
 
 "manually commit since Gofer gives birth incredible shitty pink ponies on the way"
 commit := [ :packageName| | version |
@@ -101,6 +110,9 @@ inboxRepos cacheAllFileNamesDuring: [
         white value: 'Done in ', (Duration milliSeconds: [ 
                 commit value: packageName
             ] timeToRun) asString ]]].
+
+" ==========================================================================="
+] on: AuthorNameRequest do: [ :request | request resume: 'Mister Foo'].
 
 "output the current version number =========================================="
 (FileStream forceNewFileNamed: 'version')
