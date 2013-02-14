@@ -1,4 +1,0 @@
-accessing
-testClasses
-
-	^ self retrieveTestClasses

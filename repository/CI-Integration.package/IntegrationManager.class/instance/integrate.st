@@ -5,7 +5,7 @@ integrate
 	| loaders |
 
 	"Run a first time tests"
-	previousTests := self runTests.
+	previousTests := self runAllTests.
 	
 	"Install sequenticially sources from issues"
 	self preLoadScript reset fileIn.
@@ -13,7 +13,7 @@ integrate
 	self postLoadScript reset fileIn.
 
 	"Re run tests to validate coexistence of the issues"
-	currentTests := self runTests.
+	currentTests := self runAllTests.
 	
 	"Check tests are all greens"
 	self isGreen ifFalse: [ ^ self ].
