@@ -1,7 +1,10 @@
 action-test
 spawnTestImage
 	| osProces |
-	self initializeStandardStreams.
+	
+	self flag: 'stderr / stdout should be lazily initialized'.
+	self initializeStderr; initializeStdout.
+	
 	self waitForIssueTestTimeout.
 	
 	self inform: 'Spawning new test image...'.
