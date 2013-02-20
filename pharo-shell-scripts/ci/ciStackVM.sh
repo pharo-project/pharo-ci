@@ -109,7 +109,7 @@ create_vm_script 'vm-ui.sh'
 
 # test that the script actually runs under linux =============================
 if [ "$OS" == "linux" ]; then
-	$PHARO_VM -help -vm-display-null 2>&1 > /dev/null || (\
+	$PHARO_VM -help -vm-display-null > /dev/null 2>&1 || (\
 		echo "Please install the 32bit libraries"; \
 		echo "   sudo aptitude install ia32-libs" )
 fi
