@@ -2,7 +2,7 @@
 
 - Mac: launch %{NAME}.app
 - Linux: launch %{NAME}.sh
-- Windows: launch CogVM.exe
+- Windows: launch NBCog.exe
 
 This distribution was built %{WHEN}.
 
