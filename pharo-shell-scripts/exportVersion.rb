@@ -75,7 +75,8 @@ guard()
 
 if !ENV.has_key? 'PHARO_VM'
   puts blue("$PHARO_VM is undefined, loading latest VM: ")
-  puts ENV['PHARO_VM'] = `curl http://pharo.gforge.inria.fr/ci/script/ciNBCogVM.sh | bash 2> /dev/null`.chomp
+  system('curl http://pharo.gforge.inria.fr/ci/script/ciNBCogVM.sh | bash')
+  puts ENV['PHARO_VM'] = Dir.pwd+'/vm.sh'
 end
 
 # loading the proper image ====================================================
@@ -86,7 +87,7 @@ guard()
 # exporting the pharo sources =================================================
 puts blue("Updating the image and exporting all sources ")
 
-system("$PHARO_VM -headless Pharo-#{PHARO_VERSION}.image #{SCRIPTS}/scripts/pharo/pharo-2.0-git-tracker.st")
+system("$PHARO_VM Pharo-#{PHARO_VERSION}.image #{SCRIPTS}/scripts/pharo/pharo-2.0-git-tracker.st")
 guard()
 
 `touch pharo-core/#{PHARO_VERSION}`
