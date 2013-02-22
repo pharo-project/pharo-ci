@@ -14,6 +14,6 @@ version120: spec
 		spec 
 			package: 'FileSystem-Legacy' with: 'FileSystem-Legacy-CamilloBruni.1'.
 		spec 
-			package: 'CI-Core' with: 'CI-Core-CamilloBruni.54';
-			package: 'CI-Integration' with: 'CI-Integration-CamilloBruni.31';
+			package: 'CI-Core' with: 'CI-Core-CamilloBruni.55';
+			package: 'CI-Integration' with: 'CI-Integration-CamilloBruni.32';
 			package: 'CI-Loader' with: 'CI-Loader-CamilloBruni.6' ].
