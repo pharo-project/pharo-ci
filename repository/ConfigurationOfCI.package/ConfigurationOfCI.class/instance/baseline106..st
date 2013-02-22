@@ -15,7 +15,8 @@ baseline106: spec
 		spec project: 'OSProcess' with: [
 			spec
 				className: 'ConfigurationOfOSProcess';
-				versionString: #stable;
+				version: #stable;
+				loads: 'Core';
 				repository: 'http://www.squeaksource.com/MetacelloRepository' ].
 			
 		spec package: 'FileSystem-Legacy' with: [
