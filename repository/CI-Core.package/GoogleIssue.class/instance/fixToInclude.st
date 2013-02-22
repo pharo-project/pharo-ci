@@ -4,4 +4,4 @@ fixToInclude
 
 	self status: PharoTrackerLabels issueChecked.
 	self labels: self checkedInLabel.
-	^ self submitStatusChange: 'This Issue has been checked by Ulysse the Monkey'
+	^ self submitStatusChange

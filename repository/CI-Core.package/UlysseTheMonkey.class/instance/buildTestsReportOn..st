@@ -8,7 +8,7 @@ buildTestsReportOn: stream
 	stream nextPutAll: '-------------'; lf.
 			
 	stream nextPutAll: 'Passed: '; print: testResult passed size; lf.
-	self buildGreenTestResultsOn: stream.
+	"self buildGreenTestResultsOn: stream."
 	
 	testErrors ifNotEmpty: [:collection |
 		stream nextPutAll: 'Errors: '; print: collection size; lf.

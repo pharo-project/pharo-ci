@@ -1,5 +1,5 @@
 testing
-testChangeImpact: aBlock
+testChangeImpact: doChangeBlock
 	| complete |
 	
 	"run the issue update requests in the background to save some time"
@@ -8,18 +8,15 @@ testChangeImpact: aBlock
 		self isVerbose ifTrue: [ self issue monkeyIsChecking ].
 		complete signal
 	] fork.
-				
-	self preRunTests.
+	
 	[
 		loadStopwatch reset activate.
-		"here I load the code"
-		aBlock value.
+		" load the code"
+		doChangeBlock value.
 		loadStopwatch suspend.
 
-		"Then I re run tests"
-		testResult := self runAllTests.
-		self removeFalseErrors.
-		
+		"Then run the tests"
+		testResult := self runAllTests.		
 	"collect possible errors"
 	] on: Error do: [ :e| self addError: e ].
 	
