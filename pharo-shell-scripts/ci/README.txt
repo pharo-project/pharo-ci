@@ -11,7 +11,7 @@ Examples:
 	curl http://files.pharo.org/script/ciPharo20.sh | bash
 	
 	# Alternatively wget works as well:
-	wget --quiet -qO - http://files.pharo.org/script/ciPharo20.sh | bash
+	wget --quiet -O - http://files.pharo.org/script/ciPharo20.sh | bash
 
 	# Each script comes with a help file describing the generated artifacts:
 	wget http://files.pharo.org/script/ciPharo20.sh;
