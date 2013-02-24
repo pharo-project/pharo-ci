@@ -5,4 +5,4 @@ set -e
 
 
 # OUTDATE! use newer script ===============================================
-wget --quiet -qO - http://files.pharo.org/script/ciPharo20NBCogVM.sh | bash
+wget --quiet -O - http://files.pharo.org/script/ciPharo20NBCogVM.sh | bash
