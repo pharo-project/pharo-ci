@@ -1,0 +1,14 @@
+{
+	"category" : "CI-FogBugzAPI-Tests",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		 ],
+	"name" : "FogBugzAPITest",
+	"pools" : [
+		 ],
+	"super" : "TestCase",
+	"type" : "normal" }

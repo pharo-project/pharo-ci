@@ -1,0 +1,16 @@
+{
+	"class" : {
+		"email:password:" : "BenjaminVanRyseghem 2/11/2013 15:43",
+		"extractTokenFrom:" : "BenjaminVanRyseghem 2/11/2013 15:19",
+		"identifyingToken:" : "BenjaminVanRyseghem 2/11/2013 15:20",
+		"pharoIssueTrackerURL" : "BenjaminVanRyseghem 2/11/2013 15:04",
+		"sendRequestWithArguments:" : "BenjaminVanRyseghem 2/11/2013 18:24",
+		"startTokenResponsIdentifier" : "BenjaminVanRyseghem 2/11/2013 15:18",
+		"stopTokenResponsIdentifier" : "BenjaminVanRyseghem 2/11/2013 15:18" },
+	"instance" : {
+		"editIssue:withArguments:" : "BenjaminVanRyseghem 2/11/2013 18:14",
+		"getAllReviewNeededIssues" : "BenjaminVanRyseghem 2/11/2013 17:56",
+		"getIssuesForQuery:" : "BenjaminVanRyseghem 2/11/2013 17:55",
+		"identifyingToken" : "BenjaminVanRyseghem 2/11/2013 15:20",
+		"identifyingToken:" : "BenjaminVanRyseghem 2/11/2013 15:20",
+		"sendRequestWithArguments:" : "BenjaminVanRyseghem 2/11/2013 15:45" } }
