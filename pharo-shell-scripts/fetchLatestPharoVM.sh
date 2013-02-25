@@ -35,7 +35,7 @@ DIR=`dirname "$0"`;
 
 # -------------------------------------------------------------------------
 VM_BASE_URL="https://ci.inria.fr/pharo/job/PharoVM"
-VM_URL="${VM_BASE_URL}/Architecture=${ARCHITECTURE},OS=${OS}/lastSuccessfulBuild/artifact/Pharo-${OS}.zip"
+VM_URL="${VM_BASE_URL}/Architecture=${ARCHITECTURE},OS=${OS}/lastSuccessfulBuild/artifact/pharo-${OS}.zip"
 
 VM_DIR="$WORKSPACE/vm"
 rm -rf "$VM_DIR"
