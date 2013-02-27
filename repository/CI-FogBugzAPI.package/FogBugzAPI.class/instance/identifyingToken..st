@@ -1,4 +1,4 @@
-accessing
+protocol
 identifyingToken: token
 
 	identifyingToken := token

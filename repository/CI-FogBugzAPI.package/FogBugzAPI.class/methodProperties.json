@@ -3,8 +3,10 @@
 		"email:password:" : "BenjaminVanRyseghem 2/11/2013 15:43",
 		"extractTokenFrom:" : "BenjaminVanRyseghem 2/11/2013 15:19",
 		"identifyingToken:" : "BenjaminVanRyseghem 2/11/2013 15:20",
+		"pharo" : "EstebanLorenzano 2/25/2013 16:37",
 		"pharoIssueTrackerURL" : "BenjaminVanRyseghem 2/11/2013 15:04",
-		"sendRequestWithArguments:" : "BenjaminVanRyseghem 2/11/2013 18:24",
+		"sendRequestWithArguments:" : "EstebanLorenzano 2/25/2013 16:57",
+		"sendRequestWithArguments:ifError:" : "EstebanLorenzano 2/25/2013 16:56",
 		"startTokenResponsIdentifier" : "BenjaminVanRyseghem 2/11/2013 15:18",
 		"stopTokenResponsIdentifier" : "BenjaminVanRyseghem 2/11/2013 15:18" },
 	"instance" : {
@@ -13,4 +15,7 @@
 		"getIssuesForQuery:" : "BenjaminVanRyseghem 2/11/2013 17:55",
 		"identifyingToken" : "BenjaminVanRyseghem 2/11/2013 15:20",
 		"identifyingToken:" : "BenjaminVanRyseghem 2/11/2013 15:20",
-		"sendRequestWithArguments:" : "BenjaminVanRyseghem 2/11/2013 15:45" } }
+		"logOff" : "EstebanLorenzano 2/25/2013 17:01",
+		"newIssueNamed:ownedBy:" : "EstebanLorenzano 2/25/2013 16:58",
+		"sendRequestWithArguments:" : "BenjaminVanRyseghem 2/11/2013 15:45",
+		"sendRequestWithArguments:ifError:" : "EstebanLorenzano 2/25/2013 17:02" } }

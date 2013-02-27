@@ -1,4 +1,4 @@
-protocol
+accessing
 editIssue: id withArguments: arguments
 	| respons |
 
