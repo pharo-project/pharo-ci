@@ -1,0 +1,15 @@
+{
+	"category" : "CI-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"googleTracker",
+		"fogBugzTracker" ],
+	"name" : "PenelopeTheMonkey",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

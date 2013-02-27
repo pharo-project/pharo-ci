@@ -1,3 +1,3 @@
-acessing
+accessing
 labels: aCollection 
 	labels := aCollection

@@ -1,3 +1,3 @@
-acessing
+accessing
 updated: aDateTime
 	updated := aDateTime

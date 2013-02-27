@@ -1,3 +1,3 @@
-acessing
+accessing
 tracker: aTracker
 	tracker := aTracker

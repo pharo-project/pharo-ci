@@ -1,3 +1,3 @@
-acessing
+accessing
 description
 	^ description

@@ -1,4 +1,4 @@
-acessing
+accessing
 allAttachments
 	"return a list of all attachments ordered by date. oldest first.
 	Note: 

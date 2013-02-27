@@ -1,4 +1,4 @@
-acessing
+accessing
 description: aStringOrDescription
 	description := aStringOrDescription asGoogleIssueDescription.
 	description title: self title.

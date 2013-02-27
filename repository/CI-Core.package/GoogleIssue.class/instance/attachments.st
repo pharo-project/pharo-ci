@@ -1,4 +1,4 @@
-acessing
+accessing
 attachments
 	"return a list of unique attachments.
 	Note: 

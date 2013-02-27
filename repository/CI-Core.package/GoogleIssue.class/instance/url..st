@@ -1,4 +1,4 @@
-acessing
+accessing
 url: aSubPath
 	| url |
 	url :=  'http://code.google.com/feeds/issues/p' asZnUrl.

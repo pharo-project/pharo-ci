@@ -1,4 +1,4 @@
-acessing
+accessing
 title: aString
 	title := aString.
 	description ifNotNil: [

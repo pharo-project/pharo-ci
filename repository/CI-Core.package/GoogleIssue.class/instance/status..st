@@ -1,3 +1,3 @@
-acessing
+accessing
 status: aSataneouStatusString
 	status := aSataneouStatusString
