@@ -172,32 +172,32 @@ ls -1 "$INPUT_PATH" | while read FILE ; do
 done
 
 # copy over Linux VM files
-wget http://pharo.gforge.inria.fr/ci/vm/nbcog/linux/nbcog-linux-latest.zip
+wget http://pharo.gforge.inria.fr/ci/vm/pharo/linux/pharo-linux-latest.zip
  
-LINUX_VM_PATH="nbcog-linux-latest.zip"
+LINUX_VM_PATH="pharo-linux-latest.zip"
 if [ -f "$LINUX_VM_PATH" ] ; then
     unzip -q "$LINUX_VM_PATH" -d "$OUTPUT_PATH/tmp"
-    mv "$OUTPUT_PATH/tmp/nbcog-linux-latest" "$OUTPUT_PATH/Contents/Linux"
-    mv "$OUTPUT_PATH/Contents/Linux/NBCog" "$OUTPUT_PATH/Contents/Linux/pharo"
+    mv "$OUTPUT_PATH/tmp/pharo-linux-latest" "$OUTPUT_PATH/Contents/Linux"
+    mv "$OUTPUT_PATH/Contents/Linux/pharo" "$OUTPUT_PATH/Contents/Linux/pharo"
     rm "$OUTPUT_PATH/tmp" -r
 else
     echo "Warning: Cannot find Linux VM!"
 fi
 
 # copy over Mac OS VM files
-wget http://pharo.gforge.inria.fr/ci/vm/nbcog/mac/nbcog-mac-latest.zip
-MAC_VM_PATH="nbcog-mac-latest.zip"
+wget http://pharo.gforge.inria.fr/ci/vm/pharo/mac/pharo-mac-latest.zip
+MAC_VM_PATH="pharo-mac-latest.zip"
 if [ -f "$MAC_VM_PATH" ] ; then
     unzip -q "$MAC_VM_PATH" -d "$OUTPUT_PATH/tmp"
     
     #Ensuring bin and plugins
-    mv "$OUTPUT_PATH/tmp/NBCog.app/Contents/MacOS" "$OUTPUT_PATH/Contents"
+    mv "$OUTPUT_PATH/tmp/Pharo.app/Contents/MacOS" "$OUTPUT_PATH/Contents"
     #Rename binary
-    mv "$OUTPUT_PATH/Contents/MacOS/NBCog" "$OUTPUT_PATH/Contents/MacOS/pharo"
+    mv "$OUTPUT_PATH/Contents/MacOS/Pharo" "$OUTPUT_PATH/Contents/MacOS/Pharo"
     #Ensuring resources
     #cp "$NIB_FILE" "$OUTPUT_PATH/Contents/Resources"
     # Need to add this ugly '*' outside double-quotes to be able to copy the content of the folder (and not the folder itself) on linux
-    cp -R "$OUTPUT_PATH/tmp/NBCog.app/Contents/Resources/"* "$OUTPUT_PATH/Contents/Resources"
+    cp -R "$OUTPUT_PATH/tmp/Pharo.app/Contents/Resources/"* "$OUTPUT_PATH/Contents/Resources"
 
     rm -rf "$OUTPUT_PATH/tmp"
 else
@@ -205,8 +205,8 @@ else
 fi
 
 # copy over Windows VM files
-wget http://pharo.gforge.inria.fr/ci/vm/nbcog/win/nbcog-win-latest.zip
-WIN_VM_PATH="nbcog-win-latest.zip"
+wget http://pharo.gforge.inria.fr/ci/vm/pharo/win/pharo-win-latest.zip
+WIN_VM_PATH="pharo-win-latest.zip"
 if [ -f "$WIN_VM_PATH" ] ; then
     unzip -q "$WIN_VM_PATH" -d "$OUTPUT_PATH"
 else
