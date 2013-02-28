@@ -2,7 +2,7 @@
 
 - Mac: launch %{NAME}.app
 - Linux: launch %{NAME}.sh
-- Windows: launch NBCog.exe
+- Windows: launch Pharo.exe
 
 This distribution was built %{WHEN}.
 
@@ -11,3 +11,4 @@ Please Note:
 
 Pharo does not yet natively run on a 64bits Linux. Just install the ia32/i386 runtime libraries and you should be fine. On Ubuntu and other 
 debian-based systems, these libraries are named 'ia32-libs'.
+
