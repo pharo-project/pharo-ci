@@ -177,9 +177,7 @@ wget http://pharo.gforge.inria.fr/ci/vm/pharo/linux/pharo-linux-latest.zip
 LINUX_VM_PATH="pharo-linux-latest.zip"
 if [ -f "$LINUX_VM_PATH" ] ; then
     unzip -q "$LINUX_VM_PATH" -d "$OUTPUT_PATH/tmp"
-    mv "$OUTPUT_PATH/tmp/pharo-linux-latest" "$OUTPUT_PATH/Contents/Linux"
-    mv "$OUTPUT_PATH/Contents/Linux/pharo" "$OUTPUT_PATH/Contents/Linux/pharo"
-    rm "$OUTPUT_PATH/tmp" -r
+    mv "$OUTPUT_PATH/tmp/" "$OUTPUT_PATH/Contents/Linux/"
 else
     echo "Warning: Cannot find Linux VM!"
 fi
@@ -192,10 +190,6 @@ if [ -f "$MAC_VM_PATH" ] ; then
     
     #Ensuring bin and plugins
     mv "$OUTPUT_PATH/tmp/Pharo.app/Contents/MacOS" "$OUTPUT_PATH/Contents"
-    #Rename binary
-    mv "$OUTPUT_PATH/Contents/MacOS/Pharo" "$OUTPUT_PATH/Contents/MacOS/Pharo"
-    #Ensuring resources
-    #cp "$NIB_FILE" "$OUTPUT_PATH/Contents/Resources"
     # Need to add this ugly '*' outside double-quotes to be able to copy the content of the folder (and not the folder itself) on linux
     cp -R "$OUTPUT_PATH/tmp/Pharo.app/Contents/Resources/"* "$OUTPUT_PATH/Contents/Resources"
 
