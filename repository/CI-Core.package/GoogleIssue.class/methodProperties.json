@@ -1,6 +1,6 @@
 {
 	"class" : {
-		"fromXML:tracker:" : "BenjaminVanRyseghem 6/30/2012 12:31",
+		"fromXML:tracker:" : "BenjaminVanRyseghem 3/2/2013 02:34",
 		"id:" : "CamilloBruni 9/22/2011 22:51" },
 	"instance" : {
 		"=" : "CamilloBruni 9/19/2011 17:53",
@@ -62,7 +62,7 @@
 		"loadSlice" : "CamilloBruni 9/19/2011 18:10",
 		"loadSliceFrom:" : "CamilloBruni 9/5/2012 17:09",
 		"loadSource" : "BenjaminVanRyseghem 9/26/2011 17:45",
-		"migrateToFogBugzWith:" : "EstebanLorenzano 2/25/2013 16:39",
+		"migrateToFogBugzWith:" : "BenjaminVanRyseghem 3/2/2013 02:37",
 		"monkeyIsChecking" : "CamilloBruni 2/23/2013 00:14",
 		"name" : "BenjaminVanRyseghem 9/26/2011 16:01",
 		"newEntryURL" : "BenjaminVanRyseghem 7/4/2012 13:49",
@@ -99,4 +99,6 @@
 		"url" : "CamilloBruni 9/20/2011 16:53",
 		"url:" : "MonkeyGalactikalIntegrator 6/29/2012 17:45",
 		"viewUrl" : "CamilloBruni 9/18/2011 18:19",
+		"xml" : "BenjaminVanRyseghem 3/2/2013 02:35",
+		"xml:" : "BenjaminVanRyseghem 3/2/2013 02:35",
 		"xmlEscape:on:" : "BenjaminVanRyseghem 3/26/2012 17:25" } }

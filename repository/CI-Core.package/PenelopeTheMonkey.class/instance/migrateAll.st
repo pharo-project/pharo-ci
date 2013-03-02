@@ -1,4 +1,4 @@
-as yet unclassified
+migrating
 migrateAll
-	self allIssues do: [ :each |
-		each migrateToFogBugzWith: self fogBugzTracker ]
+
+	self allIssues do: [ :each | each migrateToFogBugzWith: self fogBugzTracker ]

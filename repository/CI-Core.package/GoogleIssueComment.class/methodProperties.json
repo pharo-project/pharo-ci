@@ -1,6 +1,6 @@
 {
 	"class" : {
-		"fromXML:" : "CamilloBruni 9/22/2011 22:08",
+		"fromXML:" : "BenjaminVanRyseghem 3/2/2013 02:35",
 		"id:" : "CamilloBruni 9/22/2011 22:08" },
 	"instance" : {
 		"addAttachment:" : "CamilloBruni 9/21/2011 15:37",
@@ -17,9 +17,15 @@
 		"initializeWith:" : "CamilloBruni 9/21/2011 15:36",
 		"issue" : "CamilloBruni 8/16/2011 15:28",
 		"issue:" : "CamilloBruni 9/21/2011 15:39",
+		"labels" : "BenjaminVanRyseghem 3/2/2013 02:36",
+		"labels:" : "BenjaminVanRyseghem 3/2/2013 02:36",
 		"published" : "CamilloBruni 8/16/2011 15:28",
 		"published:" : "CamilloBruni 9/21/2011 15:41",
+		"status" : "BenjaminVanRyseghem 3/2/2013 02:36",
+		"status:" : "BenjaminVanRyseghem 3/2/2013 02:36",
 		"title" : "CamilloBruni 8/16/2011 15:28",
 		"title:" : "CamilloBruni 9/21/2011 15:39",
 		"updated" : "CamilloBruni 8/16/2011 15:28",
-		"updated:" : "CamilloBruni 9/21/2011 15:41" } }
+		"updated:" : "CamilloBruni 9/21/2011 15:41",
+		"xml" : "BenjaminVanRyseghem 3/2/2013 02:36",
+		"xml:" : "BenjaminVanRyseghem 3/2/2013 02:36" } }

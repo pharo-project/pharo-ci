@@ -19,7 +19,8 @@
 		"status",
 		"title",
 		"tracker",
-		"updated" ],
+		"updated",
+		"xml" ],
 	"name" : "GoogleIssue",
 	"pools" : [
 		 ],

@@ -1,5 +1,6 @@
-as yet unclassified
+private
 nextIssueParams
+
 	^ String streamContents: [ :s |
 		s 
 			<< 'can=all'

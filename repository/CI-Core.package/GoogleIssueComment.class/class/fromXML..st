@@ -12,5 +12,10 @@ fromXML: entryNode
 	comment title: entryNode title text trimBoth.
 	comment content: entryNode content text trimBoth.
 	comment author: (GoogleUser fromXML: entryNode author).
+	comment status: ((entryNode findTag: 'issues:status') ifNotNil: [:s| s  text ]).
+	comment labels: ((entryNode findAllTags: 'issues:label') 
+							collect: [:element| element text]).
+							
+	comment xml: entryNode.
 	
 	^ comment
