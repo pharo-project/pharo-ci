@@ -1,4 +1,4 @@
-accessing
+protocol-query
 getIssuesForQuery: query
 	| arguments rawIssues |
 	

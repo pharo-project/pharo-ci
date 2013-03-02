@@ -1,4 +1,4 @@
-protocol
+protocol-log on/off
 logOff
 
 	self sendRequestWithArguments: (Dictionary new

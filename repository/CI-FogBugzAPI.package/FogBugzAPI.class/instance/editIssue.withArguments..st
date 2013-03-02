@@ -1,9 +1,10 @@
-accessing
+protocol-edition
 editIssue: id withArguments: arguments
-	| respons |
+	| response |
 
 	arguments 	
 		at: 'cmd' put: 'edit';
 		at: 'ixBug' put: id asString.
 
-	respons := self sendRequestWithArguments:arguments.
+	response := self sendRequestWithArguments:arguments.
+	self flag: 'analyse response for error'

@@ -1,5 +1,6 @@
 instance creation
-id: id 
+id: id
+
 	^ self issues
 		detect: [:e | e id == id ]
 		ifNone: [ self new
