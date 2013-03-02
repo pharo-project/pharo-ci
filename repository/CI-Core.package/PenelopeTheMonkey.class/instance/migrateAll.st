@@ -1,4 +1,4 @@
 migrating
 migrateAll
 
-	self allIssues do: [ :each | each migrateToFogBugzWith: self fogBugzTracker ]
+	self migrateFrom: 1 to: 7623

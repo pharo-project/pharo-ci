@@ -1,4 +1,6 @@
 accessing
 googleTracker
 
-	^ googleTracker ifNil: [ googleTracker := GoogleIssueTracker pharo ]
+	^ googleTracker ifNil: [ googleTracker := GoogleIssueTracker pharo 
+														ulysse;
+														yourself ]
