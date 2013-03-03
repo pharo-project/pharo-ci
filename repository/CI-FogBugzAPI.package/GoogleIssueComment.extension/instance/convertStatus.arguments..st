@@ -43,5 +43,15 @@ convertStatus: aString arguments: arguments
 	aString = 'Started' ifTrue: [ ^ 'edit' -> 'Active' ].
 	aString = 'fixed' ifTrue: [ ^ 'resolve' -> 'Resolved (Fix To Include)' ].
 	aString = 'Comment' ifTrue: [ ^ 'edit' -> 'Work Needed' ].
-	
+	aString = 'FixProposed' ifTrue: [ ^ 'resolve' -> 'Resolved (Review Needed)' ].
+	aString = 'CLosed' ifTrue: [ ^ 'close' -> 'Resolved (Closed)' ].	
+	aString = 'Clo' ifTrue: [ ^ 'close' -> 'Resolved (Closed)' ].	
+	aString = 'NextActionNeeded' ifTrue: [ ^ 'edit' -> 'Work Needed' ].
+	aString = 'Workneeded' ifTrue: [ ^ 'edit' -> 'Work Needed' ].
+	aString = 'open' ifTrue: [ ^ 'edit' -> 'Active' ].
+	aString = 'started' ifTrue: [ ^ 'edit' -> 'Active' ].
+	aString = 'close' ifTrue: [ ^ 'close' -> 'Resolved (Closed)' ].	
+	aString = 'Open' ifTrue: [ ^ 'edit' -> 'Active' ].
+	aString = 'closer' ifTrue: [ ^ 'close' -> 'Resolved (Closed)' ].	
+				
 	1halt.
