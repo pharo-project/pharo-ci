@@ -1,5 +1,6 @@
 instance creation
-pharo
+ulysse
+
 	^ self 
 		email: 'pharo.ulysse@gmail.com' 
 		password: 'AydsInJis'.

@@ -23,7 +23,14 @@ migrateToIssue:  newId with: tracker
 		arguments at: 'sStatus' put: pair value ].
 	
 	self labels ifNotNil: [:col | tracker analyzeLabels: col andFill: arguments ].
+
+	self attachments doWithIndex:[ :each :index |
+		ZnClient new
+			url: each url;
+			downloadTo: each filename.
+		arguments at: 'File', index asString put: each filename ].
 	
+	arguments at: 'nFileCount' put: self attachments size asString.
 	arguments at: 'cmd' put: command.
 	
 	(command = 'close') ifTrue: [ 

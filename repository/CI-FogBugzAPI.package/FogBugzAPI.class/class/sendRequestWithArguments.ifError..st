@@ -2,6 +2,9 @@ private
 sendRequestWithArguments: arguments ifError: aBlock
  	| client response |
 	
+	(arguments keys anySatisfy: [:key | key beginsWith: 'File' ])
+		ifTrue: [ ^ self sendFileWithArguments: arguments ifError: aBlock ].
+	
 	client := ZnClient new
 				url: self pharoIssueTrackerURL;
 				yourself.
