@@ -24,7 +24,9 @@ migrateToIssue:  newId with: tracker
 	
 	self labels ifNotNil: [:col | tracker analyzeLabels: col andFill: arguments ].
 
-	self attachments doWithIndex:[ :each :index |
+	self attachments doWithIndex:[ :each :index || oldFile |
+		oldFile := FileSystem workingDirectory resolve: each filename.
+		oldFile ensureDeleted.
 		ZnClient new
 			url: each url;
 			downloadTo: each filename.
