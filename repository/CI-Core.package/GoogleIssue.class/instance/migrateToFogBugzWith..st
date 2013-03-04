@@ -2,6 +2,7 @@
 migrateToFogBugzWith: aTracker
 	|  newTitle project tags newIssue newId eventDescription |
 	
+	self attachments.
 	newTitle := self title.
 	project := self fogbugzProject.
 	tags := self labels.
