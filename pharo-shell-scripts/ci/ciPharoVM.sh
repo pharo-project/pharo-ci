@@ -7,10 +7,14 @@ VM_TYPE="pharo"
 VM_BINARY_NAME="Pharo"
 VM_BINARY_NAME_LINUX="pharo"
 
+# define an echo that only outputs to stderr
+echoerr() { echo "$@" 1>&2; }
+
+
 # ARHUMENT HANDLING ===========================================================
 
 if { [ "$1" = "-h" ] || [ "$1" = "--help" ]; }; then
-    echo "This script will download the latest Pharo VM
+    echo "This script will download the latest ${VM_TYPE} VM
 
 Result in the current directory:
     vm               directory containing the VM
@@ -21,6 +25,7 @@ elif [ $# -gt 0 ]; then
     echo "--help is the only argument allowed"
     exit 1
 fi
+
 
 # SYSTEM PROPERTIES ===========================================================
 if [ -z "$OS" ] ; then
@@ -42,10 +47,13 @@ if [ -z "$ARCHITECTURE" ] ; then
     ARCHITECTURE=32
 fi
 
+
 # DOWNLOAD THE LATEST VM ======================================================
 VM_URL="http://files.pharo.org/vm/${VM_TYPE}/${OS}/${VM_TYPE}-${OS}-latest.zip"
 
-wget --progress=bar:force --output-document=vm.zip $VM_URL
+echoerr "Downloading the latest ${VM_TYPE}VM:"
+echoerr $VM_URL
+wget --quiet --output-document=vm.zip $VM_URL
 unzip -qo -d vm vm.zip
 rm -rf vm.zip
 
@@ -59,28 +67,27 @@ fi
 
 echo $PHARO_VM
 
-# DOWNLOAD THE PharoV10.sources ===============================================
-SOURCES_URL="http://files.pharo.org/image/PharoV10.sources.zip"
-wget --progress=bar:force --output-document=sources.zip $SOURCES_URL
+
+# DOWNLOAD THE *.sources ======================================================
 if [ "$OS" = "mac" ]; then
 	SOURCES_DIR='vm';
 else
 	SOURCES_DIR=`dirname $PHARO_VM`;
 fi
-unzip -qo -d $SOURCES_DIR sources.zip
-rm -rf sources.zip
 
-# DOWNLOAD THE PharoV20.sources ===============================================
-SOURCES_URL="http://files.pharo.org/image/PharoV20.sources.zip"
-wget --progress=bar:force --output-document=sources.zip $SOURCES_URL
+SOURCES_URL="http://files.pharo.org/image/"
 
-if [ "$OS" = "mac" ]; then
-	SOURCES_DIR='vm';
-else
-	SOURCES_DIR=`dirname $PHARO_VM`;
-fi
-unzip -qo -d $SOURCES_DIR sources.zip
-rm -rf sources.zip
+download_sources() {
+	echoerr "Downloading $1.sources:"
+	echoerr $SOURCES_URL/$1.sources.zip
+	wget --quiet --output-document=sources.zip $SOURCES_URL/$1.sources.zip
+	unzip -qo -d $SOURCES_DIR sources.zip
+	rm -rf sources.zip
+}
+
+download_sources PharoV10 
+download_sources PharoV20
+
 
 # VM BASH LAUNCHER ============================================================
 # create a local executable file which forwads to the found vm ================
@@ -118,8 +125,10 @@ set -f
 	chmod +x $VM_SCRIPT
 }
 
+echoerr "Creating starter scripts vm.sh and vm-ui.sh"
 create_vm_script 'vm.sh'
 create_vm_script 'vm-ui.sh'
+
 
 # test that the script actually runs under linux =============================
 if [ "$OS" == "linux" ]; then
