@@ -50,7 +50,7 @@ fi
 VM_URL="http://files.pharo.org/vm/${VM_TYPE}/${OS}/${VM_TYPE}-${OS}-latest.zip"
 
 echoerr "Downloading the latest ${VM_TYPE}VM:"
-echoerr $VM_URL
+echoerr "	$VM_URL"
 wget --quiet --output-document=vm.zip $VM_URL
 
 unzip -qo -d vm vm.zip
@@ -76,7 +76,7 @@ SOURCES_URL="http://files.pharo.org/image/"
 
 download_sources() {
 	echoerr "Downloading $1.sources:"
-	echoerr $SOURCES_URL/$1.sources.zip
+	echoerr "	$SOURCES_URL/$1.sources.zip"
 	wget --quiet --output-document=sources.zip $SOURCES_URL/$1.sources.zip
 	unzip -qo -d $SOURCES_DIR sources.zip
 	rm -rf sources.zip
