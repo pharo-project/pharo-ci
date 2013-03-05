@@ -3,4 +3,5 @@
 		 },
 	"instance" : {
 		"fogbugzProject" : "BenjaminVanRyseghem 3/1/2013 16:26",
-		"hasBeenAlreadyMigrated" : "BenjaminVanRyseghem 3/2/2013 13:57" } }
+		"hasBeenAlreadyMigrated" : "BenjaminVanRyseghem 3/2/2013 13:57",
+		"migrateToFogBugzWith:" : "BenjaminVanRyseghem 3/4/2013 17:30" } }

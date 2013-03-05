@@ -5,8 +5,8 @@ getIssuesForQuery: query
 	arguments := Dictionary new
 					at: 'cmd' put: 'search';
 					at: 'q' put: query;
-					at: 'cols' put: 'sTitle,sCategory,sProject,events,tags';
+					at: 'cols' put: 'sTitle,sCategory,ixProject,sProject,events,tags';
 					yourself.
 					
 	rawIssues := self sendRequestWithArguments:arguments.
-	^ FogBugzIssue buildIssuesFrom: rawIssues
+	^ FogBugzCase buildIssuesFrom: rawIssues

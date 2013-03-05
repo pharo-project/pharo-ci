@@ -1,0 +1,16 @@
+{
+	"category" : "CI-FogBugzAPI",
+	"classinstvars" : [
+		"users" ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"id",
+		"mail",
+		"username" ],
+	"name" : "FogBugzUser",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

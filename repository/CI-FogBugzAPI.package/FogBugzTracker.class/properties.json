@@ -6,8 +6,9 @@
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		"identifyingToken" ],
-	"name" : "FogBugzAPI",
+		"identifyingToken",
+		"projects" ],
+	"name" : "FogBugzTracker",
 	"pools" : [
 		 ],
 	"super" : "Object",
