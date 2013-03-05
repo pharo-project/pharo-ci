@@ -3,6 +3,10 @@
 # stop the script if a single command fails
 set -e 
 
+# define an echo that only outputs to stderr
+echoerr() { echo "$@" 1>&2; }
+
+
 # ARHUMENT HANDLING ===========================================================
 
 if { [ "$1" = "-h" ] || [ "$1" = "--help" ]; }; then
@@ -17,9 +21,13 @@ elif [ $# -gt 0 ]; then
     exit 1
 fi
 
+
 # DOWNLOAD THE LATEST IMAGE ===================================================
 IMAGE_URL="http://files.pharo.org/image/20/latest.zip"
-wget --progress=bar:force --output-document=image.zip $IMAGE_URL
+
+echoerr "Downloading the latest 2.0 Image:"
+echoerr "	$IMAGE_URL"
+wget --quiet --output-document=image.zip $IMAGE_URL
 
 IMAGE_DIR="image"
 mkdir $IMAGE_DIR
@@ -33,6 +41,7 @@ PHARO_CHANGES=`find $IMAGE_DIR -name \*.changes`
 # rename
 mv "$PHARO_IMAGE" Pharo.image
 mv "$PHARO_CHANGES" Pharo.changes
+
 
 # CLEANUP =====================================================================
 rm -rf image image.zip
