@@ -8,7 +8,7 @@ Examples:
 
 	# Typically the scripts are curl'ed and directly piped to bash to avoid an
 	# intermediate file:
-	curl http://files.pharo.org/script/ciPharo20.sh | bash
+	curl -L http://files.pharo.org/script/ciPharo20.sh | bash
 	
 	# Alternatively wget works as well:
 	wget --quiet -O - http://files.pharo.org/script/ciPharo20.sh | bash
