@@ -10,3 +10,15 @@ fromXML: xml
 	id := (xml attributeAt: 'ixBug') asInteger.
 	events := (xml findTag: 'events') children collect: [:node | FogBugzEvent fromXML: node ].
 	tags := (xml findTag: 'tags') children collect: [:e | e text ].
+	
+	(xml findTag: 'sfixfor')
+		ifNotNil: [:tag | milestone := tag next text ].
+	
+	status := xml sstatus next text.
+	
+	lastModification := xml dtlastupdated text asDateAndTime.
+
+	dateOpened := xml dtopened next text asDateAndTime.
+	
+	self hasBeenResolved ifTrue: [	dateResolved := xml dtresolved next text asDateAndTime ].
+	self hasBeenClosed ifTrue: [dateClosed := xml dtclosed next text asDateAndTime ].

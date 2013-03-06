@@ -6,11 +6,13 @@
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		"parent",
 		"id",
 		"attachements",
 		"description",
-		"comment" ],
+		"comment",
+		"changes",
+		"date",
+		"case" ],
 	"name" : "FogBugzEvent",
 	"pools" : [
 		 ],

@@ -1,6 +1,6 @@
 instance creation
-parent: parent
+event: parent
 
 	^ self new
-		parent: parent;
+		event: parent;
 		yourself

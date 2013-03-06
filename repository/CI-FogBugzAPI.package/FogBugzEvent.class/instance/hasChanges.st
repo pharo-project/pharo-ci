@@ -1,0 +1,4 @@
+testing
+hasChanges
+
+	^ changes notNil
