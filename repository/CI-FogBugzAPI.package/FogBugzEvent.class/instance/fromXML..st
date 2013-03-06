@@ -1,7 +1,7 @@
 instance creation
 fromXML: xml 
 
-	parent := FogBugzCase id: ((xml attributeAt: 'ixBug') asInteger).
+	parent := FogBugzIssue id: ((xml attributeAt: 'ixBug') asInteger).
 	id := (xml attributeAt: 'ixBugEvent') asInteger.
 	attachements := Set new.
 

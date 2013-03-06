@@ -2,6 +2,6 @@
 	"class" : {
 		 },
 	"instance" : {
-		"testGetListOfReviewNeededIssues" : "BenjaminVanRyseghem 3/5/2013 11:10",
-		"testRetrieveIdentifyingTokenFormServer" : "BenjaminVanRyseghem 3/5/2013 11:10",
-		"testSetNewTagAndCommentForIssue9" : "BenjaminVanRyseghem 3/5/2013 11:10" } }
+		"testGetListOfReviewNeededIssues" : "BenjaminVanRyseghem 2/11/2013 15:46",
+		"testRetrieveIdentifyingTokenFormServer" : "BenjaminVanRyseghem 2/11/2013 15:21",
+		"testSetNewTagAndCommentForIssue9" : "BenjaminVanRyseghem 2/11/2013 19:02" } }

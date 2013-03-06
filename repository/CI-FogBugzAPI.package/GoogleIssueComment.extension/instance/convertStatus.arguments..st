@@ -37,6 +37,7 @@ convertStatus: aString arguments: arguments
 	
 	"Old and not existing anymore status"
 	aString = 'Fixed' ifTrue: [ ^ 'resolve' -> 'Resolved (Fix To Include)' ].
+	aString = 'fixes' ifTrue: [ ^ 'resolve' -> 'Resolved (Fix To Include)' ].
 	aString = 'closed' ifTrue: [ ^ 'close' -> 'Resolved (Closed)' ].
 	aString = 'Verified' ifTrue: [ ^ 'resolve' -> 'Resolved (Fix To Include)' ].
 	aString = 'statusVerified' ifTrue: [ ^ 'resolve' -> 'Resolved (Fix To Include)' ].
@@ -53,5 +54,24 @@ convertStatus: aString arguments: arguments
 	aString = 'close' ifTrue: [ ^ 'close' -> 'Resolved (Closed)' ].	
 	aString = 'Open' ifTrue: [ ^ 'edit' -> 'Active' ].
 	aString = 'closer' ifTrue: [ ^ 'close' -> 'Resolved (Closed)' ].	
-				
+	aString = 'FixedWaitingToBePharoed' ifTrue: [ ^ 'resolve' -> 'Resolved (Fix To Include)' ].
+	aString = 'clos' ifTrue: [ ^ 'close' -> 'Resolved (Closed)' ].	
+		
+	aString = 'accepted' ifTrue: [ ^ 'edit' -> 'Active' ].
+	aString = 'PartiallyFixed' ifTrue: [ ^ 'edit' -> 'Work Needed' ].
+
+	aString = 'fixws' ifTrue: [ ^ 'resolve' -> 'Resolved (Fix To Include)' ].
+	"stephane.ducasse"
+	aString = 'fixced' ifTrue: [ ^ 'resolve' -> 'Resolved (Fix To Include)' ].
+	aString = 'ReviewNeeded' ifTrue: [ ^ 'resolve' -> 'Resolved (Review Needed)' ].
+	aString = 'WaitToBePharoed' ifTrue: [ ^ 'resolve' -> 'Resolved (Fix To Include)' ].
+	aString = 'AwaitingReview' ifTrue: [ ^ 'resolve' -> 'Resolved (Review Needed)' ].
+	"stephane.ducasse"
+	aString = 'Acc' ifTrue: [ ^ 'edit' -> 'Active' ].
+	aString = 'Accepter' ifTrue: [ ^ 'edit' -> 'Active' ].	
+	aString = 'Accept' ifTrue: [ ^ 'edit' -> 'Active' ].	
+
+	aString = 'Review' ifTrue: [ ^ 'resolve' -> 'Resolved (Review Needed)' ].
+	
+	
 	1halt.
