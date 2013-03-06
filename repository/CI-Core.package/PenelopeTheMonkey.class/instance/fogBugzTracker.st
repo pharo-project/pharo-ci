@@ -1,4 +1,4 @@
 accessing
 fogBugzTracker
 
-	^ fogBugzTracker ifNil: [ fogBugzTracker :=  FogBugzAPI penelope ]
+	^ fogBugzTracker ifNil: [ fogBugzTracker :=  FogBugzTracker penelope ]
