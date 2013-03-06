@@ -1,0 +1,18 @@
+{
+	"category" : "CI-FogBugzAPI",
+	"classinstvars" : [
+		"issues" ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"id",
+		"tags",
+		"project",
+		"title",
+		"events" ],
+	"name" : "FogBugzCase",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }
