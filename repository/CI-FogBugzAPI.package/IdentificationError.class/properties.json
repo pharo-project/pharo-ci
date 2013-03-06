@@ -4,9 +4,9 @@
 		 ],
 	"classvars" : [
 		 ],
-	"commentStamp" : "",
+	"commentStamp" : "<historical>",
 	"instvars" : [
-		"respons" ],
+		"response" ],
 	"name" : "IdentificationError",
 	"pools" : [
 		 ],

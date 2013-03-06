@@ -1,6 +1,6 @@
 {
 	"class" : {
-		"email:password:" : "BenjaminVanRyseghem 2/11/2013 15:43",
+		"email:password:" : "BenjaminVanRyseghem 3/6/2013 01:46",
 		"extractTokenFrom:" : "BenjaminVanRyseghem 2/11/2013 15:19",
 		"hostname" : "BenjaminVanRyseghem 3/5/2013 11:41",
 		"identifyingToken:" : "BenjaminVanRyseghem 2/11/2013 15:20",
@@ -31,6 +31,9 @@
 		"newIssueTitled:ownedBy:description:tags:project:" : "BenjaminVanRyseghem 3/2/2013 15:50",
 		"projects" : "BenjaminVanRyseghem 3/5/2013 12:57",
 		"refreshProjects" : "BenjaminVanRyseghem 3/5/2013 12:58",
+		"registerUserNamed:email:" : "BenjaminVanRyseghem 3/6/2013 01:52",
+		"registerUserNamed:email:password:" : "BenjaminVanRyseghem 3/6/2013 01:52",
+		"registerUserNamed:email:password:type:" : "BenjaminVanRyseghem 3/6/2013 01:52",
 		"rejectInvalidLabelsFrom:" : "BenjaminVanRyseghem 3/2/2013 00:17",
 		"sendRequestWithArguments:" : "BenjaminVanRyseghem 2/11/2013 15:45",
 		"sendRequestWithArguments:ifError:" : "EstebanLorenzano 2/25/2013 17:02" } }

@@ -10,7 +10,7 @@ email: emailAddress password: password
 					
 	respons := self sendRequestWithArguments: arguments.
 	(respons includesSubstring: '</error>')
-		ifTrue: [ (IdentificationError respons: respons) signal ].
+		ifTrue: [ (IdentificationError response: respons) signal ].
 		
 	token := self extractTokenFrom: respons.
 	^ self identifyingToken: token.

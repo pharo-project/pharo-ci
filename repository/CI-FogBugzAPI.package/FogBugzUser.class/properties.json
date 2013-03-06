@@ -4,7 +4,7 @@
 		"users" ],
 	"classvars" : [
 		 ],
-	"commentStamp" : "",
+	"commentStamp" : "<historical>",
 	"instvars" : [
 		"id",
 		"mail",

@@ -4,11 +4,11 @@
 		 ],
 	"classvars" : [
 		 ],
-	"commentStamp" : "",
+	"commentStamp" : "<historical>",
 	"instvars" : [
-		"name",
 		"event",
-		"url" ],
+		"url",
+		"attachementName" ],
 	"name" : "FogBugzAttachment",
 	"pools" : [
 		 ],
