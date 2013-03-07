@@ -14,12 +14,12 @@ echoerr() { echo "$@" 1>&2; }
 # ARHUMENT HANDLING ===========================================================
 
 if { [ "$1" = "-h" ] || [ "$1" = "--help" ]; }; then
-    echo "This script will download the stable ${VM_TYPE} VM
+    echo "This script will download the latest ${VM_TYPE} VM
 
 Result in the current directory:
-    vm               Directory containing the VM
-    vm.sh            Script forwarding to the VM inside the vm directory running headlessly
-    vm-ui.sh         Script running the VM interactively with a UI"
+    vm               directory containing the VM
+    vm.sh            script forwarding to the VM inside the vm directory running headlessly
+    vm-ui.sh         script running the VM interactively with a UI"
     exit 0
 elif [ $# -gt 0 ]; then
     echo "--help is the only argument allowed"
@@ -49,7 +49,7 @@ fi
 
 
 # DOWNLOAD THE LATEST VM ======================================================
-VM_URL="http://files.pharo.org/vm/${VM_TYPE}/${OS}/${VM_TYPE}-${OS}-stable.zip"
+VM_URL="http://files.pharo.org/vm/${VM_TYPE}/${OS}/${VM_TYPE}-${OS}-latest.zip"
 
 echoerr "Downloading the latest ${VM_TYPE}VM:"
 echoerr "	$VM_URL"

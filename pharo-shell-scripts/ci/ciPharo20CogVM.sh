@@ -11,6 +11,7 @@ if { [ "$1" = "-h" ] || [ "$1" = "--help" ]; }; then
 Result in the current directory:
     vm               VM directory
     vm.sh            Script forwarding to the VM in vm
+    vm-ui.sh         Script running the VM interactively with a UI
     Pharo.image      The latest pharo image
     Pharo.changes    The corresponding pharo changes"
     exit 0
