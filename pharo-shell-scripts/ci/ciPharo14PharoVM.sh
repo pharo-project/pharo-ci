@@ -3,17 +3,10 @@
 # stop the script if a single command fails
 set -e 
 
-# define an echo that only outputs to stderr
-echoerr() { echo "$@" 1>&2; }
-
-echoerr '===================================================='
-echoerr 'DEPRECATED as of 2013-03-08 use the PharoVM scripts'
-echoerr '===================================================='
-
 # ARHUMENT HANDLING ===========================================================
 
 if { [ "$1" = "-h" ] || [ "$1" = "--help" ]; }; then
-    echo "This script will download the latest Pharo 2.0 image and NativeBoost VM
+    echo "This script will download the latest Pharo 1.4 image and VM
 
 Result in the current directory:
     vm               VM directory
@@ -28,5 +21,5 @@ elif [ $# -gt 0 ]; then
 fi
 
 # FETCH DATA ==================================================================
-wget --quiet -O - http://files.pharo.org/script/ciNBCogVM.sh | bash
-wget --quiet -O - http://files.pharo.org/script/ciPharo20.sh | bash
+wget --quiet -O - http://files.pharo.org/script/ciPharoVM.sh | bash
+wget --quiet -O - http://files.pharo.org/script/ciPharo14.sh | bash
