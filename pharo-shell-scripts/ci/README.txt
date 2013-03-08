@@ -18,4 +18,4 @@ Examples:
 	bash ciPharo20.sh --help
 
 [1] https://gitorious.org/pharo-build/pharo-build
-[2] https://ci.inria.fr/pharo/job/Scripts-download/
+[2] https://ci.inria.fr/pharo/job/Zerconf/
