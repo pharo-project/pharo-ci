@@ -23,24 +23,26 @@ addAndClassifySelector: selector withMethod: compiledMethod inProtocol: category
         requestor: requestor]
     ifFalse: [
       "If protocol changed and someone is from different package, I need to throw a method recategorized"
-      ((newProtocol = oldProtocol) and: [ Smalltalk hasClassNamed: #RPackage ])
+      newProtocol = oldProtocol
         ifFalse: [ 
           | rpackage oldPackage newPackage |
               
-          rpackage := Smalltalk at: #RPackage.
-          "Check for repackage"
-          newPackage := rpackage organizer 
-            packageForProtocol: newProtocol 
-            inClass: self.
-          oldPackage := rpackage organizer 
-            packageForProtocol: oldProtocol 
-            inClass: self.
-          (newPackage = oldPackage)
-            ifFalse: [ 
-              SystemAnnouncer uniqueInstance 
-                 methodRepackaged: compiledMethod 
-                from: oldPackage 
-                to: newPackage ].
+          (Smalltalk hasClassNamed: #RPackage) ifTrue: [
+
+            rpackage := Smalltalk classNamed: #RPackage.
+            "Check for repackage"
+            newPackage := rpackage organizer 
+              packageForProtocol: newProtocol 
+              inClass: self.
+            oldPackage := rpackage organizer 
+              packageForProtocol: oldProtocol 
+              inClass: self.
+            (newPackage = oldPackage)
+              ifFalse: [ 
+                SystemAnnouncer uniqueInstance 
+                  methodRepackaged: compiledMethod 
+                  from: oldPackage 
+                  to: newPackage ]].
               
           "Announce recategorization"
           SystemAnnouncer uniqueInstance 
