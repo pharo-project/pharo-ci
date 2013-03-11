@@ -11,7 +11,8 @@
 		"isInbox",
 		"owner",
 		"cases",
-		"tracker" ],
+		"tracker",
+		"rawIssues" ],
 	"name" : "FogBugzProject",
 	"pools" : [
 		 ],

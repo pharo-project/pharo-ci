@@ -2,4 +2,5 @@ queries
 refreshCases
 
 	cases := nil.
-	^ cases := self tracker getIssuesForQuery: ('status:open project:', self title asString) max: 10
+	
+	^ cases := self getFirstCases: 50.
