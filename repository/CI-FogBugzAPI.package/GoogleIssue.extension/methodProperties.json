@@ -4,5 +4,7 @@
 	"instance" : {
 		"ensureMilestoneFor:" : "BenjaminVanRyseghem 3/5/2013 23:41",
 		"fogbugzProject" : "BenjaminVanRyseghem 3/1/2013 16:26",
+		"hasBeenAlreadyClosed" : "BenjaminVanRyseghem 3/9/2013 17:02",
 		"hasBeenAlreadyMigrated" : "BenjaminVanRyseghem 3/2/2013 13:57",
-		"migrateToFogBugzWith:" : "BenjaminVanRyseghem 3/4/2013 17:30" } }
+		"migrateToFogBugzWith:" : "BenjaminVanRyseghem 3/4/2013 17:30",
+		"preventComment" : "BenjaminVanRyseghem 3/9/2013 16:59" } }

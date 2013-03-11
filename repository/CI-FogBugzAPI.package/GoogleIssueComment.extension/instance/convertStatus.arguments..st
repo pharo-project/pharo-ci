@@ -8,12 +8,13 @@ convertStatus: aString arguments: arguments
 	aString = 'WontFix' ifTrue: [ ^ 'close' -> 'Resolved (Won''t Fix)' ].
 	aString = 'Integrated' ifTrue: [ ^ 'close' -> 'Resolved (Integrated)' ].
 	aString = 'Closed' ifTrue: [ ^ 'close' -> 'Resolved (Closed)' ].
+	aString = 'Moved' ifTrue: [ ^ 'close' -> 'Resolved (Moved)' ].
 
 	aString = 'FailingTest' ifTrue: [ 
 		arguments at: 'sCategory' put: 'Failing Test'.
 		^ 'edit' -> 'Active' ].
 
-	aString = 'HumanReviewNeeded' ifTrue: [ ^ 'edit' -> 'Human Review Needed' ].
+	aString = 'HumanReviewNeeded' ifTrue: [ ^ 'resolve' -> 'Human Review Needed' ].
 
 	aString = 'FixToInclude' ifTrue: [ ^ 'resolve' -> 'Resolved (Fix To Include)' ].
 	aString = 'FixReviewNeeded' ifTrue: [ ^ 'resolve' -> 'Resolved (Review Needed)' ].
@@ -73,5 +74,42 @@ convertStatus: aString arguments: arguments
 
 	aString = 'Review' ifTrue: [ ^ 'resolve' -> 'Resolved (Review Needed)' ].
 	
+	"stephane.ducasse"
+	aString = 'Fk' ifTrue: [ ^ 'resolve' -> 'Resolved (Review Needed)' ].
+	
+	aString = 'NoSourcesAvailable' ifTrue: [ ^ 'edit' -> 'Work Needed (No Sources)' ].
+	
+	aString = 'Acce' ifTrue: [ ^ 'edit' -> 'Active' ].
+	aString = 'RFC' ifTrue: [ ^ 'edit' -> 'Work Needed (Conclusion)' ].
+	aString = 'MonkeyWentBananas' ifTrue: [ 
+		arguments at: 'sProject' put: 'CI'.
+		^ 'edit' -> 'Active' ].
+	
+	"stephane.ducasse"
+	aString = 'WonFix' ifTrue: [ ^ 'close' -> 'Resolved (Won''t Fix)' ].
+	aString = 'Wonfix' ifTrue: [ ^ 'close' -> 'Resolved (Won''t Fix)' ].
+	
+	aString = 'FixManualReviewNeeded' ifTrue: [ ^ 'resolve' -> 'Human Review Needed' ].
+
+	"stephane.ducasse"
+	aString = 'integrated' ifTrue: [ ^ 'close' -> 'Resolved (Integrated)' ].	
+	
+	aString = 'BrokenBuild' ifTrue: [ 
+		arguments at: 'sProject' put: 'CI'.
+		^ 'edit' -> 'Active' ].	
+	
+	aString = 'HorribleErrorBlockingEverything' ifTrue: [ 
+		arguments at: 'sPriority' put: '1- Show Stopper !!!!!!'.
+		^ nil ].
+	aString = 'QualityControl' ifTrue: [ 
+		arguments at: 'sCategory' put: 'First Impressions Counts'.
+		^ nil ]. 
+	
+	aString = 'CIFixeNeeded' ifTrue: [ 
+		arguments at: 'sProject' put: 'CI'.
+		^ 'edit' -> 'Active' ].
+	
+	aString = 'IntegrationStalled' ifTrue: [ ^ nil ].
+	aString = 'worAccepted' ifTrue: [ ^ nil ].
 	
 	1halt.

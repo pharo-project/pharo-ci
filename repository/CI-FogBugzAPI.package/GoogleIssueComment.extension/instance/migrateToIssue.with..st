@@ -19,8 +19,9 @@ migrateToIssue:  newId with: tracker
 	
 	(self status isNil or: [ self id isZero ]) ifFalse: [ | pair |
 		pair := self convertStatus: self status arguments: arguments.
-		command := pair key.
-		arguments at: 'sStatus' put: pair value ].
+		pair ifNotNil: [
+			command := pair key.
+			arguments at: 'sStatus' put: pair value ]].
 	
 	self labels ifNotNil: [:col | tracker analyzeLabels: col andFill: arguments ].
 
@@ -30,7 +31,7 @@ migrateToIssue:  newId with: tracker
 		ZnClient new
 			url: each url;
 			downloadTo: each filename.
-		arguments at: 'File', index asString put: each filename ].
+		arguments at: 'File', index asString put: each filename. ].
 	
 	arguments at: 'nFileCount' put: self attachments size asString.
 	arguments at: 'cmd' put: command.
@@ -43,3 +44,5 @@ migrateToIssue:  newId with: tracker
 			at: 'sEvent' put: '' ].
 
 	tracker sendRequestWithArguments: arguments.
+	
+	self attachments do: [:each | each filename asFileReference ensureDeleted ]
