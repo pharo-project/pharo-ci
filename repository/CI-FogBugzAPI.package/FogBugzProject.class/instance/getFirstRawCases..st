@@ -6,7 +6,7 @@ getFirstRawCases: number
 	issues := self rawIssues.
 	index := issues findString: 'case ixBug='.
 	index = 0 
-		ifTrue: [ ^ 0 ].
+		ifTrue: [ ^ '' ].
 	
 	[ index > 0 and: [ occurrences < number ] ] 
 		whileTrue:

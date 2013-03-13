@@ -3,4 +3,4 @@ refreshCases
 
 	cases := nil.
 	
-	^ cases := self getFirstCases: 50.
+	^ cases := self getAllCases
