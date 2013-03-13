@@ -1,4 +1,4 @@
 protocol-query
 projects
 	
-	^ projects ifNil: [ self refreshProjects ]
+	^ projects ifNil: [ projects := self getAllProjects ]

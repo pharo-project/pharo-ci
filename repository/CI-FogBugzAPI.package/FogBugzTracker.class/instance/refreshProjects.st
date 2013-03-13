@@ -1,5 +1,6 @@
 private
 refreshProjects
+	| newProjects |
 
-	projects := nil.
-	^ projects := self getAllProjects
+	newProjects := self getAllProjects.
+	projects := newProjects
