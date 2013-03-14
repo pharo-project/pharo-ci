@@ -10,6 +10,10 @@ VM_BINARY_NAME="NBCog"
 echoerr() { echo "$@" 1>&2; }
 
 
+echoerr '===================================================='
+echoerr 'DEPRECATED as of 2013-03-08 use the PharoVM scripts'
+echoerr '===================================================='
+
 # ARHUMENT HANDLING ===========================================================
 
 if { [ "$1" = "-h" ] || [ "$1" = "--help" ]; }; then
