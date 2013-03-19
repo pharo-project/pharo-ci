@@ -1,0 +1,3 @@
+%{TITLE} %{VERSION}
+
+This distribution was built %{WHEN}.
