@@ -1,0 +1,14 @@
+{
+	"category" : "CI-FogBugzAPI",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"response" ],
+	"name" : "FogBugzIdentificationError",
+	"pools" : [
+		 ],
+	"super" : "Error",
+	"type" : "normal" }

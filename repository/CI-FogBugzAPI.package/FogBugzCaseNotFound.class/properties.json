@@ -6,8 +6,8 @@
 		 ],
 	"commentStamp" : "<historical>",
 	"instvars" : [
-		"response" ],
-	"name" : "IdentificationError",
+		"id" ],
+	"name" : "FogBugzCaseNotFound",
 	"pools" : [
 		 ],
 	"super" : "Error",
