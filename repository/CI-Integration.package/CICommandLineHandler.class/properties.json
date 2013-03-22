@@ -6,10 +6,10 @@
 		 ],
 	"commentStamp" : "<historical>",
 	"instvars" : [
-		"tracker",
 		"issue",
-		"googleCodeUser",
-		"googleCodePassword" ],
+		"issueChecker",
+		"user",
+		"password" ],
 	"name" : "CICommandLineHandler",
 	"pools" : [
 		 ],

@@ -1,5 +1,7 @@
 action-list
 listOpenIssues
-	tracker openIssues do: [ :openIssue |
+
+	self issueChecker openIssues do: [ :openIssue |
 		self printOpenIssue: openIssue ].
+
 	self exitSuccess.

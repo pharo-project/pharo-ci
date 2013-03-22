@@ -1,9 +1,10 @@
 setup
 authenticateTracker
-	self googleCodeUser
-		ifNil: [ ^  self stderr red: 'no valid user provided for authentification'; lf ].
-		
-	tracker authenticate: self googleCodeUser with: self googleCodePassword.
-	tracker isAuthenticated
+
+	self user
+		ifNil: [ ^ self exitFailure: 'no valid user provided for authentification' ].
+	
+	self issueChecker logOnWithEmail: self user password: self password.
+	self issueChecker isAuthenticated
 		ifTrue: [ self stderr green: 'issue tracker authentification succeded'; lf ]
-		ifFalse: [ self stderr red: 'issue tracker authentification failed'; lf ].
+		ifFalse: [ self exitFailure: 'issue tracker authentification failed' ].

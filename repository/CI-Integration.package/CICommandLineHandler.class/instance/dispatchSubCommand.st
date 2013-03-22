@@ -3,8 +3,8 @@ dispatchSubCommand
 	| subCommand |
 	subCommand := self argumentAt: 1.
 	
-	subCommand= 'issues'
-		ifTrue: [ ^ self listOpenIssues ].
+	subCommand= 'list'
+		ifTrue: [ ^ self listIssues ].
 	
 	self fetchIssue.
 	subCommand = 'load'

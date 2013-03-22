@@ -4,7 +4,7 @@ loadIssue
 	self inform: 'Loading  issue '.
 	
 	changeLoader := issue changeLoader.
-	tracker isAuthenticated 
+	self issueChecker isAuthenticated 
 		ifFalse: [ changeLoader quiet ].
 		
 	changeLoader load.

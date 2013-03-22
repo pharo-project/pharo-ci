@@ -1,8 +1,7 @@
 setup
 setUp
-	Author fullName: 'MonkeyGalactikalIntegrator'.
 	
-	tracker := GoogleIssueTracker pharo.
+	issueChecker := IssueChecker pharoFogBugz.
 	
-	(self hasOption: 'update-issue')
-		ifTrue: [	self authenticateTracker ].
+	"Fogbugz does not work anonymously"
+	self authenticateTracker

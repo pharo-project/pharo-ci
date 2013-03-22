@@ -6,7 +6,7 @@ loadAndTestIssue
 	self inform: 'Loading and Testing issue in separate image...'.
 	
 	changeLoader := issue changeLoader.
-	tracker isAuthenticated 
+	self issueChecker isAuthenticated 
 		ifFalse: [ changeLoader quiet ].
 	changeLoader loadAndTest.
 
