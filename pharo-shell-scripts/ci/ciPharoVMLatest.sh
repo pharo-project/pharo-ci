@@ -14,7 +14,7 @@ echoerr() { echo "$@" 1>&2; }
 # ARHUMENT HANDLING ===========================================================
 
 if { [ "$1" = "-h" ] || [ "$1" = "--help" ]; }; then
-    echo "This script will download the latest ${VM_TYPE} VM
+    echo "This script will download the latest/nightly ${VM_TYPE} VM
 
 Result in the current directory:
     vm               directory containing the VM
@@ -54,7 +54,7 @@ VM_URL="http://files.pharo.org/vm/${VM_TYPE}/${OS}/${VM_TYPE}-${OS}-latest.zip"
 echoerr "Downloading the latest ${VM_TYPE}VM:"
 echoerr "	$VM_URL"
 wget --quiet --output-document=vm.zip $VM_URL
-unzip -qo -d vm vm.zip
+unzip -q -d vm vm.zip
 rm -rf vm.zip
 
 if [ "$OS" == "win" ]; then
@@ -81,7 +81,7 @@ download_sources() {
 	echoerr "Downloading $1.sources:"
 	echoerr "	$SOURCES_URL/$1.sources.zip"
 	wget --quiet --output-document=sources.zip $SOURCES_URL/$1.sources.zip
-	unzip -qo -d $SOURCES_DIR sources.zip
+	unzip -q -d $SOURCES_DIR sources.zip
 	rm -rf sources.zip
 }
 
