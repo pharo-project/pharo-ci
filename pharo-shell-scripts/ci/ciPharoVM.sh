@@ -31,6 +31,8 @@ fi
 TMP_OS=`uname | tr '[:upper:]' '[:lower:]'`
 if [[ "{$TMP_OS}" = *windows* ]]; then
     OS='win'
+if [[ "{$TMP_OS}" = *mingw* ]]; then
+    OS='win'
 elif [[ "{$TMP_OS}" = *darwin* ]]; then
     OS='mac'
 elif [[ "{$TMP_OS}" = *linux* ]]; then
