@@ -1,0 +1,14 @@
+{
+	"category" : "CI-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		 ],
+	"name" : "CIAbstractCase",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

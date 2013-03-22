@@ -1,0 +1,1 @@
+I am the abstract class used to define the API of the Issue Tracker

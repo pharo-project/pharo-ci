@@ -1,0 +1,4 @@
+cases
+nextIssueToBeChecked
+	
+	self subclassResponsibility

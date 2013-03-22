@@ -1,0 +1,15 @@
+{
+	"category" : "CI-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"tracker",
+		"validator" ],
+	"name" : "IssueChecker",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }
