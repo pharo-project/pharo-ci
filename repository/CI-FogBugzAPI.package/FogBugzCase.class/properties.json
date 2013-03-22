@@ -20,5 +20,5 @@
 	"name" : "FogBugzCase",
 	"pools" : [
 		 ],
-	"super" : "Object",
+	"super" : "CIAbstractCase",
 	"type" : "normal" }

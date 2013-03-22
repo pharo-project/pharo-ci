@@ -7,9 +7,10 @@
 	"commentStamp" : "<historical>",
 	"instvars" : [
 		"identifyingToken",
-		"projects" ],
+		"projects",
+		"hostname" ],
 	"name" : "FogBugzTracker",
 	"pools" : [
 		 ],
-	"super" : "Object",
+	"super" : "CIAbstractTracker",
 	"type" : "normal" }

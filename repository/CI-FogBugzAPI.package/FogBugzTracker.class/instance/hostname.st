@@ -1,4 +1,4 @@
-protocol
+accessing
 hostname
 
-	^ self class hostname
+	^ hostname

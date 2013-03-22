@@ -9,8 +9,10 @@ sendRequestWithArguments: arguments ifError: aBlock
 				url: self pharoIssueTrackerURL;
 				yourself.
 				
-	arguments associationsDo: [:association | client queryAt: association key put: association value ].
+	arguments keysAndValuesDo: [ :key :value | 
+		client queryAt: key put: value ].
 	
 	response := client get.
-	client response isError  ifTrue: aBlock.
+	client response isError ifTrue: aBlock.
+	self validateXML: response ifError: aBlock.
 	^ response

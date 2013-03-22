@@ -9,5 +9,5 @@ getIssuesForQuery: query max: maxSize
 					at: 'max' put: maxSize asString;
 					yourself.
 					
-	rawIssues := self sendRequestWithArguments:arguments.
+	rawIssues := self sendRequestWithArguments: arguments.
 	^ FogBugzCase buildIssuesFrom: rawIssues

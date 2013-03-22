@@ -6,6 +6,6 @@ editIssue: id withArguments: arguments
 		at: 'cmd' put: 'edit';
 		at: 'ixBug' put: id asString.
 
-	response := self sendRequestWithArguments:arguments.
+	response := self sendRequestWithArguments: arguments.
 	self flag: 'analyse response for error'.
 	^ response

@@ -8,5 +8,5 @@ getIssuesForQuery: query
 					at: 'cols' put: 'sTitle,sCategory,ixProject,sProject,events,tags,sFixFor,dtLastUpdated,dtOpened,dtResolved,dtClosed,sStatus';
 					yourself.
 					
-	rawIssues := self sendRequestWithArguments:arguments.
+	rawIssues := self sendRequestWithArguments: arguments.
 	^ FogBugzCase buildIssuesFrom: rawIssues
