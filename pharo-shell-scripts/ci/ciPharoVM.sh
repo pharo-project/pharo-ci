@@ -79,7 +79,7 @@ download_sources() {
 	echoerr "Downloading $1.sources:"
 	echoerr "	$SOURCES_URL/$1.sources.zip"
 	wget --quiet --output-document=sources.zip $SOURCES_URL/$1.sources.zip
-	unzip -qo -d $SOURCES_DIR sources.zip
+	unzip -q -d $SOURCES_DIR sources.zip
 	rm -rf sources.zip
 }
 
