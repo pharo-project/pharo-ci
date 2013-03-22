@@ -27,20 +27,18 @@ fi
 
 
 # SYSTEM PROPERTIES ===========================================================
-if [ -z "$OS" ] ; then
-    #try to extract the os name
-    TMP_OS=`uname | tr '[:upper:]' '[:lower:]'`
-    if [[ "{$TMP_OS}" = *windows* ]]; then
-        OS='win'
-    elif [[ "{$TMP_OS}" = *darwin* ]]; then
-        OS='mac'
-    elif [[ "{$TMP_OS}" = *linux* ]]; then
-        OS='linux'
-    else
-        echo "Unsupported OS"
-        exit 1
-    fi
+TMP_OS=`uname | tr '[:upper:]' '[:lower:]'`
+if [[ "{$TMP_OS}" = *windows* ]]; then
+    OS='win'
+elif [[ "{$TMP_OS}" = *darwin* ]]; then
+    OS='mac'
+elif [[ "{$TMP_OS}" = *linux* ]]; then
+    OS='linux'
+else
+    echo "Unsupported OS"
+    exit 1
 fi
+
 
 if [ -z "$ARCHITECTURE" ] ; then
     ARCHITECTURE=32
@@ -54,7 +52,7 @@ echoerr "Downloading the latest ${VM_TYPE}VM:"
 echoerr "	$VM_URL"
 wget --quiet --output-document=vm.zip $VM_URL
 
-unzip -qo -d vm vm.zip
+unzip -q -d vm vm.zip
 rm -rf vm.zip
 
 if [ "$OS" == "win" ]; then
@@ -79,7 +77,7 @@ download_sources() {
 	echoerr "Downloading $1.sources:"
 	echoerr "	$SOURCES_URL/$1.sources.zip"
 	wget --quiet --output-document=sources.zip $SOURCES_URL/$1.sources.zip
-	unzip -qo -d $SOURCES_DIR sources.zip
+	unzip -q -d $SOURCES_DIR sources.zip
 	rm -rf sources.zip
 }
 
