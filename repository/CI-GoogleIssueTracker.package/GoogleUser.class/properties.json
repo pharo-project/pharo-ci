@@ -1,0 +1,14 @@
+{
+	"category" : "CI-GoogleIssueTracker",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"email" ],
+	"name" : "GoogleUser",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

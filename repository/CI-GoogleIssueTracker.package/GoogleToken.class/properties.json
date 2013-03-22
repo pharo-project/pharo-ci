@@ -1,0 +1,16 @@
+{
+	"category" : "CI-GoogleIssueTracker",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"service",
+		"token",
+		"user" ],
+	"name" : "GoogleToken",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

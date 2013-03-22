@@ -1,0 +1,18 @@
+{
+	"category" : "CI-GoogleIssueTracker",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"authentificationToken",
+		"project",
+		"integrated",
+		"user",
+		"token" ],
+	"name" : "GoogleIssueTracker",
+	"pools" : [
+		 ],
+	"super" : "CIAbstractTracker",
+	"type" : "normal" }

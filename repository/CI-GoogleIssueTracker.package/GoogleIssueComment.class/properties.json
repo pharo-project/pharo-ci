@@ -1,0 +1,24 @@
+{
+	"category" : "CI-GoogleIssueTracker",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"attachments",
+		"author",
+		"content",
+		"id",
+		"issue",
+		"published",
+		"title",
+		"updated",
+		"status",
+		"labels",
+		"xml" ],
+	"name" : "GoogleIssueComment",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

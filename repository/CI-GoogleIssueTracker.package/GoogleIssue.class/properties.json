@@ -1,0 +1,28 @@
+{
+	"category" : "CI-GoogleIssueTracker",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"attachements",
+		"changeLoader",
+		"comments",
+		"description",
+		"id",
+		"labels",
+		"published",
+		"relatedPackages",
+		"slice",
+		"state",
+		"status",
+		"title",
+		"tracker",
+		"updated",
+		"xml" ],
+	"name" : "GoogleIssue",
+	"pools" : [
+		 ],
+	"super" : "CIAbstractCase",
+	"type" : "normal" }
