@@ -11,7 +11,7 @@ VM_BINARY_NAME_LINUX="pharo"
 echoerr() { echo "$@" 1>&2; }
 
 
-# ARHUMENT HANDLING ===========================================================
+# ARGUMENT HANDLING ===========================================================
 
 if { [ "$1" = "-h" ] || [ "$1" = "--help" ]; }; then
     echo "This script will download the stable ${VM_TYPE} VM
@@ -54,6 +54,7 @@ VM_URL="http://files.pharo.org/vm/${VM_TYPE}/${OS}/${VM_TYPE}-${OS}-stable.zip"
 echoerr "Downloading the latest ${VM_TYPE}VM:"
 echoerr "	$VM_URL"
 wget --quiet --output-document=vm.zip $VM_URL
+mkdir vm
 unzip -q -d vm vm.zip
 rm -rf vm.zip
 
