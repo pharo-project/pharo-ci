@@ -17,15 +17,20 @@ gvfs-set-attribute \
 
 # zenity is part of GNOME
 image_count=`ls "$RESOURCES"/*.image 2>/dev/null |wc -l`
-if which zenity &>/dev/null && [ "$image_count"  -ne 1 ]; then
-	image=`zenity --title 'Select an image' --file-selection --filename "$RESOURCES/" --file-filter '*.image' --file-filter '*'`
+if [ "$1" == "" ]; then 
+	if which zenity &>/dev/null && [ "$image_count"  -ne 1 ]; then
+		image=`zenity --title 'Select an image' --file-selection --filename "$RESOURCES/" --file-filter '*.image' --file-filter '*'`
+	else
+		image="$RESOURCES/%{NAME}.image"		
+	fi
 else
-	image="$RESOURCES/%{NAME}.image"
+	image=$*
 fi
+
 
 # execute
 exec "$LINUX/pharo" \
 	-plugins "$LINUX" \
 	-encoding utf8 \
 	-vm-display-X11 \
-	"$image"
+	$image
