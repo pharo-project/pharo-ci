@@ -10,4 +10,3 @@ UseDirectSound=1
 PriorityBoost=1
 B3DXUsesOpenGL=0
 CaseSensitiveFileMode=0
-ImageFile=Shared\%{NAME}.image
