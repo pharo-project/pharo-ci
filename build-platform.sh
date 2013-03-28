@@ -143,7 +143,7 @@ case $OPTION_PLATFORM in
 		;;
 	win) 
 		PRODUCT_NAME="$OPTION_NAME" 
-		RESOURCES_PATH="Shared"
+		RESOURCES_PATH="."
 		BIN_PATH="."
 		PLATFORM_ICONS_PATH=""
 		;;
