@@ -1,16 +1,13 @@
 {
-	"category" : "CI-Core-Validation",
+	"category" : "CI-Core-Publishing",
 	"classinstvars" : [
 		 ],
 	"classvars" : [
 		 ],
 	"commentStamp" : "<historical>",
 	"instvars" : [
-		"case",
-		"messages",
-		"warnings",
-		"failures" ],
-	"name" : "CIValidationResult",
+		"validationResult" ],
+	"name" : "CIResultPublisher",
 	"pools" : [
 		 ],
 	"super" : "Object",

@@ -4,14 +4,11 @@
 		 ],
 	"classvars" : [
 		 ],
-	"commentStamp" : "<historical>",
+	"commentStamp" : "",
 	"instvars" : [
-		"case",
-		"messages",
-		"warnings",
-		"failures" ],
-	"name" : "CIValidationResult",
+		 ],
+	"name" : "CIUncategorizedMethodRule",
 	"pools" : [
 		 ],
-	"super" : "Object",
+	"super" : "CIAbstractValidationRule",
 	"type" : "normal" }
