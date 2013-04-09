@@ -1,7 +1,7 @@
 setup
 setUp
 	
-	issueChecker := IssueChecker pharoFogBugz.
+	issueChecker := IssueChecker pharo.
 	
 	"Fogbugz does not work anonymously"
 	self authenticateTracker

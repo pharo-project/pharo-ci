@@ -1,12 +1,7 @@
 action
 loadIssue
-	| changeLoader |
 	self inform: 'Loading  issue '.
 	
-	changeLoader := issue changeLoader.
-	self issueChecker isAuthenticated 
-		ifFalse: [ changeLoader quiet ].
-		
-	changeLoader load.
+	self issueChecker loadCase: issue.
 	
 	Smalltalk snapshot: true andQuit: true.
