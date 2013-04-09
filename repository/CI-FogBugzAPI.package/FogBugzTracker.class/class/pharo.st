@@ -1,4 +1,4 @@
 instance creation
 pharo
 
-	^ self forProject: 'pharo'.
+	^ self forProject: 'pharo'
