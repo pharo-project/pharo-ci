@@ -4,11 +4,10 @@
 		 ],
 	"classvars" : [
 		 ],
-	"commentStamp" : "<historical>",
+	"commentStamp" : "",
 	"instvars" : [
-		"validator",
-		"source" ],
-	"name" : "IssueChecker",
+		 ],
+	"name" : "CIAbstractIssueSource",
 	"pools" : [
 		 ],
 	"super" : "Object",

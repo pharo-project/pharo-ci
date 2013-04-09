@@ -4,12 +4,12 @@
 		 ],
 	"classvars" : [
 		 ],
-	"commentStamp" : "<historical>",
+	"commentStamp" : "",
 	"instvars" : [
-		"validator",
-		"source" ],
-	"name" : "IssueChecker",
+		"configuration",
+		"repository" ],
+	"name" : "CIConfigurationSource",
 	"pools" : [
 		 ],
-	"super" : "Object",
+	"super" : "CIAbstractIssueSource",
 	"type" : "normal" }

@@ -1,6 +1,6 @@
 instance creation
-on: aTracker
+on: anIssueSource
 	
 	^ self new
-		tracker: aTracker;
+		source: anIssueSource;
 		yourself

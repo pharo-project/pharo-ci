@@ -1,4 +1,4 @@
-delegate issue tracker 
+delegate issue source
 issueWithId: anInteger
 
-	^ self tracker issueWithId: anInteger
+	^ self source issueWithId: anInteger

@@ -1,4 +1,4 @@
-delegate issue tracker 
+delegate issue source
 nextIssueToBeChecked
 
-	^ self tracker nextIssueToBeChecked
+	^ self source nextIssueToBeChecked

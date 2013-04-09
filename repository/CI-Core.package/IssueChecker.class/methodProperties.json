@@ -1,15 +1,17 @@
 {
 	"class" : {
-		"on:" : "BenjaminVanRyseghem 3/22/2013 17:39",
-		"pharoFogBugz" : "BenjaminVanRyseghem 3/22/2013 17:39" },
+		"on:" : "CamilloBruni 4/9/2013 13:51",
+		"pharo" : "CamilloBruni 4/9/2013 13:43",
+		"pharo30" : "CamilloBruni 4/9/2013 13:43" },
 	"instance" : {
-		"isAuthenticated" : "BenjaminVanRyseghem 3/22/2013 18:24",
-		"issueWithId:" : "BenjaminVanRyseghem 3/22/2013 18:41",
+		"isAuthenticated" : "CamilloBruni 4/9/2013 13:48",
+		"issueWithId:" : "CamilloBruni 4/9/2013 13:48",
+		"loadCase:" : "CamilloBruni 4/9/2013 13:51",
 		"logOn" : "BenjaminVanRyseghem 3/22/2013 17:35",
-		"logOnWithEmail:password:" : "BenjaminVanRyseghem 3/22/2013 18:22",
-		"nextIssueToBeChecked" : "BenjaminVanRyseghem 3/22/2013 19:16",
-		"openIssues" : "BenjaminVanRyseghem 3/22/2013 17:48",
-		"tracker" : "BenjaminVanRyseghem 3/22/2013 17:48",
-		"tracker:" : "BenjaminVanRyseghem 3/22/2013 17:48",
+		"logOnWithEmail:password:" : "CamilloBruni 4/9/2013 13:48",
+		"nextIssueToBeChecked" : "CamilloBruni 4/9/2013 13:48",
+		"openIssues" : "CamilloBruni 4/9/2013 13:48",
+		"source" : "CamilloBruni 4/9/2013 13:46",
+		"source:" : "CamilloBruni 4/9/2013 13:46",
 		"validator" : "BenjaminVanRyseghem 3/22/2013 17:48",
 		"validator:" : "BenjaminVanRyseghem 3/22/2013 17:48" } }

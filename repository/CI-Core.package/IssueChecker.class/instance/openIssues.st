@@ -1,4 +1,4 @@
-delegate issue tracker 
+delegate issue source
 openIssues
 
-	^ self tracker openIssues
+	^ self source openIssues

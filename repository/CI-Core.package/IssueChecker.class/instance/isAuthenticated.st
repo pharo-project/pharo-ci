@@ -1,4 +1,4 @@
-delegate issue tracker 
+delegate issue source
 isAuthenticated
 	
-	^ self tracker isAuthenticated
+	^ self source isAuthenticated
