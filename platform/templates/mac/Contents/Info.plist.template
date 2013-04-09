@@ -348,7 +348,7 @@
 		</dict>
 	</array>
 	<key>CFBundleExecutable</key>
-	<string>pharo</string>
+	<string>Pharo</string>
 	<key>CFBundleGetInfoString</key>
 	<string>CogVM VM 6.0-pre</string>
 	<key>CFBundleIconFile</key>
