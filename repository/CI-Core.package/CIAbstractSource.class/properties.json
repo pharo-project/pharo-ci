@@ -6,10 +6,9 @@
 		 ],
 	"commentStamp" : "<historical>",
 	"instvars" : [
-		"configuration",
-		"repository" ],
-	"name" : "CIConfigurationSource",
+		 ],
+	"name" : "CIAbstractSource",
 	"pools" : [
 		 ],
-	"super" : "CIAbstractSource",
+	"super" : "Object",
 	"type" : "normal" }

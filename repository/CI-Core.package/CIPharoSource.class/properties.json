@@ -8,8 +8,8 @@
 	"instvars" : [
 		"inboxUrl",
 		"tracker" ],
-	"name" : "CIPharoIssueSource",
+	"name" : "CIPharoSource",
 	"pools" : [
 		 ],
-	"super" : "CIAbstractIssueSource",
+	"super" : "CIAbstractSource",
 	"type" : "normal" }

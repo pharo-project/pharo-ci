@@ -1,15 +1,15 @@
 {
-	"category" : "CI-Core",
+	"category" : "CI-Core-Validation",
 	"classinstvars" : [
 		 ],
 	"classvars" : [
 		 ],
 	"commentStamp" : "<historical>",
 	"instvars" : [
-		"configuration",
-		"repository" ],
-	"name" : "CIConfigurationSource",
+		"checker",
+		"rules" ],
+	"name" : "CIValidator",
 	"pools" : [
 		 ],
-	"super" : "CIAbstractSource",
+	"super" : "Object",
 	"type" : "normal" }

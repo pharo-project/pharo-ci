@@ -6,8 +6,9 @@
 		 ],
 	"commentStamp" : "<historical>",
 	"instvars" : [
-		 ],
-	"name" : "CIAbstractIssueSource",
+		"validator",
+		"source" ],
+	"name" : "CIChecker",
 	"pools" : [
 		 ],
 	"super" : "Object",

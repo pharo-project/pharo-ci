@@ -1,14 +1,13 @@
 {
-	"category" : "CI-Core",
+	"category" : "CI-Core-Validation",
 	"classinstvars" : [
 		 ],
 	"classvars" : [
 		 ],
 	"commentStamp" : "<historical>",
 	"instvars" : [
-		"validator",
-		"source" ],
-	"name" : "IssueChecker",
+		 ],
+	"name" : "CIAbstractValidationRule",
 	"pools" : [
 		 ],
 	"super" : "Object",
