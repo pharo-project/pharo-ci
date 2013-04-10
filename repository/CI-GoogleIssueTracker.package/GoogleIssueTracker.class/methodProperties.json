@@ -12,7 +12,7 @@
 		"get:" : "CamilloBruni 9/20/2011 18:06",
 		"googleServiceName" : "CamilloBruni 9/20/2011 16:01",
 		"initializeWith:" : "CamilloBruni 9/18/2011 04:13",
-		"isAuthenticated" : "BenjaminVanRyseghem 3/22/2013 18:26",
+		"isAuthenticated" : "CamilloBruni 9/20/2011 16:38",
 		"issue:" : "CamilloBruni 8/16/2011 15:24",
 		"issuesFromXML:" : "DamienCassou 5/15/2012 18:29",
 		"issuesToCheck" : "CamilloBruni 9/21/2011 01:52",
@@ -20,7 +20,8 @@
 		"issuesWithParams:" : "CamilloBruni 9/20/2011 17:01",
 		"newIssueNamed:description:" : "BenjaminVanRyseghem 3/26/2012 18:12",
 		"nextAlreadyCheckedButInAPreviousPharoVersionIssue" : "CamilloBruni 1/16/2013 18:01",
-		"nextIssueId" : "BenjaminVanRyseghem 3/22/2013 19:16",
+		"nextIssue" : "CamilloBruni 9/5/2012 22:34",
+		"nextIssueId" : "BenjaminVanRyseghem 6/30/2012 17:12",
 		"nextIssueParams" : "MonkeyGalactikalIntegrator 1/16/2013 18:08",
 		"nextIssueToBeChecked" : "BenjaminVanRyseghem 3/22/2013 19:16",
 		"openIssues" : "CamilloBruni 9/21/2011 01:49",
@@ -28,4 +29,5 @@
 		"publicUrl" : "BenjaminVanRyseghem 3/22/2013 18:32",
 		"readyForIntegrationIssues" : "BenjaminVanRyseghem 10/3/2011 17:20",
 		"token" : "CamilloBruni 9/20/2011 16:48",
-		"user" : "CamilloBruni 9/20/2011 16:33" } }
+		"user" : "CamilloBruni 9/20/2011 16:33",
+		"viewUrl" : "CamilloBruni 9/20/2011 13:17" } }

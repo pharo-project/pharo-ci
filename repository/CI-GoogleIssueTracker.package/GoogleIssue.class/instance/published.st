@@ -1,3 +1,3 @@
-accessing
+acessing
 published
 	^ published

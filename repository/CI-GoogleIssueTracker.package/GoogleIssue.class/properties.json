@@ -19,10 +19,9 @@
 		"status",
 		"title",
 		"tracker",
-		"updated",
-		"xml" ],
+		"updated" ],
 	"name" : "GoogleIssue",
 	"pools" : [
 		 ],
-	"super" : "CIAbstractCase",
+	"super" : "Object",
 	"type" : "normal" }

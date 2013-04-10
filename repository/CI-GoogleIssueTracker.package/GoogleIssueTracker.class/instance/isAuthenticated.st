@@ -1,3 +1,3 @@
 testing
 isAuthenticated
-	^ token notNil
+	^ token isNil not

@@ -14,5 +14,5 @@
 	"name" : "GoogleIssueTracker",
 	"pools" : [
 		 ],
-	"super" : "CIAbstractTracker",
+	"super" : "Object",
 	"type" : "normal" }

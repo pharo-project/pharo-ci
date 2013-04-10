@@ -2,9 +2,9 @@ loading
 loadAttachments
 	"since there is no api for accessing attachments from the google issuetracker we have to manually fetch the website and extract the attachments :)"
 	
-	| soup regex attachmentLinks commentTags attachment comment |
+	| soup regex attachmentLinks commentTags attachment comment|
 	
-	soup := GoogleIssueTracker soupClass fromString:  (self tracker get: self publicUrl) contents.
+	soup := GoogleIssueTracker soupClass fromString:  (self tracker get: self viewUrl) contents.
 	
 	"manually find the matching attachment urls.."
 	regex := ('//', self project, '.googlecode.com/issues/attachment\?.*') asRegex.
@@ -20,7 +20,7 @@ loadAttachments
 		
 	"assign attachments to issues"
 	^ (Array streamContents: [ :stream|
-		commentTags do: [ :commentTag |
+		commentTags do: [ :commentTag|
 			comment := self commentById: (commentTag id allButFirst: 2) asInteger.
 			attachmentLinks 
 				select: [ :link| commentTag includesTag: link] 

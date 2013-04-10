@@ -5,7 +5,7 @@ submit
 	
 	| result |
 	
-	id ifNotNil: [ ^  self error: 'Cannot create the same issue twice. Original issue is ', self publicUrl ].
+	id ifNotNil: [ ^  self error: 'Cannot create the same issue twice. Original issue is ', self viewUrl ].
 	result := self postXML: self issueCreateXML to: self issueUrl.
 	
 	"set the id to prevent multiple submissions of the same issue"

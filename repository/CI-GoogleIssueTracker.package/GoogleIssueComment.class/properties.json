@@ -13,10 +13,7 @@
 		"issue",
 		"published",
 		"title",
-		"updated",
-		"status",
-		"labels",
-		"xml" ],
+		"updated" ],
 	"name" : "GoogleIssueComment",
 	"pools" : [
 		 ],

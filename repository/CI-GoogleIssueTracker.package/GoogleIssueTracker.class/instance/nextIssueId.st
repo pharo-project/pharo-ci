@@ -1,6 +1,6 @@
 issues
 nextIssueId
 	
-	^ self nextIssueToBeChecked 
+	^ self nextIssue 
 			ifNil: [ nil ] 
 			ifNotNil:[ :nextIssue | nextIssue id ]
