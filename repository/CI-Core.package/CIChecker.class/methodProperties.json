@@ -1,8 +1,8 @@
 {
 	"class" : {
-		"on:" : "CamilloBruni 4/9/2013 13:51",
 		"pharo" : "CamilloBruni 4/9/2013 13:43",
-		"pharo30" : "CamilloBruni 4/9/2013 14:42" },
+		"pharo30" : "CamilloBruni 4/10/2013 14:35",
+		"source:validator:" : "CamilloBruni 4/10/2013 14:34" },
 	"instance" : {
 		"isAuthenticated" : "CamilloBruni 4/9/2013 13:48",
 		"issueWithId:" : "CamilloBruni 4/9/2013 13:48",
@@ -15,4 +15,4 @@
 		"source:" : "CamilloBruni 4/9/2013 13:46",
 		"validateCase:" : "CamilloBruni 4/9/2013 14:40",
 		"validator" : "BenjaminVanRyseghem 3/22/2013 17:48",
-		"validator:" : "BenjaminVanRyseghem 3/22/2013 17:48" } }
+		"validator:" : "CamilloBruni 4/10/2013 14:37" } }

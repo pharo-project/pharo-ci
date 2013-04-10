@@ -7,9 +7,9 @@
 	"commentStamp" : "<historical>",
 	"instvars" : [
 		"case",
-		"messages",
+		"failures",
 		"warnings",
-		"failures" ],
+		"messages" ],
 	"name" : "CIValidationResult",
 	"pools" : [
 		 ],

@@ -1,8 +1,11 @@
 {
 	"class" : {
-		"checker:" : "CamilloBruni 4/9/2013 14:43" },
+		"checker:" : "CamilloBruni 4/9/2013 14:43",
+		"pharo30" : "CamilloBruni 4/10/2013 15:05" },
 	"instance" : {
+		"addRule:" : "CamilloBruni 4/10/2013 14:38",
 		"checker" : "CamilloBruni 4/9/2013 14:43",
 		"checker:" : "CamilloBruni 4/9/2013 14:43",
 		"initialize" : "CamilloBruni 4/9/2013 14:42",
-		"rules" : "CamilloBruni 4/9/2013 14:43" } }
+		"rules" : "CamilloBruni 4/9/2013 14:43",
+		"validateCase:" : "CamilloBruni 4/10/2013 15:02" } }

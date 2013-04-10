@@ -6,9 +6,9 @@
 		 ],
 	"commentStamp" : "<historical>",
 	"instvars" : [
-		 ],
-	"name" : "CIAbstractCase",
+		"response" ],
+	"name" : "ErrorWhileCreationException",
 	"pools" : [
 		 ],
-	"super" : "Object",
+	"super" : "Exception",
 	"type" : "normal" }

@@ -8,12 +8,12 @@ initializeDialogWindow: aWindow
 			ifFalse: [ result contents: (user -> password) ]].
 		
 	aWindow toolbar okButton 		
-					isEventForNextFocusBlock: [:ev | ev keyString = '<tab>' ];
-					isEventForPreviousFocusBlock: [:ev | ev keyString = '<Shift-tab>' ].
+					keyStrokeForNextFocus: Character tab asKeyCombination;
+					keyStrokeForPreviousFocus: Character tab shift asKeyCombination.
 		
 	aWindow toolbar cancelButton 		
-					isEventForNextFocusBlock: [:ev | ev keyString = '<tab>' ];
-					isEventForPreviousFocusBlock: [:ev | ev keyString = '<Shift-tab>' ].	
+					keyStrokeForNextFocus: Character tab asKeyCombination;
+					keyStrokeForPreviousFocus: Character tab shift asKeyCombination.
 		
 	self focusOrder
 		add: userField;

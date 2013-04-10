@@ -1,0 +1,14 @@
+{
+	"category" : "CI-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "CIConfigurationChange",
+	"pools" : [
+		 ],
+	"super" : "CIAbstractChange",
+	"type" : "normal" }

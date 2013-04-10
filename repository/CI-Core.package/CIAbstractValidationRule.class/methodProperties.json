@@ -1,5 +1,19 @@
 {
 	"class" : {
-		 },
+		"case:" : "CamilloBruni 4/10/2013 15:05" },
 	"instance" : {
-		 } }
+		"backupNewTemporaryImage" : "CamilloBruni 4/10/2013 15:11",
+		"case" : "CamilloBruni 4/10/2013 15:06",
+		"case:" : "CamilloBruni 4/10/2013 15:06",
+		"deleteTemporaryImage" : "CamilloBruni 4/10/2013 15:12",
+		"filePrefix" : "CamilloBruni 4/10/2013 15:43",
+		"newImageDo:" : "CamilloBruni 4/10/2013 16:00",
+		"publishResult:" : "CamilloBruni 4/10/2013 15:56",
+		"readResultFromForkedImage:" : "CamilloBruni 4/10/2013 16:08",
+		"runNewImage" : "CamilloBruni 4/10/2013 16:10",
+		"spawnImageNewSessionDo:currentSessionDo:" : "CamilloBruni 4/10/2013 15:12",
+		"tempFile" : "CamilloBruni 4/10/2013 15:12",
+		"temporaryImageCommand" : "CamilloBruni 4/10/2013 15:12",
+		"temporaryImageFile" : "CamilloBruni 4/10/2013 15:12",
+		"temporaryImageName" : "CamilloBruni 4/10/2013 15:13",
+		"validate" : "CamilloBruni 4/10/2013 15:07" } }

@@ -1,0 +1,3 @@
+protocol
+validate
+	^ self subclassResponsibility

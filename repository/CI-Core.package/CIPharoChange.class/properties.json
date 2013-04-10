@@ -1,0 +1,14 @@
+{
+	"category" : "CI-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "CIPharoChange",
+	"pools" : [
+		 ],
+	"super" : "CIAbstractChange",
+	"type" : "normal" }

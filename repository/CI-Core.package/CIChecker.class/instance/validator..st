@@ -1,3 +1,4 @@
 accessing
-validator: anObject
-	validator := anObject
+validator: aCIValidator
+	validator := aCIValidator.
+	validator checker: self.
