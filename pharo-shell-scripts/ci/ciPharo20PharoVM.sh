@@ -19,6 +19,9 @@ elif [ $# -gt 0 ]; then
     echo "--help is the only argument allowed"
     exit 1
 fi
+echo "=========================================================================="
+echo "DEPRECATED SCRIPT, USE http://get.pharo.org/20+vm"
+echo "=========================================================================="
 
 # FETCH DATA ==================================================================
 wget --quiet -O - http://files.pharo.org/script/ciPharoVM.sh | bash
