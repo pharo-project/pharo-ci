@@ -1,4 +1,6 @@
 protocol
-loadAndTest
-	^ CIValidationResult failure: 'foo'
-	"ici je dois mettre le checkerManifest par exemple"
+loadAndTest"
+	self change hasSlice ifFalse: [ ^ self ].
+	"
+	^ self testChangeImpact: [ self change loadSlice ].
+	

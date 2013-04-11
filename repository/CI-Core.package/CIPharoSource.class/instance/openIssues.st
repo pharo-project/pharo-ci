@@ -1,3 +1,3 @@
 delegating issue tracker
 openIssues
-	^ self tracker openIssues
+	^ self wrapIssue: (self tracker openIssues)

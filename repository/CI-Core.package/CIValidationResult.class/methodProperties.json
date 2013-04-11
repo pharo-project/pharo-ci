@@ -1,13 +1,17 @@
 {
 	"class" : {
-		"case:" : "CamilloBruni 4/10/2013 14:45",
+		"change:" : "ErwanDouaille 4/11/2013 16:02",
 		"failure:" : "CamilloBruni 4/10/2013 16:06" },
 	"instance" : {
+		"," : "ErwanDouaille 4/11/2013 15:59",
+		"addAllFailures:" : "ErwanDouaille 4/11/2013 16:36",
+		"addAllMessages:" : "ErwanDouaille 4/11/2013 16:36",
+		"addAllWarnings:" : "ErwanDouaille 4/11/2013 16:37",
 		"addFailure:" : "CamilloBruni 4/10/2013 16:06",
 		"addMessage:" : "CamilloBruni 4/10/2013 16:06",
 		"addWarning:" : "CamilloBruni 4/10/2013 16:06",
-		"case" : "CamilloBruni 4/10/2013 14:45",
-		"case:" : "CamilloBruni 4/10/2013 14:45",
+		"change" : "ErwanDouaille 4/11/2013 16:02",
+		"change:" : "ErwanDouaille 4/11/2013 16:02",
 		"failureString" : "CamilloBruni 4/10/2013 14:47",
 		"failures" : "CamilloBruni 4/10/2013 14:45",
 		"initialize" : "CamilloBruni 4/10/2013 14:46",

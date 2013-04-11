@@ -1,11 +1,11 @@
 {
 	"class" : {
 		"checker:" : "CamilloBruni 4/9/2013 14:43",
-		"pharo30" : "ErwanDouaille 4/11/2013 11:15" },
+		"pharo30" : "ErwanDouaille 4/11/2013 15:56" },
 	"instance" : {
 		"addRule:" : "CamilloBruni 4/10/2013 14:38",
 		"checker" : "CamilloBruni 4/9/2013 14:43",
 		"checker:" : "CamilloBruni 4/9/2013 14:43",
 		"initialize" : "CamilloBruni 4/9/2013 14:42",
 		"rules" : "CamilloBruni 4/9/2013 14:43",
-		"validateCase:" : "CamilloBruni 4/10/2013 15:02" } }
+		"validateChange:" : "ErwanDouaille 4/11/2013 16:17" } }

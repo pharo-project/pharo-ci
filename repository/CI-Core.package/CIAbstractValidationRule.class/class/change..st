@@ -1,5 +1,5 @@
 instance creation
-case: aCase
+change: aCase
 	^ self new
-		case: aCase;
+		change: aCase;
 		yourself

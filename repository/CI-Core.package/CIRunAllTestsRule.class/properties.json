@@ -6,7 +6,12 @@
 		 ],
 	"commentStamp" : "<historical>",
 	"instvars" : [
-		 ],
+		"loadStopwatch",
+		"testResult",
+		"previousTestResult",
+		"testFailures",
+		"testErrors",
+		"errors" ],
 	"name" : "CIRunAllTestsRule",
 	"pools" : [
 		 ],

@@ -6,9 +6,9 @@ loadAndTest
 	collectArguments  
 		add: 'config-test'; yourself;
 		add: 'http://www.squeaksource.com/MetacelloRepository'; yourself;
-		add: 'ConfigurationOf',self case project title ; yourself;
+		add: 'ConfigurationOf',self change project title ; yourself;
 		add: '--install=last' ; yourself;
-		add: '--test="',self case project title,'"' ; yourself.
+		add: '--test="',self change project title,'"' ; yourself.
 		
 	arguments := CommandLineArguments withArguments: collectArguments.
 	BobNewCommandLineHandler activateWith: arguments.

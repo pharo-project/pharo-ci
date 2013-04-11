@@ -1,3 +1,3 @@
 delegating issue tracker
 changeWithId: anInteger
-	^ CIPharoChange source: self case: (self tracker issueWithId: anInteger)
+	^ self wrapIssue: (self tracker issueWithId: anInteger)

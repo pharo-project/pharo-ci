@@ -1,3 +1,3 @@
 delegating issue tracker
 nextIssueToBeChecked
-	^ self tracker nextIssueToBeChecked
+	^ self wrapIssue: (self tracker nextIssueToBeChecked)
