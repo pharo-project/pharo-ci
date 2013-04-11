@@ -13,7 +13,7 @@ baseline105: spec
 		spec
 			package:  'CI-Core';
 			package: 'CI-Integration' with: [ 
-				spec requires: #( 'Soup' 'CI-Core' 'OSProcess')];
+				spec requires: #( 'Soup' 'CI-Core' 'CommandShell')];
 			package: 'CI-Loader' with: [ 
 				spec requires: #( 'Soup' 'CI-Core' )].
 			
