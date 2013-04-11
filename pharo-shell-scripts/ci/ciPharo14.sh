@@ -6,6 +6,9 @@ set -e
 # define an echo that only outputs to stderr
 echoerr() { echo "$@" 1>&2; }
 
+echoerr "=========================================================================="
+echoerr "DEPRECATED SCRIPT, USE http://get.pharo.org/14"
+echoerr "=========================================================================="
 
 # ARHUMENT HANDLING ===========================================================
 
