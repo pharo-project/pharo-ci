@@ -1,5 +1,5 @@
 external projects
-soupFor: spec
+soup: spec
 
 	"Dependencies"
 	spec project: 'Soup' with: [
