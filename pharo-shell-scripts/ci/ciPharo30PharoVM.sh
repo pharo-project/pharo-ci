@@ -20,6 +20,10 @@ elif [ $# -gt 0 ]; then
     exit 1
 fi
 
+echo "=========================================================================="
+echo "DEPRECATED SCRIPT, USE http://get.pharo.org/30+vm"
+echo "=========================================================================="
+
 # FETCH DATA ==================================================================
 wget --quiet -O - http://files.pharo.org/script/ciPharoVM.sh | bash
 wget --quiet -O - http://files.pharo.org/script/ciPharo30.sh | bash

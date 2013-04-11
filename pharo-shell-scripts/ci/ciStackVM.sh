@@ -9,7 +9,6 @@ VM_BINARY_NAME="StackVM"
 # define an echo that only outputs to stderr
 echoerr() { echo "$@" 1>&2; }
 
-
 # ARGUMENT HANDLING ===========================================================
 
 if { [ "$1" = "-h" ] || [ "$1" = "--help" ]; }; then
