@@ -6,20 +6,9 @@ baseline107: spec
 		spec blessing: #baseline.
 		spec repository: 'http://smalltalkhub.com/mc/Pharo/ci/main'.
 	
-		"Dependencies"
-		spec project: 'Soup' with: [
-			spec 
-				className: 'ConfigurationOfSoup';
-				repository: 'http://www.squeaksource.com/Soup'].
-			
-		spec project: 'CommandShell' with: [
-			spec
-				className: 'ConfigurationOfCommandShell';
-				version: #stable;
-				repository: 'http://www.squeaksource.com/MetacelloRepository' ].
-			
-		spec package: 'FileSystem-Legacy' with: [
-			spec repository: 'http://www.smalltalkhub.com/mc/dh83/fisleg/main/' ].
+		self soup: spec.
+		self fileSystemLegacy: spec.
+		self commandShell: spec.
 				
 		spec
 			package:  'CI-Core';

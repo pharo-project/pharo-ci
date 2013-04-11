@@ -5,18 +5,10 @@ baseline104: spec
 	spec for: #pharo do: [	
 		spec blessing: #baseline.
 		spec repository: 'http://smalltalkhub.com/mc/Pharo/ci/main'.
-	
-		"Dependencies"
-		spec project: 'Soup' with: [
-			spec 
-				className: 'ConfigurationOfSoup';
-				repository: 'http://www.squeaksource.com/Soup'].
-			
-		spec project: 'OSProcess' with: [
-			spec
-				className: 'ConfigurationOfOSProcess';
-				versionString: #stable;
-				repository: 'http://www.squeaksource.com/MetacelloRepository' ].	
+		
+		self soup: spec.
+		self fileSystemLegacy: spec.
+		self commandShell: spec.	
 				
 		spec project: 'ZincHTTPComponents' with: [
 			spec
