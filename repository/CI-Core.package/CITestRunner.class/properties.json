@@ -1,14 +1,14 @@
 {
-	"category" : "CI-Core",
+	"category" : "CI-Core-Validation",
 	"classinstvars" : [
 		 ],
 	"classvars" : [
 		 ],
 	"commentStamp" : "<historical>",
 	"instvars" : [
-		"case" ],
-	"name" : "CIPharoChange",
+		 ],
+	"name" : "CITestRunner",
 	"pools" : [
 		 ],
-	"super" : "CIAbstractChange",
+	"super" : "CIAbstractValidationRule",
 	"type" : "normal" }

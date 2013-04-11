@@ -1,7 +1,7 @@
 {
 	"class" : {
 		"checker:" : "CamilloBruni 4/9/2013 14:43",
-		"pharo30" : "CamilloBruni 4/10/2013 15:05" },
+		"pharo30" : "ErwanDouaille 4/11/2013 11:15" },
 	"instance" : {
 		"addRule:" : "CamilloBruni 4/10/2013 14:38",
 		"checker" : "CamilloBruni 4/9/2013 14:43",

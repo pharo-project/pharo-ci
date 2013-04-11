@@ -4,8 +4,8 @@
 		"pharo30" : "CamilloBruni 4/10/2013 14:35",
 		"source:validator:" : "CamilloBruni 4/10/2013 14:34" },
 	"instance" : {
+		"changeWithId:" : "ErwanDouaille 4/11/2013 15:29",
 		"isAuthenticated" : "CamilloBruni 4/9/2013 13:48",
-		"issueWithId:" : "CamilloBruni 4/9/2013 13:48",
 		"loadCase:" : "CamilloBruni 4/9/2013 13:51",
 		"logOn" : "BenjaminVanRyseghem 3/22/2013 17:35",
 		"logOnWithEmail:password:" : "CamilloBruni 4/9/2013 13:48",

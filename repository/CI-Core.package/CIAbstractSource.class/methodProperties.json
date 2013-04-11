@@ -2,8 +2,8 @@
 	"class" : {
 		"pharo30" : "CamilloBruni 4/9/2013 13:56" },
 	"instance" : {
+		"changeWithId:" : "ErwanDouaille 4/11/2013 15:29",
 		"isAuthenticated" : "CamilloBruni 4/9/2013 13:49",
-		"issueWithId:" : "CamilloBruni 4/9/2013 13:49",
 		"logOnWithEmail:password:" : "CamilloBruni 4/9/2013 13:49",
 		"nextIssueToBeChecked" : "CamilloBruni 4/9/2013 13:49",
 		"openIssues" : "CamilloBruni 4/9/2013 13:49" } }

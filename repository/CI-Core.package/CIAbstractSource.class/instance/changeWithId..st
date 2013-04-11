@@ -1,4 +1,4 @@
 cases
-issueWithId: anId
+changeWithId: anId
 
 	self subclassResponsibility
