@@ -1,4 +1,3 @@
 accessing
 events
-
-        ^ events ifNil: [ events := OrderedCollection new ]
+	^ events ifNil: [ events := OrderedCollection new ]

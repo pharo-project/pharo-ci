@@ -1,4 +1,3 @@
 accessing
 issues
-
-        ^ issues ifNil: [ issues := Set new ]
+	 ^ issues ifNil: [ issues := Set new ]

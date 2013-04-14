@@ -9,4 +9,6 @@ getIssuesForQuery: query
 					yourself.
 					
 	rawIssues := self sendRequestWithArguments: arguments.
-	^ FogBugzCase buildIssuesFrom: rawIssues
+	^ FogBugzCase 
+		buildIssuesFrom: rawIssues
+	 	tracker: self
