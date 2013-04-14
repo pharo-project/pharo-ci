@@ -12,4 +12,4 @@ getIssuesForQuery: query max: maxSize
 	rawIssues := self sendRequestWithArguments: arguments.
 	^ FogBugzCase 
 		buildIssuesFrom: rawIssues
-		tracker: self tracker
+		tracker: self
