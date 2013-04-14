@@ -6,8 +6,10 @@
 		 ],
 	"commentStamp" : "<historical>",
 	"instvars" : [
-		"manager" ],
-	"name" : "CIAbstractSource",
+		"validator",
+		"source",
+		"publisher" ],
+	"name" : "CIChangeManager",
 	"pools" : [
 		 ],
 	"super" : "Object",

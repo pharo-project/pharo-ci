@@ -1,4 +1,4 @@
-accessing list
+accessing
 openIssues
 	
 	self subclassResponsibility

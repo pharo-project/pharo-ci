@@ -1,0 +1,16 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"addError:" : "ErwanDouaille 4/11/2013 16:29",
+		"addError:forFile:" : "CamilloBruni 4/14/2013 21:58",
+		"buildValidationResult" : "CamilloBruni 4/14/2013 21:58",
+		"falsePositives:includesResult:" : "CamilloBruni 4/14/2013 22:06",
+		"initialize" : "CamilloBruni 4/14/2013 21:55",
+		"loadAndTest" : "ErwanDouaille 4/11/2013 16:32",
+		"preRunTests" : "ErwanDouaille 4/11/2013 16:27",
+		"removeFalseErrors" : "CamilloBruni 4/14/2013 22:03",
+		"removeFalsePositives:from:" : "CamilloBruni 4/14/2013 22:05",
+		"runAllTests" : "ErwanDouaille 4/11/2013 16:28",
+		"testChangeImpact:" : "CamilloBruni 4/14/2013 21:57",
+		"validate" : "CamilloBruni 4/10/2013 15:08" } }
