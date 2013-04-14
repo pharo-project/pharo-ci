@@ -1,3 +1,3 @@
 publishing
 publishChangeNotFound: aChange
-	self halt.
+	aChange workNeededNoSources
