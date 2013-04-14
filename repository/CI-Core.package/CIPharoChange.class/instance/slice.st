@@ -1,3 +1,3 @@
 accessing
 slice
-	^ self source sliceFor: self case
+	^ slice ifNil: [ self loadSlice ]

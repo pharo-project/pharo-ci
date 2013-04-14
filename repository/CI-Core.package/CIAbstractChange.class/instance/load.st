@@ -1,3 +1,3 @@
-protocol
+loading
 load
-	self subclassResponsibility 
+	self assertLoadable; basicLoad

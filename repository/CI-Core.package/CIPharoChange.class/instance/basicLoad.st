@@ -1,3 +1,3 @@
 protocol
-load
+basicLoad
 	self slice merge

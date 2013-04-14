@@ -2,9 +2,11 @@
 	"class" : {
 		"source:case:" : "ErwanDouaille 4/11/2013 15:33" },
 	"instance" : {
+		"basicLoad" : "CamilloBruni 4/14/2013 22:44",
 		"case" : "ErwanDouaille 4/11/2013 15:26",
 		"case:" : "ErwanDouaille 4/11/2013 15:26",
 		"id" : "ErwanDouaille 4/11/2013 16:24",
-		"load" : "ErwanDouaille 4/11/2013 15:28",
+		"isLoadable" : "CamilloBruni 4/14/2013 22:25",
+		"loadSlice" : "CamilloBruni 4/14/2013 22:36",
 		"publicUrl" : "ErwanDouaille 4/11/2013 15:28",
-		"slice" : "CamilloBruni 4/10/2013 16:23" } }
+		"slice" : "CamilloBruni 4/14/2013 22:36" } }

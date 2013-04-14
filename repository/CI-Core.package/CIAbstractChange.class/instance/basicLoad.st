@@ -1,4 +1,3 @@
 protocol
-nextIssueToBeChecked
-	
+basicLoad
 	self subclassResponsibility
