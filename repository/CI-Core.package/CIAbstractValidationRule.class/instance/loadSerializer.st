@@ -7,5 +7,5 @@ loadSerializer
 	have to serialize all new globals too."
 	serializer := FLSerializer newDefault.
 	"freeze the current environment and thus serialize all new classes"
-	serializer analyzer globalEnvironment: self class globalEnvironment copy.
+	serializer analyzer globalEnvironment: self class environment copy.
 	^ serializer
