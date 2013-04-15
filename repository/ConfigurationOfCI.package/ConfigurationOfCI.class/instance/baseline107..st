@@ -9,13 +9,14 @@ baseline107: spec
 		self soup: spec.
 		self fileSystemLegacy: spec.
 		self commandShell: spec.
+		self fuelMetalevel: spec.
 				
 		spec
 			package:  'CI-Core';
 			package: 'CI-FogBugzAPI' with: [ spec requires: #('CI-Core') ];
 			package: 'CI-GoogleIssueTracker' with: [ spec requires: #('CI-Core') ];
 			package: 'CI-Integration' with: [ 
-				spec requires: #(  'CI-Core' 'CI-FogBugzAPI' 'FileSystem-Legacy' 'Soup' 'CommandShell' )];
+				spec requires: #(  'CI-Core' 'CI-FogBugzAPI' 'FileSystem-Legacy' 'Soup' 'CommandShell' 'FuelMetalevel')];
 			package: 'CI-Loader' with: [ 
 				spec requires: #( 'Soup' 'CI-Core' )].
 			
