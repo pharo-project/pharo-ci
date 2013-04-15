@@ -10,5 +10,5 @@ publishResult: aBlock
 	
 	serializer analyzer considerInternalAllBehaviors: globals.
 	serializer
-		serialize: result 
+		serialize: { globals. result } 
 		on: FileStream stdout binary

@@ -1,3 +1,3 @@
 accessing
 addAllMessages: aCollection 
-	self messages addAll: aCollection .
+	self messages addAll: aCollection
