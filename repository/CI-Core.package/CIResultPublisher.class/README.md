@@ -1,1 +1,0 @@
-I take a CIValidationResult and publish it using a custom format.
