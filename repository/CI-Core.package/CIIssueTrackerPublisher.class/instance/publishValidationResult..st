@@ -1,3 +1,5 @@
 publishing
 publishValidationResult: aCIValidationResult
-	self halt.
+	aCIValidationResult	isSuccess 
+			ifTrue: [ self publishSuccess: aCIValidationResult ]
+			ifFalse: [ self publishFailure: aCIValidationResult ]

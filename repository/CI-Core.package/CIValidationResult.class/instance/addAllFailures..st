@@ -1,3 +1,4 @@
 accessing
 addAllFailures: aCollection 
-	self failures addAll: aCollection .
+	"For now we do #asString to circument some issue with serializing classes"
+	self failures addAll: (aCollection collect: #asString).
