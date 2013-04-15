@@ -1,0 +1,14 @@
+{
+	"category" : "CI-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"change" ],
+	"name" : "ChangeNotFound",
+	"pools" : [
+		 ],
+	"super" : "Error",
+	"type" : "normal" }
