@@ -9,5 +9,5 @@ publishFailure: aCIValidationResult
 		failure asString includesSubstring: '>>#test' ].
 	
 	hasTestFailures
-		ifTrue: [ change workNeededFailingTests: aCIValidationResult htmlString ]
+		ifTrue: [ change workNeededFailingTests: aCIValidationResult asString ]
 		ifFalse: [ change workNeeded: aCIValidationResult htmlString ]

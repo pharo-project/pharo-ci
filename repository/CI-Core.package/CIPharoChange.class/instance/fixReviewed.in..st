@@ -5,5 +5,5 @@ fixReviewed: aMessage in: pharoReleaseNumber
 		saveStatus: aMessage withInternetLineEndings.
 	
 	self case 
-		tags add: 'Validated in ', pharoReleaseNumber asString;
-		saveTags
+		tags add: 'Validated in ', pharoReleaseNumber asString.
+	self case	saveTags

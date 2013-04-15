@@ -5,5 +5,5 @@ publishSuccess: aCIValidationResult
 	change := aCIValidationResult change.
 	
 	change 
-		fixReviewed: aCIValidationResult htmlString 
+		fixReviewed: aCIValidationResult asString 
 		in: SystemVersion current highestUpdate
