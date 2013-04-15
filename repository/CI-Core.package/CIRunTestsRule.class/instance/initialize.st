@@ -5,3 +5,4 @@ initialize
 
 	testFailures := #().
 	testErrors := #().
+	errors := Set new.

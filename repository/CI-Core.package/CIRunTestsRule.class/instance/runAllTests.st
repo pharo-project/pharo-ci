@@ -5,7 +5,10 @@ runAllTests
 	
 	suite := TestSuite new.
 	
-	TestCase allSubclasses do: [ :testClass|
-		testClass isAbstract ifFalse: [ suite addTests: testClass suite tests ]].
+	TestCase allSubclasses 
+		select: self selectTestCaseBlock
+		thenDo: [ :testClass|
+			testClass isAbstract 
+				ifFalse: [ suite addTests: testClass suite tests ]].
 	
 	^ testResult := suite run.

@@ -11,7 +11,8 @@
 		"testFailures",
 		"testErrors",
 		"errors",
-		"loadTime" ],
+		"loadTime",
+		"selectTestCaseBlock" ],
 	"name" : "CIRunTestsRule",
 	"pools" : [
 		 ],

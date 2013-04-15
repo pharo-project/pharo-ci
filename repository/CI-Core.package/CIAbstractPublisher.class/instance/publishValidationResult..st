@@ -1,4 +1,4 @@
 publishing
-publishChangeResult: aCIValidationResult
+publishValidationResult: aCIValidationResult
 	"Publish the result of validation"
 	self subclassResponsibility

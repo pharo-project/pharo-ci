@@ -1,3 +1,0 @@
-publishing
-publishChangeResult: aCIValidationResult
-	self shouldBeImplemented 

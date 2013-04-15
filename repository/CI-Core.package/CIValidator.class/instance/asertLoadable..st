@@ -2,5 +2,5 @@ validation
 asertLoadable: aChange
 	aChange isLoadable 
 		ifTrue: [ ^ self ].
-	self publisher publishChangeNotFound: aChange.
+	self publishChangeNotFound: aChange.
 	aChange assertLoadable.

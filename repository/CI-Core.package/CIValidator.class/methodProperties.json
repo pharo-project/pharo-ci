@@ -1,13 +1,16 @@
 {
 	"class" : {
 		"manager:" : "CamilloBruni 4/14/2013 21:42",
-		"pharo30" : "CamilloBruni 4/14/2013 21:52" },
+		"pharo30" : "CamilloBruni 4/15/2013 10:20" },
 	"instance" : {
 		"addRule:" : "CamilloBruni 4/10/2013 14:38",
-		"asertLoadable:" : "CamilloBruni 4/14/2013 22:42",
+		"asertLoadable:" : "CamilloBruni 4/15/2013 10:29",
 		"initialize" : "CamilloBruni 4/9/2013 14:42",
 		"manager" : "CamilloBruni 4/14/2013 21:43",
 		"manager:" : "CamilloBruni 4/14/2013 21:43",
+		"publishBeforeValidation:" : "CamilloBruni 4/15/2013 10:29",
+		"publishChangeNotFound:" : "CamilloBruni 4/15/2013 10:29",
+		"publishValidationResult:" : "CamilloBruni 4/15/2013 10:29",
 		"publisher" : "CamilloBruni 4/14/2013 22:48",
 		"rules" : "CamilloBruni 4/9/2013 14:43",
-		"validateChange:" : "CamilloBruni 4/14/2013 22:48" } }
+		"validateChange:" : "CamilloBruni 4/15/2013 10:29" } }

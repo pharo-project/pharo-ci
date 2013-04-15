@@ -1,3 +1,5 @@
 updating
 workNeededNoSources
-	^ self case statusWorkNeededNoSources; saveStatus
+	^ self case 
+		statusWorkNeededNoSources; 
+		saveStatus
