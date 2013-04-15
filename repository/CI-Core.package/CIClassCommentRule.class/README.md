@@ -1,0 +1,1 @@
+I ensure that all new classes in the System have a class comment.
