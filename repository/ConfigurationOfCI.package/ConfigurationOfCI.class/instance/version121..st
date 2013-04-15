@@ -10,7 +10,8 @@ version121: spec
 		spec 
 			project: 'Soup' with: '1.2';
 			project: 'ConfigurationOfCommandShell' with: '1.1';
-			project: 'FuelMetalevel' with: #stable.
+			project: 'FuelMetalevel' with: #stable;
+			project: 'Zinc' with: #stable.
 		spec 
 			package: 'FileSystem-Legacy' with: 'FileSystem-Legacy-CamilloBruni.1'.
 		spec 
