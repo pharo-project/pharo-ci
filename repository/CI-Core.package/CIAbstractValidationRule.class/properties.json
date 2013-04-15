@@ -6,8 +6,7 @@
 		 ],
 	"commentStamp" : "<historical>",
 	"instvars" : [
-		"change",
-		"serializer" ],
+		"change" ],
 	"name" : "CIAbstractValidationRule",
 	"pools" : [
 		 ],
