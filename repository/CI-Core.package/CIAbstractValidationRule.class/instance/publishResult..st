@@ -1,3 +1,5 @@
 image forking
 publishResult: aCIValidationResult
-	FLSerializer serialize: aCIValidationResult on: FileStream stdout binary
+	self serializer
+		serialize: aCIValidationResult 
+		on: FileStream stdout binary
