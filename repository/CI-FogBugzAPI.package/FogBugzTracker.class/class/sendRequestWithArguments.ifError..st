@@ -2,7 +2,7 @@ private
 sendRequestWithArguments: arguments ifError: aBlock
  	| client response |
 	
-	(arguments keys anySatisfy: [:key | key beginsWith: 'File' ])
+	(arguments keys anySatisfy: [ :key | key beginsWith: 'File' ])
 		ifTrue: [ ^ self sendFileWithArguments: arguments ifError: aBlock ].
 	
 	client := ZnClient new
@@ -10,9 +10,9 @@ sendRequestWithArguments: arguments ifError: aBlock
 				yourself.
 				
 	arguments keysAndValuesDo: [ :key :value | 
-		client queryAt: key put: value ].
+		client formAt: key put: value ].
 	
-	response := client get.
+	response := client post.
 	client response isError ifTrue: aBlock.
 	self validateXML: response ifError: aBlock.
 	^ response
