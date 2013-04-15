@@ -66,16 +66,11 @@ system("test -e filetree || git clone -b pharo2.0 --no-checkout #{REPOS}")
 system("git --git-dir=filetree/.git pull")
 guard()
 
-
-SOURCES="https://gforge.inria.fr/frs/download.php/24391/PharoV10.sources.zip"
-system("test -e PharoV10.sources || (wget --quiet --no-check-certificate #{SOURCES}; unzip PharoV10.sources.zip)")
-guard()
-
 # Loading the latest VM =======================================================
 
 if !ENV.has_key? 'PHARO_VM'
   puts blue("$PHARO_VM is undefined, loading latest VM: ")
-  system('curl -L get.pharo.org/20+vm | bash')
+  system('wget --quiet -O - get.pharo.org/20+vm | bash')
   puts ENV['PHARO_VM'] = Dir.pwd+'/pharo'
 end
 
