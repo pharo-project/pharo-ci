@@ -1,7 +1,7 @@
 action-list
-printOpenIssue: anIssue
+printOpenIssue: aCIChange
 
 	stdout 
-		print: anIssue id; tab;
-		nextPutAll: anIssue publicUrl; tab;
-		nextPutAll: anIssue title; lf
+		print: aCIChange id; tab;
+		nextPutAll: aCIChange publicUrl; tab;
+		nextPutAll: aCIChange name; lf

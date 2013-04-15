@@ -1,3 +1,3 @@
 accessing
 issueChecker
-	^ issueChecker
+	^ changeManager

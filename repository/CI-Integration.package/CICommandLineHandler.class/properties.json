@@ -6,10 +6,10 @@
 		 ],
 	"commentStamp" : "<historical>",
 	"instvars" : [
-		"issue",
-		"issueChecker",
 		"user",
-		"password" ],
+		"password",
+		"change",
+		"changeManager" ],
 	"name" : "CICommandLineHandler",
 	"pools" : [
 		 ],

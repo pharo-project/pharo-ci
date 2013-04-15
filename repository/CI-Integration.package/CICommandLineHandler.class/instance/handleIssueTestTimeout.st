@@ -4,5 +4,5 @@ handleIssueTestTimeout
 	| message |
 	message := 'Timeout occured while loading and testing the code'.
 	self issueChecker isAuthenticated 
-		ifTrue: [ issue reviewNeeded: message ].
+		ifTrue: [ change reviewNeeded: message ].
 	self exitFailure: message.

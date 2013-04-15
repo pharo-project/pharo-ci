@@ -1,7 +1,6 @@
 action
 loadIssue
-	self inform: 'Loading  issue '.
+	self inform: 'Loading issue ', change id asString.
 	
-	self issueChecker loadCase: issue.
-	
-	Smalltalk snapshot: true andQuit: true.
+	change load.
+	Smalltalk saveAndQuit

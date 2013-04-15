@@ -3,4 +3,6 @@ activate
 	self activateHelp
 		ifTrue: [ ^ self ].
 	self setUp.
-	self dispatchSubCommand.
+	[ self dispatchSubCommand ]
+		on: ChangeNotFound do: [ :error|
+			^ Exit signalFailure: 'No loadable changes found' ]

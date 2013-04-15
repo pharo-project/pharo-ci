@@ -5,4 +5,4 @@ fetchIssue
 	issueNumber := self optionAt: 'issue' ifAbsent: [
 		^ self fetchNextIssue ].
 	
-	issue := self issueChecker issue: issueNumber.
+	change := self issueChecker changeWithId: issueNumber.
