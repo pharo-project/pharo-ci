@@ -4,7 +4,7 @@
 		 ],
 	"classvars" : [
 		"LastVersionLoad" ],
-	"commentStamp" : "",
+	"commentStamp" : "<historical>",
 	"instvars" : [
 		"project" ],
 	"name" : "ConfigurationOfCI",
