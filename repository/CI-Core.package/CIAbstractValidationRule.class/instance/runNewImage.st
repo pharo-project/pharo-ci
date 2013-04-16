@@ -1,6 +1,7 @@
 image forking
 runNewImage
-	| forkedImage result |	
+	| forkedImage result |
+	
 	forkedImage := PipeableOSProcess command: self temporaryImageCommand.
 	result := self readResultFromForkedImage: forkedImage.
 	
@@ -10,5 +11,6 @@ runNewImage
 	forkedImage succeeded 
 		ifFalse: [ 
 			result addFailure: 'Test failed, image was terminated with signal ', forkedImage exitStatus asString ].
+	
 	self deleteTemporaryImage.
 	^ result
