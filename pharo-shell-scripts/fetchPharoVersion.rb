@@ -67,7 +67,7 @@ puts blue('Extracted:')
 puts extractedFiles
 
 # get the first extracted filename
-baseName = extractedFiles.split.first
+baseName = (extractedFiles.split.select{|x| x.end_with?('image')}).first
 # get everything before the last dot (ugly for ruby 1.8.6)
 baseName = baseName.split('.')[0..-2].join('.')
 # Potentially dangerous as it might not match the proper images..
