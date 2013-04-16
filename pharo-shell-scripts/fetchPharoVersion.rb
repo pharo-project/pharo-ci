@@ -62,7 +62,7 @@ downloadZip = "pharo#{versionNumber}.zip"
 
 system("unzip -o #{downloadZip} *.image *.changes")
 # do some awk magic to find the extracted names...
-extractedFiles = `unzip -lo #{downloadZip} *.image *.changes -x __MACOSX/* | awk '/-----/ {p = ++p % 2; next} p {print $NF}'`
+extractedFiles = `unzip -lo #{downloadZip} | awk '/-----/ {p = ++p % 2; next} p {print $NF}'`
 puts blue('Extracted:')
 puts extractedFiles
 
