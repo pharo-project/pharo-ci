@@ -6,8 +6,9 @@
 		 ],
 	"commentStamp" : "<historical>",
 	"instvars" : [
-		"configuration",
-		"repository" ],
+		"inboxUrl",
+		"publisher",
+		"validator" ],
 	"name" : "CIConfigurationSource",
 	"pools" : [
 		 ],

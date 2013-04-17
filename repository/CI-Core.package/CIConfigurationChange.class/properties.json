@@ -6,7 +6,8 @@
 		 ],
 	"commentStamp" : "<historical>",
 	"instvars" : [
-		 ],
+		"configuration",
+		"url" ],
 	"name" : "CIConfigurationChange",
 	"pools" : [
 		 ],

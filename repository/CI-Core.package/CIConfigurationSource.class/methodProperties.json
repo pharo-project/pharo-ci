@@ -1,5 +1,15 @@
 {
 	"class" : {
-		 },
+		"url:" : "ErwanDouaille 4/15/2013 13:46" },
 	"instance" : {
-		 } }
+		"inboxGofer" : "ErwanDouaille 4/15/2013 13:19",
+		"inboxUrl" : "ErwanDouaille 4/15/2013 11:02",
+		"inboxUrl:" : "ErwanDouaille 4/15/2013 11:02",
+		"initialize" : "ErwanDouaille 4/15/2013 13:39",
+		"loadConfig:" : "ErwanDouaille 4/15/2013 13:26",
+		"loadConfigFor:" : "ErwanDouaille 4/15/2013 14:10",
+		"publisher" : "ErwanDouaille 4/15/2013 13:38",
+		"publisher:" : "ErwanDouaille 4/15/2013 13:38",
+		"validateChange:" : "ErwanDouaille 4/15/2013 13:41",
+		"validator" : "ErwanDouaille 4/15/2013 13:36",
+		"validator:" : "ErwanDouaille 4/15/2013 15:27" } }

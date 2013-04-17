@@ -5,10 +5,13 @@
 		"assertLoadable" : "CamilloBruni 4/14/2013 22:43",
 		"basicLoad" : "CamilloBruni 4/14/2013 22:44",
 		"id" : "ErwanDouaille 4/11/2013 16:24",
+		"impactedPackages" : "ErwanDouaille 4/16/2013 14:38",
+		"impactedPackages:" : "ErwanDouaille 4/16/2013 14:30",
 		"isLoadable" : "CamilloBruni 4/14/2013 22:25",
 		"load" : "CamilloBruni 4/14/2013 22:44",
 		"manager" : "CamilloBruni 4/14/2013 21:42",
 		"name" : "CamilloBruni 4/14/2013 23:25",
 		"publicUrl" : "BenjaminVanRyseghem 3/22/2013 18:36",
+		"resolveImpactedPackages" : "ErwanDouaille 4/16/2013 16:25",
 		"source" : "CamilloBruni 4/10/2013 16:21",
 		"source:" : "CamilloBruni 4/10/2013 16:21" } }

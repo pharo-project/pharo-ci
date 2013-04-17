@@ -1,0 +1,3 @@
+protocol
+publicUrl
+	^ self url 

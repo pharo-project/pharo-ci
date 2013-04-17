@@ -1,0 +1,3 @@
+testing
+isLoadable
+	^ configuration notNil

@@ -1,6 +1,5 @@
 tests
 testChangeImpact: aChangeBlock
-
 	[ 
 		self preRunTests.
 		loadTime := aChangeBlock timeToRun.

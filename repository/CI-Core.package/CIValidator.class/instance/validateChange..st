@@ -1,7 +1,6 @@
 validation
 validateChange: aCIChange
 	| result |
-	
 	self asertLoadable: aCIChange.
 	self publishBeforeValidation: aCIChange.
 	
