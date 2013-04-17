@@ -6,7 +6,13 @@
 		 ],
 	"commentStamp" : "<historical>",
 	"instvars" : [
-		 ],
+		"testResult",
+		"previousTestResult",
+		"testFailures",
+		"testErrors",
+		"errors",
+		"loadTime",
+		"selectTestCaseBlock" ],
 	"name" : "CIClassCommentRule",
 	"pools" : [
 		 ],

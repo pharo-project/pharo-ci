@@ -1,1 +1,1 @@
-I ensure that all new classes in the System have a class comment.
+A CIClassCommentRule is responsible to report if new classes has comments.
