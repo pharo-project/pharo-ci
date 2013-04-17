@@ -1,7 +1,9 @@
 {
 	"class" : {
+		"configurationTest" : "ErwanDouaille 4/17/2013 11:01",
 		"manager:" : "CamilloBruni 4/14/2013 21:42",
-		"pharo30" : "CamilloBruni 4/15/2013 20:28" },
+		"pharo30" : "ErwanDouaille 4/17/2013 09:54",
+		"sliceTest" : "ErwanDouaille 4/17/2013 10:40" },
 	"instance" : {
 		"addRule:" : "CamilloBruni 4/10/2013 14:38",
 		"asertLoadable:" : "ErwanDouaille 4/16/2013 12:48",

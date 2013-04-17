@@ -6,9 +6,9 @@
 		 ],
 	"commentStamp" : "<historical>",
 	"instvars" : [
-		"source" ],
-	"name" : "CIAbstractChange",
+		"tracker" ],
+	"name" : "CIConfigurationPublisher",
 	"pools" : [
 		 ],
-	"super" : "Object",
+	"super" : "CIAbstractPublisher",
 	"type" : "normal" }

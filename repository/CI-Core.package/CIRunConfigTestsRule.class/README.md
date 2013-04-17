@@ -1,0 +1,1 @@
+A CIRunConfigTestsRule is a specific class that run test on the loaded Configuration

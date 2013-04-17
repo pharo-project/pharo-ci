@@ -1,0 +1,17 @@
+{
+	"class" : {
+		"selectTestCaseBlock:" : "ErwanDouaille 4/17/2013 10:57" },
+	"instance" : {
+		"addError:" : "ErwanDouaille 4/17/2013 10:57",
+		"addError:forFile:" : "ErwanDouaille 4/17/2013 10:57",
+		"buildValidationResult" : "ErwanDouaille 4/17/2013 10:57",
+		"falsePositives:includesResult:" : "ErwanDouaille 4/17/2013 10:57",
+		"initialize" : "ErwanDouaille 4/17/2013 10:57",
+		"loadAndTest" : "ErwanDouaille 4/17/2013 10:57",
+		"removeFalseErrors" : "ErwanDouaille 4/17/2013 10:57",
+		"removeFalsePositives:from:" : "ErwanDouaille 4/17/2013 10:57",
+		"runAllTests" : "ErwanDouaille 4/17/2013 12:52",
+		"selectTestCaseBlock" : "ErwanDouaille 4/17/2013 10:57",
+		"selectTestCaseBlock:" : "ErwanDouaille 4/17/2013 10:57",
+		"testChangeImpact:" : "ErwanDouaille 4/17/2013 13:16",
+		"validate" : "ErwanDouaille 4/17/2013 10:57" } }

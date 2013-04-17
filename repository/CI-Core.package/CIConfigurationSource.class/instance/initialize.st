@@ -1,3 +1,3 @@
 accessing
 initialize
-	self publisher: (CIIssueTrackerPublisher tracker: self).
+	self publisher: (CIConfigurationPublisher tracker: self).

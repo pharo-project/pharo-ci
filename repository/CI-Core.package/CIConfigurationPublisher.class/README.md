@@ -1,0 +1,1 @@
+I publish change results on a configurtion

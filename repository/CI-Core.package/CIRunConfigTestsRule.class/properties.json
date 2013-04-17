@@ -1,0 +1,20 @@
+{
+	"category" : "CI-Core-Validation",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"testResult",
+		"previousTestResult",
+		"testFailures",
+		"testErrors",
+		"errors",
+		"loadTime",
+		"selectTestCaseBlock" ],
+	"name" : "CIRunConfigTestsRule",
+	"pools" : [
+		 ],
+	"super" : "CIAbstractValidationRule",
+	"type" : "normal" }
