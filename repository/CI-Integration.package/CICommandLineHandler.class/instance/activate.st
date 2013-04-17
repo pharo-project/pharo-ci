@@ -1,8 +1,14 @@
 activation
 activate
+	| subCommand |
 	self activateHelp
 		ifTrue: [ ^ self ].
-	self setUp.
-	[ self dispatchSubCommand ]
-		on: ChangeNotFound do: [ :error|
-			^ Exit signalFailure: 'No loadable changes found' ]
+	subCommand := self argumentAt: 1.
+	subCommand= 'config'
+		ifTrue: [ 
+			self setUpConfig.
+			self testConfig].
+	subCommand= 'slice'
+		ifTrue: [ 
+			self setUpSlice.
+			self dispatchSubCommand.].

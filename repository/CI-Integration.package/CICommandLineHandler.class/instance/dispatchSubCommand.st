@@ -1,7 +1,7 @@
 activation
 dispatchSubCommand
 	| subCommand |
-	subCommand := self argumentAt: 1.
+	subCommand := self argumentAt: 2.
 	
 	subCommand= 'list'
 		ifTrue: [ ^ self listIssues ].
