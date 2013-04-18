@@ -5,4 +5,5 @@ configurationTest
 	validator := self new.
 	validator addRule: CIRunConfigTestsRule.
 	validator addRule: CIClassCommentRule.
+	validator addRule: CIUncategorizedMethodRule.
 	^ validator

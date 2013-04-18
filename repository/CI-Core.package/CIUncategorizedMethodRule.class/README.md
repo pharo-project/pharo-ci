@@ -1,1 +1,1 @@
-I ensure that there are no new uncategorized methods in the change.
+A CIUncategorizedMethodRule is responsible to report which classes have methods uncategorized.
