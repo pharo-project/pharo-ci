@@ -2,7 +2,7 @@ testing
 removeFalseErrors
 	testResult 
 		ifNil: [ ^ self ].
-	
+
 	testFailures := self 
 		removeFalsePositives: previousTestResult failures 
 		from: testResult failures.

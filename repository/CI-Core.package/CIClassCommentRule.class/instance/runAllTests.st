@@ -1,15 +1,9 @@
 testing
 runAllTests
-	"here use self impectedClasses"
-	|suite|
+	| noComment |
 	
-	suite := TestSuite new.
-	TestCase allSubclasses 
-		select: self selectTestCaseBlock
-		thenDo: [ :testClass|
-			testClass isAbstract 
-				ifFalse: [ 
-					self change impactedPackages do:[ :impacted |
-						(impacted asString sameAs: testClass asString)
-							ifTrue: [ suite add: testClass ]]]].
-	^ testResult := suite run.
+	noComment := OrderedCollection new.
+	Smalltalk allClasses do:[ :aClass |
+		aClass hasComment
+			ifFalse: [ noComment add: aClass ]].
+	^ testResult := noComment 

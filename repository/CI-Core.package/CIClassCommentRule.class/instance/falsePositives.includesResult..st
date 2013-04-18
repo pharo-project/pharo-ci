@@ -6,4 +6,4 @@ falsePositives: falsePositives includesResult: result
 			detect: [ :falsePositive | result name = falsePositive name ] 
 			ifNone: [ ^ false ].
 	
-	^ possibleFalsePossible selector = result selector
+	^ possibleFalsePossible  = result 

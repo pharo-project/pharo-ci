@@ -1,15 +1,20 @@
 {
 	"class" : {
-		"selectTestCaseBlock:" : "ErwanDouaille 4/17/2013 15:18" },
+		"selectTestCaseBlock:" : "ErwanDouaille 4/17/2013 16:29" },
 	"instance" : {
-		"addError:" : "ErwanDouaille 4/17/2013 15:18",
-		"addError:forFile:" : "ErwanDouaille 4/17/2013 15:18",
-		"buildValidationResult" : "ErwanDouaille 4/17/2013 15:18",
-		"falsePositives:includesResult:" : "ErwanDouaille 4/17/2013 15:18",
-		"initialize" : "ErwanDouaille 4/17/2013 15:18",
-		"loadAndTest" : "ErwanDouaille 4/17/2013 15:18",
-		"runAllTests" : "ErwanDouaille 4/17/2013 15:18",
-		"selectTestCaseBlock" : "ErwanDouaille 4/17/2013 15:18",
-		"selectTestCaseBlock:" : "ErwanDouaille 4/17/2013 15:18",
-		"testChangeImpact:" : "ErwanDouaille 4/17/2013 15:18",
-		"validate" : "ErwanDouaille 4/17/2013 15:18" } }
+		"addError:" : "ErwanDouaille 4/17/2013 16:29",
+		"addError:forFile:" : "ErwanDouaille 4/18/2013 10:58",
+		"addWarning:" : "ErwanDouaille 4/18/2013 13:24",
+		"addWarning:forFile:" : "ErwanDouaille 4/18/2013 13:31",
+		"buildValidationResult" : "ErwanDouaille 4/18/2013 13:27",
+		"falsePositives:includesResult:" : "ErwanDouaille 4/18/2013 11:13",
+		"initialize" : "ErwanDouaille 4/18/2013 13:28",
+		"loadAndTest" : "ErwanDouaille 4/18/2013 10:40",
+		"preRunTests" : "ErwanDouaille 4/17/2013 16:29",
+		"removeFalseErrors" : "ErwanDouaille 4/18/2013 13:33",
+		"removeFalsePositives:from:" : "ErwanDouaille 4/17/2013 16:29",
+		"runAllTests" : "ErwanDouaille 4/18/2013 13:33",
+		"selectTestCaseBlock" : "ErwanDouaille 4/17/2013 16:29",
+		"selectTestCaseBlock:" : "ErwanDouaille 4/17/2013 16:29",
+		"testChangeImpact:" : "ErwanDouaille 4/18/2013 13:33",
+		"validate" : "ErwanDouaille 4/17/2013 16:29" } }

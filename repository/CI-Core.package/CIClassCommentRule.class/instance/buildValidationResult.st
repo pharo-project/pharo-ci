@@ -3,8 +3,7 @@ buildValidationResult
 	| result |
 	result := CIValidationResult new.
 	result 
-		addAllFailures: errors;
-		addAllFailures: testFailures;
-		addAllFailures: testErrors.
+		addAllWarnings: warnings;
+		addAllFailures: errors.
 	"result addAllMessages: messages."
 	^ result

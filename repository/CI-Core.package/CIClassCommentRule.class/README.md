@@ -1,1 +1,1 @@
-A CIClassCommentRule is responsible to report if new classes has comments.
+A CIClassCommentRule is responsible which classes don't have comments and report them.

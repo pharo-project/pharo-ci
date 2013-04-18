@@ -2,7 +2,5 @@ initialize-release
 initialize
 	super initialize.
 	
-
-	testFailures := #().
-	testErrors := #().
-	errors := Set new.
+	warnings  := Set new.
+	errors  := Set new.

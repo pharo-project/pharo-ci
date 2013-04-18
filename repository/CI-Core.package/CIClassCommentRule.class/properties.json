@@ -8,11 +8,11 @@
 	"instvars" : [
 		"testResult",
 		"previousTestResult",
-		"testFailures",
 		"testErrors",
-		"errors",
 		"loadTime",
-		"selectTestCaseBlock" ],
+		"selectTestCaseBlock",
+		"errors",
+		"warnings" ],
 	"name" : "CIClassCommentRule",
 	"pools" : [
 		 ],

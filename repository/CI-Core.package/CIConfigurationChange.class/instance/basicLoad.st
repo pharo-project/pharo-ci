@@ -1,4 +1,4 @@
 protocol
 basicLoad
-	self configuration loadDefault.
+	self configuration load.
 	self impactedPackages: self resolveImpactedPackages.
