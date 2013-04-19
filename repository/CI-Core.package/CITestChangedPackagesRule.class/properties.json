@@ -1,0 +1,14 @@
+{
+	"category" : "CI-Core-Validation",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "CITestChangedPackagesRule",
+	"pools" : [
+		 ],
+	"super" : "CIRunTestsRule",
+	"type" : "normal" }

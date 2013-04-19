@@ -16,5 +16,5 @@
 	"name" : "CIRunConfigTestsRule",
 	"pools" : [
 		 ],
-	"super" : "CIAbstractValidationRule",
+	"super" : "CIForkedImageRule",
 	"type" : "normal" }

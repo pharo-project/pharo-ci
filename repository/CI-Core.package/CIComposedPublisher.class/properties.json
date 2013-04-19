@@ -1,0 +1,14 @@
+{
+	"category" : "CI-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"publishers" ],
+	"name" : "CIComposedPublisher",
+	"pools" : [
+		 ],
+	"super" : "CIAbstractPublisher",
+	"type" : "normal" }

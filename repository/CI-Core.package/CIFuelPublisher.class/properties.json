@@ -1,0 +1,14 @@
+{
+	"category" : "CI-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "CIFuelPublisher",
+	"pools" : [
+		 ],
+	"super" : "CIFilePublisher",
+	"type" : "normal" }

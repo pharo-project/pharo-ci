@@ -1,0 +1,3 @@
+concatenation
+, anotherPubliser
+	self subclassResponsibility

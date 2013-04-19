@@ -1,0 +1,14 @@
+{
+	"category" : "CI-Core-Validation",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "CINotRule",
+	"pools" : [
+		 ],
+	"super" : "CIComposedRule",
+	"type" : "normal" }
