@@ -6,8 +6,15 @@
 		 ],
 	"commentStamp" : "<historical>",
 	"instvars" : [
-		 ],
-	"name" : "CISmallLintRule",
+		"testResult",
+		"previousTestResult",
+		"testFailures",
+		"testErrors",
+		"errors",
+		"loadTime",
+		"selectTestCaseBlock",
+		"messages" ],
+	"name" : "CISmallIntRule",
 	"pools" : [
 		 ],
 	"super" : "CIAbstractValidationRule",

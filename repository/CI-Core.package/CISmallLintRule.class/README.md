@@ -1,1 +1,0 @@
-I apply a set of CodeCritic rules to the changes

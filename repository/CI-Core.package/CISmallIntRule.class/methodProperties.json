@@ -1,0 +1,16 @@
+{
+	"class" : {
+		"selectTestCaseBlock:" : "ErwanDouaille 4/18/2013 15:59" },
+	"instance" : {
+		"addError:" : "ErwanDouaille 4/18/2013 15:59",
+		"addError:forFile:" : "ErwanDouaille 4/18/2013 15:59",
+		"addMessage:" : "ErwanDouaille 4/19/2013 10:02",
+		"addMessage:forFile:" : "ErwanDouaille 4/19/2013 11:05",
+		"buildValidationResult" : "ErwanDouaille 4/19/2013 10:03",
+		"initialize" : "ErwanDouaille 4/19/2013 10:03",
+		"loadAndTest" : "ErwanDouaille 4/18/2013 15:59",
+		"runAllTests" : "ErwanDouaille 4/19/2013 09:48",
+		"selectTestCaseBlock" : "ErwanDouaille 4/18/2013 15:59",
+		"selectTestCaseBlock:" : "ErwanDouaille 4/18/2013 15:59",
+		"testChangeImpact:" : "ErwanDouaille 4/19/2013 09:58",
+		"validate" : "ErwanDouaille 4/18/2013 15:59" } }
