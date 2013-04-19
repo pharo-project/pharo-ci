@@ -6,8 +6,10 @@ validateChange: aCIChange
 	
 	result := CIValidationResult change: aCIChange.
 	
-	[ self rules do: [ :validationRule |
-		result := result, (validationRule change: aCIChange) validate ].
+	[ self rules do: [ :validationRule | | newResult |
+		newResult := (validationRule change: aCIChange) validate.
+		self publisherIntermediateResult: newResult.
+		result := result, newResult  ].
 	] ensure: [ 
 		self publishValidationResult: result ].
 	
