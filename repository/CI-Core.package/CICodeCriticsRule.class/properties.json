@@ -6,15 +6,8 @@
 		 ],
 	"commentStamp" : "<historical>",
 	"instvars" : [
-		"testResult",
-		"previousTestResult",
-		"testFailures",
-		"testErrors",
-		"errors",
-		"loadTime",
-		"selectTestCaseBlock",
-		"messages" ],
-	"name" : "CISmallIntRule",
+		"lintRules" ],
+	"name" : "CICodeCriticsRule",
 	"pools" : [
 		 ],
 	"super" : "CIForkedImageRule",
