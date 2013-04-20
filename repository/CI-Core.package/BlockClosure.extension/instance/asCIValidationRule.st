@@ -1,3 +1,3 @@
 *CI-Core-Validation
-asCIValudationRule
+asCIValidationRule
 	^ CIBlockRule block: self 

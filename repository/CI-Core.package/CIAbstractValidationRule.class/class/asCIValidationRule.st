@@ -1,3 +1,3 @@
 conversion
-asCIValudationRule
+asCIValidationRule
 	^ self new

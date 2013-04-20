@@ -1,15 +1,27 @@
 {
 	"class" : {
-		"asCIValudationRule" : "CamilloBruni 4/20/2013 20:26",
-		"change:" : "ErwanDouaille 4/11/2013 16:14" },
+		"&" : "CamilloBruni 4/20/2013 23:36",
+		"," : "CamilloBruni 4/20/2013 23:36",
+		"asCIValidationRule" : "CamilloBruni 4/20/2013 23:36",
+		"change:" : "ErwanDouaille 4/11/2013 16:14",
+		"validate:" : "CamilloBruni 4/20/2013 23:36",
+		"|" : "CamilloBruni 4/20/2013 23:36" },
 	"instance" : {
-		"&" : "CamilloBruni 4/19/2013 14:22",
+		"&" : "CamilloBruni 4/20/2013 23:36",
+		"," : "CamilloBruni 4/20/2013 23:36",
+		"addWith:" : "CamilloBruni 4/20/2013 23:22",
+		"addWithAll:" : "CamilloBruni 4/20/2013 23:34",
+		"andWith:" : "CamilloBruni 4/20/2013 23:25",
+		"andWithAll:" : "CamilloBruni 4/20/2013 23:34",
+		"asCIValidationRule" : "CamilloBruni 4/20/2013 23:37",
 		"backupNewTemporaryImage" : "CamilloBruni 4/10/2013 15:11",
 		"change" : "ErwanDouaille 4/11/2013 16:14",
 		"change:" : "ErwanDouaille 4/11/2013 16:14",
 		"deleteTemporaryImage" : "CamilloBruni 4/10/2013 15:12",
 		"filePrefix" : "CamilloBruni 4/10/2013 15:43",
 		"newImageDo:" : "CamilloBruni 4/15/2013 14:55",
+		"orWith:" : "CamilloBruni 4/20/2013 23:24",
+		"orWithAll:" : "CamilloBruni 4/20/2013 23:34",
 		"publishResult:" : "CamilloBruni 4/15/2013 15:06",
 		"readResultFromForkedImage:" : "ErwanDouaille 4/16/2013 15:07",
 		"runNewImage" : "CamilloBruni 4/16/2013 10:41",
@@ -18,4 +30,6 @@
 		"temporaryImageCommand" : "CamilloBruni 4/10/2013 15:12",
 		"temporaryImageFile" : "CamilloBruni 4/10/2013 15:12",
 		"temporaryImageName" : "CamilloBruni 4/10/2013 15:13",
-		"validate" : "CamilloBruni 4/10/2013 15:07" } }
+		"validate" : "CamilloBruni 4/10/2013 15:07",
+		"validate:" : "CamilloBruni 4/20/2013 22:42",
+		"|" : "CamilloBruni 4/20/2013 23:36" } }

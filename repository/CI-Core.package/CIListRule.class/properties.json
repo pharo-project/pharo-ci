@@ -7,7 +7,7 @@
 	"commentStamp" : "<historical>",
 	"instvars" : [
 		 ],
-	"name" : "CIOrRule",
+	"name" : "CIListRule",
 	"pools" : [
 		 ],
 	"super" : "CIComposedRule",
