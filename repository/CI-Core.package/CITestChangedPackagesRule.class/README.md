@@ -1,0 +1,1 @@
+I am specialzed version of the test validation rule that only runs tests in certain packages.

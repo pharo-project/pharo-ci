@@ -1,10 +1,10 @@
 {
-	"category" : "CI-Core",
+	"category" : "CI-Core-Publishing",
 	"classinstvars" : [
 		 ],
 	"classvars" : [
 		 ],
-	"commentStamp" : "",
+	"commentStamp" : "<historical>",
 	"instvars" : [
 		 ],
 	"name" : "CICommandLinePublisher",

@@ -1,0 +1,1 @@
+I display validation results and progress on the command line.

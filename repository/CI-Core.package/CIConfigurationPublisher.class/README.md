@@ -1,1 +1,3 @@
-I publish change results on a configurtion
+XXX: does not make sense this comment.
+
+I publish validation results and progress on a configurtion?
