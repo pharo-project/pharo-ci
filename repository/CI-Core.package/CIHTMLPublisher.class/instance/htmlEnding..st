@@ -1,5 +1,5 @@
 as yet unclassified
-htmlEnding: aChange
+htmlEnding: aCIValidationResult
 	^ '
 </body>
 </html>

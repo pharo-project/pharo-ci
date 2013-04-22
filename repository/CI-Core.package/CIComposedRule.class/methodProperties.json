@@ -1,5 +1,9 @@
 {
 	"class" : {
-		 },
+		"with:" : "CamilloBruni 4/20/2013 23:24",
+		"with:with:" : "CamilloBruni 4/20/2013 23:24" },
 	"instance" : {
-		 } }
+		"add:" : "CamilloBruni 4/20/2013 20:32",
+		"initialize" : "CamilloBruni 4/20/2013 20:32",
+		"shouldContinueValidationWith:" : "CamilloBruni 4/20/2013 23:44",
+		"validate" : "CamilloBruni 4/20/2013 23:43" } }

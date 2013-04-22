@@ -1,1 +1,1 @@
-A CIFilePublisher is responsible to provide an abstract for publisher which write in a file
+I am an abstract publisher for file-based output formats.

@@ -1,12 +1,13 @@
 {
-	"category" : "CI-Core",
+	"category" : "CI-Core-Publishing",
 	"classinstvars" : [
 		 ],
 	"classvars" : [
 		 ],
 	"commentStamp" : "<historical>",
 	"instvars" : [
-		"outputDirectory" ],
+		"outputDirectory",
+		"stream" ],
 	"name" : "CIFilePublisher",
 	"pools" : [
 		 ],

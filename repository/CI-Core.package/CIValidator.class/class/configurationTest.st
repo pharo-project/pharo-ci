@@ -6,5 +6,5 @@ configurationTest
 	validator addRule: CIRunConfigTestsRule.
 	validator addRule: CIClassCommentRule.
 	validator addRule: CIUncategorizedMethodRule."
-	validator addRule: CISmallIntRule .
+	validator addRule: CICodeCriticsRule .
 	^ validator
