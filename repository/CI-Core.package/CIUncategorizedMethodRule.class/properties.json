@@ -10,5 +10,5 @@
 	"name" : "CIUncategorizedMethodRule",
 	"pools" : [
 		 ],
-	"super" : "CIWithPreRunnedRule",
+	"super" : "CIPreRunTestsRule",
 	"type" : "normal" }

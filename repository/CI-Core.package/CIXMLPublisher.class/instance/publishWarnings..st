@@ -1,8 +1,8 @@
 as yet unclassified
 publishWarnings: aCIValidationResult 
 	| aString |
-	aString := '<h1>', aCIValidationResult change name asString, ' warnings : </h1><ul>'.
+	aString := '<failure>'.
 	aCIValidationResult warnings do: [ :aWarning |
-		'<li>', aWarning asString, '</li>'. ].
-	^ aString, '</ul>'.
+		aString := aString, '<result>', aWarning asString, '</result>'. ].
+	^ aString, '</failure>'.
 	

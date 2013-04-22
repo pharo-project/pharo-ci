@@ -1,0 +1,1 @@
+A CIXMLPublisher  publish report as a xml file

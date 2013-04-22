@@ -7,7 +7,7 @@
 	"commentStamp" : "<historical>",
 	"instvars" : [
 		"previousTestResult" ],
-	"name" : "CIWithPreRunnedRule",
+	"name" : "CIPreRunTestsRule",
 	"pools" : [
 		 ],
 	"super" : "CIAbstractValidationRule",

@@ -1,8 +1,8 @@
 as yet unclassified
 publishFailures: aCIValidationResult
 	| aString |
-	aString := '<h1>', aCIValidationResult change name asString, ' failures : </h1><ul>'.
+	aString := '<finality>failure</finality>'.
+	aString := aString, '<failure>'.
 	aCIValidationResult failures do: [ :aFailure |
-		'<li>', aFailure asString, '</li>'. ].
-	^ aString, '</ul>'.
-	
+		aString := aString, '<result>', aFailure asString, '</result>'. ].
+	^ aString, '</failure>'.
