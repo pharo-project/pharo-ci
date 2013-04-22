@@ -1,1 +1,1 @@
-I display validation results and progress on the command line.
+A CICommandLinePublisher is a publisher which publish on the shell directlty.

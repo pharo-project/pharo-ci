@@ -6,15 +6,9 @@
 		 ],
 	"commentStamp" : "<historical>",
 	"instvars" : [
-		"testResult",
-		"previousTestResult",
-		"testErrors",
-		"loadTime",
-		"selectTestCaseBlock",
-		"errors",
-		"warnings" ],
+		 ],
 	"name" : "CIClassCommentRule",
 	"pools" : [
 		 ],
-	"super" : "CIAbstractValidationRule",
+	"super" : "CIWithPreRunnedRule",
 	"type" : "normal" }

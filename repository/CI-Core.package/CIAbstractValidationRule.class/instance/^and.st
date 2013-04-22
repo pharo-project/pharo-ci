@@ -1,3 +1,4 @@
-combining
-& anotherRule
-	^ anotherRule asCIValidationRule andWith: self
+concatenation
+& otherRule
+	"Return an composed AndRule"
+	self shouldBeImplemented

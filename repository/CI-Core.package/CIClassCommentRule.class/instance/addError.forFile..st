@@ -1,6 +1,6 @@
 adding
 addError: anError forFile: aFileNameString
-	|index|
+	|index| 
 	
 	index := 1.
 	

@@ -1,1 +1,0 @@
-I am specialized validation rule that runs the validation in a separate image. This is useful if the validation rule has side-effects.

@@ -6,15 +6,9 @@
 		 ],
 	"commentStamp" : "<historical>",
 	"instvars" : [
-		"testResult",
-		"previousTestResult",
-		"testFailures",
-		"testErrors",
-		"errors",
-		"loadTime",
-		"selectTestCaseBlock" ],
+		 ],
 	"name" : "CIRunConfigTestsRule",
 	"pools" : [
 		 ],
-	"super" : "CIForkedImageRule",
+	"super" : "CIAbstractValidationRule",
 	"type" : "normal" }

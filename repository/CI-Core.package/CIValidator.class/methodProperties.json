@@ -1,6 +1,6 @@
 {
 	"class" : {
-		"configurationTest" : "CamilloBruni 4/21/2013 00:13",
+		"configurationTest" : "ErwanDouaille 4/19/2013 10:04",
 		"manager:" : "CamilloBruni 4/14/2013 21:42",
 		"pharo30" : "ErwanDouaille 4/17/2013 09:54",
 		"sliceTest" : "ErwanDouaille 4/17/2013 10:40" },
@@ -16,4 +16,4 @@
 		"publisher" : "CamilloBruni 4/14/2013 22:48",
 		"publisherIntermediateResult:" : "CamilloBruni 4/19/2013 14:34",
 		"rules" : "CamilloBruni 4/9/2013 14:43",
-		"validateChange:" : "CamilloBruni 4/20/2013 22:43" } }
+		"validateChange:" : "CamilloBruni 4/19/2013 14:33" } }

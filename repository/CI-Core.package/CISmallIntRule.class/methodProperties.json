@@ -1,0 +1,8 @@
+{
+	"class" : {
+		"selectTestCaseBlock:" : "ErwanDouaille 4/18/2013 15:59" },
+	"instance" : {
+		"addError:forFile:" : "ErwanDouaille 4/18/2013 15:59",
+		"addMessage:forFile:" : "ErwanDouaille 4/19/2013 11:05",
+		"runAllTests" : "ErwanDouaille 4/19/2013 09:48",
+		"testChangeImpact:" : "ErwanDouaille 4/19/2013 09:58" } }

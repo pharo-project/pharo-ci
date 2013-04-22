@@ -1,3 +1,3 @@
-validation
+protocol
 validate
-	^ self subclassResponsibility
+	^ self newImageDo: [ self loadAndTest ].

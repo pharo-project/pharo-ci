@@ -6,7 +6,16 @@
 		 ],
 	"commentStamp" : "<historical>",
 	"instvars" : [
-		"change" ],
+		"change",
+		"loadTime",
+		"testErrors",
+		"testFailures",
+		"testWarnings",
+		"testResult",
+		"selectTestCaseBlock",
+		"warnings",
+		"errors",
+		"messages" ],
 	"name" : "CIAbstractValidationRule",
 	"pools" : [
 		 ],

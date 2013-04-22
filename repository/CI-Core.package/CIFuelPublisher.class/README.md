@@ -1,1 +1,0 @@
-I output validation result as fuel-serialized files.

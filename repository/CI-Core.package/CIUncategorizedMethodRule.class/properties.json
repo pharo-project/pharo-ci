@@ -6,15 +6,9 @@
 		 ],
 	"commentStamp" : "<historical>",
 	"instvars" : [
-		"testResult",
-		"previousTestResult",
-		"testErrors",
-		"loadTime",
-		"selectTestCaseBlock",
-		"errors",
-		"warnings" ],
+		 ],
 	"name" : "CIUncategorizedMethodRule",
 	"pools" : [
 		 ],
-	"super" : "CIForkedImageRule",
+	"super" : "CIWithPreRunnedRule",
 	"type" : "normal" }

@@ -2,17 +2,9 @@
 	"class" : {
 		"selectTestCaseBlock:" : "CamilloBruni 4/15/2013 10:09" },
 	"instance" : {
-		"addError:" : "ErwanDouaille 4/11/2013 16:29",
 		"addError:forFile:" : "CamilloBruni 4/14/2013 21:58",
-		"buildValidationResult" : "CamilloBruni 4/15/2013 10:24",
 		"falsePositives:includesResult:" : "CamilloBruni 4/14/2013 22:06",
-		"initialize" : "CamilloBruni 4/15/2013 10:24",
-		"loadAndTest" : "ErwanDouaille 4/16/2013 15:02",
-		"preRunTests" : "ErwanDouaille 4/17/2013 09:27",
 		"removeFalseErrors" : "ErwanDouaille 4/18/2013 11:10",
 		"removeFalsePositives:from:" : "CamilloBruni 4/14/2013 22:05",
 		"runAllTests" : "ErwanDouaille 4/16/2013 16:26",
-		"selectTestCaseBlock" : "CamilloBruni 4/15/2013 10:06",
-		"selectTestCaseBlock:" : "CamilloBruni 4/15/2013 10:06",
-		"testChangeImpact:" : "ErwanDouaille 4/16/2013 15:04",
-		"validate" : "CamilloBruni 4/10/2013 15:08" } }
+		"testChangeImpact:" : "ErwanDouaille 4/16/2013 15:04" } }

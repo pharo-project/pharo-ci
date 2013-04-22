@@ -1,10 +1,10 @@
 {
-	"category" : "CI-Core-Publishing",
+	"category" : "CI-Core",
 	"classinstvars" : [
 		 ],
 	"classvars" : [
 		 ],
-	"commentStamp" : "<historical>",
+	"commentStamp" : "",
 	"instvars" : [
 		 ],
 	"name" : "CIXMLPublisher",

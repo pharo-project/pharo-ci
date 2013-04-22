@@ -1,5 +1,12 @@
 {
 	"class" : {
-		 },
+		"tracker:" : "ErwanDouaille 4/22/2013 13:13" },
 	"instance" : {
-		 } }
+		"publishBeforeValidation:" : "ErwanDouaille 4/22/2013 13:13",
+		"publishChangeNotFound:" : "ErwanDouaille 4/22/2013 14:10",
+		"publishFailure:" : "ErwanDouaille 4/22/2013 13:36",
+		"publishMessages:" : "ErwanDouaille 4/22/2013 14:04",
+		"publishSuccess:" : "ErwanDouaille 4/22/2013 13:39",
+		"publishValidationResult:" : "ErwanDouaille 4/22/2013 13:41",
+		"tracker" : "ErwanDouaille 4/22/2013 13:13",
+		"tracker:" : "ErwanDouaille 4/22/2013 13:13" } }
