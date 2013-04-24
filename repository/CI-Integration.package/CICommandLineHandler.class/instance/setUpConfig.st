@@ -3,9 +3,9 @@ setUpConfig
 	(self hasOption: 'url')
 		ifTrue: [
 			self stderr green: 'it will be load ConfigurationOf'; lf .
-			issueChecker := CIConfigurationSource url: (self optionAt: 'url').
+			issueChecker :=  CIChangeManager source: (CIConfigurationSource url: (self optionAt: 'url')) validator: CIValidator configurationTest  .
 			(self hasOption: 'config')
-				ifTrue: [ issue := issueChecker loadConfig: (self optionAt: 'config'). ]
+				ifTrue: [ issue := issueChecker source loadConfig: (self optionAt: 'config'). ]
 				ifFalse: [ self stderr red: 'error: no config option has been found'; lf. ]
 			]
 		ifFalse: [ 

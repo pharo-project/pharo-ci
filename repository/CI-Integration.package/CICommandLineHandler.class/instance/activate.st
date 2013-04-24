@@ -7,7 +7,7 @@ activate
 	subCommand= 'config'
 		ifTrue: [ 
 			self setUpConfig.
-			self testConfig].
+			self testConfig inspect].
 	subCommand= 'slice'
 		ifTrue: [ 
 			self setUpSlice.

@@ -1,6 +1,6 @@
 action-test
 testConfig
 	self inform: 'Testing config ', issue id asString.
-	stdout nextPutAll: issue publicUrl; lf.
-	self issueChecker validator: CIValidator configurationTest .
+	stdout nextPutAll: issue publicUrl; lf."
+	self issueChecker validator: CIValidator configurationTest ."
 	^self issueChecker validateChange: issue
