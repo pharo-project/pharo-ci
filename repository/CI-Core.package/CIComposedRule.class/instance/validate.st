@@ -5,7 +5,7 @@ validate
 	result := CIValidationResult new.
 	
 	self rules do: [ :validationRule |
-		result := result, validationRule validate: self change.
+		result := result, (validationRule validate: self change).
 		(self shouldContinueValidationWith: result)
 			ifFalse: [ ^ result ]].
 
