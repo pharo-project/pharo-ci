@@ -3,7 +3,6 @@ runNewImage
 	| forkedImage result |
 	
 	forkedImage := PipeableOSProcess command: self temporaryImageCommand.
-	self halt.
 	result := self readResultFromForkedImage: forkedImage.
 	
 	[ 10 milliSeconds wait.  
