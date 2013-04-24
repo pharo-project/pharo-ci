@@ -1,4 +1,4 @@
-as yet unclassified
+publishing
 publishValidationResult: aCIValidationResult
 	
 	^ self fileCreation: aCIValidationResult 

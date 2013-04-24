@@ -1,4 +1,4 @@
-as yet unclassified
+publishing
 publishWarnings: aCIValidationResult 
 	| aString |
 	aString := '<failure>'.

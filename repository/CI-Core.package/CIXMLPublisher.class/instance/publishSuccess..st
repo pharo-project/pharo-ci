@@ -1,4 +1,4 @@
-as yet unclassified
+publishing
 publishSuccess: aCIValidationResult
 
 	^'<finality>succeed</finality>'.

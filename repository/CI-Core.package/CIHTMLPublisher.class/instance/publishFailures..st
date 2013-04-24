@@ -1,4 +1,4 @@
-as yet unclassified
+publishing
 publishFailures: aCIValidationResult
 	| aString |
 	aString := '<h1>', aCIValidationResult change name asString, ' failures : </h1><ul>'.

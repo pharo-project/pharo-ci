@@ -1,3 +1,3 @@
-as yet unclassified
+file creation
 fileCreation: aCIValidationResult 
 	^ self subclassResponsibility 

@@ -1,4 +1,4 @@
-as yet unclassified
+publishing
 htmlEnding: aCIValidationResult
 	^ '
 </body>

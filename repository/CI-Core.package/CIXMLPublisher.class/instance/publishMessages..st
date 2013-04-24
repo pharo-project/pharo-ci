@@ -1,4 +1,4 @@
-as yet unclassified
+publishing
 publishMessages: aCIValidationResult 
 	| aString |
 	aString := '<message>'.
