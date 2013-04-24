@@ -1,3 +1,3 @@
-accessing
+as yet unclassified
 publisher
-	^ publisher
+	^ CICommandLinePublisher manager: self manager

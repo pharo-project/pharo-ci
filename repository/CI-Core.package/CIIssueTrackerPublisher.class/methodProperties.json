@@ -1,11 +1,9 @@
 {
 	"class" : {
-		"tracker:" : "CamilloBruni 4/14/2013 21:31" },
+		 },
 	"instance" : {
 		"publishBeforeValidation:" : "CamilloBruni 4/15/2013 10:31",
 		"publishChangeNotFound:" : "CamilloBruni 4/14/2013 22:55",
 		"publishFailure:" : "CamilloBruni 4/15/2013 19:53",
 		"publishSuccess:" : "CamilloBruni 4/15/2013 19:52",
-		"publishValidationResult:" : "CamilloBruni 4/15/2013 20:01",
-		"tracker" : "CamilloBruni 4/14/2013 21:30",
-		"tracker:" : "CamilloBruni 4/14/2013 21:30" } }
+		"publishValidationResult:" : "CamilloBruni 4/15/2013 20:01" } }

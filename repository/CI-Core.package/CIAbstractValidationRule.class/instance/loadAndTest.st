@@ -1,4 +1,5 @@
 test-runner
 loadAndTest
-	^ self testChangeImpact: [ self change load ].
+
+	^ (self testChangeImpact: [ self change load ]).
 	

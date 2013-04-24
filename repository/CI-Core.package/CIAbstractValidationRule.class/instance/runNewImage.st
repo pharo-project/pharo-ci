@@ -11,6 +11,5 @@ runNewImage
 	forkedImage succeeded 
 		ifFalse: [ 
 			result addFailure: 'Test failed, image was terminated with signal ', forkedImage exitStatus asString ].
-	
 	self deleteTemporaryImage.
-	^ result
+	^ result 

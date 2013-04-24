@@ -8,4 +8,3 @@ testExample
 
 	arguments := CommandLineArguments withArguments: collection.
 	command := CICommandLineHandler activateWith: arguments.
-	command inspect.

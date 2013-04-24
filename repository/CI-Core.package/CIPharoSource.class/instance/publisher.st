@@ -1,3 +1,3 @@
 accessing
 publisher
-	^ CIIssueTrackerPublisher tracker: self
+	^ CIIssueTrackerPublisher manager: self manager

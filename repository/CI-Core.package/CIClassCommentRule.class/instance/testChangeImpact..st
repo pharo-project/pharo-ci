@@ -6,5 +6,4 @@ testChangeImpact: aChangeBlock
 		self runAllTests.
 		self removeFalseErrors
 	] on: Error	do: [ :e | self addError: e ].
-	
 	^ self buildValidationResult
