@@ -6,7 +6,6 @@
 		 ],
 	"commentStamp" : "<historical>",
 	"instvars" : [
-		"inboxUrl",
 		"tracker" ],
 	"name" : "CIPharoSource",
 	"pools" : [
