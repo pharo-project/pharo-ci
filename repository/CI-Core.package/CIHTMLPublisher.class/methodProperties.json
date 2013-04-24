@@ -2,11 +2,10 @@
 	"class" : {
 		 },
 	"instance" : {
-		"fileCreation:" : "ErwanDouaille 4/24/2013 14:11",
 		"htmlBeginning:" : "ErwanDouaille 4/22/2013 14:26",
 		"htmlEnding:" : "ErwanDouaille 4/22/2013 14:26",
-		"publishBeforeValidation:" : "ErwanDouaille 4/24/2013 13:40",
 		"publishFailures:" : "ErwanDouaille 4/22/2013 16:19",
 		"publishMessages:" : "ErwanDouaille 4/22/2013 16:19",
 		"publishSuccess:" : "ErwanDouaille 4/22/2013 14:55",
+		"publishValidationResult:" : "CamilloBruni 4/24/2013 22:38",
 		"publishWarnings:" : "ErwanDouaille 4/22/2013 16:19" } }
