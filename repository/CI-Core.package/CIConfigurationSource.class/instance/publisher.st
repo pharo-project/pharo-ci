@@ -1,10 +1,10 @@
-as yet unclassified
+accessing
 publisher
 
 	| multiplePublisher |
 	multiplePublisher := CIComposedPublisher manager: self manager.
-	multiplePublisher addPublisher: CICommandLinePublisher .
-	multiplePublisher addPublisher: CIHTMLPublisher .
-	multiplePublisher addPublisher: CIXMLPublisher .
+	multiplePublisher add: CICommandLinePublisher .
+	multiplePublisher add: CIHTMLPublisher .
+	multiplePublisher add: CIXMLPublisher .
 	
 	^ multiplePublisher  

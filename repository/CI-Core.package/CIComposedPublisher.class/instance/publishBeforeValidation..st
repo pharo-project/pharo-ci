@@ -1,4 +1,5 @@
 publishing
 publishBeforeValidation: aCIChange
-	"lock the issue"
-	aCIChange lockForValidation
+	
+	self publishers do: [ :publisher | 
+			publisher publishBeforeValidation: aCIChange ].

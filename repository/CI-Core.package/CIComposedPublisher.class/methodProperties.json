@@ -2,9 +2,11 @@
 	"class" : {
 		 },
 	"instance" : {
-		"addPublisher:" : "ErwanDouaille 4/24/2013 14:59",
+		"add:" : "CamilloBruni 4/24/2013 22:30",
 		"initialize" : "ErwanDouaille 4/24/2013 15:01",
-		"publishBeforeValidation:" : "ErwanDouaille 4/24/2013 15:06",
-		"publishValidationResult:" : "ErwanDouaille 4/24/2013 15:08",
+		"publishBeforeValidation:" : "CamilloBruni 4/24/2013 22:28",
+		"publishChangeNotFound:" : "CamilloBruni 4/24/2013 22:30",
+		"publishValidationResult:" : "CamilloBruni 4/24/2013 22:28",
+		"publisherIntermediateResult:" : "CamilloBruni 4/24/2013 22:30",
 		"publishers" : "ErwanDouaille 4/24/2013 14:38",
 		"publishers:" : "ErwanDouaille 4/24/2013 14:38" } }

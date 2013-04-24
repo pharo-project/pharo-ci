@@ -1,4 +1,7 @@
 publishing
 publishValidationResult: aCIValidationResult
 	"Publish the result of validation"
-	self subclassResponsibility
+	
+	aCIValidationResult	isSuccess 
+			ifTrue: [ self publishSuccess: aCIValidationResult ]
+			ifFalse: [ self publishFailure: aCIValidationResult ].

@@ -1,3 +1,3 @@
 adding
-addPublisher: aCIPublisher
+add: aCIPublisher
 	self publishers add: aCIPublisher .
