@@ -2,7 +2,6 @@
 	"class" : {
 		"selectTestCaseBlock:" : "ErwanDouaille 4/17/2013 10:57" },
 	"instance" : {
-		"addError:forFile:" : "ErwanDouaille 4/17/2013 10:57",
 		"falsePositives:includesResult:" : "ErwanDouaille 4/17/2013 10:57",
 		"runAllTests" : "ErwanDouaille 4/17/2013 14:57",
 		"testChangeImpact:" : "ErwanDouaille 4/17/2013 15:01" } }

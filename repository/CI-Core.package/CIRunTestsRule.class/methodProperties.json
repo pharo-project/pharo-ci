@@ -2,7 +2,6 @@
 	"class" : {
 		"selectTestCaseBlock:" : "CamilloBruni 4/15/2013 10:09" },
 	"instance" : {
-		"addError:forFile:" : "CamilloBruni 4/14/2013 21:58",
 		"falsePositives:includesResult:" : "CamilloBruni 4/14/2013 22:06",
 		"removeFalseErrors" : "ErwanDouaille 4/18/2013 11:10",
 		"removeFalsePositives:from:" : "CamilloBruni 4/14/2013 22:05",
