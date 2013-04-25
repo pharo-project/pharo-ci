@@ -2,7 +2,9 @@
 	"class" : {
 		 },
 	"instance" : {
-		"testPublishBeforeValidation" : "CamilloBruni 4/25/2013 21:01",
-		"testPublishChangeNotFound" : "CamilloBruni 4/25/2013 21:01",
-		"testPublishIntermediateResult" : "CamilloBruni 4/25/2013 21:01",
-		"testPublishValidationResult" : "CamilloBruni 4/25/2013 21:01" } }
+		"testNoBlocks" : "CamilloBruni 4/25/2013 21:12",
+		"testPublishBeforeValidation" : "CamilloBruni 4/25/2013 21:09",
+		"testPublishChangeNotFound" : "CamilloBruni 4/25/2013 21:07",
+		"testPublishIntermediateResult" : "CamilloBruni 4/25/2013 21:10",
+		"testPublishValidationResult" : "CamilloBruni 4/25/2013 21:10",
+		"testResetAllBlocks" : "CamilloBruni 4/25/2013 21:15" } }
