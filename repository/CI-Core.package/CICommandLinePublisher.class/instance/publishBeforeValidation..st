@@ -1,4 +1,3 @@
 publishing
 publishBeforeValidation: aCIChange
-	"lock the issue"
-	aCIChange lockForValidation
+	"nothing to be done here"

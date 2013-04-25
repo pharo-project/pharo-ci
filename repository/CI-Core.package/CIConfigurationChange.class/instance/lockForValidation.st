@@ -1,4 +1,0 @@
-accessing
-lockForValidation
-	
-	^ self configuration
