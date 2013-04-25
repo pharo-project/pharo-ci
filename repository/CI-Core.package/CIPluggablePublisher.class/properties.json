@@ -1,0 +1,17 @@
+{
+	"category" : "CI-Core-Publishing",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"beforeValidationBlock",
+		"changeNotFoundBlock",
+		"validationResultBlock",
+		"intermediateResultBlock" ],
+	"name" : "CIPluggablePublisher",
+	"pools" : [
+		 ],
+	"super" : "CIAbstractPublisher",
+	"type" : "normal" }
