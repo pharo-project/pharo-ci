@@ -1,4 +1,4 @@
-as yet unclassified
+instance creation
 manager: aCIPharoManager
 	^ self new 
 		manager:  aCIPharoManager;

@@ -1,3 +1,3 @@
 combining
 orWith: anotherRule
-	self add: anotherRule asCIValidationRule
+	self add: anotherRule

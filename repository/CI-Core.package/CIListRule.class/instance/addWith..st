@@ -1,3 +1,3 @@
 combining
 addWith: anotherRule
-	anotherRule asCIValidationRule
+	self add: anotherRule

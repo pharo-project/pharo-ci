@@ -1,8 +1,13 @@
 {
 	"class" : {
+		"," : "CamilloBruni 4/25/2013 14:13",
+		"asCIPublisher" : "CamilloBruni 4/25/2013 14:12",
 		"manager:" : "ErwanDouaille 4/24/2013 10:46" },
 	"instance" : {
-		"," : "CamilloBruni 4/19/2013 14:20",
+		"," : "CamilloBruni 4/25/2013 14:10",
+		"addWith:" : "CamilloBruni 4/25/2013 14:11",
+		"addWithAll:" : "CamilloBruni 4/25/2013 14:00",
+		"asCIPublisher" : "CamilloBruni 4/25/2013 14:10",
 		"manager" : "CamilloBruni 4/14/2013 21:44",
 		"manager:" : "CamilloBruni 4/14/2013 21:44",
 		"publishBeforeValidation:" : "CamilloBruni 4/14/2013 21:46",

@@ -1,3 +1,3 @@
 combination
 & anotherRule
-	^ self asCIValidationRule & anotherRule asCIValidationRule
+	^ self asCIValidationRule & anotherRule

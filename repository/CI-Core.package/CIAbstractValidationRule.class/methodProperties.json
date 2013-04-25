@@ -1,6 +1,6 @@
 {
 	"class" : {
-		"&" : "CamilloBruni 4/20/2013 23:36",
+		"&" : "CamilloBruni 4/25/2013 14:13",
 		"," : "CamilloBruni 4/20/2013 23:36",
 		"asCIValidationRule" : "CamilloBruni 4/20/2013 23:36",
 		"change:" : "ErwanDouaille 4/11/2013 16:14",
@@ -16,9 +16,9 @@
 		"addMessage:forFile:" : "ErwanDouaille 4/19/2013 15:52",
 		"addWarning:" : "ErwanDouaille 4/19/2013 15:50",
 		"addWarning:forFile:" : "ErwanDouaille 4/19/2013 15:53",
-		"addWith:" : "CamilloBruni 4/20/2013 23:22",
+		"addWith:" : "CamilloBruni 4/25/2013 13:58",
 		"addWithAll:" : "CamilloBruni 4/20/2013 23:34",
-		"andWith:" : "CamilloBruni 4/20/2013 23:25",
+		"andWith:" : "CamilloBruni 4/25/2013 13:59",
 		"andWithAll:" : "CamilloBruni 4/20/2013 23:34",
 		"asCIValidationRule" : "CamilloBruni 4/20/2013 23:37",
 		"backupNewTemporaryImage" : "CamilloBruni 4/10/2013 15:11",
@@ -30,7 +30,7 @@
 		"initialize" : "ErwanDouaille 4/19/2013 16:42",
 		"loadAndTest" : "ErwanDouaille 4/24/2013 09:56",
 		"newImageDo:" : "CamilloBruni 4/15/2013 14:55",
-		"orWith:" : "CamilloBruni 4/20/2013 23:24",
+		"orWith:" : "CamilloBruni 4/25/2013 13:59",
 		"orWithAll:" : "CamilloBruni 4/20/2013 23:34",
 		"publishResult:" : "CamilloBruni 4/15/2013 15:06",
 		"readResultFromForkedImage:" : "ErwanDouaille 4/16/2013 15:07",

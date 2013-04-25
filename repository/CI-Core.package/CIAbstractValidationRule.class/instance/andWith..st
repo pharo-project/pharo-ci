@@ -1,3 +1,3 @@
 combining
 andWith: anotherRule
-	^ CIAndRule with: self with: anotherRule
+	^ CIAndRule with: anotherRule with: self

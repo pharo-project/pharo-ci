@@ -1,3 +1,3 @@
 combining
 orWith: anotherRule
-	^ CIOrRule with: self with: anotherRule
+	^ CIOrRule with: anotherRule with: self

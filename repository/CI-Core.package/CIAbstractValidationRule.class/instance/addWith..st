@@ -1,3 +1,3 @@
 combining
 addWith: anotherRule
-	^ CIListRule with: self with: anotherRule
+	^ CIListRule with: anotherRule with: self

@@ -1,3 +1,3 @@
 concatenation
 , anotherPubliser
-	self subclassResponsibility
+	^ anotherPubliser asCIPublisher addWith: self 
