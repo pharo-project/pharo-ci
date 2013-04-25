@@ -1,0 +1,3 @@
+publishing
+publishIntermediateResult: aValidationResult
+	^ self publisher publishIntermediateResult: aValidationResult
