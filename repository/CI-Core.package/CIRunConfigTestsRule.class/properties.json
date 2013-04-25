@@ -10,5 +10,5 @@
 	"name" : "CIRunConfigTestsRule",
 	"pools" : [
 		 ],
-	"super" : "CIAbstractValidationRule",
+	"super" : "CITestChangeDifferenceRule",
 	"type" : "normal" }
