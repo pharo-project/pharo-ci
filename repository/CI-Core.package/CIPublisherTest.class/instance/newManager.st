@@ -1,0 +1,3 @@
+accessing
+newManager
+	^ CIChangeManager new

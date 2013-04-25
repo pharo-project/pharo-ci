@@ -6,9 +6,9 @@
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		 ],
-	"name" : "CIComposedPublisherTest",
+		"instance" ],
+	"name" : "CIPublisherTest",
 	"pools" : [
 		 ],
-	"super" : "CIPublisherTest",
+	"super" : "TestCase",
 	"type" : "normal" }

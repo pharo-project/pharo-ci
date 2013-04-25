@@ -1,0 +1,3 @@
+tests
+testPublishBeforeValidation
+	instance publishBeforeValidation: self newChange

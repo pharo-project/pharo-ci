@@ -1,0 +1,18 @@
+{
+	"category" : "CI-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"loadBlock",
+		"id",
+		"publicUrl",
+		"isLoadable",
+		"name" ],
+	"name" : "CITestChange",
+	"pools" : [
+		 ],
+	"super" : "CIAbstractChange",
+	"type" : "normal" }

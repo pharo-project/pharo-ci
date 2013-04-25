@@ -7,7 +7,7 @@
 	"commentStamp" : "",
 	"instvars" : [
 		 ],
-	"name" : "CIComposedPublisherTest",
+	"name" : "CICommandLinePublisherTest",
 	"pools" : [
 		 ],
 	"super" : "CIPublisherTest",

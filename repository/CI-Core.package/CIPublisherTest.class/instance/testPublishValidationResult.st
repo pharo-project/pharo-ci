@@ -1,0 +1,4 @@
+tests
+testPublishValidationResult
+	instance publishValidationResult: self newValidationResult.
+	instance publishValidationResult: self newFailingValidationResult.
