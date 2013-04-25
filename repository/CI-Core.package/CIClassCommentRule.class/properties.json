@@ -10,5 +10,5 @@
 	"name" : "CIClassCommentRule",
 	"pools" : [
 		 ],
-	"super" : "CIPreRunTestsRule",
+	"super" : "CITestChangeDifferenceRule",
 	"type" : "normal" }
