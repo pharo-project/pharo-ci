@@ -1,3 +1,3 @@
 concatenation
 , anotherRule
-	^ anotherRule addWithAll: self
+	^ anotherRule asCIPublisher addWithAll: self
