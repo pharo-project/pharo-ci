@@ -11,7 +11,7 @@
 		<category>Default</category>
 	</template>
 	<template>
-		<name>Seaside 3.1 in Pharo 2.0</name>
+		<name>Seaside-3.1-in-Pharo-2.0</name>
 		<url>https://ci.inria.fr/pharo-contribution/job/Seaside-3.1-in-Pharo-2.0/lastSuccessfulBuild/artifact/Seaside-3.1-in-Pharo-2.0.zip</url>
 		<category>Web</category>
 	</template>
