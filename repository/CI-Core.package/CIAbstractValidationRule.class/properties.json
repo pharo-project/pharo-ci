@@ -7,12 +7,7 @@
 	"commentStamp" : "<historical>",
 	"instvars" : [
 		"change",
-		"loadTime",
-		"testErrors",
-		"testFailures",
-		"testWarnings",
 		"testResult",
-		"selectTestCaseBlock",
 		"warnings",
 		"errors",
 		"messages" ],

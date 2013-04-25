@@ -6,7 +6,9 @@
 		 ],
 	"commentStamp" : "<historical>",
 	"instvars" : [
-		 ],
+		"selectTestCaseBlock",
+		"testErrors",
+		"testFailures" ],
 	"name" : "CIRunTestsRule",
 	"pools" : [
 		 ],

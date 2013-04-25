@@ -4,6 +4,7 @@
 	"instance" : {
 		"loadAndTest" : "CamilloBruni 4/25/2013 22:15",
 		"loadAndValidate" : "CamilloBruni 4/25/2013 22:24",
+		"loadTime" : "CamilloBruni 4/25/2013 22:26",
 		"preRunTests" : "ErwanDouaille 4/22/2013 11:21",
 		"removeFalseErrors" : "ErwanDouaille 4/22/2013 11:22",
 		"testChangeImpact:" : "CamilloBruni 4/25/2013 22:24",
