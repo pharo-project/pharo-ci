@@ -13,6 +13,6 @@ runNewImage
 			^ self addError: 'Test failed, image was terminated with signal ', forkedImage processProxy exitStatus asString ].
 	result := self readResultFromForkedImage: forkedImage.
 	self deleteTemporaryImage.
-	errors addAll: result errors.
+	errors addAll: result failures.
 	warnings addAll: result warnings.
 	messages addAll: result messages.
