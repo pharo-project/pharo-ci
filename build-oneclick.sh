@@ -13,7 +13,6 @@ BUILD_PATH="${WORKSPACE:=$BASE_PATH/builds}"
 IMAGES_PATH="$BASE_PATH/images"
 TEMPLATE_PATH="$BASE_PATH/one-click/templates"
 ICONS_PATH="$BASE_PATH/one-click/icons"
-#NIB_FILE="$BASE_PATH/one-click/MainMenu.nib"
 VM_PATH="$BUILD_PATH/vm"
 
 # help function
@@ -172,9 +171,9 @@ ls -1 "$INPUT_PATH" | while read FILE ; do
 done
 
 # copy over Linux VM files
-wget http://pharo.gforge.inria.fr/ci/vm/pharo/linux/pharo-linux-latest.zip
+wget http://files.pharo.org/vm/pharo/linux/pharo-linux-stable.zip
  
-LINUX_VM_PATH="pharo-linux-latest.zip"
+LINUX_VM_PATH="pharo-linux-stable.zip"
 if [ -f "$LINUX_VM_PATH" ] ; then
     unzip -q "$LINUX_VM_PATH" -d "$OUTPUT_PATH/tmp"
     mv "$OUTPUT_PATH/tmp/" "$OUTPUT_PATH/Contents/Linux/"
@@ -183,8 +182,8 @@ else
 fi
 
 # copy over Mac OS VM files
-wget http://pharo.gforge.inria.fr/ci/vm/pharo/mac/pharo-mac-latest.zip
-MAC_VM_PATH="pharo-mac-latest.zip"
+wget http://files.pharo.org/vm/pharo/mac/pharo-mac-stable.zip
+MAC_VM_PATH="pharo-mac-stable.zip"
 if [ -f "$MAC_VM_PATH" ] ; then
     unzip -q "$MAC_VM_PATH" -d "$OUTPUT_PATH/tmp"
     
@@ -199,8 +198,8 @@ else
 fi
 
 # copy over Windows VM files
-wget http://pharo.gforge.inria.fr/ci/vm/pharo/win/pharo-win-latest.zip
-WIN_VM_PATH="pharo-win-latest.zip"
+wget http://files.pharo.org/vm/pharo/win/pharo-win-stable.zip
+WIN_VM_PATH="pharo-win-stable.zip"
 if [ -f "$WIN_VM_PATH" ] ; then
     unzip -q "$WIN_VM_PATH" -d "$OUTPUT_PATH"
 else
