@@ -1,3 +1,3 @@
 *CI-Core-Validation
 asCIValidationRule
-	^ CICodeCriticsRule with: self
+	^ CISmallIntRule with: self

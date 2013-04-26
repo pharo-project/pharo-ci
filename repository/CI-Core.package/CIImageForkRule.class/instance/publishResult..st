@@ -1,6 +1,9 @@
 image forking
 publishResult: aBlock
 	| globals result serializer |
+	
+	self waitForReadySignal.
+	
 	globals := Smalltalk globals copy.
 	result := aBlock value.
 	

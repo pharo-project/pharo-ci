@@ -3,6 +3,7 @@ runNewImage
 	| forkedImage result |
 	
 	forkedImage := PipeableOSProcess command: self temporaryImageCommand.
+	self flag: 'add timeout handler here'.
 	result := self readResultFromForkedImage: forkedImage.
 	
 	[ 10 milliSeconds wait.  
