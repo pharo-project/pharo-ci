@@ -1,7 +1,6 @@
 testing
 runAllTests
 	| noComment |
-	
 	noComment := OrderedCollection new.
 	Smalltalk allClasses do:[ :aClass |
 		aClass hasComment

@@ -2,7 +2,6 @@ image forking
 publishResult: aBlock
 	| globals result serializer |
 	
-	self waitForReadySignal.
 	
 	globals := Smalltalk globals copy.
 	result := aBlock value.
@@ -14,4 +13,4 @@ publishResult: aBlock
 	serializer analyzer considerInternalAllBehaviors: globals.
 	serializer
 		serialize: { globals. result } 
-		on: FileStream stdout binary
+		on: self tempFile writeStream binary

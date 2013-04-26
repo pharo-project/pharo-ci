@@ -1,17 +1,10 @@
 image forking
 readResultFromForkedImage: forkedImage
-	| readStream result |
+	| result |
 	
 	self inform: 'Waiting for test image results...'.
 	
-	"clear all the garbage that might he on the forked image's stdout"
-	forkedImage pipeFromOutput upToEnd.
-	
-	"signal that we're ready to receive the result from the forked image"
-	forkedImage pipeToInput nextPut: 1.
-	
-	readStream := forkedImage pipeFromOutput upToEnd asByteArray readStream.
-	[ result := (FLMaterializer newDefault materializeFrom: readStream) root ]
+	[ result := (FLMaterializer newDefault materializeFrom: self tempFile readStream) root ]
 		on: Error do: [ :error| 
 			^ CIValidationResult failure: 'Could not parse result from forked image' ].
 	
