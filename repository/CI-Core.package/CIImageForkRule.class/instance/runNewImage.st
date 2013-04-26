@@ -10,8 +10,9 @@ runNewImage
 
 	forkedImage succeeded 
 		ifFalse: [ 
-			result addFailure: 'Test failed, image was terminated with signal ', forkedImage exitStatus asString ].
-		
+			^ self addError: 'Test failed, image was terminated with signal ', forkedImage processProxy exitStatus asString ].
 	result := self readResultFromForkedImage: forkedImage.
 	self deleteTemporaryImage.
-	^ result 
+	errors addAll: result errors.
+	warnings addAll: result warnings.
+	messages addAll: result messages.

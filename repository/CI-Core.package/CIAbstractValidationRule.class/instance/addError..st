@@ -2,6 +2,10 @@ adding
 addError: anError
 	|index| 
 	
+	self flag: 'ugly'.
+	anError isString 
+		ifTrue: [ ^ errors add: anError ].
+		
 	index := 1.
 	errors add:(String streamContents: [ :stream|
 		stream tab print: anError; lf.
