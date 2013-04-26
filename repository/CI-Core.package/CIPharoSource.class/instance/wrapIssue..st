@@ -1,3 +1,3 @@
 private
 wrapIssue: anIssue
-	^ CIPharoChange source: self case: anIssue 
+	^ CISliceChange source: self case: anIssue 
