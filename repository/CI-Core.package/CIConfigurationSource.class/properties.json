@@ -10,5 +10,5 @@
 	"name" : "CIConfigurationSource",
 	"pools" : [
 		 ],
-	"super" : "CIAbstractSource",
+	"super" : "CIAbstractMonticelloSource",
 	"type" : "normal" }

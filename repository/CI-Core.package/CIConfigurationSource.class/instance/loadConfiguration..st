@@ -1,5 +1,5 @@
 as yet unclassified
-loadConfigFor: aConfigurationName
+loadConfiguration: aConfigurationName
 	self inboxGofer
 		package: aConfigurationName;
 		load.

@@ -1,7 +1,5 @@
-as yet unclassified
-source: aCISource configuration: aConfigurationName
-	self flag: 'TODO: Change aConfigurationName to aConfigCommandLineHandler, supporting --group --version ..'.
+instance creation
+source: aCISource configuration: aMetacelloProject
 	^ (self source: aCISource) 
-		loadConfiguration: aConfigurationName;
-		url: aCISource inboxUrl;
+		configuration: aMetacelloProject;
 		yourself.

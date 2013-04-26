@@ -1,5 +1,5 @@
 instance creation
 url: anURL 
 	^ self new 
-		inboxUrl: anURL;
+		url: anURL;
 		yourself.

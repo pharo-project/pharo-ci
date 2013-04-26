@@ -1,3 +1,3 @@
 protocol
 publicUrl
-	^ self url 
+	^ self source url

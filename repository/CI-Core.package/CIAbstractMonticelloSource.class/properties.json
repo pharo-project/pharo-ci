@@ -6,10 +6,9 @@
 		 ],
 	"commentStamp" : "<historical>",
 	"instvars" : [
-		"manager",
 		"url" ],
-	"name" : "CIAbstractSource",
+	"name" : "CIAbstractMonticelloSource",
 	"pools" : [
 		 ],
-	"super" : "Object",
+	"super" : "CIAbstractSource",
 	"type" : "normal" }

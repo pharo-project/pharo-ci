@@ -7,7 +7,6 @@
 	"commentStamp" : "<historical>",
 	"instvars" : [
 		"configuration",
-		"url",
 		"impactedPackages" ],
 	"name" : "CIConfigurationChange",
 	"pools" : [

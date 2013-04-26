@@ -1,4 +1,3 @@
 accessing
-configuration: anObject
-	configuration := anObject.
-	^ self yourself.
+configuration: aMetacelloProject
+	configuration := aMetacelloProject
