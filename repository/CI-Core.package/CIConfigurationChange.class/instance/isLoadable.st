@@ -1,3 +1,3 @@
 testing
 isLoadable
-	^ configuration notNil
+	^ configurationPoint notNil

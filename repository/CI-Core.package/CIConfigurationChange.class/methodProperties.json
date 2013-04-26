@@ -1,14 +1,16 @@
 {
 	"class" : {
-		"source:configuration:" : "CamilloBruni 4/26/2013 15:48" },
+		"source:configurationPoint:" : "CamilloBruni 4/26/2013 16:24" },
 	"instance" : {
 		"basicLoad" : "ErwanDouaille 4/18/2013 11:49",
-		"configuration" : "CamilloBruni 4/26/2013 15:47",
-		"configuration:" : "CamilloBruni 4/26/2013 15:47",
+		"configurationPoint" : "CamilloBruni 4/26/2013 16:22",
+		"configurationPoint:" : "CamilloBruni 4/26/2013 16:23",
+		"group" : "CamilloBruni 4/26/2013 16:15",
 		"id" : "ErwanDouaille 4/16/2013 16:11",
 		"impactedPackages" : "ErwanDouaille 4/17/2013 11:21",
 		"impactedPackages:" : "ErwanDouaille 4/17/2013 11:21",
-		"isLoadable" : "ErwanDouaille 4/15/2013 14:23",
+		"isLoadable" : "CamilloBruni 4/26/2013 16:22",
 		"name" : "ErwanDouaille 4/16/2013 16:11",
 		"publicUrl" : "CamilloBruni 4/26/2013 15:49",
-		"resolveImpactedPackages" : "ErwanDouaille 4/17/2013 14:47" } }
+		"resolveImpactedPackages" : "ErwanDouaille 4/17/2013 14:47",
+		"version" : "CamilloBruni 4/26/2013 16:15" } }

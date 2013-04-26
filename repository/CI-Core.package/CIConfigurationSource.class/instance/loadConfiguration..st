@@ -1,4 +1,4 @@
-as yet unclassified
+private
 loadConfiguration: aConfigurationName
 	self inboxGofer
 		package: aConfigurationName;

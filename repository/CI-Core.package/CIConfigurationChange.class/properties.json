@@ -6,8 +6,8 @@
 		 ],
 	"commentStamp" : "<historical>",
 	"instvars" : [
-		"configuration",
-		"impactedPackages" ],
+		"impactedPackages",
+		"configurationPoint" ],
 	"name" : "CIConfigurationChange",
 	"pools" : [
 		 ],
