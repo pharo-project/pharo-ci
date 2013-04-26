@@ -2,12 +2,12 @@
 	<nodeDescription>Templates for the image-launcher app</nodeDescription>
 	<template>
 		<name>Pharo-1.4</name>
-		<url>https://ci.inria.fr/pharo/view/1.4/job/Pharo-1.4/lastSuccessfulBuild/artifact/Pharo-1.4.zip</url>
+		<url>http://files.pharo.org/image/14/latest.zip</url>
 		<category>Default</category>
 	</template>
 	<template>
 		<name>Pharo-2.0</name>
-		<url>https://ci.inria.fr/pharo/view/2.0/job/Pharo-2.0/lastSuccessfulBuild/artifact/Pharo.zip</url>
+		<url>http://files.pharo.org/image/20/latest.zip</url>
 		<category>Default</category>
 	</template>
 	<template>
