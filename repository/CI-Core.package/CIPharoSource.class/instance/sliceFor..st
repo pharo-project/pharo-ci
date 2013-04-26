@@ -1,3 +1,3 @@
 loading
 sliceFor: anIssue
-	^ self loadSliceFor: anIssue from: self inboxGofer
+	^ self loadSliceFor: anIssue from: self gofer

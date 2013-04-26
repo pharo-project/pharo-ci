@@ -3,13 +3,14 @@
 		 },
 	"instance" : {
 		"changeWithId:" : "ErwanDouaille 4/11/2013 16:20",
+		"changes" : "CamilloBruni 4/26/2013 16:27",
 		"isAuthenticated" : "CamilloBruni 4/9/2013 13:50",
 		"loadSliceFor:from:" : "CamilloBruni 4/9/2013 13:54",
 		"logOnWithEmail:password:" : "CamilloBruni 4/9/2013 13:50",
 		"nextIssueToBeChecked" : "ErwanDouaille 4/11/2013 16:22",
 		"openIssues" : "CamilloBruni 4/14/2013 23:31",
 		"publisher" : "ErwanDouaille 4/24/2013 10:49",
-		"sliceFor:" : "CamilloBruni 4/9/2013 13:55",
+		"sliceFor:" : "CamilloBruni 4/26/2013 16:35",
 		"tracker" : "CamilloBruni 4/9/2013 13:47",
 		"tracker:" : "CamilloBruni 4/9/2013 13:47",
 		"wrapIssue:" : "ErwanDouaille 4/11/2013 16:20" } }
