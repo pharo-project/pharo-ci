@@ -62,7 +62,7 @@ guard()
 
 
 puts REPOS="git://github.com/dalehenrich/filetree.git"
-system("test -e filetree || git clone -b pharo2.0 --no-checkout #{REPOS}")
+system("test -e filetree || git clone --depth=1 -b pharo2.0 --no-checkout #{REPOS}")
 system("git --git-dir=filetree/.git pull")
 guard()
 
