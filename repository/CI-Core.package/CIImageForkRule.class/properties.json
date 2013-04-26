@@ -6,10 +6,9 @@
 		 ],
 	"commentStamp" : "<historical>",
 	"instvars" : [
-		"previousTestResult",
-		"loadTime" ],
-	"name" : "CITestChangeDifferenceRule",
+		 ],
+	"name" : "CIImageForkRule",
 	"pools" : [
 		 ],
-	"super" : "CIImageForkRule",
+	"super" : "CIAbstractValidationRule",
 	"type" : "normal" }

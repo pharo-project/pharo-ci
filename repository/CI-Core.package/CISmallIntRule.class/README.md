@@ -1,1 +1,1 @@
-A CISmallIntRule is responsible to run smallint rules and report what's going wrong.
+A CISmallIntRule is responsible to run smallint rules and report the results.
