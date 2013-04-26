@@ -1,0 +1,18 @@
+<imageLauncher>
+	<nodeDescription>Templates for the image-launcher app</nodeDescription>
+	<template>
+		<name>Pharo-1.4</name>
+		<url>https://ci.inria.fr/pharo/view/1.4/job/Pharo-1.4/lastSuccessfulBuild/artifact/Pharo-1.4.zip</url>
+		<category>Default</category>
+	</template>
+	<template>
+		<name>Pharo-2.0</name>
+		<url>https://ci.inria.fr/pharo/view/2.0/job/Pharo-2.0/lastSuccessfulBuild/artifact/Pharo.zip</url>
+		<category>Default</category>
+	</template>
+	<template>
+		<name>Seaside-3.1-in-Pharo-2.0</name>
+		<url>https://ci.inria.fr/pharo-contribution/job/Seaside-3.1-in-Pharo-2.0/lastSuccessfulBuild/artifact/Seaside-3.1-in-Pharo-2.0.zip</url>
+		<category>Web</category>
+	</template>
+</imageLauncher>
