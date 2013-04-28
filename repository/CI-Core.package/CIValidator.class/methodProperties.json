@@ -2,7 +2,7 @@
 	"class" : {
 		"configurationTest" : "CamilloBruni 4/25/2013 22:17",
 		"manager:" : "CamilloBruni 4/14/2013 21:42",
-		"pharo30" : "ErwanDouaille 4/17/2013 09:54",
+		"pharo30" : "CamilloBruni 4/29/2013 00:25",
 		"sliceTest" : "ErwanDouaille 4/17/2013 10:40" },
 	"instance" : {
 		"addRule:" : "CamilloBruni 4/10/2013 14:38",
@@ -16,4 +16,4 @@
 		"publishValidationResult:" : "CamilloBruni 4/15/2013 10:29",
 		"publisher" : "CamilloBruni 4/14/2013 22:48",
 		"rules" : "CamilloBruni 4/9/2013 14:43",
-		"validateChange:" : "CamilloBruni 4/25/2013 21:02" } }
+		"validateChange:" : "CamilloBruni 4/29/2013 00:52" } }

@@ -1,6 +1,6 @@
 {
 	"class" : {
-		"pharo30" : "CamilloBruni 4/26/2013 15:41" },
+		 },
 	"instance" : {
 		"changeWithId:" : "ErwanDouaille 4/11/2013 15:29",
 		"isAuthenticated" : "CamilloBruni 4/9/2013 13:49",

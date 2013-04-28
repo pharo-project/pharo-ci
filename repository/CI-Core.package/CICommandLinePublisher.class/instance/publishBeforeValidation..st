@@ -1,3 +1,5 @@
 publishing
 publishBeforeValidation: aCIChange
-	"nothing to be done here"
+	VTermOutputDriver stderr 
+		yellow: 'Starting validation of ', aCIChange asString; 
+		flush; clear; lf.
