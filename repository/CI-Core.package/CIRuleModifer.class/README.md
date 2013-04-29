@@ -1,0 +1,1 @@
+I modify the validation result of a given rule.
