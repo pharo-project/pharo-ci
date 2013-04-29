@@ -11,3 +11,4 @@ dispatchSubCommand
 		ifTrue: [ ^ self loadIssue ].
 		
 	self testIssue.
+	self exitSuccess.

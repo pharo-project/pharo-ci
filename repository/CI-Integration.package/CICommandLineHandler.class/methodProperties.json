@@ -3,9 +3,9 @@
 		"commandName" : "CamilloBruni 12/4/2012 19:34",
 		"description" : "CamilloBruni 12/4/2012 19:34" },
 	"instance" : {
-		"activate" : "ErwanDouaille 4/18/2013 15:08",
+		"activate" : "CamilloBruni 4/29/2013 01:01",
 		"authenticateTracker" : "BenjaminVanRyseghem 3/22/2013 18:53",
-		"dispatchSubCommand" : "ErwanDouaille 4/15/2013 11:38",
+		"dispatchSubCommand" : "CamilloBruni 4/29/2013 01:01",
 		"fetchIssue" : "ErwanDouaille 4/16/2013 12:10",
 		"fetchNextIssue" : "BenjaminVanRyseghem 3/22/2013 19:16",
 		"handleIssueTestFailure" : "CamilloBruni 1/16/2013 17:57",

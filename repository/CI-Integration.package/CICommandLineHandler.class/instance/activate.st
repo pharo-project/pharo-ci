@@ -7,8 +7,10 @@ activate
 	subCommand= 'config'
 		ifTrue: [ 
 			self setUpConfig.
-			self testConfig inspect].
+			self testConfig inspect.
+			self exitSuccess ].
 	subCommand= 'slice'
 		ifTrue: [ 
 			self setUpSlice.
-			self dispatchSubCommand.].
+			self dispatchSubCommand ].
+	self exitFailure: 'Invalid subcommand: ', subCommand.
