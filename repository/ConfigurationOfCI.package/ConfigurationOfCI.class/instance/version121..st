@@ -15,7 +15,7 @@ version121: spec
 		spec 
 			package: 'FileSystem-Legacy' with: 'FileSystem-Legacy-CamilloBruni.1'.
 		spec 
-			package: 'CI-Core' with: 'CI-Core-CamilloBruni.165';
+			package: 'CI-Core' with: 'CI-Core-CamilloBruni.166';
 			package: 'CI-Integration' with: 'CI-Integration-CamilloBruni.48';
 			package: 'CI-Loader' with: 'CI-Loader-CamilloBruni.6';
 			package: 'CI-FogBugzAPI' with: 'CI-FogBugzAPI-CamilloBruni.33';
