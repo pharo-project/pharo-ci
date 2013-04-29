@@ -6,8 +6,8 @@ activate
 	subCommand := self argumentAt: 1.
 	subCommand= 'config'
 		ifTrue: [ 
-			self setUpConfig.
-			self testConfig inspect.
+			self setUpConfiguration.
+			self testConfiguration inspect.
 			^ self exitSuccess ].
 	subCommand= 'slice'
 		ifTrue: [ 

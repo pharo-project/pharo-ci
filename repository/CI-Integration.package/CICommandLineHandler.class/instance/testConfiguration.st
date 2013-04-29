@@ -1,5 +1,5 @@
 action-test
-testConfig
+testConfiguration
 	self inform: 'Testing config ', issue id asString.
 	stdout nextPutAll: issue publicUrl; lf."
 	self issueChecker validator: CIValidator configurationTest ."
