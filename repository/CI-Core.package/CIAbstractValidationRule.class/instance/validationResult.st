@@ -1,5 +1,5 @@
 test-report
-buildValidationResult
+validationResult
 	| result |
 	result := CIValidationResult new.
 	result 

@@ -7,4 +7,4 @@ validate: aChange
 		valueWithin: self timeout 
 		onTimeout: [ self timeoutFailure ].
 	
-	^ self buildValidationResult
+	^ self validationResult

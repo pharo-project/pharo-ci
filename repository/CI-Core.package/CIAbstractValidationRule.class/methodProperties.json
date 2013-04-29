@@ -18,7 +18,6 @@
 		"andWith:" : "CamilloBruni 4/25/2013 13:59",
 		"andWithAll:" : "CamilloBruni 4/20/2013 23:34",
 		"asCIValidationRule" : "CamilloBruni 4/20/2013 23:37",
-		"buildValidationResult" : "ErwanDouaille 4/24/2013 10:10",
 		"change" : "ErwanDouaille 4/11/2013 16:14",
 		"change:" : "ErwanDouaille 4/11/2013 16:14",
 		"initialize" : "CamilloBruni 4/26/2013 13:51",
@@ -27,5 +26,7 @@
 		"timeout" : "CamilloBruni 4/28/2013 23:53",
 		"timeoutFailure" : "CamilloBruni 4/26/2013 14:59",
 		"validate" : "CamilloBruni 4/25/2013 22:11",
-		"validate:" : "CamilloBruni 4/29/2013 01:09",
+		"validate:" : "CamilloBruni 4/29/2013 01:45",
+		"validationResult" : "CamilloBruni 4/29/2013 01:45",
+		"validationResult:" : "CamilloBruni 4/29/2013 01:47",
 		"|" : "CamilloBruni 4/20/2013 23:36" } }

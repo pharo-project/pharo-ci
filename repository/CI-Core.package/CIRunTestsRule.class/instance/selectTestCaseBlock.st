@@ -1,3 +1,3 @@
 accessing
 selectTestCaseBlock
-	^ selectTestCaseBlock ifNil: [ ^ [ :testCase| true ] ]
+	^ selectTestCaseBlock ifNil: [ ^ [ :testCase | true ] ]

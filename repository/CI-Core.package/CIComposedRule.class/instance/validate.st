@@ -7,6 +7,6 @@ validate
 	self rules do: [ :validationRule |
 		result := result, (validationRule validate: self change).
 		(self shouldContinueValidationWith: result)
-			ifFalse: [ ^ result ]].
+			ifFalse: [ ^ self validationResult: result ]].
 
-	^ result
+	self validationResult: result

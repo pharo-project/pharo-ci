@@ -1,5 +1,5 @@
 concatenation
 , aCIValidationResult 
-	self failures addAll: aCIValidationResult failures.
-	self warnings addAll: aCIValidationResult warnings.
-	self messages addAll: aCIValidationResult messages.
+	failures addAll: aCIValidationResult failures.
+	warnings addAll: aCIValidationResult warnings.
+	messages addAll: aCIValidationResult messages.
