@@ -4,4 +4,4 @@ modifyResult: aCIValidationResult
 		addAllFailures: aCIValidationResult failures;
 		addAllFailures: aCIValidationResult warnings;
 		addAllMessages: aCIValidationResult messages;
-		result
+		yourself

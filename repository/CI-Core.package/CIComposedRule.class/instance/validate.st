@@ -9,4 +9,5 @@ validate
 		(self shouldContinueValidationWith: result)
 			ifFalse: [ ^ self validationResult: result ]].
 
-	self validationResult: result
+	self validationResult: result.
+	^ result

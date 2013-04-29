@@ -1,6 +1,6 @@
 tests
 testLoadEmptyChange
 	| rule result |
-	rule := self ruleClass selectTestCaseBlock: [ :aClass | aClass = ObjectTest ]	.
-	result := rule validate: self newChange.
+	rule := self newInstance.
+	result := self validate: rule.
 	self assert: result isSuccess.
