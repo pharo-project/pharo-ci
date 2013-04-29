@@ -1,0 +1,3 @@
+protocol
+basicValidate
+	self shouldBeImplemented

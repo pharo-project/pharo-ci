@@ -2,8 +2,5 @@
 	"class" : {
 		"selectTestCaseBlock:" : "ErwanDouaille 4/18/2013 14:44" },
 	"instance" : {
-		"addWarning:" : "CamilloBruni 4/25/2013 22:04",
-		"falsePositives:includesResult:" : "ErwanDouaille 4/18/2013 14:44",
-		"removeFalseErrors" : "ErwanDouaille 4/18/2013 14:44",
-		"removeFalsePositives:from:" : "ErwanDouaille 4/18/2013 14:44",
-		"runAllTests" : "ErwanDouaille 4/18/2013 15:12" } }
+		"addWarning:" : "CamilloBruni 4/29/2013 21:31",
+		"basicValidate" : "CamilloBruni 4/29/2013 21:31" } }

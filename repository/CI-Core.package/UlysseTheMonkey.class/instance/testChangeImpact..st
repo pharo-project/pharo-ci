@@ -18,7 +18,7 @@ testChangeImpact: aBlock
 
 		"Then I re run tests"
 		testResult := self runAllTests.
-		self removeFalseErrors.
+		self removeFalsePositives.
 		
 	"collect possible errors"
 	] on: Error do: [ :e| self addError: e ].

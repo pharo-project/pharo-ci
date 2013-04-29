@@ -1,4 +1,4 @@
 adding
-addWarning: aWarning
-	warnings add:(String streamContents: [ :stream |
-		stream tab print: aWarning ;<< ' is not yet categorized ...'])
+addWarning: aCompiledMethod
+	super addWarning: (String streamContents: [ :stream |
+		stream print: aCompiledMethod; << ' is uncategorized'])

@@ -6,11 +6,11 @@
 		 ],
 	"commentStamp" : "<historical>",
 	"instvars" : [
-		"loadBlock",
 		"id",
-		"publicUrl",
 		"isLoadable",
-		"name" ],
+		"loadBlock",
+		"name",
+		"publicUrl" ],
 	"name" : "CITestChange",
 	"pools" : [
 		 ],

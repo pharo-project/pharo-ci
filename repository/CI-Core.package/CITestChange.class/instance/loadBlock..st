@@ -1,3 +1,3 @@
 accessing
-loadBlock: anObject
-	loadBlock := anObject
+loadBlock: aBlock
+	loadBlock := aBlock

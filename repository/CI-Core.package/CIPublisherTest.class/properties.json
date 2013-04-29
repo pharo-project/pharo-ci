@@ -10,5 +10,5 @@
 	"name" : "CIPublisherTest",
 	"pools" : [
 		 ],
-	"super" : "TestCase",
+	"super" : "CITestCase",
 	"type" : "normal" }

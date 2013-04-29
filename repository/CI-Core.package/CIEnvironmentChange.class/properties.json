@@ -1,0 +1,15 @@
+{
+	"category" : "CI-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"from",
+		"to" ],
+	"name" : "CIEnvironmentChange",
+	"pools" : [
+		 ],
+	"super" : "CIAbstractChange",
+	"type" : "normal" }

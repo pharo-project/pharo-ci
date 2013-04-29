@@ -1,3 +1,4 @@
 protocol
 validate
-	self newImageDo: [ self loadAndValidate ].
+	self newImageDo: [ 
+		self validateChangeBlock: [ self change load ]].

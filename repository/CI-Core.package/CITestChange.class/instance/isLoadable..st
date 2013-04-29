@@ -1,3 +1,3 @@
 accessing
-isLoadable: anObject
-	isLoadable := anObject
+isLoadable: aBoolean
+	isLoadable := aBoolean

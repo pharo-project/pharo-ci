@@ -2,12 +2,14 @@
 	"class" : {
 		 },
 	"instance" : {
+		"basicLoad" : "CamilloBruni 4/29/2013 23:53",
 		"id" : "CamilloBruni 4/25/2013 21:50",
 		"id:" : "CamilloBruni 4/25/2013 21:49",
-		"isLoadable" : "CamilloBruni 4/25/2013 21:49",
-		"isLoadable:" : "CamilloBruni 4/25/2013 21:49",
+		"initialize" : "CamilloBruni 4/29/2013 23:49",
+		"isLoadable" : "CamilloBruni 4/29/2013 23:50",
+		"isLoadable:" : "CamilloBruni 4/29/2013 23:50",
 		"loadBlock" : "CamilloBruni 4/25/2013 21:49",
-		"loadBlock:" : "CamilloBruni 4/25/2013 21:49",
+		"loadBlock:" : "CamilloBruni 4/29/2013 23:50",
 		"name" : "CamilloBruni 4/25/2013 21:53",
 		"name:" : "CamilloBruni 4/25/2013 21:49",
 		"publicUrl" : "CamilloBruni 4/25/2013 21:50",

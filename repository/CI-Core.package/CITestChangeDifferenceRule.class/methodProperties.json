@@ -2,10 +2,15 @@
 	"class" : {
 		 },
 	"instance" : {
-		"loadAndTest" : "CamilloBruni 4/25/2013 22:15",
-		"loadAndValidate" : "CamilloBruni 4/25/2013 22:24",
+		"basicValidate" : "CamilloBruni 4/29/2013 21:22",
+		"environmentCopy" : "CamilloBruni 4/29/2013 21:16",
+		"falsePositives:includesResult:" : "CamilloBruni 4/29/2013 21:10",
 		"loadTime" : "CamilloBruni 4/25/2013 22:26",
-		"preRunTests" : "ErwanDouaille 4/22/2013 11:21",
-		"removeFalseErrors" : "ErwanDouaille 4/22/2013 11:22",
-		"testChangeImpact:" : "CamilloBruni 4/29/2013 01:45",
-		"validate" : "CamilloBruni 4/26/2013 13:49" } }
+		"postLoadValidate" : "CamilloBruni 4/29/2013 21:22",
+		"preLoadValidate" : "CamilloBruni 4/29/2013 21:23",
+		"recordEnvironmentChangeDuring:" : "CamilloBruni 4/29/2013 21:16",
+		"recordValidationChangesDuring:" : "CamilloBruni 4/29/2013 21:20",
+		"removeFalsePositives" : "CamilloBruni 4/29/2013 21:09",
+		"removeFalsePositives:from:" : "CamilloBruni 4/29/2013 21:04",
+		"validate" : "CamilloBruni 4/29/2013 21:22",
+		"validateChangeBlock:" : "CamilloBruni 4/29/2013 21:19" } }

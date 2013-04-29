@@ -6,8 +6,9 @@
 		 ],
 	"commentStamp" : "<historical>",
 	"instvars" : [
-		"previousTestResult",
-		"loadTime" ],
+		"loadTime",
+		"environmentChange",
+		"previousResult" ],
 	"name" : "CITestChangeDifferenceRule",
 	"pools" : [
 		 ],
