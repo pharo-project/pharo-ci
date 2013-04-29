@@ -6,6 +6,7 @@
 		"change:" : "ErwanDouaille 4/11/2013 16:14",
 		"harden" : "CamilloBruni 4/29/2013 14:10",
 		"selectTestCaseBlock:" : "ErwanDouaille 4/22/2013 10:05",
+		"soften" : "CamilloBruni 4/29/2013 14:33",
 		"validate:" : "ErwanDouaille 4/23/2013 13:02",
 		"|" : "CamilloBruni 4/20/2013 23:36" },
 	"instance" : {
@@ -25,6 +26,7 @@
 		"initialize" : "CamilloBruni 4/26/2013 13:51",
 		"orWith:" : "CamilloBruni 4/25/2013 13:59",
 		"orWithAll:" : "CamilloBruni 4/20/2013 23:34",
+		"soften" : "CamilloBruni 4/29/2013 14:34",
 		"timeout" : "CamilloBruni 4/28/2013 23:53",
 		"timeoutFailure" : "CamilloBruni 4/26/2013 14:59",
 		"validate" : "CamilloBruni 4/25/2013 22:11",

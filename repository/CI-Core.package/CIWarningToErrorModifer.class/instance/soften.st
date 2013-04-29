@@ -1,0 +1,3 @@
+conversion
+soften
+	^ self rule
