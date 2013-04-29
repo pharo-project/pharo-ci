@@ -1,5 +1,5 @@
 instance creation
 pharo30
 	^ self new
-		addRule: CIRunTestsRule & CIClassCommentRule harden & CIUncategorizedMethodRule;
+		addRule: CIRunTestsRule & CIClassCommentRule harden & CIUncategorizedMethodRule harden;
 		yourself

@@ -10,4 +10,4 @@ publishFailure: aCIValidationResult
 	
 	hasTestFailures
 		ifTrue: [ change workNeededFailingTests: aCIValidationResult asString ]
-		ifFalse: [ change workNeeded: aCIValidationResult htmlString ]
+		ifFalse: [ change workNeeded: aCIValidationResult asString ]
