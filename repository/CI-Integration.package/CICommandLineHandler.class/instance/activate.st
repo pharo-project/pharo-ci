@@ -8,9 +8,9 @@ activate
 		ifTrue: [ 
 			self setUpConfig.
 			self testConfig inspect.
-			self exitSuccess ].
+			^ self exitSuccess ].
 	subCommand= 'slice'
 		ifTrue: [ 
 			self setUpSlice.
-			self dispatchSubCommand ].
+			^ self dispatchSubCommand ].
 	self exitFailure: 'Invalid subcommand: ', subCommand.
