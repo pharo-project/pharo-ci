@@ -1,5 +1,5 @@
 instance creation
-configuration
+configurationTest
 	^ self new
 		addRule: CIRunConfigTestsRule & CIClassCommentRule & CIUncategorizedMethodRule;
 		yourself
