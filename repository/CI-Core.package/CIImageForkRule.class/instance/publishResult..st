@@ -3,13 +3,11 @@ publishResult: aBlock
 	| globals result serializer |
 	
 	
-	globals := Smalltalk globals copy.
+	globals := Smalltalk globals asSet.
 	result := aBlock value.
+	globals := (Smalltalk globals asSet \ globals) select: [ :each | each isBehavior ].
 	
 	serializer := FLSerializer newDefault.
-	
-	globals := (Smalltalk globals \ globals ) values select: [ :each| each isBehavior ].
-	
 	serializer analyzer considerInternalAllBehaviors: globals.
 	serializer
 		serialize: { globals. result } 
