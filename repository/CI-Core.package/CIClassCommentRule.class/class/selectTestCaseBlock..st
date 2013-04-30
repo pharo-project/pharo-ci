@@ -1,4 +1,4 @@
-as yet unclassified
+instance creation
 selectTestCaseBlock: aBlock
 	^ self new
 		 	selectTestCaseBlock: aBlock;

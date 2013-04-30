@@ -3,7 +3,7 @@ publishValidationResult: aCIValidationResult
 
 	self stream: (self outputDirectory / aCIValidationResult change name asString, 'xml') writeStream.
 	self stream nextPutAll: (self xmlBeginning: aCIValidationResult) .
-	self halt.
+	"self halt."
 	(aCIValidationResult isSuccess )
 			ifTrue: [ 
 				self stream nextPutAll: (self publishSuccess: aCIValidationResult).
