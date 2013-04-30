@@ -1,4 +1,4 @@
 accessing
 newValidationRule
-	^ CIBlockRule block: [ :change| 
+	^ CITestRule block: [ :change| 
 		self newValidationResult ]

@@ -3,4 +3,5 @@
 		 },
 	"instance" : {
 		"ruleClass" : "CamilloBruni 4/30/2013 00:02",
-		"testHarden" : "CamilloBruni 4/30/2013 00:09" } }
+		"testModify" : "ErwanDouaille 4/30/2013 13:54",
+		"testSoften" : "ErwanDouaille 4/30/2013 13:50" } }

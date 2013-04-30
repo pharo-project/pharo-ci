@@ -1,6 +1,6 @@
 tests
-testLoadEmptyChange
+testLoadSuccessfulChange
 	| rule result |
 	rule := self newInstance.
-	result := rule validate: self newChange.
+	result := rule validate: self newSuccessfulChange.
 	self assert: result isSuccess.

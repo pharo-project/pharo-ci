@@ -2,7 +2,13 @@
 	"class" : {
 		"isAbstract" : "CamilloBruni 4/29/2013 21:34" },
 	"instance" : {
+		"newFailingChange" : "ErwanDouaille 4/30/2013 17:14",
 		"newInstance" : "CamilloBruni 4/29/2013 23:59",
+		"newSuccessfulChange" : "ErwanDouaille 4/30/2013 17:15",
+		"newWarningChange" : "ErwanDouaille 4/30/2013 17:32",
 		"ruleClass" : "CamilloBruni 4/29/2013 21:35",
-		"testLoadEmptyChange" : "CamilloBruni 4/30/2013 00:09",
+		"testLoadEmptyChange" : "ErwanDouaille 4/30/2013 17:13",
+		"testLoadFailingChange" : "ErwanDouaille 4/30/2013 17:16",
+		"testLoadSuccessfulChange" : "ErwanDouaille 4/30/2013 17:34",
+		"testLoadWarningChange" : "ErwanDouaille 4/30/2013 17:32",
 		"validate:" : "CamilloBruni 4/30/2013 00:09" } }

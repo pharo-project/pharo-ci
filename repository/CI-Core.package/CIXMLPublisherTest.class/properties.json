@@ -1,0 +1,14 @@
+{
+	"category" : "CI-Core-Test",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "CIXMLPublisherTest",
+	"pools" : [
+		 ],
+	"super" : "CIPublisherTest",
+	"type" : "normal" }

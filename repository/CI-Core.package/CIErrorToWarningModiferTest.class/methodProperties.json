@@ -2,4 +2,6 @@
 	"class" : {
 		 },
 	"instance" : {
-		"ruleClass" : "CamilloBruni 4/30/2013 00:02" } }
+		"ruleClass" : "CamilloBruni 4/30/2013 00:02",
+		"testHarden" : "ErwanDouaille 4/30/2013 15:11",
+		"testModify" : "ErwanDouaille 4/30/2013 13:57" } }
