@@ -3,8 +3,8 @@ addError: anError
 	|index| 
 	
 	self flag: 'ugly'.
-	anError isString 
-		ifTrue: [ ^ errors add: anError ].
+	(anError isKindOf: Exception) 
+		ifFalse: [ ^ errors add: anError asString ].
 		
 	index := 1.
 	errors add:(String streamContents: [ :stream|
