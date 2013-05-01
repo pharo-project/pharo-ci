@@ -1,6 +1,6 @@
 validation
 basicValidate
-	| suite |
+	| suite result |
 	
 	suite := TestSuite new.
 	
@@ -9,5 +9,7 @@ basicValidate
 		thenDo: [ :testClass |
 			testClass isAbstract 
 				ifFalse: [ suite addTests: testClass suite tests ]].
-			
- 	self testResult: suite run
+	result := 	CITestResult new.
+	result maxTest: suite tests size.
+ 	suite run: result.
+	self testResult: result.

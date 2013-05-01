@@ -1,0 +1,18 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"addError:" : "CamilloBruni 5/1/2013 11:47",
+		"addFailure:" : "CamilloBruni 5/1/2013 11:47",
+		"addPass:" : "CamilloBruni 5/1/2013 11:51",
+		"addSkip:" : "CamilloBruni 5/1/2013 11:57",
+		"currentTestCase" : "CamilloBruni 5/1/2013 11:48",
+		"increaseTestCount" : "CamilloBruni 5/1/2013 11:09",
+		"initialize" : "CamilloBruni 5/1/2013 11:10",
+		"maxTest" : "CamilloBruni 5/1/2013 11:10",
+		"maxTest:" : "CamilloBruni 5/1/2013 11:11",
+		"print:short:on:" : "CamilloBruni 5/1/2013 11:55",
+		"printProgress" : "CamilloBruni 5/1/2013 11:10",
+		"printTestCase:" : "CamilloBruni 5/1/2013 11:10",
+		"runCase:" : "CamilloBruni 5/1/2013 11:55",
+		"stderr" : "CamilloBruni 5/1/2013 11:10" } }

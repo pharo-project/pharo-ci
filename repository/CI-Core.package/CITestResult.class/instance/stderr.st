@@ -1,0 +1,3 @@
+accessing
+stderr
+	^ VTermOutputDriver stderr
