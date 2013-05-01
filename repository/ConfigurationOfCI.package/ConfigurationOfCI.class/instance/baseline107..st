@@ -13,7 +13,7 @@ baseline107: spec
 			zinc: spec.
 				
 		spec
-			package: 'CI-Core' with: [ spec requires: #('FuelMetalevel' 'CommandShell') ];
+			package: 'CI-Core' with: [ spec requires: #('FuelMetalevel'  'FileSystem-Legacy' 'CommandShell') ];
 			package: 'CI-FogBugzAPI' with: [ spec requires: #('CI-Core') ];
 			package: 'CI-GoogleIssueTracker' with: [ spec requires: #('CI-Core') ];
 			package: 'CI-Integration' with: [ 
