@@ -1,0 +1,3 @@
+tests
+testLoadSuccessfulChange
+	^ true
