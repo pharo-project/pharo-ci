@@ -2,4 +2,6 @@
 	"class" : {
 		 },
 	"instance" : {
-		 } }
+		"testShouldContinueFailureOrMessage" : "ErwanDouaille 5/2/2013 23:25",
+		"testShouldContinueMessageOrFailure" : "ErwanDouaille 5/2/2013 23:19",
+		"testShouldContinueNothingOrFailure" : "ErwanDouaille 5/2/2013 23:23" } }
