@@ -1,4 +1,4 @@
 protocol
 validate
 	^ self block ifNotNil: [ 
-		self block cull: self change ]
+		self validationResult: (self block cull: self change) ]
