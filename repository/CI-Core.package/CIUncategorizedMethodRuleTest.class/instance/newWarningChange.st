@@ -6,7 +6,7 @@ newWarningChange
 			classVariableNames: ''
 			poolDictionaries: ''
 			category: 'CI-Test'.
-		 (Smalltalk at:#CITestCommentClass) compile: 'testingUngategorized
+		 (Smalltalk at:#CITestClass) compile: 'testingUngategorized
 ^ self']
 	
 	
