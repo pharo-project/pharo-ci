@@ -2,4 +2,8 @@
 	"class" : {
 		 },
 	"instance" : {
+		"testLoadEmptyChange" : "ErwanDouaille 5/3/2013 11:23",
+		"testLoadFailingChange" : "ErwanDouaille 5/3/2013 11:24",
+		"testLoadSuccessfulChange" : "ErwanDouaille 5/3/2013 11:24",
+		"testLoadWarningChange" : "ErwanDouaille 5/3/2013 11:24",
 		"testShouldContinue" : "ErwanDouaille 5/2/2013 23:53" } }

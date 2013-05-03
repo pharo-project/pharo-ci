@@ -1,4 +1,4 @@
-as yet unclassified
+tests
 testShouldContinueMessageAndFailure
 
 	| ruleOne ruleTwo aResult |

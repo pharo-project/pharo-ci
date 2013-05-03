@@ -1,4 +1,4 @@
-as yet unclassified
+tests
 testShouldContinue
 
 	| ruleOne ruleTwo aResult ruleThree ruleFour |

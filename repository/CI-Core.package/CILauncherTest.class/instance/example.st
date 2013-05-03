@@ -1,5 +1,5 @@
-as yet unclassified
-testExample
+tests
+example
 	| collection arguments command |
 	collection := OrderedCollection new.
 	collection add: 'config'.
