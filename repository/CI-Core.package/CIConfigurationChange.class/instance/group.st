@@ -1,3 +1,3 @@
 accessing
 group
-	^ group
+	^ self source group
