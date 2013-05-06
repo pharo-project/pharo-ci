@@ -17,5 +17,6 @@ setUpConfiguration
 	manager :=  CIChangeManager 
 			source: source
 			validator: CIValidator configuration.
+	self optionAt: 'group' ifPresent: [ :group | issue := manager changeWithGroup: group ].
 	self optionAt: 'version' ifPresent: [ :id | ^ issue := manager changeWithId: id ].
 	^ issue := manager changeWithId: #stable
