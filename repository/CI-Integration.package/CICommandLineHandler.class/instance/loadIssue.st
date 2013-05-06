@@ -1,7 +1,7 @@
-action
+setup
 loadIssue
+
 	self inform: 'Loading  issue '.
-	
-	self issueChecker loadCase: issue.
+	self manager loadCase: issue.
 	
 	Smalltalk snapshot: true andQuit: true.

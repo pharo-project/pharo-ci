@@ -7,9 +7,9 @@
 	"commentStamp" : "<historical>",
 	"instvars" : [
 		"issue",
-		"issueChecker",
 		"user",
-		"password" ],
+		"password",
+		"manager" ],
 	"name" : "CICommandLineHandler",
 	"pools" : [
 		 ],

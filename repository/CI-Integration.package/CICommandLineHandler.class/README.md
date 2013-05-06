@@ -1,4 +1,4 @@
-Usage: ci [config | slice ] [[list] [load|test [--issue=<issueNumber>][--next] [--update-issue]]] | [ --url="anURL" --config="ConfigurationOf" ]
+Usage: ci [config | slice ] [[list] [load|test [--issue=<issueNumber>][--next] [--update-issue]]] | [ anURL aConfigurationOf ]
 
 	list           	list all open issues
 	load            install the given or next open issue
@@ -9,8 +9,8 @@ Usage: ci [config | slice ] [[list] [load|test [--issue=<issueNumber>][--next] [
 	--next          		use the next open issue for the selected action
 	--update-issue     	if specified updates the issue with integration information
 	
-	--url          			describe the repository where the ConfigurationOf is
-	--update-issue     	describe wich ConfigurationOf we want to load and test
+	url          			describe the repository where the ConfigurationOf is
+	aConfigurationOf     	describe wich ConfigurationOf we want to load and test
 	
 Documentation:
 The CI command line handler interacts with the issue tracker, loads slice or configuration and tests submitted code.

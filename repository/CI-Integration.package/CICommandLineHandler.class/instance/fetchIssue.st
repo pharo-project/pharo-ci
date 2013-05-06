@@ -1,8 +1,4 @@
 action
 fetchIssue
-	| issueNumber |
-	
-	issueNumber := self optionAt: 'issue' ifAbsent: [
-		^ self fetchNextIssue ].
-	
-	issue := self issueChecker changeWithId: issueNumber.
+
+	issue := self manager changeWithId: (self optionAt: 'issue' ifAbsent: [ ^ self fetchNextIssue ]).

@@ -1,7 +1,7 @@
 action-list
 listIssueWithId: anId
 	
-	issue := self issueChecker changeWithId: anId.
+	issue := self manager changeWithId: anId.
 	self printOpenIssue: issue.
 
 	self exitSuccess.

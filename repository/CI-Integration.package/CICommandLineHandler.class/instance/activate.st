@@ -1,16 +1,17 @@
 activation
 activate
-	| subCommand |
+
 	self activateHelp
 		ifTrue: [ ^ self ].
-	subCommand := self argumentAt: 1.
-	subCommand= 'config'
+	
+	((self argumentAt: 1) = 'config')
 		ifTrue: [ 
 			self setUpConfiguration.
-			self testConfiguration inspect.
-			^ self exitSuccess ].
-	subCommand= 'slice'
+			^ self dispatchSubConfigurationCommand].
+		
+	((self argumentAt: 1) = 'slice')
 		ifTrue: [ 
 			self setUpSlice.
-			^ self dispatchSubCommand ].
-	self exitFailure: 'Invalid subcommand: ', subCommand.
+			^ self dispatchSubSliceCommand ].
+		
+	self exitFailure: 'Invalid subcommand: ', (self argumentAt: 1) .

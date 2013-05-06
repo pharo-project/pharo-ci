@@ -1,13 +1,21 @@
 setup
 setUpConfiguration
-	(self hasOption: 'url')
-		ifFalse: [ ^ self exitFailure: 'error: no url has been found for ConfigurationOf' ].
+
+	"(self hasOption: 'version')
+		ifTrue: "
+	| source error |	
+	
+	error := false.
+	[self argumentAt: 3 ] 
+		on: Error,Halt,Exit 
+		do: [ error := true].
+	
+	error 
+		ifTrue: [ source := CIConfigurationSource url: (self argumentAt: 2) ]
+		ifFalse: [ source := CIConfigurationSource url: (self argumentAt: 2)  configurationName:  (self argumentAt: 3) ] .
 		
-	issueChecker :=  CIChangeManager 
-			source: (CIConfigurationSource url: (self optionAt: 'url')) 
+	manager :=  CIChangeManager 
+			source: source
 			validator: CIValidator configuration.
-		
-	(self hasOption: 'config')
-		ifFalse: [ ^ self exitFailure: 'error: no config option has been found' ].
-		
-	issue := issueChecker changeWithId: (self optionAt: 'config').
+	self optionAt: 'version' ifPresent: [ :id | ^ issue := manager changeWithId: id ].
+	^ issue := manager changeWithId: #stable
