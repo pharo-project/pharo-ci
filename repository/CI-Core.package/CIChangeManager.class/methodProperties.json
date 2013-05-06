@@ -4,6 +4,7 @@
 		"pharo30" : "CamilloBruni 4/14/2013 21:33",
 		"source:validator:" : "CamilloBruni 4/14/2013 21:33" },
 	"instance" : {
+		"changeWithGroup:" : "ErwanDouaille 5/6/2013 14:42",
 		"changeWithId:" : "ErwanDouaille 4/11/2013 15:29",
 		"isAuthenticated" : "CamilloBruni 4/9/2013 13:48",
 		"logOn" : "BenjaminVanRyseghem 3/22/2013 17:35",
