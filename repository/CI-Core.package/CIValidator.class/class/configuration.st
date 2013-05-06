@@ -1,5 +1,5 @@
 instance creation
-configurationTest
+configuration
 	^ self new
 		addRule: CIClassCommentRule & CIUncategorizedMethodRule;
 		yourself

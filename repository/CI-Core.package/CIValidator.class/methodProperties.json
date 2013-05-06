@@ -1,9 +1,9 @@
 {
 	"class" : {
-		"configurationTest" : "CamilloBruni 4/29/2013 21:23",
+		"configuration" : "ErwanDouaille 5/6/2013 11:25",
 		"manager:" : "CamilloBruni 4/14/2013 21:42",
 		"pharo30" : "CamilloBruni 4/29/2013 15:11",
-		"sliceTest" : "ErwanDouaille 4/17/2013 10:40" },
+		"slice" : "ErwanDouaille 5/6/2013 11:25" },
 	"instance" : {
 		"addRule:" : "CamilloBruni 4/10/2013 14:38",
 		"asertLoadable:" : "ErwanDouaille 4/16/2013 12:48",

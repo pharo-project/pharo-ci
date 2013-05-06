@@ -1,3 +1,3 @@
 accessing
 id
-	^self configuration name
+	^self configurationPoint name

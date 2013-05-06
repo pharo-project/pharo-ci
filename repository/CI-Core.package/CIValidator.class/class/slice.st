@@ -1,3 +1,3 @@
 instance creation
-sliceTest
+slice
 	^self pharo30 
