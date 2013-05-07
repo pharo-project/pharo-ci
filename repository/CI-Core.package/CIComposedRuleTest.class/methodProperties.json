@@ -2,4 +2,7 @@
 	"class" : {
 		"isAbstract" : "CamilloBruni 4/30/2013 09:42" },
 	"instance" : {
-		 } }
+		"testLoadEmptyChange" : "ErwanDouaille 5/7/2013 15:46",
+		"testLoadFailingChange" : "ErwanDouaille 5/7/2013 15:46",
+		"testLoadSuccessfulChange" : "ErwanDouaille 5/7/2013 15:46",
+		"testLoadWarningChange" : "ErwanDouaille 5/7/2013 15:46" } }

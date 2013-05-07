@@ -4,8 +4,4 @@
 	"instance" : {
 		"ruleClass" : "CamilloBruni 4/30/2013 00:02",
 		"testHarden" : "ErwanDouaille 5/2/2013 19:17",
-		"testLoadEmptyChange" : "ErwanDouaille 5/2/2013 14:18",
-		"testLoadFailingChange" : "ErwanDouaille 5/2/2013 14:18",
-		"testLoadSuccessfulChange" : "ErwanDouaille 5/2/2013 14:18",
-		"testLoadWarningChange" : "ErwanDouaille 5/2/2013 14:18",
 		"testModify" : "ErwanDouaille 4/30/2013 13:57" } }

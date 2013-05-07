@@ -5,9 +5,5 @@
 		"changeForHardenTest" : "ErwanDouaille 5/3/2013 11:48",
 		"ruleClass" : "CamilloBruni 4/30/2013 00:02",
 		"ruleForHardenTest" : "ErwanDouaille 5/3/2013 11:48",
-		"testLoadEmptyChange" : "ErwanDouaille 5/2/2013 15:09",
-		"testLoadFailingChange" : "ErwanDouaille 5/2/2013 15:09",
-		"testLoadSuccessfulChange" : "ErwanDouaille 5/2/2013 15:09",
-		"testLoadWarningChange" : "ErwanDouaille 5/2/2013 15:09",
 		"testModify" : "ErwanDouaille 4/30/2013 13:54",
 		"testSoften" : "ErwanDouaille 5/2/2013 15:09" } }

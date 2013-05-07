@@ -1,3 +1,0 @@
-tests
-testLoadSuccessfulChange
-	^ true

@@ -2,9 +2,5 @@
 	"class" : {
 		 },
 	"instance" : {
-		"testLoadEmptyChange" : "ErwanDouaille 5/6/2013 22:35",
-		"testLoadFailingChange" : "ErwanDouaille 5/6/2013 22:35",
-		"testLoadSuccessfulChange" : "ErwanDouaille 5/6/2013 22:35",
-		"testLoadWarningChange" : "ErwanDouaille 5/6/2013 22:35",
 		"testShouldContinueFailureAndMessage" : "ErwanDouaille 5/6/2013 22:31",
 		"testShouldContinueMessageAndFailure" : "ErwanDouaille 5/6/2013 22:34" } }
