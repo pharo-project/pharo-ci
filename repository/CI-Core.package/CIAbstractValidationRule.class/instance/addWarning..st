@@ -1,4 +1,4 @@
 adding
 addWarning: aWarning
 	
-	warnings add: aWarning
+	self validationResult addWarning: aWarning

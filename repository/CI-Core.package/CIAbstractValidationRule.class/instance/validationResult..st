@@ -1,6 +1,3 @@
-test-report
+accessing
 validationResult: aCIValidationResult
-	errors := aCIValidationResult failures.
-	warnings := aCIValidationResult warnings.
-	messages := aCIValidationResult messages.
-	^ self validationResult
+	validationResult := aCIValidationResult 

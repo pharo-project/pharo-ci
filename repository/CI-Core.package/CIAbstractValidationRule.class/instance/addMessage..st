@@ -1,4 +1,4 @@
 adding
-addMessage: aMessage
+addMessage: message
 	
-	messages add: aMessage
+	self validationResult addMessage: message

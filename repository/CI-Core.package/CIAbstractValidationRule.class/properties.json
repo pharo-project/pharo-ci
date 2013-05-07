@@ -7,9 +7,7 @@
 	"commentStamp" : "<historical>",
 	"instvars" : [
 		"change",
-		"warnings",
-		"errors",
-		"messages" ],
+		"validationResult" ],
 	"name" : "CIAbstractValidationRule",
 	"pools" : [
 		 ],

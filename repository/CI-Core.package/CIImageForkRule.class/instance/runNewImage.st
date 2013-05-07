@@ -20,7 +20,5 @@ runNewImage
 	
 	[
 		result := self readResultFromForkedImage: forkedImage.
-		errors addAll: result failures.
-		warnings addAll: result warnings.
-		messages addAll: result messages.
+		self addValidationResult:  result.
 	] ensure: [ self deleteTemporaryImage ]
