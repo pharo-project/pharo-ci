@@ -2,18 +2,16 @@ file creation
 publishValidationResult: aCIValidationResult
 
 	self stream: (self outputDirectory / aCIValidationResult change name asString, 'html') writeStream.
-	self stream nextPutAll: (self htmlBeginning: aCIValidationResult) .
+	self htmlBeginning: aCIValidationResult.
 	
 	(aCIValidationResult isSuccess )
-			ifTrue: [ 
-				self stream nextPutAll: (self publishSuccess: aCIValidationResult).
-				(aCIValidationResult messages isNil or: aCIValidationResult messages isEmpty ) 
-					ifFalse: [self stream nextPutAll: (self publishWarnings: aCIValidationResult)]]
-			ifFalse: [ 
-				self stream nextPutAll: (self publishFailures: aCIValidationResult) ].
-			
+			ifTrue: [self publishSuccess: aCIValidationResult]
+			ifFalse: [ self publishFailures: aCIValidationResult].
+	
+	(aCIValidationResult warnings isNil or: aCIValidationResult warnings isEmpty ) 
+		ifFalse: [self publishWarnings: aCIValidationResult]	.
 	(aCIValidationResult messages isNil or: [ aCIValidationResult messages isEmpty ])
-		ifFalse: [ self stream nextPutAll: (self publishMessages: aCIValidationResult) ].
+		ifFalse: [ self publishMessages: aCIValidationResult ].
 		
-	self stream nextPutAll: (self htmlEnding: aCIValidationResult) .
+	self htmlEnding: aCIValidationResult.
 	self stream close.

@@ -1,3 +1,3 @@
 accessing
 publisherClass
-	^ CIXMLPublisher
+	^ CIXMLPublisher 

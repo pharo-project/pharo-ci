@@ -4,5 +4,4 @@ xmlBeginning: aCIValidationResult
 		writer 
 			enablePrettyPrinting ;
 			xml;
-			comment: 'Pharo CI report';
-			tag: 'name' with: aCIValidationResult change name, ' - report']
+			comment: 'Pharo CI report']

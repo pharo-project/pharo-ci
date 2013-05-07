@@ -1,4 +1,4 @@
 accessing
 publisher
 	
-	^ CICommandLinePublisher, CIHTMLPublisher, CIXMLPublisher
+	^ CICommandLinePublisher, CIHTMLPublisher, CIXMLPublisher 
