@@ -1,0 +1,3 @@
+accessing
+xmlWriter
+	^ xmlWriter

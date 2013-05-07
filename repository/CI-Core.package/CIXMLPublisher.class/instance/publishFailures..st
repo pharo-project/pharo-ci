@@ -1,8 +1,8 @@
 publishing
 publishFailures: aCIValidationResult
-	| aString |
-	aString := '<finality>failure</finality>'.
-	aString := aString, '<failure>'.
-	aCIValidationResult failures do: [ :aFailure |
-		aString := aString, '<result>', aFailure asString, '</result>'. ].
-	^ aString, '</failure>'.
+		
+	self xmlWriter writeWith: [ :writer |
+		writer tag: 'finality' with: 'succeed'.
+		writer tag: 'failure' with: [
+			aCIValidationResult failures do: [ :aMessage |
+				writer tag: 'result' with:  aMessage ]]].

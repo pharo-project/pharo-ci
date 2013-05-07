@@ -2,18 +2,15 @@ file creation
 publishValidationResult: aCIValidationResult
 
 	self stream: (self outputDirectory / aCIValidationResult change name asString, 'xml') writeStream.
-	self stream nextPutAll: (self xmlBeginning: aCIValidationResult) .
-	"self halt."
+	self xmlWriter stream: self stream.
+	self xmlBeginning: aCIValidationResult .
 	(aCIValidationResult isSuccess )
-			ifTrue: [ 
-				self stream nextPutAll: (self publishSuccess: aCIValidationResult).
-				(aCIValidationResult messages isNil or: aCIValidationResult messages isEmpty ) 
-					ifFalse: [self stream nextPutAll: (self publishWarnings: aCIValidationResult)]]
-			ifFalse: [ 
-				self stream nextPutAll: (self publishFailures: aCIValidationResult) ].
+			ifTrue: [ self publishSuccess: aCIValidationResult ]
+			ifFalse: [ self publishFailures: aCIValidationResult ].
 			
+	(aCIValidationResult warnings isNil or: aCIValidationResult warnings isEmpty ) 
+		ifFalse: [self publishWarnings: aCIValidationResult].
 	(aCIValidationResult messages isNil or: [ aCIValidationResult messages isEmpty ])
-		ifFalse: [ self stream nextPutAll: (self publishMessages: aCIValidationResult) ].
+		ifFalse: [ self publishMessages: aCIValidationResult ].
 		
-	self stream nextPutAll: (self xmlEnding: aCIValidationResult) .
-	self stream close.
+	self xmlWriter close.

@@ -2,10 +2,12 @@
 	"class" : {
 		 },
 	"instance" : {
-		"publishFailures:" : "ErwanDouaille 4/22/2013 16:17",
-		"publishMessages:" : "ErwanDouaille 4/22/2013 16:16",
-		"publishSuccess:" : "ErwanDouaille 4/22/2013 15:55",
-		"publishValidationResult:" : "CamilloBruni 4/30/2013 19:44",
-		"publishWarnings:" : "ErwanDouaille 4/22/2013 16:17",
-		"xmlBeginning:" : "ErwanDouaille 4/22/2013 16:18",
-		"xmlEnding:" : "ErwanDouaille 4/22/2013 16:19" } }
+		"initialize" : "ErwanDouaille 5/7/2013 11:20",
+		"publishFailures:" : "ErwanDouaille 5/7/2013 11:16",
+		"publishMessages:" : "ErwanDouaille 5/7/2013 11:13",
+		"publishSuccess:" : "ErwanDouaille 5/7/2013 11:27",
+		"publishValidationResult:" : "ErwanDouaille 5/7/2013 11:40",
+		"publishWarnings:" : "ErwanDouaille 5/7/2013 11:17",
+		"xmlBeginning:" : "ErwanDouaille 5/7/2013 11:41",
+		"xmlWriter" : "ErwanDouaille 5/7/2013 11:02",
+		"xmlWriter:" : "ErwanDouaille 5/7/2013 11:02" } }

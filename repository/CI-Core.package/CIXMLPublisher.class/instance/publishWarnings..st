@@ -1,8 +1,8 @@
 publishing
 publishWarnings: aCIValidationResult 
-	| aString |
-	aString := '<failure>'.
-	aCIValidationResult warnings do: [ :aWarning |
-		aString := aString, '<result>', aWarning asString, '</result>'. ].
-	^ aString, '</failure>'.
+	
+	self xmlWriter writeWith: [ :writer |
+		writer tag: 'warnings' with: [
+			aCIValidationResult warnings do: [ :aMessage |
+				writer tag: 'result' with:  aMessage ]]].
 	

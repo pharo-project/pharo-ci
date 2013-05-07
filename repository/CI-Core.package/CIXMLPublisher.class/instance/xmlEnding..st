@@ -1,4 +1,0 @@
-publishing
-xmlEnding: aCIValidationResult
-	^ '
-	</report>'

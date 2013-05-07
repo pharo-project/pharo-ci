@@ -1,4 +1,4 @@
 publishing
 publishSuccess: aCIValidationResult
 
-	^'<finality>succeed</finality>'.
+	^self xmlWriter writeWith: [ :writer | writer tag: 'finality' with: 'succeed'].

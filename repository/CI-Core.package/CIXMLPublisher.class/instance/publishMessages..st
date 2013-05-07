@@ -1,8 +1,7 @@
 publishing
 publishMessages: aCIValidationResult 
-	| aString |
-	aString := '<message>'.
-	aCIValidationResult messages do: [ :aMessage |
-		aString := aString, '<result>', aMessage asString, '</result>'. ].
-	^ aString, '</message>'.
 	
+	self xmlWriter writeWith: [ :writer |
+		writer tag: 'message' with: [
+			aCIValidationResult messages do: [ :aMessage |
+				writer tag: 'result' with:  aMessage ]]].
