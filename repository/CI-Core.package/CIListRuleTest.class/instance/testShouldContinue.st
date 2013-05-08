@@ -7,7 +7,7 @@ testShouldContinue
 	ruleTwo := [ :change | CIValidationResult message: 'test message' ] asCIValidationRule.
 	ruleThree := [ :change | CIValidationResult warning: 'test message' ] asCIValidationRule.
 	ruleFour := [ :change | CIValidationResult failure: 'test message' ] asCIValidationRule.
-	aResult := (((CIListRule with: ruleOne with: ruleTwo ) addWith: ruleThree) addWith: ruleFour) validate: [].
+	aResult := (ruleOne, ruleTwo, ruleThree, ruleFour) validate: self newChange.
 	
 	self assert: aResult failures size equals: 2.
 	self assert: aResult messages size equals: 1.	
