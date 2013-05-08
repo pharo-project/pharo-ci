@@ -1,6 +1,9 @@
 file creation
 publishValidationResult: aCIValidationResult
-	self stream: (self outputDirectory / aCIValidationResult change name asString , 'xml') writeStream.
+	| file |
+	file := self outputDirectory / aCIValidationResult change name asString , 'xml'.
+	file ensureDeleted.
+	self stream: file writeStream.
 	self xmlWriter stream: self stream.
 	self xmlBeginning: aCIValidationResult.
 	self xmlWriter

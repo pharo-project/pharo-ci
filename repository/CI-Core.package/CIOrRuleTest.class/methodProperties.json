@@ -2,6 +2,6 @@
 	"class" : {
 		 },
 	"instance" : {
-		"testShouldContinueFailureOrMessage" : "ErwanDouaille 5/2/2013 23:25",
-		"testShouldContinueMessageOrFailure" : "ErwanDouaille 5/2/2013 23:19",
-		"testShouldContinueNothingOrFailure" : "ErwanDouaille 5/2/2013 23:23" } }
+		"testShouldContinueFailureOrMessage" : "CI Validation User 5/8/2013 15:51",
+		"testShouldContinueMessageOrFailure" : "CI Validation User 5/8/2013 15:52",
+		"testShouldContinueNothingOrFailure" : "CI Validation User 5/8/2013 15:51" } }

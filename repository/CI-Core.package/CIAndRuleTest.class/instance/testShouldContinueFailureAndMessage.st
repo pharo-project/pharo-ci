@@ -5,7 +5,7 @@ testShouldContinueFailureAndMessage
 	
 	ruleOne := [ :change | CIValidationResult failure: 'test failure' ] asCIValidationRule.
 	ruleTwo := [ :change | CIValidationResult message: 'test message' ] asCIValidationRule.
-	aResult := (CIAndRule with: ruleOne with: ruleTwo) validate.
+	aResult := (CIAndRule with: ruleOne with: ruleTwo) validate: [].
 	
 	"in case of the failure is handle first, it shouldn't continue to run tests, that's why we get 0 message and 1 failure"
 	self assert: aResult failures size equals: 1.

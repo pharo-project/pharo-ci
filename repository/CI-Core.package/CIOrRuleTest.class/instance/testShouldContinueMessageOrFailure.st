@@ -5,7 +5,7 @@ testShouldContinueMessageOrFailure
 	
 	ruleOne := [ :change | CIValidationResult failure: 'test failure' ] asCIValidationRule.
 	ruleTwo := [ :change | CIValidationResult message: 'test message' ] asCIValidationRule.
-	aResult := (CIAndRule with: ruleTwo with: ruleOne) validate.
+	aResult := (CIAndRule with: ruleTwo with: ruleOne) validate: self newChange.
 	
 	self assert: aResult failures size equals: 1.
 	self assert: aResult messages size equals: 1.	
