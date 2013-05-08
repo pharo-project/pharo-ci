@@ -1,15 +1,14 @@
 tests
 testSoften
-	| aResult aModifyResult |
+	| aRule aSoftenedRule result |
 	
-	aResult := (self ruleForHardenTest) validate.
-	aModifyResult := ((self ruleClass) rule: (self ruleForHardenTest)) validate.
+	aRule := [ :change | CIValidationResult failure: 'failure' ] asCIValidationRule.
+	aSoftenedRule := aRule soften.
+	result := aSoftenedRule validate.
 	
-	self assert: aResult failures isEmpty not.
-	self assert: aResult messages size equals: 0.	
-	self assert: aResult failures isEmpty not.
+	self deny: aRule validate isSuccess.
+	self assert: result isSuccess.
 	
-	self assert: aModifyResult warnings size equals: 0.	
-	self assert: aModifyResult messages size equals: 0.	
-	self assert: aModifyResult failures isEmpty not.	
-		
+	self assert: result failures isEmpty.
+	self assert: result warnings size equals: 1.
+	self assert: result warnings first equals: 'failure'.

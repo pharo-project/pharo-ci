@@ -3,8 +3,6 @@
 		"isAbstract" : "CamilloBruni 4/30/2013 00:01" },
 	"instance" : {
 		"newInstance" : "CamilloBruni 4/30/2013 00:11",
-		"newValidationRule" : "ErwanDouaille 5/2/2013 11:49",
-		"testLoadEmptyChange" : "ErwanDouaille 5/7/2013 15:50",
-		"testLoadFailingChange" : "ErwanDouaille 5/7/2013 15:50",
-		"testLoadSuccessfulChange" : "ErwanDouaille 5/7/2013 15:50",
-		"testLoadWarningChange" : "ErwanDouaille 5/7/2013 15:49" } }
+		"testLoadFailingChange" : "CI Validation User 5/9/2013 00:18",
+		"testLoadSuccessfulChange" : "CI Validation User 5/9/2013 00:18",
+		"testLoadWarningChange" : "CI Validation User 5/9/2013 00:18" } }

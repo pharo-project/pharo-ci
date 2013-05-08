@@ -2,8 +2,6 @@
 	"class" : {
 		 },
 	"instance" : {
-		"changeForHardenTest" : "ErwanDouaille 5/3/2013 11:48",
 		"ruleClass" : "CamilloBruni 4/30/2013 00:02",
-		"ruleForHardenTest" : "ErwanDouaille 5/3/2013 11:48",
 		"testModify" : "ErwanDouaille 4/30/2013 13:54",
-		"testSoften" : "ErwanDouaille 5/2/2013 15:09" } }
+		"testSoften" : "CI Validation User 5/9/2013 00:24" } }

@@ -7,7 +7,7 @@ testModify
 	aResult addFailure: 'a'.
 	aResult addMessage: 'b'.
 	aResult addWarning: 'c'.
-	aModifyResult := (CIErrorToWarningModifer new) modifyResult: aResult.
+	aModifyResult := CIErrorToWarningModifer new modifyResult: aResult.
 	
 	self assert: aResult failures size equals: 1.	
 	self assert: aResult messages size equals: 1.	

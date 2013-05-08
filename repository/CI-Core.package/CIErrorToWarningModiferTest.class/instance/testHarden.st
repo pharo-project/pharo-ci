@@ -1,16 +1,11 @@
 tests
 testHarden
-	| aResult aModifyResult  aRule |
+	| rule hardenedRule result |
 	
-	aRule :=[ :change | CIValidationResult failure: 'test' ] asCIValidationRule .
-	aResult :=  aRule validate.
-	aModifyResult := ((self ruleClass) rule: aRule) validate.
+	rule := [ :change | CIValidationResult warning: 'warning' ] asCIValidationRule .
+	hardenedRule := rule harden.
 	
-	self assert: aResult failures isEmpty not.
-	self assert: aResult messages size equals: 0.	
-	self assert: aResult warnings size equals: 0.
+	result := hardenedRule validate.
 	
-	self assert: aModifyResult failures size equals: 0.	
-	self assert: aModifyResult messages size equals: 0.	
-	self assert: aModifyResult warnings isEmpty not.	
-		
+	self assert: result warnings isEmpty.
+	self assert: result failures first equals: 'warning'.
