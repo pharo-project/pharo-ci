@@ -3,14 +3,17 @@ removeFalsePositives
 	previousResult 
 		ifNil: [ ^ self ].
 
-	errors := self 
+	validationResult failures: (self 
 		removeFalsePositives: previousResult failures 
-		from: errors.
+		from: self errors).
 		
-	warnings := self 
+	validationResult warnings: (self 
 		removeFalsePositives: previousResult warnings 
-		from: warnings.
+		from: self warnings).
 		
-	messages := self 
+	validationResult messages: (self 
 		removeFalsePositives: previousResult messages 
-		from: messages.
+		from: self messages).
+		
+	 
+		

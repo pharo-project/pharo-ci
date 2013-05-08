@@ -1,3 +1,3 @@
-image forking
+accessing
 tempFile
 	^ self filePrefix asFileReference

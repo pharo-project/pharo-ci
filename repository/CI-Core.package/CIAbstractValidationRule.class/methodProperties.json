@@ -25,9 +25,11 @@
 		"andWithAll:" : "CamilloBruni 4/20/2013 23:34",
 		"asCIValidationRule" : "CamilloBruni 4/20/2013 23:37",
 		"change" : "ErwanDouaille 4/11/2013 16:14",
-		"change:" : "ErwanDouaille 4/11/2013 16:14",
+		"change:" : "CI Validation User 5/8/2013 13:39",
+		"errors" : "CI Validation User 5/8/2013 14:27",
 		"harden" : "CamilloBruni 4/29/2013 14:09",
 		"initialize" : "ErwanDouaille 5/7/2013 14:25",
+		"messages" : "CI Validation User 5/8/2013 14:27",
 		"orWith:" : "CamilloBruni 4/25/2013 13:59",
 		"orWithAll:" : "CamilloBruni 4/20/2013 23:34",
 		"soften" : "CamilloBruni 4/29/2013 14:34",
@@ -37,4 +39,5 @@
 		"validate:" : "ErwanDouaille 5/3/2013 11:56",
 		"validationResult" : "ErwanDouaille 5/7/2013 14:23",
 		"validationResult:" : "ErwanDouaille 5/7/2013 14:24",
+		"warnings" : "CI Validation User 5/8/2013 14:27",
 		"|" : "CamilloBruni 4/20/2013 23:36" } }

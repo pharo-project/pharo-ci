@@ -1,3 +1,3 @@
-image forking
+accessing
 filePrefix
 	^ self class name

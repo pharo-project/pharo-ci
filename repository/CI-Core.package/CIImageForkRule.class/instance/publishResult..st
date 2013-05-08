@@ -1,4 +1,4 @@
-image forking
+result handling forked image
 publishResult: aBlock
 	| oldGlobals newGlobals globals result |
 	

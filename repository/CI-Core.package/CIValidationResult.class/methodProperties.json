@@ -16,6 +16,7 @@
 		"change:" : "ErwanDouaille 4/11/2013 16:02",
 		"failureString" : "CamilloBruni 4/10/2013 14:47",
 		"failures" : "CamilloBruni 4/10/2013 14:45",
+		"failures:" : "CI Validation User 5/8/2013 14:25",
 		"hasFailures" : "ErwanDouaille 4/30/2013 17:29",
 		"hasMessages" : "ErwanDouaille 4/30/2013 17:29",
 		"hasWarnings" : "ErwanDouaille 4/30/2013 17:29",
@@ -25,9 +26,12 @@
 		"isFailure" : "ErwanDouaille 4/30/2013 17:27",
 		"isSuccess" : "CamilloBruni 4/15/2013 10:32",
 		"messages" : "CamilloBruni 4/10/2013 14:45",
+		"messages:" : "CI Validation User 5/8/2013 14:26",
+		"postCopy" : "CI Validation User 5/8/2013 14:36",
 		"printFailuresOn:" : "CamilloBruni 4/15/2013 14:26",
 		"printList:named:on:" : "CamilloBruni 4/15/2013 14:27",
 		"printMessagesOn:" : "CamilloBruni 4/15/2013 14:26",
 		"printOn:" : "CamilloBruni 4/15/2013 14:23",
 		"printWarningsOn:" : "CamilloBruni 4/15/2013 14:26",
-		"warnings" : "CamilloBruni 4/10/2013 14:45" } }
+		"warnings" : "CamilloBruni 4/10/2013 14:45",
+		"warnings:" : "CI Validation User 5/8/2013 14:25" } }

@@ -1,3 +1,3 @@
-as yet unclassified
+protocol
 basicLoad
 	self loadBlock ifNotNil: [ self loadBlock value ]

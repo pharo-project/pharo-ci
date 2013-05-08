@@ -6,7 +6,8 @@
 		 ],
 	"commentStamp" : "<historical>",
 	"instvars" : [
-		 ],
+		"communicationPort",
+		"readSocket" ],
 	"name" : "CIImageForkRule",
 	"pools" : [
 		 ],

@@ -1,5 +1,6 @@
 validation
 recordValidationChangesDuring: aBlock
 	self preLoadValidate.
-	aBlock value.
+	loadTime := aBlock timeToRun.
 	self postLoadValidate.
+	self removeFalsePositives.

@@ -1,3 +1,3 @@
-image forking
+accessing
 temporaryImageName
 	^ self filePrefix
