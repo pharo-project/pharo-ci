@@ -2,6 +2,7 @@
 	"class" : {
 		 },
 	"instance" : {
-		"testShouldContinueFailureOrMessage" : "CI Validation User 5/8/2013 15:51",
-		"testShouldContinueMessageOrFailure" : "CI Validation User 5/8/2013 15:52",
-		"testShouldContinueNothingOrFailure" : "CI Validation User 5/8/2013 15:51" } }
+		"ruleClass" : "CI Validation User 5/9/2013 00:26",
+		"testFailureOrMessage" : "CI Validation User 5/9/2013 00:36",
+		"testMessageOrFailure" : "CI Validation User 5/9/2013 00:36",
+		"testNothingOrFailure" : "CI Validation User 5/9/2013 00:36" } }
