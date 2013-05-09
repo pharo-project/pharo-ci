@@ -1,9 +1,8 @@
 versions
 version120: spec
-	<version: '1.20' imports: #('1.06-baseline' )>
+	<version: '1.20' imports: #('1.06-baseline')>
 
 	spec for: #'common' do: [
-		spec blessing: #'stable'.
 		spec description: 'command line handler'.
 		spec author: 'CamilloBruni'.
 		spec timestamp: '1/28/2013 17:55'. ].
