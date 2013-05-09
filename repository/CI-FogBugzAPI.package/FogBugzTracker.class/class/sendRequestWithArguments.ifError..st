@@ -13,6 +13,7 @@ sendRequestWithArguments: arguments ifError: aBlock
 		client formAt: key put: value ].
 	
 	response := client post.
-	client response isError ifTrue: aBlock.
+	client response isError 
+		ifTrue: [ aBlock cull: (self extractErrorMessage: client response) ].
 	self validateXML: response ifError: aBlock.
 	^ response

@@ -4,4 +4,4 @@ validateXML: response ifError: aBlock
 	Most probably this is a bug since the http response is not flagged as an error"
 	
 	(response endsWith: ']]></error></response>')
-		ifTrue: aBlock
+		ifTrue: [ aBlock cull: (self extractXMLErrorMessage: response) ]

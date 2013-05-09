@@ -1,13 +1,13 @@
 queries
-extractTokenFrom: respons
+extractTokenFrom: response
 
 	| startIdentifier stopIdentifier firstIndex offset lastIndex |
 
-	startIdentifier := self startTokenResponsIdentifier.
-	stopIdentifier := self stopTokenResponsIdentifier.
+	startIdentifier := self startTokenResponseIdentifier.
+	stopIdentifier := self stopTokenResponseIdentifier.
 
-	firstIndex := respons findString: startIdentifier.
+	firstIndex := response findString: startIdentifier.
 	offset := startIdentifier size.
-	lastIndex := respons findString: stopIdentifier startingAt: firstIndex.
+	lastIndex := response findString: stopIdentifier startingAt: firstIndex.
 
-	^ respons copyFrom: firstIndex+offset to: lastIndex-1
+	^ response copyFrom: firstIndex+offset to: lastIndex-1

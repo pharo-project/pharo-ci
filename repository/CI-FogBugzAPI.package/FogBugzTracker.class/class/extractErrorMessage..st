@@ -1,0 +1,3 @@
+private
+extractErrorMessage: aResponse
+	self shouldBeImplemented

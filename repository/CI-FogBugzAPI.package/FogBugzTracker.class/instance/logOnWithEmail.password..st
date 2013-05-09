@@ -1,6 +1,6 @@
 protocol-log on/off
 logOnWithEmail: emailAddress password: password
-	| arguments respons token |
+	| arguments response token |
 
 	arguments := Dictionary new 
 					at: 'cmd' put: 'logon';
@@ -8,9 +8,9 @@ logOnWithEmail: emailAddress password: password
 					at: 'password' put: password;
 					yourself.
 					
-	respons := self sendRequestWithArguments: arguments.
-	(respons includesSubstring: '</error>')
-		ifTrue: [ (FogBugzIdentificationError response: respons) signal ].
+	response := self sendRequestWithArguments: arguments.
+	(response includesSubstring: '</error>')
+		ifTrue: [ (FogBugzIdentificationError response: response) signal ].
 		
-	token := self class extractTokenFrom: respons.
+	token := self class extractTokenFrom: response.
 	^ self identifyingToken: token.
