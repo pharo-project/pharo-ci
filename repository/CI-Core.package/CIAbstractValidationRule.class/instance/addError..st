@@ -3,10 +3,10 @@ addError: anError
 	| index |
 	self flag: 'ugly'.
 	(anError isKindOf: Exception)
-		ifFalse: [ ^ self validationResult addFailure: anError asString ].
+		ifFalse: [ ^ self validationResult addError: anError asString ].
 	index := 1.
 	self validationResult 
-		addFailure:
+		addError:
 			(String
 				streamContents: [ :stream | 
 					stream tab

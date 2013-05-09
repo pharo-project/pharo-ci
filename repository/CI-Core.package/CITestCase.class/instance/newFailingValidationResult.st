@@ -3,7 +3,7 @@ newFailingValidationResult
 	| result |
 	result := self newValidationResult.
 	result
-		addFailure: 'failure 1';
-		addFailure: 'failure 2';
-		addFailure: 'failure 3'.
+		addError: 'failure 1';
+		addError: 'failure 2';
+		addError: 'failure 3'.
 	^ result

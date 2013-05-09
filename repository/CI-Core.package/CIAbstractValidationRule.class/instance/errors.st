@@ -1,3 +1,3 @@
 accessing
 errors
-	^ self validationResult failures
+	^ self validationResult errors

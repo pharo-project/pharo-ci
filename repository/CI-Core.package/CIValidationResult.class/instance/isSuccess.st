@@ -1,3 +1,3 @@
 testing
 isSuccess
-	^ self failures isNil or: [ self failures isEmpty ]
+	^ self errors isNil or: [ self errors isEmpty ]

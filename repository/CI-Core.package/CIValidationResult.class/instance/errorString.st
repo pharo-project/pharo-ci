@@ -1,4 +1,4 @@
 printing
-failureString
+errorString
 	^ String streamContents: [ :str |
-		self printFailuresOn: str ]
+		self printErrorsOn: str ]

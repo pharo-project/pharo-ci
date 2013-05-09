@@ -9,6 +9,6 @@ testSoften
 	self deny: aRule validate isSuccess.
 	self assert: result isSuccess.
 	
-	self assert: result failures isEmpty.
+	self assert: result errors isEmpty.
 	self assert: result warnings size equals: 1.
 	self assert: result warnings first equals: 'failure'.

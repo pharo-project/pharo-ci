@@ -2,7 +2,7 @@ publishing
 publishFailures: aCIValidationResult
 	| aString |
 	aString := '<h1>', aCIValidationResult change name asString, ' failures : </h1><ul>'.
-	aCIValidationResult failures do: [ :aFailure |
+	aCIValidationResult errors do: [ :aFailure |
 		aString := aString, '<li>', aFailure asString, '</li>'. ].
 	self stream nextPutAll:  aString, '</ul>'.
 	

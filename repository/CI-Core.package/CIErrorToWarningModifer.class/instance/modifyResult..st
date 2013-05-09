@@ -1,7 +1,7 @@
 protocol
 modifyResult: aCIValidationResult
 	^ CIValidationResult new
-		addAllWarnings: aCIValidationResult failures;
+		addAllWarnings: aCIValidationResult errors;
 		addAllWarnings: aCIValidationResult warnings;
 		addAllMessages: aCIValidationResult messages;
 		yourself

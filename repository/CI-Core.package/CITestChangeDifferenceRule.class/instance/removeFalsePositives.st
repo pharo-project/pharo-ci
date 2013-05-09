@@ -3,8 +3,8 @@ removeFalsePositives
 	previousResult 
 		ifNil: [ ^ self ].
 
-	validationResult failures: (self 
-		removeFalsePositives: previousResult failures 
+	validationResult errors: (self 
+		removeFalsePositives: previousResult errors 
 		from: self errors).
 		
 	validationResult warnings: (self 

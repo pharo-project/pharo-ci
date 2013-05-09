@@ -1,6 +1,6 @@
 printing
 printOn: aStream
 	self 
-		printFailuresOn: aStream;
+		printErrorsOn: aStream;
 		printWarningsOn: aStream;
 		printMessagesOn: aStream

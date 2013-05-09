@@ -17,6 +17,6 @@ testMessageOrFailure
 	self assert: validatedRuleOne.
 	self deny: validatedRuleTwo.
 	
-	self assert: aResult failures size equals: 0.
+	self assert: aResult errors size equals: 0.
 	self assert: aResult messages size equals: 1.	
 	self assert: aResult warnings size equals: 0.

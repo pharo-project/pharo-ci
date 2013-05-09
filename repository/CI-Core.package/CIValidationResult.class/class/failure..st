@@ -1,5 +1,5 @@
 instance creation
 failure: aMessage
 	^ self new
-		addFailure: aMessage;
+		addError: aMessage;
 		yourself

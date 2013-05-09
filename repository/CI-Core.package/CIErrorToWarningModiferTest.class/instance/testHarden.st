@@ -8,4 +8,4 @@ testHarden
 	result := hardenedRule validate.
 	
 	self assert: result warnings isEmpty.
-	self assert: result failures first equals: 'warning'.
+	self assert: result errors first equals: 'warning'.

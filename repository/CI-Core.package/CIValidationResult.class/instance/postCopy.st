@@ -1,6 +1,6 @@
 copying
 postCopy
 	super postCopy.
-	failures := failures copy.
+	errors := errors copy.
 	warnings := warnings copy.
 	messages := messages copy.

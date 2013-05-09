@@ -9,6 +9,6 @@ testShouldContinue
 	ruleFour :=  [ :change | CIValidationResult failure: 'test message' ] asCIValidationRule.
 	aResult := (ruleOne, ruleTwo, ruleThree, ruleFour) validate: self newChange.
 	
-	self assert: aResult failures size equals: 2.
+	self assert: aResult errors size equals: 2.
 	self assert: aResult messages size equals: 1.	
 	self assert: aResult warnings size equals: 1.

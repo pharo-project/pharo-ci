@@ -5,7 +5,7 @@ publishFailure: aCIValidationResult
 	change := aCIValidationResult change.
 	
 	self flag: 'stupid test for now'.
-	hasTestFailures := aCIValidationResult failures anySatisfy: [ :failure | 
+	hasTestFailures := aCIValidationResult errors anySatisfy: [ :failure | 
 		failure asString includesSubstring: '>>#test' ].
 	
 	hasTestFailures
