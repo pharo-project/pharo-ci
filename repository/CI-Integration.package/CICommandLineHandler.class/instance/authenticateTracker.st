@@ -1,8 +1,10 @@
 authentification
 authenticateTracker
 
-	self user ifNil: [ ^ self exitFailure: 'no valid user provided for authentification' ].
-	self password ifNil: [ ^ self exitFailure: 'no valid password provided for authentification' ].
+	self user 
+		ifNil: [ ^ self exitFailure: 'no valid user provided for authentification' ].
+	self password 
+		ifNil: [ ^ self exitFailure: 'no valid password provided for authentification' ].
 	
 	self manager logOnWithEmail: self user password: self password.
 	
