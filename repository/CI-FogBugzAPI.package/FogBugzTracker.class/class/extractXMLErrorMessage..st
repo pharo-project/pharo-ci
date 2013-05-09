@@ -1,3 +1,3 @@
 private
 extractXMLErrorMessage: aResponse
-	^ ((XMLDOMParser parse: aResponse) findElementNamed: 'error') contentString
+	^ ((Soup fromString: aResponse) findTag: 'error') string
