@@ -15,16 +15,16 @@ baseline107: spec
 				
 		spec
 			package: 'CI-Core' with: [ 
-				spec requires: #('FuelMetalevel'  'FileSystem-Legacy' 'CommandShell' 'XMLWriter') ];
+				spec requires: #('FuelMetalevel'  'FileSystem-Legacy' 'CommandShell' 'XMLWriter')];
 			package: 'CI-FogBugzAPI' with: [ 
-				spec requires: #('CI-Core') ];
+				spec requires: #('CI-Core')];
 			package: 'CI-GoogleIssueTracker' with: [
-				spec requires: #('CI-Core') ];
+				spec requires: #('CI-Core')];
 			package: 'CI-Integration' with: [ 
-				spec requires: #(  'CI-Core' 'CI-FogBugzAPI' 'Soup' 'CommandShell' )];
+				spec requires: #('CI-Core' 'CI-FogBugzAPI' 'Soup' 'CommandShell')];
 			package: 'CI-Loader' with: [ 
-				spec requires: #( 'Soup' 'CI-Core' )].
+				spec requires: #('Soup' 'CI-Core')].
 			
 		spec 
-			group: 'default' with: #( 'CI-Core' 'CI-Integration' 'CI-Loader');
-			group: 'core' with: #( 'CI-Core') ]
+			group: 'default' with: #('CI-Core' 'CI-Integration' 'CI-Loader');
+			group: 'core'    with: #('CI-Core') ]
