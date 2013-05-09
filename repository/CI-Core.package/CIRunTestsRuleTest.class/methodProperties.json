@@ -2,8 +2,13 @@
 	"class" : {
 		 },
 	"instance" : {
-		"newInstance" : "CI Validation User 5/9/2013 00:56",
+		"createNewTestClass" : "CamilloBruni 5/9/2013 11:13",
+		"defaultTestPackage" : "CamilloBruni 5/9/2013 11:13",
+		"newFailingChange" : "CamilloBruni 5/9/2013 10:51",
+		"newInstance" : "CamilloBruni 5/9/2013 10:45",
+		"newSuccessfulChange" : "CamilloBruni 5/9/2013 10:51",
+		"newWarningChange" : "CamilloBruni 5/9/2013 11:14",
 		"ruleClass" : "CamilloBruni 4/29/2013 21:35",
-		"testErrorValidation" : "CI Validation User 5/9/2013 00:57",
+		"testErrorValidation" : "CamilloBruni 5/9/2013 10:50",
 		"testFailureValidation" : "CI Validation User 5/9/2013 00:57",
 		"testPerfectValidation" : "CI Validation User 5/9/2013 00:39" } }

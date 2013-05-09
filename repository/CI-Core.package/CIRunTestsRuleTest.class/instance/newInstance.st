@@ -1,3 +1,4 @@
 accessing
 newInstance
-	^ self ruleClass selectTestCaseBlock: [ :aClass | aClass package name beginsWith: 'KernelTests-Numbers' ]
+	^ self ruleClass selectTestCaseBlock: [ :aClass | 
+		aClass package name beginsWith: self testPackage ]
