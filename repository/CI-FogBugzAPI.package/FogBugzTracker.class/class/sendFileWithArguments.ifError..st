@@ -9,9 +9,13 @@ sendFileWithArguments: arguments ifError: aBlock
 	entity := client multiPartFormDataEntity.
 	files := arguments associations select:[ :e | e key beginsWith: 'File' ].
 	files do: [:association |
-		entity addPart: (ZnMimePart fieldName: association key fileName: association value asFileReference basename entity: (ZnEntity bytes: association value asFileReference readStream binary contents)) ].
+		entity addPart: (ZnMimePart 
+			fieldName: association key 
+			fileName: association value asFileReference basename 
+			entity: (ZnEntity bytes: association value asFileReference readStream binary contents)) ].
 				
-	arguments associationsDo: [:association | client queryAt: association key put: association value ].
+	arguments associationsDo: [:association | 
+		client queryAt: association key put: association value ].
 	
 	response := client post.
 	client response isError  ifTrue: aBlock.

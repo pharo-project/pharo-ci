@@ -1,6 +1,6 @@
 {
 	"class" : {
-		"email:password:" : "BenjaminVanRyseghem 3/22/2013 17:31",
+		"email:password:" : "CamilloBruni 5/9/2013 13:55",
 		"extractErrorMessage:" : "CamilloBruni 5/9/2013 11:43",
 		"extractTokenFrom:" : "CamilloBruni 5/9/2013 11:30",
 		"extractXMLErrorMessage:" : "CamilloBruni 5/9/2013 11:40",
@@ -10,8 +10,8 @@
 		"penelope" : "BenjaminVanRyseghem 3/22/2013 17:54",
 		"pharo" : "CamilloBruni 4/9/2013 13:41",
 		"pharoIssueTrackerURL" : "BenjaminVanRyseghem 3/5/2013 11:41",
-		"sendFileWithArguments:ifError:" : "BenjaminVanRyseghem 3/4/2013 17:22",
-		"sendRequestWithArguments:" : "CamilloBruni 5/9/2013 11:26",
+		"sendFileWithArguments:ifError:" : "CamilloBruni 5/9/2013 11:44",
+		"sendRequestWithArguments:" : "CamilloBruni 5/9/2013 11:44",
 		"sendRequestWithArguments:ifError:" : "CamilloBruni 5/9/2013 11:25",
 		"startTokenResponseIdentifier" : "CamilloBruni 5/9/2013 11:30",
 		"stopTokenResponseIdentifier" : "CamilloBruni 5/9/2013 11:30",
@@ -37,7 +37,7 @@
 		"issueWithId:" : "CamilloBruni 4/15/2013 10:18",
 		"knownLabels" : "BenjaminVanRyseghem 3/2/2013 13:30",
 		"logOff" : "EstebanLorenzano 2/25/2013 17:01",
-		"logOnWithEmail:password:" : "CamilloBruni 5/9/2013 11:29",
+		"logOnWithEmail:password:" : "CamilloBruni 5/9/2013 13:57",
 		"newIssueTitled:ownedBy:description:category:milestone:tags:project:" : "BenjaminVanRyseghem 3/2/2013 02:39",
 		"newIssueTitled:ownedBy:description:tags:project:" : "BenjaminVanRyseghem 3/2/2013 15:50",
 		"nextIssueToBeChecked" : "BenjaminVanRyseghem 3/22/2013 19:17",

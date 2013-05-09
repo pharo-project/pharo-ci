@@ -8,9 +8,8 @@ logOnWithEmail: emailAddress password: password
 					at: 'password' put: password;
 					yourself.
 					
-	response := self sendRequestWithArguments: arguments.
-	(response includesSubstring: '</error>')
-		ifTrue: [ (FogBugzIdentificationError response: response) signal ].
+	response := self sendRequestWithArguments: arguments ifError: [ :message |
+			FogBugzIdentificationError signal: message ].
 		
 	token := self class extractTokenFrom: response.
 	^ self identifyingToken: token.

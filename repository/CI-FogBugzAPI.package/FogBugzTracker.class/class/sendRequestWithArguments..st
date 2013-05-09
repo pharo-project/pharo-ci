@@ -11,7 +11,7 @@ sendRequestWithArguments: arguments
 		self sendRequestWithArguments: arguments ifError: [ :message| self error: message ]].
 	
 	lastIndex := (event size // groupOf) * groupOf.
-	text := event copyFrom: lastIndex +1 to: event size.
+	text := event copyFrom: lastIndex + 1 to: event size.
 	arguments at: 'sEvent' put: text.
 	
 	^ self sendRequestWithArguments: arguments ifError: [ :message| self error: message ]

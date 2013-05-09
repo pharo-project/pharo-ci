@@ -1,4 +1,4 @@
 accessing
-response: queryRespons
+response: queryResponse
 	
-	 response := queryRespons
+	 response := queryResponse
