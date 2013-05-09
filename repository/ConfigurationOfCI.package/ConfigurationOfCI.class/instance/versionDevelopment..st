@@ -12,9 +12,9 @@ versionDevelopment: spec
 			project: 'XMLWriter'     with: #stable.
 			
 		spec 
-			"ErwanDouaille"
-			package: 'CI-Core'               with: 'CI-Core-CamilloBruni.185';
-			package: 'CI-Integration'        with: 'CI-Integration-CamilloBruni.50';
+			"ErwanDouaille CamilloBruni"
+			package: 'CI-Core'               with: 'CI-Core-CamilloBruni.207';
+			package: 'CI-FogBugzAPI'         with: 'CI-FogBugzAPI-CamilloBruni.35';
+			package: 'CI-Integration'        with: 'CI-Integration-ErwanDouaille.52';
 			package: 'CI-Loader'             with: 'CI-Loader-CamilloBruni.6';
-			package: 'CI-FogBugzAPI'         with: 'CI-FogBugzAPI-CamilloBruni.33';
 			package: 'CI-GoogleIssueTracker' with: 'CI-GoogleIssueTracker-CamilloBruni.2' ].
