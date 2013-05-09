@@ -2,8 +2,8 @@ tests
 testFailureValidation
 	| instance aResult |
 	instance := self newInstance.
-	instance change: ((CITestChange new) isLoadable: false). 
-	aResult := (instance validate) .
+	
+	aResult := instance validate: (CITestChange new isLoadable: false). 
 	
 	"could be a failure, no change "
 	self assert: aResult failures size equals: 1.

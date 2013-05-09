@@ -3,10 +3,10 @@ testShouldContinue
 
 	| ruleOne ruleTwo aResult ruleThree ruleFour |
 	
-	ruleOne := [ :change | CIValidationResult failure: 'test failure' ] asCIValidationRule.
-	ruleTwo := [ :change | CIValidationResult message: 'test message' ] asCIValidationRule.
+	ruleOne :=   [ :change | CIValidationResult failure: 'test failure' ] asCIValidationRule.
+	ruleTwo :=   [ :change | CIValidationResult message: 'test message' ] asCIValidationRule.
 	ruleThree := [ :change | CIValidationResult warning: 'test message' ] asCIValidationRule.
-	ruleFour := [ :change | CIValidationResult failure: 'test message' ] asCIValidationRule.
+	ruleFour :=  [ :change | CIValidationResult failure: 'test message' ] asCIValidationRule.
 	aResult := (ruleOne, ruleTwo, ruleThree, ruleFour) validate: self newChange.
 	
 	self assert: aResult failures size equals: 2.

@@ -2,8 +2,7 @@ tests
 testErrorValidation
 	| instance aResult |
 	instance := self newInstance.
-	instance change: ((CITestChange new) isLoadable: true; loadBlock: [true]). 
-	aResult := (instance validate) .
+	aResult := instance validate: (CITestChange new isLoadable: true; loadBlock: [true]). 
 	
 	self assert: aResult failures size > 0.	
 	self assert: aResult messages size > 0.	

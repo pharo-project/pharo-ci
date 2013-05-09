@@ -2,8 +2,8 @@
 	"class" : {
 		 },
 	"instance" : {
-		"newInstance" : "CamilloBruni 5/1/2013 12:13",
+		"newInstance" : "CI Validation User 5/9/2013 00:56",
 		"ruleClass" : "CamilloBruni 4/29/2013 21:35",
-		"testErrorValidation" : "ErwanDouaille 4/30/2013 15:42",
-		"testFailureValidation" : "ErwanDouaille 4/30/2013 15:32",
-		"testPerfectValidation" : "ErwanDouaille 4/30/2013 15:40" } }
+		"testErrorValidation" : "CI Validation User 5/9/2013 00:57",
+		"testFailureValidation" : "CI Validation User 5/9/2013 00:57",
+		"testPerfectValidation" : "CI Validation User 5/9/2013 00:39" } }
