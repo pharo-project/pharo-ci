@@ -13,8 +13,8 @@ versionDevelopment: spec
 			
 		spec 
 			"ErwanDouaille CamilloBruni"
-			package: 'CI-Core'               with: 'CI-Core-CamilloBruni.207';
-			package: 'CI-FogBugzAPI'         with: 'CI-FogBugzAPI-CamilloBruni.35';
+			package: 'CI-Core'               with: 'CI-Core-CamilloBruni.208';
+			package: 'CI-FogBugzAPI'         with: 'CI-FogBugzAPI-CamilloBruni.36';
 			package: 'CI-Integration'        with: 'CI-Integration-CamilloBruni.53';
 			package: 'CI-Loader'             with: 'CI-Loader-CamilloBruni.6';
 			package: 'CI-GoogleIssueTracker' with: 'CI-GoogleIssueTracker-CamilloBruni.2' ].
