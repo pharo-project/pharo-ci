@@ -4,5 +4,5 @@ xmlWriter: spec
 	"Dependencies"
 	spec project: 'XMLWriter' with: [
 		spec 
-			className: 'ConfigurationOfXMLWriter';
-			repository: 'http://smalltalkhub.com/Pharo/XMLWriter/main'].
+			repository: 'http://smalltalkhub.com/PharoExtras/XMLWriter/main';
+			className: 'ConfigurationOfXMLWriter'].
