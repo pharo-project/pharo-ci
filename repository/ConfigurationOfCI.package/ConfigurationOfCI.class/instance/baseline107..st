@@ -10,18 +10,21 @@ baseline107: spec
 			fileSystemLegacy: spec;
 			commandShell: spec;
 			fuelMetalevel: spec;
-			zinc: spec.
+			zinc: spec;
+			xmlWriter: spec.
 				
 		spec
-			package: 'CI-Core' with: [ spec requires: #('FuelMetalevel'  'FileSystem-Legacy' 'CommandShell') ];
-			package: 'CI-FogBugzAPI' with: [ spec requires: #('CI-Core') ];
-			package: 'CI-GoogleIssueTracker' with: [ spec requires: #('CI-Core') ];
+			package: 'CI-Core' with: [ 
+				spec requires: #('FuelMetalevel'  'FileSystem-Legacy' 'CommandShell' 'XMLWriter') ];
+			package: 'CI-FogBugzAPI' with: [ 
+				spec requires: #('CI-Core') ];
+			package: 'CI-GoogleIssueTracker' with: [
+				spec requires: #('CI-Core') ];
 			package: 'CI-Integration' with: [ 
-				spec requires: #(  'CI-Core' 'CI-FogBugzAPI' 'Soup' 'CommandShell' 'Zinc')];
+				spec requires: #(  'CI-Core' 'CI-FogBugzAPI' 'Soup' 'CommandShell' )];
 			package: 'CI-Loader' with: [ 
 				spec requires: #( 'Soup' 'CI-Core' )].
 			
 		spec 
-			group: 'default' with: #( 'CI-Core' );
-			group: 'full' with: #( 'CI-Integration' 'CI-Loader' );
-			group: 'soup' with: #( 'Soup' ) "for laziliy loading the Soup packages"]
+			group: 'default' with: #( 'CI-Core' 'CI-Integration' 'CI-Loader');
+			group: 'core' with: #( 'CI-Core') ]
