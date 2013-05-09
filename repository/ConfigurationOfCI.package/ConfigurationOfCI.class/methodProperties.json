@@ -23,14 +23,15 @@
 	"instance" : {
 		"baseline106:" : "ErwanDouaille 5/6/2013 20:53",
 		"baseline107:" : "CI Validation User 5/9/2013 09:35",
+		"bleedingEdge:" : "CamilloBruni 5/9/2013 10:38",
 		"commandShell:" : "CamilloBruni 5/1/2013 11:04",
 		"development:" : "CI Validation User 5/9/2013 09:59",
 		"fileSystemLegacy:" : "CamilloBruni 4/11/2013 12:44",
 		"fuelMetalevel:" : "CamilloBruni 4/15/2013 13:26",
 		"project" : "BenjaminVanRyseghem 9/20/2011 14:21",
 		"soup:" : "CamilloBruni 4/11/2013 12:47",
-		"stable:" : "CamilloBruni 4/15/2013 13:36",
+		"stable:" : "CamilloBruni 5/9/2013 10:36",
 		"version120:" : "CI Validation User 5/9/2013 09:58",
-		"version121:" : "CI Validation User 5/9/2013 10:11",
+		"version121:" : "CamilloBruni 5/9/2013 10:39",
 		"xmlWriter:" : "CI Validation User 5/9/2013 09:36",
 		"zinc:" : "CamilloBruni 4/15/2013 20:25" } }
