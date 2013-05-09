@@ -1,4 +1,4 @@
 accessing
 newInstance
 	^ self ruleClass selectTestCaseBlock: [ :aClass | 
-		aClass package name beginsWith: self testPackage ]
+		aClass package name beginsWith: self defaultTestPackage ]
