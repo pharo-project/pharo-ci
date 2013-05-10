@@ -1,3 +1,5 @@
 accessing
 change: anObject
-	change := anObject asCIChange
+	change := anObject asCIChange.
+	self validationResult ifNotNil: [ 
+		self validationResult change: change ]

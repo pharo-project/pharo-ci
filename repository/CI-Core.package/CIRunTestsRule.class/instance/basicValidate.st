@@ -13,4 +13,5 @@ basicValidate
 	result := 	CITestResult new.
 	result maxTest: suite tests size.
  	suite run: result.
+	
 	self testResult: result.
