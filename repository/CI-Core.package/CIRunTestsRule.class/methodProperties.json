@@ -1,8 +1,9 @@
 {
 	"class" : {
+		"packagePrefix:" : "CamilloBruni 5/10/2013 16:24",
 		"selectTestCaseBlock:" : "CamilloBruni 4/15/2013 10:09" },
 	"instance" : {
-		"basicValidate" : "CamilloBruni 5/1/2013 12:25",
+		"basicValidate" : "CamilloBruni 5/10/2013 16:21",
 		"defaultSelectTestCaseBlock" : "CamilloBruni 5/10/2013 13:08",
 		"filePrefix" : "CI Validation User 5/9/2013 21:57",
 		"initialize" : "CamilloBruni 5/10/2013 13:05",

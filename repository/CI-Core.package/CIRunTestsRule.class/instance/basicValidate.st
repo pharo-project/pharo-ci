@@ -9,6 +9,7 @@ basicValidate
 		thenDo: [ :testClass |
 			testClass isAbstract 
 				ifFalse: [ suite addTests: testClass suite tests ]].
+	
 	result := 	CITestResult new.
 	result maxTest: suite tests size.
  	suite run: result.
