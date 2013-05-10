@@ -11,6 +11,5 @@ readResultFromForkedImage: forkedImage
 		"fuel bug prevents us from serializing all values directly, need to handle the globals first"
 		result second.] ensure: [ stream nextPutAll: 'OK'; flush ] ]
 	on: Error do: [ :error|
-		1halt.
-		CIValidationResult failure: 'Could not parse result from forked image' ].
+		CIValidationResult failure: 'Could not parse result from forked image: ', error asString ].
 	
