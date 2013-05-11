@@ -17,4 +17,5 @@ serializeGlobals: globals result: result
 		on: stream.
 	self inform: 'B: Waiting for OK'.
 	"wait until we get an OK response"
-	stream next: 2
+	stream next: 2.
+	self inform: 'B: Got OK'.
