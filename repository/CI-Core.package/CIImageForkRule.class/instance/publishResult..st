@@ -14,4 +14,5 @@ publishResult: aBlock
 		
 	globals := newGlobals \ oldGlobals.
 	
+	self inform: 'B: Publishing result: ', result asString.
 	self serializeGlobals: globals result: result
