@@ -3,7 +3,7 @@ readResultFromForkedImage: forkedImage
 	| result communicationStream ack |
 	
 	self inform: 'A: Waiting for test image results...'.
-	^ [ 
+	[ 
 		communicationStream := self newReadSocketStream.
 		self inform: 'A: Writing READY'.
 		communicationStream nextPutAll: 'READY'; flush.
@@ -15,7 +15,7 @@ readResultFromForkedImage: forkedImage
 			self inform: 'A: Reading result'.
 			result := (FLMaterializer newDefault materializeFrom: communicationStream) root.
 			"fuel bug prevents us from serializing all values directly, need to handle the globals first"
-			result second
+			^ result second
 		] ensure: [ 
 			self inform: 'A: Writing OK'.
 			communicationStream nextPutAll: 'OK'; flush ]]

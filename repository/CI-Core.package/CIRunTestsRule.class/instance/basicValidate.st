@@ -15,3 +15,4 @@ basicValidate
  	suite run: result.
 	
 	self testResult: result.
+	^ self validationResult
