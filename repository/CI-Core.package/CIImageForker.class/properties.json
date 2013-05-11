@@ -1,0 +1,15 @@
+{
+	"category" : "CI-Core-Validation",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"name",
+		"communication" ],
+	"name" : "CIImageForker",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

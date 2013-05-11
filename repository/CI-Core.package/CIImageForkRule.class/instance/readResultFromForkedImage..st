@@ -1,15 +1,19 @@
 result handling main image
 readResultFromForkedImage: forkedImage
-	| result stream ack |
+	| result communicationStream ack |
 	
 	self inform: 'Waiting for test image results...'.
 	^ [ 
-		stream := self newReadSocketStream.
-		stream nextPutAll: 'READY'; flush.
-		self assert: (ack := stream next: 3) asString = 'ACK'.
-		[ result := (FLMaterializer newDefault materializeFrom: stream) root.
-		"fuel bug prevents us from serializing all values directly, need to handle the globals first"
-		result second.] ensure: [ stream nextPutAll: 'OK'; flush ] ]
+		communicationStream := self newReadSocketStream.
+		communicationStream nextPutAll: 'READY'; flush.
+		self assert: (ack := communicationStream next: 3) asString = 'ACK'.
+		[ 
+			result := (FLMaterializer newDefault materializeFrom: communicationStream) root.
+			"fuel bug prevents us from serializing all values directly, need to handle the globals first"
+			result second
+		] ensure: [ communicationStream nextPutAll: 'OK'; flush ]]
 	on: Error do: [ :error|
-		CIValidationResult failure: 'Could not parse result from forked image: ', error asString ].
+		CIValidationResult failure: (String streamContents: [ :stream|
+			stream << 'Could not parse result from forked image: '; print: error.
+			error signalerContext shortDebugStackOn: stream ])].
 	
