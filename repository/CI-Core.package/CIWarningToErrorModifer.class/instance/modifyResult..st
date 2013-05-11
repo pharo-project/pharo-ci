@@ -1,7 +1,9 @@
 protocol
 modifyResult: aCIValidationResult
-	^ CIValidationResult new
+	| result |
+	result := CIValidationResult new
 		addAllErrors: aCIValidationResult errors;
 		addAllErrors: aCIValidationResult warnings;
 		addAllMessages: aCIValidationResult messages;
-		yourself
+		yourself.
+	^ self validationResult: result
