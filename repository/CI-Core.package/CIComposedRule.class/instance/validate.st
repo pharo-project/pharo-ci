@@ -1,6 +1,7 @@
 protocol
 validate
 	| result |
+	self assertHasChange.
 	result := CIValidationResult new.
 	
 	self rules do: [ :validationRule |

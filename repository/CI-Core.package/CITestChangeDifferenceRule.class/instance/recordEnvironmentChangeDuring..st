@@ -1,6 +1,6 @@
 validation
 recordEnvironmentChangeDuring: aChangeBlock
 	| oldEnvironment |
-	oldEnvironment := self environmentCopy.
+	"oldEnvironment := self environmentCopy."
 	aChangeBlock value.
-	environmentChange := CIEnvironmentChange from: oldEnvironment to: self environmentCopy.
+	"environmentChange := CIEnvironmentChange from: oldEnvironment to: self environmentCopy."
