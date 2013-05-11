@@ -13,9 +13,12 @@ readResultFromForkedImage: forkedImage
 			description: 'A: Expected ACK but got ', ack printString.
 		[ 
 			self inform: 'A: Reading result'.
-			result := (FLMaterializer newDefault materializeFrom: communicationStream) root.
 			"fuel bug prevents us from serializing all values directly, need to handle the globals first"
-			^ result second
+			result := (FLMaterializer newDefault materializeFrom: communicationStream) root second.
+			self 
+				assert: (result isKindOf: CIValidationResult)
+				description: 'Expected a CIValidationResult but got a ', result class name. 
+			^ result
 		] ensure: [ 
 			self inform: 'A: Writing OK'.
 			communicationStream nextPutAll: 'OK'; flush ]]
