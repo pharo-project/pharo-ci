@@ -1,6 +1,10 @@
 printing
 printProgress
-	| string |
-	string := '[',currentTest asString, '/', self maxTest asString,']'.
-	self stderr 
-		startOfLine; right: (80 - string size); nextPutAll: string.
+	| maxPositions |
+	maxPositions := (self maxTest log + 1) floor.
+	self stderr
+		nextPut: $[;
+		nextPutAll: (currentTest asString padLeftTo: maxPositions);
+		nextPut: $/;
+		print: self maxTest;
+		nextPutAll: '] '.
