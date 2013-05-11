@@ -1,5 +1,8 @@
 protocol
 validate
+	| result |
 	
-	^ self newImageDo: [ 
-		self validateChangeBlock: [ self change load ]]
+	result := self newImageDo: [ 
+		self validateChangeBlock: [ self change load ]].
+	
+	^ self addValidationResult: result

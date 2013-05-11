@@ -1,6 +1,6 @@
 image forking
 newImageDo: aBlock
-	^ self restoreCommunicationPortAfter: [
+	self restoreCommunicationPortAfter: [
 		self 
 			spawnImageNewSessionDo: [
 				self publishResult: 	aBlock.
