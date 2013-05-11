@@ -23,6 +23,7 @@ readResultFromForkedImage: forkedImage
 			self inform: 'A: Writing OK'.
 			communicationStream nextPutAll: 'OK'; flush ]]
 	on: Error do: [ :error|
+		self inform: 'A: result loading failed'.
 		^ CIValidationResult failure: (String streamContents: [ :stream|
 			stream << 'Could not parse result from forked image: '; print: error.
 			error signalerContext shortDebugStackOn: stream ])].
