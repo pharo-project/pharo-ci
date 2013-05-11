@@ -2,7 +2,7 @@ result handling main image
 readResultFromForkedImage: forkedImage
 	| result communicationStream ack |
 	
-	self inform: 'Waiting for test image results...'.
+	self inform: 'A: Waiting for test image results...'.
 	^ [ 
 		communicationStream := self newReadSocketStream.
 		self inform: 'A: Writing READY'.
