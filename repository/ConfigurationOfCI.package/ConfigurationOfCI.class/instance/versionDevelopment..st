@@ -5,12 +5,7 @@ versionDevelopment: spec
 	spec for: #'common' do: [
 		spec timestamp: 'CamilloBruni 4/10/2013 16:43'.
 		
-		spec 
-			project: 'Soup'          with: '1.2';
-			project: 'CommandShell'  with: '1.1';
-			project: 'FuelMetalevel' with: #stable;
-			project: 'XMLWriter'     with: #stable.
-		
+		self versionDevelopmentExternal: spec. 
 		spec 
 			"ErwanDouaille CamilloBruni"
 			package: 'CI-Core'               with: 'CI-Core-CamilloBruni.222';
