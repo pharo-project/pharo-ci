@@ -4,7 +4,7 @@ testSoften
 	
 	aRule := [ :change | CIValidationResult failure: 'failure' ] asCIValidationRule.
 	aSoftenedRule := aRule soften.
-	result := aSoftenedRule validate.
+	result := aSoftenedRule validate: self newChange.
 	
 	self deny: aRule validate isSuccess.
 	self assert: result isSuccess.

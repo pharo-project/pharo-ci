@@ -5,7 +5,7 @@ testHarden
 	rule := [ :change | CIValidationResult warning: 'warning' ] asCIValidationRule .
 	hardenedRule := rule harden.
 	
-	result := hardenedRule validate.
+	result := hardenedRule validate: self newChange.
 	
 	self assert: result warnings isEmpty.
 	self assert: result errors first equals: 'warning'.

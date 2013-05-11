@@ -1,3 +1,3 @@
 protocol
 basicLoad
-	self loadBlock ifNotNil: [ self loadBlock value ]
+	^ self loadBlock ifNotNil: [ self loadBlock value ]

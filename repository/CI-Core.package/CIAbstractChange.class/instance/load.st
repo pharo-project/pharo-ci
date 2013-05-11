@@ -1,3 +1,4 @@
 loading
 load
-	self assertLoadable; basicLoad
+	self assertLoadable.
+	^ self basicLoad
