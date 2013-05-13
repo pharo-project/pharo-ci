@@ -5,4 +5,6 @@ newFailingChange
 		class compile: 'testFail
 			self fail'.
 		class compile: 'testError
-			Error signal: #anErrorDescription asWideString ' ] asCIChange
+			Error signal: #anErrorDescription asWideString '.
+		class compile: 'testError2
+			self assert: false description: (Character value: 1000) asWideString ' ] asCIChange

@@ -1,6 +1,7 @@
 result handling forked image
 serializeGlobals: globals result: result
 	| serializer stream  ack |
+	result change: nil.
 	stream := self newWriteSocketStream. 
 	"wait until we get a READY signal"
 	self inform: 'B: Waiting for READY'.
