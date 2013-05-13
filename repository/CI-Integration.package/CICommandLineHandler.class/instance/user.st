@@ -1,5 +1,5 @@
 authentification
 user
 	user ifNotNil: [ ^ user ].
-	user := OSProcess thisOSProcess environment at: 'PHARO_CI_USER' ifAbsent: nil.
+	user := OSPlatform env at: 'PHARO_CI_USER' ifAbsent: nil.
 	^ user
