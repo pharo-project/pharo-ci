@@ -1,11 +1,13 @@
 validation
 recordValidationChangesDuring: aBlock
 	self preLoadValidate.
+	self inform: 'Loading change.'.
 	[ loadTime := aBlock timeToRun ]
-		on: Error do: [ :error |
+		on: Error, Warning do: [ :error |
 			^ self addError: (String streamContents: [ :stream |
 				stream << 'Could not apply change: '; print: error.
-				error signalerContext shortDebugStackOn: stream ])] .
+				error signalerContext shortDebugStackOn: stream ])].
+	self inform: 'Loaded change in ', loadTime asString, ' ms'.
 	self 
 		postLoadValidate;
 		removeFalsePositives.
