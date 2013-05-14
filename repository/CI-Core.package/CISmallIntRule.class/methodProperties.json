@@ -3,4 +3,10 @@
 		"with:" : "CamilloBruni 4/26/2013 14:00",
 		"with:with:" : "CamilloBruni 4/26/2013 14:01" },
 	"instance" : {
-		 } }
+		"add:" : "ErwanDouaille 5/14/2013 13:31",
+		"basicValidate" : "ErwanDouaille 5/14/2013 16:23",
+		"initialize" : "ErwanDouaille 5/14/2013 13:32",
+		"rules" : "ErwanDouaille 5/14/2013 13:20",
+		"rules:" : "ErwanDouaille 5/14/2013 13:20",
+		"runRules" : "ErwanDouaille 5/14/2013 16:24",
+		"testResult:" : "ErwanDouaille 5/14/2013 13:08" } }
