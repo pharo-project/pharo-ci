@@ -1,4 +1,7 @@
 loading
 load
+	| result |
 	self assertLoadable.
-	^ self basicLoad
+	result := self basicLoad.
+	Smalltalk garbageCollect.
+	^ result
