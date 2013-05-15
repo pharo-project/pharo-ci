@@ -8,6 +8,6 @@ configuration
 		
 	^ self new
 		addRule: 
-			(RBUnclassifiedMethodsRule asCIValidationRule harden) & 
-			(RBNoClassCommentRule asCIValidationRule harden);
+			RBUnclassifiedMethodsRule harden & 
+			RBNoClassCommentRule harden;
 		yourself

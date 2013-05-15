@@ -9,6 +9,6 @@ pharo30
 	^ self new
 		addRule: 
 			CIRunTestsRule & 
-			(RBUnclassifiedMethodsRule asCIValidationRule harden) & 
-			(RBNoClassCommentRule asCIValidationRule harden);
+			RBUnclassifiedMethodsRule harden & 
+			RBNoClassCommentRule harden;
 		yourself
