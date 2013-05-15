@@ -1,1 +1,0 @@
-A CIUncategorizedMethodRule is responsible to report which classes have methods uncategorized.
