@@ -1,4 +1,6 @@
 as yet unclassified
 testResult: aSmallIntResult
-	
-	self addAllWarnings: aSmallIntResult 
+
+	aSmallIntResult do: [ :each |
+		each classes do: [ :class |
+			self addWarning: each label asString, ' ', class asString ]].
