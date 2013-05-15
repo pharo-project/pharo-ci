@@ -1,8 +1,8 @@
 {
 	"class" : {
-		"configuration" : "ErwanDouaille 5/15/2013 15:18",
+		"configuration" : "ErwanDouaille 5/6/2013 11:25",
 		"manager:" : "CamilloBruni 4/14/2013 21:42",
-		"pharo30" : "ErwanDouaille 5/15/2013 15:18",
+		"pharo30" : "CamilloBruni 4/29/2013 15:11",
 		"slice" : "ErwanDouaille 5/6/2013 11:25" },
 	"instance" : {
 		"addRule:" : "CamilloBruni 4/10/2013 14:38",

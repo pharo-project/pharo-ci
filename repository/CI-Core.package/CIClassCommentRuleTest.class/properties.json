@@ -7,8 +7,8 @@
 	"commentStamp" : "",
 	"instvars" : [
 		 ],
-	"name" : "CISmallIntRuleUncategorizedMethodTest",
+	"name" : "CIClassCommentRuleTest",
 	"pools" : [
 		 ],
-	"super" : "CISmallIntRuleTest",
+	"super" : "CIValidationRuleTest",
 	"type" : "normal" }

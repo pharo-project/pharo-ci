@@ -6,3 +6,5 @@ newSuccessfulChange
 			classVariableNames: ''
 			poolDictionaries: ''
 			category: 'CI-Test'.]
+	
+	

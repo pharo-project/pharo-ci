@@ -1,0 +1,1 @@
+A CIClassCommentRule is responsible which classes don't have comments and report them.
