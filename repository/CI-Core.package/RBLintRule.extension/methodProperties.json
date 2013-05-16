@@ -1,6 +1,7 @@
 {
 	"class" : {
-		"asCIValidationRule" : "ErwanDouaille 5/14/2013 13:48",
+		"asCIValidationRule" : "CamilloBruni 5/16/2013 11:17",
 		"harden" : "CamilloBruni 5/16/2013 09:27" },
 	"instance" : {
-		 } }
+		"asCIValidationRule" : "CamilloBruni 5/16/2013 11:17",
+		"harden" : "CamilloBruni 5/16/2013 11:18" } }

@@ -1,3 +1,3 @@
 *CI-Core-Validation
 asCIValidationRule
-	^ CISmallIntRule with: self new.
+	^ CISmallIntRule with: self.

@@ -1,7 +1,7 @@
 *CI-Core-Validation
 pharoHardLintRules
 	^ self rules: { 
-		RBUndeclaredReferenceRule,
+		RBUndeclaredReferenceRule.
 		RBUnclassifiedMethodsRule.
 		RBNoClassCommentRule. 
 		RBDefinesEqualNotHashRule.
