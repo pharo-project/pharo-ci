@@ -10,5 +10,5 @@
 	"name" : "CIConfigurationExemple",
 	"pools" : [
 		 ],
-	"super" : "TestCase",
+	"super" : "Object",
 	"type" : "normal" }

@@ -8,5 +8,5 @@ testPublishChangeNotFound
 	publisher changeNotFoundBlock: [ publishedChangeNotFound := true ].
 	
 	publisher publishChangeNotFound: #anObject.
-	self assert: publishedChangeNotFound.
+	self assert: publishedChangeNotFound .
 	self deny: publishedSomethingElse.

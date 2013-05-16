@@ -8,4 +8,4 @@ testEntity
 		publishValidationResult: (CIValidationResult change: (CITestChange new name: 'TestEntity')).
 	path := file outputDirectory / 'TestEntity', 'xml'.
 	
-	self assert: (directory exists: path ).
+	self assert: (directory exists: path ) description: 'Testing the creation of the xml file'.

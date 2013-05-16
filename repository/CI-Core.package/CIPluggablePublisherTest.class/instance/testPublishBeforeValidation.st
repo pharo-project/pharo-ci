@@ -8,5 +8,5 @@ testPublishBeforeValidation
 	publisher beforeValidationBlock: [ publishedBeforeValidation := true ].
 	
 	publisher publishBeforeValidation: #anObject.
-	self assert: publishedBeforeValidation.
+	self assert: publishedBeforeValidation  description: 'Ensure the validation'.
 	self deny: publishedSomethingElse.

@@ -8,5 +8,5 @@ testContents
 		publishValidationResult: (CIValidationResult change: (CITestChange new name: 'TestEntity')).
 	path := file outputDirectory / 'TestEntity', 'html'.
 	
-	self assert: (directory exists: path ).
-	self assert: path readStream contents asString = self defaultContent.
+	self assert: (directory exists: path ) description: 'Testing the creation of html file'.
+	self assert: path readStream contents asString equals: self defaultContent.
