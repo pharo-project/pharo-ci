@@ -2,9 +2,5 @@ image forking
 newImageDo: aBlock
 	self restoreCommunicationPortAfter: [
 		self 
-			spawnImageNewSessionDo: [
-				[ self publishResult: aBlock. ] ensure: [ 
-					self inform: 'B: Terminating'.
-					Smalltalk snapshot: true andQuit: true.
-					Error signal: 'should not reopen forked validation image' ]]
+			spawnImageNewSessionDo: [ self runForkedImage: aBlock ]
 			currentSessionDo: [ ^ self runNewImage ]].
