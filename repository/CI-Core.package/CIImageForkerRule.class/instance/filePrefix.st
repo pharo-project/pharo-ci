@@ -1,3 +1,11 @@
 as yet unclassified
 filePrefix
-	^ self class name
+	| imageName originalPrefix |
+	
+	imageName := Smalltalk imageFile basenameWithoutExtension.
+	originalPrefix := super filePrefix.
+	
+	(originalPrefix = imageName)
+		ifFalse: [ ^ originalPrefix ].
+		
+	^ imageName, '_', originalPrefix
