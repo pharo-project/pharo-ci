@@ -1,3 +1,29 @@
+'From Pharo3.0 of 18 March 2013 [Latest update: #30138] on 17 May 2013 at 10:51:52 am'!
+
+!SmalltalkImage methodsFor: 'PharoKernel' stamp: 'PavelKrivanek 11/20/2012 20:07'!
+kernelPackageNames
+ 
+  ^ #('AST-Core' 'AST-Semantic' 'Announcements-Core' 'Announcements-Core' 'Collections-Abstract' 'Collections-Arithmetic' 'Collections-Arrayed'
+ 'Collections-Atomic' 'Collections-Native' 'Collections-Sequenceable' 'Collections-Stack' 'Collections-Streams' 
+'Collections-Strings' 'Collections-Support' 'Collections-Text' 'Collections-Traits' 'Collections-Unordered' 
+'Collections-Weak' 'Compiler' 'Compression' 'Files' 'Graphics-Display Objects' 'Graphics-Primitives' 
+'Graphics-Transformations' 'Kernel' 'Multilingual-Encodings' 'Multilingual-ImmPlugin' 'Multilingual-Languages' 
+'Multilingual-TextConversion'  'System-Change Notification' 'System-Changes' 'System-CommandLine' 'System-Clipboard' 
+'System-FileRegistry' 'System-Finalization' 'System-Localization' 'System-Object Events' 'System-Platforms' 
+'System-Support' 'Text-Core' 'Traits' 'UIManager' 'Transcript' 'FileSystem-AnsiStreams' 'FileSystem-Core' 
+'FileSystem-Disk' 'FileSystem-Memory' 'CodeImport' 'Regex-Core' 'SystemProgress' 'System-Announcements' 'Ring-Core-Kernel' 'Ring-Core-Containers' 'Kernel-Pragmas' 'Kernel-Pragmas' 'System-PragmaCollector')! !
+
+'From Pharo3.0 of 18 March 2013 [Latest update: #30138] on 17 May 2013 at 11:11:51 am'!
+
+!DefaultCommandLineHandler class methodsFor: 'class initialization' stamp: 'PavelKrivanek 5/17/2013 11:11'!
+startUp: resuming
+
+  "only handle when lauching a new image"
+  resuming ifFalse: [ ^ self ].
+  "Smalltalk tools userManager canRunStartupScript ifFalse: [ ^ self ]."
+  Smalltalk addDeferredStartupAction: [ self new activate ]! !
+
+
 'From Pharo2.0a of ''18 April 2012'' [Latest update: #20580] on 8 March 2013 at 12:58:16 pm'!
 
 !ClassDescription methodsFor: 'accessing method dictionary' stamp: 'PavelKrivanek 3/8/2013 12:58'!
