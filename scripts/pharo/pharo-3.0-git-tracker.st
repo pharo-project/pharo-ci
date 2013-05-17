@@ -9,3 +9,5 @@ FileStream stdout nextPutAll: 'Installing FileSystemST';lf.
 
 FileStream stdout nextPutAll: 'Exporting all Packages';lf.
 (FileSystem st root) copyAllTo: 'pharo-core' asFileReference.
+
+Smalltalk snapshot: true andQuit: true.
