@@ -2,7 +2,7 @@
 
 !SmalltalkImage methodsFor: 'PharoKernel' stamp: 'PavelKrivanek 11/20/2012 20:07'!
 kernelPackageNames
-
+ 
   ^ #('AST-Core' 'AST-Semantic' 'Announcements-Core' 'Announcements-Core' 'Collections-Abstract' 'Collections-Arithmetic' 'Collections-Arrayed'
  'Collections-Atomic' 'Collections-Native' 'Collections-Sequenceable' 'Collections-Stack' 'Collections-Streams' 
 'Collections-Strings' 'Collections-Support' 'Collections-Text' 'Collections-Traits' 'Collections-Unordered' 
