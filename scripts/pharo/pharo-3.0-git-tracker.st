@@ -1,7 +1,6 @@
-
 Gofer new
 	smalltalkhubUser: 'dh83' project: 'FileSystemST';
-	configuration;
-	loadDevelopment.
+	package: 'ConfigurationOfFileSystemST';
+	load.
 	
-(FileSystem st root) copyAllTo: 'pharo-core' asFileReference.
+(Smalltalk at: #ConfigurationOfFileSystemST) loadDevelopment
