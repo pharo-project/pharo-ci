@@ -1,4 +1,4 @@
-as yet unclassified
+result handling main image
 resultAssertion: result
 	self 
 		assert: (result isKindOf: CIValidationResult)

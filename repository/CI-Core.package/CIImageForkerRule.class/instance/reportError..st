@@ -1,4 +1,4 @@
-as yet unclassified
+result handling main image
 reportError: error
 	[FLSerializer serialize: error freeze toFileNamed: 'MaterializationError.fuel'] 
 			on: Error do: [ :e | 
