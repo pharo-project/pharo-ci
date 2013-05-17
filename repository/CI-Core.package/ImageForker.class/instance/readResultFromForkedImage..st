@@ -15,19 +15,9 @@ readResultFromForkedImage: forkedImage
 			self inform: 'A: Reading result'.
 			"fuel bug prevents us from serializing all values directly, need to handle the globals first"
 			result := (FLMaterializer newDefault materializeFrom: communicationStream) root second.
-			self 
-				assert: (result isKindOf: CIValidationResult)
-				description: 'Expected a CIValidationResult but got a ', result class name. 
+			self resultAssertion: result.
 			^ result
 		] ensure: [ 
 			self inform: 'A: Writing OK'.
 			communicationStream nextPutAll: 'OK'; flush ]]
-	on: Error do: [ :error |
-		[FLSerializer serialize: error freeze toFileNamed: 'MaterializationError.fuel'] 
-			on: Error do: [ :e | 
-				self inform: 'A: Could not serialize materialization error: ', e asString ].   
-		self inform: 'A: result loading failed'.
-		^ CIValidationResult failure: (String streamContents: [ :stream|
-			stream << 'Could not parse result from forked image: '; print: error.
-			error signalerContext shortDebugStackOn: stream ])].
-	
+	on: Error do: [ :error | self reportError: error].

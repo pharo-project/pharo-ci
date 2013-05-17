@@ -6,12 +6,9 @@
 		 ],
 	"commentStamp" : "<historical>",
 	"instvars" : [
-		"loadTime",
-		"environmentChange",
-		"previousResult",
-		"imageForker" ],
-	"name" : "CITestChangeDifferenceRule",
+		 ],
+	"name" : "CIImageForkerRule",
 	"pools" : [
 		 ],
-	"super" : "CIAbstractValidationRule",
+	"super" : "ImageForker",
 	"type" : "normal" }

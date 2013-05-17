@@ -6,9 +6,9 @@
 		 ],
 	"commentStamp" : "<historical>",
 	"instvars" : [
-		"name",
-		"communication" ],
-	"name" : "CIImageForker",
+		"communicationPort",
+		"readSocket" ],
+	"name" : "ImageForker",
 	"pools" : [
 		 ],
 	"super" : "Object",

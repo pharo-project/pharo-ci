@@ -6,10 +6,9 @@
 		 ],
 	"commentStamp" : "<historical>",
 	"instvars" : [
-		"communicationPort",
-		"readSocket" ],
-	"name" : "CIImageForkRule",
+		 ],
+	"name" : "CIImageForkerBlock",
 	"pools" : [
 		 ],
-	"super" : "CIAbstractValidationRule",
+	"super" : "ImageForker",
 	"type" : "normal" }
