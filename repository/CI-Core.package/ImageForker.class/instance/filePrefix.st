@@ -1,4 +1,4 @@
 accessing
 filePrefix
 	"the fork image name's"
-	self subclassResponsibility 
+	^ self class name asString
