@@ -41,7 +41,7 @@ versionNumber = 0
 
 # check if the file exists on our main servers...
 puts blue("Trying prebuilt images:")
-FILE_SERVER="http://pharo.gforge.inria.fr/ci/image/"
+FILE_SERVER="http://files.pharo.org/image/"
 PHARO_VERSION.downto(1000) {|i|
     url = FILE_SERVER + i.to_s[0..1] + '/' + i.to_s + '.zip'
     puts url
