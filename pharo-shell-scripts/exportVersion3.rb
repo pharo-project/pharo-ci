@@ -55,16 +55,11 @@ else
 end
  
 puts REPOS="git@github.com:PharoProject/pharo-core.git"
-system("test -e pharo-core || git clone --depth=1 -b 2.0 --no-checkout #{REPOS}")
+system("test -e pharo-core || git clone --depth=1 -b 3.0 --no-checkout #{REPOS}")
 system("git --git-dir=pharo-core/.git pull")
 system("rm -rf pharo-core/*")
 guard()
 
-
-puts REPOS="git://github.com/dalehenrich/filetree.git"
-system("test -e filetree || git clone --depth=1 -b pharo2.0 --no-checkout #{REPOS}")
-system("git --git-dir=filetree/.git pull")
-guard()
 
 # Loading the latest VM =======================================================
 
@@ -82,7 +77,7 @@ guard()
 # exporting the pharo sources =================================================
 puts blue("Updating the image and exporting all sources ")
 
-system("$PHARO_VM Pharo-#{PHARO_VERSION}.image #{SCRIPTS}/scripts/pharo/pharo-2.0-git-tracker.st")
+system("$PHARO_VM Pharo-#{PHARO_VERSION}.image #{SCRIPTS}/scripts/pharo/pharo-3.0-git-tracker.st")
 guard()
 
 `touch pharo-core/#{PHARO_VERSION}`
