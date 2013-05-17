@@ -7,7 +7,7 @@ Slice part :
 	test 	test the given or next open issue
 	
 	--issue 			specifiy an issue to be tested if omitted use the next untested issue
-	<issueNumber> 		a valid Issue number from the Pharo issue tracker
+	<issueNumber> 		a valid Issue number from the Pharo issue tracker / next
 	--next 				use the next open issue for the selected action
 	--update-issue 	if specified updates the issue with integration information
 	
