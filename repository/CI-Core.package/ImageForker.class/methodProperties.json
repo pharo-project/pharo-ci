@@ -2,9 +2,9 @@
 	"class" : {
 		"forkDo:" : "ErwanDouaille 5/17/2013 11:07" },
 	"instance" : {
-		"backupNewTemporaryImage" : "ErwanDouaille 5/17/2013 13:40",
+		"backupNewTemporaryImage" : "ErwanDouaille 5/17/2013 15:12",
 		"communicationPort" : "ErwanDouaille 5/17/2013 10:29",
-		"createStderrForwarderForProcess:" : "ErwanDouaille 5/17/2013 14:43",
+		"createStderrForwarderForProcess:" : "ErwanDouaille 5/17/2013 15:18",
 		"deleteTemporaryImage" : "ErwanDouaille 5/17/2013 10:29",
 		"filePrefix" : "ErwanDouaille 5/17/2013 14:22",
 		"handleExitStatus:" : "ErwanDouaille 5/17/2013 11:41",

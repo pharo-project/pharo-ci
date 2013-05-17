@@ -1,4 +1,7 @@
 image forking
 backupNewTemporaryImage
+	| oldImageName newImageName |
 	self deleteTemporaryImage.
-	^ Smalltalk backupTo: self temporaryImageName
+	newImageName := self temporaryImageName.
+	oldImageName := Smalltalk shortImageName.
+	^ Smalltalk backupTo: newImageName
