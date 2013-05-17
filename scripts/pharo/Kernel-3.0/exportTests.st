@@ -27,7 +27,7 @@ SUnit-Tests
 Tests' linesDo: [:packageName |
   "((Smalltalk vm getSystemAttribute: 3) ifNil: [FileSystem disk workingDirectory] ifNotNilDo: [:path | FileSystem disk workingDirectory resolve: path])" 
  FileStream forceNewFileNamed: (packageName, '.st') do: [:file |
-    file nextPutAll: (ScriptLoader latestSource: packageName location: 'http://ss3.gemstone.com/ss/Pharo20')]].
+    file nextPutAll: (ScriptLoader latestSource: packageName location: 'http://smalltalkhub.com/mc/Pharo/Pharo30/main')]].
 
 FooSharedPool fileOut.
 

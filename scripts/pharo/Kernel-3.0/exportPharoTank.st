@@ -283,11 +283,11 @@ mcRegistry := aTAPackage additionalObjectAt: #MCRegistry.
 
 repoGroup := MCRepositoryGroup new.
 repoGroup addRepository: (MCHttpRepository
-  location: 'http://ss3.gemstone.com/ss/Pharo20'
+  location: 'http://smalltalkhub.com/mc/Pharo/Pharo30/main'
   user: ''
   password: '').  
 repoGroup addRepository: (MCHttpRepository
-  location: 'http://ss3.gemstone.com/ss/PharoInbox'
+  location: 'http://smalltalkhub.com/mc/Pharo/Pharo30Inbox/main'
   user: ''
   password: '').
 "
