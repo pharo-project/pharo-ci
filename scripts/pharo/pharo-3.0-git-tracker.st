@@ -4,13 +4,13 @@ Gofer new
 	package: 'ConfigurationOfFileSystemST';
 	load.
 
-version := SystemVersion current highestUpdate.
+version := SystemVersion current highestUpdate asString.
 FileStream stdout nextPutAll: 'Extracting commit message';lf.
-versionString := (ScriptLoader >> ('update', version asString) asSymbol) literals 
+versionString := (ScriptLoader >> ('update', version) asSymbol) literals 
 	detect: [ :e| e isString and: [ e isSymbol not ]]
 	ifNone: [ '' ].
 
-version asString asFileReference writeStreamDo: [ :stream| 
+version asFileReference writeStreamDo: [ :stream| 
 	stream nextPutAll: versionString ].
 
 
