@@ -8,4 +8,4 @@ FileStream stdout nextPutAll: 'Installing FileSystemST';lf.
 
 
 FileStream stdout nextPutAll: 'Exporting all Packages';lf.
-(FileSystem st root) copyAllTo: self outputDirectory ensureDirectory.
+(FileSystem st root) copyAllTo: 'pharo-core' asFileDirectory.
