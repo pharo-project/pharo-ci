@@ -1,4 +1,3 @@
 accessing
 filePrefix
-	"the fork image name's"
-	^ self class name asString
+	^ filePrefix ifNil: [ filePrefix := Smalltalk imageFile nextVersion basenameWithoutExtension, '_fork' ]

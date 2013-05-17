@@ -1,12 +1,12 @@
 {
 	"class" : {
-		"forkDo:" : "ErwanDouaille 5/17/2013 11:07" },
+		"newImageDo:" : "CamilloBruni 5/17/2013 18:35" },
 	"instance" : {
 		"backupNewTemporaryImage" : "ErwanDouaille 5/17/2013 15:12",
 		"communicationPort" : "ErwanDouaille 5/17/2013 10:29",
 		"createStderrForwarderForProcess:" : "ErwanDouaille 5/17/2013 15:18",
 		"deleteTemporaryImage" : "ErwanDouaille 5/17/2013 10:29",
-		"filePrefix" : "ErwanDouaille 5/17/2013 15:44",
+		"filePrefix" : "CamilloBruni 5/17/2013 18:33",
 		"handleExitStatus:" : "ErwanDouaille 5/17/2013 11:41",
 		"handleResultFromForkedImage:" : "ErwanDouaille 5/17/2013 10:29",
 		"newImageDo:" : "ErwanDouaille 5/17/2013 10:32",
@@ -15,7 +15,7 @@
 		"openCommunicationSocket" : "ErwanDouaille 5/17/2013 10:29",
 		"prepareListenSocket" : "ErwanDouaille 5/17/2013 10:29",
 		"publishResult:" : "ErwanDouaille 5/17/2013 10:29",
-		"readResultFromForkedImage:" : "ErwanDouaille 5/17/2013 10:41",
+		"readResultFromForkedImage:" : "CamilloBruni 5/17/2013 18:34",
 		"reportError:" : "ErwanDouaille 5/17/2013 14:24",
 		"restoreCommunicationPortAfter:" : "ErwanDouaille 5/17/2013 10:29",
 		"resultAssertion:" : "ErwanDouaille 5/17/2013 14:23",
@@ -26,6 +26,7 @@
 		"temporaryImageCommand" : "ErwanDouaille 5/17/2013 10:29",
 		"temporaryImageFile" : "ErwanDouaille 5/17/2013 10:29",
 		"temporaryImageName" : "ErwanDouaille 5/17/2013 10:29",
-		"timeout" : "ErwanDouaille 5/17/2013 10:44",
+		"timeout" : "CamilloBruni 5/17/2013 18:30",
+		"timeout:" : "CamilloBruni 5/17/2013 18:30",
 		"waitForProcess:" : "ErwanDouaille 5/17/2013 10:29",
 		"waitForReadySignal" : "ErwanDouaille 5/17/2013 10:29" } }

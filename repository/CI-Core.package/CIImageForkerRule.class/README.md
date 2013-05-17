@@ -1,1 +1,0 @@
-I'm the default Class to run CI test into a forked image.

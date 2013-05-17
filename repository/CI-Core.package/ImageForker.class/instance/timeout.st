@@ -1,3 +1,3 @@
 accessing
 timeout
-	^ self subclassResponsibility 
+	^ timeout ifNil: [ 2 minutes ]

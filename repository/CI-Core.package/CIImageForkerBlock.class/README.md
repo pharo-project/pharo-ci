@@ -1,1 +1,0 @@
-A CIImageForkerBlock is a default way to run a block in a forkedImage and have the result given back
