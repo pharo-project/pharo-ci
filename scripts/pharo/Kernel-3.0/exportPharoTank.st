@@ -18,7 +18,7 @@ FileStream stdout
 " hacks "
 
 
- Parser warningAllowed: true.   
+"Parser warningAllowed: true. "  
 
 " To be added soon in Pharo " 
  "'BufferedConverterBatchMethods.cs' asFileReference readStream fileIn."
