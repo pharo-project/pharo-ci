@@ -1,6 +1,6 @@
 *CI-Core-Validation
 pharoHardLintRules
-	^ self rules: { 
+	^ self rules: ({ 
 		RBUndeclaredReferenceRule.
 		RBUnclassifiedMethodsRule.
 		RBNoClassCommentRule. 
@@ -19,4 +19,4 @@ pharoHardLintRules
 		RBUnoptimizedToDoRule.
 		RBBetweenAndRule.
 		RBCodeCruftLeftInMethodsRule 
-	}
+	} collect: [ :each | each new ])

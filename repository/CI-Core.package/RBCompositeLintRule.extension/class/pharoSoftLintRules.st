@@ -1,6 +1,6 @@
 *CI-Core-Validation
 pharoSoftLintRules	
-	^ self rules: {			
+	^ self rules: ({			
 		RBInstanceVariableCapitalizationRule.
 		RBClassVariableCapitalizationRule.
 		RBMissingSubclassResponsibilityRule.
@@ -32,4 +32,4 @@ pharoSoftLintRules
 		RBAtIfAbsentRule.
 		RBAllAnyNoneSatisfyRule.
 		RBClassNameInSelectorRule 
-	}
+	} collect: [ :each | each new ])
