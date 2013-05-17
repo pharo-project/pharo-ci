@@ -1,4 +1,4 @@
-image forking
+result handling main image
 runNewImage
 	| relayOutput forkedImage |
 	forkedImage := PipeableOSProcess command: self temporaryImageCommand.
@@ -6,6 +6,7 @@ runNewImage
 	
 	[ ^ self handleResultFromForkedImage: forkedImage ]
 		ensure: [ 
+		relayOutput terminate.
+		readSocket close.
 		self handleExitStatus: forkedImage.
-			relayOutput terminate.
-			self deleteTemporaryImage ]
+		self deleteTemporaryImage ]

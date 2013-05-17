@@ -1,5 +1,5 @@
 initialization
 initialize
 	super initialize.
-	imageForker := ImageForker new.
+	imageForker := CIImageForker new.
 	imageForker timeout: self timeout.

@@ -10,7 +10,7 @@
 		"readSocket",
 		"timeout",
 		"filePrefix" ],
-	"name" : "ImageForker",
+	"name" : "CIImageForker",
 	"pools" : [
 		 ],
 	"super" : "Object",
