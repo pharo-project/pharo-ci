@@ -1,4 +1,5 @@
 initialization
 initialize
 	super initialize.
-	self imageForker: CIImageForkerRule.
+	imageForker := ImageForker new.
+	imageForker timeout: self timeout.

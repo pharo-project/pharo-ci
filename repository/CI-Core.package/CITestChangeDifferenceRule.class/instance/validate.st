@@ -4,7 +4,7 @@ validate
 	
 	self assertHasChange.
 
-	result := self imageForker newImageDo: [ 
+	result := self newImageDo: [ 
 		self validateChangeBlock: [ self change load ]].
 	
 	^ self addValidationResult: result
