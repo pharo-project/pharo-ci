@@ -3,7 +3,7 @@ readResultFromForkedImage: forkedImage
 	| result communicationStream ack |
 	
 	self inform: 'A: Waiting for test image results...'.
-
+	
 	communicationStream := self newReadSocketStream.
 	self inform: 'A: Writing READY'.
 	communicationStream nextPutAll: 'READY'; flush.
@@ -18,4 +18,5 @@ readResultFromForkedImage: forkedImage
 		^ result
 	] ensure: [ 
 		self inform: 'A: Writing OK'.
-		communicationStream nextPutAll: 'OK'; flush ]
+		communicationStream nextPutAll: 'OK'; flush.
+		communicationStream close. ]
