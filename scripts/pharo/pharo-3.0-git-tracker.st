@@ -12,7 +12,7 @@ versionString := (ScriptLoader >> ('update', version) asSymbol) literals
 
 version asFileReference writeStreamDo: [ :stream| 
 	stream 
-		nextPutAll: version; cr;
+		nextPutAll: version; cr; lf;
 		nextPutAll: versionString ].
 
 
