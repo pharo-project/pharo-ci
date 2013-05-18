@@ -92,7 +92,9 @@ commitMessage  := ScriptLoader methodDict
                         ifAbsent: [ '' "for some strange reason some updates do not contain an explicit update"].
 
 versionString asFileReference writeStreamDo: [ :stream| 
-	stream nextPutAll: commitMessage ].
+	stream 
+		nextPutAll: versionString; cr;
+		nextPutAll: commitMessage ].
 	
 "save all packages into the filetree repository ============================="
 blue value:'Comitting changes to ', fileTreeRepository directory asString.
