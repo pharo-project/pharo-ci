@@ -11,6 +11,6 @@ runNewImage
 	[ ^ self handleResultFromForkedImage: forkedImage ]
 		ensure: [ 
 		relayOutput terminate.
-		readSocket ifNotNil: [ readSocket close ].
+		readSocket ifNotNil: [ readSocket closeAndDestroy ].
 		self handleExitStatus: forkedImage.
 		self deleteTemporaryImage ]
