@@ -1,3 +1,4 @@
 image-evaluation
 evaluate: aBlock
-	^ self remote
+	self isForkedImage 
+		ifTrue: [ ^ aBlock value ]
