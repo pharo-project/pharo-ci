@@ -1,7 +1,6 @@
-Usage: seamless originalPort acutalPort
+Usage: seamless port
 
-	originalPort 	Is the seamless port from the remote.
-	actualPort		is the seamless actual port.
+	port		is the seamless actual port.
 			
 Documentation:
 

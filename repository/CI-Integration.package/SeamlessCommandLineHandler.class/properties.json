@@ -6,9 +6,7 @@
 		 ],
 	"commentStamp" : "<historical>",
 	"instvars" : [
-		"remotePort",
-		"localPort",
-		"remote" ],
+		"localPort" ],
 	"name" : "SeamlessCommandLineHandler",
 	"pools" : [
 		 ],
