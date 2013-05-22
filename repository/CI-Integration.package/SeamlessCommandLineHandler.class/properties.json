@@ -1,0 +1,18 @@
+{
+	"category" : "CI-Integration-CommandLine",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"issue",
+		"user",
+		"password",
+		"manager",
+		"actioner" ],
+	"name" : "SeamlessCommandLineHandler",
+	"pools" : [
+		 ],
+	"super" : "CommandLineHandler",
+	"type" : "normal" }

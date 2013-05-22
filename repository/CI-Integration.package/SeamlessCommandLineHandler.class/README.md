@@ -1,0 +1,1 @@
+A SeamlessCommandLineHandler is a commandLineHandler to use Seamless from commandLine :)
