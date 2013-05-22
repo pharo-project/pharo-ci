@@ -1,3 +1,3 @@
-as yet unclassified
+image-evaluation
 evaluate: aBlock
 	^ self new; evaluate: aBlock

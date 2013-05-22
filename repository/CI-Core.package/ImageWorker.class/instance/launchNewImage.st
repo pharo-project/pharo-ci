@@ -1,7 +1,16 @@
 image-forking
 launchNewImage
+	self isForkedImage 
+		ifTrue: [  ]
+		ifFalse: [ 
+			OSProcess command: 
+				Smalltalk vm command, 
+				' ', 
+				self temporaryImageFile fullName, 
+				' seamless ', 
+				self remotePort asString. ]
 	
-	| temporaryImageCommand |
-	temporaryImageCommand := Smalltalk vm command, ' ', self temporaryImageFile fullName.
+	"
+	it will not be a forked image since we have seamless comm Unmatched string quote ->andline handlers
 	PipeableOSProcess command: temporaryImageCommand.
-	self waitingForkedImageMessage.
+	self waitingForkedImageMessage."

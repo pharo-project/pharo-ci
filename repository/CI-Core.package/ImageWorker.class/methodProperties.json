@@ -6,12 +6,13 @@
 		"closeCommunication" : "ErwanDouaille 5/22/2013 10:02",
 		"createForkedImage" : "ErwanDouaille 5/22/2013 08:38",
 		"createNewImageName" : "ErwanDouaille 5/22/2013 08:41",
-		"evaluate:" : "ErwanDouaille 5/22/2013 09:55",
+		"evaluate:" : "ErwanDouaille 5/22/2013 11:24",
 		"forkedImageName" : "ErwanDouaille 5/22/2013 08:43",
 		"forkedImageName:" : "ErwanDouaille 5/22/2013 08:43",
 		"initialize" : "ErwanDouaille 5/22/2013 08:35",
 		"initializeCommunication" : "ErwanDouaille 5/22/2013 10:00",
-		"launchNewImage" : "ErwanDouaille 5/22/2013 09:57",
+		"isForkedImage" : "ErwanDouaille 5/22/2013 11:02",
+		"launchNewImage" : "ErwanDouaille 5/22/2013 11:28",
 		"localPort" : "ErwanDouaille 5/22/2013 08:35",
 		"localPort:" : "ErwanDouaille 5/22/2013 08:35",
 		"remote" : "ErwanDouaille 5/22/2013 09:48",
@@ -20,5 +21,4 @@
 		"remotePort:" : "ErwanDouaille 5/22/2013 08:35",
 		"startLocalServer" : "ErwanDouaille 5/22/2013 09:59",
 		"temporaryChangesFile" : "ErwanDouaille 5/22/2013 08:44",
-		"temporaryImageFile" : "ErwanDouaille 5/22/2013 08:44",
-		"waitingForkedImageMessage" : "ErwanDouaille 5/22/2013 10:08" } }
+		"temporaryImageFile" : "ErwanDouaille 5/22/2013 08:44" } }
