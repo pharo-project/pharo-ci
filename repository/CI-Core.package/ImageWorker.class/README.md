@@ -1,0 +1,1 @@
+An ImageWorker is the new image forker stuff. It will use Seamless stuff to communicate with the forked image.

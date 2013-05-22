@@ -1,0 +1,17 @@
+{
+	"class" : {
+		"evaluate:" : "ErwanDouaille 5/22/2013 08:52" },
+	"instance" : {
+		"checkFileCreation" : "ErwanDouaille 5/22/2013 08:43",
+		"createForkedImage" : "ErwanDouaille 5/22/2013 08:38",
+		"createNewImageName" : "ErwanDouaille 5/22/2013 08:41",
+		"evaluate:" : "ErwanDouaille 5/22/2013 08:53",
+		"forkedImageName" : "ErwanDouaille 5/22/2013 08:43",
+		"forkedImageName:" : "ErwanDouaille 5/22/2013 08:43",
+		"initialize" : "ErwanDouaille 5/22/2013 08:35",
+		"localPort" : "ErwanDouaille 5/22/2013 08:35",
+		"localPort:" : "ErwanDouaille 5/22/2013 08:35",
+		"remotePort" : "ErwanDouaille 5/22/2013 08:35",
+		"remotePort:" : "ErwanDouaille 5/22/2013 08:35",
+		"temporaryChangesFile" : "ErwanDouaille 5/22/2013 08:44",
+		"temporaryImageFile" : "ErwanDouaille 5/22/2013 08:44" } }
