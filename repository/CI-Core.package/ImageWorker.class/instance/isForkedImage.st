@@ -1,3 +1,3 @@
 assertion
 isForkedImage
-	^ session = Smalltalk session 
+	^ (session = Smalltalk session) not
