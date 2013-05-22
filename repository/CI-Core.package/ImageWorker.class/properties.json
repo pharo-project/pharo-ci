@@ -8,7 +8,8 @@
 	"instvars" : [
 		"localPort",
 		"remotePort",
-		"forkedImageName" ],
+		"forkedImageName",
+		"remote" ],
 	"name" : "ImageWorker",
 	"pools" : [
 		 ],
