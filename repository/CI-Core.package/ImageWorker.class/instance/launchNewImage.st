@@ -1,7 +1,6 @@
 image-forking
 launchNewImage
 	self isForkedImage 
-		ifTrue: [  ]
 		ifFalse: [ 
 			OSProcess command: 
 				Smalltalk vm command, 
