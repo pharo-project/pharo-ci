@@ -1,6 +1,8 @@
-image-creation
+image-communication
 close
-	self
-		closeRemoveImage;
-		removeForkedImageFiles;
-		closeCommunication
+	self isForkedImage
+		ifFalse: [ 
+			self
+				closeRemoveImage;
+				removeForkedImageFiles;
+				closeCommunication ]

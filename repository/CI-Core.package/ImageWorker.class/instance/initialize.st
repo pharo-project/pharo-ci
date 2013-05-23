@@ -4,4 +4,6 @@ initialize
 	self localPort: 10800.
 	self remotePort: 10801.
 	self createForkedImage.
-	self initializeCommunication.
+	self isForkedImage 
+		ifFalse: [ self initializeCommunication ].			
+	

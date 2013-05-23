@@ -1,18 +1,19 @@
 {
 	"class" : {
 		"evaluate:" : "CamilloBruni 5/23/2013 12:14",
-		"evaluateFromForkedImage:" : "CamilloBruni 5/23/2013 12:09" },
+		"evaluateFromForkedImage:" : "ErwanDouaille 5/23/2013 13:36" },
 	"instance" : {
 		"checkFileCreation" : "ErwanDouaille 5/22/2013 08:43",
-		"close" : "CamilloBruni 5/23/2013 12:19",
+		"close" : "ErwanDouaille 5/23/2013 14:22",
 		"closeCommunication" : "CamilloBruni 5/23/2013 12:16",
+		"closeRemoveImage" : "ErwanDouaille 5/23/2013 13:47",
 		"createForkedImage" : "ErwanDouaille 5/22/2013 08:38",
 		"createNewImageName" : "CamilloBruni 5/23/2013 12:11",
-		"evaluate:" : "CamilloBruni 5/23/2013 12:09",
+		"evaluate:" : "a 5/23/2013 14:32",
 		"forkedImageName" : "ErwanDouaille 5/22/2013 08:43",
 		"forkedImageName:" : "ErwanDouaille 5/22/2013 08:43",
-		"initialize" : "CamilloBruni 5/23/2013 11:51",
-		"initializeCommunication" : "CamilloBruni 5/23/2013 12:10",
+		"initialize" : "a 5/23/2013 14:32",
+		"initializeCommunication" : "ErwanDouaille 5/23/2013 14:08",
 		"isForkedImage" : "ErwanDouaille 5/22/2013 15:43",
 		"launchNewImage" : "CamilloBruni 5/23/2013 12:17",
 		"localPort" : "ErwanDouaille 5/22/2013 08:35",
@@ -21,6 +22,7 @@
 		"remote:" : "ErwanDouaille 5/22/2013 09:48",
 		"remotePort" : "ErwanDouaille 5/22/2013 08:35",
 		"remotePort:" : "ErwanDouaille 5/22/2013 08:35",
+		"removeForkedImageFiles" : "ErwanDouaille 5/23/2013 13:39",
 		"startLocalServer" : "CamilloBruni 5/23/2013 12:15",
 		"temporaryChangesFile" : "ErwanDouaille 5/22/2013 08:44",
 		"temporaryImageFile" : "ErwanDouaille 5/22/2013 08:44" } }
