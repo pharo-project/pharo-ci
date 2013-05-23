@@ -1,6 +1,6 @@
 versions
 versionDevelopment: spec
-	<version: 'dev' imports: #('1.07-baseline')>
+	<version: 'dev' imports: #('dev-baseline')>
 
 	spec for: #'common' do: [
 		spec timestamp: 'CamilloBruni 4/10/2013 16:43'.

@@ -21,7 +21,7 @@
 		"validate" : "BenjaminVanRyseghem 3/26/2012 19:24" },
 	"instance" : {
 		"baseline106:" : "CamilloBruni 5/9/2013 14:02",
-		"baseline107:" : "CamilloBruni 5/9/2013 18:42",
+		"baselineDev:" : "CamilloBruni 5/23/2013 11:28",
 		"bleedingEdge:" : "CamilloBruni 5/11/2013 18:00",
 		"commandShell:" : "CamilloBruni 5/9/2013 18:40",
 		"development:" : "CamilloBruni 5/9/2013 14:00",
@@ -31,8 +31,8 @@
 		"soup:" : "CamilloBruni 5/9/2013 18:39",
 		"stable:" : "CamilloBruni 5/9/2013 10:36",
 		"version120:" : "CamilloBruni 5/9/2013 14:01",
-		"versionDevelopment:" : "CamilloBruni 5/21/2013 15:18",
-		"versionDevelopmentBleedingEdge:" : "CamilloBruni 5/11/2013 18:02",
+		"versionDevelopment:" : "CamilloBruni 5/23/2013 11:27",
+		"versionDevelopmentBleedingEdge:" : "CamilloBruni 5/23/2013 11:27",
 		"versionDevelopmentExternal:" : "CamilloBruni 5/11/2013 17:55",
 		"xmlWriter:" : "CamilloBruni 5/9/2013 18:41",
 		"zinc:" : "CamilloBruni 5/9/2013 18:39" } }

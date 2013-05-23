@@ -1,6 +1,6 @@
 baselines
-baseline107: spec
-	<version: '1.07-baseline'>
+baselineDev: spec
+	<version: 'dev-baseline'>
 
 	spec for: #pharo do: [	
 		spec blessing: #baseline.
