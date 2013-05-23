@@ -11,11 +11,12 @@ baselineDev: spec
 			commandShell: spec;
 			fuelMetalevel: spec;
 			zinc: spec;
-			xmlWriter: spec.
+			xmlWriter: spec;
+			seamless: spec.
 				
 		spec
 			package: 'CI-Core' with: [ 
-				spec requires: #('FuelMetalevel'  'FileSystem-Legacy' 'CommandShell' 'XMLWriter')];
+				spec requires: #('FuelMetalevel'  'FileSystem-Legacy' 'CommandShell' 'XMLWriter' 'Seamless')];
 			package: 'CI-FogBugzAPI' with: [ 
 				spec requires: #('CI-Core')];
 			package: 'CI-GoogleIssueTracker' with: [
