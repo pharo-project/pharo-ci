@@ -1,5 +1,7 @@
-as yet unclassified
+image-evaluation
 evaluate: aBlock
-
-	^ self new; evaluate: aBlock
-	
+	| worker result |
+	worker := self new.
+	[ result := worker evaluate: aBlock ]
+		ensure: [ worker close ].
+	^ result

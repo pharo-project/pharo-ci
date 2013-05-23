@@ -1,4 +1,4 @@
 image-communication
 startLocalServer
 
-	^ SeamlessDeamon newDefaultWithGlobalAccess startOn: self localPort 
+	^ localServer := SeamlessDeamon newDefaultWithGlobalAccess startOn: self localPort 

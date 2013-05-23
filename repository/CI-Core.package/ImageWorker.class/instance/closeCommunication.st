@@ -1,3 +1,4 @@
 image-communication
 closeCommunication
-	"DO NOT FORGET"
+	
+	localServer stop.

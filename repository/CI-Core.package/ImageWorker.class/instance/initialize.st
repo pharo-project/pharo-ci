@@ -1,7 +1,7 @@
 initialize-release
 initialize
 
-	self localPort: 8080.
-	self remotePort: 8081.
+	self localPort: 10800.
+	self remotePort: 10801.
 	self createForkedImage.
 	self initializeCommunication.

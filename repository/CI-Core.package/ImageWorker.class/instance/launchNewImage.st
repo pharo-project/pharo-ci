@@ -2,7 +2,7 @@ image-forking
 launchNewImage
 	self isForkedImage 
 		ifFalse: [
-			OSProcess command: 
+			forkedImageProcess := OSProcess command: 
 				Smalltalk vm command, 
 				' ', 
 				self temporaryImageFile fullName, 

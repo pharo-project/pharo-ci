@@ -10,7 +10,9 @@
 		"remotePort",
 		"forkedImageName",
 		"remote",
-		"session" ],
+		"session",
+		"localServer",
+		"forkedImageProcess" ],
 	"name" : "ImageWorker",
 	"pools" : [
 		 ],
