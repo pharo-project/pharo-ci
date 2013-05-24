@@ -2,7 +2,7 @@ image-communication
 close
 	self isForkedImage
 		ifFalse: [ 
-			self
+			[self
 				closeRemoveImage;
 				removeForkedImageFiles;
-				closeCommunication ]
+				closeCommunication ] fork]

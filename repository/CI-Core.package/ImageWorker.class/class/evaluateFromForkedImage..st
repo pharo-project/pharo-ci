@@ -1,3 +1,4 @@
 image-evaluation
-evaluateFromForkedImage: aBlock
+evaluateFromForkedImage: aBlock	
+	self inform: 'aBlock is currently running.'.
 	^ aBlock asLocalObject value
