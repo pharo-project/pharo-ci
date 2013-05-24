@@ -4,7 +4,7 @@ validate
 	
 	self assertHasChange.
 
-	result := self newImageDo: [ 
+	result := ImageWorker evaluate: [ 
 		self validateChangeBlock: [ self change load ]].
 	
 	^ self addValidationResult: result

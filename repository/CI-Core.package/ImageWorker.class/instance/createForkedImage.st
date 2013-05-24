@@ -1,5 +1,6 @@
 image-creation
 createForkedImage
-	
 	self createNewImageName.
-	self launchNewImage.
+	self isForkedImage
+		ifTrue: [ self terminateActiveProcess ]
+		ifFalse: [ self launchNewImage ]

@@ -8,8 +8,7 @@
 	"instvars" : [
 		"loadTime",
 		"environmentChange",
-		"previousResult",
-		"imageForker" ],
+		"previousResult" ],
 	"name" : "CITestChangeDifferenceRule",
 	"pools" : [
 		 ],

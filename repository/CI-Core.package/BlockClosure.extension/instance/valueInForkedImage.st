@@ -1,3 +1,3 @@
 *CI-Core-Validation
 valueInForkedImage
-	^ CIImageForker newImageDo: self. 
+	^ ImageWorker evaluate: self. 

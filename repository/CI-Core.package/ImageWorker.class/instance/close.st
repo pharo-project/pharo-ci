@@ -2,7 +2,8 @@ image-communication
 close
 	self isForkedImage
 		ifFalse: [ 
-			[self
-				closeRemoveImage;
+			[self closeRemoveImage] fork.
+			2000 milliSeconds wait.
+			self 
 				removeForkedImageFiles;
-				closeCommunication ] fork]
+				closeCommunication]
