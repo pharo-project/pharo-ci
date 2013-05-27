@@ -1,1 +1,0 @@
-A ConfigurationLoadValidationRule is a test which will be run on ConfigurationOf class to know if each version of the project is loadable
