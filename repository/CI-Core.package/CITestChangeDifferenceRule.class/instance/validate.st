@@ -4,7 +4,7 @@ validate
 	
 	self assertHasChange.
 
-	result := ImageWorker evaluate: [ 
+	result := "ImageWorker evaluate:" CIImageForker newImageDo: [ 
 		self validateChangeBlock: [ self change load ]].
 	
 	^ self addValidationResult: result

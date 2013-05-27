@@ -1,0 +1,1 @@
+A ConfigurationValidationRule is a test which will be run on ConfigurationOf class to know if they has a minimal structure, looking for load, loadDevelopment ... methods

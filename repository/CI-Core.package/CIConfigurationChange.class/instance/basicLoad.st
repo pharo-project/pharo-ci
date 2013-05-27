@@ -1,6 +1,5 @@
 protocol
 basicLoad
-
 	"should look if empty string works"
 	(self group isNil )
 		ifTrue: [ self configurationPoint  load ]
