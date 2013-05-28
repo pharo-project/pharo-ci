@@ -1,3 +1,3 @@
 tests
-testStructure
+testIsLoadable
  	^ self subclassResponsibility 

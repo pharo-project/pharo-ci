@@ -1,4 +1,3 @@
 accessing
-configuration
-
+configuration 
 	^ self source configuration

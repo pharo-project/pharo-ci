@@ -1,0 +1,14 @@
+{
+	"category" : "CI-Core-Validation",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "CIChangeConfigurationValidationRule",
+	"pools" : [
+		 ],
+	"super" : "CIChangeValidationRule",
+	"type" : "normal" }
