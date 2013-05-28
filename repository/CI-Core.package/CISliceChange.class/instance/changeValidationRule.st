@@ -1,4 +1,4 @@
 testing
 changeValidationRule
 
-	^ self shouldBeImplemented 
+	 ^ CIChangeSliceValidationRule 

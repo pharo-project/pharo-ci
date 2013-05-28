@@ -1,0 +1,1 @@
+I'm responsible to test if the change and the configuration associated to the change is correclty structured and if it's loadable without any problem

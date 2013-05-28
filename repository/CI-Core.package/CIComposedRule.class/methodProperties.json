@@ -1,9 +1,11 @@
 {
 	"class" : {
 		"with:" : "CamilloBruni 4/20/2013 23:24",
-		"with:with:" : "CamilloBruni 4/20/2013 23:24" },
+		"with:with:" : "CamilloBruni 4/20/2013 23:24",
+		"with:withRules:" : "ErwanDouaille 5/28/2013 11:07" },
 	"instance" : {
 		"add:" : "CamilloBruni 4/20/2013 20:32",
+		"addAll:" : "ErwanDouaille 5/28/2013 11:04",
 		"initialize" : "CamilloBruni 4/20/2013 20:32",
 		"rules" : "ErwanDouaille 4/24/2013 15:22",
 		"rules:" : "ErwanDouaille 4/24/2013 15:22",

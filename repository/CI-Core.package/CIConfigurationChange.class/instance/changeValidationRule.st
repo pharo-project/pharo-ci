@@ -1,4 +1,4 @@
 testing
 changeValidationRule
 
-	 ^ ConfigurationValidationRule validate: self.
+	 ^ CIChangeConfigurationValidationRule 

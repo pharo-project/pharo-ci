@@ -1,3 +1,0 @@
-tests
-testStructure
- 	^ self subclassResponsibility 

@@ -1,6 +1,6 @@
 tests
 testIsLoadable
-	
+	self change assertLoadable.
 	CIImageForker newImageDo: [| test specLoader|
 	(self change group isNil )
 		ifTrue: [ test := self change configurationPoint load ]

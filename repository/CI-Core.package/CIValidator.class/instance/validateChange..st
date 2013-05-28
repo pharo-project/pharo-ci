@@ -1,9 +1,8 @@
 validation
 validateChange: aCIChange
 	| result |
-	self asertLoadable: aCIChange.
 	self publishBeforeValidation: aCIChange.
-	
+	rules := CIAndRule with: aCIChange changeValidationRule withRules: self rules.
 	result := CIValidationResult change: aCIChange.
 	
 	[ self rules do: [ :validationRule | | newResult |
