@@ -3,6 +3,6 @@ configuration
 				
 	^ self new
 		addRule: 
-			RBUnclassifiedMethodsRule harden & 
-			RBNoClassCommentRule harden;
+				RBUnclassifiedMethodsRule harden & 
+				RBNoClassCommentRule harden;
 		yourself

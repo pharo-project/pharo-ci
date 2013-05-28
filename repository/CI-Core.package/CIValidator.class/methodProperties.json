@@ -1,13 +1,13 @@
 {
 	"class" : {
-		"configuration" : "ErwanDouaille 5/28/2013 11:02",
+		"configuration" : "ErwanDouaille 5/28/2013 13:43",
 		"manager:" : "CamilloBruni 4/14/2013 21:42",
-		"pharo30" : "CamilloBruni 5/16/2013 10:52",
+		"pharo30" : "ErwanDouaille 5/28/2013 13:43",
 		"slice" : "ErwanDouaille 5/6/2013 11:25" },
 	"instance" : {
 		"addRule:" : "CamilloBruni 4/10/2013 14:38",
 		"asertLoadable:" : "ErwanDouaille 4/16/2013 12:48",
-		"initialize" : "CamilloBruni 4/9/2013 14:42",
+		"initialize" : "ErwanDouaille 5/28/2013 14:14",
 		"manager" : "CamilloBruni 4/14/2013 21:43",
 		"manager:" : "CamilloBruni 4/14/2013 21:43",
 		"publishBeforeValidation:" : "CamilloBruni 4/15/2013 10:29",
@@ -16,4 +16,4 @@
 		"publishValidationResult:" : "CamilloBruni 4/15/2013 10:29",
 		"publisher" : "CamilloBruni 4/14/2013 22:48",
 		"rules" : "CamilloBruni 4/9/2013 14:43",
-		"validateChange:" : "ErwanDouaille 5/28/2013 11:10" } }
+		"validateChange:" : "ErwanDouaille 5/28/2013 14:16" } }
