@@ -1,5 +1,6 @@
 image-evaluation
-evaluate: aBlock
+send: aSelector to: aClassName
+
 	| worker result process |
 	
 	worker := self new.
@@ -11,7 +12,7 @@ evaluate: aBlock
 		priority: Processor activePriority.
 	process resume.
 	worker isForkedImage 	
-		ifFalse: [result := (worker evaluate: aBlock) asLocalObject  ].
+		ifFalse: [result := (worker send: aSelector to: aClassName) asLocalObject  ].
 	process terminate.
 	worker close.
 	^ result

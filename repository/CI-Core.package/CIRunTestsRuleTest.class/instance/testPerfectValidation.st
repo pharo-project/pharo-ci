@@ -3,6 +3,7 @@ testPerfectValidation
 	| instance aResult |
 	
 	instance := self newInstance.
+	1halt.
 	aResult := instance validate: self newSuccessfulChange.
 	
 	self assert: aResult errors size equals: 0.	

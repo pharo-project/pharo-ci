@@ -3,7 +3,7 @@ close
 	self isForkedImage
 		ifFalse: [ 
 			[self closeRemoveImage] fork.
-			2000 milliSeconds wait.
+			2 seconds wait.
 			self 
 				removeForkedImageFiles;
 				closeCommunication]
