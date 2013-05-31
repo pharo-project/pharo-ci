@@ -4,6 +4,6 @@ validate
 	
 	self assertHasChange.
 
-	result := self validateChangeBlock: [ self change load ].
-	
+	result := self newImageDo: [(self validateChangeBlock: [ (self change)  load ]) asLocalObject ].
 	^ self addValidationResult: result
+	

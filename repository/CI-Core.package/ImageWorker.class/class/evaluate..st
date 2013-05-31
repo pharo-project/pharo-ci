@@ -11,7 +11,7 @@ evaluate: aBlock
 		priority: Processor activePriority.
 	process resume.
 	worker isForkedImage 	
-		ifFalse: [result := (worker evaluate: aBlock) asLocalObject  ].
+		ifFalse: [result := worker evaluate: aBlock  ].
 	process terminate.
 	worker close.
 	^ result
