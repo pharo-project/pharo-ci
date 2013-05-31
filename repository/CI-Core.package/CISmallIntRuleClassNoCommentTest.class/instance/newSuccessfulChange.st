@@ -5,7 +5,7 @@ newSuccessfulChange
 			instanceVariableNames: ''
 			classVariableNames: ''
 			poolDictionaries: ''
-			category: 'CI-Test') asLocalObject.
+			category: 'CI-Test') .
 	(Smalltalk at:#CITestClass) comment: ' testing !' ]
 	
 	

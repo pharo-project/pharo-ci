@@ -5,7 +5,7 @@ newWarningChange
 			instanceVariableNames: ''
 			classVariableNames: ''
 			poolDictionaries: ''
-			category: 'CI-Test') asLocalObject.
+			category: 'CI-Test') .
 		 (Smalltalk at:#CITestClass) compile: 'testingUngategorized
 ^ self']
 	

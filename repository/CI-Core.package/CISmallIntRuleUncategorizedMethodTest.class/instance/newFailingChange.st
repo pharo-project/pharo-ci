@@ -1,3 +1,3 @@
 accessing
 newFailingChange
-	^ CITestChange loadBlock: [ "(Error signal) asLocalObject" ]
+	^ CITestChange loadBlock: [ (Error signal) ]

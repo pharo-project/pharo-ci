@@ -6,7 +6,7 @@ terminateActiveProcess
 	currentProcess := Processor activeProcess.
 
 	[ 
-		currentProcess terminate on: Error do: [ :error | "nothing because we don't care"].
+		[currentProcess terminate] on: Error do: [ :error | "nothing because we don't care"].
 		UIManager default spawnNewProcessIfThisIsUI: currentProcess.
 		semaphore signal.
 	] fork.

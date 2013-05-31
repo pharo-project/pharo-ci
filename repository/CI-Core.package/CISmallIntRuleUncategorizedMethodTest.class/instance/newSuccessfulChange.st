@@ -5,4 +5,4 @@ newSuccessfulChange
 			instanceVariableNames: ''
 			classVariableNames: ''
 			poolDictionaries: ''
-			category: 'CI-Test') asLocalObject]
+			category: 'CI-Test') ]
