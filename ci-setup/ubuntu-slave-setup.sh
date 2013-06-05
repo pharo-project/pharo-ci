@@ -18,5 +18,7 @@ elif [ $# -gt 0 ];then
 fi
 
 # INSTALL THE LIBRARIES =======================================================
+sudo dpkg --add-architecture i386
+sudo apt-get update
 
 sudo apt-get install $LIBRARIES

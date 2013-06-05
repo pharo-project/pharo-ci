@@ -54,7 +54,7 @@ else
     system("git --git-dir=pharo-build/.git pull")
 end
  
-puts REPOS="git@github.com:PharoProject/pharo-core.git"
+puts REPOS="git@github.com:pharo-project/pharo-core.git"
 system("test -e pharo-core || git clone --depth=1 -b 2.0 --no-checkout #{REPOS}")
 system("git --git-dir=pharo-core/.git pull")
 system("rm -rf pharo-core/*")
