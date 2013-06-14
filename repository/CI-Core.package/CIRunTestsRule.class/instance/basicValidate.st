@@ -7,8 +7,10 @@ basicValidate
 	TestCase allSubclasses 
 		select: self selectTestCaseBlock
 		thenDo: [ :testClass |
-			testClass isAbstract 
-				ifFalse: [ suite addTests: testClass suite tests ]].
+			(self defaultSelectTestCaseBlock value: testClass)
+				ifTrue: [ 
+					testClass isAbstract 
+						ifFalse: [ suite addTests: testClass suite tests ]]].
 	
 	result := 	CITestResult new.
 	result maxTest: suite tests size.
