@@ -5,10 +5,13 @@ do: aBlock
 	
 	worker := self new.
 	process := self newPollProcessFor: worker.
+	worker isForkedImage
+		ifTrue: [ ^ self ].
 		
 	[ 
-		worker isForkedImage
-			ifFalse: [ aBlock value: worker ] ]
+		| result |
+		[ result := aBlock value: worker ] on: Error do: [ :e | e debug. ].
+		^ result ]
 	ensure: [ 
-		process terminate.
-		worker close ]
+		[10 seconds wait. process terminate.
+		worker close] fork ]

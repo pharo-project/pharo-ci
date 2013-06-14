@@ -1,13 +1,13 @@
 {
 	"class" : {
-		"do:" : "CamilloBruni 6/14/2013 10:34",
+		"do:" : "CamilloBruni 6/14/2013 11:33",
 		"evaluate:" : "CamilloBruni 6/14/2013 10:28",
 		"evaluateFromForkedImage:" : "CamilloBruni 6/14/2013 10:34",
-		"newPollProcessFor:" : "CamilloBruni 6/14/2013 10:34",
-		"send:to:" : "CamilloBruni 6/14/2013 10:41" },
+		"newPollProcessFor:" : "CamilloBruni 6/14/2013 11:05",
+		"send:to:" : "CamilloBruni 6/14/2013 10:54" },
 	"instance" : {
 		"checkFileCreation" : "ErwanDouaille 5/22/2013 08:43",
-		"close" : "CamilloBruni 6/14/2013 10:17",
+		"close" : "CamilloBruni 6/14/2013 11:36",
 		"closeCommunication" : "ErwanDouaille 5/24/2013 15:38",
 		"closeRemoveImage" : "ErwanDouaille 5/24/2013 15:38",
 		"createForkedImage" : "ErwanDouaille 5/29/2013 11:29",

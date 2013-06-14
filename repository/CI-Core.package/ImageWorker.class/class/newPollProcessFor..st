@@ -5,8 +5,9 @@ newPollProcessFor: worker
 	| process |
 	
 	process := [ 
-		[ VTermOutputDriver stderr green: '.'; lf.
-			1 second wait.	"send a message over the wire"
+		[ VTermOutputDriver stderr green: '.'.
+			10 seconds wait.	
+			"send a message over the wire"
 			(worker remote at: #DateAndTime) now
 		] repeat.
 		Processor terminateActive ] forkNamed: 'Seamless Poll Process'.
