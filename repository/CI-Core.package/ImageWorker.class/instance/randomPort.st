@@ -1,8 +1,10 @@
 image-communication
 randomPort
 
-| a b |
-a := Socket newTCP.
-b := (a listenOn: 0) port.
-a close.
-	^ b
+	| socket port |
+	
+	socket := Socket newTCP.
+	port := (socket listenOn: 0) port.
+	socket close.
+	
+	^ port
