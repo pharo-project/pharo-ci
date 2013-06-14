@@ -6,8 +6,8 @@
 		 ],
 	"commentStamp" : "<historical>",
 	"instvars" : [
-		"rules",
-		"manager" ],
+		"manager",
+		"rule" ],
 	"name" : "CIValidator",
 	"pools" : [
 		 ],

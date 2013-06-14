@@ -1,3 +1,3 @@
-as yet unclassified
+forking
 newImageDo: aBlock 
 	^ self new newImageDo: aBlock

@@ -1,4 +1,4 @@
-as yet unclassified
+tests
 testResult: aSmallIntResult
 
 	aSmallIntResult do: [ :each |

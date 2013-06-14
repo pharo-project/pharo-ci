@@ -1,4 +1,4 @@
 initialize-release
 initialize
 	super initialize.
-	rules := CIListRule new.
+	rule := CIListRule new.

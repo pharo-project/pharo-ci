@@ -1,4 +1,4 @@
-as yet unclassified
+validation
 basicValidate
 
 	self testResult: self runRules.

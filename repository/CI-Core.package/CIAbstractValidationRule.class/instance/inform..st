@@ -1,4 +1,4 @@
-as yet unclassified
+ui
 inform: aString
 	self flag: 'for debugging'.
 	VTermOutputDriver stderr
