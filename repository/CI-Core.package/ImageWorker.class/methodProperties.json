@@ -2,9 +2,9 @@
 	"class" : {
 		"do:" : "CamilloBruni 6/14/2013 10:34",
 		"evaluate:" : "CamilloBruni 6/14/2013 10:28",
-		"evaluateFromForkedImage:" : "CamilloBruni 6/14/2013 10:26",
+		"evaluateFromForkedImage:" : "CamilloBruni 6/14/2013 10:34",
 		"newPollProcessFor:" : "CamilloBruni 6/14/2013 10:34",
-		"send:to:" : "CamilloBruni 6/14/2013 10:28" },
+		"send:to:" : "CamilloBruni 6/14/2013 10:41" },
 	"instance" : {
 		"checkFileCreation" : "ErwanDouaille 5/22/2013 08:43",
 		"close" : "CamilloBruni 6/14/2013 10:17",
