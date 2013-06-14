@@ -4,6 +4,6 @@ validate
 	
 	"this is the new version"
 	result := self newImageDo: [ :remote | 
-		((remote at: #CITestChangeDifferenceRule) validateLocally: self change) asLocalObject ].
+		((remote at: self class name) validateLocally: self change) asLocalObject ].
 	^ self addValidationResult: result
 	
