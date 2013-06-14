@@ -3,9 +3,9 @@ addError: anError
 	| index |
 	
 	self flag: 'ugly'.
-	"(anError isKindOf: Exception)
+	(anError isKindOf: Exception)
 		ifFalse: [ ^ self validationResult addError: anError asString ].
-	"
+	
 	self flag: 'even uglier'.
 	index := 1.
 	self validationResult addError: (String streamContents: [ :stream | 

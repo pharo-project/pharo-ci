@@ -9,9 +9,7 @@ do: aBlock
 		ifTrue: [ ^ self ].
 		
 	[ 
-		| result |
-		[ result := aBlock value: worker ] on: Error do: [ :e | e debug. ].
-		^ result ]
-	ensure: [ 
-		[10 seconds wait. process terminate.
-		worker close] fork ]
+		^ aBlock value: worker
+	] ensure: [ 
+		process terminate.
+		worker close ]

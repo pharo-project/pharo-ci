@@ -1,11 +1,15 @@
 validation
 validateLocally: aCIChange
 	| instance |
-	"here we are in the forked image, let's run it"
-	instance := self change: aCIChange asLocalObject.
 	
-	[ instance recordEnvironmentChangeDuring: [
-			instance recordValidationChangesDuring: [ instance change load] ]
+	instance := self new.
+	
+	[ 
+		"here we are in the forked image, let's run it"
+		instance 
+			change: aCIChange asLocalObject;
+			recordEnvironmentChangeDuring: [
+			instance recordValidationChangesDuring: [ instance change load ]]
 	] on: Error, Exit do: [ :e | 
 		instance addError: e ].
 	
