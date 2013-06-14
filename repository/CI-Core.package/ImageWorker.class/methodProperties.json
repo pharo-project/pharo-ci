@@ -1,8 +1,9 @@
 {
 	"class" : {
-		"evaluate:" : "ErwanDouaille 6/11/2013 14:16",
-		"evaluateFromForkedImage:" : "ErwanDouaille 5/30/2013 14:27",
-		"send:to:" : "CamilloBruni 6/14/2013 10:24" },
+		"do:" : "CamilloBruni 6/14/2013 10:28",
+		"evaluate:" : "CamilloBruni 6/14/2013 10:28",
+		"evaluateFromForkedImage:" : "CamilloBruni 6/14/2013 10:26",
+		"send:to:" : "CamilloBruni 6/14/2013 10:28" },
 	"instance" : {
 		"checkFileCreation" : "ErwanDouaille 5/22/2013 08:43",
 		"close" : "CamilloBruni 6/14/2013 10:17",
