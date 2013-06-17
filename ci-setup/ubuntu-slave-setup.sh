@@ -3,7 +3,7 @@
 # stop the script if a single command fails
 set -e 
 
-LIBRARIES="gcc g++ cmake lib32c-dev libasound2-dev libssl-dev libfreetype6-dev libgl1-mesa-dev zip bash-completion htop ruby1.9.1 git-all ia32-libs xz-utils build-essential debhelper devscripts"
+LIBRARIES="gcc g++ cmake lib32c-dev default-jre libasound2-dev libssl-dev libfreetype6-dev libgl1-mesa-dev zip bash-completion htop ruby1.9.1 git-all ia32-libs xz-utils build-essential debhelper devscripts"
 
 # ARGUMENT HANDLING ===========================================================
 if { [ "$1" = "-h" ] || [ "$1" = "--help" ]; }; then
