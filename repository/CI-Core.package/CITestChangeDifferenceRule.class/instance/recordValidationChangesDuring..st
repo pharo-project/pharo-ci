@@ -4,7 +4,7 @@ recordValidationChangesDuring: aBlock
 	self inform: 'Loading change.'.
 	
 	[[ loadTime := aBlock timeToRun ]
-		on: Error, Warning do: [ :error |
+		on: Error, Deprecation , Warning do: [ :error |
 			^ self addError: (String streamContents: [ :stream |
 				stream << 'Could not apply change: '; print: error.
 				error signalerContext shortDebugStackOn: stream ])]

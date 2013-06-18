@@ -8,7 +8,7 @@ validateLocally: aValidationRule
 		"here we are in the forked image, let's run it"
 		instance recordEnvironmentChangeDuring: [
 			instance recordValidationChangesDuring: [ instance change load ]]
-	] on: Error, Exit do: [ :e | 
+	] on: Error, Deprecation , Exit do: [ :e | 
 		instance addError: e ].
 	
 	instance validationResult change: nil.
