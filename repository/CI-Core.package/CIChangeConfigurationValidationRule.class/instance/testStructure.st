@@ -1,7 +1,6 @@
 tests
 testStructure
  	| classSelectors selectors |	
-	
 	classSelectors := self configuration class class selectors.
 	selectors := self configuration class selectors.
 	
