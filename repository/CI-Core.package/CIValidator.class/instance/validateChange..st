@@ -1,13 +1,13 @@
 validation
 validateChange: aCIChange
-	| result |
+	| result rules |
 	self publishBeforeValidation: aCIChange.
 	
-	rule :=  aCIChange changeValidationRule & self rule.
+	rules :=  aCIChange changeValidationRule & self rule.
 	result := CIValidationResult change: aCIChange.
 	
 	[ 
-		result := rule validate: aCIChange.
+		result := rules validate: aCIChange.
 	] ensure: [ 
 		self publishValidationResult: result ].
 	
