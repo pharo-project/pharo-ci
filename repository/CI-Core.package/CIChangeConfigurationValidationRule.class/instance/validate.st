@@ -1,5 +1,8 @@
 protocol
 validate
+	self source isNil 	
+		ifTrue: [ self addError: 'Source is nil'.
+			^ self validationResult  ].
 	self configuration isNil
 		ifTrue: [ 
 			self addError: 'No configuration has been found'.
