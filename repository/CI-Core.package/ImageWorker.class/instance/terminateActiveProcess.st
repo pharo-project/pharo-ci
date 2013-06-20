@@ -9,9 +9,13 @@ terminateActiveProcess
 	semaphore := Semaphore new.
 	currentProcess := Processor activeProcess.
 
-	[
-		[currentProcess terminate] on: Error do: [ :error | "ignore" ].
-		UIManager default spawnNewProcessIfThisIsUI: currentProcess.
+	[ | queue nextInQueue|
+		"kill the current UI process"
+		[currentProcess terminate] on: Error do: [ :error | ].
+		"process the pending ui messages to make sure we activate the commandline handler!"
+		queue := WorldState deferredUIMessages.
+		[(nextInQueue := queue nextOrNil) isNil] whileFalse: [ nextInQueue value]. 
+		
 		semaphore signal.
 	] fork.
 
