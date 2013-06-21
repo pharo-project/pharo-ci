@@ -9,10 +9,9 @@ baselineDev: spec
 		self soup: spec;
 			fileSystemLegacy: spec;
 			commandShell: spec;
-			fuelMetalevel: spec;
 			zinc: spec;
 			xmlWriter: spec;
-			seamless: spec.
+			imageWorker: spec.
 				
 		spec
 			package: 'CI-Core' with: [ 
