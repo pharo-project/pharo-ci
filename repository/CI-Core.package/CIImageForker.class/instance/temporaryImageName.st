@@ -1,3 +1,0 @@
-accessing
-temporaryImageName
-	^ self filePrefix
