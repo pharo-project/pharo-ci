@@ -1,6 +1,6 @@
 publishing
 publishValidationResult: aCIValidationResult
 
-	aCIValidationResult	isSuccess 
-		ifTrue: [ self publishSuccess: aCIValidationResult ]
-		ifFalse: [ self publishFailure: aCIValidationResult ]
+	^ self 
+		publishValidationResult: aCIValidationResult
+		message: aCIValidationResult asString

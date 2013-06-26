@@ -1,6 +1,8 @@
 file creation
 publishValidationResult: aCIValidationResult
-	FileStream forceNewFileNamed: aCIValidationResult change name asString, '.fuel' do: [:aStream |
+	self updateFileName: aCIValidationResult.
+	
+	FileStream forceNewFileNamed: self fileName, '.fuel' do: [:aStream |
 		FLSerializer newDefault 
 			showProgress;
 			serialize: aCIValidationResult 

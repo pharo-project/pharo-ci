@@ -1,7 +1,9 @@
 file creation
 publishValidationResult: aCIValidationResult
 
-	self stream: (self outputDirectory / aCIValidationResult change name asString, 'html') writeStream.
+	self updateFileName: aCIValidationResult.
+	
+	self stream: (self outputDirectory / self fileName, 'html') writeStream.
 	self htmlBeginning: aCIValidationResult.
 	
 	(aCIValidationResult isSuccess )
