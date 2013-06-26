@@ -3,5 +3,5 @@ runRules
 	| result |
 	result := OrderedCollection new.
 	self rules do: [ :rule |
-		result add: rule run result ].
+		rule run addResultTo: result. ].
 	^ result
