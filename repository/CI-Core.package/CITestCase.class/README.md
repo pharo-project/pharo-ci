@@ -1,0 +1,1 @@
+A CITestCase is an abstract containing the default API used to test the CI project

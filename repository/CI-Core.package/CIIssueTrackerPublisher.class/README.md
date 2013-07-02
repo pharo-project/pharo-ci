@@ -1,1 +1,1 @@
-I publish change results on an issue tracker
+I publish change results on an issue tracker.
