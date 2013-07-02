@@ -1,0 +1,14 @@
+{
+	"category" : "CI-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"manager" ],
+	"name" : "CIAbstractChangeProvider",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

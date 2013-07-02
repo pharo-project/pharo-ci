@@ -1,4 +1,0 @@
-testing
-isAuthenticated
-
-	self subclassResponsibility

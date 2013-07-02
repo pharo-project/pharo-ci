@@ -1,5 +1,5 @@
 instance creation
 pharo30
 	^ self 
-		source: CIPharoSource pharo30
+		source: CISliceChangeProvider pharo30
 		validator: CIValidator pharo30

@@ -1,0 +1,14 @@
+{
+	"category" : "CI-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"changeBlock" ],
+	"name" : "CITestChangeProvider",
+	"pools" : [
+		 ],
+	"super" : "CIAbstractChangeProvider",
+	"type" : "normal" }
