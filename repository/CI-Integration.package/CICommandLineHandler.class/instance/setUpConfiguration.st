@@ -11,8 +11,8 @@ setUpConfiguration
 		do: [ error := true].
 	
 	error 
-		ifTrue: [ source := CIConfigurationSource url: (self argumentAt: 2) ]
-		ifFalse: [ source := CIConfigurationSource url: (self argumentAt: 2)  configurationName:  (self argumentAt: 3) ] .
+		ifTrue: [ source := CIConfigurationChangeProvider url: (self argumentAt: 2) ]
+		ifFalse: [ source := CIConfigurationChangeProvider url: (self argumentAt: 2)  configurationName:  (self argumentAt: 3) ] .
 		
 	manager :=  CIChangeManager 
 			source: source

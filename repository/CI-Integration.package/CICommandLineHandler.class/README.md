@@ -24,3 +24,7 @@ Configuration part :
 Documentation:
 
 	The CI command line handler interacts with the issue tracker, loads slice or configuration and tests submitted code.
+
+Examples : 
+
+Let's have a look on CIConfigurationExemple and CISliceExemple 
