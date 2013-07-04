@@ -6,9 +6,10 @@ Gofer new
 
 version := SystemVersion current highestUpdate asString.
 FileStream stdout nextPutAll: 'Extracting commit message';lf.
-versionString := (ScriptLoader >> ('update', version) asSymbol) literals 
-	detect: [ :e| e isString and: [ e isSymbol not ]]
-	ifNone: [ '' ].
+versionString := [(ScriptLoader >> ('update', version) asSymbol) literals 
+		detect: [ :e| e isString and: [ e isSymbol not ]]
+		ifNone: [ '' ]
+	] on: Error do: [ :e | '' ].
 
 version asFileReference writeStreamDo: [ :stream| 
 	stream 
