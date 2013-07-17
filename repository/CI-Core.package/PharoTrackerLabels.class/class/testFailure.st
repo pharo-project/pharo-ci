@@ -1,0 +1,4 @@
+accessing
+testFailure
+
+	^ #'WorkNeeded-FailingTest'

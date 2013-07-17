@@ -1,3 +1,0 @@
-publishing
-publishBeforeValidation: aCIChange
-	"ingnored"

@@ -1,0 +1,21 @@
+{
+	"category" : "CI-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"attachments",
+		"author",
+		"content",
+		"id",
+		"issue",
+		"published",
+		"title",
+		"updated" ],
+	"name" : "GoogleIssueComment",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

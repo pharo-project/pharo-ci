@@ -1,3 +1,0 @@
-accessing
-defaultTestPackage
-	^ 'KernelTests-Numbers'

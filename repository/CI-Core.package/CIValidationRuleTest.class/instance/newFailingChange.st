@@ -1,3 +1,0 @@
-accessing
-newFailingChange
-	^ self shouldBeImplemented

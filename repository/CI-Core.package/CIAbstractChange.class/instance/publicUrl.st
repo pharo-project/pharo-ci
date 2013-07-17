@@ -1,4 +1,0 @@
-protocol
-publicUrl
-
-	self subclassResponsibility

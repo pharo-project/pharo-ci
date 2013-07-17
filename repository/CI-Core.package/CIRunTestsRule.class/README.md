@@ -1,1 +1,0 @@
-I load a case source in a separate image and publish the test results.

@@ -1,3 +1,0 @@
-accessing
-validator
-	^ validator

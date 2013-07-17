@@ -1,3 +1,0 @@
-conversion
-harden
-	^ self rule

@@ -1,3 +1,0 @@
-accessing
-beforeValidationBlock
-	^ beforeValidationBlock

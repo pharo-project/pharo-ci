@@ -1,4 +1,0 @@
-accessing
-openIssues
-	
-	self subclassResponsibility

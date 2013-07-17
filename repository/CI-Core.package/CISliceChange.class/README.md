@@ -1,1 +1,0 @@
-I am a representation of an issue tracker case mainly used to define protocol methods

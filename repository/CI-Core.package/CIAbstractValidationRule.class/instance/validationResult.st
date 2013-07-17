@@ -1,4 +1,0 @@
-accessing
-validationResult
-	
-	^ validationResult 

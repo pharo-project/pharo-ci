@@ -1,1 +1,0 @@
-I am an abstract change source with a minimal interface for a gofer and monticello.

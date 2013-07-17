@@ -1,1 +1,0 @@
-I am a customized test result which outputs the progress on the command line

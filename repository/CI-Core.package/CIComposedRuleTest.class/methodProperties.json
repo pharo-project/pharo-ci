@@ -1,8 +1,0 @@
-{
-	"class" : {
-		"isAbstract" : "CamilloBruni 4/30/2013 09:42" },
-	"instance" : {
-		"testLoadEmptyChange" : "CI Validation User 5/9/2013 01:03",
-		"testLoadFailingChange" : "CI Validation User 5/9/2013 01:03",
-		"testLoadSuccessfulChange" : "CI Validation User 5/9/2013 01:03",
-		"testLoadWarningChange" : "CI Validation User 5/9/2013 01:03" } }

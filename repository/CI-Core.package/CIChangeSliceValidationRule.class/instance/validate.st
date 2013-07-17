@@ -1,5 +1,0 @@
-protocol
-validate
-
-	self testIsLoadable.
-			

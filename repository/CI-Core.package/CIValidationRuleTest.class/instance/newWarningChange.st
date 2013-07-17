@@ -1,3 +1,0 @@
-accessing
-newWarningChange
-	^ self subclassresponsibility 

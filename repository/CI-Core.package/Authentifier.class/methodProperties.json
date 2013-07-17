@@ -1,0 +1,15 @@
+{
+	"class" : {
+		"spec" : "BenjaminVanRyseghem 7/4/2012 14:57" },
+	"instance" : {
+		"gmail" : "BenjaminVanRyseghem 7/4/2012 14:57",
+		"initialExtent" : "BenjaminVanRyseghem 7/4/2012 15:00",
+		"initialize" : "CamilloBruni 7/17/2013 22:54",
+		"initializeDialogWindow:" : "GuillermoPolito 3/19/2013 19:12",
+		"initializeWidgets" : "GuillermoPolito 3/19/2013 19:12",
+		"passwordField" : "BenjaminVanRyseghem 7/4/2012 14:57",
+		"passwordLabel" : "BenjaminVanRyseghem 7/4/2012 14:57",
+		"result" : "BenjaminVanRyseghem 7/4/2012 15:04",
+		"title" : "BenjaminVanRyseghem 7/4/2012 15:51",
+		"userField" : "BenjaminVanRyseghem 7/4/2012 14:57",
+		"userLabel" : "BenjaminVanRyseghem 7/4/2012 14:57" } }

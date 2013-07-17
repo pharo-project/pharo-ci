@@ -1,3 +1,0 @@
-private
-shouldContinueValidationWith: aCIValidationResult
-	self subclassResponsibility

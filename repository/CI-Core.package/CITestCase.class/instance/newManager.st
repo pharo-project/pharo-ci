@@ -1,3 +1,0 @@
-accessing
-newManager
-	^ CIChangeManager new

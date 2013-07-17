@@ -1,3 +1,0 @@
-protocol
-basicLoad
-	self subclassResponsibility

@@ -1,1 +1,0 @@
-I validate a given case using CIValidationRules
