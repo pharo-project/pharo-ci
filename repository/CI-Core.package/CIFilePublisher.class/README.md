@@ -1,0 +1,1 @@
+I am an abstract publisher for file-based output formats.

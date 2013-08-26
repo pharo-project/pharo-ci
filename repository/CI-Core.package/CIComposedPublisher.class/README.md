@@ -1,0 +1,2 @@
+I display validation result and progress on mutliple other publishers.
+This is useful for instance if you want to have direct feedback on the command line using the CICommandLinePublisher and at the same time use another publisher.

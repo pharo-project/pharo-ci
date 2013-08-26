@@ -1,0 +1,3 @@
+tests
+testPublishChangeNotFound
+	instance publishChangeNotFound: self newChange

@@ -1,0 +1,3 @@
+tests
+testPublishIntermediateResult
+	instance publishIntermediateResult: self newValidationResult

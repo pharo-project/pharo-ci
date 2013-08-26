@@ -1,0 +1,4 @@
+protocol
+nextIssueToBeChecked
+	
+	self subclassResponsibility

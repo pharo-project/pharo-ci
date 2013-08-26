@@ -1,0 +1,10 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"newFailingChange" : "ErwanDouaille 6/20/2013 14:01",
+		"newSuccessfulChange" : "ErwanDouaille 7/2/2013 16:06",
+		"newWarningChange" : "ErwanDouaille 7/2/2013 16:06",
+		"ruleClass" : "ErwanDouaille 6/18/2013 15:31",
+		"testLoadEmptyChange" : "ErwanDouaille 6/20/2013 14:07",
+		"testLoadWarningChange" : "ErwanDouaille 6/20/2013 14:03" } }

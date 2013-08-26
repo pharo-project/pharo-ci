@@ -1,0 +1,14 @@
+{
+	"category" : "CI-Core-Publishing",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"manager" ],
+	"name" : "CIAbstractPublisher",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

@@ -1,0 +1,11 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"publisherClass" : "CamilloBruni 4/25/2013 21:16",
+		"testNoBlocks" : "CamilloBruni 4/25/2013 21:12",
+		"testPublishBeforeValidation" : "ErwanDouaille 5/16/2013 10:30",
+		"testPublishChangeNotFound" : "ErwanDouaille 5/16/2013 10:31",
+		"testPublishIntermediateResult" : "CamilloBruni 4/25/2013 21:10",
+		"testPublishValidationResult" : "CamilloBruni 4/25/2013 21:10",
+		"testResetAllBlocks" : "CamilloBruni 4/25/2013 21:15" } }

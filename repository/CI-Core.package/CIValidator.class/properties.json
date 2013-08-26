@@ -1,0 +1,15 @@
+{
+	"category" : "CI-Core-Validation",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"manager",
+		"rule" ],
+	"name" : "CIValidator",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

@@ -1,0 +1,3 @@
+conversion
+asCIValidationRule
+	^ self

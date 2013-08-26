@@ -1,0 +1,16 @@
+{
+	"category" : "CI-Core-Validation",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"loadTime",
+		"environmentChange",
+		"previousResult" ],
+	"name" : "CITestChangeDifferenceRule",
+	"pools" : [
+		 ],
+	"super" : "CIAbstractValidationRule",
+	"type" : "normal" }

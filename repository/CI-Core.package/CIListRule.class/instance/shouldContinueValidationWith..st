@@ -1,0 +1,3 @@
+private
+shouldContinueValidationWith: aCIValidationResult
+	^ true

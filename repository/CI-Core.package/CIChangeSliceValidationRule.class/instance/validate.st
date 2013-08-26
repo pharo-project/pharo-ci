@@ -1,0 +1,5 @@
+protocol
+validate
+
+	self testIsLoadable.
+			

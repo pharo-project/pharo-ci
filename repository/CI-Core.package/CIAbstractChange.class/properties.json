@@ -1,0 +1,14 @@
+{
+	"category" : "CI-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"source" ],
+	"name" : "CIAbstractChange",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

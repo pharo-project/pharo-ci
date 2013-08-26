@@ -1,0 +1,14 @@
+{
+	"category" : "CI-Core-Test",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"instance" ],
+	"name" : "CIPublisherTest",
+	"pools" : [
+		 ],
+	"super" : "CITestCase",
+	"type" : "normal" }

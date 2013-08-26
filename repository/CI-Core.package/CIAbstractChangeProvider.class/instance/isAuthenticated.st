@@ -1,0 +1,4 @@
+testing
+isAuthenticated
+
+	self subclassResponsibility

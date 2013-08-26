@@ -1,0 +1,1 @@
+I convert all the warnings of the validation of a rule to errors.

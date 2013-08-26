@@ -1,0 +1,15 @@
+{
+	"category" : "CI-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"case",
+		"slice" ],
+	"name" : "CISliceChange",
+	"pools" : [
+		 ],
+	"super" : "CIAbstractChange",
+	"type" : "normal" }

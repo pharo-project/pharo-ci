@@ -1,0 +1,1 @@
+A CISmallIntRule is responsible to run smallint rules and report the results.

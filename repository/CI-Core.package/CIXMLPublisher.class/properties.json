@@ -1,0 +1,14 @@
+{
+	"category" : "CI-Core-Publishing",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"xmlWriter" ],
+	"name" : "CIXMLPublisher",
+	"pools" : [
+		 ],
+	"super" : "CIFilePublisher",
+	"type" : "normal" }

@@ -1,0 +1,1 @@
+I collect results from different CIValidators

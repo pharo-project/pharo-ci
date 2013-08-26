@@ -1,0 +1,14 @@
+{
+	"category" : "CI-Core-Test",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "CIChangeValidationRuleTest",
+	"pools" : [
+		 ],
+	"super" : "CIValidationRuleTest",
+	"type" : "normal" }

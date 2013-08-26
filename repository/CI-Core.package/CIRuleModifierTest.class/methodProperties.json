@@ -1,0 +1,8 @@
+{
+	"class" : {
+		"isAbstract" : "CamilloBruni 4/30/2013 00:01" },
+	"instance" : {
+		"newInstance" : "CamilloBruni 5/11/2013 21:23",
+		"testLoadFailingChange" : "CI Validation User 5/9/2013 00:18",
+		"testLoadSuccessfulChange" : "CI Validation User 5/9/2013 00:18",
+		"testLoadWarningChange" : "CI Validation User 5/9/2013 00:18" } }

@@ -1,0 +1,15 @@
+{
+	"category" : "CI-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"impactedPackages",
+		"configurationPoint" ],
+	"name" : "CIConfigurationChange",
+	"pools" : [
+		 ],
+	"super" : "CIAbstractChange",
+	"type" : "normal" }
