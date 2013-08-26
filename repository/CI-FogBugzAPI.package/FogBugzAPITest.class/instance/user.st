@@ -1,3 +1,3 @@
 accessing
 user
-	^ OSPlatform env at: 'PHARO_CI_USER' ifAbsent: nil.
+	^ Smalltalk os environment at: 'PHARO_CI_USER' ifAbsent: nil.
