@@ -9,10 +9,8 @@ version120: spec
 			timestamp: '1/28/2013 17:55'.
 		
 		spec 
-			project: 'Soup' with: '1.2'.
-		spec 
-			package: 'FileSystem-Legacy' with: 'FileSystem-Legacy-CamilloBruni.1'.
-		spec 
-			package: 'CI-Core'        with: 'CI-Core-CamilloBruni.57';
-			package: 'CI-Integration' with: 'CI-Integration-CamilloBruni.32';
-			package: 'CI-Loader'      with: 'CI-Loader-CamilloBruni.6' ].
+			project: 'Soup'              with: '1.2';
+			package: 'FileSystem-Legacy' with: 'FileSystem-Legacy-CamilloBruni.1';
+			package: 'CI-Core'           with: 'CI-Core-CamilloBruni.57';
+			package: 'CI-Integration'    with: 'CI-Integration-CamilloBruni.32';
+			package: 'CI-Loader'         with: 'CI-Loader-CamilloBruni.6' ].
