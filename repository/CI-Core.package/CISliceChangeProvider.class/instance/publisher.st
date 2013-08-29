@@ -1,3 +1,3 @@
 accessing
 publisher
-	^ CICommandLinePublisher", self issueTrackerPublisher"
+	^ CICommandLinePublisher new ", self issueTrackerPublisher"
