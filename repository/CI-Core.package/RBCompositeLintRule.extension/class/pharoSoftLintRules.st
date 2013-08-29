@@ -30,6 +30,6 @@ pharoSoftLintRules
 		RBUnnecessaryAssignmentRule.
 		RBNotEliminationRule.
 		RBAtIfAbsentRule.
-		RBAllAnyNoneSatisfyRule.
+		"RBAllAnyNoneSatisfyRule."
 		RBClassNameInSelectorRule 
 	} collect: [ :each | each new ])

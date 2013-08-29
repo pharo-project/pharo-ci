@@ -1,8 +1,7 @@
 publishing
 publishValidationResult: aCIValidationResult
-	
 	aCIValidationResult	isSuccess 
 			ifTrue: [ self publishSuccess: aCIValidationResult ]
 			ifFalse: [ self publishFailure: aCIValidationResult ].
-	(aCIValidationResult messages isNil or: [ aCIValidationResult errors isEmpty ])
+	aCIValidationResult messages isEmpty
 		ifFalse: [ self publishMessages: aCIValidationResult ].
