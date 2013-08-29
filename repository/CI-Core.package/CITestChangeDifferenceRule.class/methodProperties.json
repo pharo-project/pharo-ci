@@ -1,6 +1,6 @@
 {
 	"class" : {
-		"validateLocally:" : "ErwanDouaille 6/18/2013 13:12" },
+		"validateLocally:" : "CamilloBruni 8/29/2013 01:50" },
 	"instance" : {
 		"basicValidate" : "CamilloBruni 5/11/2013 20:17",
 		"environmentCopy" : "CamilloBruni 4/29/2013 21:16",
@@ -9,9 +9,9 @@
 		"newImageDo:" : "ErwanDouaille 5/29/2013 09:27",
 		"postLoadValidate" : "CamilloBruni 5/11/2013 20:16",
 		"preLoadValidate" : "CamilloBruni 5/11/2013 20:17",
-		"recordEnvironmentChangeDuring:" : "CamilloBruni 5/11/2013 22:26",
-		"recordValidationChangesDuring:" : "ErwanDouaille 6/18/2013 13:11",
+		"recordEnvironmentChangeDuring:" : "CamilloBruni 8/29/2013 01:52",
+		"recordValidationChangesDuring:" : "CamilloBruni 8/29/2013 01:56",
 		"removeFalsePositives" : "CamilloBruni 5/9/2013 14:16",
 		"removeFalsePositives:from:" : "CamilloBruni 4/29/2013 21:04",
-		"validate" : "CamilloBruni 6/14/2013 13:13",
+		"validate" : "CamilloBruni 8/29/2013 01:45",
 		"validateChangeBlock:" : "ErwanDouaille 6/18/2013 11:28" } }
