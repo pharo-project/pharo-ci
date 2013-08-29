@@ -3,6 +3,6 @@ publishValidationResult: aCIValidationResult
 
 	self publishHTMLResult: aCIValidationResult.
 	
-	super 
+	self 
 		publishValidationResult: aCIValidationResult
 		message: (self buildMessage: aCIValidationResult)
