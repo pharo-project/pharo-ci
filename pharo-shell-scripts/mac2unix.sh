@@ -10,4 +10,4 @@ Usage:
 	exit 1
 fi
 
-cat $1 | tr '\r' '\n' > $1
+cat "$1" | tr '\r' '\n' > "$1"
