@@ -1,3 +1,4 @@
 validation
 timeoutFailure
-	self addError: 'Timeout occured while loading ', self change name.
+	self flag: #TODO. "Use a real timeout error".
+	self addError: self name, ': Timeout (after ', self timeout asString, ') occured while loading "', self change name, '"'.
