@@ -6,4 +6,5 @@ forkImage
 		WorldState deferredUIMessages flush.
 		Smalltalk removeFromStartUpList: BasicCommandLineHandler.
 		Smalltalk backupTo: name.
+		VTermOutputDriver stdout red: 'FFFFFFFFFFFFFFFFFFFFF'; lf.
  	] ensure: [ BasicCommandLineHandler initialize ].
