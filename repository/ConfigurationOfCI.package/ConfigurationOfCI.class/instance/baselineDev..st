@@ -10,8 +10,7 @@ baselineDev: spec
 			fileSystemLegacy: spec;
 			commandShell: spec;
 			zinc: spec;
-			xmlWriter: spec;
-			imageWorker: spec.
+			xmlWriter: spec.
 				
 		spec
 			package: 'CI-Core' with: [ 
