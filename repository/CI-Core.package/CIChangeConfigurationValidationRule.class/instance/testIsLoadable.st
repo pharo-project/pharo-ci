@@ -1,7 +1,7 @@
 tests
 testIsLoadable
 "	self change assertLoadable.
-	ImageWorker evaluate: [| test specLoader|
+	CIImageWorker evaluate: [| test specLoader|
 	(self change group isNil )
 		ifTrue: [ test := self change configurationPoint load ]
 		ifFalse: [ test := self change configurationPoint load: self group].
