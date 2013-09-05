@@ -11,6 +11,7 @@ terminateActiveProcess
 
 	[ 
 		"suspend the current UI process, terminating it would cause all pending #ensure: blocks to be evaluated which can cause unwanted side-effects"
+		self inform: 'terminateActiveProcess'.
 		[ currentProcess suspend ] on: Error do: [ :error | ].
 		semaphore signal.
 	] fork.

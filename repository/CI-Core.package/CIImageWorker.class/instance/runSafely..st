@@ -1,5 +1,6 @@
 private - forked image
 runSafely: aBlock
+	self inform: 'runSafely:'.
 	"Make sure we can run aBlock without side-effects "
 	[ aBlock ensure: [
 		"Make sure that we always quit the image after running the block and serializing its contents."
