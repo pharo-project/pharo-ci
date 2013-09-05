@@ -6,5 +6,5 @@ readForkedImageResult
 		ifFalse: [ ^ Error signal: 'Forked Image did not produce result' ].
 	result := FLMaterializer materializeFromFileNamed: self resultFile fullName.
 	result second 
-		ifTrue: [ Error signal: 'TODO got error from image' ]
+		ifTrue: [ self resignalRemoteError: result first ]
 		ifFalse: [ ^ result first ]
