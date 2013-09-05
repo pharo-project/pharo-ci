@@ -3,7 +3,9 @@ validate
 	| result |
 	self assertHasChange.
 	"Validate this rule in a separate image"
-	result := self newImageDo: [ :remote | 
-		((remote at: self class name) validateLocally: self) asLocalObject ].
+	result := self newImageDo: [ 
+		self 
+			validateChangeBlock: [ self change load ];
+			validationResult ].
 	^ self addValidationResult: result
 	
