@@ -1,0 +1,18 @@
+{
+	"category" : "CI-Core-Validation",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"timeout",
+		"name",
+		"block",
+		"session",
+		"forkedImageProcess" ],
+	"name" : "CIImageWorker",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }
