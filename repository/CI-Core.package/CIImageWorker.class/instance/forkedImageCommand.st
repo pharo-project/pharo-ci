@@ -1,3 +1,3 @@
 accessing
 forkedImageCommand
-	^ Smalltalk vm command, ' ', self forkedImageFile fullName
+	^ Smalltalk vm command, ' "', self forkedImageFile fullName, '"'
