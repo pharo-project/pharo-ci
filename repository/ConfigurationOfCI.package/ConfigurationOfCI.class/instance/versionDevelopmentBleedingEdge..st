@@ -1,6 +1,6 @@
 versions
 versionDevelopmentBleedingEdge: spec
-	<version: 'devBleedingEdge' imports: #('dev-baseline')>
+	<version: '999-devBleedingEdge' imports: #('999-dev-baseline')>
 
 	spec for: #'common' do: [
 		self versionDevelopmentExternal: spec.  ].
