@@ -77,5 +77,4 @@ guard()
 # exporting the pharo sources =================================================
 puts blue("Updating the image and exporting all sources ")
 
-system("$PHARO_VM Pharo-#{PHARO_VERSION}.image #{SCRIPTS}/scripts/pharo/pharo-3.0-git-tracker.st")
-guard()
+exec("$PHARO_VM Pharo-#{PHARO_VERSION}.image #{SCRIPTS}/scripts/pharo/pharo-3.0-git-tracker.st")

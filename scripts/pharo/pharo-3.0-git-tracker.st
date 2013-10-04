@@ -32,6 +32,6 @@ FileStream stdout nextPutAll: 'Converting Line Endings';lf.
     contents replaceAll: Character cr with: Character lf.
     file delete.
     file writeStreamDo: [ :stream| 
-        stream nextPutAll: contents ]]
+        stream nextPutAll: contents ]].
 
 Smalltalk snapshot: true andQuit: true.
