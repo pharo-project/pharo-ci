@@ -25,4 +25,13 @@ FileStream stdout nextPutAll: 'Installing FileSystemST';lf.
 FileStream stdout nextPutAll: 'Exporting all Packages';lf.
 (FileSystem st root) copyAllTo: 'pharo-core' asFileReference.
 
+FileStream stdout nextPutAll: 'Converting Line Endings';lf.
+'pharo-core' asFileReference allFiles do: [ :file |
+    | contents |
+    contents := file readStream contents.
+    contents replaceAll: Character cr with: Character lf.
+    file delete.
+    file writeStreamDo: [ :stream| 
+        stream nextPutAll: contents ]]
+
 Smalltalk snapshot: true andQuit: true.
