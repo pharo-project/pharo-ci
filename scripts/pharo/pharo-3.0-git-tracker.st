@@ -28,10 +28,13 @@ FileStream stdout nextPutAll: 'Exporting all Packages';lf.
 FileStream stdout nextPutAll: 'Converting Line Endings';lf.
 'pharo-core' asFileReference allFiles do: [ :file |
     | contents |
-    contents := file readStream contents.
-    contents replaceAll: Character cr with: Character lf.
+    contents := file readStream binary contents.
+    contents
+        replaceAll: Character cr asciiValue
+        with: Character lf asciiValue.
     file delete.
     file writeStreamDo: [ :stream| 
+        stream binary.
         stream nextPutAll: contents ]].
 
 Smalltalk snapshot: true andQuit: true.
