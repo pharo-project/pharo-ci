@@ -26,7 +26,9 @@ FileStream stdout nextPutAll: 'Exporting all Packages';lf.
 (FileSystem st root) copyAllTo: 'pharo-core' asFileReference.
 
 FileStream stdout nextPutAll: 'Converting Line Endings';lf.
-'pharo-core' asFileReference allFiles do: [ :file |
+'pharo-core' asFileReference allFiles 
+  select: [ :file | file extension = 'st' ]
+  thenDo: [ :file |
     | contents |
     contents := file readStream binary contents.
     contents
