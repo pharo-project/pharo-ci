@@ -8,7 +8,7 @@ color := [:colorCode :text|
     FileStream stderr 
         "set the color"
         nextPut: Character escape; nextPut: $[; print: colorCode; nextPut: $m;
-        nextPutAll: text; crlf;
+        nextPutAll: text; lf;
         "reset the color"
         nextPut: Character escape; nextPutAll: '[0m'.
 ].
@@ -16,7 +16,7 @@ color := [:colorCode :text|
 red        := [:text| color value: 31 value: text ].
 green      := [:text| color value: 32 value: text ].
 blue       := [:text| color value: 34 value: text ].
-white      := [:text| FileStream stderr nextPutAll: text; crlf ].
+white      := [:text| FileStream stderr nextPutAll: text; lf ].
 white_nolf := [:text| FileStream stderr nextPutAll: text ].
 
 "============================================================================="
@@ -93,7 +93,7 @@ commitMessage  := ScriptLoader methodDict
 
 versionString asFileReference writeStreamDo: [ :stream| 
 	stream 
-		nextPutAll: versionString; cr;
+		nextPutAll: versionString; lf;
 		nextPutAll: commitMessage ].
 	
 "save all packages into the filetree repository ============================="
@@ -137,6 +137,7 @@ blue value: 'Converting Line Endings'; lf.
 (FileStream forceNewFileNamed: 'version')
     nextPutAll: versionString;
     close.
+	
 "store the commit message in a separate file"
 (FileStream forceNewFileNamed: versionString)
     lineEndConvention: #lf;
