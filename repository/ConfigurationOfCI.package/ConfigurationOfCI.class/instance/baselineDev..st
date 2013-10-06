@@ -10,11 +10,12 @@ baselineDev: spec
 			fileSystemLegacy: spec;
 			commandShell: spec;
 			zinc: spec;
-			xmlWriter: spec.
+			xmlWriter: spec;
+			imageWorker: spec.
 				
 		spec
 			package: 'CI-Core' with: [ 
-				spec requires: #( 'FileSystem-Legacy' 'CommandShell' 'XMLWriter')];
+				spec requires: #( 'FileSystem-Legacy' 'CommandShell' 'XMLWriter' 'ImageWorker')];
 			package: 'CI-FogBugzAPI' with: [ 
 				spec requires: #('CI-Core')];
 			package: 'CI-GoogleIssueTracker' with: [
