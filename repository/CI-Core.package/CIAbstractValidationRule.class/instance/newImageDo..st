@@ -1,5 +1,5 @@
 instance-creation
 newImageDo: aBlock
 	| result |
-	result := CIImageWorker do: aBlock.
+	result := ImageWorker do: aBlock.
 	^ result
