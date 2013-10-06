@@ -97,7 +97,7 @@ versionString asFileReference writeStreamDo: [ :stream|
 		nextPutAll: commitMessage ].
 	
 "save all packages into the filetree repository ============================="
-blue value:'Comitting changes to ', fileTreeRepository directory asString.
+blue value: 'Comitting changes to ', fileTreeRepository directory asString.
 
 "manually commit since Gofer gives birth incredible shitty pink ponies on the way"
 commit := [ :packageName| | version |
@@ -118,6 +118,20 @@ inboxRepos cacheAllFileNamesDuring: [
 
 " ==========================================================================="
 ] on: AuthorNameRequest do: [ :request | request resume: 'Mister Foo'].
+
+blue value: 'Converting Line Endings'; lf.
+'pharo-core' asFileReference allFiles 
+  select: [ :file | file extension = 'st' ]
+  thenDo: [ :file |
+    | contents |
+    contents := file readStream binary contents.
+    contents
+        replaceAll: Character cr asciiValue
+        with: Character lf asciiValue.
+    file delete.
+    file writeStreamDo: [ :stream| 
+        stream binary.
+        stream nextPutAll: contents ]].
 
 "output the current version number =========================================="
 (FileStream forceNewFileNamed: 'version')
