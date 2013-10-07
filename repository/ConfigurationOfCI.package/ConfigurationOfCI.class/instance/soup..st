@@ -1,8 +1,7 @@
 external projects
 soup: spec
 
-	"Dependencies"
 	spec project: 'Soup' with: [
 		spec
-			repository: 'http://www.squeaksource.com/Soup';
+			repository: 'http://smalltalkhub.com/mc/PharoExtras/Soup/main';
 			className: 'ConfigurationOfSoup'].
