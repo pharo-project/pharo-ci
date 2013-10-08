@@ -94,7 +94,8 @@ commitMessage  := ScriptLoader methodDict
 versionString asFileReference writeStreamDo: [ :stream| 
 	stream 
 		nextPutAll: versionString; lf;
-		nextPutAll: commitMessage ].
+		nextPutAll: commitMessage; lf;
+        nextPutAll: 'http://files.pharo.org/image/20/'; nextPutAll: versionString; nextPutAll: '.zip'; lf ].
 	
 "save all packages into the filetree repository ============================="
 blue value: 'Committing changes to ', fileTreeRepository directory asString.

@@ -13,8 +13,9 @@ versionString := [(ScriptLoader >> ('update', version) asSymbol) literals
 
 version asFileReference writeStreamDo: [ :stream| 
 	stream 
-		nextPutAll: version; cr; lf;
-		nextPutAll: versionString ].
+		nextPutAll: version; lf;
+		nextPutAll: versionString; lf; lf;
+        nextPutAll: 'http://files.pharo.org/image/30/'; nextPutAll: version; nextPutAll: '.zip'; lf ].
 
 
 FileStream stdout nextPutAll: 'Installing FileSystemST'; lf.
