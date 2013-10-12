@@ -1,6 +1,6 @@
 ui
 inform: aString
 	self flag: 'for debugging'.
-	VTermOutputDriver stderr
+	VTermOutputDriver stdout
 			nextPutAll: 'Notice: ';
 			nextPutAll: aString asString; lf.
