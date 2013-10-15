@@ -1,6 +1,5 @@
 publishing
 htmlEnding: aCIValidationResult
-	self stream nextPutAll: '
-</body>
-</html>
-'
+	self stream lf;
+		nextPutAll: '</body>'; lf;
+		nextPutAll: '</html>'; lf

@@ -1,3 +1,5 @@
 accessing
 newValidationResult
-	^ CIValidationResult new.
+	^ CIValidationResult new
+		change: self newChange;
+		yourself

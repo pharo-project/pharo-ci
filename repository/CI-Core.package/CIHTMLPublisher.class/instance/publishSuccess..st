@@ -1,4 +1,7 @@
 publishing
 publishSuccess: aCIValidationResult
 
-	self stream nextPutAll: '<h1>', aCIValidationResult change name asString, ' test succeed ! </h1>'.
+	self stream
+		nextPutAll: '<h2>'; 
+		nextPutAll: aCIValidationResult change name asString;
+		nextPutAll: ' test succeed !</h2>'.
