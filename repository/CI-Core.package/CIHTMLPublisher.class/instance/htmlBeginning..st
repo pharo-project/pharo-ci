@@ -8,8 +8,11 @@ htmlBeginning: aCIValidationResult
 		nextPutAll: '<title>';
 		nextPutAll: aCIValidationResult change name asString; 
 		nextPutAll: ' -- Test report</title>'; lf;
+		nextPutAll: '<link href="'; nextPutAll: self bootstrapRoot; nextPutAll: 'css/bootstrap.min.css" rel="stylesheet" media="screen">';
 		nextPutAll: '</head>'; lf;
-		nextPutAll: '<body>'.
+		nextPutAll: '<body>'; lf;
+		nextPutAll: '<script src="http://code.jquery.com/jquery.js"></script>'; lf;
+ 		nextPutAll: '<script src="'; nextPutAll: self bootstrapRoot; nextPutAll: 'js/bootstrap.min.js"></script>'; lf.
 
 	aCIValidationResult change url ifNil: [ 
 		self stream

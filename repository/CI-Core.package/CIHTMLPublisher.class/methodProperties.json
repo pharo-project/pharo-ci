@@ -2,11 +2,12 @@
 	"class" : {
 		 },
 	"instance" : {
-		"htmlBeginning:" : "CamilloBruni 10/15/2013 22:30",
+		"bootstrapRoot" : "CamilloBruni 10/15/2013 22:39",
+		"htmlBeginning:" : "CamilloBruni 10/15/2013 22:42",
 		"htmlEnding:" : "CamilloBruni 10/15/2013 22:30",
-		"publishFailures:" : "CamilloBruni 10/15/2013 22:19",
+		"publishFailures:" : "CamilloBruni 10/15/2013 22:47",
 		"publishList:title:" : "CamilloBruni 10/15/2013 22:27",
-		"publishMessages:" : "CamilloBruni 10/15/2013 22:19",
+		"publishMessages:" : "CamilloBruni 10/15/2013 22:47",
 		"publishSuccess:" : "CamilloBruni 10/15/2013 22:27",
 		"publishValidationResult:" : "CamilloBruni 10/15/2013 22:22",
-		"publishWarnings:" : "CamilloBruni 10/15/2013 22:20" } }
+		"publishWarnings:" : "CamilloBruni 10/15/2013 22:47" } }

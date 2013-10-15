@@ -2,4 +2,4 @@ publishing
 publishMessages: aCIValidationResult
 	self 
 		publishList: aCIValidationResult messages
-		title: 'Messages'
+		title: '<span class="label label-info">Additional Remarks</span>'
