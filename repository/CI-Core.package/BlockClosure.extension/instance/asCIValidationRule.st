@@ -1,3 +1,3 @@
 *CI-Core-Validation
 asCIValidationRule
-	^ CITestRule block: self 
+	^ CIMockRule block: self 

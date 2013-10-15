@@ -1,3 +1,3 @@
 accessing
 timeout
-	^ 20 minutes
+	^ 40 minutes

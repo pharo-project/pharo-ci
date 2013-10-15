@@ -1,3 +1,3 @@
 accessing
 ruleClass
-	^ CIRunTestsRule
+	^ CISUnitTestsRule

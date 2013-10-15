@@ -2,9 +2,9 @@ instance creation
 pharo30
 	^ self new
 		addRule: 
-			"(CIRunTestsRule selectTestCaseBlock: [ :testCase|
-				testCase package name beginsWith: 'Kernel' ]),"
-			CIRunTestsRule,
+			(CISUnitTestsRule selectTestCaseBlock: [ :testCase|
+				(testCase package name beginsWith: 'Metacello') not ]),"
+			CISUnitTestsRule,"
 			RBCompositeLintRule pharoHardLintRules harden,
 			RBCompositeLintRule pharoSoftLintRules;
 		yourself

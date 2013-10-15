@@ -9,7 +9,7 @@
 		"selectTestCaseBlock",
 		"testErrors",
 		"testFailures" ],
-	"name" : "CIRunTestsRule",
+	"name" : "CISUnitTestsRule",
 	"pools" : [
 		 ],
 	"super" : "CITestChangeDifferenceRule",

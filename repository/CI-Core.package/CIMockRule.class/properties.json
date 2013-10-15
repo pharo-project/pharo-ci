@@ -7,7 +7,7 @@
 	"commentStamp" : "<historical>",
 	"instvars" : [
 		"block" ],
-	"name" : "CITestRule",
+	"name" : "CIMockRule",
 	"pools" : [
 		 ],
 	"super" : "CIAbstractValidationRule",
