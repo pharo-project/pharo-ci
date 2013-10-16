@@ -1,0 +1,3 @@
+accessing
+newSuccessfulChange
+	^ CITestChange new

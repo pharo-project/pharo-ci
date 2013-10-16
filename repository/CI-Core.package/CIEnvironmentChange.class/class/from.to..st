@@ -1,4 +1,4 @@
-as yet unclassified
+instance creation
 from: oldEnviroment to: newEnvironment
 	^ self new
 		from: oldEnviroment;

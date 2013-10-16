@@ -7,7 +7,7 @@ newSuccessfulChange
 		version: 'ConfigurationOfPharoExample-ErwanDouaille.4';
 		load.
 
-	 source := CIConfigurationChangeProvider new
+	source := CIConfigurationChangeProvider new
 		metacelloProject: #ConfigurationOfPharoExample asClass project.
 	
 	^ source changeWithId: #stable

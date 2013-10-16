@@ -2,9 +2,5 @@
 	"class" : {
 		 },
 	"instance" : {
-		"newFailingChange" : "ErwanDouaille 6/20/2013 14:01",
-		"newSuccessfulChange" : "CamilloBruni 9/3/2013 17:11",
-		"newWarningChange" : "CamilloBruni 9/3/2013 17:12",
-		"ruleClass" : "ErwanDouaille 6/18/2013 15:31",
-		"testLoadEmptyChange" : "ErwanDouaille 6/20/2013 14:07",
-		"testLoadWarningChange" : "ErwanDouaille 6/20/2013 14:03" } }
+		"newSuccessfulChange" : "CamilloBruni 10/16/2013 15:36",
+		"ruleClass" : "ErwanDouaille 6/18/2013 15:31" } }

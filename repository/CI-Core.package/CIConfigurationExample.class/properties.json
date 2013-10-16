@@ -7,7 +7,7 @@
 	"commentStamp" : "<historical>",
 	"instvars" : [
 		 ],
-	"name" : "CIConfigurationExemple",
+	"name" : "CIConfigurationExample",
 	"pools" : [
 		 ],
 	"super" : "Object",

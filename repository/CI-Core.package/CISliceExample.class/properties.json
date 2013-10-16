@@ -7,7 +7,7 @@
 	"commentStamp" : "<historical>",
 	"instvars" : [
 		 ],
-	"name" : "CISliceExemple",
+	"name" : "CISliceExample",
 	"pools" : [
 		 ],
 	"super" : "Object",

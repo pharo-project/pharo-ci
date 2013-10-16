@@ -1,9 +1,14 @@
 tests
-testIsLoadable
-	self change assertLoadable.
+testIsLoadable.
+	self flag: 'The error handling needs to be improved here'.
 	self inform: 'Loading ', self change asString.
-	[[ self change slice merge ] 
-		on: MCMergeResolutionRequest do: [ :request |
+	[[[ 
+		self change
+			assertLoadable;
+			load.
+	] on: MCMergeResolutionRequest do: [ :request |
 			self addError: 'Merge conflict occured while loading slice'  ]]
-		on: Error, Warning do: [ :warning |
-			self addError: 'Warning occurred while loading slice: ', warning asString ]
+		on: ChangeNotFound do: [ :error |
+			self addError: 'No loadable SLICE found.' ]]
+		on: Error, Warning do: [ :error |
+			self addError: 'Error occurred while loading slice: ', error asString ]
