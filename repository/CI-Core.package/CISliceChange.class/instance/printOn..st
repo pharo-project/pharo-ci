@@ -1,4 +1,6 @@
 printing
 printOn: aStream
 	aStream nextPutAll: 'SLICE '; print: self id; space.
-	aStream nextPutAll: self slice url 
+	self isLoadable
+		ifTrue: [ 	aStream nextPutAll: self slice url ]
+		ifFalse: [ aStream nextPutAll: 'without url' ]
