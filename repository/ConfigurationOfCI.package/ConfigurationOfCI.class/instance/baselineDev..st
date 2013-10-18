@@ -13,7 +13,7 @@ baselineDev: spec
 				
 		spec
 			package: 'CI-Core' with: [ 
-				spec requires: #( 'FileSystem-Legacy' 'CommandShell' 'XMLWriter' 'ImageWorker')];
+				spec requires: #( 'CommandShell' 'XMLWriter' 'ImageWorker')];
 			package: 'CI-FogBugzAPI' with: [ 
 				spec requires: #('CI-Core')];
 			package: 'CI-GoogleIssueTracker' with: [
