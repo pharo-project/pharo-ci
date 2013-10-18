@@ -1,4 +1,3 @@
 adding
 addWarning: aWarning
-	
-	self validationResult addWarning: aWarning asString
+	self validationResult addWarning: aWarning
