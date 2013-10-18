@@ -6,7 +6,9 @@
 		 ],
 	"commentStamp" : "<historical>",
 	"instvars" : [
-		 ],
+		"writer",
+		"bootstrapRoot",
+		"itemId" ],
 	"name" : "CIHTMLPublisher",
 	"pools" : [
 		 ],

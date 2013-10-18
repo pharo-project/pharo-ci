@@ -1,4 +1,4 @@
-as yet unclassified
+initalization
 initialize 
 	super initialize.
 	self xmlWriter: XMLWriter new.

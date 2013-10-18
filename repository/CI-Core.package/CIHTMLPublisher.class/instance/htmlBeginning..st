@@ -1,26 +1,27 @@
 publishing
 htmlBeginning: aCIValidationResult
 	self stream
-		nextPutAll: '<?xml version="1.0" encoding="UTF-8"?>'; lf;
-		nextPutAll: '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">'; lf;
-		nextPutAll: '<html>'; lf;
-		nextPutAll: '<head>'; lf;
-		nextPutAll: '<title>';
-		nextPutAll: aCIValidationResult change name asString; 
-		nextPutAll: ' -- Test report</title>'; lf;
-		nextPutAll: '<link href="'; nextPutAll: self bootstrapRoot; nextPutAll: 'css/bootstrap.min.css" rel="stylesheet" media="screen">';
-		nextPutAll: '</head>'; lf;
-		nextPutAll: '<body>'; lf;
-		nextPutAll: '<script src="http://code.jquery.com/jquery.js"></script>'; lf;
- 		nextPutAll: '<script src="'; nextPutAll: self bootstrapRoot; nextPutAll: 'js/bootstrap.min.js"></script>'; lf.
+		<< '<?xml version="1.0" encoding="UTF-8"?>'; lf;
+		<< '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">'; lf;
+		<< '<html>'; lf;
+		<< '<head>'; lf;
+		<< '<title>';
+		<< aCIValidationResult change name asString; 
+		<< ' -- Test report</title>'; lf;
+		<< '<link href="'; << self bootstrapRoot; << 'css/bootstrap.min.css" rel="stylesheet" media="screen">';
+		<< '</head>'; lf;
+		<< '<body>'; lf;
+		<< '<script src="'; << self bootstrapRoot; << 'js/jquery-1.10.2.min.js"></script>'; lf;
+ 		<< '<script src="'; << self bootstrapRoot; << 'js/bootstrap.min.js"></script>'; lf;
+		<< '<div class="container">';lf.
 
 	aCIValidationResult change url ifNil: [ 
 		self stream
-			nextPutAll: '<h1>';
-			nextPutAll: aCIValidationResult change name asString; nextPutAll: ' -- Test report</h1>'; lf.
+			<< '<h1>';
+			<< aCIValidationResult change name asString; << ' Validation Report </h1>'; lf.
 		^ self ].
 	
 	self stream lf;
-		nextPutAll: '<h1><a href="'; nextPutAll: aCIValidationResult change url; nextPutAll:'">';
-		nextPutAll: aCIValidationResult change name asString; nextPutAll: ' -- Test report';
-		nextPutAll: '</a></h1>'; lf.
+		<< '<h1><a href="'; << aCIValidationResult change url; <<'">';
+		<< aCIValidationResult change name asString; << ' Validation Report';
+		<< '</a></h1>'; lf.

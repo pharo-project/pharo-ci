@@ -3,11 +3,12 @@ publishValidationResult: aCIValidationResult
 
 	self updateFileName: aCIValidationResult.
 	
-	self stream: (self outputDirectory / self fileName, 'html') writeStream.
+	self stream: (self outputDirectory / self fileName, 'html') ensureDelete writeStream.
 	self htmlBeginning: aCIValidationResult.
 	
+	self publishSummary: aCIValidationResult.
 	aCIValidationResult isSuccess
-			ifTrue: [ self publishSuccess: aCIValidationResult ]
+			ifTrue:  [ self publishSuccess: aCIValidationResult ]
 			ifFalse: [ self publishFailures: aCIValidationResult ].
 	
 	aCIValidationResult hasWarnings 

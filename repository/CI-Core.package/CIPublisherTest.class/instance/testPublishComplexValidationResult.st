@@ -1,0 +1,3 @@
+tests
+testPublishComplexValidationResult
+	instance publishValidationResult: self newComplexValidationResult.

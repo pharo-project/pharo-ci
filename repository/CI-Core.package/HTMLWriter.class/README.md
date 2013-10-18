@@ -1,0 +1,1 @@
+I am a specialized subclass for generating valid HTML documents
