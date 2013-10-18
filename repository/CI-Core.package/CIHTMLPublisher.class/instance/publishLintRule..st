@@ -14,6 +14,7 @@ publishLintRule: aLintRule
 		publishResultGroupWithTitle: aLintRule name 
 		count: aLintRule problemCount 
 		with: [
+			self stream << aLintRule rationale << '</p><p>'.
 			result isCollection
 				ifTrue: [ 
 					result 

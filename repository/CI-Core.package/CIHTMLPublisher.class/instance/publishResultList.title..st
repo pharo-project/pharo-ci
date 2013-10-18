@@ -5,11 +5,16 @@ publishResultList: list title: aString
 	self stream 
 		<< '<h2>'; << aString; << '</h2>';
 		<< '<ul class="list-group">'; lf.
-
+	
+	self flag: 'add double dispatch'.
 	filteredList := self 
 		publishList: filteredList 
 		kind: MCMergeResolutionRequest 
 		do: [ :each | self publishMergeConflict: each ].
+	filteredList := self 
+		publishList: filteredList 
+		kind: ChangeNotFound 
+		do: [ :each | self publishChangeNotFound: each ].
 	filteredList := self 
 		publishList: filteredList
 		kind: Error
@@ -21,6 +26,11 @@ publishResultList: list title: aString
 	
 	"For the left-over items we just print the strings in a list"
 	filteredList do: [ :each | 
-		self stream << '<li class="list-group-item"><h4 class="list-group-item-heading">' << each asString; << '</h4></li>'; lf ].
+		self stream 
+			<< '<li class="list-group-item">';
+			<< '<h4 class="list-group-item-heading">';
+			<< each asString; 
+			<< '</h4>';
+			<< '</li>'; lf ].
 	
 	self stream << '</ul>'; lf.
