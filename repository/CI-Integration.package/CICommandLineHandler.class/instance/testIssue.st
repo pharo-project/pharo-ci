@@ -1,6 +1,6 @@
 action-test
 testIssue
-	self inform: 'Testing issue ', issue id asString.
+	self inform: 'Testing Issue ', issue id asString.
 	stdout nextPutAll: issue publicUrl; lf.
 	
 	^self manager validateChange: issue

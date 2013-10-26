@@ -3,20 +3,28 @@ setUpConfiguration
 
 	"(self hasOption: 'version')
 		ifTrue: "
-	| source error |	
+	| source error configurationName |	
 	
 	error := false.
-	[self argumentAt: 3 ] 
-		on: Error,Halt,Exit 
-		do: [ error := true].
+	[ configurationName := self argumentAt: 3 ] 
+		on: Error
+		do: [ error := true ].
 	
+	source := CIConfigurationChangeProvider url: (self argumentAt: 2).
 	error 
-		ifTrue: [ source := CIConfigurationChangeProvider url: (self argumentAt: 2) ]
-		ifFalse: [ source := CIConfigurationChangeProvider url: (self argumentAt: 2)  configurationName:  (self argumentAt: 3) ] .
+		ifFalse: [ source configurationName: configurationName ] .
 		
 	manager :=  CIChangeManager 
-			source: source
+			changeProvider: source
 			validator: CIValidator configuration.
-	self optionAt: 'group' ifPresent: [ :group | issue := manager changeWithGroup: group ].
-	self optionAt: 'version' ifPresent: [ :id | ^ issue := manager changeWithId: id ].
+			
+	self 
+		optionAt: 'group' 
+		ifPresent: [ :group |
+			issue := manager changeWithGroup: group ].
+	self
+		optionAt: 'version'
+		ifPresent: [ :id |
+			^ issue := manager changeWithId: id ].
+	
 	^ issue := manager changeWithId: #stable
