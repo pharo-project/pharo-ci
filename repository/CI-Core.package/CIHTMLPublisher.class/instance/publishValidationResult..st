@@ -1,10 +1,10 @@
 file creation
 publishValidationResult: aCIValidationResult
 
-	self updateFileName: aCIValidationResult.
-	
-	self stream: (self outputDirectory / self fileName, 'html') ensureDelete writeStream.
-	self htmlBeginning: aCIValidationResult.
+	self
+		updateFileName: aCIValidationResult;
+		newStream;
+		htmlBeginning: aCIValidationResult.
 	
 	self publishSummary: aCIValidationResult.
 	aCIValidationResult isSuccess

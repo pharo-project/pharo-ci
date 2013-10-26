@@ -1,20 +1,20 @@
 {
 	"class" : {
+		"changeProvider:validator:" : "CamilloBruni 10/22/2013 22:15",
 		"pharo" : "CamilloBruni 4/9/2013 13:43",
-		"pharo30" : "ErwanDouaille 7/2/2013 16:07",
-		"source:validator:" : "CamilloBruni 4/14/2013 21:33" },
+		"pharo30" : "CamilloBruni 10/22/2013 22:05" },
 	"instance" : {
+		"changeProvider" : "CamilloBruni 10/22/2013 22:15",
+		"changeProvider:" : "CamilloBruni 10/22/2013 22:15",
 		"changeWithGroup:" : "ErwanDouaille 5/6/2013 14:42",
 		"changeWithId:" : "ErwanDouaille 4/11/2013 15:29",
 		"isAuthenticated" : "CamilloBruni 4/9/2013 13:48",
-		"logOn" : "BenjaminVanRyseghem 3/22/2013 17:35",
+		"logOn" : "CamilloBruni 10/22/2013 22:02",
 		"logOnWithEmail:password:" : "CamilloBruni 4/9/2013 13:48",
 		"nextIssueToBeChecked" : "CamilloBruni 4/9/2013 13:48",
 		"openIssues" : "CamilloBruni 4/9/2013 13:48",
 		"publisher" : "CamilloBruni 4/14/2013 21:28",
 		"publisher:" : "CamilloBruni 4/14/2013 21:43",
-		"source" : "CamilloBruni 4/9/2013 13:46",
-		"source:" : "CamilloBruni 4/14/2013 21:44",
 		"validateChange:" : "ErwanDouaille 4/11/2013 16:13",
 		"validator" : "BenjaminVanRyseghem 3/22/2013 17:48",
 		"validator:" : "CamilloBruni 4/14/2013 21:42" } }

@@ -1,6 +1,8 @@
 printing
 printOn: aStream
-	self 
-		printErrorsOn: aStream;
-		printWarningsOn: aStream;
-		printMessagesOn: aStream
+	super printOn: aStream.
+	aStream
+		<< '( Errors: '; print: self errors size; 
+		<< ', Warnings: '; print: self warnings size; 
+		<< ', Messages: '; print: self messages size;
+		<< ' )'

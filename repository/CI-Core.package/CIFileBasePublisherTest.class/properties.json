@@ -6,9 +6,9 @@
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		 ],
-	"name" : "CIXMLPublisherTest",
+		"stream" ],
+	"name" : "CIFileBasePublisherTest",
 	"pools" : [
 		 ],
-	"super" : "CIFileBasePublisherTest",
+	"super" : "CIPublisherTest",
 	"type" : "normal" }

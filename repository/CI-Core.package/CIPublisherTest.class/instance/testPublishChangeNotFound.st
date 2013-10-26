@@ -1,3 +1,3 @@
 tests
 testPublishChangeNotFound
-	instance publishChangeNotFound: self newChange
+	instance publishChangeNotFound: self newChangeNotFound

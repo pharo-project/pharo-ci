@@ -7,8 +7,8 @@
 	"commentStamp" : "<historical>",
 	"instvars" : [
 		"validator",
-		"source",
-		"publisher" ],
+		"publisher",
+		"changeProvider" ],
 	"name" : "CIChangeManager",
 	"pools" : [
 		 ],

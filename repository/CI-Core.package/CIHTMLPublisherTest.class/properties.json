@@ -10,5 +10,5 @@
 	"name" : "CIHTMLPublisherTest",
 	"pools" : [
 		 ],
-	"super" : "CIPublisherTest",
+	"super" : "CIFileBasePublisherTest",
 	"type" : "normal" }
