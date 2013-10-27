@@ -1,4 +1,4 @@
 delegate issue source
 openIssues
 
-	^ self source openIssues
+	^ self changeProvider openIssues

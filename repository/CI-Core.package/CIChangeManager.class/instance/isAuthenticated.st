@@ -1,4 +1,4 @@
 delegate issue source
 isAuthenticated
 	
-	^ self source isAuthenticated
+	^ self changeProvider isAuthenticated
