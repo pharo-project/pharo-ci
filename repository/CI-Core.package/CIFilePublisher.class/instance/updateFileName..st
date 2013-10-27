@@ -1,4 +1,4 @@
 accessing
 updateFileName: aCIValidationResult
 	fileName ifNil: [ 
-		fileName := aCIValidationResult change name asString ]
+		fileName := aCIValidationResult change id asString ]
