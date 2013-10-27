@@ -1,19 +1,16 @@
 publishing
 htmlBeginning: aCIValidationResult
 	self stream
-		<< '<?xml version="1.0" encoding="UTF-8"?>'; lf;
-		<< '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">'; lf;
-		<< '<html>'; lf;
+		<< '<!DOCTYPE html>'; lf;
+		<< '<html lang="en">'; lf;
 		<< '<head>'; lf;
 		<< '<title>Validation Report: ';
 		<< (aCIValidationResult change id ifNil: [ '' ]) asString; space;
 		<< aCIValidationResult change name asString; 
 		<< ' -- Test report</title>'; lf;
-		<< '<link href="'; << self bootstrapRoot; << 'css/bootstrap.min.css" rel="stylesheet" media="screen">';
+		<< '<link href="'; << self bootstrapRoot; << 'css/bootstrap.css" rel="stylesheet">';
 		<< '</head>'; lf;
 		<< '<body>'; lf;
-		<< '<script src="'; << self bootstrapRoot; << 'js/jquery-1.10.2.min.js"></script>'; lf;
- 		<< '<script src="'; << self bootstrapRoot; << 'js/bootstrap.min.js"></script>'; lf;
 		<< '<div class="container">';lf.
 
 	aCIValidationResult change url ifNil: [ 

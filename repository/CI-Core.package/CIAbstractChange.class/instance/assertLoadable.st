@@ -1,4 +1,4 @@
 asserting
 assertLoadable
 	self isLoadable
-		ifFalse: [ ChangeNotFound signalChange: self ]
+		ifFalse: [ self signalChangeNotFound ]

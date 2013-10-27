@@ -1,3 +1,3 @@
 accessing
 configuration 
-	^ self source configuration
+	^ self changeProvider configuration

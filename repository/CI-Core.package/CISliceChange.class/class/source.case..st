@@ -1,5 +1,5 @@
 instance creation
 source: aCISource case: aTrackerCase
-	^ (self source: aCISource)
+	^ (self changeProvider: aCISource)
 			case: aTrackerCase;
 			yourself 

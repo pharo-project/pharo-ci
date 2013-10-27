@@ -4,7 +4,9 @@ publishResultGroupWithTitle: title count: count with: contentBlock
 		<< '<h4 class="list-group-item-heading" data-toggle="collapse" data-target="#result-'; 
 		print: itemId;
 		<< '">'; 
-		<< title.
+		<< title; space;
+		"info button"
+		<< '<span class="btn btn-xs glyphicon glyphicon-info-sign"></span>'.
 	
 	count > 0
 		ifTrue: [ self stream << '<span class="badge pull-right">'; print: count; << '</span>' ].

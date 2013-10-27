@@ -1,3 +1,3 @@
 protocol
 publicUrl
-	^ self source url
+	^ self changeProvider url

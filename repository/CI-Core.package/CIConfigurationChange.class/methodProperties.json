@@ -1,17 +1,17 @@
 {
 	"class" : {
-		"source:configurationPoint:" : "ErwanDouaille 5/27/2013 18:52" },
+		"source:configurationPoint:" : "CamilloBruni 10/28/2013 00:16" },
 	"instance" : {
 		"basicLoad" : "ErwanDouaille 5/27/2013 16:53",
 		"changeValidationRule" : "ErwanDouaille 5/28/2013 10:39",
 		"configurationPoint" : "CamilloBruni 4/26/2013 16:22",
 		"configurationPoint:" : "CamilloBruni 4/26/2013 16:23",
-		"group" : "ErwanDouaille 5/6/2013 17:46",
+		"group" : "CamilloBruni 10/28/2013 00:18",
 		"id" : "ErwanDouaille 5/6/2013 13:31",
 		"impactedPackages" : "ErwanDouaille 4/17/2013 11:21",
 		"impactedPackages:" : "ErwanDouaille 4/17/2013 11:21",
 		"isLoadable" : "CamilloBruni 4/26/2013 16:22",
 		"name" : "ErwanDouaille 5/27/2013 18:32",
-		"publicUrl" : "CamilloBruni 4/26/2013 15:49",
+		"publicUrl" : "CamilloBruni 10/28/2013 00:18",
 		"resolveImpactedPackages" : "ErwanDouaille 4/17/2013 14:47",
 		"version" : "ErwanDouaille 5/27/2013 18:30" } }

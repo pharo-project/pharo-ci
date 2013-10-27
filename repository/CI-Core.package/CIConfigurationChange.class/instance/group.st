@@ -1,3 +1,3 @@
 accessing
 group
-	^ self source group
+	^ self changeProvider group

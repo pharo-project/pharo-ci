@@ -1,0 +1,3 @@
+asserting
+signalChangeNotFound
+	ChangeNotFound signalChange: self

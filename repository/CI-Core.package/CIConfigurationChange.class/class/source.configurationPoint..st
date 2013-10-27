@@ -1,6 +1,6 @@
 instance creation
 source: aCISource configurationPoint: aMetacelloVersion
 	
-	^ (self source: aCISource) 
+	^ (self changeProvider: aCISource) 
 		configurationPoint: aMetacelloVersion;
 		yourself.
