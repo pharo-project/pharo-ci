@@ -3,5 +3,9 @@
 		"signalChange:" : "CamilloBruni 4/14/2013 22:37",
 		"signalChange:message:" : "CamilloBruni 4/14/2013 22:37" },
 	"instance" : {
+		"addLocation:" : "CamilloBruni 10/27/2013 23:31",
 		"change" : "CamilloBruni 4/14/2013 22:37",
-		"change:" : "CamilloBruni 4/14/2013 22:37" } }
+		"change:" : "CamilloBruni 4/14/2013 22:37",
+		"initialize" : "CamilloBruni 10/27/2013 23:31",
+		"locations" : "CamilloBruni 10/27/2013 23:30",
+		"locations:" : "CamilloBruni 10/27/2013 23:30" } }

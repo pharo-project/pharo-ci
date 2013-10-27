@@ -2,7 +2,7 @@ helper
 publishMergeConflicts: conflicts class: class
 	
 	
-	self stream << '<tr><td colspan="3">' << class name << '</td></tr>';lf.
+	self stream << '<tr><td></td><td colspan="2"><strong>' << class name << '</strong></td></tr>';lf.
 	conflicts do: [ :each |
 		 self stream << '<tr><td><span class="glyphicon glyphicon-'.
 		each isAddition

@@ -1,5 +1,7 @@
 helper
 publishSummaryLabel: labelString count: count type: type
+	count = 0
+		ifTrue: [ ^ self ].
 	self stream 
 		<< '<span class="label label-' << type << '">';
 		print: count; space; 

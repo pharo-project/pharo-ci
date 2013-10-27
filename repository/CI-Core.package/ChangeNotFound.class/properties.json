@@ -6,7 +6,8 @@
 		 ],
 	"commentStamp" : "<historical>",
 	"instvars" : [
-		"change" ],
+		"change",
+		"locations" ],
 	"name" : "ChangeNotFound",
 	"pools" : [
 		 ],
