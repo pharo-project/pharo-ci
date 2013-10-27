@@ -2,5 +2,5 @@ publishing
 publishChangeNotFound: aChange
 	VTermOutputDriver stderr 
 		color256: Color orange; 
-		<< aChange name asString; << ' >> no changes has been found'; 
+		<< 'Could not find changes'; 
 		flush; clear; lf.

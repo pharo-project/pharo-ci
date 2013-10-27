@@ -1,0 +1,3 @@
+accessing
+locations
+	^ { self url }
