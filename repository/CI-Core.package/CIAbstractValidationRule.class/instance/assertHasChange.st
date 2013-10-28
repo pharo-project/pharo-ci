@@ -1,3 +1,5 @@
 validation
 assertHasChange
-	self assert: change isNotNil description: 'No change given'.
+	self
+		assert: change isNotNil
+		description: 'No change given'.

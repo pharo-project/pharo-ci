@@ -1,4 +1,4 @@
 testing
 changeValidationRule
 
-	 ^ CISliceChangeValidationRule 
+	 ^ CIChangeSliceValidationRule 

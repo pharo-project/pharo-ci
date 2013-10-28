@@ -7,7 +7,7 @@
 	"commentStamp" : "<historical>",
 	"instvars" : [
 		 ],
-	"name" : "CISliceChangeValidationRule",
+	"name" : "CIChangeSliceValidationRule",
 	"pools" : [
 		 ],
 	"super" : "CIChangeValidationRule",

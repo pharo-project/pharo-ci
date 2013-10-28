@@ -8,6 +8,7 @@
 		"newWarningChange" : "ErwanDouaille 4/30/2013 17:32",
 		"ruleClass" : "CamilloBruni 4/29/2013 21:35",
 		"testLoadEmptyChange" : "ErwanDouaille 4/30/2013 17:13",
+		"testLoadEmptyChangeNonLoadable" : "CamilloBruni 10/28/2013 01:13",
 		"testLoadFailingChange" : "ErwanDouaille 5/13/2013 15:51",
 		"testLoadNil" : "CamilloBruni 5/14/2013 13:21",
 		"testLoadSuccessfulChange" : "ErwanDouaille 4/30/2013 17:34",

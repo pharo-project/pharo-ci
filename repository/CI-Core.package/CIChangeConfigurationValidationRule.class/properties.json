@@ -7,7 +7,7 @@
 	"commentStamp" : "<historical>",
 	"instvars" : [
 		 ],
-	"name" : "CIConfigurationChangeValidationRule",
+	"name" : "CIChangeConfigurationValidationRule",
 	"pools" : [
 		 ],
 	"super" : "CIChangeValidationRule",
