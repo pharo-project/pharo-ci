@@ -1,6 +1,6 @@
 tests
 createNewTestClass
-	^ TestCase subclass: (#CIRunTestsRule_, self selector) asSymbol
+	^ TestCase subclass: (#CISUnitTestsRule_, self selector) asSymbol
 			instanceVariableNames: ''
 			classVariableNames: ''
 			poolDictionaries: ''

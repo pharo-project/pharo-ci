@@ -7,7 +7,7 @@
 	"commentStamp" : "",
 	"instvars" : [
 		 ],
-	"name" : "CIRunTestsRuleTest",
+	"name" : "CISUnitTestsRuleTest",
 	"pools" : [
 		 ],
 	"super" : "CIAbstractBaseRuleTest",
