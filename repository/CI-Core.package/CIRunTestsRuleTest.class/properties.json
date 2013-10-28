@@ -10,5 +10,5 @@
 	"name" : "CIRunTestsRuleTest",
 	"pools" : [
 		 ],
-	"super" : "CIValidationRuleTest",
+	"super" : "CIAbstractBaseRuleTest",
 	"type" : "normal" }

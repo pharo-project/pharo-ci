@@ -7,8 +7,8 @@
 	"commentStamp" : "",
 	"instvars" : [
 		 ],
-	"name" : "CITestRuleTest",
+	"name" : "CIAbstractValidationRuleTest",
 	"pools" : [
 		 ],
-	"super" : "CIAbstractBaseRuleTest",
+	"super" : "CITestCase",
 	"type" : "normal" }

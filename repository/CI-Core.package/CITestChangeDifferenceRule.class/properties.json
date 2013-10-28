@@ -12,5 +12,5 @@
 	"name" : "CITestChangeDifferenceRule",
 	"pools" : [
 		 ],
-	"super" : "CIAbstractValidationRule",
+	"super" : "CIAbstractBaseRule",
 	"type" : "normal" }

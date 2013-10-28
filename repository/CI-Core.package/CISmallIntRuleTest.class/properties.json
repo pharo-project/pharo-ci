@@ -10,5 +10,5 @@
 	"name" : "CISmallIntRuleTest",
 	"pools" : [
 		 ],
-	"super" : "CIValidationRuleTest",
+	"super" : "CIAbstractBaseRuleTest",
 	"type" : "normal" }

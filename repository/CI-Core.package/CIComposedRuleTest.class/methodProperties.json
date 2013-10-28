@@ -2,8 +2,4 @@
 	"class" : {
 		"isAbstract" : "CamilloBruni 4/30/2013 09:42" },
 	"instance" : {
-		"testLoadEmptyChange" : "CI Validation User 10/28/2013 01:29",
-		"testLoadEmptyChangeNonLoadable" : "CI Validation User 10/28/2013 01:29",
-		"testLoadFailingChange" : "CI Validation User 10/28/2013 01:29",
-		"testLoadSuccessfulChange" : "CI Validation User 10/28/2013 01:29",
-		"testLoadWarningChange" : "CI Validation User 10/28/2013 01:29" } }
+		 } }

@@ -1,3 +1,0 @@
-tests
-testLoadSuccessfulChange
-	"Ignore this test in ComposedRule"

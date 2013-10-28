@@ -10,5 +10,5 @@
 	"name" : "CIMockRule",
 	"pools" : [
 		 ],
-	"super" : "CIAbstractValidationRule",
+	"super" : "CIAbstractBaseRule",
 	"type" : "normal" }

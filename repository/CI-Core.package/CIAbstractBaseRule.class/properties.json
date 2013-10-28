@@ -6,9 +6,9 @@
 		 ],
 	"commentStamp" : "<historical>",
 	"instvars" : [
-		"rules" ],
-	"name" : "CIComposedRule",
+		 ],
+	"name" : "CIAbstractBaseRule",
 	"pools" : [
 		 ],
-	"super" : "CIAbstractWrapperRule",
+	"super" : "CIAbstractValidationRule",
 	"type" : "normal" }

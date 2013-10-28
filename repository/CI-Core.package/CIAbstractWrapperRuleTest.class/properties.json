@@ -3,12 +3,12 @@
 	"classinstvars" : [
 		 ],
 	"classvars" : [
-		 ],
-	"commentStamp" : "",
+		"Wrapper" ],
+	"commentStamp" : "<historical>",
 	"instvars" : [
 		 ],
-	"name" : "CIValidationRuleTest",
+	"name" : "CIAbstractWrapperRuleTest",
 	"pools" : [
 		 ],
-	"super" : "CITestCase",
+	"super" : "CIAbstractValidationRuleTest",
 	"type" : "normal" }
