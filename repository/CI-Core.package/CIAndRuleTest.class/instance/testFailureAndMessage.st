@@ -8,7 +8,7 @@ testFailureAndMessage
 	
 	ruleOne := [ :change |
 		validatedRuleOne := true.
-		CIValidationResult failure: 'test failure' ] asCIValidationRule.
+		CIValidationResult error: 'test failure' ] asCIValidationRule.
 	ruleTwo := [ :change | 
 		validatedRuleTwo := true.
 		CIValidationResult message: 'test message' ] asCIValidationRule.

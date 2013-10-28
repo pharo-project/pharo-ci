@@ -1,7 +1,8 @@
 protocol
 validate
 	self changeProvider isNil 	
-		ifTrue: [ self addError: 'Source is nil'.
+		ifTrue: [
+			self addError: 'Source is nil'.
 			^ self validationResult  ].
 	self configuration isNil
 		ifTrue: [ 

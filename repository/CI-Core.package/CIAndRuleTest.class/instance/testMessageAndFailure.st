@@ -11,7 +11,7 @@ testMessageAndFailure
 		CIValidationResult message: 'test message' ] asCIValidationRule.
 	ruleTwo := [ :change | 
 		validatedRuleTwo := true. 
-		CIValidationResult failure: 'test failure'] asCIValidationRule.
+		CIValidationResult error: 'test failure'] asCIValidationRule.
 	
 	aResult := (ruleOne & ruleTwo) validate: self newChange.
 	self assert: validatedRuleOne.
