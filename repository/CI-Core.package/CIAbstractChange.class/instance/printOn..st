@@ -2,5 +2,6 @@ printing
 printOn: aStream
 
 	aStream 
-		nextPutAll: 'Change of ';
-		nextPutAll: self name.
+		nextPutAll: 'a CIChange(';
+		nextPutAll: self name;
+		nextPut: $).
