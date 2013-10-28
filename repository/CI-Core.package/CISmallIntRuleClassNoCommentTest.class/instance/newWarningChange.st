@@ -1,7 +1,7 @@
 accessing
 newWarningChange
 	^ CITestChange loadBlock: [ 
-		(Object subclass: #CITestClass	
+		(Object subclass: #CITestClassForNoCommentRule
 			instanceVariableNames: ''
 			classVariableNames: ''
 			poolDictionaries: ''

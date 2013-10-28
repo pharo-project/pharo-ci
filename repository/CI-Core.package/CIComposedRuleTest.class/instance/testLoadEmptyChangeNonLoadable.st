@@ -1,3 +1,3 @@
 tests
-testLoadSuccessfulChange
+testLoadEmptyChangeNonLoadable
 	"Ignore this test in ComposedRule"
