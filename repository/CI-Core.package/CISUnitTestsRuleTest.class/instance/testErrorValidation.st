@@ -5,4 +5,4 @@ testErrorValidation
 	instance := self newInstance.
 	aResult := instance validate: self newFailingChange. 
 	
-	self assert: aResult isFailing.
+	self assert: aResult isFailure.
