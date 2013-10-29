@@ -1,0 +1,14 @@
+{
+	"category" : "CI-Integration-Example",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		 ],
+	"name" : "CIConfigurationExample",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

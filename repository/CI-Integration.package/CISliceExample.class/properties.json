@@ -1,0 +1,14 @@
+{
+	"category" : "CI-Integration-Example",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		 ],
+	"name" : "CISliceExample",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }
