@@ -18,4 +18,4 @@ testExplicitRemoveFalsePositivesFrom
 	
 	self
 		assertCollection: errors first result classes asArray
-		equals: { Set }
+		equals: { Set }.
