@@ -1,5 +1,3 @@
 instance-creation
 newImageDo: aBlock
-	| result |
-	result := ImageWorker do: aBlock.
-	^ result
+	^ self newImageDo: aBlock onTimeout: [ :e | e pass ]

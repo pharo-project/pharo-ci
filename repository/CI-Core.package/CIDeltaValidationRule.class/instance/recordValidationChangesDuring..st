@@ -5,16 +5,14 @@ recordValidationChangesDuring: aChangeBlock
 		2. post validation after applying aChangeBlock 
 	and creates a diff of the validation result to exclude failing results from step 1."
 	
-	self inform: 'Collect clean results'.
+	self inform: 'Collecting clean results'.
 	self preLoadValidate.
 	
 	self inform: 'Loading change.'.
 	[[ loadTime := aChangeBlock timeToRun ]
-		on: Error, Deprecation , Warning do: [ :error |
+		on: Error, Deprecation, Warning do: [ :error |
 			self inform: 'Could not apply change: ', error asString.
-			^ self addError: (String streamContents: [ :stream |
-				stream << 'Could not apply change: '; print: error.
-				error signalerContext shortDebugStackOn: stream ])]
+			^ self addError: error ]
 	] on: Exception do: [ :e |
 		self inform: '   loading signalled ', e asString.
 		e pass ].

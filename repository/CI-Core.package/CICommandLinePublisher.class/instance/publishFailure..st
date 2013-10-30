@@ -5,3 +5,5 @@ publishFailure: aCIValidationResult
 		publishList: aCIValidationResult errors
 		title: 'Validation Errors:'
 		color: Color red.
+	
+	self publishWarnings: aCIValidationResult.
