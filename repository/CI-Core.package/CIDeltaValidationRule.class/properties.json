@@ -9,7 +9,7 @@
 		"loadTime",
 		"environmentChange",
 		"previousResult" ],
-	"name" : "CITestChangeDifferenceRule",
+	"name" : "CIDeltaValidationRule",
 	"pools" : [
 		 ],
 	"super" : "CIAbstractBaseRule",

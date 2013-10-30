@@ -12,5 +12,5 @@
 	"name" : "CISUnitTestsRule",
 	"pools" : [
 		 ],
-	"super" : "CITestChangeDifferenceRule",
+	"super" : "CIDeltaValidationRule",
 	"type" : "normal" }

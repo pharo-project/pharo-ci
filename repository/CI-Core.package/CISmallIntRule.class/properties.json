@@ -10,5 +10,5 @@
 	"name" : "CISmallIntRule",
 	"pools" : [
 		 ],
-	"super" : "CITestChangeDifferenceRule",
+	"super" : "CIDeltaValidationRule",
 	"type" : "normal" }

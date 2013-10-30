@@ -1,0 +1,7 @@
+{
+	"class" : {
+		"isAbstract" : "CamilloBruni 10/30/2013 14:07" },
+	"instance" : {
+		"afterErrors" : "CamilloBruni 10/30/2013 14:13",
+		"beforeErrors" : "CamilloBruni 10/30/2013 14:13",
+		"testRemoveFalsePositivesFrom" : "CamilloBruni 10/30/2013 14:13" } }

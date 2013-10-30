@@ -2,6 +2,8 @@
 	"class" : {
 		 },
 	"instance" : {
+		"afterErrors" : "CamilloBruni 10/30/2013 14:16",
+		"beforeErrors" : "CamilloBruni 10/30/2013 14:16",
 		"createNewTestClass" : "CamilloBruni 10/28/2013 09:23",
 		"defaultTestPackage" : "CamilloBruni 5/9/2013 11:13",
 		"newFailingChange" : "CamilloBruni 10/28/2013 09:22",
