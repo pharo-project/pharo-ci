@@ -2,6 +2,6 @@
 = other
 	super = other
 		ifFalse: [ ^ false ].
-	classes = other classes
+	self classes = other classes
 		ifFalse: [ ^ false ].
-	^ metaClasses = other metaClasses
+	^ self metaClasses = other metaClasses
