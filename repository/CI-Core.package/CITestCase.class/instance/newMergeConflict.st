@@ -4,7 +4,7 @@ newMergeConflict
 	
 	definition := (Object >> #name) asRingDefinition asMCMethodDefinition.
 	definition2 := definition copy.
-	definition2 setTimeStamp: ''.
+	definition2 instVarNamed: #category put: ''.
 
 	snapshot  := MCSnapshot fromDefinitions: { definition }.
 	snapshot2 := MCSnapshot fromDefinitions: { definition2 }.
