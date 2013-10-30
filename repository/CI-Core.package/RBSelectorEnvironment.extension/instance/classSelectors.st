@@ -1,0 +1,3 @@
+*CI-Core
+classSelectors 
+	^ classSelectors

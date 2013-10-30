@@ -7,6 +7,6 @@ newWarningChange
 			poolDictionaries: ''
 			category: 'CI-Test') .
 		 (Smalltalk at:#CITestClass) compile: 'testingUngategorized
-^ self']
+^ self' ]
 	
 	
