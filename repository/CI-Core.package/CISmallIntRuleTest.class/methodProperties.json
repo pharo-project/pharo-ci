@@ -3,8 +3,6 @@
 		"isAbstract" : "ErwanDouaille 5/15/2013 13:47" },
 	"instance" : {
 		"afterErrors" : "CamilloBruni 10/30/2013 16:52",
-		"beforeErrors" : "CamilloBruni 10/30/2013 17:34",
+		"beforeErrors" : "CamilloBruni 10/30/2013 16:51",
 		"newFailingChange" : "CamilloBruni 10/30/2013 16:49",
-		"newInstance" : "ErwanDouaille 5/30/2013 14:11",
-		"testExplicitRemoveFalsePositivesFrom" : "CamilloBruni 10/30/2013 18:15",
-		"testExplicitRemoveFalsePositivesFromReverse" : "CamilloBruni 10/30/2013 18:16" } }
+		"newInstance" : "ErwanDouaille 5/30/2013 14:11" } }

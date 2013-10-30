@@ -1,3 +1,0 @@
-*CI-Core
-metaClasses
-	^ metaClasses

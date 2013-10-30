@@ -1,3 +1,3 @@
 accessing
 beforeErrors
-	^ {  RBNoClassCommentRule new }
+	^ {  RBNoClassCommentRule new run }

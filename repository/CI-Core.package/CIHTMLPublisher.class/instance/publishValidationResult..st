@@ -11,6 +11,8 @@ publishValidationResult: aCIValidationResult
 			ifTrue:  [ self publishSuccess: aCIValidationResult ]
 			ifFalse: [ self publishFailures: aCIValidationResult ].
 	
+	self publishChanges: aCIValidationResult change.
+	
 	aCIValidationResult hasWarnings 
 		ifTrue: [ self publishWarnings: aCIValidationResult ].
 	aCIValidationResult hasMessages
