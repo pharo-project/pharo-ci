@@ -9,7 +9,7 @@ publishValidationResult: aCIValidationResult
 	self publishSummary: aCIValidationResult.
 	aCIValidationResult isSuccess
 			ifTrue:  [ self publishSuccess: aCIValidationResult ]
-			ifFalse: [ self publishFailures: aCIValidationResult ].
+			ifFalse: [ self publishFailure: aCIValidationResult ].
 	
 	self publishChanges: aCIValidationResult change.
 	
