@@ -8,7 +8,8 @@ htmlBeginning: aCIValidationResult
 		<< (aCIValidationResult change id ifNil: [ '' ]) asString; space;
 		<< aCIValidationResult change name asString; 
 		<< ' -- Test report</title>'; lf;
-		<< '<link href="'; << self bootstrapRoot; << 'css/bootstrap.css" rel="stylesheet">'.
+		<< '<link href="'; << self bootstrapRoot; << 'css/bootstrap.css" rel="stylesheet">'; lf;
+		<< '<style>'; << self defaultStyle; << '</style>'; lf.
 
 	self 
 		javaScript: 'jquery-1.10.2.min.js';

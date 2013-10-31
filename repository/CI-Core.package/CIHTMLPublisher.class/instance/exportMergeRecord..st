@@ -4,8 +4,10 @@ exportMergeRecord: anMCPatchOperation
 		<< '</td>';
 		<< '<td class="mergeRecordOld">'.
 	
-	anMCPatchOperation baseDefinition ifNotNil: [ :definition |
-		self stream << '<code>'; print: definition timeStamp; << '</code>'; lf ].
+	anMCPatchOperation baseDefinition 
+		ifNil: [ self stream << '<code></code>'; lf ]
+		ifNotNil: [ :definition |
+			self stream << '<code>'; print: definition timeStamp; << '</code>'; lf ].
 	
 	self stream
 		<< '<pre>'; 
@@ -13,8 +15,10 @@ exportMergeRecord: anMCPatchOperation
 		<< '</pre></td>'; lf;
 		<< '<td class="mergeRecordNew">'.
 	
-	anMCPatchOperation targetDefinition ifNotNil: [ :definition |
-		self stream << '<code>'; print: definition timeStamp; << '</code>'; lf ].
+	anMCPatchOperation targetDefinition 
+		ifNil: [ self stream << '<code></code>'; lf ]
+		ifNotNil: [ :definition | 
+			self stream << '<code>'; print: definition timeStamp; << '</code>'; lf ].
 	self stream
 		<< '<pre>'; 
 		<< anMCPatchOperation diffToSource; 
