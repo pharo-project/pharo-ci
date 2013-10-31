@@ -1,5 +1,6 @@
 printing
 print: anLongErrorMesssage short: aShortString on: aStream 
+	isQuiet ifTrue: [ ^ self ].
 	
 	aStream 
 		nextPutAll: anLongErrorMesssage;
