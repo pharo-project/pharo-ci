@@ -1,4 +1,4 @@
-file creation
+publishing
 publishValidationResult: aCIValidationResult
 
 	self
@@ -6,7 +6,6 @@ publishValidationResult: aCIValidationResult
 		newStream;
 		htmlBeginning: aCIValidationResult.
 	
-	self publishSummary: aCIValidationResult.
 	aCIValidationResult isSuccess
 			ifTrue:  [ self publishSuccess: aCIValidationResult ]
 			ifFalse: [ self publishFailure: aCIValidationResult ].
