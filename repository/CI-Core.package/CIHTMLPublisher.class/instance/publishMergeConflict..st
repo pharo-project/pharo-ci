@@ -9,7 +9,7 @@ publishMergeConflict: anMCMergeResolutionRequest
 			<< '<tbody>'; lf.
 		
 		conflicts := conflicts groupedBy: [ :each | each targetClass ].
-		conflicts keys sorted do: [ :class | 
+		(conflicts keys sorted: [ :a :b | a name <= b name ]) do: [ :class | 
 			self publishMergeConflicts: (conflicts at: class) class: class ].
 		
 		self stream << '</tbody></table>'
