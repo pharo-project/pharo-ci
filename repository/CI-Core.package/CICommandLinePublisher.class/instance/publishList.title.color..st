@@ -3,14 +3,13 @@ publishList: collection title: titleString color: color
 	
 	VTermOutputDriver stderr 
 		color256: color;
-		<< titleString;
-		flush; clear.
+		<< titleString; clear.
 	
 	"Shortcut form if there is only one message"
 	collection size = 1
-		ifTrue: [ ^ VTermOutputDriver stderr space; << collection first asString ].
+		ifTrue: [ ^ VTermOutputDriver stderr space; << collection first asString; lf; flush ].
 	
 	VTermOutputDriver stderr lf.
 	collection do: [ :aMessage |
 		VTermOutputDriver stderr 
-			<< '    - '; << aMessage asString; lf ]
+			<< '    - '; << aMessage asString; lf; flush ]
