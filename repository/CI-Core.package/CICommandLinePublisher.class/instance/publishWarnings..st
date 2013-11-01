@@ -3,5 +3,5 @@ publishWarnings: aCIValidationResult
 
 	self 
 		publishList: aCIValidationResult warnings
-		title: 'Validation Warnigs'
+		title: 'Validation Warnings'
 		color: Color orange.
