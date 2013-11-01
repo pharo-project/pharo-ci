@@ -7,7 +7,7 @@ exportMergeRecord: anMCPatchOperation
 	anMCPatchOperation baseDefinition 
 		ifNil: [ self stream << '<code></code>'; lf ]
 		ifNotNil: [ :definition |
-			self stream << '<code>'; print: definition timeStamp; << '</code>'; lf ].
+			self stream << '<code>'; print: definition fullTimeStamp; << '</code>'; lf ].
 	
 	self stream
 		<< '<pre>'; 
@@ -18,7 +18,7 @@ exportMergeRecord: anMCPatchOperation
 	anMCPatchOperation targetDefinition 
 		ifNil: [ self stream << '<code></code>'; lf ]
 		ifNotNil: [ :definition | 
-			self stream << '<code>'; print: definition timeStamp; << '</code>'; lf ].
+			self stream << '<code>'; print: definition fullTimeStamp; << '</code>'; lf ].
 	self stream
 		<< '<pre>'; 
 		<< anMCPatchOperation diffToSource; 

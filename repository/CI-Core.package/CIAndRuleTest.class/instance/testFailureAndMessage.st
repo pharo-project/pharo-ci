@@ -2,7 +2,7 @@ tests
 testFailureAndMessage
 
 	| ruleOne ruleTwo aResult validatedRuleOne validatedRuleTwo |
-	
+
 	validatedRuleOne := false.
 	validatedRuleTwo := false.
 	
