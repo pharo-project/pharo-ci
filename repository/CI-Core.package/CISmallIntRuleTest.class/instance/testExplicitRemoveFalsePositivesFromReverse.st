@@ -6,7 +6,7 @@ testExplicitRemoveFalsePositivesFromReverse
 	rule := CISmallIntRule new.
 	
 	before := RBNoClassCommentRule new
-		result: (RBClassEnvironment classes: { Array. Set});
+		result: (RBClassEnvironment classes: { Array. Set });
 		yourself.
 	
 	after := RBNoClassCommentRule new

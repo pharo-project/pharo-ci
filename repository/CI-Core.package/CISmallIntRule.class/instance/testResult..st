@@ -1,3 +1,3 @@
 tests
-testResult: aSmallIntResult
-	self addWarning: aSmallIntResult.
+testResult: aSmallIntResultCollection
+	self addAllWarnings: aSmallIntResultCollection.

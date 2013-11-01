@@ -10,7 +10,7 @@ removeFalsePositives: falsePositives fromResult: rule
 	
 	"If the rule is exactly the same as the matchingFalsePositive the result is empty."
 	rule = matchingFalsePositive 
-		ifTrue: [ ^ nil ].
-		
+		ifTrue: [  ^ nil ].
+	
 	rule removeFalsePositives: matchingFalsePositive.
 	^ rule
