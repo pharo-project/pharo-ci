@@ -5,7 +5,6 @@ $(document).ready(function() {
 	$(".mergeRecordOld").each(addDiffPatch);
 });
 
-var dmp = new diff_match_patch();
 
 function addDiffPatch() {
 	var newRecord = $(this).next(".mergeRecordNew");
@@ -13,8 +12,11 @@ function addDiffPatch() {
 	addDiffBetween($(this).children("pre").first(), newRecord.children("pre").first());
 }
 
+var diffTool = new diff_match_patch();
+
 function addDiffBetween(a, b) {
-	var diff = dmp.diff_main(a.text(), b.text());
-	a.html(dmp.diff_prettyHtml(diff))
+	var diff = diffTool.diff_main(a.text(), b.text());
+	diffTool.diff_cleanupSemantic(diff);
+	a.html(diffTool.diff_prettyHtml(diff))
 };
 ' copyReplaceAll: String cr with: String lf.
