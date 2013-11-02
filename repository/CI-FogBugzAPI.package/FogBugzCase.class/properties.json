@@ -16,7 +16,9 @@
 		"dateOpened",
 		"dateResolved",
 		"dateClosed",
-		"status" ],
+		"status",
+		"subcases",
+		"parentCase" ],
 	"name" : "FogBugzCase",
 	"pools" : [
 		 ],
