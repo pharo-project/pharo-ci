@@ -1,4 +1,4 @@
-helper
+helper merge conflict
 publishMergeConflict: anMCMergeResolutionRequest
 	| conflicts |
 	conflicts := anMCMergeResolutionRequest merger conflicts.

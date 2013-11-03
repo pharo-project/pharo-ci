@@ -1,4 +1,4 @@
-helper
+helper merge conflict
 exportMergeRecord: anMCPatchOperation
 	self stream
 		<< '</td>';

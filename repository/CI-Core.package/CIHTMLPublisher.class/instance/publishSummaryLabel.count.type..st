@@ -1,4 +1,4 @@
-helper
+helper summary
 publishSummaryLabel: labelString count: count type: type
 	count = 0
 		ifTrue: [ ^ self ].

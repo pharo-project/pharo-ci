@@ -1,4 +1,4 @@
-helper
+helper merge conflict
 publishMergeConflicts: conflicts class: class
 	
 	

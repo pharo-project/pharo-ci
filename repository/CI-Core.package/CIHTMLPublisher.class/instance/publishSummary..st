@@ -1,7 +1,6 @@
-helper
-publishSummary: aVlidationResult
+helper summary
+publishSummary: aValidationResult
 	
-	self
-		publishSummaryLabel: 'Error'   count: aVlidationResult errors size   type: 'danger';
-		publishSummaryLabel: 'Warning' count: aVlidationResult warnings size type: 'warning';
-		publishSummaryLabel: 'Remark'  count: aVlidationResult messages size type: 'info'.
+	self publishSummaryLabels: aValidationResult.
+	self stream << '<h2>Validation Setup</h2>'.
+	self publishTestParameters.
