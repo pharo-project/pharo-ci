@@ -16,7 +16,9 @@ fromXML: xml
 		ifNotNil: [ :tag | milestone := tag next text ].
 	(xml findTag: 'ixbugchildren')
 		ifNotNil: [ :tag |
-			subcases := (tag text splitOn: $,) collect: [ :each | each asInteger ]].
+			tag text isEmpty
+				ifTrue: [ subcases := { } ]
+				ifFalse: [ subcases := (tag text splitOn: $,) collect: [ :each | each asInteger ]]].
 	(xml findTag: 'ixBugParent')
 		ifNotNil: [ :tag | parentCase := tag text asInteger ].
 	
