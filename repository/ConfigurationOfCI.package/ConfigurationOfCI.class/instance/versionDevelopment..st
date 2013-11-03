@@ -8,7 +8,7 @@ versionDevelopment: spec
 		self versionDevelopmentExternal: spec. 
 		spec 
 			"ErwanDouaille CamilloBruni"
-			package: 'CI-Core'               with: 'CI-Core-CamilloBruni.437';
+			package: 'CI-Core'               with: 'CI-Core-CamilloBruni.438';
 			package: 'CI-FogBugzAPI'         with: 'CI-FogBugzAPI-CamilloBruni.45';
 			package: 'CI-Integration'        with: 'CI-Integration-CamilloBruni.73';
 			package: 'CI-Loader'             with: 'CI-Loader-CamilloBruni.6';
