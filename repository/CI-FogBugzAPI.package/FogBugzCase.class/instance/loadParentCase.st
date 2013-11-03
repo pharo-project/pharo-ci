@@ -1,3 +1,4 @@
 updating
 loadParentCase
-	parentCase := self tracker getIssueWithID: parentCase
+	"For performance reasons, the parentCase is only loaded on demand"
+	parentCase := self class forId: parentCase
