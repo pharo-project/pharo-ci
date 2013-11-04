@@ -7,8 +7,8 @@ if [ -d "$dir" ]; then
 fi
 
 # set up your app name, version number, and background image file name
-APP_NAME="SuperCoolApp"
-VERSION="1.0.0"
+APP_NAME="Pharo"
+VERSION="3.0.0"
 DMG_BACKGROUND_IMG="Background.png"
 
 # you should not need to change these
@@ -27,22 +27,6 @@ mkdir -p "${STAGING_DIR}"
 cp -rpf "${APP_NAME}.app" "${STAGING_DIR}"
 # ... cp anything else you want in the DMG - documentation, etc.
 
-pushd "${STAGING_DIR}"
-
-# strip the executable
-echo "Stripping ${APP_EXE}..."
-strip -u -r "${APP_EXE}"
-
-# compress the executable if we have upx in PATH
-#  UPX: http://upx.sourceforge.net/
-if hash upx 2>/dev/null; then
-   echo "Compressing (UPX) ${APP_EXE}..."
-   upx -9 "${APP_EXE}"
-fi
-
-# ... perform any other stripping/compressing of libs and executables
-
-popd
 
 # figure out how big our DMG needs to be
 #  assumes our contents are at least 1M!
