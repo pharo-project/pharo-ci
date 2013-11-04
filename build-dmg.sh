@@ -9,7 +9,7 @@ fi
 # set up your app name, version number, and background image file name
 APP_NAME="Pharo"
 VERSION="3.0.0"
-DMG_BACKGROUND_IMG="Background.png"
+DMG_BACKGROUND_IMG="background.png"
 
 # you should not need to change these
 APP_EXE="${APP_NAME}.app/Contents/MacOS/${APP_NAME}"
