@@ -6,10 +6,13 @@ if [ -d "$dir" ]; then
   cd "$dir"
 fi
 
-# set up your app name, version number, and background image file name
 APP_NAME="Pharo"
 VERSION="3.0.0"
 DMG_BACKGROUND_IMG="background.png"
+
+# Indicate the vertical pixel where the icons (Pharo and Applications)
+# will be positioned
+ICON_VPOSITION=168
 
 # you should not need to change these
 APP_EXE="${APP_NAME}.app/Contents/MacOS/${APP_NAME}"
@@ -89,8 +92,8 @@ echo '
            set arrangement of viewOptions to not arranged
            set icon size of viewOptions to 72
            set background picture of viewOptions to file ".background:'${DMG_BACKGROUND_IMG}'"
-           set position of item "'${APP_NAME}'.app" of container window to {160, 150}
-           set position of item "Applications" of container window to {360, 170}
+           set position of item "'${APP_NAME}'.app" of container window to {160, '${ICON_VPOSITION}'}
+           set position of item "Applications" of container window to {360, '${ICON_VPOSITION}'}
            close
            open
            update without registering applications
