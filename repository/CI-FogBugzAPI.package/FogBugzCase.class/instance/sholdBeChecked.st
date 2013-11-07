@@ -5,6 +5,6 @@ sholdBeChecked
 	
 	currentUpdateTag := 'Validated in ', SystemVersion current highestUpdate asString.
 	(self tags includes: currentUpdateTag)
-		ifFalse: [ ^ false ].
+		ifTrue: [ ^ false ].
 	
 	^ self subcases allSatisfy: [ :case | case hasBeenClosed ]
