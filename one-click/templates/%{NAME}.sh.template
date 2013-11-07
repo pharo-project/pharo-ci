@@ -2,7 +2,7 @@
 
 # path
 DIR=`readlink -f $0` #resolve symlink
-ROOT=`dirname $DIR` #obtain dir of the resolved path
+ROOT=`dirname "$DIR"` #obtain dir of the resolved path
 LINUX="$ROOT/Contents/Linux"
 RESOURCES="$ROOT/Contents/Resources"
 
