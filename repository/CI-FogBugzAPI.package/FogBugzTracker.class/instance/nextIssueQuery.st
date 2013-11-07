@@ -1,6 +1,6 @@
 protocol-query
 nextIssueQuery
-	^ 'status:"Fix Review Needed" ',
+	^ 'status:"Fix Review"',
 	'status:open ',
 	'-milestone:Later ',
 	'milestone:"Pharo', SystemVersion current dottedMajorMinor,'" ',
