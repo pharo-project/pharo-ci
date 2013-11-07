@@ -1,1 +1,1 @@
-I'm responsible to test is the slice is loadable
+I'm responsible to test if a slice change is loadable

@@ -1,1 +1,1 @@
-I am an abstract validation rule that records two validation results, once before and once after loading a change, and generates a validation result contaning only the difference. Hence I eliminate false positives and only record the the negative impact of a change.
+I am an abstract validation rule that records two validation results, once before and once after loading a change, and generates a validation result contaning only the difference. Hence, I eliminate false positives and only record the the negative impact of a change.
