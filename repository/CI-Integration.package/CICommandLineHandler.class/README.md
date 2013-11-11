@@ -25,4 +25,8 @@ Documentation:
 	The CI command line handler interacts with the issue tracker, loads slice or configuration and tests submitted code.
 
 Examples: 
-	Let's have a look on CIConfigurationExample and CISliceExample 
+	# validate an issue locally
+   ./pharo Pharo.image ci slice test --issue=0000
+	
+   # valiate the next Fix to Review issue
+   ./pharo Pharo.image ci slice test --next
