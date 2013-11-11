@@ -14,6 +14,6 @@ version130: spec
 			"ErwanDouaille CamilloBruni"
 			package: 'CI-Core'               with: 'CI-Core-CamilloBruni.439';
 			package: 'CI-FogBugzAPI'         with: 'CI-FogBugzAPI-CamilloBruni.48';
-			package: 'CI-Integration'        with: 'CI-Integration-CamilloBruni.71';
+			package: 'CI-Integration'        with: 'CI-Integration-CamilloBruni.74';
 			package: 'CI-Loader'             with: 'CI-Loader-CamilloBruni.6';
 			package: 'CI-GoogleIssueTracker' with: 'CI-GoogleIssueTracker-CamilloBruni.2' ].
