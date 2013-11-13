@@ -1,1 +1,0 @@
-'From Pharo1.4a of ''16 June 2011'' [Latest update: #14244] on 12 December 2011 at 3:02:07 pm'!!String methodsFor: '*typesystem-analyzer-support' stamp: 'EstebanAllende 12/5/2011 17:14'!withoutCRs	^' ' join: self lines! !

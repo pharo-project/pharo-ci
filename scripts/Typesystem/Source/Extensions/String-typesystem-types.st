@@ -1,1 +1,0 @@
-'From Pharo1.4a of ''16 June 2011'' [Latest update: #14425] on 14 June 2012 at 12:46:27 pm'!!String methodsFor: '*typesystem-types' stamp: 'EstebanAllende 6/14/2012 12:45'!asType	|type|	type := PPTypedSmalltalkParser new type parse: self.	^type resolveWith: TypeEnvironment globalEnvironment.! !

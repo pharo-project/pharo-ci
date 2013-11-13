@@ -1,1 +1,0 @@
-'From Pharo1.4 of 18 April 2012 [Latest update: #14438] on 16 July 2012 at 4:30:28 pm'!!RBProgramNode methodsFor: '*typesystem-shadows' stamp: 'OzC 7/16/2012 11:58'!shadowNodeOf: aNode	|res|	self flag: #blame. "missing method"	res := ShadowNode shadow: self.	res start: aNode start.	res stop: aNode stop.	^res! !
