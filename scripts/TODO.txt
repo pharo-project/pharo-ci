@@ -1,2 +1,0 @@
-http://code.google.com/p/pharo/issues/detail?id=3506
-http://code.google.com/p/pharo/issues/detail?id=3536

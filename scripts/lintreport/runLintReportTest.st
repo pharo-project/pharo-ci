@@ -1,3 +1,0 @@
-"LRXMLCheckstyleReport runAllPackagesAndAllRules."
-"LRXMLCompleteReport runAllPackagesAndAllRules."
-LRXMLSimpleReport runAllPackagesAndAllRules.

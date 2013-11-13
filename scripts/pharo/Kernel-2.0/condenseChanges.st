@@ -1,1 +1,0 @@
-Smalltalk condenseChanges."Smalltalk saveImageInNewContext."SmalltalkImage current snapshot: true andQuit: true.

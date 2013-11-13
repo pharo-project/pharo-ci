@@ -1,1 +1,0 @@
-(ZnZincServerAdaptor port: 8080)  codec: GRPharoUtf8Codec new;  start.Smalltalk snapshot: true andQuit: true.

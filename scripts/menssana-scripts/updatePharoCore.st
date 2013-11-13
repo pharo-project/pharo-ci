@@ -1,1 +1,0 @@
-[UpdateStreamer new updateFromServer] valueSuppressingAllMessages.
