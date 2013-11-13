@@ -2,7 +2,7 @@
 
 # path
 DIR=`readlink -f $0` #resolve symlink
-ROOT=`dirname $DIR` #obtain dir of the resolved path
+ROOT=`dirname "$DIR"` #obtain dir of the resolved path
 LINUX="$ROOT/bin"
 RESOURCES="$ROOT/shared"
 ICONS="$ROOT/icons"
@@ -33,4 +33,4 @@ exec "$LINUX/pharo" \
 	-plugins "$LINUX" \
 	-encoding utf8 \
 	-vm-display-X11 \
-	$image
+	"$image"
