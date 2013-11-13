@@ -1,0 +1,1 @@
+Author fullName: 'Hazelnut Monkey'.Gofer it    url: 'http://www.smalltalkhub.com/mc/Guille/Seed/main';    package: 'ConfigurationOfHazelnut';    load.    (Smalltalk at: #ConfigurationOfHazelnut) loadBleedingEdge. 

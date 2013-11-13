@@ -1,0 +1,1 @@
+(FileStream forceNewFileNamed: 'accuny.txt') nextPutAll: (TextStyle named: 'Bitmap DejaVu Sans') storeString; close.SmalltalkImage current snapshot: false andQuit: true.

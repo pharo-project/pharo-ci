@@ -1,0 +1,1 @@
+'From Pharo1.4 of 18 April 2012 [Latest update: #14438] on 19 July 2012 at 1:39:36 pm'!!ByteSymbol class methodsFor: '*typesystem-core' stamp: 'EstebanAllende 7/19/2012 13:33'!instanceSpecies	^{self. ByteString}! !
