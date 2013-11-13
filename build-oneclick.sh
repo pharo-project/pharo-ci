@@ -171,7 +171,7 @@ ls -1 "$INPUT_PATH" | while read FILE ; do
 done
 
 # copy over Linux VM files
-wget http://files.pharo.org/vm/pharo/linux/Pharo-VM-linux-stable.zip
+test -f Pharo-VM-linux-stable.zip || wget http://files.pharo.org/vm/pharo/linux/Pharo-VM-linux-stable.zip
 LINUX_VM_PATH="Pharo-VM-linux-stable.zip"
 if [ -f "$LINUX_VM_PATH" ] ; then
     unzip -q "$LINUX_VM_PATH" -d "$OUTPUT_PATH/tmp"
@@ -181,7 +181,7 @@ else
 fi
 
 # copy over Mac OS VM files
-wget http://files.pharo.org/vm/pharo/mac/Pharo-VM-mac-stable.zip
+test -f Pharo-VM-mac-stable.zip || wget http://files.pharo.org/vm/pharo/mac/Pharo-VM-mac-stable.zip
 MAC_VM_PATH="Pharo-VM-mac-stable.zip"
 if [ -f "$MAC_VM_PATH" ] ; then
     unzip -q "$MAC_VM_PATH" -d "$OUTPUT_PATH/tmp"
@@ -197,7 +197,7 @@ else
 fi
 
 # copy over Windows VM files
-wget http://files.pharo.org/vm/pharo/win/Pharo-VM-win-stable.zip
+test -f Pharo-VM-win-stable.zip || wget http://files.pharo.org/vm/pharo/win/Pharo-VM-win-stable.zip
 WIN_VM_PATH="Pharo-VM-win-stable.zip"
 if [ -f "$WIN_VM_PATH" ] ; then
     unzip -q "$WIN_VM_PATH" -d "$OUTPUT_PATH"
