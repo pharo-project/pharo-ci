@@ -6,7 +6,7 @@
 
 # directory configuration
 BASE_PATH="$(cd "$(dirname "$0")" && pwd)"
-BUILD_PATH="${WORKSPACE:=$BASE_PATH/builds}"
+BUILD_PATH="${WORKSPACE:=$BASE_PATH}"
 
 IMAGES_PATH="$BASE_PATH/images"
 ICONS_PATH="$BASE_PATH/platform/icons"
