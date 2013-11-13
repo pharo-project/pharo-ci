@@ -1,0 +1,1 @@
+'From Pharo1.4a of ''16 June 2011'' [Latest update: #14244] on 12 December 2011 at 3:01:55 pm'!!OCFunctionScope methodsFor: '*typesystem-analyzer' stamp: 'EstebanAllende 12/7/2011 02:09'!lookupNonCopyVar: name	^tempVars at: name ! !

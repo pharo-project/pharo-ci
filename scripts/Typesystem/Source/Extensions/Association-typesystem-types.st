@@ -1,0 +1,1 @@
+'From Pharo1.4a of ''16 June 2011'' [Latest update: #14244] on 12 December 2011 at 3:02:35 pm'!!Association methodsFor: '*typesystem-types' stamp: 'EstebanAllende 12/5/2011 01:28'!asType	^LambdaType new params: self key; return: self value.! !

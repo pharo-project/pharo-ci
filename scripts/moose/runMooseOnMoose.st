@@ -1,0 +1,1 @@
+| report |report := OnMooseReport on: MooseScripts createModelForConfigurationOfMoose.REPHudson runOn: report spec.
