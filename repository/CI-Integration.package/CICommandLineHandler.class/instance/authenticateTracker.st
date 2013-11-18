@@ -2,9 +2,9 @@ authentification
 authenticateTracker
 
 	self user 
-		ifNil: [ ^ self exitFailure: 'no valid user provided for authentification, please set the PHARO_CI_USER  environment variable' ].
+		ifNil: [ ^ self exitFailure: 'no valid user provided for authentification' ].
 	self password 
-		ifNil: [ ^ self exitFailure: 'no valid password provided for authentification, please set the PHARO_CI_PWD environment variable' ].
+		ifNil: [ ^ self exitFailure: 'no valid password provided for authentification' ].
 	
 	self manager 
 		logOnWithEmail: self user

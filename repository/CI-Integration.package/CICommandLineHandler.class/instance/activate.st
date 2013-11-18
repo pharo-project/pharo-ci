@@ -3,7 +3,7 @@ activate
 
 	self activateHelp
 		ifTrue: [ ^ self ].
-	
+		
 	((self argumentAt: 1) = 'config')
 		ifTrue: [ 
 			self setUpConfiguration.
