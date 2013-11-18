@@ -1,15 +1,8 @@
 helper
 publishLintRule: aLintRule
 	| result |
-	result := aLintRule result.
-	
-	(result isKindOf: RBClassEnvironment)
-		ifTrue: [ result := result classNames sorted ].
-	(result isKindOf: RBPackageEnvironment)
-		ifTrue: [ result := result packageNames sorted ].
-	(result isKindOf: RBSelectorEnvironment)
-		ifTrue: [ result := (result methods sorted: CompiledMethod sortBlock) collect: #printString ].
-	
+	self flag: 'Use the real objects instead of accessing only the names'.
+	result := aLintRule result ciElementNames.
 	self
 		publishResultGroupWithTitle: aLintRule name 
 		count: aLintRule problemCount 
