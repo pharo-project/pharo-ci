@@ -8,7 +8,7 @@ pharoHardLintRules
 		RBEquivalentSuperclassMethodsRule.
 		RBJustSendsSuperRule.
 		RBSubclassResponsibilityNotDefinedRule.
-		RBTempVarOverridesInstVarRule.
+		"RBTempVarOverridesInstVarRule. gotta wait for a fix"
 		RBVariableNotDefinedRule.
 		RBEqualNotUsedRule.
 		RBOnlyReadOrWrittenTemporaryRule.
