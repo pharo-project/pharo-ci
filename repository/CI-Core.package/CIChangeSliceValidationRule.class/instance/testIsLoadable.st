@@ -6,4 +6,4 @@ testIsLoadable
 			assertLoadable;
 			load.
 	] on: MCMergeResolutionRequest, Error, Warning do: [ :error |
-			self addError: error ]
+			self addError: error freeze ]

@@ -5,6 +5,6 @@ validateChangeBlock: aChangeBlock
 			self recordValidationChangesDuring: aChangeBlock ]
 	] on: Error, Exit, Deprecation do: [ :error | 
 		self inform: 'Could validate change: ', error asString.
-		self addError: error ].
+		self addError: error freeze ].
 	
 	^ self validationResult

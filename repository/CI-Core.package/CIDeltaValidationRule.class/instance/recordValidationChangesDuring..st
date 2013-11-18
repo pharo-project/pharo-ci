@@ -12,7 +12,7 @@ recordValidationChangesDuring: aChangeBlock
 	[[ loadTime := aChangeBlock timeToRun ]
 		on: Error, Deprecation, Warning do: [ :error |
 			self inform: 'Could not apply change: ', error asString.
-			^ self addError: error ]
+			^ self addError: error freeze ]
 	] on: Exception do: [ :e |
 		self inform: '   loading signalled ', e asString.
 		e pass ].
