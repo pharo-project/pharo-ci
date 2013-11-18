@@ -1,11 +1,12 @@
 accessing
-newSuccessfulChange
+newWarningChange
 	^ CITestChange loadBlock: [ 
 		(Object subclass: #CITestClass	
 			instanceVariableNames: ''
 			classVariableNames: ''
 			poolDictionaries: ''
 			category: 'CI-Test') .
-		#CITestClass asClass comment: ' testing !' ]
+		 (Smalltalk at:#CITestClass) compile: 'testingUngategorized
+^ self' ]
 	
 	

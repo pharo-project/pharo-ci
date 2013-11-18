@@ -6,6 +6,6 @@ newSuccessfulChange
 			classVariableNames: ''
 			poolDictionaries: ''
 			category: 'CI-Test') .
-		#CITestClass asClass comment: ' testing !' ]
+	(Smalltalk at:#CITestClass) comment: ' testing !' ]
 	
 	
