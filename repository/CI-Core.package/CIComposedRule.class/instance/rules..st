@@ -1,3 +1,3 @@
 accessing
-rules: anObject
-	rules := anObject
+rules: aCollection
+	rules := aCollection asOrderedCollection

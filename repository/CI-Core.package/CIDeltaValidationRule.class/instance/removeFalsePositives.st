@@ -1,5 +1,5 @@
 false positive handling
-removeFalsePositives
+removeFalsePositives	
 	previousResult 
 		ifNil: [ ^ self ].
 

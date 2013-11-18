@@ -1,4 +1,4 @@
-as yet unclassified
+false positive handling
 removeFalsePositives: falsePositives from: results
 	| converted |
 	

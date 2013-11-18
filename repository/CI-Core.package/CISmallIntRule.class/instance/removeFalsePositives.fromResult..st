@@ -1,4 +1,4 @@
-as yet unclassified
+false positive handling
 removeFalsePositives: falsePositives fromResult: rule
 	"Try filtering out falsePositives for a given result."
 	| matchingFalsePositive |
