@@ -10,7 +10,7 @@ elementsFromLintRule: lintRule
 	(resultClass includesBehavior: RBPackageEnvironment)
 		ifTrue: [ ^ result packageNames sorted ].
 	(resultClass includesBehavior: RBSelectorEnvironment)
-		ifTrue: [ ^ (result methods sorted: CompiledMethod) collect: #printString ].
+		ifTrue: [ ^ result methodStrings sorted ].
 	(resultClass includesBehavior: RBCategoryEnvironment)
 		ifTrue: [ ^ (result categories collect: [ :each | each asString ]) sorted].
 	(resultClass includesBehavior: RBProtocolEnvironment)
