@@ -2,10 +2,10 @@ instance creation
 pharo30
 	^ self new
 		addRule: 
-			(CISUnitTestsRule selectTestCaseBlock: [ :testCaseClass |
+			"(CISUnitTestsRule selectTestCaseBlock: [ :testCaseClass |
 				(testCaseClass package name beginsWith: 'Metacello') not 
-				and: [ testCaseClass ~= NBPointerArgumentsTests ]]),"
+				and: [ testCaseClass ~= NBPointerArgumentsTests ]]),
 			CISUnitTestsRule,"
-			RBCompositeLintRule pharoHardLintRules harden,
-			RBCompositeLintRule pharoSoftLintRules;
+			RBCompositeLintRule pharoHardLintRules harden",
+			RBCompositeLintRule pharoSoftLintRules";
 		yourself

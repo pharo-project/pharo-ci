@@ -1,3 +1,3 @@
 *CI-Core
 ciElementNames
-	^ categories sorted
+	^ (self categories collect: [ :each | each asString ]) sorted

@@ -2,7 +2,7 @@ helper
 publishLintRule: aLintRule
 	| result |
 	self flag: 'Use the real objects instead of accessing only the names'.
-	result := aLintRule result ciElementNames.
+	result := self elementsFromLintRule: aLintRule.
 	self
 		publishResultGroupWithTitle: aLintRule name 
 		count: aLintRule problemCount 
