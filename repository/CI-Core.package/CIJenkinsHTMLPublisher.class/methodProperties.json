@@ -2,5 +2,8 @@
 	"class" : {
 		 },
 	"instance" : {
-		"publishJenkinsJobLink" : "CamilloBruni 11/19/2013 11:28",
+		"buildUrl" : "CamilloBruni 11/19/2013 19:23",
+		"htmlEnding:" : "CamilloBruni 11/19/2013 19:26",
+		"publishConsoleOutput" : "CamilloBruni 11/19/2013 19:32",
+		"publishJenkinsJobLink" : "CamilloBruni 11/19/2013 19:26",
 		"publishTestParameters" : "CamilloBruni 11/19/2013 11:29" } }
