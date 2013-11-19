@@ -1,3 +1,3 @@
-*CI-Core-Validation
+*CI-Core
 ciElementNames
 	^ #()

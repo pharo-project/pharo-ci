@@ -1,0 +1,1 @@
+A specialized HTML publisher that includes links to the  jenkins build and console output.
