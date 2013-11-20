@@ -7,5 +7,5 @@
 	instance 
 		classSelectors: (self subtractSelectorDictionary: other classSelectors from: classSelectors)
 		metaClassSelectors: (self subtractSelectorDictionary: other metaClassSelectors from: metaClassSelectors);
-		searchStrings: searchStrings \ other searchStrings.
+		searchStrings: self searchStrings \ other searchStrings.
 	^ instance
