@@ -2,7 +2,6 @@ helper
 publishLintRule: aLintRule
 	| result |
 	self flag: 'Use the real objects instead of accessing only the names'.
-1halt.
 	result := self elementsFromLintRule: aLintRule.
 	self
 		publishResultGroupWithTitle: aLintRule name 
