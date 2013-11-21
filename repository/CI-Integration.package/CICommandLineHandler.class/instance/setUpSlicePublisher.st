@@ -1,6 +1,6 @@
 setup
 setUpSlicePublisher
 	self shouldUpdateIssue 
-		ifFalse: [ ^ CICommandLinePublisher, self setupHTMLPublisher ].
+		ifFalse: [ ^ CICommandLinePublisher, self setUpHTMLPublisher ].
 	"use the default publisher associated with the Slice change provider"
-	^ manager changeProvider publisher
+	^ CICommandLinePublisher, self setUpIssueTrackerPublisher

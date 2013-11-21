@@ -1,11 +1,8 @@
 setup
-setupHTMLPublisher
+setUpHTMLPublisher
 	| publisher |
-	publisher := self isJenkinsJob 
-				ifFalse: [ CIHTMLPublisher new ]
-				ifTrue: [ CIJenkinsHTMLPublisher new ].
-	
-	(self hasOption: 'html-resources')
-		ifTrue: [ publisher bootstrapRoot: (self optionAt: 'html-resources') ].
-	
+	publisher := self isJenkinsJob
+		ifFalse: [ CIHTMLPublisher new ]
+		ifTrue: [ CIJenkinsHTMLPublisher new ].
+	self setHtmlResourcesFor: publisher.
 	^ publisher
