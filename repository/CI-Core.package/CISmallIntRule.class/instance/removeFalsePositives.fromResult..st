@@ -13,4 +13,9 @@ removeFalsePositives: falsePositives fromResult: rule
 		ifTrue: [  ^ nil ].
 	
 	rule removeFalsePositives: matchingFalsePositive.
+	
+	"this happens if there invalid rules have been fixed"
+	rule result isEmpty
+		ifTrue: [ ^ nil ].
+	
 	^ rule
