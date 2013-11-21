@@ -1,3 +1,3 @@
 accessing
-fileName: aFileName
-	fileName := aFileName
+fileName: aString
+	fileName := aString

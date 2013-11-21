@@ -8,7 +8,7 @@ htmlBeginning: aCIValidationResult
 		<< (aCIValidationResult change id ifNil: [ '' ]) asString; space;
 		<< aCIValidationResult change name asString; 
 		<< ' -- Test report</title>'; lf;
-		<< '<link href="'; << self bootstrapRoot; << 'css/bootstrap.css" rel="stylesheet">'; lf;
+		<< '<link href="'; << self htmlResourcesUrl; << 'css/bootstrap.css" rel="stylesheet">'; lf;
 		<< '<style>'; << self defaultStyle; << '</style>'; lf.
 
 	self 

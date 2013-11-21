@@ -1,6 +1,5 @@
 publishing
 publish: aCIValidationResult to: aFileName
 	^ self new
-		fileName: aFileName;
-		publishValidationResult: aCIValidationResult;
+		publish: aCIValidationResult to: aFileName;
 		yourself

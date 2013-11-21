@@ -1,5 +1,5 @@
 publishing
 publishHTMLResult: aCIValidationResult
-	CIJenkinsHTMLPublisher 
+	self htmlPublisher
 		publish: aCIValidationResult 
 		to: self fileName

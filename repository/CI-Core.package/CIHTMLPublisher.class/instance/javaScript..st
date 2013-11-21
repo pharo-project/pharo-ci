@@ -2,4 +2,4 @@ publishing
 javaScript: scriptFileName
 	
 	self stream 
-		<< '<script src="' << self bootstrapRoot << 'js/' << scriptFileName << '"></script>'; lf
+		<< '<script src="' << self htmlResourcesUrl << 'js/' << scriptFileName << '"></script>'; lf

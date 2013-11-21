@@ -7,8 +7,8 @@
 	"commentStamp" : "<historical>",
 	"instvars" : [
 		"writer",
-		"bootstrapRoot",
-		"itemId" ],
+		"itemId",
+		"htmlResourcesUrl" ],
 	"name" : "CIHTMLPublisher",
 	"pools" : [
 		 ],

@@ -1,14 +1,15 @@
 {
 	"class" : {
-		"publish:to:" : "CamilloBruni 6/26/2013 14:34" },
+		"publish:to:" : "CamilloBruni 11/21/2013 18:48" },
 	"instance" : {
-		"fileName" : "CamilloBruni 6/26/2013 14:29",
-		"fileName:" : "CamilloBruni 6/26/2013 14:29",
+		"fileName" : "CamilloBruni 11/21/2013 18:51",
+		"fileName:" : "CamilloBruni 11/21/2013 18:51",
 		"initialize" : "ErwanDouaille 4/22/2013 15:41",
 		"outputDirectory" : "ErwanDouaille 4/22/2013 15:39",
 		"outputDirectory:" : "ErwanDouaille 4/22/2013 15:39",
+		"publish:to:" : "CamilloBruni 11/21/2013 18:52",
 		"publishBeforeValidation:" : "CamilloBruni 4/24/2013 22:35",
 		"publishChangeNotFound:" : "CamilloBruni 4/24/2013 22:35",
 		"stream" : "ErwanDouaille 4/22/2013 15:39",
 		"stream:" : "ErwanDouaille 4/22/2013 15:39",
-		"updateFileName:" : "CamilloBruni 10/27/2013 23:18" } }
+		"updateFileName:" : "CamilloBruni 11/21/2013 18:51" } }

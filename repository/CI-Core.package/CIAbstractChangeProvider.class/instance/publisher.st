@@ -1,4 +1,4 @@
 accessing
 publisher
 	"return a default CIPublisher for this source"
-	^ self subclassResponsibility
+	^ CICommandLinePublisher new
