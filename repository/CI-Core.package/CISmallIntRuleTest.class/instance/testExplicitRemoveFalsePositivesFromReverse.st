@@ -1,6 +1,6 @@
 testing
 testExplicitRemoveFalsePositivesFromReverse
-	"Basically the same test as testExplicitRemoveFalsePositivesFrom but with switched #before and #after "
+	"Basically the same test as testExplicitRemoveFalsePositivesFrom but with switched #before and #after resulting in an empty collection"
 	| rule errors before after |
 	
 	rule := CISmallIntRule new.
@@ -17,4 +17,4 @@ testExplicitRemoveFalsePositivesFromReverse
 		removeFalsePositives: { before }
 		from: { after }.
 	
-	self assert: errors first result classes isEmpty.
+	self assert: errors isEmpty.
