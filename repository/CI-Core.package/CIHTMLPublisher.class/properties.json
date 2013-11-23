@@ -8,7 +8,8 @@
 	"instvars" : [
 		"writer",
 		"itemId",
-		"htmlResourcesUrl" ],
+		"htmlResourcesUrl",
+		"additionalParemeters" ],
 	"name" : "CIHTMLPublisher",
 	"pools" : [
 		 ],
