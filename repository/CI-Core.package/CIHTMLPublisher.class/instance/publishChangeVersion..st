@@ -5,7 +5,7 @@ publishChangeVersion: aValidationResult
 	
 	self stream 
 		<< '<tr><td>Loaded&nbsp;'; 
-			<< change typeName; 
-		<< '</td> <td> <a href="'; << change publicUrl; << '">'; 
+			<< change typeName asString; 
+		<< '</td> <td> <a href="'; << change publicUrl asString; << '">'; 
 			print: change; 
 		<< '</a></td></tr>'; lf.
