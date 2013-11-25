@@ -6,4 +6,4 @@ publishSuccess: aCIValidationResult message: aString
 	
 	change 
 		fixReviewed: aString
-		in: SystemVersion current highestUpdate
+		in: SystemVersion current highestUpdate.

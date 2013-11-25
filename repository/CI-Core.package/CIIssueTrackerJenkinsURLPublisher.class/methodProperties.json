@@ -2,6 +2,7 @@
 	"class" : {
 		 },
 	"instance" : {
+		"addHtmlStatusLink:" : "CamilloBruni 11/25/2013 21:35",
 		"buildMessage:" : "CamilloBruni 11/21/2013 20:22",
 		"fileName" : "CamilloBruni 11/21/2013 18:50",
 		"htmlPublisher" : "CamilloBruni 11/21/2013 18:47",
@@ -10,8 +11,8 @@
 		"id" : "CamilloBruni 8/26/2013 23:08",
 		"name" : "CamilloBruni 8/26/2013 23:08",
 		"number" : "CamilloBruni 8/26/2013 23:08",
-		"publishHTMLResult:" : "CamilloBruni 11/21/2013 18:51",
+		"publishHTMLResult:" : "CamilloBruni 11/25/2013 21:31",
 		"publishValidationCrash:" : "CamilloBruni 11/1/2013 15:16",
-		"publishValidationResult:" : "CamilloBruni 11/1/2013 17:21",
+		"publishValidationResult:" : "CamilloBruni 11/25/2013 21:23",
 		"reportUrl" : "CamilloBruni 11/21/2013 18:50",
 		"url" : "CamilloBruni 8/26/2013 23:09" } }
