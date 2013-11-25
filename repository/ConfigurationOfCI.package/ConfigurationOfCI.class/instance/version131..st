@@ -12,7 +12,7 @@ version131: spec
 		
 		spec 
 			"ErwanDouaille CamilloBruni"
-			package: 'CI-Core'               with: 'CI-Core-CamilloBruni.467';
+			package: 'CI-Core'               with: 'CI-Core-CamilloBruni.468';
 			package: 'CI-FogBugzAPI'         with: 'CI-FogBugzAPI-CamilloBruni.50';
 			package: 'CI-Integration'        with: 'CI-Integration-CamilloBruni.79';
 			package: 'CI-Loader'             with: 'CI-Loader-CamilloBruni.6';
