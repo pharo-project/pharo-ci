@@ -5,5 +5,6 @@ publishTestParameters: aValidationResult
 		publishImageVersion;
 		publisOSVersion;
 		publishVMVersion;
-		publishChangeVersion: aValidationResult.
+		publishChangeVersion: aValidationResult;
+		publishAdditionalParameters.
 	self stream << '</table>'
