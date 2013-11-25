@@ -1,5 +1,5 @@
 helper parameters
-publishTestParameters
+publishTestParameters: aValidationResult
 	self additionalParemeters 
 		at: 'Jenkins Job' 
 		put: (String streamContents: [ :s |
@@ -8,4 +8,4 @@ publishTestParameters
 					<< '<span class="label label-primary">'; 
 					<< (Smalltalk os environment at: 'BUILD_TAG'); 
 					<< '</span></a>']).
-	^ super publishTestParameters
+	^ super publishTestParameters: aValidationResult
