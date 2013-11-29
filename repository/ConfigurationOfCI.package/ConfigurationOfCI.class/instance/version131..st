@@ -6,9 +6,9 @@ version131: spec
 		spec timestamp: 'CamilloBruni 2013-10-16'.
 		
 		spec 
-			project: 'Soup'          with: '1.2';
+			project: 'Soup'          with: '1.6';
 			project: 'CommandShell'  with: '1.1';
-			project: 'XMLWriter'     with: '2.3'.
+			project: 'XMLWriter'     with: #stable.
 		
 		spec 
 			"ErwanDouaille CamilloBruni"
