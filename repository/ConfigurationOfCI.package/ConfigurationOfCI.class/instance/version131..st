@@ -8,7 +8,7 @@ version131: spec
 		spec 
 			project: 'Soup'          with: '1.2';
 			project: 'CommandShell'  with: '1.1';
-			project: 'XMLWriter'     with: #stable.
+			project: 'XMLWriter'     with: '2.3'.
 		
 		spec 
 			"ErwanDouaille CamilloBruni"
