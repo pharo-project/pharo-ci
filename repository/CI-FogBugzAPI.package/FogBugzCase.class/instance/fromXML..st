@@ -32,3 +32,8 @@ fromXML: xml
 		ifTrue: [	dateResolved := xml dtresolved next text asDateAndTime ].
 	self hasBeenClosed
 		ifTrue: [dateClosed := xml dtclosed next text asDateAndTime ].
+	
+	user := FogBugzUser
+		id: (xml findTag: 'ixperson') next text asInteger
+		username: (xml findTag: 'sperson') next text
+		mail: nil.
