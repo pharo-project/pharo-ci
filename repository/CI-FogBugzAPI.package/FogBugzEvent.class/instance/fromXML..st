@@ -16,6 +16,12 @@ fromXML: xml
 	changes := (xml findTag: 'schanges') next name = 'sformat'
 					ifTrue: [ nil ] 
 					ifFalse: [ (xml findTag: 'schanges') next text trimBoth ].
+					
+	user := FogBugzUser
+		id: (xml findTag: 'ixperson') next text asInteger
+		username: (xml findTag: 'sperson') next text
+		mail: nil.
+
 	(xml findTag: 'rgattachments') children allButLast 		
 		collect: [:node | 
 			attachements 

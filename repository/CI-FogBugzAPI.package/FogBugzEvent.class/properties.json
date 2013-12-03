@@ -12,7 +12,8 @@
 		"comment",
 		"changes",
 		"date",
-		"case" ],
+		"case",
+		"user" ],
 	"name" : "FogBugzEvent",
 	"pools" : [
 		 ],
