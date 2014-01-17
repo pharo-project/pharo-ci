@@ -6,7 +6,7 @@ version131: spec
 		spec timestamp: 'CamilloBruni 2013-10-16'.
 		
 		spec 
-			project: 'Soup'          with: '1.6';
+			project: 'Soup'          with: '1.2';
 			project: 'CommandShell'  with: '1.1';
 			project: 'XMLWriter'     with: #stable.
 		
@@ -14,6 +14,6 @@ version131: spec
 			"ErwanDouaille CamilloBruni"
 			package: 'CI-Core'               with: 'CI-Core-CamilloBruni.468';
 			package: 'CI-FogBugzAPI'         with: 'CI-FogBugzAPI-CamilloBruni.50';
-			package: 'CI-Integration'        with: 'CI-Integration-CamilloBruni.79';
+			package: 'CI-Integration'        with: 'CI-Integration-CamilloBruni.80';
 			package: 'CI-Loader'             with: 'CI-Loader-CamilloBruni.6';
 			package: 'CI-GoogleIssueTracker' with: 'CI-GoogleIssueTracker-CamilloBruni.2' ].
