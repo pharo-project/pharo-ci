@@ -25,6 +25,7 @@ Configuration part:
 	
 Documentation:
 	The CI command line handler interacts with the issue tracker, loads slice or configuration and tests submitted code.
+	The authentification credentials to access the issue tracker can be provided by the environment variables PHARO_CI_USER and PHARO_CI_PWD respectively.
 
 Examples: 
 	# validate an issue locally
