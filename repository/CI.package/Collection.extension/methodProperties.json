@@ -1,7 +1,0 @@
-{
-	"class" : {
-		 },
-	"instance" : {
-		"do:inParallel:" : "BenjaminVanRyseghem 9/26/2011 17:32",
-		"doWithIndex:inParallel:" : "BenjaminVanRyseghem 9/26/2011 17:43",
-		"select:inParallel:" : "CamilloBruni 9/22/2011 17:48" } }

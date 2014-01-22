@@ -1,4 +1,0 @@
-display
-listDialogClass
-
-	^ TickDialogWindow
