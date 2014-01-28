@@ -9,7 +9,7 @@
 		"writer",
 		"itemId",
 		"htmlResourcesUrl",
-		"additionalParemeters" ],
+		"additionalParameters" ],
 	"name" : "CIHTMLPublisher",
 	"pools" : [
 		 ],

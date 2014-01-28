@@ -1,6 +1,5 @@
 publishing
 publishValidationResult: aCIValidationResult
-
 	self
 		updateFileName: aCIValidationResult;
 		newStream;

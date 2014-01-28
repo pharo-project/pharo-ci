@@ -1,7 +1,8 @@
 adding
 addPass: aTestCase
 	super addPass: aTestCase.
-	self
+	"self
 		print: ''
 		short: ' [OK]' 
-		on: self stderr green 
+		on: self stderr green "
+	self stderr nextPut: $.

@@ -1,6 +1,6 @@
 helper parameters
 publishTestParameters: aValidationResult
-	self additionalParemeters 
+	self additionalParameters 
 		at: 'Jenkins Job' 
 		put: (String streamContents: [ :s |
 				s 

@@ -1,6 +1,6 @@
 helper parameters
 publishAdditionalParameters
-	self additionalParemeters keysAndValuesDo: [ :name :description |
+	self additionalParameters keysAndValuesDo: [ :name :description |
 		self stream 
 			<< '<tr><td>'; 
 			<< name asString; 
