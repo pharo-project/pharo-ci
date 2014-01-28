@@ -9,6 +9,6 @@ defaultStyle
 }
 .stackframe-popover {
 	width: auto;
-	min-width: 600px;
+	min-width: 700px;
 }
 ' copyReplaceAll: String cr with: String lf
