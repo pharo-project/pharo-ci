@@ -53,7 +53,8 @@ wget -O- get.pharo.org/vm | bash
 
 cd ../
 
-for file in ../patches/*.patch; do
+pwd
+for file in ../../patches/*.patch; do
     patch -p1 < $file
 done
 
