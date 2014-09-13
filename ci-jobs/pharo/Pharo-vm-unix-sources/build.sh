@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -ex
+
 WORKSPACE=${WORKSPACE:-$(pwd)}
 
 cd "$WORKSPACE"
