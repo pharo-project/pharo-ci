@@ -54,7 +54,7 @@ wget -O- get.pharo.org/vm | bash
 cd ../
 
 pwd
-for file in ../../patches/*.patch; do
+for file in "$WORKSPACE"/pharo-ci/ci-jobs/Pharo-vm-unix-sources/patches/*; do
     patch -p1 < $file
 done
 
