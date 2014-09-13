@@ -52,6 +52,11 @@ wget -O- get.pharo.org/vm | bash
 ./pharo generator.image script.st || (cat stderr; exit 1)
 
 cd ../
+
+for file in ../patches/*.patch; do
+    patch -p1 < $file
+done
+
 vm_version=$(cat build/vmVersionInfo.h | sed -e 's/^.* Date: \([-0-9]*\) .*$/\1/' | tr - .)
 cd ..
 mv cog pharo-vm-${vm_version}
