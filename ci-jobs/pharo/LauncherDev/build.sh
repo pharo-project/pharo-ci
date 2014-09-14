@@ -10,8 +10,8 @@ wget --quiet -O - get.pharo.org/$PHARO+$VM | bash
 ./pharo Pharo.image save $JOB_NAME --delete-old
 ./pharo $JOB_NAME.image --version > version.txt
 
-REPO=http://smalltalkhub.com/mc/Pharo/$JOB_NAME/main
-./pharo $JOB_NAME.image config $REPO ConfigurationOf$JOB_NAME --install=$VERSION
+REPO=http://smalltalkhub.com/mc/Pharo/PharoLauncher/main
+./pharo $JOB_NAME.image config $REPO ConfigurationOfPharoLauncher --install=$VERSION
 ./pharo $JOB_NAME.image test --junit-xml-output "PharoLauncher.*"
 ./pharo $JOB_NAME.image eval --save "PhLDirectoryBasedImageRepository location"
 
