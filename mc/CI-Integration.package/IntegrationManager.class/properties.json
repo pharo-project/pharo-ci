@@ -1,5 +1,5 @@
 {
-	"category" : "CI-Integration",
+	"category" : "CI-Integration-Core",
 	"classinstvars" : [
 		"default",
 		"integrated" ],

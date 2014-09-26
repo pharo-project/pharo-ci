@@ -1,0 +1,1 @@
+I am a special validator dedicated to the check of script changes

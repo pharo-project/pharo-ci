@@ -1,0 +1,11 @@
+{
+	"class" : {
+		"spec" : "EstebanLorenzano 9/17/2014 14:04" },
+	"instance" : {
+		"configureButton" : "EstebanLorenzano 9/17/2014 13:50",
+		"configureButton:" : "EstebanLorenzano 9/17/2014 13:50",
+		"initializeWidgets" : "EstebanLorenzano 9/17/2014 14:59",
+		"integrateButton" : "EstebanLorenzano 9/17/2014 13:50",
+		"integrateButton:" : "EstebanLorenzano 9/17/2014 13:50",
+		"refreshButton" : "EstebanLorenzano 9/17/2014 13:50",
+		"refreshButton:" : "EstebanLorenzano 9/17/2014 13:50" } }

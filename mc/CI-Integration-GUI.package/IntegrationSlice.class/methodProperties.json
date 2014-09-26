@@ -1,0 +1,12 @@
+{
+	"class" : {
+		"issue:" : "EstebanLorenzano 9/16/2014 14:41",
+		"issue:version:" : "EstebanLorenzano 9/16/2014 14:40",
+		"new" : "EstebanLorenzano 9/16/2014 14:41" },
+	"instance" : {
+		"fetchLatestVersionNameOn:" : "EstebanLorenzano 9/23/2014 15:54",
+		"fetchLatestVersionOn:" : "EstebanLorenzano 9/23/2014 15:52",
+		"initializeIssue:version:" : "EstebanLorenzano 9/23/2014 14:35",
+		"isSlice" : "EstebanLorenzano 9/23/2014 15:04",
+		"verifyScriptOn:merge:" : "EstebanLorenzano 9/24/2014 14:07",
+		"version" : "EstebanLorenzano 9/16/2014 14:59" } }

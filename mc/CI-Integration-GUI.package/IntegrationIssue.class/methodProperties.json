@@ -1,0 +1,16 @@
+{
+	"class" : {
+		"fromIssue:" : "EstebanLorenzano 9/23/2014 14:47",
+		"issue:" : "EstebanLorenzano 9/23/2014 14:34" },
+	"instance" : {
+		"configurationName" : "EstebanLorenzano 9/23/2014 13:21",
+		"configurationVersion" : "EstebanLorenzano 9/23/2014 13:19",
+		"id" : "EstebanLorenzano 9/23/2014 17:48",
+		"initializeIssue:" : "EstebanLorenzano 9/23/2014 14:35",
+		"isMetacello" : "EstebanLorenzano 9/23/2014 15:04",
+		"isSlice" : "EstebanLorenzano 9/23/2014 15:04",
+		"issue" : "EstebanLorenzano 9/23/2014 14:35",
+		"postload" : "EstebanLorenzano 9/23/2014 17:47",
+		"preload" : "EstebanLorenzano 9/23/2014 17:47",
+		"verifyScriptOn:merge:" : "EstebanLorenzano 9/23/2014 15:10",
+		"wrap:withPreloadAndPostload:" : "EstebanLorenzano 9/23/2014 18:02" } }

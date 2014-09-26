@@ -1,0 +1,14 @@
+{
+	"category" : "CI-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		 ],
+	"name" : "CIFileTreeChangeProvider",
+	"pools" : [
+		 ],
+	"super" : "CIAbstractChangeProvider",
+	"type" : "normal" }

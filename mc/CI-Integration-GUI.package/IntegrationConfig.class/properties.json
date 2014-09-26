@@ -1,0 +1,17 @@
+{
+	"category" : "CI-Integration-GUI-View",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"version",
+		"username",
+		"password",
+		"externalBrowserCommand" ],
+	"name" : "IntegrationConfig",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

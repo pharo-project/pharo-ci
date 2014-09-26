@@ -1,0 +1,22 @@
+{
+	"category" : "CI-Integration-GUI-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"version",
+		"username",
+		"password",
+		"issues",
+		"preLoad",
+		"postLoad",
+		"comment",
+		"buildId",
+		"success" ],
+	"name" : "Integration",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

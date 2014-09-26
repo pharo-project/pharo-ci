@@ -1,0 +1,20 @@
+{
+	"category" : "CI-Integration-GUI-View",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		"Current" ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"toolBarPanel",
+		"issueList",
+		"scriptTabPanel",
+		"commentText",
+		"postLoadText",
+		"preLoadText",
+		"config" ],
+	"name" : "IntegrationBrowser",
+	"pools" : [
+		 ],
+	"super" : "ComposableModel",
+	"type" : "normal" }

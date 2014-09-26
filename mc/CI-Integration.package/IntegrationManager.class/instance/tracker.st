@@ -1,4 +1,4 @@
 accessing
 tracker
 
-	^ tracker ifNil: [ tracker := GoogleIssueTracker pharo ]
+	^ tracker ifNil: [ tracker := FogBugzTracker pharo ]

@@ -1,4 +1,4 @@
-protocol-users
+registering
 registerEmail: email
 	| fullName indexOfAt indexOfPlus index |
 	

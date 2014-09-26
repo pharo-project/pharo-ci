@@ -1,0 +1,17 @@
+{
+	"category" : "CI-Integration-GUI-View",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"headerLabel",
+		"eventList",
+		"commentText",
+		"issue" ],
+	"name" : "IntegrationIssueEventBrowser",
+	"pools" : [
+		 ],
+	"super" : "ComposableModel",
+	"type" : "normal" }

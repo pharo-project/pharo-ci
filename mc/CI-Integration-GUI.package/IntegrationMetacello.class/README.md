@@ -1,0 +1,1 @@
+I represent a Metacello Configuration in the context of an integration issue.

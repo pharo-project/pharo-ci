@@ -1,6 +1,7 @@
 {
 	"class" : {
 		"packagePrefix:" : "CamilloBruni 5/10/2013 16:24",
+		"packageRegex:" : "BenjaminVanRyseghem 3/5/2014 18:31",
 		"selectTestCaseBlock:" : "CamilloBruni 4/15/2013 10:09" },
 	"instance" : {
 		"basicValidate" : "CamilloBruni 10/31/2013 14:54",

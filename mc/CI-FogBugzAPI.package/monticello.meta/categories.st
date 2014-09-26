@@ -1,2 +1,2 @@
 SystemOrganization addCategory: #'CI-FogBugzAPI'!
-SystemOrganization addCategory: #'CI-FogBugzAPI-Tests'!
+SystemOrganization addCategory: 'CI-FogBugzAPI-Tests'!

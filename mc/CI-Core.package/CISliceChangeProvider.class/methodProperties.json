@@ -1,6 +1,7 @@
 {
 	"class" : {
-		"pharo30" : "CamilloBruni 4/29/2013 00:24" },
+		"pharo30" : "CamilloBruni 4/29/2013 00:24",
+		"pharo40" : "EstebanLorenzano 6/7/2014 17:24" },
 	"instance" : {
 		"changeWithId:" : "ErwanDouaille 4/11/2013 16:20",
 		"changes" : "CamilloBruni 4/26/2013 16:27",

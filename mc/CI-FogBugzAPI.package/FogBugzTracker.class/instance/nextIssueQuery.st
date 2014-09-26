@@ -1,4 +1,4 @@
-protocol-query
+querying
 nextIssueQuery
 	^ 'status:"Fix Review"',
 	'status:open ',

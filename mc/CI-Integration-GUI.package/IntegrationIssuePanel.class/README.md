@@ -1,0 +1,1 @@
+A panel to show a detailed case.

@@ -5,7 +5,7 @@ doneApplyingChangesSilently
 		"now you can reopen prior to publishing to fix :)"
 	self saveAsNewImageWithCurrentReleaseNameToPublish.
 	comment := String streamContents: [:stream |
-		IntegrationManager default issuesToIntegrate do: [:each | 
+		IntegrationManager uniqueInstance issuesToIntegrate do: [:each | 
 			stream << each name << 'Thanks to ' << each content author email ; lf;lf.
 			stream << each url;lf;lf;lf.]].
 	comment := comment trimBoth.

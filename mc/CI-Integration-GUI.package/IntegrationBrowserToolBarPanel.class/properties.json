@@ -1,0 +1,16 @@
+{
+	"category" : "CI-Integration-GUI-View",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "EstebanLorenzano 9/17/2014 16:48",
+	"instvars" : [
+		"refreshButton",
+		"configureButton",
+		"integrateButton" ],
+	"name" : "IntegrationBrowserToolBarPanel",
+	"pools" : [
+		 ],
+	"super" : "ComposableModel",
+	"type" : "normal" }

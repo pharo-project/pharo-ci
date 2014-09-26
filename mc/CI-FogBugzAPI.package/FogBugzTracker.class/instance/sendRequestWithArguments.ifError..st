@@ -1,4 +1,4 @@
-protocol
+private
 sendRequestWithArguments: arguments ifError: aBlock 
 
 	arguments at: 'token' put: self identifyingToken.

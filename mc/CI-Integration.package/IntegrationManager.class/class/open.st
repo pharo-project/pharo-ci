@@ -1,4 +1,3 @@
 display
 open
-
-	self default open
+	self uniqueInstance open

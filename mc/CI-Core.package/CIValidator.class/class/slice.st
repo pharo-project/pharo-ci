@@ -1,3 +1,3 @@
 instance creation
 slice
-	^self pharo30 
+	^self pharo40 

@@ -21,7 +21,12 @@ fromXML: xml
 				ifFalse: [ subcases := (tag text splitOn: $,) collect: [ :each | each asInteger ]]].
 	(xml findTag: 'ixBugParent')
 		ifNotNil: [ :tag | parentCase := tag text asInteger ].
-	
+
+	configuration := xml findTagText: 'configurationof' default: ''.
+	configurationVersion := xml findTagText: 'configurationversion' default: ''.
+	preload := xml findTagText: 'preload' default: ''.
+	postload := xml findTagText: 'postload' default: ''.
+		
 	status := xml sstatus next text.
 	
 	lastModification := xml dtlastupdated text asDateAndTime.

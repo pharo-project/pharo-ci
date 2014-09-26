@@ -1,4 +1,4 @@
-protocol-log on/off
+logging
 logOnWithEmail: emailAddress password: password
 	| arguments response token |
 

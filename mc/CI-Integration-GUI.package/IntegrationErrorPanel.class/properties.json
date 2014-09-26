@@ -1,0 +1,16 @@
+{
+	"category" : "CI-Integration-GUI-View",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"error",
+		"messageLabel",
+		"logText" ],
+	"name" : "IntegrationErrorPanel",
+	"pools" : [
+		 ],
+	"super" : "ComposableModel",
+	"type" : "normal" }

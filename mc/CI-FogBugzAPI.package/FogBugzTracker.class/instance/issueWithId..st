@@ -1,3 +1,3 @@
-protocol-query
+querying
 issueWithId: id
 	^ self getIssueWithID: id

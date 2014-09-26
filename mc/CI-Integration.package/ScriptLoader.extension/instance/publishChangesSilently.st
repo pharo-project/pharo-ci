@@ -1,6 +1,7 @@
 *CI-Integration
 publishChangesSilently
-	| username password changescriptname changesetFilename str strings|
+	| username password str strings|
+	
 	(FileStream isAFileNamed: 'PharoPass.txt') 
 		ifTrue: [ str := FileStream fileNamed:  'PharoPass.txt'. 
 				strings := str contents substrings.
@@ -9,9 +10,7 @@ publishChangesSilently
 		ifFalse: [ username := UIManager default request: 'Pharo repository login'.
 			     password := UIManager default requestPassword: 'Pharo repository password'.].
 
-	self setToRepositoriesPassword: password to: username.
-	
-	
-	changescriptname := (IntegrationManager default issuesToIntegrate collect: #id) joinUsing: '-'.	
-	changesetFilename := self CSForLastUpdateAndPatchUpdatesList: changescriptname.
-	self copyPackagesFromWaitingFolderToHomeRepository.
+	self 
+		publicChangesSilently: (IntegrationManager uniqueInstance issuesToIntegrate collect: #id) 
+		user: username 
+		password: password

@@ -1,7 +1,7 @@
 instance creation
 prepare: aCollection
 
-	^ self default
+	^ self uniqueInstance
 		issueNumbers: aCollection;
 		prepare;
 		yourself

@@ -1,5 +1,5 @@
 activation
 dispatchSubConfigurationCommand
 
-	self testConfiguration.
+	self testIssue.
 	self exitSuccess.

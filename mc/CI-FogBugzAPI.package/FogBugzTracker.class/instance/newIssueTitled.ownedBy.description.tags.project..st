@@ -1,4 +1,4 @@
-protocol-edition
+editing
 newIssueTitled: aName ownedBy: aOwner description: description tags: tags project: project
 	| response arguments xml id |
 

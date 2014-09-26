@@ -1,4 +1,4 @@
 instance creation
 new
 
-	self error: 'Should use default instead'
+	self error: 'Should use #uniqueInstance instead'

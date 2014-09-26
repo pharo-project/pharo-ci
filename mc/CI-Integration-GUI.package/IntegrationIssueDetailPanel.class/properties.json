@@ -1,0 +1,22 @@
+{
+	"category" : "CI-Integration-GUI-View",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"issue",
+		"tagLabel",
+		"tagText",
+		"configurationLabel",
+		"configurationText",
+		"preloadLabel",
+		"preloadText",
+		"postloadLabel",
+		"postloadText" ],
+	"name" : "IntegrationIssueDetailPanel",
+	"pools" : [
+		 ],
+	"super" : "ComposableModel",
+	"type" : "normal" }

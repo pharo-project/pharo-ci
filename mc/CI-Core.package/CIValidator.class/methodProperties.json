@@ -1,9 +1,12 @@
 {
 	"class" : {
 		"configuration" : "ErwanDouaille 5/28/2013 13:43",
+		"filetree:" : "BenjaminVanRyseghem 3/5/2014 18:52",
 		"manager:" : "CamilloBruni 4/14/2013 21:42",
+		"packageRegex:" : "BenjaminVanRyseghem 3/5/2014 18:33",
 		"pharo30" : "CamilloBruni 11/25/2013 21:45",
-		"slice" : "ErwanDouaille 5/6/2013 11:25" },
+		"pharo40" : "EstebanLorenzano 9/4/2014 17:34",
+		"slice" : "EstebanLorenzano 6/9/2014 11:47" },
 	"instance" : {
 		"addRule:" : "CamilloBruni 6/14/2013 17:27",
 		"asertLoadable:" : "CamilloBruni 6/14/2013 10:13",

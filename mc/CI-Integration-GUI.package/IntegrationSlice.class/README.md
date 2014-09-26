@@ -1,0 +1,2 @@
+I represent a SLICE in the context of an integration issue. 
+I keep an issue number and *potentially* a specific SLICE version (but this will usually not be used, since gofer can retrieve latest SLICE without human interference). 

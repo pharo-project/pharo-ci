@@ -1,0 +1,3 @@
+protocol
+nextIssueToBeChecked
+	^ nil

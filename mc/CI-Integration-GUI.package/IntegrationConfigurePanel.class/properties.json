@@ -1,0 +1,21 @@
+{
+	"category" : "CI-Integration-GUI-View",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"versionLabel",
+		"versionText",
+		"usernameLabel",
+		"usernameText",
+		"passwordLabel",
+		"passwordText",
+		"externalBrowserLabel",
+		"externalBrowserText" ],
+	"name" : "IntegrationConfigurePanel",
+	"pools" : [
+		 ],
+	"super" : "ComposableModel",
+	"type" : "normal" }

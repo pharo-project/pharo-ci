@@ -1,3 +1,3 @@
 instance creation
 pharo
-	^ self pharo30
+	^ self pharo40

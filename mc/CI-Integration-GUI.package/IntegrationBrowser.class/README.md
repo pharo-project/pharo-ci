@@ -1,0 +1,1 @@
+I browse open issues from fogbugz and show them in a fashionable way, to allow an integration to happen. 

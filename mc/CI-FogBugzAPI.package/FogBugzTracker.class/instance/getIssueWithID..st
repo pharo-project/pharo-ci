@@ -1,4 +1,4 @@
-protocol-query
+querying
 getIssueWithID: id
 
 	^ (self getIssuesForQuery: 'ixbug:', id asString)

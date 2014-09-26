@@ -1,4 +1,4 @@
-protocol-query
+querying
 informationAboutProject: id
 
 	^ self sendRequestWithArguments: (Dictionary new

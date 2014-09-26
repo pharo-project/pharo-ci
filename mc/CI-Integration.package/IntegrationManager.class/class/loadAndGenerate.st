@@ -1,6 +1,6 @@
 instance creation
 loadAndGenerate
 
-	^ self default
+	^ self uniqueInstance
 		loadAndGenerate;
 		yourself

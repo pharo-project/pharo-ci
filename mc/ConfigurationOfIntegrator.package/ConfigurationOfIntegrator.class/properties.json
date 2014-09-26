@@ -1,0 +1,14 @@
+{
+	"category" : "ConfigurationOfIntegrator",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		"LastVersionLoad" ],
+	"commentStamp" : "",
+	"instvars" : [
+		"project" ],
+	"name" : "ConfigurationOfIntegrator",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

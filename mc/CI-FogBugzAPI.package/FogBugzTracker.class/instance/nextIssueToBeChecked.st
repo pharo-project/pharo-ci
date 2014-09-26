@@ -1,4 +1,4 @@
-protocol-query
+querying
 nextIssueToBeChecked
 	
 	^ (self getIssuesForQuery: self nextIssueQuery max: 50)

@@ -1,0 +1,14 @@
+{
+	"category" : "CI-Integration-GUI-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"systemLog" ],
+	"name" : "IntegrationError",
+	"pools" : [
+		 ],
+	"super" : "Error",
+	"type" : "normal" }

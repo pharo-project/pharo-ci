@@ -1,4 +1,4 @@
-protocol-query
+private
 getIssuesForQuery: query max: maxSize
 	| arguments rawIssues |
 	

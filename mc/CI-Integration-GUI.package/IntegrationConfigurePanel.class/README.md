@@ -1,0 +1,1 @@
+I'm a configuration panel to allow user to change his data.

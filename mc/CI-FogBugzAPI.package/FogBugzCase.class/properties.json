@@ -19,7 +19,11 @@
 		"status",
 		"subcases",
 		"parentCase",
-		"user" ],
+		"user",
+		"configuration",
+		"configurationVersion",
+		"preload",
+		"postload" ],
 	"name" : "FogBugzCase",
 	"pools" : [
 		 ],

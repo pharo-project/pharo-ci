@@ -1,5 +1,7 @@
 activation
 activate
+	"Hack to prevent delays to be triggered immediatly"
+	1 milliSecond wait.
 
 	self activateHelp
 		ifTrue: [ ^ self ].
@@ -14,4 +16,14 @@ activate
 			self setUpSlice.
 			^ self dispatchSubSliceCommand ].
 		
+	((self argumentAt: 1) = 'script')
+		ifTrue: [ 
+			self setUpScript.
+			^ self dispatchSubScriptCommand ].
+		
+	((self argumentAt: 1) = 'filetree')
+		ifTrue: [ 
+			self setUpFileTree.
+			^ self dispatchSubFileTreeCommand ].
+	
 	self exitFailure: 'Invalid subcommand: ', (self argumentAt: 1) .

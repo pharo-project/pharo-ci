@@ -1,4 +1,4 @@
-protocol-users
+registering
 registerUserNamed: fullName email: email password: password type: type
 
 	^ self sendRequestWithArguments: (Dictionary new

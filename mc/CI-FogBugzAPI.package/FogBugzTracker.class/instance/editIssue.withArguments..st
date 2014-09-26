@@ -1,4 +1,4 @@
-protocol-edition
+editing
 editIssue: id withArguments: arguments
 	| response |
 

@@ -1,4 +1,4 @@
-protocol
+private
 sendRequestWithArguments: arguments
 
 	arguments at: 'token' put: self identifyingToken.

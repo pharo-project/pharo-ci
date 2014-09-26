@@ -1,6 +1,4 @@
-protocol-log on/off
+logging
 logOff
-
-	self sendRequestWithArguments: (Dictionary new
-											at: 'cmd' put: 'logoff';
-											yourself)
+	self sendRequestWithArguments: {'cmd'->'logoff'} asDictionary.
+	identifyingToken := nil

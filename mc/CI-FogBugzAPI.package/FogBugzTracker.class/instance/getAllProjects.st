@@ -1,4 +1,4 @@
-protocol-query
+querying
 getAllProjects
 	| rawProjects |
 	

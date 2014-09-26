@@ -1,0 +1,1 @@
+I'm a browser for detail an issue and gis events.

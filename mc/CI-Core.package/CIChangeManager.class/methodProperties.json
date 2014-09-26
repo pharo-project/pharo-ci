@@ -1,8 +1,9 @@
 {
 	"class" : {
 		"changeProvider:validator:" : "CamilloBruni 10/22/2013 22:15",
-		"pharo" : "CamilloBruni 4/9/2013 13:43",
-		"pharo30" : "CamilloBruni 10/22/2013 22:05" },
+		"pharo" : "EstebanLorenzano 6/7/2014 17:23",
+		"pharo30" : "CamilloBruni 10/22/2013 22:05",
+		"pharo40" : "EstebanLorenzano 6/7/2014 17:23" },
 	"instance" : {
 		"changeProvider" : "CamilloBruni 10/22/2013 22:15",
 		"changeProvider:" : "CamilloBruni 10/22/2013 22:15",

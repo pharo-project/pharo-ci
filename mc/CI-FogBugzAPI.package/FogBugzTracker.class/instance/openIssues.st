@@ -1,4 +1,4 @@
-protocol-query
+querying
 openIssues
 
 	^ self getIssuesForQuery: 'status:open'

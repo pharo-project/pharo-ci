@@ -1,6 +1,5 @@
 helper
 publishError: anError	
-	self flag: 'Dont even consider refactoring this ;)'.
 	self 
 		publishResultGroupWithTitle: ('Exception: <code>', anError printString, '</code>')
 		with: [ | contexts |

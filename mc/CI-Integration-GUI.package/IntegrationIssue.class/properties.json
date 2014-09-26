@@ -1,0 +1,14 @@
+{
+	"category" : "CI-Integration-GUI-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "EstebanLorenzano 9/24/2014 14:07",
+	"instvars" : [
+		"issue" ],
+	"name" : "IntegrationIssue",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

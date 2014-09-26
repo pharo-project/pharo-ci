@@ -1,6 +1,6 @@
 instance creation
 integrate
 
-	^ self default
+	^ self uniqueInstance
 		integrate;
 		yourself

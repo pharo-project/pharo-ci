@@ -1,0 +1,1 @@
+I'm a detail on attributes of a case. 

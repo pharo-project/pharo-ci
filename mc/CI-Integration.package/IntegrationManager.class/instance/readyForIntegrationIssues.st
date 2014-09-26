@@ -1,4 +1,3 @@
-display
+accessing
 readyForIntegrationIssues
-
-	^ self tracker readyForIntegrationIssues
+	^ self readyForIntegrationIssuesMilestone: '4.0'

@@ -1,4 +1,4 @@
 protocol
 publicUrl
 
-	self subclassResponsibility
+	^ self subclassResponsibility
