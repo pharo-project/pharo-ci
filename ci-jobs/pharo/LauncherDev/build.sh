@@ -2,17 +2,28 @@
 
 set -ex
 
-# jenkins puts all the params after a / in the job name as well :(
-export JOB_NAME=`dirname $JOB_NAME`
-
 wget --quiet -O - get.pharo.org/$PHARO+$VM | bash
 
-./pharo Pharo.image save $JOB_NAME --delete-old
-./pharo $JOB_NAME.image --version > version.txt
+./pharo Pharo.image save PharoLauncher --delete-old
+./pharo PharoLauncher.image --version > version.txt
 
 REPO=http://smalltalkhub.com/mc/Pharo/PharoLauncher/main
-./pharo $JOB_NAME.image config $REPO ConfigurationOfPharoLauncher --install=$VERSION
-./pharo $JOB_NAME.image test --junit-xml-output "PharoLauncher.*"
-./pharo $JOB_NAME.image eval --save "PhLDirectoryBasedImageRepository location"
+./pharo PharoLauncher.image config $REPO ConfigurationOfPharoLauncher --install=$VERSION
+./pharo PharoLauncher.image test --junit-xml-output "PharoLauncher.*"
+./pharo PharoLauncher.image eval --save "PhLDirectoryBasedImageRepository location"
 
-zip -r $JOB_NAME.zip $JOB_NAME.image $JOB_NAME.changes
+zip -9r PharoLauncher-developer.zip PharoLauncher.image PharoLauncher.changes
+
+./pharo PharoLauncher.image eval --save "PhLDeploymentScript doAll"
+
+# Create the platform-specific archives
+mkdir One
+cp PharoLauncher.image   One/Pharo.image
+cp PharoLauncher.changes One/Pharo.changes
+cp pharo-vm/PharoV*.sources One
+git clone git://gitorious.org/pharo-build/pharo-build.git
+DATE=$(date +%Y.%m.%d)
+bash ./pharo-build/build-platform.sh -i One/Pharo -o Pharo -v $VERSION-$DATE -t Pharo -p mac
+bash ./pharo-build/build-platform.sh -i One/Pharo -o Pharo -v $VERSION-$DATE -t Pharo -p win
+
+zip -9r PharoLauncher-urer.zip Pharo.image Pharo.changes
