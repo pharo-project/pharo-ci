@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Make sure that the png will look good on Mac OS X when set as a
 # folder background

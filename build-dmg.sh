@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # make sure we are in the correct dir when we double-click a .command file
 dir=${0%/*}

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # build-platform.sh -- Builds Pharo based platform-dependent images
 #

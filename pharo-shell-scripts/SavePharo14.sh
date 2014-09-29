@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # input: a path where to copy image and changes files
 
 if [ -z "$WORKSPACE" ] ; then

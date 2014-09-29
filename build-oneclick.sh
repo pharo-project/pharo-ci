@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # build-oneclick.sh -- Builds Pharo based One-Click images
 #
