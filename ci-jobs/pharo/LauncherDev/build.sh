@@ -26,4 +26,4 @@ DATE=$(date +%Y.%m.%d)
 bash ./pharo-build/build-platform.sh -i One/Pharo -o Pharo -v $VERSION-$DATE -t Pharo -p mac
 bash ./pharo-build/build-platform.sh -i One/Pharo -o Pharo -v $VERSION-$DATE -t Pharo -p win
 
-zip -9r PharoLauncher-urer.zip PharoLauncher.image PharoLauncher.changes
+zip -9r PharoLauncher-user-$VERSION-$DATE.zip PharoLauncher.image PharoLauncher.changes
