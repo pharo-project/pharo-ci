@@ -27,3 +27,5 @@ bash ./pharo-build/build-platform.sh -i One/Pharo -o Pharo -v $VERSION-$DATE -t 
 bash ./pharo-build/build-platform.sh -i One/Pharo -o Pharo -v $VERSION-$DATE -t Pharo -p win
 
 zip -9r PharoLauncher-user-$VERSION-$DATE.zip PharoLauncher.image PharoLauncher.changes
+
+md5sum PharoLauncher-user--$VERSION-$DATE.zip > PharoLauncher-user--$VERSION-$DATE.zip.md5sum
