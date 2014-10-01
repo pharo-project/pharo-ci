@@ -5,14 +5,13 @@ set -ex
 # by Andy Maloney
 # http://asmaloney.com/2013/07/howto/packaging-a-mac-os-x-application-using-a-dmg/
 
-
-APP_NAME="Pharo"
-VERSION="3.0.0"
-DMG_BACKGROUND_IMG="background.png"
+APP_NAME=${APP_NAME:-"Pharo"}
+VERSION=${VERSION:-"3.0.0"}
+DMG_BACKGROUND_IMG=${DMG_BACKGROUND_IMG:-"background.png"}
 
 # Indicate the vertical pixel where the icons (Pharo and Applications)
 # will be positioned
-ICON_VPOSITION=168
+ICON_VPOSITION=${ICON_VPOSITION:-168}
 
 # you should not need to change these
 APP_EXE="${APP_NAME}.app/Contents/MacOS/${APP_NAME}"
