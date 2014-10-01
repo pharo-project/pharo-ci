@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -ex
+
 # make sure we are in the correct dir when we double-click a .command file
 dir=${0%/*}
 if [ -d "$dir" ]; then
