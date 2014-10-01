@@ -2,7 +2,7 @@
 
 set -ex
 
-launcher_directory="./*VERSION=[0-9]*"
+launcher_directory=$(basename "./*VERSION=[0-9]*")
 # launcher_version=$(basename "$(pwd)" \
 #     | sed -e 's/^.*VERSION=\([0-9.]*\),.*$/\1/')
 
