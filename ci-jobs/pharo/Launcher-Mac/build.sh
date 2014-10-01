@@ -12,5 +12,5 @@ unzip "$launcher_directory/Pharo-mac.zip"
 cp pharo-ci/background/background.png .
 ./pharo-ci/build-dmg.sh
 
-generated_dmg=*.dmg
-md5sum "$generated_dmg" > "$generated_dmg.md5sum"
+generated_dmg=$(echo *.dmg)
+md5 "$generated_dmg" > "$generated_dmg.md5sum"
