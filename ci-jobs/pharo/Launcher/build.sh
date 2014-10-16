@@ -21,10 +21,9 @@ mkdir One
 cp PharoLauncher.image   One/Pharo.image
 cp PharoLauncher.changes One/Pharo.changes
 cp pharo-vm/PharoV*.sources One
-git clone git://gitorious.org/pharo-build/pharo-build.git
 DATE=$(date +%Y.%m.%d)
-bash ./pharo-build/build-platform.sh -i One/Pharo -o PharoLauncher-$VERSION-$DATE -v $VERSION-$DATE -t Pharo -p mac
-bash ./pharo-build/build-platform.sh -i One/Pharo -o PharoLauncher-$VERSION-$DATE -v $VERSION-$DATE -t Pharo -p win
+bash ./pharo-ci/build-platform.sh -i One/Pharo -o Pharo -v $VERSION-$DATE -t Pharo -p mac
+bash ./pharo-ci/build-platform.sh -i One/Pharo -o Pharo -v $VERSION-$DATE -t Pharo -p win
 
 zip -9r PharoLauncher-user-$VERSION-$DATE.zip PharoLauncher.image PharoLauncher.changes
 
