@@ -53,11 +53,6 @@ wget -O- get.pharo.org/vm | bash
 
 cd ../
 
-pwd
-for file in "$WORKSPACE"/pharo-ci/ci-jobs/pharo/Pharo-vm-unix-sources/patches/*; do
-    patch -p1 < $file
-done
-
 vm_version=$(cat build/vmVersionInfo.h | sed -e 's/^.* Date: \([-0-9]*\) .*$/\1/' | tr - .)
 cd ..
 mv cog pharo-vm-${vm_version}
