@@ -39,6 +39,13 @@ buildSourcesForDistroPackaging
 !PharoVMBuilder class methodsFor: 'building' stamp: 'DamienCassou 8/4/2014 15:07'!
 buildSourcesForDistroPackaging
 	^ self new buildSourcesForDistroPackaging! !
+
+! !
+
+
+!TPharoUnixConfig methodsFor: 'building' stamp: 'DamienCassou 8/4/2014 15:07'!
+compilerFlagsRelease
+  ^super compilerFlagsRelease, { '-DPRODUCTION=1' }
 EOF
 
 
