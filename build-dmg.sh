@@ -4,6 +4,7 @@ set -ex
 
 # by Andy Maloney
 # http://asmaloney.com/2013/07/howto/packaging-a-mac-os-x-application-using-a-dmg/
+# https://gist.github.com/asmaloney/55d96a8c3558b2f92cb3
 
 APP_NAME=${APP_NAME:-"Pharo"}
 VERSION=${VERSION:-"3.0.0"}
