@@ -65,7 +65,10 @@ if ssh "$SERVER" test -f "$BASEDIR/$directory/blessed/$file"; then
 fi
 
 if confirm "Are you sure you want to bless $file?"; then
-    ssh "$SERVER" cp --no-clobber "$BASEDIR/$directory/$file" "$BASEDIR/$directory/blessed"
+    ssh "$SERVER" sh <<EOF
+sudo su --login --command "cp --no-clobber \"$BASEDIR/$directory/$file\" \"$BASEDIR/$directory/blessed\"" filepharosync
+sudo su --login --command "cp --no-clobber \"$BASEDIR/$directory/$file.md5sum\" \"$BASEDIR/$directory/blessed\"" filepharosync
+EOF
     exit 0
 else
     echo "Abort requested"
