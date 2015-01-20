@@ -10,6 +10,7 @@ cd ..
 
 unzip "$launcher_directory/Pharo-win.zip"
 
+pwd
 VERSION=$launcher_version ./pharo-ci/build-windows-installer.sh
 
 generated_exe=$(echo *.exe)
