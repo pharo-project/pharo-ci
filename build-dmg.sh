@@ -71,6 +71,8 @@ sleep 2
 # add a link to the Applications dir
 echo "Add link to /Applications"
 pushd /Volumes/"${VOL_NAME}"
+pwd
+ls -la
 ln -s /Applications .
 popd
 
