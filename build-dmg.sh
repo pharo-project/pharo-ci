@@ -73,8 +73,7 @@ echo "Add link to /Applications"
 pushd /Volumes/"${VOL_NAME}"
 pwd
 ls -la
-# I don't know why, but it seems this is not necessary anymore:
-# ln -s /Applications .
+ln -s /Applications
 popd
 
 # add a background image
