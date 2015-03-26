@@ -71,7 +71,7 @@ sleep 2
 # add a link to the Applications dir
 echo "Add link to /Applications"
 pushd /Volumes/"${VOL_NAME}"
-ln -s /Applications
+ln -s /Applications .
 popd
 
 # add a background image
