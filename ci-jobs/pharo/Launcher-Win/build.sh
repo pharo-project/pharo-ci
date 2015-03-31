@@ -14,7 +14,7 @@ pwd
 VERSION=$launcher_version ./pharo-ci/build-windows-installer.sh
 
 generated_exe=$(echo *.exe)
-cp /BY "$generated_exe" latest.exe
+cp "$generated_exe" latest.exe
 
 # We can't generate the md5sum because the md5 command is not present
 # on Windows by default:
