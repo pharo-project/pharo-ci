@@ -15,3 +15,7 @@ VERSION=$launcher_version ./pharo-ci/build-dmg.sh
 
 generated_dmg=$(echo *.dmg)
 md5 "$generated_dmg" > "$generated_dmg.md5sum"
+
+# For permalinks on file server
+cp "$generated_dmg" latest.dmg
+cp "$generated_dmg.md5sum" latest.md5sum
