@@ -18,4 +18,4 @@ md5 "$generated_dmg" > "$generated_dmg.md5sum"
 
 # For permalinks on file server
 cp "$generated_dmg" latest.dmg
-cp "$generated_dmg.md5sum" latest.md5sum
+cp "$generated_dmg.md5sum" latest.dmg.md5sum
