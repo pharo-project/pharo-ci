@@ -20,7 +20,15 @@ zip -9r PharoLauncher-developer.zip PharoLauncher.image PharoLauncher.changes
 mkdir One
 cp PharoLauncher.image   One/Pharo.image
 cp PharoLauncher.changes One/Pharo.changes
-cp pharo-vm/PharoV*.sources One
+
+# Download the sources files
+cd One
+wget --quiet http://file-pharo.inria.fr/sources/PharoV10.sources.zip && unzip PharoV10.sources.zip PharoV10.sources && rm PharoV10.sources.zip
+wget --quiet http://file-pharo.inria.fr/sources/PharoV20.sources.zip && unzip PharoV20.sources.zip PharoV20.sources && rm PharoV20.sources.zip
+wget --quiet http://file-pharo.inria.fr/sources/PharoV30.sources.zip && unzip PharoV30.sources.zip PharoV30.sources && rm PharoV30.sources.zip
+wget --quiet http://file-pharo.inria.fr/sources/PharoV40.sources.zip && unzip PharoV40.sources.zip PharoV40.sources && rm PharoV40.sources.zip
+cd ..
+
 DATE=$(date +%Y.%m.%d)
 bash ./pharo-ci/build-platform.sh -i One/Pharo -o Pharo -v $VERSION-$DATE -t Pharo -p mac
 bash ./pharo-ci/build-platform.sh -i One/Pharo -o Pharo -v $VERSION-$DATE -t Pharo -p win
