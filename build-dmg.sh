@@ -1,11 +1,15 @@
 #!/usr/bin/env bash
 
 set -ex
+# This script creats a .dmg out of an .app file. The resulting .dmg
+# shows a nice pharo background and let the user drag&drop an
+# application in /Applications.
 
-# by Andy Maloney
+# This script is taken from Andy Maloney
 # http://asmaloney.com/2013/07/howto/packaging-a-mac-os-x-application-using-a-dmg/
 # https://gist.github.com/asmaloney/55d96a8c3558b2f92cb3
 
+# At some point, I could replace this script with https://github.com/LinusU/node-appdmg
 APP_NAME=${APP_NAME:-"Pharo"}
 VERSION=${VERSION:-"3.0.0"}
 DMG_BACKGROUND_IMG=${DMG_BACKGROUND_IMG:-"background.png"}
