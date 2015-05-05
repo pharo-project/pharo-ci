@@ -69,8 +69,22 @@ if confirm "Are you sure you want to bless $file?"; then
 sudo su --login --command "cp --no-clobber \"$BASEDIR/$directory/$file\" \"$BASEDIR/$directory/blessed\"" filepharosync
 sudo su --login --command "cp --no-clobber \"$BASEDIR/$directory/$file.md5sum\" \"$BASEDIR/$directory/blessed\"" filepharosync
 EOF
-    exit 0
 else
     echo "Abort requested"
     exit 1
 fi
+
+file="/$directory/blessed/$file"
+
+read -s -p "What is board@pharo.org password for cdn77.com? " passwd
+
+echo
+curl --data "cdn_id=30462&login=board@pharo.org&passwd=$passwd&url[]=$file" https://client.cdn77.com/api/v2.0/data/purge
+echo
+curl --data "cdn_id=30462&login=board@pharo.org&passwd=$passwd&url[]=$file" https://client.cdn77.com/api/v2.0/data/purge
+echo
+curl --data "cdn_id=30462&login=board@pharo.org&passwd=$passwd&url[]=$file" https://client.cdn77.com/api/v2.0/data/purge
+echo
+curl --data "cdn_id=30462&login=board@pharo.org&passwd=$passwd&url[]=$file" https://client.cdn77.com/api/v2.0/data/purge
+echo
+curl --data "cdn_id=30462&login=board@pharo.org&passwd=$passwd&url[]=$file" https://client.cdn77.com/api/v2.0/data/purge
