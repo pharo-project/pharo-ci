@@ -24,7 +24,7 @@ unzip -o ../../vmmaker-image.zip
 cat > packaging.cs <<EOF
 'From Pharo3.0 of 18 March 2013 [Latest update: #30852] on 4 August 2014 at 3:14:39.778255 pm'!
 
-!PharoVMBuilder methodsFor: 'building' stamp: 'DamienCassou 8/4/2014 15:08'!
+!PharoVMSpur32Builder methodsFor: 'building' stamp: 'DamienCassou 8/4/2014 15:08'!
 buildSourcesForDistroPackaging
 	CogNativeBoostPlugin setTargetPlatform: #Linux32PlatformId.
 	
@@ -36,7 +36,7 @@ buildSourcesForDistroPackaging
 ! !
 
 
-!PharoVMBuilder class methodsFor: 'building' stamp: 'DamienCassou 8/4/2014 15:07'!
+!PharoVMSpur32Builder class methodsFor: 'building' stamp: 'DamienCassou 8/4/2014 15:07'!
 buildSourcesForDistroPackaging
 	^ self new buildSourcesForDistroPackaging! !
 
@@ -51,7 +51,7 @@ EOF
 
 cat > ./script.st <<EOF
 'packaging.cs' asFileReference fileIn.
-PharoVMBuilder buildSourcesForDistroPackaging.
+PharoVMSpur32Builder buildSourcesForDistroPackaging.
 Smalltalk snapshot: false andQuit: true.
 EOF
 
