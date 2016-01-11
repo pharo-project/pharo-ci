@@ -11,6 +11,8 @@ ZIP_FILTER='*'
 # Download the latest sources ================================================
 wget --quiet files.pharo.org/vm/src/spur/vmmaker-image.zip
 wget --quiet files.pharo.org/vm/src/spur/cog.tar.gz
+md5sum vmmaker-image.zip
+md5sum cog.tar.gz
 
 # Unpack sources =============================================================
 tar -xzf cog.tar.gz
