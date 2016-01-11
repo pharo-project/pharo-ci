@@ -79,12 +79,12 @@ file="/$directory/blessed/$file"
 read -s -p "What is board@pharo.org password for cdn77.com? " passwd
 
 echo
-curl --data "cdn_id=30462&login=board@pharo.org&passwd=$passwd&url[]=$file" https://client.cdn77.com/api/v2.0/data/purge
+curl --insecure --data "cdn_id=30462&login=board@pharo.org&passwd=$passwd&url[]=$file" https://client.cdn77.com/api/v2.0/data/purge
 echo
-curl --data "cdn_id=30462&login=board@pharo.org&passwd=$passwd&url[]=$file" https://client.cdn77.com/api/v2.0/data/purge
+curl --insecure --data "cdn_id=30462&login=board@pharo.org&passwd=$passwd&url[]=$file" https://client.cdn77.com/api/v2.0/data/purge
 echo
-curl --data "cdn_id=30462&login=board@pharo.org&passwd=$passwd&url[]=$file" https://client.cdn77.com/api/v2.0/data/purge
+curl --insecure --data "cdn_id=30462&login=board@pharo.org&passwd=$passwd&url[]=$file" https://client.cdn77.com/api/v2.0/data/purge
 echo
-curl --data "cdn_id=30462&login=board@pharo.org&passwd=$passwd&url[]=$file" https://client.cdn77.com/api/v2.0/data/purge
+curl --insecure --data "cdn_id=30462&login=board@pharo.org&passwd=$passwd&url[]=$file" https://client.cdn77.com/api/v2.0/data/purge
 echo
-curl --data "cdn_id=30462&login=board@pharo.org&passwd=$passwd&url[]=$file" https://client.cdn77.com/api/v2.0/data/purge
+curl --insecure --data "cdn_id=30462&login=board@pharo.org&passwd=$passwd&url[]=$file" https://client.cdn77.com/api/v2.0/data/purge
