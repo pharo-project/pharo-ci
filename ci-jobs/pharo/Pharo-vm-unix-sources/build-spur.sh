@@ -55,7 +55,7 @@ PharoVMSpur32Builder buildSourcesForDistroPackaging.
 Smalltalk snapshot: false andQuit: true.
 EOF
 
-wget -O- get.pharo.org/vm | bash
+wget -O- get.pharo.org/vm50 | bash
 ./pharo generator.image script.st || (cat stderr; exit 1)
 
 cd ../
