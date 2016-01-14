@@ -81,7 +81,7 @@ ln -sf /Applications
 popd
 
 # add a background image
-mkdir /Volumes/"${VOL_NAME}"/.background
+mkdir -p /Volumes/"${VOL_NAME}"/.background
 cp "${DMG_BACKGROUND_IMG}" /Volumes/"${VOL_NAME}"/.background/
 
 # tell the Finder to resize the window, set the background,
