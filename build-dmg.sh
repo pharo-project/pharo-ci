@@ -77,7 +77,7 @@ echo "Add link to /Applications"
 pushd /Volumes/"${VOL_NAME}"
 pwd
 ls -la
-ln -s /Applications
+ln -sf /Applications
 popd
 
 # add a background image
