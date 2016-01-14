@@ -62,25 +62,12 @@ wget -O- get.pharo.org/vm50 | bash
 
 cd ../
 
+pwd
+ls ..
+patch -p1 < ../ci-jobs/pharo/Pharo-vm-unix-sources/spur-patches/fix-cmake-root-directory.patch
+
 vm_version=$(cat build/vmVersionInfo.h | sed -e 's/^.* Date: \([-0-9]*\) .*$/\1/' | tr - .)
 cd ..
-
-
-# Workaround for https://pharo.fogbugz.com/f/cases/17376/CMakeLists-txt-has-hard-references
-cat > cog/build/directories.cmake <<EOF
-set(topDir "\${CMAKE_SOURCE_DIR}/..")
-set(buildDir "\${topDir}/build")
-set(thirdpartyDir "\${buildDir}/thirdParty")
-set(platformsDir "\${topDir}/platforms")
-set(srcDir "\${topDir}/src")
-set(srcPluginsDir "\${srcDir}/plugins")
-set(srcVMDir "\${srcDir}/vm")
-set(platformName "unix")
-set(targetPlatform \${platformsDir}/\${platformName})
-set(crossDir "\${platformsDir}/Cross")
-set(platformVMDir "\${targetPlatform}/vm")
-set(outputDir "\${topDir}/results")
-EOF
 
 mv cog pharo-vm-spur-${vm_version}
 tar cjf pharo-vm-spur-${vm_version}.tar.bz2 pharo-vm-spur-${vm_version}
