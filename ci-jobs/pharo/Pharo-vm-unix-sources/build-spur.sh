@@ -2,6 +2,7 @@
 
 set -ex
 
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 WORKSPACE=${WORKSPACE:-$(pwd)}
 
 cd "$WORKSPACE"
@@ -64,7 +65,7 @@ cd ../
 
 pwd
 ls ..
-patch -p1 < ../ci-jobs/pharo/Pharo-vm-unix-sources/spur-patches/fix-cmake-root-directory.patch
+patch -p1 < "$SCRIPT_DIR"/spur-patches/fix-cmake-root-directory.patch
 
 vm_version=$(cat build/vmVersionInfo.h | sed -e 's/^.* Date: \([-0-9]*\) .*$/\1/' | tr - .)
 cd ..
