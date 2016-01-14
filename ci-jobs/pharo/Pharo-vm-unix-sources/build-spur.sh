@@ -30,7 +30,7 @@ cat > packaging.cs <<EOF
 buildSourcesForDistroPackaging
 	CogNativeBoostPlugin setTargetPlatform: #Linux32PlatformId.
 	
-	PharoUnixConfig new
+	PharoSpur32UnixConfig new
 		addExternalPlugins: #( FT2Plugin SqueakSSLPlugin );
 		addInternalPlugins: #( UnixOSProcessPlugin  );
 		generateSources; 
