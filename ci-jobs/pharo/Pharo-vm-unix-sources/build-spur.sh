@@ -66,6 +66,8 @@ cd ../
 pwd
 ls ..
 patch -p1 < "$SCRIPT_DIR"/spur-patches/fix-cmake-root-directory.patch
+patch -p1 < "$SCRIPT_DIR"/spur-patches/pharo-is-not-squeak.patch
+patch -p1 < "$SCRIPT_DIR"/spur-patches/fix-executable-name.patch
 
 vm_version=$(cat build/vmVersionInfo.h | sed -e 's/^.* Date: \([-0-9]*\) .*$/\1/' | tr - .)
 cd ..
