@@ -63,12 +63,8 @@ wget -O- get.pharo.org/vm50 | bash
 
 cd ../
 
-pwd
-ls ..
-
 vm_version=$(cat build/vmVersionInfo.h | sed -e 's/^.* Date: \([-0-9]*\) .*$/\1/' | tr - .)
 cd ..
-
 mv cog pharo-vm-spur-${vm_version}
 tar cjf pharo-vm-spur-${vm_version}.tar.bz2 pharo-vm-spur-${vm_version}
 
