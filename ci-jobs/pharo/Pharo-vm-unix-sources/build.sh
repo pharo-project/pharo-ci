@@ -26,9 +26,13 @@ cat > packaging.cs <<EOF
 
 !PharoVMBuilder methodsFor: 'building' stamp: 'DamienCassou 8/4/2014 15:08'!
 buildSourcesForDistroPackaging
+	| config |
 	CogNativeBoostPlugin setTargetPlatform: #Linux32PlatformId.
-	
-	PharoUnixConfig new
+	config := PharoUnixConfig new.
+        "I can't compile this plugin anymore: https://pharo.fogbugz.com/f/cases/17942"
+        config internalPlugins: (
+           config internalPlugins copyWithout: #Mpeg3Plugin).
+	config
 		addExternalPlugins: #( FT2Plugin SqueakSSLPlugin );
 		addInternalPlugins: #( UnixOSProcessPlugin  );
 		generateSources; 
