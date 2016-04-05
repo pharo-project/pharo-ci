@@ -29,8 +29,6 @@ cat > packaging.cs <<EOF
 
 !PharoVMSpur32Builder methodsFor: 'building' stamp: 'DamienCassou 8/4/2014 15:08'!
 buildSourcesForDistroPackaging
-	CogNativeBoostPlugin setTargetPlatform: #Linux32PlatformId.
-	
 	PharoSpur32UnixConfig new
 		addExternalPlugins: #( FT2Plugin SqueakSSLPlugin );
 		addInternalPlugins: #( UnixOSProcessPlugin  );
