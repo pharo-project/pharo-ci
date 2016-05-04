@@ -27,6 +27,7 @@ wget --quiet http://file-pharo.inria.fr/sources/PharoV10.sources.zip && unzip Ph
 wget --quiet http://file-pharo.inria.fr/sources/PharoV20.sources.zip && unzip PharoV20.sources.zip PharoV20.sources && rm PharoV20.sources.zip
 wget --quiet http://file-pharo.inria.fr/sources/PharoV30.sources.zip && unzip PharoV30.sources.zip PharoV30.sources && rm PharoV30.sources.zip
 wget --quiet http://file-pharo.inria.fr/sources/PharoV40.sources.zip && unzip PharoV40.sources.zip PharoV40.sources && rm PharoV40.sources.zip
+wget --quiet http://file-pharo.inria.fr/sources/PharoV50.sources.zip && unzip PharoV50.sources.zip PharoV50.sources && rm PharoV50.sources.zip
 cd ..
 
 DATE=$(date +%Y.%m.%d)
