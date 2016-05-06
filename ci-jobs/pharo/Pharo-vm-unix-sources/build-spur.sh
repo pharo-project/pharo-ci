@@ -57,6 +57,9 @@ Smalltalk snapshot: false andQuit: true.
 EOF
 
 wget -O- get.pharo.org/vm50 | bash
+cd pharo-vm
+wget -O PharoV40.sources http://files.pharo.org/sources/PharoV40.sources
+cd ..
 ./pharo generator.image script.st
 
 cd ../
