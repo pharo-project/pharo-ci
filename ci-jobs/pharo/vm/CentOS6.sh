@@ -30,7 +30,7 @@ unzip -o ../../vmmaker-image.zip
 # cd pharovm-centos65-master
 # sudo install-requisites.sh
 
-wget -O vm.zip http://files.pharo.org/vm/pharo/linux/centos/latest.zip
+wget -O vm.zip http://files.pharo.org/vm/pharo-spur32/linux/centos/latest.zip
 unzip vm.zip
 wget http://files.pharo.org/sources/PharoV50.sources.zip
 unzip PharoV50.sources.zip
