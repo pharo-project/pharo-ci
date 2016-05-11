@@ -9,8 +9,8 @@ if [ "$OS" == "win" ]; then
 fi
 
 # Download the latest sources ================================================
-wget --quiet files.pharo.org/vm/src/vmmaker-image.zip
-wget --quiet files.pharo.org/vm/src/cog.tar.gz
+wget --quiet files.pharo.org/vm/src/spur/vmmaker-image.zip
+wget --quiet files.pharo.org/vm/src/spur/cog.tar.gz
 
 # Unpack sources =============================================================
 tar -xzf cog.tar.gz || echo # echo needed for Windows build (error on symlinks creation)
@@ -32,8 +32,8 @@ unzip -o ../../vmmaker-image.zip
 
 wget -O vm.zip http://files.pharo.org/vm/pharo/linux/centos/latest.zip
 unzip vm.zip
-wget http://files.pharo.org/sources/PharoV30.sources.zip
-unzip PharoV30.sources.zip
+wget http://files.pharo.org/sources/PharoV50.sources.zip
+unzip PharoV50.sources.zip
 ./pharo --nodisplay generator.image eval "PharoVMBuilder buildOnJenkins: '$OS'" || (cat stderr; exit 1)
 
 cd "$WORKSPACE"
