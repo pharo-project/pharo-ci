@@ -9,9 +9,9 @@ launcher_version=$(basename "$(pwd)" \
 cd ..
 
 unzip "$launcher_directory/Pharo-mac.zip" 
-cp pharo-ci/background/background.png .
+cp pharo-build-scripts/background/background.png .
 
-VERSION=$launcher_version ./pharo-ci/build-dmg.sh
+VERSION=$launcher_version ./pharo-build-scripts/build-dmg.sh
 
 generated_dmg=$(echo *.dmg)
 md5 "$generated_dmg" > "$generated_dmg.md5sum"
