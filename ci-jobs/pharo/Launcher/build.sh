@@ -31,8 +31,8 @@ wget --quiet http://file-pharo.inria.fr/sources/PharoV50.sources.zip && unzip Ph
 cd ..
 
 DATE=$(date +%Y.%m.%d)
-bash ./pharo-build-scripts/build-platform.sh -i Pharo -o Pharo -r $PHARO -s $PHARO -v $VERSION-$DATE -t Pharo -p mac
-bash ./pharo-build-scripts/build-platform.sh -i Pharo -o Pharo -r $PHARO -s $PHARO -v $VERSION-$DATE -t Pharo -p win
+bash ./pharo-build-scripts/build-platform.sh -i Pharo -o Pharo -r $PHARO -s $PHARO -l -v $VERSION-$DATE -t Pharo -p mac
+bash ./pharo-build-scripts/build-platform.sh -i Pharo -o Pharo -r $PHARO -s $PHARO -l -v $VERSION-$DATE -t Pharo -p win
 
 zip -9r PharoLauncher-user-$VERSION-$DATE.zip PharoLauncher.image PharoLauncher.changes
 
