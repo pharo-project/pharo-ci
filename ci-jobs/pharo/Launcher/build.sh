@@ -15,6 +15,8 @@ REPO=http://smalltalkhub.com/mc/Pharo/PharoLauncher/main
 zip -9r PharoLauncher-developer.zip PharoLauncher.image PharoLauncher.changes
 
 ./pharo PharoLauncher.image eval --save "PhLDeploymentScript doAll"
+# Faster the startup of the launcher image
+./pharo PharoLauncher.image eval --save ""
 
 # Create the platform-specific archives
 mkdir One
@@ -33,6 +35,7 @@ cd ..
 DATE=$(date +%Y.%m.%d)
 bash ./pharo-build-scripts/build-platform.sh -i Pharo -o Pharo -r $PHARO -s $PHARO -l -v $VERSION-$DATE -t Pharo -p mac
 bash ./pharo-build-scripts/build-platform.sh -i Pharo -o Pharo -r $PHARO -s $PHARO -l -v $VERSION-$DATE -t Pharo -p win
+bash ./pharo-build-scripts/build-platform.sh -i Pharo -o Pharo -r $PHARO -s $PHARO -l -v $VERSION-$DATE -t Pharo -p linux
 
 zip -9r PharoLauncher-user-$VERSION-$DATE.zip PharoLauncher.image PharoLauncher.changes
 
