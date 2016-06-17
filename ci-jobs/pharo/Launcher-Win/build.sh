@@ -11,7 +11,8 @@ cd ..
 unzip "$launcher_directory/Pharo-win.zip"
 
 pwd
-VERSION=$launcher_version ./pharo-build-scripts/build-windows-installer.sh
+VERSION=$launcher_version 
+./pharo-build-scripts/build-windows-installer.sh
 
 generated_exe=$(echo *.exe)
 cp "$generated_exe" latest.exe
