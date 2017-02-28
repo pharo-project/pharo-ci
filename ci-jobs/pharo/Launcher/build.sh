@@ -31,6 +31,14 @@ function copy_prespur_vm() {
 	fi
 }
 
+function ensure_pharo_sources_version() {
+	HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" http://file-pharo.inria.fr/sources/PharoV$1.sources.zip)
+	if [ $HTTP_CODE -eq 404 ]
+	then
+  		PHARO_SOURCES=50
+	fi
+}
+
 wget --quiet -O - get.pharo.org/$PHARO+$VM | bash
 
 ./pharo Pharo.image save PharoLauncher --delete-old
@@ -62,9 +70,10 @@ done
 cd ..
 
 DATE=$(date +%Y.%m.%d)
-bash ./pharo-build-scripts/build-platform.sh -i Pharo -o Pharo -r $PHARO -s $PHARO -v $VERSION-$DATE -t Pharo -p mac
-bash ./pharo-build-scripts/build-platform.sh -i Pharo -o Pharo -r $PHARO -s $PHARO -v $VERSION-$DATE -t Pharo -p win
-bash ./pharo-build-scripts/build-platform.sh -i Pharo -o Pharo -r $PHARO -s $PHARO -v $VERSION-$DATE -t Pharo -p linux
+ensure_pharo_sources_version
+bash ./pharo-build-scripts/build-platform.sh -i Pharo -o Pharo -r $PHARO -s $PHARO_SOURCES -v $VERSION-$DATE -t Pharo -p mac
+bash ./pharo-build-scripts/build-platform.sh -i Pharo -o Pharo -r $PHARO -s $PHARO_SOURCES -v $VERSION-$DATE -t Pharo -p win
+bash ./pharo-build-scripts/build-platform.sh -i Pharo -o Pharo -r $PHARO -s $PHARO_SOURCES -v $VERSION-$DATE -t Pharo -p linux
 
 zip -9r PharoLauncher-user-$VERSION-$DATE.zip PharoLauncher.image PharoLauncher.changes
 
