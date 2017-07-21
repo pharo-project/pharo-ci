@@ -17,10 +17,13 @@ function ensure_pharo_sources_version() {
 	fi
 }
 
-wget --quiet -O - get.pharo.org/$PHARO+$VM | bash
+wget --quiet -O - get.pharo.org/$PHARO | bash
+wget --quiet -O - get.pharo.org/$VM | bash
 
 ./pharo Pharo.image save PharoLauncher --delete-old
 ./pharo PharoLauncher.image --version > version.txt
+./pharo PharoLauncher.image eval '(MBConfigurationRoot current configurationInfoFor: ConfigurationOfPharoLauncher) version versionNumber' > launcher-version.txt
+VERSION_NUMBER=$(cat launcher-version.txt)
 
 REPO=http://smalltalkhub.com/mc/Pharo/PharoLauncher/main
 ./pharo PharoLauncher.image config $REPO ConfigurationOfPharoLauncher --install=$VERSION
@@ -47,7 +50,7 @@ ensure_pharo_sources_version
 bash ./pharo-build-scripts/build-platform.sh -i Pharo -o Pharo -r $PHARO -s $PHARO_SOURCES -v $VERSION-$DATE -t Pharo -p mac
 bash ./pharo-build-scripts/build-platform.sh -i Pharo -o Pharo -r $PHARO -s $PHARO_SOURCES -v $VERSION-$DATE -t Pharo -p win
 bash ./pharo-build-scripts/build-platform.sh -i Pharo -o Pharo -r $PHARO -s $PHARO_SOURCES -v $VERSION-$DATE -t Pharo -p linux
-mv Pharo-linux.zip Pharo-linux-$VERSION.zip
+mv Pharo-linux.zip Pharo-linux-$VERSION_NUMBER.zip
 
 zip -9r PharoLauncher-user-$VERSION-$DATE.zip PharoLauncher.image PharoLauncher.changes
 
