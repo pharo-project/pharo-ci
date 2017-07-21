@@ -41,7 +41,7 @@ mkdir One
 cp PharoLauncher.image   One/Pharo.image
 cp PharoLauncher.changes One/Pharo.changes
 cd One
-wget --quiet http://file-pharo.inria.fr/sources/PharoV50.sources.zip && unzip PharoV50.sources.zip PharoV50.sources && rm PharoV50.sources.zip
+wget --quiet http://file-pharo.inria.fr/sources/PharoV60.sources.zip && unzip PharoV60.sources.zip PharoV60.sources && rm PharoV60.sources.zip
 copy_current_stable_image
 cd ..
 
