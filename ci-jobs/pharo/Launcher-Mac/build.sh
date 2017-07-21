@@ -2,16 +2,11 @@
 
 set -ex
 
-cd ./*VERSION=[0-9]*
-launcher_directory=$(pwd)
-launcher_version=$(basename "$(pwd)" \
-    | sed -e 's/^.*VERSION=\([0-9.]*\),.*$/\1/')
-cd ..
-
-unzip "$launcher_directory/Pharo-mac.zip" 
+find . -wholename '*VERSION=stable*/Pharo-mac.zip' -exec unzip '{}' . \;
+find . -wholename '*VERSION=stable*/launcher-version.txt' -exec mv '{}' . \;
 cp pharo-build-scripts/background/background.png .
 
-VERSION=$launcher_version ./pharo-build-scripts/build-dmg.sh
+VERSION=$(cat launcher-version.txt) ./pharo-build-scripts/build-dmg.sh
 
 generated_dmg=$(echo *.dmg)
 md5 "$generated_dmg" > "$generated_dmg.md5sum"
