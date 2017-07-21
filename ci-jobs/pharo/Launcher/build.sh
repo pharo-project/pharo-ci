@@ -13,7 +13,7 @@ function ensure_pharo_sources_version() {
 	HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" http://file-pharo.inria.fr/sources/PharoV$1.sources.zip)
 	if [ $HTTP_CODE -eq 404 ]
 	then
-  		PHARO_SOURCES=50
+  		PHARO_SOURCES=60
 	fi
 }
 
