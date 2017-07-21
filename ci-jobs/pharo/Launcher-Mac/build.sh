@@ -2,7 +2,7 @@
 
 set -ex
 
-find . -wholename '*VERSION=stable*/Pharo-mac.zip' -exec unzip '{}' . \;
+find . -wholename '*VERSION=stable*/Pharo-mac.zip' -exec unzip '{}' -d . \;
 find . -wholename '*VERSION=stable*/launcher-version.txt' -exec mv '{}' . \;
 cp pharo-build-scripts/background/background.png .
 
