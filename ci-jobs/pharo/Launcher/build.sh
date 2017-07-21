@@ -22,13 +22,13 @@ wget --quiet -O - get.pharo.org/$VM | bash
 
 ./pharo Pharo.image save PharoLauncher --delete-old
 ./pharo PharoLauncher.image --version > version.txt
-./pharo PharoLauncher.image eval '(MBConfigurationRoot current configurationInfoFor: ConfigurationOfPharoLauncher) version versionNumber' > launcher-version.txt
-VERSION_NUMBER=$(cat launcher-version.txt)
 
 REPO=http://smalltalkhub.com/mc/Pharo/PharoLauncher/main
 ./pharo PharoLauncher.image config $REPO ConfigurationOfPharoLauncher --install=$VERSION
 ./pharo PharoLauncher.image test --junit-xml-output "PharoLauncher.*"
 ./pharo PharoLauncher.image eval --save "PhLDirectoryBasedImageRepository location"
+./pharo PharoLauncher.image eval '(MBConfigurationRoot current configurationInfoFor: ConfigurationOfPharoLauncher) version versionNumber' > launcher-version.txt
+VERSION_NUMBER=$(cat launcher-version.txt)
 
 zip -9r PharoLauncher-developer.zip PharoLauncher.image PharoLauncher.changes
 
