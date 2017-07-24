@@ -17,8 +17,7 @@ function ensure_pharo_sources_version() {
 	fi
 }
 
-wget --quiet -O - get.pharo.org/$PHARO | bash
-wget --quiet -O - get.pharo.org/$VM | bash
+wget --quiet -O - get.pharo.org/$PHARO+$VM | bash
 
 ./pharo Pharo.image save PharoLauncher --delete-old
 ./pharo PharoLauncher.image --version > version.txt
