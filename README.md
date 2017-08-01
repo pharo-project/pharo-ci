@@ -3,9 +3,9 @@
 This repository contains tools and resources to build
 [Pharo](http://www.pharo.org) and related tools.
 
-## Pharo slaves setup
+# Pharo slaves setup
 ## Building slaves from Pharo templates
-### Linux slave
+### Linux and OS X slaves
 Nothing more to do.
 ### Windows slave
 Follow steps 4 and 5 of 'Building slaves / templates from scratch'
@@ -33,7 +33,7 @@ libcairo 32-bits version is needed by some UI tests.
 sudo fdisk -l
 sudo fdisk /dev/vda [replace vda with the disk with the free space]
 ```
-    n - p - enter - enter - p - w
+n - p - enter - enter - p - w
 ```bash
 sudo mkfs -t ext4 /dev/vda3 [replace vda3 with the disk partition with the free space]
 ```
@@ -56,6 +56,7 @@ UUID=paste-UUID-here	/builds	ext4	defaults	1	2
 1. Create the slave from the featured "BETA - Windows 7 64b-Visual-V25"  template by resizing the root disk size to 120 Go. 
 2. install MSys (could be already installed)
 3. install additional packages:
+Run Windowd terminal (cmd), then:
 ```bash
 bash
 mingw-get install msys-mktemp # needed by zero-conf
@@ -65,9 +66,18 @@ mingw-get install msys-coreutils-ext # readlink is also needed by zero-conf
 - Open the 'Create and format hard disk partitions' tool from the control panel
 - Select the free space on the disk visualization
 - Click on 'Format ...'
- - Drive Letter: 'E'
- - Volume Label: 'Builds'
- - File System: NTFS
- - Allocation Unit Size: default
- - Tick 'Perform a quick format'
+  - Drive Letter: 'E'
+  - Volume Label: 'Builds'
+  - File System: NTFS
+  - Allocation Unit Size: default
+  - Tick 'Perform a quick format'
 5. Configure your node in Jenkins to build in the 'E:\builds' folder
+
+### OS X slave
+Pharo does not run properly in headless mode and needs an access to a Windows manager.
+To avoid the following error `_RegisterApplication(), FAILED TO establish the default connection to the WindowServer, _CGSDefaultConnection() is NULL.`, we need the followinf workaround:
+```bash
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" # Install brew
+brew install jenkins
+```
+Then, follow brew instructions telling you right away how to turn it into a Launch Agent.
