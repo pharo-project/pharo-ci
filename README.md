@@ -6,9 +6,9 @@ This repository contains tools and resources to build
 # Pharo slaves setup
 ## Building slaves from Pharo templates
 ### Linux and OS X slaves
-Nothing more to do.
+Just use templates to create slaves. Nothing more to do.
 ### Windows slave
-Follow steps 4 and 5 of 'Building slaves / templates from scratch'
+Use the template and follow steps 4 and 5 of 'Building slaves / templates from scratch'
 
 ## Building slaves / templates from scratch
 ### Linux slave
@@ -74,8 +74,8 @@ mingw-get install msys-coreutils-ext # readlink is also needed by zero-conf
 5. Configure your node in Jenkins to build in the 'E:\builds' folder
 
 ### OS X slave
-Pharo does not run properly in headless mode and needs an access to a Windows manager.
-To avoid the following error `_RegisterApplication(), FAILED TO establish the default connection to the WindowServer, _CGSDefaultConnection() is NULL.`, we need the followinf workaround:
+Pharo does not run properly in headless mode and needs an access to a Window manager.
+To avoid the following error `_RegisterApplication(), FAILED TO establish the default connection to the WindowServer, _CGSDefaultConnection() is NULL.`, we need the following workaround:
 ```bash
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" # Install brew
 brew install jenkins
