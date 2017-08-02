@@ -65,7 +65,8 @@ mingw-get install msys-coreutils-ext # readlink is also needed by zero-conf
 4. Add and prepare the disk for builds
 - Open the 'Create and format hard disk partitions' tool from the control panel
 - Select the free space on the disk visualization
-- Click on 'Format ...'
+- Click on 'New simple volume ...'
+  - Use maximum volume size,
   - Drive Letter: 'E'
   - Volume Label: 'Builds'
   - File System: NTFS
