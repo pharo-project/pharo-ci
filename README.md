@@ -76,9 +76,15 @@ mingw-get install msys-coreutils-ext # readlink is also needed by zero-conf
 
 ### OS X slave
 Pharo does not run properly in headless mode and needs an access to a Window manager.
-To avoid the following error `_RegisterApplication(), FAILED TO establish the default connection to the WindowServer, _CGSDefaultConnection() is NULL.`, we need the following workaround:
-```bash
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" # Install brew
-brew install jenkins
-```
-Then, follow brew instructions telling you right away how to turn it into a Launch Agent.
+To avoid the following error `_RegisterApplication(), FAILED TO establish the default connection to the WindowServer, _CGSDefaultConnection() is NULL.`, we need to workaround this problem and provide a proper Window manager. Two things must happen to access the Window manager:
+ - a user needs to be logged in using graphical mode
+ - the user connecting through ssh should be the same as the one that is logged in
+ 
+In our case, the user logging through ssh is the one connecting from the jenkins master. We need to add autologin at startup for him.
+For this, follow the next instructions:
+ - Connect to your OS X slave in graphical mode: https://wiki.inria.fr/ciportal/Slaves_Access_Tutorial#Connecting_to_a_MacOSX_slave_.28graphical_way.29
+https://www.howtogeek.com/180953/3-free-ways-to-remotely-connect-to-your-macs-desktop/
+
+ - Set autologin for the user you want: https://support.apple.com/en-us/HT201476
+
+ - Reboot the machine
