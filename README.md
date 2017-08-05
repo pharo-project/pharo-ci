@@ -51,6 +51,11 @@ Copy-paste the UUID of the newly created partition (check the target of the syml
 # /builds
 UUID=paste-UUID-here	/builds	ext4	defaults	1	2
 ```
+Also, Unix slaves don't come by default with UTF-8 encoding. That breaks some tests. We should set that in the .profile file in the `ci` user.
+
+```
+export LC_ALL="en_US.UTF-8"
+ ```
 
 ### Windows slave
 1. Create the slave from the featured "BETA - Windows 7 64b-Visual-V25"  template by resizing the root disk size to 120 Go. 
