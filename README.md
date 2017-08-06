@@ -66,6 +66,9 @@ and then
 ```bash
 $ ln -s .profile .bashrc
 ```
+
+Also, do not forget to disconnect and reconnect your slaves to start a new ssh session and read the corresponding files.
+
 ### Windows slave
 1. Create the slave from the featured "BETA - Windows 7 64b-Visual-V25"  template by resizing the root disk size to 120 Go. 
 2. install MSys (could be already installed)
