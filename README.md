@@ -51,12 +51,21 @@ Copy-paste the UUID of the newly created partition (check the target of the syml
 # /builds
 UUID=paste-UUID-here	/builds	ext4	defaults	1	2
 ```
-Also, Unix slaves don't come by default with UTF-8 encoding. That breaks some tests. We should set that in the .profile file in the `ci` user.
+Also, Unix slaves don't come by default with UTF-8 encoding. That breaks some tests. We should set that in the .profile/.bashrc file in the `ci` user.
 
 ```
 export LC_ALL="en_US.UTF-8"
  ```
+Remember that normal ssh connection will by default use `sh` (and thus the .profile file) instead of `bash`, while jenkins uses `bash` (and thus the .bashrc file). To avoid problems, it is probably good to do the export in one file and to make a link to the second one.
 
+```
+#.profile
+export LC_ALL="en_US.UTF-8"
+ ```
+and then
+```bash
+$ ln -s .profile .bashrc
+```
 ### Windows slave
 1. Create the slave from the featured "BETA - Windows 7 64b-Visual-V25"  template by resizing the root disk size to 120 Go. 
 2. install MSys (could be already installed)
