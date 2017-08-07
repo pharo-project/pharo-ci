@@ -51,7 +51,7 @@ Copy-paste the UUID of the newly created partition (check the target of the syml
 # /builds
 UUID=paste-UUID-here	/builds	ext4	defaults	1	2
 ```
-Also, Unix slaves don't come by default with UTF-8 encoding. That breaks some tests. We should set that in the .profile/.bashrc file in the `ci` user.
+7. Also, Unix slaves don't come by default with UTF-8 encoding. That breaks some tests. We should set that in the .profile/.bashrc file in the `ci` user.
 
 ```
 export LC_ALL="en_US.UTF-8"
@@ -105,3 +105,9 @@ https://www.howtogeek.com/180953/3-free-ways-to-remotely-connect-to-your-macs-de
  - Set autologin for the user you want: https://support.apple.com/en-us/HT201476
 
  - Reboot the machine
+
+Once the window server is enabled, another issue appears: if pharo crashes, osx will try to restore the graphical session and open a pop-up that is unreachable from the command line. To avoid the popup from opening, we should set pharo to not open it from the start:
+
+```bash
+defaults write org.pharo.Pharo ApplePersistenceIgnoreState YES
+```
