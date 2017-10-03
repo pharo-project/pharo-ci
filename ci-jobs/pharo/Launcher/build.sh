@@ -39,6 +39,8 @@ zip -9r PharoLauncher-developer.zip PharoLauncher.image PharoLauncher.changes
 mkdir One
 cp PharoLauncher.image   One/Pharo.image
 cp PharoLauncher.changes One/Pharo.changes
+mkdir win
+cp ProcessWrapperPlugin.dll One/
 cd One
 wget --quiet http://file-pharo.inria.fr/sources/PharoV60.sources.zip && unzip PharoV60.sources.zip PharoV60.sources && rm PharoV60.sources.zip
 copy_current_stable_image
