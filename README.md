@@ -51,6 +51,23 @@ Copy-paste the UUID of the newly created partition (check the target of the syml
 # /builds
 UUID=paste-UUID-here	/builds	ext4	defaults	1	2
 ```
+7. Also, Unix slaves don't come by default with UTF-8 encoding. That breaks some tests. We should set that in the .profile/.bashrc file in the `ci` user.
+
+```
+export LC_ALL="en_US.UTF-8"
+ ```
+Remember that normal ssh connection will by default use `sh` (and thus the .profile file) instead of `bash`, while jenkins uses `bash` (and thus the .bashrc file). To avoid problems, it is probably good to do the export in one file and to make a link to the second one.
+
+```
+#.profile
+export LC_ALL="en_US.UTF-8"
+ ```
+and then
+```bash
+$ ln -s .profile .bashrc
+```
+
+Also, do not forget to disconnect and reconnect your slaves to start a new ssh session and read the corresponding files.
 
 ### Windows slave
 1. Create the slave from the featured "BETA - Windows 7 64b-Visual-V25"  template by resizing the root disk size to 120 Go. 
@@ -65,7 +82,8 @@ mingw-get install msys-coreutils-ext # readlink is also needed by zero-conf
 4. Add and prepare the disk for builds
 - Open the 'Create and format hard disk partitions' tool from the control panel
 - Select the free space on the disk visualization
-- Click on 'Format ...'
+- Click on 'New simple volume ...'
+  - Use maximum volume size,
   - Drive Letter: 'E'
   - Volume Label: 'Builds'
   - File System: NTFS
@@ -75,9 +93,21 @@ mingw-get install msys-coreutils-ext # readlink is also needed by zero-conf
 
 ### OS X slave
 Pharo does not run properly in headless mode and needs an access to a Window manager.
-To avoid the following error `_RegisterApplication(), FAILED TO establish the default connection to the WindowServer, _CGSDefaultConnection() is NULL.`, we need the following workaround:
+To avoid the following error `_RegisterApplication(), FAILED TO establish the default connection to the WindowServer, _CGSDefaultConnection() is NULL.`, we need to workaround this problem and provide a proper Window manager. Two things must happen to access the Window manager:
+ - a user needs to be logged in using graphical mode
+ - the user connecting through ssh should be the same as the one that is logged in
+ 
+In our case, the user logging through ssh is the one connecting from the jenkins master. We need to add autologin at startup for him.
+For this, follow the next instructions:
+ - Connect to your OS X slave in graphical mode: https://wiki.inria.fr/ciportal/Slaves_Access_Tutorial#Connecting_to_a_MacOSX_slave_.28graphical_way.29
+https://www.howtogeek.com/180953/3-free-ways-to-remotely-connect-to-your-macs-desktop/
+
+ - Set autologin for the user you want: https://support.apple.com/en-us/HT201476
+
+ - Reboot the machine
+
+Once the window server is enabled, another issue appears: if pharo crashes, osx will try to restore the graphical session and open a pop-up that is unreachable from the command line. To avoid the popup from opening, we should set pharo to not open it from the start:
+
 ```bash
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" # Install brew
-brew install jenkins
+defaults write org.pharo.Pharo ApplePersistenceIgnoreState YES
 ```
-Then, follow brew instructions telling you right away how to turn it into a Launch Agent.
