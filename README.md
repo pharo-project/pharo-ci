@@ -90,6 +90,14 @@ mingw-get install msys-coreutils-ext # readlink is also needed by zero-conf
   - Allocation Unit Size: default
   - Tick 'Perform a quick format'
 5. Configure your node in Jenkins to build in the 'E:\builds' folder
+6. Make sure you have installed java version 1.8 (required by latest jenkins). For example:
+```bash
+$ java -version
+java version "1.8.0_151"
+Java(TM) SE Runtime Environment (build 1.8.0_151-b12)
+Java HotSpot(TM) 64-Bit Server VM (build 25.151-b12, mixed mode)
+```
+If not there, you have to install it.
 
 ### OS X slave
 Pharo does not run properly in headless mode and needs an access to a Window manager.
