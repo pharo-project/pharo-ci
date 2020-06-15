@@ -70,6 +70,22 @@ $ ln -s .profile .bashrc
 Also, do not forget to disconnect and reconnect your slaves to start a new ssh session and read the corresponding files.
 
 ### Windows slave
+#### Windows 10
+1. Create the slave from the featured "windows-10-chocolatey-java"  template.
+2. Install packages with Chocolatey:
+```batch
+choco install -y git
+choco install -y cygwin
+choco install --source cygwin mingw64-x86_64-clang zip unzip wget curl make
+choco install -y advanced-installer --version 17.1.1
+```
+3. Set the environment
+```batch
+setx /M ADVINST "C:\Program Files (x86)\Caphyon\Advanced Installer 17.1.1\bin\x86\
+setx /M PATH "C:\tools\cygwin\bin;%PATH%"
+```
+
+#### Windows 7
 1. Create the slave from the featured "BETA - Windows 7 64b-Visual-V25"  template by resizing the root disk size to 120 Go. 
 2. install MSys (could be already installed)
 3. install additional packages:
