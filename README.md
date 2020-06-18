@@ -76,7 +76,7 @@ Also, do not forget to disconnect and reconnect your slaves to start a new ssh s
 ```batch
 choco install -y git
 choco install -y cygwin
-choco install --source cygwin mingw64-x86_64-clang zip unzip wget curl make
+choco install --source cygwin mingw64-x86_64-clang zip unzip wget curl make cmake
 choco install -y advanced-installer --version 17.1.1
 ```
 3. Set the environment
