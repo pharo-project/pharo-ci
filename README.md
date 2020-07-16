@@ -71,7 +71,7 @@ Also, do not forget to disconnect and reconnect your slaves to start a new ssh s
 
 ### Windows slave
 #### Windows 10
-1. Create the slave from the featured "windows-10-chocolatey-java"  template.
+1. Create the slave from the [featured "windows-10-chocolatey-java"  template](https://inria-ci.gitlabpages.inria.fr/doc/page/windows10-template/).
 2. Install packages with Chocolatey:
 ```batch
 choco install -y git
