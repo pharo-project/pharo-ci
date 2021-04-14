@@ -135,3 +135,16 @@ Once the window server is enabled, another issue appears: if pharo crashes, osx 
 ```bash
 defaults write org.pharo.Pharo ApplePersistenceIgnoreState YES
 ```
+
+#### Apple Silicon Machines
+
+To use Apple silicon Machines install a JVM that only has ARM64 version (if it is an universal binary, it executes the x86_64 version)
+
+https://stackoverflow.com/questions/66705777/jenkins-does-not-work-properly-on-mac-m1-agent
+
+```bash
+brew install --cask zulu
+```
+
+
+
